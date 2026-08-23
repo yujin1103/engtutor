@@ -1,0 +1,65 @@
+# engtutor 개발 환경
+#
+#   docker compose up              -> ollama + api + ui  (로컬 GPU 모드)
+#   docker compose up api ui       -> api + ui 만        (Claude API 모드)
+#
+# api 는 LLM_BACKEND 환경변수로 백엔드를 고르므로 ollama 에 구조적으로 의존하지 않는다.
+# 그래서 depends_on 을 일부러 걸지 않았다. (걸면 Claude 모드에서도 9GB 모델이 딸려 올라온다)
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: engtutor-ollama
+    gpus: all
+    ports:
+      - "11434:11434"          # 호스트에서 직접 디버깅할 때 사용
+    volumes:
+      - ollama_models:/root/.ollama
+    environment:
+      OLLAMA_HOST: 0.0.0.0:11434
+      OLLAMA_KEEP_ALIVE: 30m   # 턴마다 9GB 모델을 언로드/로드하지 않도록
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    restart: unless-stopped
+
+  api:
+    build: .
+    container_name: engtutor-api
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - .:/workspace           # 코드 수정 -> 재빌드 없이 즉시 반영
+    env_file:
+      - .env
+    environment:
+      OLLAMA_BASE_URL: http://ollama:11434
+      # NTFS -> WSL2 경계에서는 inotify 이벤트가 컨테이너까지 넘어오지 않는다.
+      # 폴링을 켜지 않으면 --reload 가 실제로 동작하지 않는다.
+      WATCHFILES_FORCE_POLLING: "true"
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  ui:
+    build: .
+    container_name: engtutor-ui
+    command: >
+      streamlit run ui/chat_app.py
+      --server.port 8501
+      --server.address 0.0.0.0
+      --server.fileWatcherType poll
+      --browser.gatherUsageStats false
+    volumes:
+      - .:/workspace
+    env_file:
+      - .env
+    environment:
+      API_BASE_URL: http://api:8000   # localhost 가 아니라 compose 서비스명
+    ports:
+      - "8501:8501"
+    restart: unless-stopped
+
+volumes:
+  ollama_models:                # NTFS 바인드 마운트는 9GB 모델 로딩이 느려서 named volume 사용

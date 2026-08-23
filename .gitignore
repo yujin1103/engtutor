@@ -1,0 +1,30 @@
+# --- 비밀정보 (절대 커밋 금지) ---
+.env
+*.pem
+*.key
+.oci/
+
+# --- 데이터 (로컬 생성물) ---
+data/
+*.db
+*.db-journal
+*.sqlite3
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# --- Streamlit ---
+.streamlit/secrets.toml
+
+# --- OS / 에디터 ---
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
