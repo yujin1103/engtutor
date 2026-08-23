@@ -16,6 +16,9 @@ You will be given the conversation and every correction that came up during it.
 - `learned`: up to 5 expressions worth remembering, drawn from what actually appeared in this
   conversation. `english` is the expression itself; `note_ko` is one short Korean sentence on
   when to use it. Prefer the corrected/natural forms over the learner's original wording.
+  **Only include expressions tied to the scenario the learner was practicing.** Skip anything
+  the partner said to recover from a misunderstanding or an off-topic remark
+  (e.g. "Sorry, I didn't catch that.") — that is not what the learner came to practice.
 
 # Rules
 
