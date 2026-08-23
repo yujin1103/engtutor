@@ -82,7 +82,7 @@ docker compose run --rm api pytest -q
 POST /sessions/{session_id}/report
 ```
 
-리포트는 네 부분으로 나오는데, 출처가 다르다.
+리포트는 다섯 부분으로 나오는데, 출처가 다르다.
 
 | 항목 | 출처 |
 |---|---|
@@ -90,6 +90,7 @@ POST /sessions/{session_id}/report
 | 반복 실수 패턴 (`patterns_ko`) | LLM — `mistake` 등급만 근거로 삼는다 |
 | 오늘 배운 표현 (`learned`) | LLM |
 | 틀린 문장 모음 (`mistakes`) | **DB 그대로** — LLM이 지어낼 여지가 없다 |
+| 오늘 나온 단어 (`word_tips`) | **DB 그대로** — 검수 완료된 항목만 |
 
 ### 교정의 두 등급
 
@@ -113,6 +114,63 @@ LLM 호출은 **세션당 1회**뿐이다. 교정 기록은 `corrections` 테이
 
 ---
 
+## 단어 콘텐츠 파이프라인
+
+원칙: **생성은 AI(로컬 배치), 검수는 사람, 서빙은 DB.**
+실시간 대화 경로에서는 단어 콘텐츠를 절대 LLM으로 만들지 않는다 — 항상 DB 조회다.
+
+```
+단어 목록 ──▶ batch_generate.py ──▶ words 테이블 (reviewed=false)
+                  (Ollama, JSON 스키마 강제)          │
+                                                      ▼
+                                          review_app.py (사람이 수정·승인)
+                                                      │  reviewed=true
+                                                      ▼
+                                    리포트에 '오늘 나온 단어'로 노출
+```
+
+### 1) 배치 생성
+
+```powershell
+# 스타터 60단어 (기본)
+docker compose exec api python content/batch_generate.py
+
+# 품질만 먼저 눈으로 확인 (DB에 쓰지 않음)
+docker compose exec api python content/batch_generate.py --dry-run --limit 4
+
+# 실제 NGSL로
+docker compose exec api python content/batch_generate.py --wordlist content/data/ngsl.csv
+```
+
+이미 생성된 단어는 자동으로 건너뛴다(`--redo`로 강제). **사람이 승인한 항목은 배치가 덮어쓰지 않는다** —
+검수 결과를 배치가 날리면 검수가 무의미해지기 때문이다.
+
+실측(qwen3:14b, `--concurrency 4`): **60단어 93.7초 (0.64단어/초)**. NGSL 2,800단어면 약 73분.
+
+### 2) 검수
+
+```powershell
+docker compose --profile review up -d review   # http://localhost:8502
+```
+
+미검수 필터·검색·항목 수정·승인 토글. 필요할 때만 띄우면 되므로 profile 뒤에 두었다.
+
+### 3) 리포트 연동
+
+리포트를 만들 때 교정에 등장한 단어를 `words` 테이블과 매칭해 **`reviewed=true`인 항목만** 붙인다.
+미검수 항목은 절대 새어 나가지 않는다(테스트로 고정).
+
+### 단어 목록
+
+`content/data/starter_words.txt`는 **NGSL이 아니라** 파이프라인을 바로 돌려보기 위해 직접 고른
+60단어다(borrow/lend, say/tell/speak/talk 처럼 한국인이 실제로 헷갈리는 짝 위주).
+실제 NGSL(약 2,800단어, CC BY)로 돌리는 법은 `content/data/README.md` 참고.
+
+> 시판 단어책·이북 등 저작물에서 예문·해설을 수집하는 코드는 작성하지 않는다.
+> 교차 확인이 필요하면 공개 자원만 쓴다 — Wiktionary, WordNet, Tatoeba(CC BY).
+
+---
+
 ## 구조
 
 ```
@@ -122,6 +180,7 @@ app/
 ├── session_store.py   SqliteSessionStore + InMemorySessionStore (같은 Protocol)
 ├── db/                models.py(sessions/turns/corrections) · crud.py · database.py
 ├── report/            schemas.py · service.py · prompts/report_system.md
+├── content/           schemas.py · generator.py · prompts/word_system.md
 ├── llm/               백엔드 추상화
 │   ├── base.py            chat_json(system, messages, schema) 계약
 │   ├── ollama_client.py   format 파라미터로 JSON 스키마 강제
@@ -131,9 +190,11 @@ app/
     ├── schemas.py     TurnResponse / Correction (단일 출처)
     ├── prompts/       tutor_system.md + guardrails.md
     ├── scenarios/     YAML 3종
+    ├── korean.py      한국어 표기 정규화 (모델이 못 고치는 것)
     ├── loader.py      시나리오·프롬프트 로딩
     └── service.py     프롬프트 조립 → LLM → 검증 → 1회 재시도
 ui/chat_app.py         Streamlit 채팅 UI
+content/               batch_generate.py · review_app.py · data/
 tests/                 스키마·시나리오·프롬프트·DB·리포트 스모크 테스트
 ```
 
@@ -172,5 +233,5 @@ opening_hint_ko: 메뉴 이름을 말해보세요. "I'll have the ~ ." 가 자�
 
 - [x] **1단계 — 코어 루프**: LLM 추상화, 시스템 프롬프트, 시나리오 3종, `/chat`, Streamlit UI
 - [x] **2단계 — 저장과 리포트**: SQLite 세션·턴·교정, 세션 종료 리포트, 레벨 선택
-- [ ] **3단계 — 콘텐츠 파이프라인**: NGSL 배치 생성, 검수용 Streamlit 앱, 리포트-단어 DB 연동
+- [x] **3단계 — 콘텐츠 파이프라인**: NGSL 배치 생성, 검수용 Streamlit 앱, 리포트-단어 DB 연동
 - [ ] **4단계 — 보안·마무리**: 인젝션 테스트 슈트, 아키텍처 다이어그램, 보안 결과 표

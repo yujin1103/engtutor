@@ -115,6 +115,17 @@ def render_report(report: dict[str, Any]) -> None:
                 st.markdown(f"**→ {m['better']}**")
                 st.caption(m["note"])
 
+    tips = report.get("word_tips") or []
+    if tips:
+        st.markdown("#### 📚 오늘 나온 단어")
+        st.caption("검수 완료된 단어 사전에서 가져왔어요.")
+        for t in tips:
+            with st.container(border=True):
+                confused = f" · 헷갈리는 단어: {', '.join(t['confused_with'])}" if t["confused_with"] else ""
+                st.markdown(f"**{t['word']}** — {t['meaning_ko']}{confused}")
+                st.markdown(f"_{t['example']}_")
+                st.caption(t["usage_note"])
+
 
 # ---------------------------------------------------------------- 사이드바
 try:

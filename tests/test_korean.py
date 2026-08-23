@@ -24,6 +24,25 @@ def test_dieut_irregular_is_fixed(given, expected):
 
 
 @pytest.mark.parametrize(
+    ("given", "expected"),
+    [
+        ("그렇게 하면 되요.", "그렇게 하면 돼요."),
+        ("길어지면 안되요.", "길어지면 안돼요."),
+        ("답이 됬어요.", "답이 됐어요."),
+        ("그렇게 되서 어려워요.", "그렇게 돼서 어려워요."),
+    ],
+)
+def test_dwae_spelling_is_fixed(given, expected):
+    """'되-' + '-요/-서'는 항상 '돼요/돼서'. '되요'는 오탐이 없는 오타다."""
+    assert normalize(given) == expected
+
+
+@pytest.mark.parametrize("text", ["그렇게 하면 돼요.", "확인이 되면 알려주세요.", "되도록 짧게 말해요."])
+def test_dwae_does_not_touch_correct_forms(text):
+    assert normalize(text) == text
+
+
+@pytest.mark.parametrize(
     "text",
     [
         "묻는 게 자연스러워요.",  # '묻는'은 규칙 활용 — 건드리면 안 된다

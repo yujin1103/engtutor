@@ -143,8 +143,19 @@ def main() -> int:
             print(f"  {item['english']}")
             print(f"    {item['note_ko']}")
 
+    tips = report.get("word_tips") or []
+    if tips:
+        print(f"\n📚 오늘 나온 단어 ({len(tips)}) — 검수 완료된 항목만")
+        for t in tips:
+            confused = f"  (헷갈림: {', '.join(t['confused_with'])})" if t["confused_with"] else ""
+            print(f"  {t['word']} — {t['meaning_ko']}{confused}")
+            print(f"    예문: {t['example']}")
+            print(f"    {t['usage_note']}")
+    else:
+        print("\n📚 오늘 나온 단어: 없음 (검수된 단어가 매칭되지 않았어요)")
+
     print("\n원본 JSON:")
-    print(json.dumps(report, ensure_ascii=False, indent=2)[:1200])
+    print(json.dumps(report, ensure_ascii=False, indent=2)[:900])
     return 0
 
 

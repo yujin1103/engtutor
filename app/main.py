@@ -124,13 +124,16 @@ def session_report(session_id: str) -> SessionReport:
     if not any(m["role"] == "user" for m in session.messages):
         raise HTTPException(status_code=400, detail="대화가 없어 리포트를 만들 수 없습니다.")
 
+    corrections = store.corrections(session.id)
     try:
         report = ReportService(get_client()).build(
             session_id=session.id,
             scenario=scenario,
             level=session.level,
             messages=session.messages,
-            corrections=store.corrections(session.id),
+            corrections=corrections,
+            # 검수된 단어만 DB 에서 붙인다. 대화 경로에서 LLM 으로 만들지 않는다.
+            word_tips=store.word_tips(corrections),
         )
     except LLMError as exc:
         raise HTTPException(status_code=502, detail=str(exc)) from exc

@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
+from ..content.schemas import WordTip
 from ..tutor.korean import normalize
 from ..tutor.schemas import Correction
 
@@ -51,3 +52,5 @@ class SessionReport(BaseModel):
     polish_count: int  # kind == "polish"  — 통하지만 더 자연스러운 표현
     mistakes: list[Correction]  # 두 등급 모두, kind 를 달고 그대로
     insight: ReportInsight
+    # 교정에 등장한 단어 중 '검수 완료'된 항목만. DB 조회이며 LLM 을 거치지 않는다.
+    word_tips: list[WordTip] = []

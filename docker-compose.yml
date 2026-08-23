@@ -61,5 +61,25 @@ services:
       - "8501:8501"
     restart: unless-stopped
 
+  # 단어 검수 UI. 필요할 때만 띄우면 되므로 profile 뒤에 둔다.
+  #   docker compose --profile review up -d review
+  review:
+    build: .
+    container_name: engtutor-review
+    profiles: ["review"]
+    command: >
+      streamlit run content/review_app.py
+      --server.port 8502
+      --server.address 0.0.0.0
+      --server.fileWatcherType poll
+      --browser.gatherUsageStats false
+    volumes:
+      - .:/workspace
+    env_file:
+      - .env
+    ports:
+      - "8502:8502"
+    restart: unless-stopped
+
 volumes:
   ollama_models:                # NTFS 바인드 마운트는 9GB 모델 로딩이 느려서 named volume 사용

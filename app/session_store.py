@@ -13,6 +13,7 @@ import uuid
 from dataclasses import dataclass, field
 from typing import Protocol
 
+from .content.schemas import WordTip
 from .llm.base import Message
 from .tutor.schemas import Correction, TurnResponse
 
@@ -34,6 +35,8 @@ class SessionStore(Protocol):
     def record_turn(self, session_id: str, *, user_text: str, turn: TurnResponse) -> None: ...
 
     def corrections(self, session_id: str) -> list[Correction]: ...
+
+    def word_tips(self, corrections: list[Correction]) -> list[WordTip]: ...
 
     def end(self, session_id: str) -> None: ...
 
@@ -62,6 +65,9 @@ class InMemorySessionStore:
 
     def corrections(self, session_id: str) -> list[Correction]:
         return list(self._corrections.get(session_id, []))
+
+    def word_tips(self, corrections: list[Correction]) -> list[WordTip]:
+        return []  # 인메모리 저장소에는 단어 콘텐츠가 없다
 
     def end(self, session_id: str) -> None:
         session = self._sessions.get(session_id)
@@ -110,6 +116,13 @@ class SqliteSessionStore:
 
         with db_session() as db:
             return crud.corrections_of(db, session_id)
+
+    def word_tips(self, corrections: list[Correction]) -> list[WordTip]:
+        from .db import crud
+        from .db.database import db_session
+
+        with db_session() as db:
+            return crud.word_tips_for(db, corrections)
 
     def end(self, session_id: str) -> None:
         from .db import crud

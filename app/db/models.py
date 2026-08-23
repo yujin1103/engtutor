@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
-from sqlalchemy import DateTime, ForeignKey, Integer, String, Text
+from sqlalchemy import JSON, Boolean, DateTime, ForeignKey, Integer, String, Text
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 
@@ -69,3 +69,26 @@ class CorrectionRow(Base):
     note: Mapped[str] = mapped_column(Text)
 
     turn: Mapped[TurnRow] = relationship(back_populates="corrections")
+
+
+class WordRow(Base):
+    """사전 생성 + 사람 검수된 단어 콘텐츠.
+
+    실시간 대화 경로에서는 절대 LLM 으로 만들지 않는다. 여기서 조회만 한다.
+    """
+
+    __tablename__ = "words"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    word: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    level: Mapped[str] = mapped_column(String(8), index=True)
+    meaning_ko: Mapped[str] = mapped_column(Text)
+    example: Mapped[str] = mapped_column(Text)
+    usage_note: Mapped[str] = mapped_column(Text)
+    confused_with: Mapped[list[str]] = mapped_column(JSON, default=list)
+    # 사람이 승인해야 True. 리포트에는 True 인 것만 나간다.
+    reviewed: Mapped[bool] = mapped_column(Boolean, default=False, index=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_utcnow)
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=_utcnow, onupdate=_utcnow
+    )

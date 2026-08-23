@@ -2,14 +2,16 @@
 
 from __future__ import annotations
 
+import re
 from datetime import datetime, timezone
 
-from sqlalchemy import func, select
+from sqlalchemy import func, or_, select
 from sqlalchemy.orm import Session as DbSession
 from sqlalchemy.orm import selectinload
 
+from ..content.schemas import WordEntry, WordTip
 from ..tutor.schemas import Correction, TurnResponse
-from .models import CorrectionRow, SessionRow, TurnRow
+from .models import CorrectionRow, SessionRow, TurnRow, WordRow
 
 
 def create_session(db: DbSession, *, session_id: str, scenario_id: str, level: str) -> SessionRow:
@@ -95,3 +97,110 @@ def end_session(db: DbSession, session_id: str) -> None:
     row = db.get(SessionRow, session_id)
     if row is not None and row.ended_at is None:
         row.ended_at = datetime.now(timezone.utc)
+
+
+# ---------------------------------------------------------------- 단어 콘텐츠
+
+_TOKEN = re.compile(r"[a-z][a-z']*")
+
+
+def tokenize(text: str) -> set[str]:
+    """교정 문장에서 단어를 뽑는다. 매칭용이라 단순 소문자 토큰이면 충분하다."""
+    return {t for t in _TOKEN.findall(text.lower()) if len(t) >= 2}
+
+
+def existing_words(db: DbSession) -> set[str]:
+    """이미 생성된 단어. 배치를 다시 돌려도 중복 생성하지 않기 위해."""
+    return set(db.execute(select(WordRow.word)).scalars())
+
+
+def upsert_word(db: DbSession, entry: WordEntry) -> WordRow:
+    """배치 생성 결과 저장. 항상 reviewed=False 로 들어간다.
+
+    이미 있는 단어를 다시 생성하면 내용만 갱신하되, 사람이 이미 승인한 항목은
+    건드리지 않는다(검수 결과를 배치가 덮어쓰면 안 된다).
+    """
+    row = db.execute(select(WordRow).where(WordRow.word == entry.word)).scalar_one_or_none()
+    if row is None:
+        row = WordRow(word=entry.word, reviewed=False)
+        db.add(row)
+    elif row.reviewed:
+        return row
+
+    row.level = entry.level
+    row.meaning_ko = entry.meaning_ko
+    row.example = entry.example
+    row.usage_note = entry.usage_note
+    row.confused_with = entry.confused_with
+    db.flush()
+    return row
+
+
+def list_words(
+    db: DbSession,
+    *,
+    reviewed: bool | None = None,
+    query: str | None = None,
+    limit: int = 50,
+    offset: int = 0,
+) -> list[WordRow]:
+    stmt = select(WordRow)
+    if reviewed is not None:
+        stmt = stmt.where(WordRow.reviewed.is_(reviewed))
+    if query:
+        like = f"%{query.strip().lower()}%"
+        stmt = stmt.where(or_(WordRow.word.like(like), WordRow.meaning_ko.like(like)))
+    stmt = stmt.order_by(WordRow.reviewed, WordRow.word).limit(limit).offset(offset)
+    return list(db.execute(stmt).scalars())
+
+
+def count_words(db: DbSession, *, reviewed: bool | None = None) -> int:
+    stmt = select(func.count(WordRow.id))
+    if reviewed is not None:
+        stmt = stmt.where(WordRow.reviewed.is_(reviewed))
+    return int(db.execute(stmt).scalar_one())
+
+
+def save_word_edits(db: DbSession, word_id: int, **fields: object) -> WordRow | None:
+    row = db.get(WordRow, word_id)
+    if row is None:
+        return None
+    for key, value in fields.items():
+        setattr(row, key, value)
+    db.flush()
+    return row
+
+
+def word_tips_for(
+    db: DbSession, corrections: list[Correction], *, limit: int = 5
+) -> list[WordTip]:
+    """교정에 등장한 단어 중 검수된 항목만 리포트에 붙인다.
+
+    LLM 을 부르지 않는다 — 대화 경로에서 단어 콘텐츠를 생성하지 않는다는 원칙 때문이다.
+    """
+    if not corrections:
+        return []
+
+    tokens: set[str] = set()
+    for c in corrections:
+        tokens |= tokenize(c.original)
+        tokens |= tokenize(c.better)
+    if not tokens:
+        return []
+
+    stmt = (
+        select(WordRow)
+        .where(WordRow.word.in_(tokens), WordRow.reviewed.is_(True))
+        .order_by(WordRow.level, WordRow.word)
+        .limit(limit)
+    )
+    return [
+        WordTip(
+            word=r.word,
+            meaning_ko=r.meaning_ko,
+            example=r.example,
+            usage_note=r.usage_note,
+            confused_with=list(r.confused_with or []),
+        )
+        for r in db.execute(stmt).scalars()
+    ]

@@ -10,6 +10,7 @@ from pathlib import Path
 
 from pydantic import ValidationError
 
+from ..content.schemas import WordTip
 from ..llm.base import LLMClient, LLMError, Message
 from ..tutor.loader import Scenario
 from ..tutor.schemas import Correction, json_schema_for
@@ -35,10 +36,12 @@ class ReportService:
         level: str,
         messages: list[Message],
         corrections: list[Correction],
+        word_tips: list[WordTip] | None = None,
     ) -> SessionReport:
         user_turns = [m for m in messages if m["role"] == "user"]
         insight = self._insight(scenario, level, messages, corrections)
         return SessionReport(
+            word_tips=word_tips or [],
             session_id=session_id,
             scenario_title=scenario.title,
             level=level,
