@@ -178,7 +178,7 @@ def test_word_tips_only_include_reviewed(db):
         crud.upsert_word(s, _entry())
 
     corrections = [
-        Correction(kind="mistake", original="I borrow you pen", better="Can I borrow your pen?", note="~")
+        Correction(kind="mistake", original="I borrow you pen", better="Can I borrow your pen?", note="빌리다는 borrow 예요.")
     ]
 
     with db.db_session() as s:

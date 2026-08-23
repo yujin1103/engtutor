@@ -23,7 +23,7 @@
   - 기본(개발·평소 사용): Ollama 로컬. 기본 모델 `qwen3:14b` (개발 머신: Windows, RTX 5080 16GB VRAM, 32GB RAM — Q4 기준 여유 있게 동작). 대안 모델: `qwen3:8b`, `gemma3:12b`, `exaone3.5:7.8b` — 모델명은 환경변수로만 지정.
   - 데모·고품질 필요 시: Claude API, 모델 `claude-haiku-4-5`.
 - 구조화 출력: 두 백엔드 모두 JSON 스키마를 강제한다 (Ollama는 `format` 파라미터에 JSON 스키마, Claude는 structured output 또는 tool-use 방식). 파싱 실패 시 1회 재시도 폴백을 넣는다.
-- 실행: 개발은 로컬 venv(uvicorn + streamlit), 마무리 단계에서 docker-compose 제공. Ollama는 호스트에서 실행하고 컨테이너에서는 `http://host.docker.internal:11434`로 접근한다.
+- 실행: **처음부터 Docker Desktop 기준**(2026-08-23 변경). Ollama도 컨테이너로 올려 `gpus: all` 로 GPU를 넘기고, 컨테이너 사이에서는 서비스명 `http://ollama:11434` 로 접근한다. Ollama를 호스트에서 돌리는 구성도 `OLLAMA_BASE_URL` 만 `http://host.docker.internal:11434` 로 바꾸면 되고 코드는 건드릴 필요가 없다.
 
 ## 3. 핵심 기능 명세 (MVP)
 
@@ -155,7 +155,8 @@ DB_PATH=./data/engtutor.db
 
 ## 9. 하지 말 것
 
-- 실서비스용 기능(인증, 결제, 클라우드 배포 인프라) 구현 금지.
+- 실서비스용 기능(인증, 결제) 구현 금지.
+- 클라우드는 **외부 노출 진입점으로만** 쓴다(2026-08-23 변경). 연산은 전부 로컬 GPU에서 한다 — Oracle Cloud Always Free에는 GPU가 없어 `qwen3:14b` 를 돌릴 수 없다. 앱을 클라우드로 옮기거나 거기서 모델을 돌리는 제안은 하지 않는다.
 - 이북·시판 교재 콘텐츠를 수집·크롤링하는 코드 작성 금지.
 - 확정된 스택·구조 재논의 금지 (개선 제안은 해당 단계 완료 후 별도로만).
 - `reply` 필드에 교정·해설을 섞는 것 금지.

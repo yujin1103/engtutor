@@ -9,7 +9,7 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
-from .korean import normalize
+from .korean import normalize, require_korean
 
 
 CorrectionKind = Literal["mistake", "polish"]
@@ -35,7 +35,7 @@ class Correction(BaseModel):
     better: str = Field(description="A more natural English way to say it.")
     note: str = Field(description="Short friendly explanation in natural Korean (해요체).")
 
-    _fix_note = field_validator("note")(lambda v: normalize(v))
+    _fix_note = field_validator("note")(lambda v: require_korean(normalize(v), "note"))
 
 
 class TurnResponse(BaseModel):
@@ -57,7 +57,7 @@ class TurnResponse(BaseModel):
         description="One short Korean sentence hinting what the learner could say next."
     )
 
-    _fix_hint = field_validator("hint_ko")(lambda v: normalize(v))
+    _fix_hint = field_validator("hint_ko")(lambda v: require_korean(normalize(v), "hint_ko"))
 
 
 def _resolve(node: Any, defs: dict[str, Any]) -> Any:

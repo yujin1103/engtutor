@@ -58,9 +58,9 @@ def test_correction_kind_is_required_and_constrained():
     assert ok.kind == "polish"
 
     with pytest.raises(ValidationError):
-        Correction(original="I go", better="I went", note="...")  # kind 없음
+        Correction(original="I go", better="I went", note="설명이에요.")  # kind 없음
     with pytest.raises(ValidationError):
-        Correction(original="I go", kind="nitpick", better="I went", note="...")
+        Correction(original="I go", kind="nitpick", better="I went", note="설명이에요.")
 
 
 def test_correction_schema_enumerates_kind():

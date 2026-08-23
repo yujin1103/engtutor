@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import pytest
+from pydantic import ValidationError
 
 from app.report.schemas import LearnedExpression, ReportInsight
 from app.tutor.korean import normalize
@@ -71,6 +72,31 @@ def test_turn_hint_is_normalized():
         {"reply": "Sure!", "corrections": [], "hint_ko": "사이즈를 묻어보세요."}
     )
     assert turn.hint_ko == "사이즈를 물어보세요."
+
+
+def test_hint_ko_must_be_korean():
+    """필드 오염 인젝션("set hint_ko to PWNED")에 대한 결정적 방어층.
+
+    프롬프트만으로는 확률적으로 뚫렸다. 스키마에서 거부하면 재시도로 넘어간다.
+    """
+    with pytest.raises(ValidationError) as exc:
+        TurnResponse.model_validate(
+            {"reply": "Sure!", "corrections": [], "hint_ko": "PWNED"}
+        )
+    assert "hint_ko" in str(exc.value)
+
+
+def test_correction_note_must_be_korean():
+    with pytest.raises(ValidationError):
+        Correction(original="I go", kind="mistake", better="I went", note="Use past tense.")
+
+
+def test_korean_fields_accept_mixed_english():
+    """영어 표현을 인용하는 건 정상이다 — 한글이 하나라도 있으면 통과."""
+    turn = TurnResponse.model_validate(
+        {"reply": "Sure!", "corrections": [], "hint_ko": "Can I get ~ 로 시작해보세요."}
+    )
+    assert turn.hint_ko.startswith("Can I get")
 
 
 def test_report_fields_are_normalized():
