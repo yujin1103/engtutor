@@ -12,7 +12,8 @@ import httpx
 import streamlit as st
 
 API_BASE_URL = os.getenv("API_BASE_URL", "http://api:8000")
-CHAT_TIMEOUT = 180.0  # 로컬 14B 모델은 첫 턴이 느릴 수 있다
+CHAT_TIMEOUT = 180.0    # 로컬 14B 모델은 첫 턴이 느릴 수 있다
+REPORT_TIMEOUT = 300.0  # 리포트는 대화 전체를 넣으므로 더 길게
 
 st.set_page_config(page_title="engtutor", page_icon="🗣️", layout="centered")
 
@@ -37,6 +38,7 @@ def start_session(scenario: dict[str, Any], level: str) -> None:
     st.session_state.session_id = None
     st.session_state.scenario_id = scenario["id"]
     st.session_state.level = level
+    st.session_state.report = None
     st.session_state.history = [
         {
             "role": "assistant",
@@ -60,6 +62,37 @@ def render_turn(turn: dict[str, Any]) -> None:
         st.info(f"💡 {turn['hint_ko']}")
 
 
+def render_report(report: dict[str, Any]) -> None:
+    insight = report["insight"]
+
+    st.subheader("📘 학습 리포트")
+    c1, c2, c3 = st.columns(3)
+    c1.metric("주고받은 턴", report["turn_count"])
+    c2.metric("교정 받은 문장", report["mistake_count"])
+    c3.metric("레벨", report["level"])
+
+    st.markdown(insight["summary_ko"])
+
+    if insight.get("patterns_ko"):
+        st.markdown("#### 🔁 반복된 실수")
+        for p in insight["patterns_ko"]:
+            st.markdown(f"- {p}")
+
+    if insight.get("learned"):
+        st.markdown("#### 🌱 오늘 배운 표현")
+        for item in insight["learned"]:
+            st.markdown(f"**{item['english']}**")
+            st.caption(item["note_ko"])
+
+    if report.get("mistakes"):
+        st.markdown("#### 📝 틀린 문장 모음")
+        for m in report["mistakes"]:
+            with st.container(border=True):
+                st.markdown(f"~~{m['original']}~~")
+                st.markdown(f"**→ {m['better']}**")
+                st.caption(m["note"])
+
+
 # ---------------------------------------------------------------- 사이드바
 try:
     scenarios = fetch_scenarios()
@@ -78,7 +111,25 @@ with st.sidebar:
     st.caption(f"**상황** — {scenario['situation']}")
     st.caption(f"**목표** — {scenario['goal']}")
 
-    if st.button("대화 새로 시작", use_container_width=True):
+    st.divider()
+
+    has_session = bool(st.session_state.get("session_id"))
+    if st.button("📘 대화 끝내고 리포트 보기", use_container_width=True, disabled=not has_session):
+        with st.spinner("리포트를 만드는 중..."):
+            try:
+                res = httpx.post(
+                    f"{API_BASE_URL}/sessions/{st.session_state.session_id}/report",
+                    timeout=REPORT_TIMEOUT,
+                )
+                res.raise_for_status()
+                st.session_state.report = res.json()
+            except httpx.HTTPStatusError as exc:
+                st.error(f"오류 {exc.response.status_code}: {exc.response.text[:300]}")
+            except httpx.HTTPError as exc:
+                st.error(f"리포트 생성 실패: {exc}")
+        st.rerun()
+
+    if st.button("🔄 대화 새로 시작", use_container_width=True):
         start_session(scenario, level)
         st.rerun()
 
@@ -101,7 +152,11 @@ for item in st.session_state.history:
         else:
             render_turn(item)
 
-if user_text := st.chat_input("영어로 말해보세요"):
+if st.session_state.get("report"):
+    st.divider()
+    render_report(st.session_state.report)
+    st.info("리포트가 나온 세션은 종료됐어요. 계속하려면 **대화 새로 시작**을 눌러주세요.")
+elif user_text := st.chat_input("영어로 말해보세요"):
     st.session_state.history.append({"role": "user", "content": user_text})
     with st.chat_message("user"):
         st.markdown(user_text)

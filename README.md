@@ -74,13 +74,43 @@ docker compose run --rm api pytest -q
 
 ---
 
+## 학습 리포트
+
+대화를 마치면 사이드바의 **📘 대화 끝내고 리포트 보기** 를 누른다. API로는:
+
+```
+POST /sessions/{session_id}/report
+```
+
+리포트는 네 부분으로 나오는데, 출처가 다르다.
+
+| 항목 | 출처 |
+|---|---|
+| 총평 (`summary_ko`) | LLM |
+| 반복 실수 패턴 (`patterns_ko`) | LLM |
+| 오늘 배운 표현 (`learned`) | LLM |
+| 틀린 문장 모음 (`mistakes`) | **DB 그대로** — LLM이 지어낼 여지가 없다 |
+
+LLM 호출은 **세션당 1회**뿐이다. 교정 기록은 `corrections` 테이블 값을 그대로 싣는다.
+
+> **리포트는 API 백엔드 사용을 권장한다.** 총평과 패턴 요약은 대화 전체를 읽고 추상화하는
+> 작업이라 로컬 7~14B 모델에서는 품질 편차가 크다. 리포트를 뽑기 전에 `.env`의
+> `LLM_BACKEND=anthropic`으로 바꾸고 `docker compose restart api` 하면 같은 세션을 그대로
+> 이어서 쓸 수 있다. 대화 자체는 로컬 모델로 충분하다.
+
+리포트를 생성하면 세션은 종료 처리되어(`ended_at` 기록) 더 이상 대화를 이어갈 수 없다.
+
+---
+
 ## 구조
 
 ```
 app/
-├── main.py            FastAPI: /chat, /scenarios, /healthz
+├── main.py            FastAPI: /chat, /scenarios, /healthz, /sessions/{id}/report
 ├── config.py          .env 로딩 (pydantic-settings)
-├── session_store.py   인메모리 세션 (2단계에서 SQLite로 교체)
+├── session_store.py   SqliteSessionStore + InMemorySessionStore (같은 Protocol)
+├── db/                models.py(sessions/turns/corrections) · crud.py · database.py
+├── report/            schemas.py · service.py · prompts/report_system.md
 ├── llm/               백엔드 추상화
 │   ├── base.py            chat_json(system, messages, schema) 계약
 │   ├── ollama_client.py   format 파라미터로 JSON 스키마 강제
@@ -93,7 +123,7 @@ app/
     ├── loader.py      시나리오·프롬프트 로딩
     └── service.py     프롬프트 조립 → LLM → 검증 → 1회 재시도
 ui/chat_app.py         Streamlit 채팅 UI
-tests/                 스키마·시나리오·프롬프트 스모크 테스트
+tests/                 스키마·시나리오·프롬프트·DB·리포트 스모크 테스트
 ```
 
 ### 설계 메모
@@ -127,6 +157,6 @@ opening_hint_ko: 메뉴 이름을 말해보세요. "I'll have the ~ ." 가 자�
 ## 진행 상황
 
 - [x] **1단계 — 코어 루프**: LLM 추상화, 시스템 프롬프트, 시나리오 3종, `/chat`, Streamlit UI
-- [ ] **2단계 — 저장과 리포트**: SQLite 세션·턴·교정, 세션 종료 리포트, 레벨 선택
+- [x] **2단계 — 저장과 리포트**: SQLite 세션·턴·교정, 세션 종료 리포트, 레벨 선택
 - [ ] **3단계 — 콘텐츠 파이프라인**: NGSL 배치 생성, 검수용 Streamlit 앱, 리포트-단어 DB 연동
 - [ ] **4단계 — 보안·마무리**: 인젝션 테스트 슈트, 아키텍처 다이어그램, 보안 결과 표

@@ -3,22 +3,34 @@
 from __future__ import annotations
 
 import logging
+from collections.abc import AsyncIterator
+from contextlib import asynccontextmanager
 from typing import Literal
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
+from .db.database import init_db
 from .llm.base import LLMError
 from .llm.factory import get_client
-from .session_store import InMemorySessionStore
+from .report.schemas import SessionReport
+from .report.service import ReportService
+from .session_store import SqliteSessionStore
 from .tutor.loader import Scenario, get_scenarios
 from .tutor.schemas import TurnResponse
 from .tutor.service import TutorService
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 
-app = FastAPI(title="engtutor", version="0.1.0")
-store = InMemorySessionStore()
+
+@asynccontextmanager
+async def lifespan(_: FastAPI) -> AsyncIterator[None]:
+    init_db()
+    yield
+
+
+app = FastAPI(title="engtutor", version="0.2.0", lifespan=lifespan)
+store = SqliteSessionStore()
 
 
 class ScenarioOut(BaseModel):
@@ -74,6 +86,8 @@ def chat(req: ChatRequest) -> ChatResponse:
         session = store.get(req.session_id)
         if session is None:
             raise HTTPException(status_code=404, detail="세션을 찾을 수 없습니다. 새로 시작하세요.")
+        if session.ended:
+            raise HTTPException(status_code=409, detail="이미 종료된 세션입니다. 새로 시작하세요.")
     else:
         session = store.create(scenario_id=scenario.id, level=req.level or scenario.level)
 
@@ -88,6 +102,38 @@ def chat(req: ChatRequest) -> ChatResponse:
     except LLMError as exc:
         raise HTTPException(status_code=502, detail=str(exc)) from exc
 
-    store.append(session.id, {"role": "user", "content": req.message})
-    store.append(session.id, {"role": "assistant", "content": turn.reply})
+    store.record_turn(session.id, user_text=req.message, turn=turn)
     return ChatResponse(session_id=session.id, turn=turn)
+
+
+@app.post("/sessions/{session_id}/report", response_model=SessionReport)
+def session_report(session_id: str) -> SessionReport:
+    """세션을 종료하고 학습 리포트를 만든다.
+
+    리포트 품질은 백엔드 영향을 많이 받는다. 로컬 모델이 아쉬우면
+    LLM_BACKEND=anthropic 으로 바꿔 생성하는 걸 권한다(README 참고).
+    """
+    session = store.get(session_id)
+    if session is None:
+        raise HTTPException(status_code=404, detail="세션을 찾을 수 없습니다.")
+
+    scenario = get_scenarios().get(session.scenario_id)
+    if scenario is None:
+        raise HTTPException(status_code=404, detail=f"시나리오가 사라졌습니다: {session.scenario_id}")
+
+    if not any(m["role"] == "user" for m in session.messages):
+        raise HTTPException(status_code=400, detail="대화가 없어 리포트를 만들 수 없습니다.")
+
+    try:
+        report = ReportService(get_client()).build(
+            session_id=session.id,
+            scenario=scenario,
+            level=session.level,
+            messages=session.messages,
+            corrections=store.corrections(session.id),
+        )
+    except LLMError as exc:
+        raise HTTPException(status_code=502, detail=str(exc)) from exc
+
+    store.end(session.id)
+    return report

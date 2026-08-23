@@ -1,7 +1,10 @@
 """세션 저장소.
 
-1단계는 인메모리다. 2단계에서 SQLite 구현체로 갈아끼우되
-Protocol 만 지키면 /chat 코드는 건드리지 않는다.
+Protocol 을 지키는 구현이 두 개다.
+- InMemorySessionStore : 테스트·DB 없이 돌릴 때
+- SqliteSessionStore   : 실제 실행 경로 (2단계부터)
+
+/chat 코드는 어느 쪽인지 몰라도 되게 유지한다.
 """
 
 from __future__ import annotations
@@ -11,6 +14,7 @@ from dataclasses import dataclass, field
 from typing import Protocol
 
 from .llm.base import Message
+from .tutor.schemas import Correction, TurnResponse
 
 
 @dataclass
@@ -19,6 +23,7 @@ class Session:
     scenario_id: str
     level: str
     messages: list[Message] = field(default_factory=list)
+    ended: bool = False
 
 
 class SessionStore(Protocol):
@@ -26,25 +31,89 @@ class SessionStore(Protocol):
 
     def get(self, session_id: str) -> Session | None: ...
 
-    def append(self, session_id: str, message: Message) -> None: ...
+    def record_turn(self, session_id: str, *, user_text: str, turn: TurnResponse) -> None: ...
+
+    def corrections(self, session_id: str) -> list[Correction]: ...
+
+    def end(self, session_id: str) -> None: ...
 
 
 class InMemorySessionStore:
-    """프로세스가 죽으면 사라진다. 1단계에서만 쓴다."""
+    """프로세스가 죽으면 사라진다. 테스트용."""
 
     def __init__(self) -> None:
         self._sessions: dict[str, Session] = {}
+        self._corrections: dict[str, list[Correction]] = {}
 
     def create(self, *, scenario_id: str, level: str) -> Session:
         session = Session(id=uuid.uuid4().hex, scenario_id=scenario_id, level=level)
         self._sessions[session.id] = session
+        self._corrections[session.id] = []
         return session
 
     def get(self, session_id: str) -> Session | None:
         return self._sessions.get(session_id)
 
-    def append(self, session_id: str, message: Message) -> None:
+    def record_turn(self, session_id: str, *, user_text: str, turn: TurnResponse) -> None:
+        session = self._sessions[session_id]
+        session.messages.append({"role": "user", "content": user_text})
+        session.messages.append({"role": "assistant", "content": turn.reply})
+        self._corrections[session_id].extend(turn.corrections)
+
+    def corrections(self, session_id: str) -> list[Correction]:
+        return list(self._corrections.get(session_id, []))
+
+    def end(self, session_id: str) -> None:
         session = self._sessions.get(session_id)
-        if session is None:
-            raise KeyError(session_id)
-        session.messages.append(message)
+        if session is not None:
+            session.ended = True
+
+
+class SqliteSessionStore:
+    """SQLite 영속 저장. 대화 히스토리는 turns 테이블에서 복원한다."""
+
+    def create(self, *, scenario_id: str, level: str) -> Session:
+        from .db import crud
+        from .db.database import db_session
+
+        session_id = uuid.uuid4().hex
+        with db_session() as db:
+            crud.create_session(db, session_id=session_id, scenario_id=scenario_id, level=level)
+        return Session(id=session_id, scenario_id=scenario_id, level=level)
+
+    def get(self, session_id: str) -> Session | None:
+        from .db import crud
+        from .db.database import db_session
+
+        with db_session() as db:
+            row = crud.get_session(db, session_id)
+            if row is None:
+                return None
+            return Session(
+                id=row.id,
+                scenario_id=row.scenario_id,
+                level=row.level,
+                messages=crud.messages_of(row),  # type: ignore[arg-type]
+                ended=row.ended_at is not None,
+            )
+
+    def record_turn(self, session_id: str, *, user_text: str, turn: TurnResponse) -> None:
+        from .db import crud
+        from .db.database import db_session
+
+        with db_session() as db:
+            crud.record_turn(db, session_id=session_id, user_text=user_text, turn=turn)
+
+    def corrections(self, session_id: str) -> list[Correction]:
+        from .db import crud
+        from .db.database import db_session
+
+        with db_session() as db:
+            return crud.corrections_of(db, session_id)
+
+    def end(self, session_id: str) -> None:
+        from .db import crud
+        from .db.database import db_session
+
+        with db_session() as db:
+            crud.end_session(db, session_id)
