@@ -5,17 +5,31 @@ pydantic 모델이 단일 출처다. 두 백엔드에 넘길 JSON 스키마는 �
 
 from __future__ import annotations
 
-from typing import Any
+from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
 
+CorrectionKind = Literal["mistake", "polish"]
+
+
 class Correction(BaseModel):
-    """직전 사용자 발화 하나에 대한 교정."""
+    """직전 사용자 발화 하나에 대한 교정.
+
+    kind 로 두 등급을 구분한다. 왕초보에게 "틀렸다"는 신호를 남발하면 위축되므로,
+    통하긴 하는 표현은 polish 로 내려 별도로 보여준다.
+    리포트의 '반복된 실수' 패턴은 mistake 만 근거로 삼는다.
+    """
 
     model_config = ConfigDict(extra="forbid")
 
     original: str = Field(description="The learner's original wording, quoted as-is.")
+    kind: CorrectionKind = Field(
+        description=(
+            "'mistake' = actually wrong or confusing to a listener. "
+            "'polish' = correct English, but a native speaker would say it differently here."
+        )
+    )
     better: str = Field(description="A more natural English way to say it.")
     note: str = Field(description="Short friendly explanation in natural Korean (해요체).")
 

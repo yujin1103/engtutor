@@ -63,6 +63,8 @@ class CorrectionRow(Base):
         ForeignKey("turns.id", ondelete="CASCADE"), index=True
     )
     original: Mapped[str] = mapped_column(Text)
+    # mistake = 실제 오류 / polish = 통하지만 더 자연스러운 표현
+    kind: Mapped[str] = mapped_column(String(16), default="mistake", server_default="mistake")
     better: Mapped[str] = mapped_column(Text)
     note: Mapped[str] = mapped_column(Text)
 

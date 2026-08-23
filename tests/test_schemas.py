@@ -50,6 +50,26 @@ def test_turn_response_accepts_empty_corrections():
     assert turn.corrections == []
 
 
+def test_correction_kind_is_required_and_constrained():
+    """kind 가 빠지거나 임의 값이면 검증에서 걸려야 한다."""
+    from app.tutor.schemas import Correction
+
+    ok = Correction(original="I go", kind="polish", better="I went", note="지난 일이에요.")
+    assert ok.kind == "polish"
+
+    with pytest.raises(ValidationError):
+        Correction(original="I go", better="I went", note="...")  # kind 없음
+    with pytest.raises(ValidationError):
+        Correction(original="I go", kind="nitpick", better="I went", note="...")
+
+
+def test_correction_schema_enumerates_kind():
+    """두 백엔드에 넘기는 스키마에 kind enum 이 실려야 모델이 아무 값이나 못 쓴다."""
+    schema = turn_response_schema()
+    kind = schema["properties"]["corrections"]["items"]["properties"]["kind"]
+    assert set(kind.get("enum", [])) == {"mistake", "polish"}
+
+
 def test_turn_response_rejects_missing_reply():
     with pytest.raises(ValidationError):
         TurnResponse.model_validate({"corrections": [], "hint_ko": "..."})

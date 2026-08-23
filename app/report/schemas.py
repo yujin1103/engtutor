@@ -41,6 +41,7 @@ class SessionReport(BaseModel):
     scenario_title: str
     level: str
     turn_count: int
-    mistake_count: int
-    mistakes: list[Correction]
+    mistake_count: int  # kind == "mistake" — 실제 오류
+    polish_count: int  # kind == "polish"  — 통하지만 더 자연스러운 표현
+    mistakes: list[Correction]  # 두 등급 모두, kind 를 달고 그대로
     insight: ReportInsight

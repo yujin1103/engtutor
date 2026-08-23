@@ -64,6 +64,7 @@ def record_turn(
             CorrectionRow(
                 turn_id=assistant.id,
                 original=correction.original,
+                kind=correction.kind,
                 better=correction.better,
                 note=correction.note,
             )
@@ -84,7 +85,10 @@ def corrections_of(db: DbSession, session_id: str) -> list[Correction]:
         .order_by(TurnRow.turn_index, CorrectionRow.id)
     )
     rows = db.execute(stmt).scalars()
-    return [Correction(original=r.original, better=r.better, note=r.note) for r in rows]
+    return [
+        Correction(original=r.original, kind=r.kind, better=r.better, note=r.note)
+        for r in rows
+    ]
 
 
 def end_session(db: DbSession, session_id: str) -> None:

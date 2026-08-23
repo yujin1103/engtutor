@@ -49,15 +49,26 @@ def start_session(scenario: dict[str, Any], level: str) -> None:
     ]
 
 
+def _render_corrections(items: list[dict[str, Any]], *, strike: bool) -> None:
+    for c in items:
+        st.markdown(f"~~{c['original']}~~" if strike else f"{c['original']}")
+        st.markdown(f"**→ {c['better']}**")
+        st.caption(c["note"])
+
+
 def render_turn(turn: dict[str, Any]) -> None:
     st.markdown(turn["reply"])
     corrections = turn.get("corrections") or []
-    if corrections:
-        with st.expander(f"✏️ 이렇게 말하면 더 자연스러워요 ({len(corrections)})", expanded=True):
-            for c in corrections:
-                st.markdown(f"~~{c['original']}~~")
-                st.markdown(f"**→ {c['better']}**")
-                st.caption(c["note"])
+    # 실제 오류와 '더 자연스럽게'를 분리한다. 왕초보에게 둘을 같은 무게로 보여주면 위축된다.
+    mistakes = [c for c in corrections if c.get("kind", "mistake") == "mistake"]
+    polish = [c for c in corrections if c.get("kind") == "polish"]
+
+    if mistakes:
+        with st.expander(f"✏️ 고쳐볼까요 ({len(mistakes)})", expanded=True):
+            _render_corrections(mistakes, strike=True)
+    if polish:
+        with st.expander(f"✨ 이렇게 하면 더 자연스러워요 ({len(polish)})", expanded=False):
+            _render_corrections(polish, strike=False)
     if turn.get("hint_ko"):
         st.info(f"💡 {turn['hint_ko']}")
 
@@ -66,10 +77,11 @@ def render_report(report: dict[str, Any]) -> None:
     insight = report["insight"]
 
     st.subheader("📘 학습 리포트")
-    c1, c2, c3 = st.columns(3)
+    c1, c2, c3, c4 = st.columns(4)
     c1.metric("주고받은 턴", report["turn_count"])
-    c2.metric("교정 받은 문장", report["mistake_count"])
-    c3.metric("레벨", report["level"])
+    c2.metric("고칠 것", report["mistake_count"])
+    c3.metric("다듬을 것", report.get("polish_count", 0))
+    c4.metric("레벨", report["level"])
 
     st.markdown(insight["summary_ko"])
 
@@ -84,11 +96,22 @@ def render_report(report: dict[str, Any]) -> None:
             st.markdown(f"**{item['english']}**")
             st.caption(item["note_ko"])
 
-    if report.get("mistakes"):
+    all_items = report.get("mistakes") or []
+    real = [m for m in all_items if m.get("kind", "mistake") == "mistake"]
+    polish = [m for m in all_items if m.get("kind") == "polish"]
+
+    if real:
         st.markdown("#### 📝 틀린 문장 모음")
-        for m in report["mistakes"]:
+        for m in real:
             with st.container(border=True):
                 st.markdown(f"~~{m['original']}~~")
+                st.markdown(f"**→ {m['better']}**")
+                st.caption(m["note"])
+
+    if polish:
+        with st.expander(f"✨ 더 자연스럽게 말하는 법 ({len(polish)})", expanded=False):
+            for m in polish:
+                st.markdown(f"{m['original']}")
                 st.markdown(f"**→ {m['better']}**")
                 st.caption(m["note"])
 

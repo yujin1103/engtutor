@@ -87,9 +87,20 @@ POST /sessions/{session_id}/report
 | 항목 | 출처 |
 |---|---|
 | 총평 (`summary_ko`) | LLM |
-| 반복 실수 패턴 (`patterns_ko`) | LLM |
+| 반복 실수 패턴 (`patterns_ko`) | LLM — `mistake` 등급만 근거로 삼는다 |
 | 오늘 배운 표현 (`learned`) | LLM |
 | 틀린 문장 모음 (`mistakes`) | **DB 그대로** — LLM이 지어낼 여지가 없다 |
+
+### 교정의 두 등급
+
+`Correction.kind`로 나눈다. 왕초보에게 "틀렸다"는 신호를 남발하면 위축되기 때문이다.
+
+| kind | 뜻 | UI | 리포트 |
+|---|---|---|---|
+| `mistake` | 실제로 틀렸거나 듣는 사람이 오해할 것 | ✏️ 고쳐볼까요 (펼침) | `mistake_count`, 패턴 근거 |
+| `polish` | 맞는 영어인데 원어민은 다르게 말할 것 | ✨ 더 자연스러워요 (접힘) | `polish_count`, 패턴에서 제외 |
+
+예: `I want ice americano` → `mistake` (ice/iced 오류) · `Large` → `polish` (통하지만 please가 부드러움)
 
 LLM 호출은 **세션당 1회**뿐이다. 교정 기록은 `corrections` 테이블 값을 그대로 싣는다.
 

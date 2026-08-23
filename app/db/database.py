@@ -44,8 +44,29 @@ engine = _make_engine()
 SessionLocal = sessionmaker(bind=engine, autoflush=False, expire_on_commit=False)
 
 
+# 이미 만들어진 테이블에 나중에 추가된 컬럼. create_all 은 기존 테이블을 바꾸지 않으므로
+# 여기서 직접 채워 넣는다. 토이 규모라 Alembic 을 들이는 대신 이 정도로 충분하다.
+_ADDED_COLUMNS: dict[str, dict[str, str]] = {
+    "corrections": {"kind": "VARCHAR(16) NOT NULL DEFAULT 'mistake'"},
+}
+
+
+def _apply_added_columns() -> None:
+    from sqlalchemy import text
+
+    with engine.begin() as conn:
+        for table, columns in _ADDED_COLUMNS.items():
+            existing = {row[1] for row in conn.execute(text(f"PRAGMA table_info({table})"))}
+            if not existing:  # 테이블 자체가 없으면 create_all 이 만든다
+                continue
+            for name, ddl in columns.items():
+                if name not in existing:
+                    conn.execute(text(f"ALTER TABLE {table} ADD COLUMN {name} {ddl}"))
+
+
 def init_db() -> None:
     Base.metadata.create_all(bind=engine)
+    _apply_added_columns()
 
 
 @contextmanager

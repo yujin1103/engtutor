@@ -44,7 +44,7 @@ def test_sqlite_round_trip(sqlite_store):
         user_text="I want ice americano",
         turn=_turn(
             "Sure! What size?",
-            [Correction(original="I want ice americano", better="Can I get an iced americano?", note="더 자연스러워요.")],
+            [Correction(kind="mistake", original="I want ice americano", better="Can I get an iced americano?", note="더 자연스러워요.")],
         ),
     )
     sqlite_store.record_turn(session.id, user_text="Large please", turn=_turn("For here or to go?"))
@@ -63,16 +63,76 @@ def test_corrections_persist_in_order(sqlite_store):
     sqlite_store.record_turn(
         session.id,
         user_text="I go yesterday",
-        turn=_turn("Nice!", [Correction(original="I go yesterday", better="I went yesterday.", note="지난 일이에요.")]),
+        turn=_turn("Nice!", [Correction(kind="mistake", original="I go yesterday", better="I went yesterday.", note="지난 일이에요.")]),
     )
     sqlite_store.record_turn(
         session.id,
         user_text="He don't know",
-        turn=_turn("Okay.", [Correction(original="He don't know", better="He doesn't know.", note="he 는 doesn't 예요.")]),
+        turn=_turn("Okay.", [Correction(kind="mistake", original="He don't know", better="He doesn't know.", note="he 는 doesn't 예요.")]),
     )
 
     corrections = sqlite_store.corrections(session.id)
     assert [c.original for c in corrections] == ["I go yesterday", "He don't know"]
+
+
+def test_correction_kind_persists_and_splits_counts(sqlite_store):
+    """mistake / polish 가 DB 를 왕복하고 리포트 카운트가 나뉘는지."""
+    session = sqlite_store.create(scenario_id="cafe_order", level="A1")
+    sqlite_store.record_turn(
+        session.id,
+        user_text="I go yesterday",
+        turn=_turn(
+            "Nice!",
+            [
+                Correction(kind="mistake", original="I go yesterday", better="I went yesterday.", note="지난 일이에요."),
+                Correction(kind="polish", original="Large", better="Large, please.", note="please 를 붙이면 부드러워요."),
+            ],
+        ),
+    )
+
+    restored = sqlite_store.corrections(session.id)
+    assert [c.kind for c in restored] == ["mistake", "polish"]
+
+    class FakeClient:
+        name = "fake"
+
+        def describe(self) -> str:
+            return "fake"
+
+        def ping(self) -> bool:
+            return True
+
+        def chat_json(self, **_):
+            return {"summary_ko": "좋아요.", "patterns_ko": [], "learned": []}
+
+    report = ReportService(FakeClient()).build(
+        session_id=session.id,
+        scenario=load_scenarios()["cafe_order"],
+        level="A1",
+        messages=[{"role": "user", "content": "I go yesterday"}],
+        corrections=restored,
+    )
+    # polish 는 '틀린 것'으로 세지 않는다
+    assert report.mistake_count == 1
+    assert report.polish_count == 1
+    assert len(report.mistakes) == 2
+
+
+def test_transcript_separates_mistake_from_polish():
+    """리포트 프롬프트가 polish 를 실수로 오해하지 않도록 분리해 넘기는지."""
+    from app.report.service import _transcript
+
+    text = _transcript(
+        [{"role": "user", "content": "I go"}],
+        [
+            Correction(kind="mistake", original="I go", better="I went", note="지난 일이에요."),
+            Correction(kind="polish", original="Large", better="Large, please.", note="부드러워요."),
+        ],
+    )
+    mistakes_at = text.index("REAL MISTAKES")
+    polish_at = text.index("POLISH")
+    assert text.index('"I go"') > mistakes_at
+    assert text.index('"Large"') > polish_at
 
 
 def test_end_marks_session_ended(sqlite_store):
@@ -114,7 +174,7 @@ def test_report_assembles_without_calling_llm_for_mistakes():
                 "learned": [{"english": "I went there.", "note_ko": "지난 일을 말할 때 써요."}],
             }
 
-    corrections = [Correction(original="I go", better="I went", note="지난 일이에요.")]
+    corrections = [Correction(kind="mistake", original="I go", better="I went", note="지난 일이에요.")]
     report = ReportService(FakeClient()).build(
         session_id="s1",
         scenario=load_scenarios()["cafe_order"],

@@ -43,7 +43,8 @@ class ReportService:
             scenario_title=scenario.title,
             level=level,
             turn_count=len(user_turns),
-            mistake_count=len(corrections),
+            mistake_count=sum(1 for c in corrections if c.kind == "mistake"),
+            polish_count=sum(1 for c in corrections if c.kind == "polish"),
             mistakes=corrections,
             insight=insight,
         )
@@ -83,11 +84,22 @@ def _transcript(messages: list[Message], corrections: list[Correction]) -> str:
         who = "Learner" if m["role"] == "user" else "Partner"
         lines.append(f"{who}: {m['content']}")
 
+    mistakes = [c for c in corrections if c.kind == "mistake"]
+    polish = [c for c in corrections if c.kind == "polish"]
+
     lines.append("")
-    lines.append("=== CORRECTIONS THAT CAME UP ===")
-    if corrections:
-        for c in corrections:
+    lines.append("=== REAL MISTAKES (base `patterns_ko` on these only) ===")
+    if mistakes:
+        for c in mistakes:
             lines.append(f'- "{c.original}" -> "{c.better}" ({c.note})')
     else:
-        lines.append("(none - the learner made no mistakes worth correcting)")
+        lines.append("(none - the learner made no actual mistakes)")
+
+    lines.append("")
+    lines.append("=== POLISH (already correct, just less natural - NOT mistakes) ===")
+    if polish:
+        for c in polish:
+            lines.append(f'- "{c.original}" -> "{c.better}" ({c.note})')
+    else:
+        lines.append("(none)")
     return "\n".join(lines)
