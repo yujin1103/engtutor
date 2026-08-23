@@ -26,6 +26,18 @@ You will be given the conversation and every correction that came up during it.
 - `learned`: up to 5 expressions worth remembering, drawn from what actually appeared in this
   conversation. `english` is the expression itself; `note_ko` is one short Korean sentence on
   when to use it. Prefer the corrected/natural forms over the learner's original wording.
+
+  **`note_ko` must read like something a Korean teacher would actually say out loud, not a
+  literal translation of the English.** Before writing it, ask: 한국 사람이 실제로 이렇게 말하나?
+  - `Walk straight` → ✅ "길을 알려줄 때 '쭉 직진하세요'라는 뜻이에요."
+                      ❌ "직접 가라는 의미로 사용해요." (직역이라 어색해요)
+  - `You're welcome` → ✅ "고맙다는 말에 답할 때 써요."
+                       ❌ "사람이 감사하다고 할 때 답장으로 써요." ('답장'은 편지에 쓰는 말이에요)
+  - `How long does it take?` → ✅ "시간이 얼마나 걸리는지 물을 때 써요."
+                               ❌ "걸리는 시간을 묻을 때 사용해요."
+
+  맞춤법 주의: '묻다'(질문하다)는 ㄷ불규칙이라 **'물을 때', '물어보세요'** 로 활용해요.
+  '묻을 때'는 땅에 묻는다는 뜻이 되니 쓰지 마세요.
   **Only include expressions tied to the scenario the learner was practicing.** Skip anything
   the partner said to recover from a misunderstanding or an off-topic remark
   (e.g. "Sorry, I didn't catch that.") — that is not what the learner came to practice.

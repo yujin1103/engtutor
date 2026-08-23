@@ -6,8 +6,9 @@ LLM 은 '오늘 배운 표현'과 '반복 실수 패턴'만 1회 호출로 생�
 
 from __future__ import annotations
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
+from ..tutor.korean import normalize
 from ..tutor.schemas import Correction
 
 
@@ -16,6 +17,8 @@ class LearnedExpression(BaseModel):
 
     english: str = Field(description="An English expression the learner practiced today.")
     note_ko: str = Field(description="When to use it, in one short friendly Korean sentence.")
+
+    _fix_note = field_validator("note_ko")(lambda v: normalize(v))
 
 
 class ReportInsight(BaseModel):
@@ -32,6 +35,9 @@ class ReportInsight(BaseModel):
     learned: list[LearnedExpression] = Field(
         description="Up to 5 expressions worth remembering from this session."
     )
+
+    _fix_summary = field_validator("summary_ko")(lambda v: normalize(v))
+    _fix_patterns = field_validator("patterns_ko")(lambda v: [normalize(p) for p in v])
 
 
 class SessionReport(BaseModel):
