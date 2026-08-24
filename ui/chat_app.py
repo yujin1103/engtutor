@@ -25,6 +25,14 @@ def fetch_scenarios() -> list[dict[str, Any]]:
     return res.json()
 
 
+@st.cache_data(ttl=300)
+def fetch_strictness() -> list[dict[str, Any]]:
+    """교정 강도 선택지는 서버가 내려준다 — 문구를 UI 가 복제하지 않는다."""
+    res = httpx.get(f"{API_BASE_URL}/strictness", timeout=10.0)
+    res.raise_for_status()
+    return res.json()
+
+
 def fetch_health() -> dict[str, Any]:
     try:
         res = httpx.get(f"{API_BASE_URL}/healthz", timeout=10.0)
@@ -142,6 +150,16 @@ with st.sidebar:
 
     level = st.radio("레벨", options=["A1", "A2"], horizontal=True, index=0 if scenario["level"] == "A1" else 1)
 
+    modes = {m["key"]: m for m in fetch_strictness()}
+    strictness = st.select_slider(
+        "교정 강도",
+        options=list(modes),
+        value=st.session_state.get("strictness", "balanced"),
+        format_func=lambda k: modes[k]["label"],
+    )
+    st.session_state.strictness = strictness
+    st.caption(modes[strictness]["caption"])
+
     st.caption(f"**상황** — {scenario['situation']}")
     st.caption(f"**목표** — {scenario['goal']}")
 
@@ -200,6 +218,7 @@ elif user_text := st.chat_input("영어로 말해보세요"):
         "message": user_text,
         "session_id": st.session_state.session_id,
         "level": st.session_state.level,
+        "strictness": st.session_state.get("strictness", "balanced"),
     }
     with st.chat_message("assistant"):
         with st.spinner("생각 중..."):

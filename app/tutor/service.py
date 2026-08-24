@@ -9,6 +9,7 @@ from pydantic import ValidationError
 from ..llm.base import LLMClient, LLMError, Message
 from .loader import Scenario, load_prompt
 from .schemas import TurnResponse, turn_response_schema
+from .strictness import DEFAULT_STRICTNESS, Strictness, prompt_for
 
 logger = logging.getLogger(__name__)
 
@@ -35,13 +36,19 @@ class TutorService:
         self._guardrails = load_prompt("guardrails.md")
         self._schema = turn_response_schema()
 
-    def build_system(self, scenario: Scenario, level: str) -> str:
+    def build_system(
+        self,
+        scenario: Scenario,
+        level: str,
+        strictness: Strictness = DEFAULT_STRICTNESS,
+    ) -> str:
         guardrails = self._guardrails.format(ai_role=scenario.ai_role)
         return self._system_template.format(
             level=level,
             ai_role=scenario.ai_role,
             situation=scenario.situation,
             goal=scenario.goal,
+            strictness=prompt_for(strictness),
             guardrails=guardrails,
         )
 
@@ -52,8 +59,9 @@ class TutorService:
         level: str,
         history: list[Message],
         user_text: str,
+        strictness: Strictness = DEFAULT_STRICTNESS,
     ) -> TurnResponse:
-        system = self.build_system(scenario, level)
+        system = self.build_system(scenario, level, strictness)
         messages: list[Message] = [
             *history[-MAX_HISTORY_MESSAGES:],
             {"role": "user", "content": user_text},

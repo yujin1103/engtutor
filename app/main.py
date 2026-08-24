@@ -19,6 +19,18 @@ from .session_store import SqliteSessionStore
 from .tutor.loader import Scenario, get_scenarios
 from .tutor.schemas import TurnResponse
 from .tutor.service import TutorService
+from .tutor.strictness import (
+    CAPTIONS as STRICTNESS_CAPTIONS,
+)
+from .tutor.strictness import (
+    DEFAULT_STRICTNESS,
+    ORDER as STRICTNESS_ORDER,
+    Strictness,
+    show_polish,
+)
+from .tutor.strictness import (
+    LABELS as STRICTNESS_LABELS,
+)
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 
@@ -52,6 +64,7 @@ class ChatRequest(BaseModel):
     message: str = Field(min_length=1, max_length=1000)
     session_id: str | None = None
     level: Literal["A1", "A2"] | None = None
+    strictness: Strictness = DEFAULT_STRICTNESS
 
 
 class ChatResponse(BaseModel):
@@ -76,6 +89,24 @@ def list_scenarios() -> list[ScenarioOut]:
     return [ScenarioOut.of(s) for s in get_scenarios().values()]
 
 
+class StrictnessOut(BaseModel):
+    key: Strictness
+    label: str
+    caption: str
+
+
+@app.get("/strictness", response_model=list[StrictnessOut])
+def list_strictness() -> list[StrictnessOut]:
+    """교정 강도 선택지. 프런트엔드가 라벨을 복제하지 않게 서버가 내려준다.
+
+    나중에 PWA 를 붙여도 문구가 한 곳에서만 관리된다.
+    """
+    return [
+        StrictnessOut(key=k, label=STRICTNESS_LABELS[k], caption=STRICTNESS_CAPTIONS[k])
+        for k in STRICTNESS_ORDER
+    ]
+
+
 @app.post("/chat", response_model=ChatResponse)
 def chat(req: ChatRequest) -> ChatResponse:
     scenario = get_scenarios().get(req.scenario_id)
@@ -98,9 +129,17 @@ def chat(req: ChatRequest) -> ChatResponse:
             level=session.level,
             history=session.messages,
             user_text=req.message,
+            strictness=req.strictness,
         )
     except LLMError as exc:
         raise HTTPException(status_code=502, detail=str(exc)) from exc
+
+    # 유연 모드는 프롬프트로 polish 를 만들지 말라고 하지만, 모델이 규칙을 흘릴 수 있다.
+    # 저장 전에 코드로 한 번 더 걷어낸다 — 프롬프트로 못 막는 건 코드로 막는다는 원칙.
+    if not show_polish(req.strictness):
+        turn = turn.model_copy(
+            update={"corrections": [c for c in turn.corrections if c.kind != "polish"]}
+        )
 
     store.record_turn(session.id, user_text=req.message, turn=turn)
     return ChatResponse(session_id=session.id, turn=turn)

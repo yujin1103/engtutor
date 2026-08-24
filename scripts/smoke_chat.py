@@ -78,6 +78,9 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--scenario", default="cafe_order", choices=sorted(SCRIPTS))
     parser.add_argument("--level", default=None, choices=["A1", "A2"])
+    parser.add_argument(
+        "--strictness", default="balanced", choices=["gentle", "balanced", "strict"]
+    )
     args = parser.parse_args()
     script = SCRIPTS[args.scenario]
 
@@ -90,7 +93,7 @@ def main() -> int:
     scenarios = {s["id"]: s for s in httpx.get(f"{API}/scenarios", timeout=10).json()}
     scenario = scenarios[args.scenario]
     level = args.level or scenario["level"]
-    print(f"시나리오: {scenario['title']}  (레벨 {level})")
+    print(f"시나리오: {scenario['title']}  (레벨 {level} · 교정 강도 {args.strictness})")
     print(f"첫 발화: {scenario['opening_line']}")
 
     session_id: str | None = None
@@ -102,6 +105,7 @@ def main() -> int:
             "message": user_text,
             "session_id": session_id,
             "level": level,
+            "strictness": args.strictness,
         }
         started = time.perf_counter()
         res = httpx.post(f"{API}/chat", json=payload, timeout=300)

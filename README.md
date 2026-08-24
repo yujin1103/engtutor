@@ -104,6 +104,28 @@ POST /sessions/{session_id}/report
 | 틀린 문장 모음 (`mistakes`) | **DB 그대로** — LLM이 지어낼 여지가 없다 |
 | 오늘 나온 단어 (`word_tips`) | **DB 그대로** — 검수 완료된 항목만 |
 
+### 교정 강도 3단계
+
+사이드바에서 고른다. 왕초보는 매 턴 빨간 줄을 받으면 그만두고, 어느 정도 하는 사람은
+사소한 것까지 짚어주길 원한다. 같은 앱이 둘 다 만족시키려면 사용자가 골라야 한다.
+
+| 강도 | 동작 | `Large` 에 대한 실제 응답 |
+|---|---|---|
+| **유연** | 오해를 부르는 것 하나만. `polish` 생성 안 함 | 교정 없음 |
+| **중간** (기본) | `mistake` + `polish`, 합쳐 최대 2건 | ✨ `Large, please.` (접힘) |
+| **엄격** | 관사·전치사·복수형까지. 통해도 어색하면 `polish` | ✨ `Large, please.` (펼침) |
+
+유연 모드는 프롬프트로 `polish` 를 만들지 말라고 지시하고, **서버가 저장 전에 한 번 더
+걷어낸다.** 프롬프트로 못 막는 건 코드로 막는다는 원칙을 여기도 적용했다.
+
+강도 목록과 문구는 `GET /strictness` 가 내려준다 — 프런트엔드가 라벨을 복제하지 않게
+하기 위해서다. 나중에 PWA 를 붙여도 문구는 한 곳에서만 관리된다.
+
+```powershell
+docker compose exec api python scripts/smoke_chat.py --strictness gentle
+docker compose exec api python scripts/smoke_chat.py --strictness strict
+```
+
 ### 교정의 두 등급
 
 `Correction.kind`로 나눈다. 왕초보에게 "틀렸다"는 신호를 남발하면 위축되기 때문이다.
@@ -288,7 +310,7 @@ LLMClient.chat_json(system, messages, schema)
 
 ```
 app/
-├── main.py            FastAPI: /chat, /scenarios, /healthz, /sessions/{id}/report
+├── main.py            FastAPI: /chat · /scenarios · /strictness · /healthz · /sessions/{id}/report
 ├── config.py          .env 로딩 (pydantic-settings)
 ├── session_store.py   SqliteSessionStore + InMemorySessionStore (같은 Protocol)
 ├── db/                models.py(sessions/turns/corrections) · crud.py · database.py
@@ -303,7 +325,8 @@ app/
     ├── schemas.py     TurnResponse / Correction (단일 출처)
     ├── prompts/       tutor_system.md + guardrails.md
     ├── scenarios/     YAML 3종
-    ├── korean.py      한국어 표기 정규화 (모델이 못 고치는 것)
+    ├── korean.py      한국어 표기 정규화 + 한글 필수 검증 (인젝션 방어층)
+    ├── strictness.py  교정 강도 3단계
     ├── loader.py      시나리오·프롬프트 로딩
     └── service.py     프롬프트 조립 → LLM → 검증 → 1회 재시도
 ui/chat_app.py         Streamlit 채팅 UI

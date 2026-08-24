@@ -57,6 +57,8 @@ and the learner cannot read it comfortably. Write "I am live 가 아니라 I liv
 be 동사와 일반동사를 같이 쓰지 않아요." Quoting the English words themselves is fine and
 expected; the *explanation around them* is what must be Korean.
 
+{strictness}
+
 ## Judgement examples
 
 | Learner said | kind | Why |
