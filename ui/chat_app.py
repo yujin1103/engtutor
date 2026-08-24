@@ -5,7 +5,9 @@ API 는 compose 네트워크 이름(http://api:8000)으로 부른다 — localho
 
 from __future__ import annotations
 
+import json
 import os
+from collections.abc import Iterator
 from typing import Any
 
 import httpx
@@ -40,6 +42,28 @@ def fetch_health() -> dict[str, Any]:
         return res.json()
     except httpx.HTTPError as exc:
         return {"backend": "?", "detail": str(exc), "reachable": False}
+
+
+def stream_turn(payload: dict[str, Any]) -> Iterator[dict[str, Any]]:
+    """`/chat/stream` 의 SSE 사건을 하나씩 돌려준다.
+
+    스트리밍을 쓰는 이유는 총 시간을 줄이려는 게 아니다 — 총 시간은 그대로다.
+    빈 화면을 보는 시간을 줄이는 것이다. 왕초보에게 8초 침묵은 '고장'으로 읽힌다.
+    """
+    with httpx.stream(
+        "POST", f"{API_BASE_URL}/chat/stream", json=payload, timeout=CHAT_TIMEOUT
+    ) as res:
+        if res.status_code >= 400:
+            res.read()
+            yield {"type": "error", "detail": f"오류 {res.status_code}: {res.text[:400]}"}
+            return
+        for line in res.iter_lines():
+            if not line.startswith("data: "):
+                continue
+            try:
+                yield json.loads(line[6:])
+            except json.JSONDecodeError:
+                continue
 
 
 def start_session(scenario: dict[str, Any], level: str) -> None:
@@ -266,21 +290,39 @@ elif user_text := st.chat_input("영어로 말해보세요"):
         "strictness": st.session_state.get("strictness", "balanced"),
     }
     with st.chat_message("assistant"):
-        with st.spinner("생각 중..."):
-            try:
-                res = httpx.post(f"{API_BASE_URL}/chat", json=payload, timeout=CHAT_TIMEOUT)
-                res.raise_for_status()
-                data = res.json()
-            except httpx.HTTPStatusError as exc:
-                st.error(f"오류 {exc.response.status_code}: {exc.response.text[:400]}")
-                st.stop()
-            except httpx.HTTPError as exc:
-                st.error(f"API 호출 실패: {exc}")
-                st.stop()
+        box = st.empty()
+        box.markdown("_생각 중..._")
 
-        st.session_state.session_id = data["session_id"]
-        turn = data["turn"]
-        render_turn(turn)
+        text = ""
+        turn: dict[str, Any] | None = None
+        error: str | None = None
+        try:
+            for event in stream_turn(payload):
+                kind = event.get("type")
+                if kind == "session":
+                    st.session_state.session_id = event["session_id"]
+                elif kind == "delta":
+                    text += event["text"]
+                    box.markdown(f"{text} ▌")  # 커서로 '아직 오는 중'을 보여준다
+                elif kind == "reset":
+                    # 1차 응답이 스키마 검증에 걸렸다. 보여준 글자는 버린다.
+                    text = ""
+                    box.markdown("_다시 정리하는 중..._")
+                elif kind == "turn":
+                    turn = event["turn"]
+                elif kind == "error":
+                    error = event["detail"]
+        except httpx.HTTPError as exc:
+            error = f"API 호출 실패: {exc}"
+
+        if turn is None:
+            box.empty()
+            st.error(error or "응답을 받지 못했습니다.")
+            st.stop()
+
+        # 교정·힌트는 검증이 끝난 뒤에야 그린다. 반쯤 만들어진 교정은 보여주지 않는다.
+        with box.container():
+            render_turn(turn)
 
     st.session_state.history.append({"role": "assistant", **turn})
     st.session_state.revealed = False  # 새 턴이 오면 영어는 다시 접는다

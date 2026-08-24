@@ -52,14 +52,65 @@ def _hr(title: str) -> None:
     print(f"\n{'=' * 66}\n{title}\n{'=' * 66}")
 
 
-def _show_turn(user_text: str, turn: dict, elapsed: float) -> None:
+class SmokeError(RuntimeError):
+    """스모크 도중 멈춰야 하는 실패."""
+
+
+def _call_plain(payload: dict) -> tuple[str, dict, float, float | None]:
+    started = time.perf_counter()
+    res = httpx.post(f"{API}/chat", json=payload, timeout=300)
+    elapsed = time.perf_counter() - started
+    if res.status_code != 200:
+        raise SmokeError(f"HTTP {res.status_code}: {res.text[:500]}")
+    data = res.json()
+    return data["session_id"], data["turn"], elapsed, None
+
+
+def _call_stream(payload: dict) -> tuple[str, dict, float, float | None]:
+    """SSE 로 받으면서 **첫 글자까지 걸린 시간**을 잰다.
+
+    스트리밍이 줄이는 건 총 시간이 아니라 빈 화면을 보는 시간이다.
+    두 수치를 나란히 찍어야 그 차이가 눈에 보인다.
+    """
+    started = time.perf_counter()
+    session_id = payload.get("session_id")
+    turn: dict | None = None
+    first: float | None = None
+
+    with httpx.stream("POST", f"{API}/chat/stream", json=payload, timeout=300) as res:
+        if res.status_code != 200:
+            res.read()
+            raise SmokeError(f"HTTP {res.status_code}: {res.text[:500]}")
+        for line in res.iter_lines():
+            if not line.startswith("data: "):
+                continue
+            event = json.loads(line[6:])
+            kind = event.get("type")
+            if kind == "session":
+                session_id = event["session_id"]
+            elif kind == "delta" and first is None:
+                first = time.perf_counter() - started
+            elif kind == "reset":
+                first = None  # 1차 폐기 — 다시 잰다
+            elif kind == "turn":
+                turn = event["turn"]
+            elif kind == "error":
+                raise SmokeError(event["detail"])
+
+    if turn is None:
+        raise SmokeError("turn 사건이 오지 않았습니다.")
+    return session_id, turn, time.perf_counter() - started, first
+
+
+def _show_turn(user_text: str, turn: dict, elapsed: float, first: float | None = None) -> None:
     print(f"\n👤 {user_text}")
     print(f"🤖 {turn['reply']}")
 
     words = [len(s.split()) for s in turn["reply"].replace("!", ".").replace("?", ".").split(".") if s.strip()]
     longest = max(words) if words else 0
     flag = "✅" if longest <= 8 else f"⚠️  {longest}단어"
-    print(f"   [문장 최대 길이 {flag} · {elapsed:.1f}s]")
+    timing = f"{elapsed:.1f}s" if first is None else f"첫 글자 {first:.1f}s → 전체 {elapsed:.1f}s"
+    print(f"   [문장 최대 길이 {flag} · {timing}]")
 
     if turn["corrections"]:
         for c in turn["corrections"]:
@@ -83,6 +134,9 @@ def main() -> int:
     parser.add_argument(
         "--strictness", default="balanced", choices=["gentle", "balanced", "strict"]
     )
+    parser.add_argument(
+        "--stream", action="store_true", help="/chat/stream 으로 받고 첫 글자 도달 시간을 잰다"
+    )
     args = parser.parse_args()
     script = SCRIPTS[args.scenario]
 
@@ -100,6 +154,8 @@ def main() -> int:
 
     session_id: str | None = None
     total = 0.0
+    firsts: list[float] = []
+    call = _call_stream if args.stream else _call_plain
 
     for user_text in script:
         payload = {
@@ -109,20 +165,23 @@ def main() -> int:
             "level": level,
             "strictness": args.strictness,
         }
-        started = time.perf_counter()
-        res = httpx.post(f"{API}/chat", json=payload, timeout=300)
-        elapsed = time.perf_counter() - started
-        total += elapsed
-
-        if res.status_code != 200:
-            print(f"\n❌ HTTP {res.status_code}: {res.text[:500]}")
+        try:
+            session_id, turn, elapsed, first = call(payload)
+        except SmokeError as exc:
+            print(f"\n❌ {exc}")
             return 1
 
-        data = res.json()
-        session_id = data["session_id"]
-        _show_turn(user_text, data["turn"], elapsed)
+        total += elapsed
+        if first is not None:
+            firsts.append(first)
+        _show_turn(user_text, turn, elapsed, first)
 
     print(f"\n턴 {len(script)}개 · 합계 {total:.1f}s · 평균 {total / len(script):.1f}s")
+    if firsts:
+        print(
+            f"첫 글자 평균 {sum(firsts) / len(firsts):.1f}s "
+            f"— 빈 화면을 보는 시간이 {total / len(script) - sum(firsts) / len(firsts):.1f}s 줄었다"
+        )
 
     _hr("학습 리포트")
     started = time.perf_counter()

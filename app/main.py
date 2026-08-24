@@ -2,12 +2,14 @@
 
 from __future__ import annotations
 
+import json
 import logging
-from collections.abc import AsyncIterator
+from collections.abc import AsyncIterator, Iterator
 from contextlib import asynccontextmanager
 from typing import Literal
 
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 
 from .db.database import init_db
@@ -33,6 +35,7 @@ from .tutor.strictness import (
 )
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
+logger = logging.getLogger(__name__)
 
 
 @asynccontextmanager
@@ -109,8 +112,9 @@ def list_strictness() -> list[StrictnessOut]:
     ]
 
 
-@app.post("/chat", response_model=ChatResponse)
-def chat(req: ChatRequest) -> ChatResponse:
+def _resolve(req: ChatRequest):
+    """시나리오와 세션을 확인/생성한다. 스트리밍이 시작되기 **전에** 끝나야
+    4xx 를 정상적인 HTTP 상태코드로 돌려줄 수 있다."""
     scenario = get_scenarios().get(req.scenario_id)
     if scenario is None:
         raise HTTPException(status_code=404, detail=f"시나리오를 찾을 수 없습니다: {req.scenario_id}")
@@ -123,6 +127,24 @@ def chat(req: ChatRequest) -> ChatResponse:
             raise HTTPException(status_code=409, detail="이미 종료된 세션입니다. 새로 시작하세요.")
     else:
         session = store.create(scenario_id=scenario.id, level=req.level or scenario.level)
+    return scenario, session
+
+
+def _finalize(session_id: str, req: ChatRequest, turn: TurnResponse) -> TurnResponse:
+    """유연 모드 필터링 + 저장. 스트리밍/비스트리밍이 같은 경로를 쓴다."""
+    # 유연 모드는 프롬프트로 polish 를 만들지 말라고 하지만, 모델이 규칙을 흘릴 수 있다.
+    # 저장 전에 코드로 한 번 더 걷어낸다 — 프롬프트로 못 막는 건 코드로 막는다는 원칙.
+    if not show_polish(req.strictness):
+        turn = turn.model_copy(
+            update={"corrections": [c for c in turn.corrections if c.kind != "polish"]}
+        )
+    store.record_turn(session_id, user_text=req.message, turn=turn)
+    return turn
+
+
+@app.post("/chat", response_model=ChatResponse)
+def chat(req: ChatRequest) -> ChatResponse:
+    scenario, session = _resolve(req)
 
     service = TutorService(get_client())
     try:
@@ -136,15 +158,56 @@ def chat(req: ChatRequest) -> ChatResponse:
     except LLMError as exc:
         raise HTTPException(status_code=502, detail=str(exc)) from exc
 
-    # 유연 모드는 프롬프트로 polish 를 만들지 말라고 하지만, 모델이 규칙을 흘릴 수 있다.
-    # 저장 전에 코드로 한 번 더 걷어낸다 — 프롬프트로 못 막는 건 코드로 막는다는 원칙.
-    if not show_polish(req.strictness):
-        turn = turn.model_copy(
-            update={"corrections": [c for c in turn.corrections if c.kind != "polish"]}
-        )
+    return ChatResponse(session_id=session.id, turn=_finalize(session.id, req, turn))
 
-    store.record_turn(session.id, user_text=req.message, turn=turn)
-    return ChatResponse(session_id=session.id, turn=turn)
+
+def _sse(payload: dict[str, object]) -> str:
+    # json.dumps 가 개행을 이스케이프하므로 SSE 프레임이 깨지지 않는다.
+    return f"data: {json.dumps(payload, ensure_ascii=False)}\n\n"
+
+
+@app.post("/chat/stream")
+def chat_stream(req: ChatRequest) -> StreamingResponse:
+    """`/chat` 과 결과는 같고, reply 만 생성되는 대로 먼저 흘려보낸다.
+
+    전체 응답이 8초 걸려도 첫 글자는 1초 안에 도착한다. 교정과 힌트는
+    검증이 끝난 뒤 마지막 turn 사건에 한 번에 실려 온다 — 반쯤 만들어진
+    교정을 학습자에게 보여 주는 일은 없어야 하기 때문이다.
+    """
+    scenario, session = _resolve(req)
+    service = TutorService(get_client())
+
+    def events() -> Iterator[str]:
+        yield _sse({"type": "session", "session_id": session.id})
+        try:
+            for event in service.respond_stream(
+                scenario=scenario,
+                level=session.level,
+                history=session.messages,
+                user_text=req.message,
+                strictness=req.strictness,
+            ):
+                if event["type"] == "turn":
+                    turn = _finalize(session.id, req, event["turn"])
+                    yield _sse({"type": "turn", "turn": turn.model_dump()})
+                elif event["type"] == "reset":
+                    yield _sse({"type": "reset"})
+                else:
+                    yield _sse({"type": "delta", "text": event["text"]})
+        except LLMError as exc:
+            # 스트림이 이미 200 으로 시작돼 상태코드를 바꿀 수 없다. 사건으로 알린다.
+            logger.exception("스트리밍 턴 실패")
+            yield _sse({"type": "error", "detail": str(exc)})
+
+    return StreamingResponse(
+        events(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            # 나중에 Caddy 뒤에 둘 때 프록시가 버퍼링해 스트리밍이 죽는 걸 막는다.
+            "X-Accel-Buffering": "no",
+        },
+    )
 
 
 @app.post("/sessions/{session_id}/report", response_model=SessionReport)
