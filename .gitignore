@@ -5,7 +5,8 @@
 .oci/
 
 # --- 데이터 (로컬 생성물) ---
-data/
+# 런타임 생성물만. content/data/ 는 소스라 루트에만 앵커링한다.
+/data/
 *.db
 *.db-journal
 *.sqlite3

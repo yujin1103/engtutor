@@ -1,0 +1,73 @@
+# engtutor 스타터 단어 목록 (60개)
+#
+# ⚠️ 이 파일은 NGSL 이 아닙니다. 파이프라인을 바로 돌려볼 수 있도록 직접 고른
+#    A1~A2 필수 동사 위주의 시작용 목록입니다.
+#
+# 선정 기준: 한국인 학습자가 실제로 헷갈리는 짝이 있는 기초 단어
+#   borrow/lend/rent · say/tell/speak/talk · listen/hear · look/see/watch
+#   come/go · bring/take · spend/cost/pay · remember/forget
+#
+# 실제 NGSL(약 2,800단어, CC BY)로 돌리려면 content/data/README.md 를 보세요.
+#
+# 형식: 한 줄에 한 단어. '#' 로 시작하면 주석. CSV 도 됩니다(첫 컬럼을 단어로 읽음).
+
+borrow
+lend
+rent
+bring
+take
+come
+go
+say
+tell
+speak
+talk
+listen
+hear
+look
+see
+watch
+make
+do
+meet
+know
+learn
+teach
+wear
+put
+wait
+spend
+cost
+pay
+buy
+order
+try
+mind
+mean
+remember
+forget
+leave
+arrive
+get
+give
+keep
+let
+ask
+answer
+help
+need
+want
+like
+enjoy
+hope
+wish
+think
+feel
+become
+seem
+stay
+live
+work
+study
+practice
+choose
