@@ -34,8 +34,35 @@ MAX_EXAMPLE_WORDS = 12
 MIN_USAGE_NOTE_CHARS = 15
 MAX_USAGE_NOTE_CHARS = 300
 MAX_CONFUSED_WITH = 4
+# 문형은 형태 표기다. 이보다 길면 설명이 섞여 들어온 것이다(칸 자체는 120자까지 받는다).
+MAX_PATTERN_DISPLAY_CHARS = 60
 
 _WORD_TOKEN = re.compile(r"[a-z]+")
+
+# 문형에서 괄호 안은 선택 사항이다 — `borrow + 목적어 (+ from + 사람)` 의 from 이
+# 예문에 없다고 지적하면 안 된다.
+_PATTERN_OPTIONAL = re.compile(r"\([^)]*\)")
+
+# 형태 자리를 표시하는 기호. 실제 단어가 아니라서 예문에서 찾으면 안 된다.
+_PLACEHOLDER = {
+    "v", "n", "adj", "adv", "o", "s", "c", "sb", "sth", "one",
+    "someone", "something", "somebody", "somewhere", "someplace",
+    "anyone", "anything", "anybody", "everyone", "everything", "everybody",
+    "ing", "ed", "pp", "a", "an", "the",
+    # 문법 용어. 형태를 설명하는 말이지 예문에서 찾을 단어가 아니다 —
+    # `to an extent + that-clause` 의 clause 를 예문에서 찾으면 영원히 못 찾는다.
+    "clause", "infinitive", "gerund", "phrase", "noun", "verb",
+    "adjective", "adverb", "object", "subject", "form",
+}
+
+# 축약형을 풀어 쓴 형태. `be against` 의 be 는 예문에서 `I'm` 으로 나타난다.
+# 원본 토큰은 그대로 두고 여기서 나온 토큰을 **더한다** — can't -> ca 처럼
+# 원본이 있어야만 찾을 수 있는 경우가 있어서 치환이 아니라 합집합이어야 한다.
+_CONTRACTIONS = {
+    "n't": " not", "'m": " am", "'re": " are", "'s": " is",
+    "'ve": " have", "'ll": " will", "'d": " would",
+}
+_CONTRACTION = re.compile("|".join(re.escape(k) for k in _CONTRACTIONS))
 
 # 영어 단어(구 포함). 아포스트로피와 하이픈은 허용하고, 괄호·기호는 막는다.
 _PLAIN_WORD = re.compile(r"[a-z]+(?:['\-][a-z]+)*(?: [a-z]+(?:['\-][a-z]+)*){0,2}")
@@ -144,6 +171,8 @@ class WordLike(Protocol):
     word: str
     level: str
     meaning_ko: str
+    # 문형. pattern 컬럼이 생기기 전에 저장된 항목은 None 이다.
+    pattern: str | None
     example: str
     usage_note: str
     confused_with: list[str]
@@ -177,11 +206,49 @@ def mentions(text: str, word: str) -> bool:
     정하는 신호다. 놓치면 검수가 늦어질 뿐 잘못된 항목이 통과하지는 않는다.
     """
     w = word.strip().lower()
-    tokens = set(_WORD_TOKEN.findall(text.lower()))
+    lowered = text.lower()
+    # 축약형을 푼 토큰을 더한다. 빼지는 않는다 — can't 는 원본에서만 can 이 보이고,
+    # I'm 은 푼 쪽에서만 am 이 보인다. 둘 다 필요하다.
+    tokens = set(_WORD_TOKEN.findall(lowered))
+    tokens |= set(_WORD_TOKEN.findall(_CONTRACTION.sub(lambda m: _CONTRACTIONS[m.group()], lowered)))
     if w in tokens or any(t in _IRREGULAR.get(w, ()) for t in tokens):
         return True
     stems = _stems(w)
     return any(t.startswith(s) and len(t) - len(s) <= 3 for t in tokens for s in stems)
+
+
+def pattern_forms(pattern: str, word: str) -> list[tuple[str, ...]]:
+    """문형을 **대안 형태들**로 쪼개고, 각 형태가 예문에 요구하는 영어 조각을 돌려준다.
+
+    한 형태 안의 조각은 전부 있어야 하고, 형태끼리는 하나만 만족하면 된다.
+    `feel + 형용사 / feel like + 명사` 는 둘 중 아무 쪽으로 써도 맞는 예문이다.
+
+    괄호 안(선택 사항), 표제어 자신, 자리 표시어(V, -ing, somewhere)는 뺀다.
+    남는 건 대개 전치사·불변화사인데, 그게 정확히 왕초보가 빠뜨리는 것이다 —
+    `listen to` 의 to, `look forward to` 의 forward.
+
+    빈 튜플은 '요구하는 게 없는 형태'라 항상 만족한다. 처음에는 슬래시를 한 조각
+    안의 대안으로만 처리했는데, 실제 데이터에서 `hope + that + 문장 / hope + to + 동사`
+    같은 **형태 나열**이 훨씬 흔했고 그걸 전부 요구하다 오탐 10건을 냈다.
+    """
+    core = _PATTERN_OPTIONAL.sub(" ", pattern)
+    forms: list[tuple[str, ...]] = []
+    for segment in re.split(r"[,/|]", core):
+        tokens = _WORD_TOKEN.findall(segment.lower())
+        if not tokens:
+            # 영어가 하나도 없는 조각은 형태가 아니라 자리 표시어의 일부다 —
+            # `area + of + 장소/주제` 의 '주제'. 이걸 형태로 세면 '요구하는 게 없는
+            # 형태'가 하나 생겨서 검사가 통째로 무력해진다(실제로 area 를 놓쳤다).
+            continue
+        required = []
+        for token in tokens:
+            if token in _PLACEHOLDER or len(token) < 2:
+                continue
+            if mentions(token, word):  # 표제어(굴절형 포함)는 따로 검사한다
+                continue
+            required.append(token)
+        forms.append(tuple(dict.fromkeys(required)))
+    return forms
 
 
 def screen(row: WordLike) -> list[Finding]:
@@ -216,6 +283,34 @@ def screen(row: WordLike) -> list[Finding]:
         out.append(
             Finding("confused_with_malformed", "low", f"단어가 아닌 값이 있어요: {bad[0]!r}")
         )
+
+    # 문형 검사. 없는 건 여기서 지적하지 않는다 — pattern 이전에 생성된 항목이
+    # 전부 걸려 큐가 무의미해진다. 그건 사람이 한 줄씩 고칠 일이 아니라 배치가
+    # 채울 일이라서, screen_words.py 가 개수만 따로 알려 준다.
+    pattern = (getattr(row, "pattern", None) or "").strip()
+    if pattern:
+        if len(pattern) > MAX_PATTERN_DISPLAY_CHARS:
+            out.append(
+                Finding("pattern_too_long", "low", f"문형이 {len(pattern)}자예요 — 설명이 섞였을 수 있어요")
+            )
+        if not _WORD_TOKEN.search(pattern.lower()):
+            # 형태를 적는 칸에 영어가 하나도 없으면 뜻풀이를 옮겨 적은 것이다.
+            out.append(Finding("pattern_without_english", "low", "문형에 영어가 없어요"))
+        forms = pattern_forms(pattern, word)
+        unmet = [
+            tuple(t for t in form if not mentions(row.example, t)) for form in forms
+        ]
+        # 형태 중 하나라도 예문이 보여주면 통과다. 전부 못 보여줄 때만 지적하고,
+        # 가장 가까운(빠진 게 적은) 형태를 알려 준다 — 사람이 고칠 지점이 거기다.
+        if forms and all(unmet):
+            closest = min(unmet, key=len)
+            out.append(
+                Finding(
+                    "example_ignores_pattern",
+                    "medium",
+                    f"예문이 문형을 안 보여줘요 — {'·'.join(closest)} 가 예문에 없어요",
+                )
+            )
 
     if row.level not in VALID_LEVELS:
         out.append(Finding("bad_level", "medium", f"레벨 값이 이상해요: {row.level!r}"))

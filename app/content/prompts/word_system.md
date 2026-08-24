@@ -12,6 +12,12 @@ You will be given ONE English headword. Produce one entry for it.
 - `meaning_ko`: the Korean meaning. **If Koreans routinely confuse this word with another,
   disambiguate inside parentheses** — `빌리다 (내가 빌려 오는 쪽)`, not just `빌리다`.
   One line. No bullet lists.
+- `pattern`: the **grammatical shape** this word takes in a sentence — the form, not the meaning.
+  Write the headword with whatever must come with it, **40 characters or fewer**:
+  `listen to + 목적어`, `enjoy + -ing`, `advice: 불가산명사 (an advice X)`, `arrive at/in + 장소`.
+  Optional parts go in parentheses. A word with nothing to say here still has a shape —
+  write the plainest one (`a/the + book`, `happy + about/with`). This is the field beginners
+  need most: they usually know what a word means and still put it in the wrong slot.
 - `example`: ONE short sentence a beginner could actually say out loud. **8 words or fewer.**
   Use the headword in it. Everyday situations only — ordering food, asking directions,
   small talk. No literary or textbook sentences.
@@ -49,7 +55,18 @@ You will be given ONE English headword. Produce one entry for it.
    A related word is not the headword: `absent` is not `absence`, `math` is not `mathematics`,
    `comfortable` is not `comfort`. If the noun form feels awkward, build the sentence around
    the noun anyway.
-9. Output must match the given JSON schema exactly. No markdown, no extra text.
+9. **`example` must actually demonstrate `pattern`.** If `pattern` is `listen to + 목적어`,
+   the example contains `listen to` — not a sentence that avoids the preposition. Anything you
+   put in parentheses is optional and may be left out of the example; anything outside them
+   may not. Decide the pattern first, then write a sentence that shows it.
+10. `pattern` is a form, not a sentence and not a definition. `enjoy + -ing`, not
+   `enjoy 는 -ing 를 목적어로 취해요`. Never repeat `meaning_ko` here.
+11. **`pattern` describes ONE form — the one a beginner needs first.** Do not list a word's
+   senses: `hold + 목적어 (물건), hold on (기다리다), hold + something + back (억제하다)`
+   is three entries crammed into one field, and the example can only show one of them.
+   Pick the commonest form and put the rest in `usage_note` if they matter.
+   The same goes for `example`: it must match the form you chose, not a different sense.
+12. Output must match the given JSON schema exactly. No markdown, no extra text.
 
 # Examples
 
@@ -59,6 +76,7 @@ Headword: `borrow`
   "word": "borrow",
   "level": "A1",
   "meaning_ko": "빌리다 (내가 빌려 오는 쪽)",
+  "pattern": "borrow + 목적어 (+ from + 사람)",
   "example": "Can I borrow your pen?",
   "usage_note": "빌려주는 쪽은 lend 예요. '돈 좀 빌려줄래?'는 Can you lend me some money? 가 자연스러워요.",
   "confused_with": ["lend", "rent"]
@@ -71,6 +89,7 @@ Headword: `actually`
   "word": "actually",
   "level": "A2",
   "meaning_ko": "사실은, 실은",
+  "pattern": "Actually, + 문장 (문장 맨 앞)",
   "example": "Actually, I'm not hungry.",
   "usage_note": "한국어 '사실'보다 훨씬 가볍게 써요. 상대 말을 부드럽게 정정할 때 문장 맨 앞에 붙이면 자연스러워요.",
   "confused_with": ["really", "in fact"]

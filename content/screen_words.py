@@ -62,6 +62,7 @@ def main() -> int:
                     "word": r.word,
                     "level": r.level,
                     "meaning_ko": r.meaning_ko,
+                    "pattern": r.pattern,
                     "example": r.example,
                     "usage_note": r.usage_note,
                     "confused_with": list(r.confused_with or []),
@@ -86,6 +87,16 @@ def main() -> int:
     for level in ("high", "medium", "low"):
         n = by_severity.get(level, 0)
         print(f"  {_ICON[level]} 최고 심각도 {level:<6} {n:>5}  {_bar(n, total)}")
+
+    # 문형 없음은 지적이 아니라 별도 집계다. 선별기가 이걸 지적하면 pattern 이전에
+    # 생성된 항목이 전부 걸려 큐 순서가 무의미해진다 — 사람이 한 줄씩 고칠 일이
+    # 아니라 배치가 채울 일이라서 개수만 알려 준다.
+    no_pattern = sum(1 for i in items if not (getattr(i, "pattern", None) or "").strip())
+    if no_pattern:
+        print(
+            f"\n  ○ 문형 비어 있음        {no_pattern:>5}  {_bar(no_pattern, total)}\n"
+            "    (지적 아님) content/batch_generate.py --missing-pattern 으로 채웁니다"
+        )
 
     print("\n항목별 지적 내역")
     print("-" * 66)

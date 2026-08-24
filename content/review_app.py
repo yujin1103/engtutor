@@ -47,11 +47,13 @@ def load_words() -> list[dict]:
                 "word": r.word,
                 "level": r.level,
                 "meaning_ko": r.meaning_ko,
+                "pattern": r.pattern,
                 "example": r.example,
                 "usage_note": r.usage_note,
                 "confused_with": list(r.confused_with or []),
                 "rank": r.rank,
                 "reviewed": r.reviewed,
+                "reviewed_by": r.reviewed_by,
             }
             for r in crud.list_words(db, limit=100_000)
         ]
@@ -117,6 +119,14 @@ if total == 0:
     st.stop()
 
 st.progress(approved / total, text=f"검수 진행률 {approved}/{total}")
+
+no_pattern = sum(1 for w in words if not (w["pattern"] or "").strip())
+if no_pattern:
+    st.caption(
+        f"문형이 비어 있는 항목 **{no_pattern}개**. 한 줄씩 손으로 채울 일이 아니라 배치가 채울 일이라 "
+        "선별기는 이걸 지적하지 않습니다 — "
+        "`docker compose exec api python content/batch_generate.py --missing-pattern`"
+    )
 if flagged:
     st.caption(
         f"미검수 {total - approved}개 중 **{flagged}개**가 지적됐습니다. "
@@ -157,6 +167,9 @@ for item in page_items:
     title = f"{badge} {marks} **{item['word']}** `{place}` — {item['meaning_ko']}"
 
     with st.expander(title, expanded=not item["reviewed"] and worst is not None):
+        if item["reviewed"]:
+            # 출처를 안 남기면 '검수됨'이 사람이 본 건지 모델이 본 건지 알 수 없다.
+            st.caption(f"✅ 검수 완료 · {item['reviewed_by'] or '출처 미상 (기록 이전에 승인)'}")
         if found:
             for f in found:
                 st.markdown(f"{ICON[f['severity']]} {f['message']}  `{f['code']}`")
@@ -170,6 +183,12 @@ for item in page_items:
                 key=f"level-{item['id']}",
             )
             meaning = col_b.text_input("뜻 (한국어)", value=item["meaning_ko"], key=f"meaning-{item['id']}")
+            pattern = st.text_input(
+                "문형 (형태만 · 예: listen to + 목적어)",
+                value=item["pattern"] or "",
+                key=f"pat-{item['id']}",
+                help="뜻이 아니라 이 단어가 문장에서 취하는 형태입니다. 괄호 안은 선택 사항으로 봅니다.",
+            )
             example = st.text_input(
                 "예문 (영어, 8단어 이내 · 표제어를 실제로 쓸 것)",
                 value=item["example"],
@@ -193,10 +212,16 @@ for item in page_items:
                         item["id"],
                         level=level,
                         meaning_ko=meaning.strip(),
+                        # 빈 칸은 NULL 로 남긴다. 빈 문자열이면 '채워야 할 문형'을
+                        # 세는 쿼리에서 빠져 배치가 영영 채우지 않는다.
+                        pattern=pattern.strip() or None,
                         example=example.strip(),
                         usage_note=usage.strip(),
                         confused_with=[w.strip() for w in confused.split(",") if w.strip()],
                         reviewed=approve,
+                        # 이 화면에서 누른 건 사람이다. 출처를 안 남기면 나중에
+                        # "검수됨"이 사람이 본 건지 모델이 본 건지 알 수 없다.
+                        reviewed_by="human" if approve else None,
                     )
                 # 저장하면 선별 결과(복제 검사 포함)가 달라진다. 캐시를 통째로 버린다.
                 st.cache_data.clear()

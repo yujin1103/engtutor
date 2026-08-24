@@ -6,6 +6,7 @@
 
 from __future__ import annotations
 
+import re
 from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
@@ -13,6 +14,26 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator, model_valida
 from ..tutor.korean import normalize, reject_hangul, require_korean
 
 WordLevel = Literal["A1", "A2", "B1"]
+
+# words.pattern 컬럼 폭. 이걸 넘기면 저장 시점에 잘려 문형이 깨진다.
+MAX_PATTERN_CHARS = 120
+
+# 모델이 문형을 `enjoy + -ing` 처럼 코드 표기로 감싸 내놓는 일이 잦다.
+# 학습자에게는 그대로 보이는 값이라 껍데기만 벗긴다.
+_PATTERN_WRAPPER = re.compile(r"^[`'\"*\s]+|[`'\"*\s]+$")
+
+
+def clean_pattern(value: str) -> str:
+    """문형 표기를 한 줄로 정리한다. 뜻이 아니라 형태를 적는 칸이다."""
+    text = _PATTERN_WRAPPER.sub("", " ".join(value.split()))
+    if not text:
+        raise ValueError("pattern 이 비어 있습니다. 이 단어가 문장에서 취하는 형태를 적어야 합니다.")
+    if len(text) > MAX_PATTERN_CHARS:
+        raise ValueError(
+            f"pattern 이 {len(text)}자입니다. {MAX_PATTERN_CHARS}자 이내의 형태 표기여야 합니다"
+            f"(설명은 usage_note 에 씁니다): {text[:60]!r}"
+        )
+    return text
 
 
 class WordEntry(BaseModel):
@@ -26,6 +47,16 @@ class WordEntry(BaseModel):
         description=(
             "Korean meaning. If the word is easy to confuse with another, disambiguate in "
             "parentheses — e.g. '빌리다 (내가 빌려 오는 쪽)'."
+        )
+    )
+    # example 앞에 둔다. 스키마 순서가 곧 생성 순서라, 형태를 먼저 정하고 나면
+    # 예문이 그 형태를 따라간다. 반대로 두면 예문을 쓴 뒤 형태를 갖다 붙인다.
+    pattern: str = Field(
+        description=(
+            "The grammatical shape this word takes in a sentence — the FORM, not the meaning. "
+            "Write the headword together with what must follow it, in 40 characters or fewer: "
+            "'listen to + 목적어', 'enjoy + -ing', 'advice: 불가산명사 (an advice X)'. "
+            "Put optional parts in parentheses. This is what Korean beginners get wrong most."
         )
     )
     example: str = Field(
@@ -44,6 +75,7 @@ class WordEntry(BaseModel):
     # 학습자에게 보이는 한국어 필드는 한글이 있어야 하고, 예문에는 한글이 없어야 한다.
     # 프롬프트로 "한국어로 써라"라고 해도 확률적으로 새어 나간다 — 실제로 NGSL 2,801개
     # 중 calm 의 설명이 통째로 영어로 생성됐다. 스키마에서 거부하면 재시도로 넘어간다.
+    _fix_pattern = field_validator("pattern")(clean_pattern)
     _fix_meaning = field_validator("meaning_ko")(lambda v: require_korean(normalize(v), "meaning_ko"))
     _fix_usage = field_validator("usage_note")(lambda v: require_korean(normalize(v), "usage_note"))
     _chk_example = field_validator("example")(lambda v: reject_hangul(v, "example"))
@@ -93,6 +125,9 @@ class WordTip(BaseModel):
 
     word: str
     meaning_ko: str
+    # 문형은 pattern 이 생기기 전에 만들어진 항목에는 없다. 없으면 안 보여줄 뿐이라
+    # 옵셔널로 둔다 — 이것 때문에 리포트가 실패하면 안 된다.
+    pattern: str | None = None
     example: str
     usage_note: str
     confused_with: list[str]

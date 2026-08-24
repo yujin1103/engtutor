@@ -13,6 +13,7 @@ from pydantic import ValidationError
 from app.content.schemas import WordEntry
 from app.content.screening import (
     mentions,
+    pattern_forms,
     risk_score,
     screen,
     screen_all,
@@ -25,11 +26,16 @@ def _row(**over):
         "word": "borrow",
         "level": "A1",
         "meaning_ko": "빌리다 (내가 빌려 오는 쪽)",
+        "pattern": "borrow + 목적어 (+ from + 사람)",
         "example": "Can I borrow your pen?",
         "usage_note": "빌려주는 쪽은 lend 예요. 방향이 반대예요.",
         "confused_with": ["lend"],
     }
     base.update(over)
+    # 표제어만 바꿔 다른 검사를 보려는 시험이 많다. 문형은 표제어를 따라가야
+    # (borrow 의 문형이 comfort 항목에 남지 않게) 그 시험들이 문형 지적에 오염되지 않는다.
+    if "word" in over and "pattern" not in over:
+        base["pattern"] = f"{over['word']} + 목적어"
     return type("W", (), base)()
 
 
@@ -150,6 +156,146 @@ def test_risk_score_puts_high_first():
     assert risk_score(high) > risk_score(low)
 
 
+# ------------------------------------------------------------------ 문형(pattern)
+def test_example_must_actually_show_the_pattern():
+    """문형이 `listen to` 인데 예문에 to 가 없으면, 예문이 하려던 일을 안 한 것이다.
+
+    왕초보가 틀리는 지점이 정확히 이 전치사다. 문형만 맞고 예문이 다르면
+    학습자는 예문을 따라 말하면서 틀린 형태를 익힌다.
+    """
+    found = _codes(screen(_row(
+        word="listen",
+        pattern="listen to + 목적어",
+        example="I listen music every day.",
+        usage_note="음악을 들을 때 써요.",
+    )))
+    assert "example_ignores_pattern" in found
+
+
+def test_optional_parts_of_a_pattern_are_not_required():
+    """괄호 안은 선택 사항이다. `borrow (+ from + 사람)` 의 from 을 요구하면 오탐이다."""
+    assert "example_ignores_pattern" not in _codes(screen(_row()))
+
+
+def test_alternatives_need_only_one():
+    """`arrive at/in + 장소` 는 at 이나 in 중 하나면 된다."""
+    found = _codes(screen(_row(
+        word="arrive",
+        pattern="arrive at/in + 장소",
+        example="I arrive at the airport.",
+        usage_note="도착지 앞에 at 이나 in 을 붙여요.",
+    )))
+    assert "example_ignores_pattern" not in found
+
+
+def test_pattern_check_understands_inflection():
+    """be + interested in 의 be 는 예문에서 am 으로 나타난다."""
+    found = _codes(screen(_row(
+        word="interested",
+        pattern="be interested in + 명사",
+        example="I am interested in music.",
+        usage_note="관심 있는 대상 앞에 in 을 써요. 사람이 주어예요.",
+    )))
+    assert "example_ignores_pattern" not in found
+
+
+def test_missing_pattern_is_not_flagged():
+    """문형 이전에 생성된 항목이 전부 걸리면 큐 순서가 무의미해진다.
+
+    빈 문형은 사람이 한 줄씩 고칠 일이 아니라 배치가 채울 일이다
+    (batch_generate.py --missing-pattern). 그래서 선별기는 지적하지 않는다.
+    """
+    found = _codes(screen(_row(pattern=None)))
+    assert not any(code.startswith("pattern") or code == "example_ignores_pattern" for code in found)
+
+
+def test_a_definition_in_the_pattern_field_is_flagged():
+    """형태를 적는 칸에 설명이 들어오면 문형이 아니다."""
+    long_note = (
+        "빌리다라는 뜻으로 쓰이고 돌려주는 것을 전제로 하는 동사예요. "
+        "반대로 빌려주는 쪽은 lend 를 쓰고, 돈을 내고 빌리는 건 rent 예요."
+    )
+    assert len(long_note) > 60, "이 시험이 검사하려는 건 길이다"
+    assert "pattern_too_long" in _codes(screen(_row(pattern=long_note)))
+
+
+def test_alternative_forms_need_only_one_to_match():
+    """`hope + that + 문장 / hope + to + 동사` 는 둘 중 아무 쪽이나 맞는 예문이다.
+
+    처음엔 슬래시 양쪽을 모두 요구했다가 실제 데이터에서 오탐 10건을 냈다.
+    문형은 한 단어가 취할 수 있는 형태들의 목록이지, 전부 동시에 만족할 조건이 아니다.
+    """
+    found = _codes(screen(_row(
+        word="hope",
+        pattern="hope + that + 문장 / hope + to + 동사",
+        example="I hope to see you again.",
+        usage_note="바라는 일을 말할 때 to 나 that 뒤에 붙여요.",
+    )))
+    assert "example_ignores_pattern" not in found
+
+
+def test_contractions_count_as_the_word():
+    """`be against` 의 be 는 예문에서 `I'm` 으로 나타난다. 이걸 놓쳐 오탐 2건이 났다."""
+    found = _codes(screen(_row(
+        word="against",
+        pattern="be against + 목적어",
+        example="I'm against smoking.",
+        usage_note="반대하는 대상 앞에 붙여요. 찬성은 for 예요.",
+    )))
+    assert "example_ignores_pattern" not in found
+    assert mentions("I'm against smoking.", "be")
+    assert mentions("I can't go there.", "can"), "축약형을 풀면서 원본을 잃으면 안 된다"
+
+
+def test_placeholder_words_are_not_required_in_the_example():
+    """`put + 목적어 + somewhere` 의 somewhere 는 자리 표시어지 찾아야 할 단어가 아니다."""
+    found = _codes(screen(_row(
+        word="put",
+        pattern="put + 목적어 + somewhere",
+        example="Put the book on the table.",
+        usage_note="놓을 자리를 함께 말해야 자연스러워요.",
+    )))
+    assert "example_ignores_pattern" not in found
+
+
+def test_grammar_terms_are_not_required_in_the_example():
+    """`that-clause` 의 clause 는 형태를 설명하는 말이다. 예문에서 찾으면 영원히 못 찾는다."""
+    assert pattern_forms("to an extent + that-clause", "extent") == [("to", "that")]
+
+
+def test_a_pattern_from_another_sense_is_still_caught():
+    """오탐을 없애면서 진짜까지 놓치면 안 된다.
+
+    `kind` 항목은 문형이 '종류'(kind of), 예문이 '친절한'(a kind person)이라
+    두 뜻이 섞여 있다. 이런 건 사람이 봐야 한다.
+    """
+    found = _codes(screen(_row(
+        word="kind",
+        pattern="kind + of + 명사",
+        example="She is a kind person.",
+        usage_note="종류를 말할 때는 kind of 를 써요.",
+    )))
+    assert "example_ignores_pattern" in found
+
+
+@pytest.mark.parametrize(
+    "pattern,word,expected",
+    [
+        ("enjoy + -ing", "enjoy", [()]),          # -ing 는 자리 표시지 단어가 아니다
+        ("listen to + 목적어", "listen", [("to",)]),
+        ("arrive at/in + 장소", "arrive", [("at",), ("in",)]),
+        ("borrow + 목적어 (+ from + 사람)", "borrow", [()]),
+        ("advice: 불가산명사", "advice", [()]),    # 표제어만 남으면 검사할 게 없다
+        ("feel + 형용사 / feel like + 명사", "feel", [(), ("like",)]),
+        # 슬래시가 형태를 나누는 게 아니라 자리 표시어 안에 있는 경우.
+        # '주제' 를 형태로 세면 요구 없는 형태가 생겨 검사가 무력해진다.
+        ("area + of + 장소/주제", "area", [("of",)]),
+    ],
+)
+def test_pattern_forms(pattern, word, expected):
+    assert pattern_forms(pattern, word) == expected
+
+
 # ------------------------------------------------------------------ 생성 시점 차단
 def test_schema_rejects_an_example_without_the_headword():
     """선별은 사후 진단이다. 생성 시점에 막으면 재시도가 알아서 고친다."""
@@ -158,6 +304,7 @@ def test_schema_rejects_an_example_without_the_headword():
             word="age",
             level="A1",
             meaning_ko="나이",
+            pattern="age: 셀 수 있는 명사",
             example="How old are you?",
             usage_note="나이를 물을 때 써요.",
             confused_with=[],
@@ -171,6 +318,7 @@ def test_schema_rejects_an_english_usage_note():
             word="calm",
             level="A2",
             meaning_ko="차분한",
+            pattern="stay/keep calm",
             example="Stay calm and think carefully.",
             usage_note="Korean learners confuse 'calm' with 'quiet'.",
             confused_with=["quiet"],
@@ -183,6 +331,7 @@ def test_schema_rejects_hangul_in_the_example():
             word="borrow",
             level="A1",
             meaning_ko="빌리다",
+            pattern="borrow + 목적어",
             example="Can I borrow your 펜?",
             usage_note="빌려주는 쪽은 lend 예요.",
             confused_with=[],
@@ -194,6 +343,7 @@ def test_schema_still_accepts_an_inflected_example():
         word="buy",
         level="A1",
         meaning_ko="사다",
+        pattern="buy + 목적어 (+ for + 사람)",
         example="I bought a coffee.",
         usage_note="값을 치르고 얻는 걸 말해요. 빌리는 건 borrow 예요.",
         confused_with=["borrow"],
@@ -207,6 +357,7 @@ def test_schema_allows_punctuation_the_english_whitelist_would_reject():
         word="say",
         level="A1",
         meaning_ko="말하다",
+        pattern="say + 말한 내용",
         example='He said, "Hello!"',
         usage_note="상대를 밝힐 때는 tell 을 써요.",
         confused_with=["tell"],

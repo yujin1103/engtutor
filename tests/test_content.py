@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import pytest
+from pydantic import ValidationError
 
 from app.content.generator import WordGenerator, load_wordlist
 from app.content.schemas import WordEntry
@@ -17,8 +18,18 @@ def test_word_entry_schema_is_flat_and_strict():
     text = json.dumps(schema)
     assert "$ref" not in text and "$defs" not in text
     assert set(schema["required"]) == {
-        "word", "level", "meaning_ko", "example", "usage_note", "confused_with",
+        "word", "level", "meaning_ko", "pattern", "example", "usage_note", "confused_with",
     }
+
+
+def test_pattern_is_generated_before_the_example():
+    """스키마 순서가 곧 생성 순서다. 형태를 먼저 정해야 예문이 그 형태를 따라간다.
+
+    반대로 두면 모델이 예문을 쓴 뒤 거기에 맞는 문형을 갖다 붙인다 — 그러면
+    문형은 예문의 요약일 뿐이고, 왕초보가 틀리는 지점을 짚지 못한다.
+    """
+    keys = list(json_schema_for(WordEntry)["properties"])
+    assert keys.index("pattern") < keys.index("example")
 
 
 def test_word_is_lowercased_and_korean_normalized():
@@ -26,6 +37,7 @@ def test_word_is_lowercased_and_korean_normalized():
         word="  Borrow ",
         level="A1",
         meaning_ko="빌리다",
+        pattern="borrow + 목적어",
         example="Can I borrow your pen?",
         usage_note="가격을 묻을 때가 아니라 물건을 빌릴 때 써요.",
         confused_with=["lend"],
@@ -94,10 +106,31 @@ _GOOD = {
     "word": "borrow",
     "level": "A1",
     "meaning_ko": "빌리다 (내가 빌려 오는 쪽)",
+    "pattern": "borrow + 목적어 (+ from + 사람)",
     "example": "Can I borrow your pen?",
     "usage_note": "빌려주는 쪽은 lend 예요.",
     "confused_with": ["lend"],
 }
+
+
+# ---------------------------------------------------------------- 문형(pattern)
+def test_pattern_strips_code_formatting():
+    """모델이 문형을 백틱으로 감싸 내놓는 일이 잦다. 학습자에게 그대로 보이는 값이다."""
+    entry = WordEntry(**{**_GOOD, "pattern": "  `borrow + 목적어`  "})
+    assert entry.pattern == "borrow + 목적어"
+
+
+def test_pattern_rejects_a_definition_pasted_into_the_form_field():
+    """형태를 적는 칸이다. 설명이 들어오면 저장 시점에 잘려 문형이 깨진다."""
+    with pytest.raises(ValidationError):
+        WordEntry(**{**_GOOD, "pattern": "빌리다라는 뜻으로 " + "아주 길게 설명하는 문장 " * 8})
+
+
+def test_pattern_is_required():
+    """빠뜨릴 수 있게 두면 모델이 대부분 빠뜨린다 — 2,801개 중 10개만 짚었던 그 필드다."""
+    payload = {k: v for k, v in _GOOD.items() if k != "pattern"}
+    with pytest.raises(ValidationError):
+        WordEntry(**payload)
 
 
 def test_generate_one_returns_entry():
@@ -263,6 +296,71 @@ def test_ranks_follow_the_wordlist_order(db):
     with db.db_session() as s:
         ranks = {r.word: r.rank for r in crud.list_words(s)}
     assert ranks == {"lend": 1, "borrow": 2}
+
+
+# ---------------------------------------------------------------- 문형 백필
+def test_pattern_survives_the_round_trip(db):
+    from app.db import crud
+
+    with db.db_session() as s:
+        crud.upsert_word(s, _entry())
+    with db.db_session() as s:
+        assert crud.list_words(s)[0].pattern == "borrow + 목적어 (+ from + 사람)"
+
+
+def test_missing_pattern_is_listed_by_frequency_and_skips_approved(db):
+    """2,801개를 통째로 다시 돌릴 이유가 없다 — 빠진 것만, 자주 쓰는 것부터 채운다.
+
+    승인된 항목은 빠진다. 배치가 검수 결과를 덮어쓰지 않는다는 규칙이 여기에도 걸린다.
+    """
+    from app.db import crud
+
+    with db.db_session() as s:
+        for word in ("borrow", "lend", "rent"):
+            crud.upsert_word(s, _entry(word=word, example=f"Can I {word} it?"))
+        crud.assign_ranks(s, ["rent", "lend", "borrow"])
+
+    with db.db_session() as s:
+        rows = {r.word: r for r in crud.list_words(s)}
+        # pattern 이 생기기 전에 저장된 항목을 흉내 낸다.
+        crud.save_word_edits(s, rows["borrow"].id, pattern=None)
+        crud.save_word_edits(s, rows["lend"].id, pattern="")
+        crud.save_word_edits(s, rows["rent"].id, pattern=None, reviewed=True)
+
+    with db.db_session() as s:
+        # rent 는 승인돼서 빠지고, 남은 둘은 빈도 순(lend #2 -> borrow #3)이다.
+        assert crud.words_missing_pattern(s) == ["lend", "borrow"]
+        assert "rent" in crud.words_missing_pattern(s, include_reviewed=True)
+
+
+def test_word_tips_carry_the_pattern(db):
+    """리포트에서 학습자가 보는 건 뜻보다 형태다. 여기서 끊기면 문형이 갈 곳이 없다."""
+    from app.db import crud
+
+    with db.db_session() as s:
+        row = crud.upsert_word(s, _entry())
+        crud.save_word_edits(s, row.id, reviewed=True)
+
+    corrections = [
+        Correction(kind="mistake", original="I borrow you pen", better="Can I borrow your pen?", note="빌리다는 borrow 예요.")
+    ]
+    with db.db_session() as s:
+        assert crud.word_tips_for(s, corrections)[0].pattern == "borrow + 목적어 (+ from + 사람)"
+
+
+def test_word_tips_tolerate_entries_made_before_pattern_existed(db):
+    """문형이 없다고 리포트가 실패하면 안 된다. 안 보여줄 뿐이다."""
+    from app.db import crud
+
+    with db.db_session() as s:
+        row = crud.upsert_word(s, _entry())
+        crud.save_word_edits(s, row.id, pattern=None, reviewed=True)
+
+    corrections = [
+        Correction(kind="mistake", original="I borrow you pen", better="Can I borrow your pen?", note="빌리다는 borrow 예요.")
+    ]
+    with db.db_session() as s:
+        assert crud.word_tips_for(s, corrections)[0].pattern is None
 
 
 def test_ranks_ignore_words_not_in_the_database(db):

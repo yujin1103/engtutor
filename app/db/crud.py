@@ -129,11 +129,24 @@ def upsert_word(db: DbSession, entry: WordEntry) -> WordRow:
 
     row.level = entry.level
     row.meaning_ko = entry.meaning_ko
+    row.pattern = entry.pattern
     row.example = entry.example
     row.usage_note = entry.usage_note
     row.confused_with = entry.confused_with
     db.flush()
     return row
+
+
+def words_missing_pattern(db: DbSession, *, include_reviewed: bool = False) -> list[str]:
+    """문형이 비어 있는 단어. pattern 이 생기기 전에 만들어진 항목을 찾는다.
+
+    2,801개를 통째로 다시 돌릴 이유가 없다 — 빠진 것만 채우면 된다.
+    승인된 항목은 기본으로 제외한다(배치가 검수 결과를 덮어쓰지 않는다는 규칙 그대로).
+    """
+    stmt = select(WordRow.word).where(or_(WordRow.pattern.is_(None), WordRow.pattern == ""))
+    if not include_reviewed:
+        stmt = stmt.where(WordRow.reviewed.is_(False))
+    return list(db.execute(stmt.order_by(WordRow.rank.is_(None), WordRow.rank)).scalars())
 
 
 def list_words(
@@ -217,6 +230,7 @@ def word_tips_for(
     return [
         WordTip(
             word=r.word,
+            pattern=r.pattern,
             meaning_ko=r.meaning_ko,
             example=r.example,
             usage_note=r.usage_note,

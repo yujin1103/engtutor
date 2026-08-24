@@ -86,11 +86,19 @@ class WordRow(Base):
     example: Mapped[str] = mapped_column(Text)
     usage_note: Mapped[str] = mapped_column(Text)
     confused_with: Mapped[list[str]] = mapped_column(JSON, default=list)
+    # 이 단어의 문형·연어 사실. 예: "V + -ing", "listen to + 목적어", "불가산명사".
+    # 뜻이 아니라 **어떻게 쓰이는가**다. 왕초보가 틀리는 건 대부분 여기다 —
+    # 생성된 2,801개 중 이걸 짚은 설명이 10개(0.4%)뿐이었다.
+    # 구조화해 두면 재생성 때 제약으로 넣고, 선별기가 설명이 이걸 반영했는지 검사할 수 있다.
+    pattern: Mapped[str | None] = mapped_column(String(120), nullable=True)
     # NGSL 빈도 순위(1이 가장 자주 쓰임). 검수 우선순위로 쓴다 — 300개만 검수해도
     # 가장 많이 쓰는 300개를 얻어야 하기 때문이다. 목록 밖 단어는 NULL.
     rank: Mapped[int | None] = mapped_column(Integer, nullable=True, index=True)
-    # 사람이 승인해야 True. 리포트에는 True 인 것만 나간다.
+    # 승인해야 True. 리포트에는 True 인 것만 나간다.
     reviewed: Mapped[bool] = mapped_column(Boolean, default=False, index=True)
+    # 누가 승인했는지. 검수 UI 에서 사람이 누르면 "human", 그 밖에는 모델 이름을
+    # 남긴다. 출처를 안 남기면 "검수됨"이 무슨 뜻인지 나중에 알 수 없다.
+    reviewed_by: Mapped[str | None] = mapped_column(String(32), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_utcnow)
     updated_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), default=_utcnow, onupdate=_utcnow

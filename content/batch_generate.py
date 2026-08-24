@@ -8,6 +8,8 @@
     docker compose exec api python content/batch_generate.py --wordlist content/data/ngsl.csv
     docker compose exec api python content/batch_generate.py --limit 20 --concurrency 4
     docker compose exec api python content/batch_generate.py --dry-run --limit 3
+    docker compose exec api python content/batch_generate.py --missing-pattern
+    docker compose exec api python content/batch_generate.py --flagged
 """
 
 from __future__ import annotations
@@ -49,6 +51,26 @@ def _normalize_existing() -> int:
     return 0
 
 
+def _flagged_words(db, *, code: str | None) -> list[str]:
+    """선별기가 지적한 미검수 항목의 표제어. 빈도 순으로 돌려준다.
+
+    선별은 사후 진단이고, 같은 규칙이 이미 `WordEntry` 검증에 들어가 있다.
+    그래서 지적된 항목을 **지금 프롬프트로 다시 생성하면** 대부분 스스로 고쳐진다 —
+    남는 것만 사람이 보면 된다. 그게 검수 큐를 짧게 유지하는 방법이다.
+    """
+    from app.content.screening import screen_all
+
+    rows = [r for r in crud.list_words(db, limit=100_000) if not r.reviewed]
+    findings = screen_all(rows)
+    picked = [
+        r for r in rows
+        if findings.get(r.word)
+        and (code is None or any(f.code == code for f in findings[r.word]))
+    ]
+    picked.sort(key=lambda r: (r.rank is None, r.rank or 0, r.word))
+    return [r.word for r in picked]
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--wordlist", type=Path, default=DEFAULT_WORDLIST)
@@ -63,6 +85,19 @@ def main() -> int:
         help="LLM 호출 없이 저장된 항목의 한국어 표기만 다시 정규화한다",
     )
     parser.add_argument(
+        "--missing-pattern",
+        action="store_true",
+        help="문형(pattern)이 비어 있는 미검수 항목만 다시 생성한다. 목록 파일 대신 DB 를 본다",
+    )
+    parser.add_argument(
+        "--flagged",
+        action="store_true",
+        help="선별기가 지적한 미검수 항목만 다시 생성한다. 목록 파일 대신 DB 를 본다",
+    )
+    parser.add_argument(
+        "--code", default=None, help="--flagged 와 함께: 이 지적 코드가 붙은 항목만"
+    )
+    parser.add_argument(
         "--rank-only",
         action="store_true",
         help="LLM 호출 없이 목록 순서를 빈도 순위로만 기록한다",
@@ -72,22 +107,42 @@ def main() -> int:
     if args.normalize_existing:
         return _normalize_existing()
 
-    if not args.wordlist.exists():
-        logger.error("단어 목록이 없습니다: %s", args.wordlist)
-        return 1
-
-    init_db()
-    words = load_wordlist(args.wordlist, limit=args.limit)
-
-    # 목록에 등장하는 순서가 곧 빈도 순서다(NGSL). 검수 우선순위로 쓰려면
-    # 생성 성공 여부와 무관하게 매번 기록해 둔다.
-    if not args.dry_run:
+    if args.missing_pattern or args.flagged:
+        # 목록 파일이 아니라 DB 가 대상이다. 2,801개를 통째로 다시 돌릴 이유가 없다 —
+        # 빠진 것·지적된 것만 고친다. 승인된 항목은 어느 쪽이든 빠진다.
+        init_db()
         with db_session() as db:
-            changed = crud.assign_ranks(db, load_wordlist(args.wordlist))
-        if changed:
-            logger.info("빈도 순위 기록: %d개", changed)
-    if args.rank_only:
-        return 0
+            if args.flagged:
+                words = _flagged_words(db, code=args.code)
+                what = f"지적된 항목{f' ({args.code})' if args.code else ''}"
+            else:
+                words = crud.words_missing_pattern(db)
+                what = "문형 없는 항목"
+        if args.limit:
+            words = words[: args.limit]
+        if not words:
+            logger.info("%s이 없습니다.", what)
+            return 0
+        # 전부 이미 DB 에 있는 단어라, 중복 건너뛰기를 끄지 않으면 하나도 안 돈다.
+        args.redo = True
+        logger.info("%s %d개를 빈도 순으로 다시 생성합니다.", what, len(words))
+    else:
+        if not args.wordlist.exists():
+            logger.error("단어 목록이 없습니다: %s", args.wordlist)
+            return 1
+
+        init_db()
+        words = load_wordlist(args.wordlist, limit=args.limit)
+
+        # 목록에 등장하는 순서가 곧 빈도 순서다(NGSL). 검수 우선순위로 쓰려면
+        # 생성 성공 여부와 무관하게 매번 기록해 둔다.
+        if not args.dry_run:
+            with db_session() as db:
+                changed = crud.assign_ranks(db, load_wordlist(args.wordlist))
+            if changed:
+                logger.info("빈도 순위 기록: %d개", changed)
+        if args.rank_only:
+            return 0
 
     if not args.redo:
         with db_session() as db:
@@ -117,6 +172,7 @@ def main() -> int:
                 if r.ok:
                     e = r.entry
                     print(f"\n[{e.level}] {e.word} — {e.meaning_ko}")
+                    print(f"  문형: {e.pattern}")
                     print(f"  예문: {e.example}")
                     print(f"  노트: {e.usage_note}")
                     if e.confused_with:

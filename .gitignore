@@ -29,3 +29,9 @@ Thumbs.db
 .DS_Store
 .vscode/
 .idea/
+
+# 검수 배치 임시 파일 (레포에 넣지 않는다)
+/.review/
+
+# 터널 개인키 (절대 커밋 금지)
+/deploy/keys/

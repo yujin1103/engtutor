@@ -214,6 +214,8 @@ def main() -> int:
         for t in tips:
             confused = f"  (헷갈림: {', '.join(t['confused_with'])})" if t["confused_with"] else ""
             print(f"  {t['word']} — {t['meaning_ko']}{confused}")
+            if t.get("pattern"):
+                print(f"    문형: {t['pattern']}")
             print(f"    예문: {t['example']}")
             print(f"    {t['usage_note']}")
     else:
