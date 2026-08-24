@@ -235,6 +235,85 @@ docker compose exec api python content/batch_generate.py --wordlist content/data
 비슷하게 생긴 고빈도 단어로 끌려가는 실패라 대조 검사는 느슨하게 두지 않는다 —
 잘못된 표제어로 사전에 들어가면 검수자도 알아채기 어렵다.
 
+#### 뜻은 아는데 형태에서 틀린다 — 문형(`pattern`)
+
+왕초보가 `listen`의 뜻을 몰라서 틀리는 게 아니다. `I listen music`이라고 말해서 틀린다.
+그런데 생성된 2,801개의 설명 중 **형태를 짚은 것은 10개(0.4%)뿐**이었다.
+
+```powershell
+# 재현: usage_note 에 형태 표지(전치사·불가산·+ -ing·목적어 …)가 있는지 센다
+docker compose exec api python content/measure_pattern_coverage.py
+```
+
+프롬프트에 "형태도 알려줘"를 한 줄 더 넣는 방식은 이미 실패한 방식이다
+(`meaning_ko`를 한국어로 쓰라는 지시가 `calm`에서 새어 나간 것과 같은 종류의 실패다).
+**칸을 만들면 스키마가 강제한다.** 그래서 `pattern`을 별도 필드로 뒀다.
+
+```json
+{
+  "word": "listen",
+  "pattern": "listen to + 목적어",
+  "example": "I listen to music every day."
+}
+```
+
+두 가지가 설계의 핵심이다.
+
+- **`pattern`은 `example`보다 앞에 있다.** JSON 스키마의 필드 순서가 곧 생성 순서라,
+  형태를 먼저 정하면 예문이 그 형태를 따라간다. 순서를 뒤집으면 모델은 예문을 쓴 뒤
+  거기에 맞는 문형을 갖다 붙인다 — 그러면 문형은 예문의 요약일 뿐이고 틀리는 지점을 못 짚는다.
+- **선별기가 둘의 일치를 검사한다**(`example_ignores_pattern` 🟡). 문형이 `listen to`인데
+  예문에 `to`가 없으면, 학습자는 예문을 따라 말하며 틀린 형태를 익힌다.
+  괄호 안은 선택 사항으로 보고(`borrow + 목적어 (+ from + 사람)`의 `from`을 요구하지 않는다),
+  `at/in`처럼 슬래시로 묶인 것은 하나만 있으면 통과한다. 굴절형도 인정한다(`be` → `am`).
+
+**문형이 비어 있는 것 자체는 지적하지 않는다.** `pattern` 이전에 생성된 2,801개가 전부
+걸려 큐 순서가 무의미해지기 때문이다 — `duplicate_example`을 🔴에서 ⚪로 되돌린 것과 같은
+이유다. 사람이 한 줄씩 채울 일이 아니라 배치가 채울 일이라, 개수만 따로 알려 준다.
+
+```powershell
+# 문형이 빈 미검수 항목만 다시 생성한다 (승인된 항목은 건드리지 않는다)
+docker compose exec api python content/batch_generate.py --missing-pattern
+```
+
+패치가 아니라 **재생성**이다. 문형만 나중에 붙이면 옛 예문과 어긋나 방금 만든
+`example_ignores_pattern` 검사에 그대로 걸린다. 형태를 먼저 정하는 순서가 지켜져야 한다.
+
+#### 시범 백필 300개 — 칸 하나가 설명까지 바꿨다
+
+빈도 상위 300개로 먼저 돌렸다. **298개 성공, 2개 실패, 9분 22초**(0.5단어/초).
+
+| | 설명이 형태를 짚은 비율 |
+|---|---|
+| 문형 칸 있음 (298개) | **8.7%** |
+| 문형 칸 없음 (2,503개) | 0.3% |
+
+같은 모델·같은 프롬프트에서 **칸 하나가 늘었을 때의 차이**다. 형태를 적을 자리를
+만들어 주니 모델이 형태를 생각했고, 그 생각이 `usage_note` 로도 번졌다.
+"프롬프트에 한 줄 더"가 아니라 "스키마에 칸 하나"가 답이었던 셈이다.
+
+#### 오탐 13건을 먼저 걷어냈다
+
+새로 만든 `example_ignores_pattern` 이 298개 중 **28개**를 지적했다. 하나씩 보니
+**13개가 오탐**이었고, 원인은 셋 다 검사 쪽에 있었다.
+
+| 원인 | 사례 | 무엇이 틀렸나 |
+|---|---|---|
+| 축약형 미인식 | `be against` / `I'm against smoking.` | `I'm` 안의 `am` 을 못 봤다 |
+| 자리 표시어 누락 | `put + 목적어 + somewhere` | `somewhere` 를 찾아야 할 단어로 취급 |
+| 대안 형태를 전부 요구 | `hope + that + 문장 / hope + to + 동사` | 둘 중 하나면 되는데 둘 다 요구 |
+
+고치고 나니 **28건 → 11건**, 남은 11건은 전부 진짜였다. 특히 `kind`(문형은 '종류'인데
+예문은 '친절한'), `result`(문형은 동사인데 예문은 명사)처럼 **한 항목 안에서 뜻이
+갈린 것**을 잡았다. 이건 사람이 한 항목만 봐서는 놓치기 쉬운 종류다.
+
+슬래시를 형태 구분으로만 읽었더니 `area + of + 장소/주제` 의 `주제` 가 '요구 조건 없는
+형태'가 되어 검사를 통째로 무력화한 것도 여기서 드러났다. **영어가 하나도 없는 조각은
+형태로 세지 않는다**로 고쳤다.
+
+한편 `hold`·`keep`·`play` 는 한 칸에 뜻 세 개를 욱여넣고 있었다(`pattern_too_long` ⚪).
+이건 검사가 아니라 프롬프트가 막을 일이라, "문형은 **하나의 형태**만 적는다"를 규칙에 넣었다.
+
 ### 2) 선별 — 2,801개를 사람이 다 볼 수는 없다
 
 한 항목 15초씩만 잡아도 12시간이다. 그렇다고 자동 승인하면 검수의 존재 이유
@@ -254,6 +333,7 @@ docker compose exec api python content/screen_words.py --code headword_absent --
 | `usage_not_korean` | 🔴 | `calm` 의 설명이 통째로 영어였다 |
 | `duplicate_usage_note` | 🔴 | 앞 항목 설명을 그대로 베낌 (한 항목만 봐서는 안 보인다) |
 | `example_missing_headword` | 🟡 | `age` → `How old are you?`, `hand` → `Pass me the book, please.` |
+| `example_ignores_pattern` | 🟡 | 문형이 `listen to` 인데 예문에 `to` 가 없음 |
 | `duplicate_example` | ⚪ | 예문 공유. `I am a student.` 는 be·i·student 모두에 정당하다 |
 | `confused_with_malformed` | ⚪ | `"chip (as in 'a piece')"` 처럼 단어 자리에 해설이 들어감 |
 
@@ -296,6 +376,12 @@ docker compose --profile review up -d review   # http://localhost:8502
 ```powershell
 docker compose exec api python content/batch_generate.py --wordlist content/data/ngsl.csv --rank-only
 ```
+
+**누가 승인했는지 남긴다**(`words.reviewed_by`). 이 화면에서 사람이 누르면 `human` 이다.
+출처를 안 남기면 나중에 "검수됨"이 사람이 본 건지 모델이 본 건지 알 수 없고,
+*승인은 사람만 한다*는 규칙이 실제로 지켜졌는지 데이터로 확인할 수 없다.
+컬럼이 생기기 전에 승인된 항목은 `출처 미상 (기록 이전에 승인)`으로 표시된다 —
+비어 있는 걸 `human` 으로 채우면 그게 바로 지어낸 검수 기록이 된다.
 
 ### 4) 리포트 연동
 
@@ -379,6 +465,106 @@ docker compose exec api python scripts/security_report.py         # 아래 표 �
 
 ---
 
+## 외부에 잠깐 열기 (시범)
+
+같은 네트워크에 없는 사람에게 보여줄 때만 쓴다. **클라우드는 진입점으로만 쓰고
+연산은 전부 집 GPU에서 한다** — Oracle Cloud Always Free에는 GPU가 없어
+`qwen3:14b`를 올릴 수 없기 때문이다.
+
+```
+            인터넷
+               │  https (암호 한 겹)
+               ▼
+   ┌───────────────────────┐         ┌──────────────────────────┐
+   │  Oracle VM (진입점)   │         │  집 PC (연산)            │
+   │  nginx :443           │◀────────│  tunnel ── autossh       │
+   │    └ 127.0.0.1:8501   │  SSH -R │  ui :8501                │
+   │  GPU 없음. 모델 없음  │         │  api :8000 · ollama :11434│
+   └───────────────────────┘         └──────────────────────────┘
+                                      ▲ 여기 세 개는 터널에 없다
+```
+
+**터널에 올리는 건 채팅 UI 하나뿐이다.** 검수 UI(8502)는 DB를 직접 쓰는 화면이라
+절대 올리지 않고, API(8000)와 Ollama(11434)도 마찬가지다. `-R 127.0.0.1:8501`로
+VM의 **루프백에만** 묶으므로, VM 바깥에서는 이 포트로 직접 들어올 수 없고
+반드시 nginx의 암호를 지나야 한다.
+
+### 1) VM 쪽 (한 번만)
+
+먼저 이름이 하나 필요하다. Let's Encrypt는 IP에 인증서를 주지 않고,
+**HTTPS가 아니면 암호 한 겹이 평문으로 흐른다.** DuckDNS 같은 무료 서브도메인이면 된다.
+
+```bash
+scp -r deploy ubuntu@<VM_IP>:~/
+ssh ubuntu@<VM_IP>
+sudo bash deploy/vm_setup.sh --domain engtutor.duckdns.org --email you@example.com
+```
+
+nginx 설치 → 암호 파일 생성 → 리버스 프록시 설정 → 방화벽 개방 → 인증서 발급까지
+한다. **Oracle 이미지는 VCN 보안 목록과 별개로 인스턴스 안에도 iptables 규칙을 넣어 둔다** —
+스크립트가 그쪽을 열어 주지만, VCN 인그레스(80/443)는 콘솔에서 직접 열어야 한다.
+
+### 2) 집 쪽
+
+```powershell
+ssh-keygen -t ed25519 -f deploy/keys/id_ed25519 -N '""'
+type deploy\keys\id_ed25519.pub | ssh ubuntu@<VM_IP> "cat >> ~/.ssh/authorized_keys"
+
+# .env 에 TUNNEL_HOST 를 넣고
+docker compose --profile expose up -d tunnel
+```
+
+키는 `deploy/keys/`에 두고 `.gitignore`에 걸어 둔다. NTFS에서 마운트한 키는 권한이
+0777로 보여 ssh가 거부하므로, 컨테이너가 복사해 600으로 낮춘 뒤 쓴다.
+회선이 끊기거나 VM이 재부팅되면 `ssh`는 조용히 죽기 때문에 `autossh`로 되살린다.
+
+### 3) 열어야 할 것만 열렸는지 확인
+
+"암호를 걸었다"와 "암호가 실제로 걸려 있다"는 다른 말이다. 설정 파일을 읽는 건 의도를
+확인하는 것이므로, 바깥에서 결과를 확인한다.
+
+```powershell
+python scripts/check_exposure.py engtutor.duckdns.org --user demo --password ****
+```
+
+암호 없이 401인지, HTTP가 HTTPS로 넘어가는지, 그리고 **8502·8000·11434·8501이 바깥에서
+닫혀 있는지**를 본다. 마지막이 핵심이다 — 공유기나 VCN 규칙을 잘못 건드리면
+검수 UI가 그대로 열린다.
+
+### 속도 제한이 앱을 죽였다
+
+처음에 `rate=2r/s burst=40` 으로 걸었다. 스크립트 점검은 전부 통과했는데
+브라우저로 열자 **하얀 화면**이 떴다.
+
+Streamlit 첫 화면은 JS·CSS를 **112개 동시에** 요청한다. 그중 71개가 nginx에서
+503으로 잘려 나갔고, JS가 없으니 화면에 아무것도 그려지지 않았다.
+
+```
+자산 112개 동시 요청 → {200: 41, 503: 71}     # 고치기 전
+자산 112개 동시 요청 → {200: 112}             # 정적 자산을 제한 밖으로 뺀 뒤
+```
+
+**`/` 하나만 받아 보는 점검은 이걸 못 잡는다.** 200이 오기 때문이다.
+사람이 브라우저로 열어야만 보이는 종류의 고장이라, 점검 스크립트에
+"자산을 브라우저처럼 동시에 던져 보는" 항목을 넣어야 한다.
+
+속도 제한 자체의 값어치도 다시 봐야 했다. 대화 턴은 웹소켓 하나 안에서 오가므로
+`limit_req` 는 애초에 그걸 세지 못한다. **GPU를 지키는 건 암호 한 겹이지 이 제한이 아니다.**
+
+### 이 구성이 막지 못하는 것
+
+- **암호를 아는 사람의 사용량은 못 막는다.** nginx의 요청 수 제한은 연결 시도를 셀 뿐,
+  웹소켓 하나가 열린 뒤 그 안에서 오가는 대화 턴은 세지 못한다. 실질적인 방어는 암호 한 겹이다.
+- 대화 내용은 집 SQLite에 그대로 남는다. 남에게 열어 두는 동안에는 남의 문장이 쌓인다.
+- 이 앱에는 인증이 없다(설계상 만들지 않기로 한 것). 암호는 nginx가 앞에서 거는 것이지
+  앱이 사용자를 구분하는 게 아니다. **시범이 끝나면 터널을 내린다.**
+
+```powershell
+docker compose --profile expose down tunnel
+```
+
+---
+
 ## 구조
 
 ```
@@ -430,13 +616,15 @@ app/
 └── tutor/
     ├── schemas.py     TurnResponse / Correction (단일 출처)
     ├── prompts/       tutor_system.md + guardrails.md
-    ├── scenarios/     YAML 3종
+    ├── scenarios/     YAML 33종 (6개 분류)
+    ├── categories.py  시나리오 분류
     ├── korean.py      한국어 표기 정규화 + 한글 필수 검증 (인젝션 방어층)
     ├── strictness.py  교정 강도 3단계
     ├── loader.py      시나리오·프롬프트 로딩
     └── service.py     프롬프트 조립 → LLM → 검증 → 1회 재시도
 ui/chat_app.py         Streamlit 채팅 UI
-content/               batch_generate.py · screen_words.py · review_app.py · data/
+content/               batch_generate.py · screen_words.py · review_app.py
+                       measure_pattern_coverage.py · data/
 tests/                 스키마·시나리오·DB·리포트·콘텐츠·선별·스트리밍·백엔드 전환
 tests/security/        인젝션 케이스 14종 + 판정 로직 (표와 공유)
 scripts/               smoke_chat.py · probe_stream.py · security_report.py
@@ -456,26 +644,172 @@ scripts/               smoke_chat.py · probe_stream.py · security_report.py
 
 ---
 
-## 시나리오 추가하기
+## 시나리오
 
-`app/tutor/scenarios/`에 YAML 파일 하나를 추가하면 끝이다. 파일명(확장자 제외)과 `id`는 같아야 한다.
+**33개, 6개 분류.** 전부 `app/tutor/scenarios/`의 YAML이고 코드에는 하나도 없다.
+
+| 분류 | 개수 | 예 |
+|---|---|---|
+| ☕ 카페·식당 | 6 | 음료 주문, 잘못 나온 음료 바꾸기, 전화로 배달 시키기 |
+| 🚇 길·이동 | 6 | 택시 목적지 말하기, 지하철 환승 묻기, 공항 체크인 |
+| 👋 사람 만나기 | 6 | 자기소개, 날씨 잡담, 부드럽게 거절하기 |
+| 🛍️ 쇼핑 | 5 | 사이즈 묻기, 입어보고 바꾸기, 환불하기 |
+| 🏨 숙소·여행 | 5 | 체크인, 방 문제 알리기, 전화로 예약 |
+| 🆘 곤란할 때 | 5 | 약국, 병원에서 증상 말하기, 못 알아들었을 때 되묻기 |
+
+레벨은 **A1 15개 · A2 13개 · B1 5개**. B1은 A1~A2를 끝낸 학습자가 갈 곳이 없어 앱을 떠나는 걸 막으려고 뒀다.
+
+### 고르는 방식 — 목록에서 드릴다운으로
+
+3개일 때는 사이드바 목록 하나로 충분했다. 33개가 되자 그 목록이 **"뭘 골라야 하지"에서 멈추는 화면**이 됐다.
+그래서 한 겹 안으로 들어가는 구조로 바꿨다.
+
+```
+무엇을 연습할까요?
+  ├── ☕ 카페·식당 (6)  ──▶  카페에서 음료 주문하기   [A1 · 🎯 사이즈까지 골라 주문 끝내기]
+  ├── 🚇 길·이동 (6)         주문한 음료가 잘못 나왔을 때 [A2 · ...]
+  ├── 👋 사람 만나기 (6)     ...
+  └── ...                    ← 뒤로
+```
+
+분류는 문법이 아니라 **상황**으로 나눈다. 왕초보가 앱을 여는 이유는 "현재완료를 연습하려고"가 아니라
+"다음 주에 카페에서 주문해야 해서"다. 이름으로 바로 찾고 싶으면 검색창이 전 분류를 가로질러 찾는다.
+
+> 원형 배치로 안쪽으로 파고드는 형태도 검토했지만, Streamlit에서는 클릭을 파이썬으로 돌려받을 방법이
+> 없어 커스텀 컴포넌트가 필요하다. 같은 '한 겹씩 들어가는' 흐름을 카드로 구현했다.
+
+### 추가하기
+
+YAML 파일 하나를 넣으면 끝이다. 파일명(확장자 제외)과 `id`가 같아야 하고, `category`는
+`app/tutor/categories.py`에 있는 값이어야 한다 — 오타를 내면 화면 어디에도 안 나오므로 **로딩 시점에 거부**한다.
 
 ```yaml
 id: restaurant_order
-title: 식당에서 주문하기
-level: A1
-ai_role: a waiter at a casual restaurant
-situation: 학습자는 자리에 앉았고, 메뉴판을 막 받았어요.
-goal: 음식 하나를 주문하고 물도 요청하기
-opening_line: "Are you ready to order?"
-opening_hint_ko: 메뉴 이름을 말해보세요. "I'll have the ~ ." 가 자연스러워요.
+title: 식당에서 음식 주문하기
+category: food          # food · getting_around · people · shopping · stay · trouble
+level: A1               # A1 · A2 · B1
+ai_role: a server at a casual family restaurant
+situation: 학습자는 자리에 앉았고, 메뉴판을 받은 참이에요.
+goal: 음식 하나와 마실 것 하나를 주문하기
+opening_line: "Hi! Are you ready to order?"
+opening_say_en: "Yes. I'd like the chicken, please."
+opening_say_more: "Yes, I'd like the chicken and a water, please."
+opening_hint_ko: 주문할 준비가 됐냐고 물었어요. I'd like ~ 는 '~로 할게요' 라는 뜻이에요.
 ```
+
+### AI가 자기가 한 말을 모르고 있었다
+
+`asking_repeat`(못 알아들었을 때 되묻기)에서 드러났다.
+
+```
+AI: The train leaves from platform nine in four minutes.
+나: pardon me?
+AI: Sure! Let me repeat that slowly.      ← 다시 말해주겠다고만 하고 끝
+나: sorry, again please?
+AI: Of course! Let me say it again.       ← 또 약속만
+나: which platform?
+AI: This platform! The station platform.  ← 9번인데 엉뚱한 답
+```
+
+원인은 `opening_line`이 **UI에만 있었다**는 것이다. 서버는 첫 발화를 모델에게 보내지
+않았으므로, 모델이 본 대화는 이랬다.
+
+```
+system: <역할·상황·목표>
+user:   "pardon me?"        ← 무엇을 다시 말하라는 건지 알 수 없다
+```
+
+프롬프트에는 "**이미 한 말을 읽고 답하라**"는 규칙이 있었다. 읽을 것이 없었을 뿐이다.
+첫 발화를 매 요청마다 히스토리 앞에 붙이는 것으로 고쳤다 — 저장하지 않는다.
+시나리오의 속성이라 DB에 복제하면 YAML을 고쳐도 옛 세션이 옛 문장을 들고 있게 된다.
+
+```
+AI: Of course. The train leaves from platform nine in four minutes.   ← 실제로 다시 말한다
+AI: Platform nine. It's the second one on the left.                   ← 사실도 맞다
+```
+
+**모든 시나리오의 첫 턴이 그랬다.** 카페처럼 첫 발화가 "뭐 드릴까요?" 같은 질문이면
+사용자의 답에 내용이 실려 있어 티가 안 났을 뿐이다.
+
+### 8단어 고정이 B1을 망치고 있었다
+
+`{level}`을 프롬프트에 끼워 넣기만 하고, 길이 규칙은 **모든 레벨에서 8단어**였다.
+A1에 맞춘 값이라 B1 학습자에게는 대화가 통째로 짧게 느껴진다 — 상대가 세 마디로
+끊어 말하면 연습할 거리가 안 생긴다.
+
+교정 강도와 같은 방식으로 레벨별 조각을 갈아 끼운다(`app/tutor/levels.py`).
+
+| | `reply` | `say_en` |
+|---|---|---|
+| A1 | 한 문장 8단어 이내 | 1~3단어 |
+| A2 | 한두 문장, 문장당 12단어 | 한 문장 |
+| B1 | 두세 문장, 문장당 18단어 + **매 턴 대화를 이어갈 것 하나** | 완결된 문장 |
+
+같은 입력에 대한 실제 차이:
+
+```
+A1: Platform nine.
+B1: Platform nine. It's the second one on the left.
+```
+
+### 해석 보기 — 왕초보는 상대의 영어도 못 읽는다
+
+`hint_ko`는 **다음에 뭘 말할지**를 알려줄 뿐, 방금 상대가 뭐라고 했는지는 알려주지
+않는다. `reply_ko`를 스키마에 넣고 말풍선 아래 접어 뒀다. `say_en`과 같은 원리다 —
+먼저 영어로 읽어 보고, 막히면 연다.
+
+`reply` 바로 뒤에 두었다. 필드 순서가 곧 생성 순서라 **스트리밍은 그대로**이고
+(`reply`가 여전히 가장 먼저 완성된다) 해석이 그 다음으로 확정된다.
+
+한 가지가 딸려 왔다. 한국어를 쓸 자리가 생기자 `reply`에도 한국어가 새기 시작했다
+(5번 중 1번). 보안 슈트가 검사하던 성질인데 **정작 스키마에는 검증이 없었다** —
+`say_en`에는 `require_english`가, `hint_ko`에는 `require_korean`이 걸려 있는데
+`reply`만 비어 있었다. `reject_hangul`을 걸어 fail-closed로 만들었다.
+
+### 예시를 베끼는 것은 프롬프트로 못 막았다
+
+학습자가 한국어만 쓴 턴(인젝션 포함)에서는 모델이 쓸 재료가 없어 **프롬프트 예시를
+통째로 베낀다.** 택시·호텔·역 시나리오에서 학습자에게 `I have a headache.`를 말하라고
+했다 — 약국 예시에 있는 문장이다.
+
+두 번 시도했다. 예시 자체를 카페 밖으로 옮겼더니 `reply`는 깨끗해졌지만 `say_en`으로
+옮겨갔다. "예시의 말을 베끼지 말라"를 모든 필드로 확장해도 네 시나리오 전부에서
+그대로 나왔다. **프롬프트로 못 고치는 종류**라 코드에서 막았다(`korean.py`와 같은 이유).
+
+이 턴에 가장 쓸모 있는 문장은 시나리오가 이미 들고 있다 — 첫 발화에 대한 답이다.
+
+```
+[taxi_ride]        say_en='To the airport, please.'
+[hotel_checkin]    say_en='Yes. I have a reservation.'
+[clothes_shopping] say_en='Do you have this in medium?'
+```
+
+### 설정이 풀리던 버그
+
+교정 강도를 낮춰 놓고 대화를 시작하면 도로 기본값으로 돌아갔다. 원인은 위젯이었다.
+
+```python
+# 전: 위젯에 key 가 없고, 세션 상태를 value= 로 되먹였다
+strictness = st.select_slider(..., value=st.session_state.get("strictness", "balanced"))
+st.session_state.strictness = strictness
+
+# 후: key 로 상태를 Streamlit 이 소유하게 한다
+st.session_state.setdefault("strictness", "balanced")
+st.select_slider(..., key="strictness")
+```
+
+`key` 없는 위젯은 매개변수로 신원이 정해져서, `value=`가 바뀌면 다른 위젯으로 취급돼 초기화된다.
+레벨 라디오도 `index=`를 시나리오에서 매번 계산하고 있어 같은 병에 걸려 있었다.
+둘 다 `key`로 바꾸고, **설정은 시나리오를 바꿔도 유지된다**는 규칙으로 통일했다.
+
+`start_session()`에서 레벨을 쓰던 코드도 지웠다 — 위젯이 소유하는 값을 위젯이 만들어진 뒤에
+코드가 덮어쓰면 Streamlit이 예외를 던진다. 지금은 **설정은 사이드바, 대화 상태는 코드**로 소유가 갈린다.
 
 ---
 
 ## 진행 상황
 
-- [x] **1단계 — 코어 루프**: LLM 추상화, 시스템 프롬프트, 시나리오 3종, `/chat`, Streamlit UI
+- [x] **1단계 — 코어 루프**: LLM 추상화, 시스템 프롬프트, 시나리오, `/chat`, Streamlit UI
 - [x] **2단계 — 저장과 리포트**: SQLite 세션·턴·교정, 세션 종료 리포트, 레벨 선택
 - [x] **3단계 — 콘텐츠 파이프라인**: NGSL 배치 생성, 검수용 Streamlit 앱, 리포트-단어 DB 연동
 - [x] **4단계 — 보안·마무리**: 인젝션 테스트 슈트, 아키텍처 다이어그램, 보안 결과 표
