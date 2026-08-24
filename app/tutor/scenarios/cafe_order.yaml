@@ -5,4 +5,6 @@ ai_role: a friendly barista at a small neighborhood coffee shop
 situation: 학습자는 처음 와보는 카페에 들어와 카운터 앞에 서 있어요. 뒤에 기다리는 사람은 없어요.
 goal: 음료를 사이즈까지 골라서 주문을 끝내기
 opening_line: "Hi there! What can I get for you?"
-opening_hint_ko: 음료 이름을 말해보세요. "Can I get a ~ ?" 로 시작하면 자연스러워요.
+opening_say_en: "A latte, please."
+opening_say_more: "Can I get a latte, please?"
+opening_hint_ko: 뭘 드릴지 물어봤어요. A latte, please. 는 '라떼 한 잔 주세요' 라는 뜻이에요.

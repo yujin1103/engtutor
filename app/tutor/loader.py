@@ -31,6 +31,10 @@ class Scenario(BaseModel):
     situation: str
     goal: str
     opening_line: str
+    # 첫 화면은 LLM 호출이 없다. 왕초보가 가장 크게 얼어붙는 지점이므로
+    # 여기에도 '그대로 말할 영어'가 있어야 한다.
+    opening_say_en: str
+    opening_say_more: str
     opening_hint_ko: str
 
 

@@ -33,7 +33,13 @@ def sqlite_store(tmp_path, monkeypatch):
 
 
 def _turn(reply: str, corrections: list[Correction] | None = None) -> TurnResponse:
-    return TurnResponse(reply=reply, corrections=corrections or [], hint_ko="다음엔 이렇게요.")
+    return TurnResponse(
+        reply=reply,
+        corrections=corrections or [],
+        say_en="Yes.",
+        say_more="Yes, please.",
+        hint_ko="다음엔 이렇게요.",
+    )
 
 
 def test_sqlite_round_trip(sqlite_store):

@@ -23,8 +23,9 @@ _REPAIR_NOTE = (
     "SYSTEM NOTE: your previous output did not match the required JSON schema. "
     "Reply again with ONLY a JSON object containing exactly these keys: "
     "reply (string), corrections (array of objects with original/kind/better/note "
-    "where kind is 'mistake' or 'polish'), hint_ko (string, Korean). "
-    "No markdown fence, no commentary."
+    "where kind is 'mistake' or 'polish'), say_en (string, short English the learner "
+    "can say as is), say_more (string, English, a little longer), "
+    "hint_ko (string, Korean). No markdown fence, no commentary."
 )
 
 

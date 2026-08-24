@@ -9,7 +9,7 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
-from .korean import normalize, require_korean
+from .korean import normalize, require_english, require_korean
 
 
 CorrectionKind = Literal["mistake", "polish"]
@@ -53,10 +53,35 @@ class TurnResponse(BaseModel):
         default_factory=list,
         description="Corrections for the learner's last message. Empty list if it was fine.",
     )
+    # say_en / say_more 를 hint_ko 앞에 둔다.
+    # 필드 선언 순서가 그대로 Ollama format(GBNF) 생성 순서가 되므로,
+    # 영어 '바닥'을 먼저 확정한 뒤 한국어 안내가 그것을 감싸게 된다. 추가 토큰 0.
+    say_en: str = Field(
+        description=(
+            "One complete English line the learner can say right now, exactly as written. "
+            "The shortest thing that works — a single word is fine. "
+            "Never a template, a blank to fill, a choice list, or an instruction."
+        )
+    )
+    say_more: str = Field(
+        description=(
+            "One step up from say_en: the same move said a little longer, "
+            "or the other option if your reply offered a choice. Never empty."
+        )
+    )
     hint_ko: str = Field(
-        description="One short Korean sentence hinting what the learner could say next."
+        description=(
+            "One or two short Korean sentences: what just happened, "
+            "and what say_en means. Never a template with blanks."
+        )
     )
 
+    _chk_say = field_validator("say_en")(
+        lambda v: require_english(v, "say_en", max_words=5, max_chars=32)
+    )
+    _chk_more = field_validator("say_more")(
+        lambda v: require_english(v, "say_more", max_words=10, max_chars=64)
+    )
     _fix_hint = field_validator("hint_ko")(lambda v: require_korean(normalize(v), "hint_ko"))
 
 

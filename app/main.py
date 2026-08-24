@@ -52,6 +52,8 @@ class ScenarioOut(BaseModel):
     situation: str
     goal: str
     opening_line: str
+    opening_say_en: str
+    opening_say_more: str
     opening_hint_ko: str
 
     @classmethod

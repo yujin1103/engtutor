@@ -54,7 +54,7 @@ def test_schema_forces_structure():
     """출력이 스키마로 고정돼야 평문 탈출이 어렵다."""
     schema = turn_response_schema()
     assert schema["additionalProperties"] is False
-    assert set(schema["required"]) == {"reply", "corrections", "hint_ko"}
+    assert set(schema["required"]) == {"reply", "corrections", "say_en", "say_more", "hint_ko"}
 
 
 def test_guardrails_are_appended_to_every_scenario():

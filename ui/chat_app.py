@@ -47,11 +47,14 @@ def start_session(scenario: dict[str, Any], level: str) -> None:
     st.session_state.scenario_id = scenario["id"]
     st.session_state.level = level
     st.session_state.report = None
+    st.session_state.revealed = False
     st.session_state.history = [
         {
             "role": "assistant",
             "reply": scenario["opening_line"],
             "corrections": [],
+            "say_en": scenario["opening_say_en"],
+            "say_more": scenario["opening_say_more"],
             "hint_ko": scenario["opening_hint_ko"],
         }
     ]
@@ -77,8 +80,8 @@ def render_turn(turn: dict[str, Any]) -> None:
     if polish:
         with st.expander(f"✨ 이렇게 하면 더 자연스러워요 ({len(polish)})", expanded=False):
             _render_corrections(polish, strike=False)
-    if turn.get("hint_ko"):
-        st.info(f"💡 {turn['hint_ko']}")
+    # 힌트는 말풍선이 아니라 입력창 바로 위 바에서 보여준다(render_say_bar).
+    # 여기서 또 그리면 대화가 길어질 때 화면이 힌트로 뒤덮인다.
 
 
 def render_report(report: dict[str, Any]) -> None:
@@ -204,6 +207,48 @@ for item in st.session_state.history:
         else:
             render_turn(item)
 
+def render_say_bar() -> None:
+    """입력창 바로 위 '지금 말할 수 있는 것' 바.
+
+    얼어붙는 사건이 실제로 일어나는 좌표가 화면 맨 아래다. 힌트를 말풍선 안에 두면
+    대화가 길어질수록 스크롤 위로 사라진다.
+
+    영어는 기본으로 접혀 있다 — 시도 먼저, 막히면 열기. 그래야 의존이 덜 생기고
+    열었는지가 관측 가능해진다.
+    """
+    if st.session_state.get("report"):
+        return  # 종료된 세션에는 말할 것을 제안하지 않는다
+    last = next(
+        (h for h in reversed(st.session_state.history) if h["role"] == "assistant"), None
+    )
+    if last is None:
+        return
+
+    with st.container(border=True):
+        left, right = st.columns([4, 1], vertical_alignment="center")
+        left.markdown(f"💡 {last.get('hint_ko', '')}")
+
+        revealed = st.session_state.get("revealed", False)
+        if not revealed:
+            if right.button("🔤 답 표시", use_container_width=True, help="막혔을 때만 눌러보세요"):
+                st.session_state.revealed = True
+                st.rerun()
+        else:
+            right.caption("아래를 그대로 말해보세요")
+
+        if revealed:
+            for line in (last.get("say_en"), last.get("say_more")):
+                if line:
+                    st.code(line, language=None, wrap_lines=True)
+
+        # 모델이 헤매도 바닥이 사라지지 않게 UI 상수로 보장한다.
+        with st.expander("🤷 무슨 말인지 모르겠어요", expanded=False):
+            st.code("Sorry, I don't understand.", language=None)
+            st.caption("이 한 마디면 상대가 다시 쉽게 말해줘요. 실제 대화에서 제일 많이 쓰는 영어예요.")
+
+
+render_say_bar()
+
 if st.session_state.get("report"):
     st.divider()
     render_report(st.session_state.report)
@@ -238,3 +283,5 @@ elif user_text := st.chat_input("영어로 말해보세요"):
         render_turn(turn)
 
     st.session_state.history.append({"role": "assistant", **turn})
+    st.session_state.revealed = False  # 새 턴이 오면 영어는 다시 접는다
+    st.rerun()

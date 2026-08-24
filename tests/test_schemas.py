@@ -38,9 +38,9 @@ def test_every_object_forbids_extra_properties():
             assert node.get("additionalProperties") is False
 
 
-def test_schema_requires_all_three_fields():
+def test_schema_requires_all_fields():
     schema = turn_response_schema()
-    assert set(schema["required"]) == {"reply", "corrections", "hint_ko"}
+    assert set(schema["required"]) == {"reply", "corrections", "say_en", "say_more", "hint_ko"}
 
 
 def test_repair_note_lists_every_required_field():
@@ -69,7 +69,7 @@ def test_repair_note_mentions_kind_values():
 
 def test_turn_response_accepts_empty_corrections():
     turn = TurnResponse.model_validate(
-        {"reply": "Sure! What size?", "corrections": [], "hint_ko": "사이즈를 말해보세요."}
+        {"reply": "Sure! What size?", "corrections": [], "say_en": "Yes.", "say_more": "Yes, please.", "hint_ko": "사이즈를 말해보세요."}
     )
     assert turn.corrections == []
 
@@ -96,7 +96,7 @@ def test_correction_schema_enumerates_kind():
 
 def test_turn_response_rejects_missing_reply():
     with pytest.raises(ValidationError):
-        TurnResponse.model_validate({"corrections": [], "hint_ko": "..."})
+        TurnResponse.model_validate({"corrections": [], "say_en": "Yes.", "say_more": "Yes, please.", "hint_ko": "..."})
 
 
 def test_scenarios_load():

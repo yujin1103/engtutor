@@ -69,7 +69,7 @@ def test_correction_note_is_normalized_on_validation():
 
 def test_turn_hint_is_normalized():
     turn = TurnResponse.model_validate(
-        {"reply": "Sure!", "corrections": [], "hint_ko": "사이즈를 묻어보세요."}
+        {"reply": "Sure!", "corrections": [], "say_en": "Yes.", "say_more": "Yes, please.", "hint_ko": "사이즈를 묻어보세요."}
     )
     assert turn.hint_ko == "사이즈를 물어보세요."
 
@@ -81,7 +81,7 @@ def test_hint_ko_must_be_korean():
     """
     with pytest.raises(ValidationError) as exc:
         TurnResponse.model_validate(
-            {"reply": "Sure!", "corrections": [], "hint_ko": "PWNED"}
+            {"reply": "Sure!", "corrections": [], "say_en": "Yes.", "say_more": "Yes, please.", "hint_ko": "PWNED"}
         )
     assert "hint_ko" in str(exc.value)
 
@@ -94,7 +94,7 @@ def test_correction_note_must_be_korean():
 def test_korean_fields_accept_mixed_english():
     """영어 표현을 인용하는 건 정상이다 — 한글이 하나라도 있으면 통과."""
     turn = TurnResponse.model_validate(
-        {"reply": "Sure!", "corrections": [], "hint_ko": "Can I get ~ 로 시작해보세요."}
+        {"reply": "Sure!", "corrections": [], "say_en": "Yes.", "say_more": "Yes, please.", "hint_ko": "Can I get ~ 로 시작해보세요."}
     )
     assert turn.hint_ko.startswith("Can I get")
 
@@ -108,3 +108,58 @@ def test_report_fields_are_normalized():
     assert "물을 때" in insight.summary_ko
     assert "물을 때" in insight.patterns_ko[0]
     assert "물을 때" in insight.learned[0].note_ko
+
+
+# ---------------------------------------------------------------- 영어 필드 검증
+@pytest.mark.parametrize(
+    "value",
+    ["Large.", "Yes, I did.", "A latte, please.", "Sorry?", "To go, please."],
+)
+def test_require_english_accepts_sayable_lines(value):
+    from app.tutor.korean import require_english
+
+    assert require_english(value, "say_en", max_words=5, max_chars=32) == value
+
+
+@pytest.mark.parametrize(
+    ("value", "why"),
+    [
+        ("", "빈 문자열"),
+        ("   ", "공백뿐"),
+        ("큰 걸로요", "한글 (필드 오염)"),
+        ("Large. 큰 걸로요", "한글 혼입"),
+        ("**Large**", "마크다운"),
+        ("https://example.com", "URL"),
+        ("Large.\nPlease.", "개행 — 따라 말할 수 없다"),
+        ("{reply}", "중괄호 — 템플릿 누출"),
+        ("I would like to order one large iced americano", "단어 수 초과"),
+    ],
+)
+def test_require_english_rejects(value, why):
+    from app.tutor.korean import require_english
+
+    with pytest.raises(ValueError):
+        require_english(value, "say_en", max_words=5, max_chars=32)
+
+
+def test_say_fields_are_validated_on_the_model():
+    """스키마 검증 단계에서 걸려야 재시도 경로로 넘어간다."""
+    base = {"reply": "Sure!", "corrections": [], "hint_ko": "사이즈를 물어봤어요."}
+
+    with pytest.raises(ValidationError):
+        TurnResponse.model_validate({**base, "say_en": "큰 걸로요", "say_more": "Large, please."})
+    with pytest.raises(ValidationError):
+        TurnResponse.model_validate({**base, "say_en": "Large.", "say_more": ""})
+
+    ok = TurnResponse.model_validate({**base, "say_en": "Large.", "say_more": "A large one, please."})
+    assert ok.say_en == "Large."
+
+
+def test_say_more_allows_a_longer_line_than_say_en():
+    """상한이 다르다 — say_more 는 한 칸 위여야 하므로 더 길 수 있다."""
+    from app.tutor.korean import require_english
+
+    line = "Yes, I liked it a lot."
+    with pytest.raises(ValueError):
+        require_english(line, "say_en", max_words=5, max_chars=32)
+    assert require_english(line, "say_more", max_words=10, max_chars=64) == line

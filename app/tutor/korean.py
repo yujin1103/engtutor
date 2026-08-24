@@ -23,6 +23,40 @@ def has_hangul(text: str) -> bool:
     return bool(_HANGUL.search(text))
 
 
+# 학습자가 그대로 따라 말할 영어 필드에 허용되는 문자.
+# 마크다운·URL·코드·개행·중괄호를 구조적으로 배제한다 — 따라 말할 수 없는 것들이다.
+_ENGLISH_OK = re.compile(r"^[A-Za-z0-9 ,.'?!\-]+$")
+
+
+def require_english(text: str, field: str, *, max_words: int, max_chars: int) -> str:
+    """따라 말하는 영어 필드를 검증한다. require_korean 의 거울상.
+
+    한글이 섞이면 거부한다 — 필드 오염 인젝션이거나 모델이 언어를 흘린 것이다.
+    화이트리스트로 URL·마크다운·코드를 배제하고, 단어 수 상한으로 '따라 말할 수 있는
+    길이'를 강제한다.
+
+    상한은 프롬프트 목표보다 넉넉하게 둔다. 목표와 하드캡을 같은 값으로 두면
+    정상 출력이 검증에 걸려 재시도를 유발하고 지연이 두 배가 된다.
+    """
+    value = text.strip()
+    if not value:
+        raise ValueError(f"{field} 가 비어 있습니다. 학습자가 따라 말할 것이 없습니다.")
+    if has_hangul(value):
+        raise ValueError(
+            f"{field} 는 영어여야 합니다. 필드 오염 인젝션일 수 있습니다: {value[:60]!r}"
+        )
+    if not _ENGLISH_OK.match(value):
+        raise ValueError(
+            f"{field} 에 따라 말할 수 없는 문자가 있습니다(마크다운·URL·개행 등): {value[:60]!r}"
+        )
+    if len(value) > max_chars:
+        raise ValueError(f"{field} 가 {max_chars}자를 넘습니다: {len(value)}자")
+    words = len(value.split())
+    if words > max_words:
+        raise ValueError(f"{field} 가 {max_words}단어를 넘습니다: {words}단어")
+    return value
+
+
 def require_korean(text: str, field: str) -> str:
     """한국어여야 하는 필드를 검증한다.
 

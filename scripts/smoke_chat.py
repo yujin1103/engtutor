@@ -72,6 +72,8 @@ def _show_turn(user_text: str, turn: dict, elapsed: float) -> None:
     else:
         print("   ✏️  (교정 없음)")
     print(f"   💡 {turn['hint_ko']}")
+    print(f"   👉 {turn.get('say_en', '')}")
+    print(f"   👉 {turn.get('say_more', '')}")
 
 
 def main() -> int:
