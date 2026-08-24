@@ -86,6 +86,9 @@ class WordRow(Base):
     example: Mapped[str] = mapped_column(Text)
     usage_note: Mapped[str] = mapped_column(Text)
     confused_with: Mapped[list[str]] = mapped_column(JSON, default=list)
+    # NGSL 빈도 순위(1이 가장 자주 쓰임). 검수 우선순위로 쓴다 — 300개만 검수해도
+    # 가장 많이 쓰는 300개를 얻어야 하기 때문이다. 목록 밖 단어는 NULL.
+    rank: Mapped[int | None] = mapped_column(Integer, nullable=True, index=True)
     # 사람이 승인해야 True. 리포트에는 True 인 것만 나간다.
     reviewed: Mapped[bool] = mapped_column(Boolean, default=False, index=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_utcnow)

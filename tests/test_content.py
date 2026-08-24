@@ -203,7 +203,10 @@ def test_search_and_filter(db):
 
     with db.db_session() as s:
         crud.upsert_word(s, _entry())
-        crud.upsert_word(s, _entry(word="lend", meaning_ko="빌려주다"))
+        crud.upsert_word(
+            s,
+            _entry(word="lend", meaning_ko="빌려주다", example="Can you lend me a pen?"),
+        )
     with db.db_session() as s:
         assert [r.word for r in crud.list_words(s, query="lend")] == ["lend"]
         assert [r.word for r in crud.list_words(s, query="빌려주다")] == ["lend"]
@@ -245,3 +248,48 @@ def test_tokenize_lowercases_and_drops_punctuation():
     from app.db.crud import tokenize
 
     assert tokenize("Can I borrow your pen?") == {"can", "borrow", "your", "pen"}
+
+
+# ---------------------------------------------------------------- 검수 우선순위
+def test_ranks_follow_the_wordlist_order(db):
+    """NGSL 은 목록 순서가 곧 빈도 순서다. 저장하며 그 정보를 잃고 있었다.
+
+    검수를 중간에 멈춰도 자주 쓰는 단어부터 승인돼 있어야 리포트에 도움이 된다.
+    """
+    from app.db import crud
+
+    with db.db_session() as s:
+        crud.upsert_word(s, _entry())
+        crud.upsert_word(
+            s, _entry(word="lend", meaning_ko="빌려주다", example="Can you lend me a pen?")
+        )
+
+    with db.db_session() as s:
+        assert crud.assign_ranks(s, ["lend", "borrow"]) == 2
+
+    with db.db_session() as s:
+        ranks = {r.word: r.rank for r in crud.list_words(s)}
+    assert ranks == {"lend": 1, "borrow": 2}
+
+
+def test_ranks_ignore_words_not_in_the_database(db):
+    from app.db import crud
+
+    with db.db_session() as s:
+        crud.upsert_word(s, _entry())
+    with db.db_session() as s:
+        assert crud.assign_ranks(s, ["nonexistent", "borrow"]) == 1
+    with db.db_session() as s:
+        assert crud.list_words(s)[0].rank == 2
+
+
+def test_reassigning_the_same_ranks_changes_nothing(db):
+    """배치를 다시 돌려도 순위가 흔들리면 검수 순서가 뒤집힌다."""
+    from app.db import crud
+
+    with db.db_session() as s:
+        crud.upsert_word(s, _entry())
+    with db.db_session() as s:
+        crud.assign_ranks(s, ["borrow"])
+    with db.db_session() as s:
+        assert crud.assign_ranks(s, ["borrow"]) == 0

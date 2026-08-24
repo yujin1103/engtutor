@@ -62,6 +62,11 @@ def main() -> int:
         action="store_true",
         help="LLM 호출 없이 저장된 항목의 한국어 표기만 다시 정규화한다",
     )
+    parser.add_argument(
+        "--rank-only",
+        action="store_true",
+        help="LLM 호출 없이 목록 순서를 빈도 순위로만 기록한다",
+    )
     args = parser.parse_args()
 
     if args.normalize_existing:
@@ -73,6 +78,17 @@ def main() -> int:
 
     init_db()
     words = load_wordlist(args.wordlist, limit=args.limit)
+
+    # 목록에 등장하는 순서가 곧 빈도 순서다(NGSL). 검수 우선순위로 쓰려면
+    # 생성 성공 여부와 무관하게 매번 기록해 둔다.
+    if not args.dry_run:
+        with db_session() as db:
+            changed = crud.assign_ranks(db, load_wordlist(args.wordlist))
+        if changed:
+            logger.info("빈도 순위 기록: %d개", changed)
+    if args.rank_only:
+        return 0
+
     if not args.redo:
         with db_session() as db:
             done = crud.existing_words(db)

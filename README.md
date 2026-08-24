@@ -235,7 +235,47 @@ docker compose exec api python content/batch_generate.py --wordlist content/data
 비슷하게 생긴 고빈도 단어로 끌려가는 실패라 대조 검사는 느슨하게 두지 않는다 —
 잘못된 표제어로 사전에 들어가면 검수자도 알아채기 어렵다.
 
-### 2) 검수
+### 2) 선별 — 2,801개를 사람이 다 볼 수는 없다
+
+한 항목 15초씩만 잡아도 12시간이다. 그렇다고 자동 승인하면 검수의 존재 이유
+(LLM 이 만든 걸 LLM 이 통과시키지 않게 하는 것)가 사라진다.
+
+그래서 **선별기는 승인하지 않는다. 순서만 매긴다**(`app/content/screening.py`).
+LLM 을 부르지 않고 규칙으로만 판단한다.
+
+```powershell
+docker compose exec api python content/screen_words.py
+docker compose exec api python content/screen_words.py --code headword_absent --show 30
+```
+
+| 검사 | 심각도 | 실제로 잡은 것 |
+|---|---|---|
+| `headword_absent` | 🔴 | 예문·설명 어디에도 표제어가 없음 — 다른 단어를 설명한 것 |
+| `usage_not_korean` | 🔴 | `calm` 의 설명이 통째로 영어였다 |
+| `duplicate_usage_note` | 🔴 | 앞 항목 설명을 그대로 베낌 (한 항목만 봐서는 안 보인다) |
+| `example_missing_headword` | 🟡 | `age` → `How old are you?`, `hand` → `Pass me the book, please.` |
+| `duplicate_example` | ⚪ | 예문 공유. `I am a student.` 는 be·i·student 모두에 정당하다 |
+| `confused_with_malformed` | ⚪ | `"chip (as in 'a piece')"` 처럼 단어 자리에 해설이 들어감 |
+
+`duplicate_example` 을 처음엔 🔴 로 뒀다가 되돌렸다. 멀쩡한 25개가 큐 맨 앞을
+차지했기 때문이다. **오탐은 사람 시간을 낭비하고, 미탐은 나쁜 항목을 뒤로 민다** —
+비대칭이 다르므로 심각도도 달라야 한다.
+
+첫 실행 결과 2,801개 중 **91개 지적**. 프롬프트를 고치고 재생성해 **30개**로 줄었다.
+
+#### 잡은 걸 다시 생성 시점에 막는다
+
+선별은 사후 진단이다. 같은 규칙을 `WordEntry` 검증에 넣으면 생성 단계에서
+거부되고, 재시도가 이유를 알려주며 다시 요청한다.
+
+- `example` 은 표제어를 실제로 써야 한다 (굴절형 허용: `bought`, `arose`)
+- `meaning_ko`·`usage_note` 는 한글 필수, `example` 은 한글 금지
+
+83개 재생성에서 76개가 이 경로로 고쳐졌다. 남은 7개(`else`, `nowhere`, `extent` 등)는
+모델이 세 번 다 자연스러운 우회 표현을 골랐다 — 그건 사람이 30초면 고친다.
+**그게 검수 큐가 존재하는 이유다.**
+
+### 3) 검수
 
 ```powershell
 docker compose --profile review up -d review   # http://localhost:8502
@@ -243,7 +283,21 @@ docker compose --profile review up -d review   # http://localhost:8502
 
 미검수 필터·검색·항목 수정·승인 토글. 필요할 때만 띄우면 되므로 profile 뒤에 두었다.
 
-### 3) 리포트 연동
+정렬은 두 가지다.
+
+- **의심 순** (기본) — 선별기가 지적한 것부터. 지적이 같으면 빈도 순으로 이어진다.
+- **빈도 순** — NGSL 순위대로. `be`, `and`, `of`, `to` 부터.
+
+빈도 순위(`words.rank`)를 따로 저장한다. NGSL 은 목록 순서가 곧 빈도 순서인데
+그 정보가 저장 시점에 사라지고 있었다. **검수를 중간에 멈춰도 가장 많이 쓰는
+단어부터 승인돼 있어야** 리포트에 실제로 도움이 된다. 300개만 검수했을 때
+"가장 자주 쓰는 300개"와 "a 로 시작하는 300개"는 가치가 전혀 다르다.
+
+```powershell
+docker compose exec api python content/batch_generate.py --wordlist content/data/ngsl.csv --rank-only
+```
+
+### 4) 리포트 연동
 
 리포트를 만들 때 교정에 등장한 단어를 `words` 테이블과 매칭해 **`reviewed=true`인 항목만** 붙인다.
 미검수 항목은 절대 새어 나가지 않는다(테스트로 고정).
@@ -382,8 +436,8 @@ app/
     ├── loader.py      시나리오·프롬프트 로딩
     └── service.py     프롬프트 조립 → LLM → 검증 → 1회 재시도
 ui/chat_app.py         Streamlit 채팅 UI
-content/               batch_generate.py · review_app.py · data/
-tests/                 스키마·시나리오·DB·리포트·콘텐츠·백엔드 전환
+content/               batch_generate.py · screen_words.py · review_app.py · data/
+tests/                 스키마·시나리오·DB·리포트·콘텐츠·선별·스트리밍·백엔드 전환
 tests/security/        인젝션 케이스 14종 + 판정 로직 (표와 공유)
 scripts/               smoke_chat.py · probe_stream.py · security_report.py
 ```

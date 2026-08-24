@@ -10,7 +10,7 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
-from ..tutor.korean import normalize
+from ..tutor.korean import normalize, reject_hangul, require_korean
 
 WordLevel = Literal["A1", "A2", "B1"]
 
@@ -41,13 +41,37 @@ class WordEntry(BaseModel):
         description="English words a Korean learner confuses with this one. Empty list if none."
     )
 
-    _fix_meaning = field_validator("meaning_ko")(lambda v: normalize(v))
-    _fix_usage = field_validator("usage_note")(lambda v: normalize(v))
+    # 학습자에게 보이는 한국어 필드는 한글이 있어야 하고, 예문에는 한글이 없어야 한다.
+    # 프롬프트로 "한국어로 써라"라고 해도 확률적으로 새어 나간다 — 실제로 NGSL 2,801개
+    # 중 calm 의 설명이 통째로 영어로 생성됐다. 스키마에서 거부하면 재시도로 넘어간다.
+    _fix_meaning = field_validator("meaning_ko")(lambda v: require_korean(normalize(v), "meaning_ko"))
+    _fix_usage = field_validator("usage_note")(lambda v: require_korean(normalize(v), "usage_note"))
+    _chk_example = field_validator("example")(lambda v: reject_hangul(v, "example"))
 
     @field_validator("word")
     @classmethod
     def _lowercase(cls, v: str) -> str:
         return v.strip().lower()
+
+    @model_validator(mode="after")
+    def _example_must_use_the_headword(self) -> "WordEntry":
+        """예문이 표제어를 실제로 쓰는지 확인한다.
+
+        프롬프트에 "Use the headword in it" 이 있는데도 NGSL 2,801개 중 39개가
+        어겼다 — age 의 예문이 'How old are you?', hand 의 예문이
+        'Pass me the book, please.' 였다. 표제어를 안 쓰는 예문은 예문이 하는
+        유일한 일을 안 하는 것이라, 프롬프트가 아니라 여기서 막는다.
+
+        굴절형은 허용한다(bought, went, arose). 거부되면 생성기의 재시도 경로가
+        무엇이 틀렸는지 알려주며 다시 요청한다.
+        """
+        from .screening import mentions  # 순환 참조를 피해 함수 안에서 가져온다
+
+        if not mentions(self.example, self.word):
+            raise ValueError(
+                f"예문이 표제어 {self.word!r} 를 쓰지 않습니다: {self.example!r}"
+            )
+        return self
 
     @model_validator(mode="after")
     def _drop_self_reference(self) -> "WordEntry":

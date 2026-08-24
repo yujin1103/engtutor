@@ -154,6 +154,26 @@ def list_words(
     return list(db.execute(stmt).scalars())
 
 
+def assign_ranks(db: DbSession, words: list[str]) -> int:
+    """단어 목록의 순서를 빈도 순위로 기록한다. 1이 가장 자주 쓰이는 단어.
+
+    NGSL 은 파일에 등장하는 순서가 곧 빈도 순서인데, 그 정보가 저장 시점에
+    사라지고 있었다. 검수를 중간에 멈춰도 **가장 많이 쓰는 단어부터** 승인돼
+    있어야 리포트에 실제로 도움이 된다.
+    """
+    ranks = {}
+    for i, word in enumerate(words, start=1):
+        ranks.setdefault(word.strip().lower(), i)
+
+    changed = 0
+    for row in db.execute(select(WordRow)).scalars():
+        rank = ranks.get(row.word)
+        if rank is not None and row.rank != rank:
+            row.rank = rank
+            changed += 1
+    return changed
+
+
 def count_words(db: DbSession, *, reviewed: bool | None = None) -> int:
     stmt = select(func.count(WordRow.id))
     if reviewed is not None:

@@ -72,6 +72,17 @@ def require_korean(text: str, field: str) -> str:
     return text
 
 
+def reject_hangul(text: str, field: str) -> str:
+    """영어여야 하는 필드에 한글이 섞이지 않았는지만 본다.
+
+    `require_english` 와 달리 문자 화이트리스트를 걸지 않는다. 예문에는 따옴표나
+    콜론이 정당하게 들어갈 수 있어서, 거기까지 막으면 멀쩡한 예문을 떨어뜨린다.
+    """
+    if has_hangul(text):
+        raise ValueError(f"{field} 는 영어여야 합니다. 한글이 섞였습니다: {text[:60]!r}")
+    return text
+
+
 # (틀린 표기, 올바른 표기)
 _REPLACEMENTS: tuple[tuple[str, str], ...] = (
     # 묻다(질문하다)는 ㄷ불규칙 — 묻을 X, 물을 O
