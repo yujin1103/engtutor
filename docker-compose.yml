@@ -81,5 +81,49 @@ services:
       - "8502:8502"
     restart: unless-stopped
 
+  # 외부 노출용 SSH 리버스 터널. 시범 때만 띄운다.
+  #   docker compose --profile expose up -d tunnel
+  #
+  # 클라우드는 진입점으로만 쓴다 — 연산은 전부 이 집 GPU 에서 돈다.
+  # VM 은 요청을 받아 이 터널로 넘길 뿐이고, 모델은 VM 에 올라가지 않는다.
+  tunnel:
+    build:
+      context: .
+      dockerfile: deploy/tunnel.Dockerfile
+    container_name: engtutor-tunnel
+    profiles: ["expose"]
+    depends_on:
+      - ui
+    env_file:
+      - .env
+    volumes:
+      - ./deploy/keys:/keys:ro   # 개인키. .gitignore 에 있다
+    # NTFS 에서 마운트한 키는 권한이 0777 로 보여 ssh 가 거부한다.
+    # 컨테이너 안으로 복사해 600 으로 낮춘 뒤 쓴다.
+    #
+    # -R 127.0.0.1:PORT 로 **루프백에만** 묶는다. VM 바깥에서 이 포트로 직접
+    # 들어올 수 없고, 반드시 nginx(암호 한 겹)를 거치게 된다.
+    # $$ 로 이스케이프해 compose 가 아니라 **컨테이너 안의 sh** 가 값을 읽게 한다.
+    # compose 단계에서 ${TUNNEL_HOST:?...} 로 검사하면 이 파일을 읽는 모든 명령이
+    # (평소의 up · exec 까지) TUNNEL_HOST 없이는 전부 실패한다. 시범용 선택 기능이
+    # 일상 작업을 막으면 안 된다.
+    #
+    # 줄 들여쓰기를 **전부 같게** 맞춘다. YAML 접힘(>)은 더 깊이 들여쓴 줄을
+    # 접지 않고 개행을 그대로 남기는데, 그러면 `exec autossh -M 0 -N` 에서
+    # 명령이 끊겨 autossh 가 사용법만 출력하고 끝난다.
+    command: >
+      'set -e;
+      : "$${TUNNEL_HOST:?.env 에 TUNNEL_HOST 를 넣으세요 (예: engtutor.duckdns.org)}";
+      cp /keys/$${TUNNEL_KEY:-id_ed25519} /tmp/k; chmod 600 /tmp/k;
+      exec autossh -M 0 -N
+      -o ServerAliveInterval=15 -o ServerAliveCountMax=3
+      -o ExitOnForwardFailure=yes
+      -o StrictHostKeyChecking=accept-new
+      -o UserKnownHostsFile=/tmp/known_hosts
+      -i /tmp/k
+      -R 127.0.0.1:$${TUNNEL_REMOTE_PORT:-8501}:ui:8501
+      $${TUNNEL_USER:-ubuntu}@$${TUNNEL_HOST}'
+    restart: unless-stopped
+
 volumes:
   ollama_models:                # NTFS 바인드 마운트는 9GB 모델 로딩이 느려서 named volume 사용
