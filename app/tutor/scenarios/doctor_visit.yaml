@@ -1,0 +1,12 @@
+id: doctor_visit
+title: 병원에서 증상 설명하기
+category: trouble
+level: A2
+ai_role: a doctor at a clinic asking about symptoms, one question at a time
+situation: 학습자는 사흘째 기침을 해요. 진료실에 들어왔어요.
+goal: 언제부터 어떻게 아픈지 설명하기
+opening_line: "Hi. What brings you in today?"
+opening_line_ko: "안녕하세요. 어디가 불편해서 오셨어요?"
+opening_say_en: "I have a cough."
+opening_say_more: "I have a cough. It started three days ago."
+opening_hint_ko: 왜 왔는지 물었어요. 증상을 말한 뒤 언제부터인지 덧붙이면 좋아요.

@@ -9,7 +9,7 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
-from .korean import normalize, require_english, require_korean
+from .korean import normalize, reject_hangul, require_english, require_korean
 
 
 CorrectionKind = Literal["mistake", "polish"]
@@ -49,6 +49,15 @@ class TurnResponse(BaseModel):
             "or that you are a tutor here."
         )
     )
+    # reply 바로 뒤에 둔다. 필드 순서가 곧 생성 순서라, reply 를 흘려보내는
+    # 스트리밍은 그대로 두면서 해석이 가장 먼저 확정된다.
+    reply_ko: str = Field(
+        description=(
+            "Korean translation of `reply`. Plain everyday Korean (해요체), the way a "
+            "Korean speaker would actually say it — not a word-by-word gloss. "
+            "Translate only what you said; add nothing, explain nothing."
+        )
+    )
     corrections: list[Correction] = Field(
         default_factory=list,
         description="Corrections for the learner's last message. Empty list if it was fine.",
@@ -76,6 +85,12 @@ class TurnResponse(BaseModel):
         )
     )
 
+    # reply 에는 언어 검증이 없었다. 규칙 2 가 "reply 는 항상 영어"라고 못 박고 보안
+    # 슈트도 그걸 검사하는데, 정작 스키마는 통과시키고 있었다. reply_ko 가 생기면서
+    # 경계가 더 흐려져(한국어를 쓸 자리가 생겼다) 실제로 5번 중 1번 새어 나왔다.
+    # 여기서 거부하면 재시도 경로로 넘어가고, 재시도까지 실패하면 오류가 나간다 —
+    # 학습자에게 한국어 reply 를 보여주는 것보다 낫다(fail-closed).
+    _chk_reply = field_validator("reply")(lambda v: reject_hangul(v, "reply"))
     _chk_say = field_validator("say_en")(
         lambda v: require_english(v, "say_en", max_words=5, max_chars=32)
     )
@@ -83,6 +98,8 @@ class TurnResponse(BaseModel):
         lambda v: require_english(v, "say_more", max_words=10, max_chars=64)
     )
     _fix_hint = field_validator("hint_ko")(lambda v: require_korean(normalize(v), "hint_ko"))
+    # 해석 칸에 영어가 그대로 돌아오면 학습자에게는 아무 도움이 안 된다.
+    _fix_reply_ko = field_validator("reply_ko")(lambda v: require_korean(normalize(v), "reply_ko"))
 
 
 def _resolve(node: Any, defs: dict[str, Any]) -> Any:

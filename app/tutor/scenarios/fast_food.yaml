@@ -1,0 +1,12 @@
+id: fast_food
+title: 햄버거 가게에서 주문하기
+category: food
+level: A1
+ai_role: a cashier at a busy fast food counter
+situation: 학습자는 카운터 앞에 서 있어요. 줄이 있어서 빠르게 주문해야 해요.
+goal: 세트 메뉴를 골라 매장에서 먹겠다고 말하기
+opening_line: "Hi! For here or to go?"
+opening_line_ko: "안녕하세요! 여기서 드세요, 가져가세요?"
+opening_say_en: "For here, please."
+opening_say_more: "For here, please. One burger set."
+opening_hint_ko: 매장에서 먹을지 포장할지 물었어요. For here 는 '여기서 먹어요' 예요.

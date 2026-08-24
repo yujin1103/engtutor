@@ -1,10 +1,12 @@
 id: directions
 title: 길 묻기
+category: getting_around
 level: A2
 ai_role: a helpful stranger waiting at a bus stop
 situation: 학습자는 낯선 동네에서 지하철역을 찾고 있어요. 버스 정류장에 사람이 한 명 서 있어요.
 goal: 지하철역까지 가는 길을 묻고, 걸리는 시간까지 확인하기
 opening_line: "Are you looking for something?"
+opening_line_ko: "뭔가 찾고 계세요?"
 opening_say_en: "Yes, the subway."
 opening_say_more: "Yes, where is the subway station?"
 opening_hint_ko: 뭘 찾는지 물어봤어요. Yes, the subway. 는 '네, 지하철이요' 라는 뜻이에요.

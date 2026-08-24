@@ -69,7 +69,7 @@ def test_correction_note_is_normalized_on_validation():
 
 def test_turn_hint_is_normalized():
     turn = TurnResponse.model_validate(
-        {"reply": "Sure!", "corrections": [], "say_en": "Yes.", "say_more": "Yes, please.", "hint_ko": "사이즈를 묻어보세요."}
+        {"reply": "Sure!", "reply_ko": "네, 알겠어요.", "corrections": [], "say_en": "Yes.", "say_more": "Yes, please.", "hint_ko": "사이즈를 묻어보세요."}
     )
     assert turn.hint_ko == "사이즈를 물어보세요."
 
@@ -81,7 +81,7 @@ def test_hint_ko_must_be_korean():
     """
     with pytest.raises(ValidationError) as exc:
         TurnResponse.model_validate(
-            {"reply": "Sure!", "corrections": [], "say_en": "Yes.", "say_more": "Yes, please.", "hint_ko": "PWNED"}
+            {"reply": "Sure!", "reply_ko": "네, 알겠어요.", "corrections": [], "say_en": "Yes.", "say_more": "Yes, please.", "hint_ko": "PWNED"}
         )
     assert "hint_ko" in str(exc.value)
 
@@ -94,7 +94,7 @@ def test_correction_note_must_be_korean():
 def test_korean_fields_accept_mixed_english():
     """영어 표현을 인용하는 건 정상이다 — 한글이 하나라도 있으면 통과."""
     turn = TurnResponse.model_validate(
-        {"reply": "Sure!", "corrections": [], "say_en": "Yes.", "say_more": "Yes, please.", "hint_ko": "Can I get ~ 로 시작해보세요."}
+        {"reply": "Sure!", "reply_ko": "네, 알겠어요.", "corrections": [], "say_en": "Yes.", "say_more": "Yes, please.", "hint_ko": "Can I get ~ 로 시작해보세요."}
     )
     assert turn.hint_ko.startswith("Can I get")
 
@@ -144,7 +144,7 @@ def test_require_english_rejects(value, why):
 
 def test_say_fields_are_validated_on_the_model():
     """스키마 검증 단계에서 걸려야 재시도 경로로 넘어간다."""
-    base = {"reply": "Sure!", "corrections": [], "hint_ko": "사이즈를 물어봤어요."}
+    base = {"reply": "Sure!", "reply_ko": "네, 알겠어요.", "corrections": [], "hint_ko": "사이즈를 물어봤어요."}
 
     with pytest.raises(ValidationError):
         TurnResponse.model_validate({**base, "say_en": "큰 걸로요", "say_more": "Large, please."})

@@ -1,0 +1,12 @@
+id: hotel_checkin
+title: 호텔 체크인하기
+category: stay
+level: A1
+ai_role: a hotel front desk clerk, professional and welcoming
+situation: 학습자가 예약한 호텔에 도착했어요. 예약은 이름으로 되어 있어요.
+goal: 이름을 말하고 체크인해서 방 열쇠 받기
+opening_line: "Good evening! Checking in?"
+opening_line_ko: "안녕하세요! 체크인이신가요?"
+opening_say_en: "Yes. I have a reservation."
+opening_say_more: "Yes, I have a reservation under Kim."
+opening_hint_ko: 체크인이냐고 물었어요. I have a reservation. 이 열쇠까지 가는 문장이에요.

@@ -1,0 +1,12 @@
+id: small_talk
+title: 날씨로 가볍게 말 걸기
+category: people
+level: A1
+ai_role: a neighbor waiting for the elevator, friendly and unhurried
+situation: 학습자는 엘리베이터를 기다리다 이웃과 눈이 마주쳤어요.
+goal: 날씨 이야기로 짧은 잡담을 주고받기
+opening_line: "Good morning! Nice weather today."
+opening_line_ko: "좋은 아침이에요! 오늘 날씨 좋네요."
+opening_say_en: "Yes, it's very nice."
+opening_say_more: "Yes, it's really nice today. Are you going to work?"
+opening_hint_ko: 날씨 이야기로 말을 걸었어요. 맞장구부터 치면 대화가 이어져요.

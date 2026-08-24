@@ -1,10 +1,12 @@
 id: cafe_order
 title: 카페에서 음료 주문하기
+category: food
 level: A1
 ai_role: a friendly barista at a small neighborhood coffee shop
 situation: 학습자는 처음 와보는 카페에 들어와 카운터 앞에 서 있어요. 뒤에 기다리는 사람은 없어요.
 goal: 음료를 사이즈까지 골라서 주문을 끝내기
 opening_line: "Hi there! What can I get for you?"
+opening_line_ko: "안녕하세요! 뭐 드릴까요?"
 opening_say_en: "A latte, please."
 opening_say_more: "Can I get a latte, please?"
 opening_hint_ko: 뭘 드릴지 물어봤어요. A latte, please. 는 '라떼 한 잔 주세요' 라는 뜻이에요.

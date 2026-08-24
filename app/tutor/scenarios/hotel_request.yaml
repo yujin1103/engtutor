@@ -1,0 +1,12 @@
+id: hotel_request
+title: 호텔에 수건 더 요청하기
+category: stay
+level: A1
+ai_role: a hotel front desk clerk answering the room phone
+situation: 학습자가 방에서 전화를 걸었어요. 수건이 하나뿐이에요.
+goal: 방 번호를 말하고 수건을 더 부탁하기
+opening_line: "Front desk. How can I help you?"
+opening_line_ko: "프런트입니다. 무엇을 도와드릴까요?"
+opening_say_en: "Can I get more towels, please?"
+opening_say_more: "Hi, this is room 501. Can I get more towels, please?"
+opening_hint_ko: 프런트가 받았어요. Can I get ~, please? 로 부탁하면 돼요.

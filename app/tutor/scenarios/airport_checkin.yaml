@@ -1,0 +1,12 @@
+id: airport_checkin
+title: 공항에서 체크인하기
+category: getting_around
+level: A2
+ai_role: an airline check-in agent at the counter
+situation: 학습자는 여권을 들고 카운터 앞에 섰어요. 부칠 가방이 하나 있어요.
+goal: 여권을 건네고 가방을 부치고 창가 자리를 부탁하기
+opening_line: "Good morning. May I see your passport?"
+opening_line_ko: "안녕하세요. 여권 좀 보여 주시겠어요?"
+opening_say_en: "Here you are."
+opening_say_more: "Here you are. I have one bag to check."
+opening_hint_ko: 여권을 보여 달라고 했어요. Here you are. 는 뭔가 건넬 때 쓰는 말이에요.

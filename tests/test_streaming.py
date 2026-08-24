@@ -23,6 +23,7 @@ from app.tutor.service import TutorService
 
 GOOD = {
     "reply": "Sure! What size would you like?",
+    "reply_ko": "네! 어떤 사이즈로 드릴까요?",
     "corrections": [
         {
             "original": "I want ice americano",
@@ -251,7 +252,9 @@ def test_sse_frames_are_well_formed(sse_app):
     assert "".join(e["text"] for e in events if e["type"] == "delta") == GOOD["reply"]
 
     turn = events[-1]["turn"]
-    assert set(turn) == {"reply", "corrections", "say_en", "say_more", "hint_ko"}
+    assert set(turn) == {
+        "reply", "reply_ko", "corrections", "say_en", "say_more", "hint_ko",
+    }
     assert turn["hint_ko"] == GOOD["hint_ko"]
 
 

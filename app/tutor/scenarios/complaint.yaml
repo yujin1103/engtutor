@@ -1,0 +1,12 @@
+id: complaint
+title: 서비스에 정중히 항의하기
+category: trouble
+level: B1
+ai_role: a restaurant manager who listens and wants to make it right
+situation: 학습자는 음식을 40분째 기다리고 있어요. 다른 테이블은 이미 받았어요.
+goal: 화내지 않고 상황을 설명해 해결받기
+opening_line: "Is everything okay here?"
+opening_line_ko: "여기 별일 없으신가요?"
+opening_say_en: "We've been waiting a long time."
+opening_say_more: "Excuse me, we ordered forty minutes ago. Could you check?"
+opening_hint_ko: 괜찮냐고 물었어요. 사실을 말하고 Could you ~ 로 부탁하면 정중해요.

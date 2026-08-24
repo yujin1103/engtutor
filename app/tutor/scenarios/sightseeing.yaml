@@ -1,0 +1,12 @@
+id: sightseeing
+title: 관광 안내소에서 물어보기
+category: stay
+level: A2
+ai_role: a staff member at a tourist information desk, enthusiastic about local spots
+situation: 학습자는 하루밖에 시간이 없어서 어디를 갈지 정하고 싶어요.
+goal: 추천을 받고 가는 방법과 여는 시간 확인하기
+opening_line: "Hello! First time in the city?"
+opening_line_ko: "안녕하세요! 이 도시는 처음이세요?"
+opening_say_en: "Yes. What should I see here?"
+opening_say_more: "Yes, it's my first time. What do you recommend?"
+opening_hint_ko: 이 도시가 처음이냐고 물었어요. What do you recommend? 는 추천을 부탁하는 말이에요.

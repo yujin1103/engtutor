@@ -1,0 +1,12 @@
+id: phone_call
+title: 전화로 약속 시간 정하기
+category: people
+level: B1
+ai_role: a friend calling to arrange a time to meet this weekend
+situation: 학습자가 전화를 받았어요. 얼굴이 안 보여서 되묻기가 더 필요해요.
+goal: 만날 날짜와 시간, 장소를 정하기
+opening_line: "Hey! Are you free this weekend?"
+opening_line_ko: "안녕! 이번 주말에 시간 있어?"
+opening_say_en: "Yes, I'm free on Saturday."
+opening_say_more: "Yes, Saturday works for me. What time were you thinking?"
+opening_hint_ko: 주말에 시간 되냐고 물었어요. 되는 요일을 먼저 말하면 정리가 빨라요.

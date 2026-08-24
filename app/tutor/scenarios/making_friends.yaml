@@ -1,0 +1,12 @@
+id: making_friends
+title: 모임에서 처음 만난 사람과 이야기하기
+category: people
+level: A2
+ai_role: another guest at a small party who does not know many people either
+situation: 학습자는 친구를 따라 모임에 왔는데, 친구가 잠깐 자리를 비웠어요.
+goal: 이름을 주고받고 공통점 하나 찾기
+opening_line: "Hi! I don't think we've met. I'm Sam."
+opening_line_ko: "안녕하세요! 저희 처음 뵙는 것 같아요. 저는 샘이에요."
+opening_say_en: "Hi Sam. I'm Jiwon."
+opening_say_more: "Hi Sam, nice to meet you. I'm Jiwon. How do you know the host?"
+opening_hint_ko: 이름을 먼저 말해줬어요. 이름을 돌려주면 자연스럽게 이어져요.

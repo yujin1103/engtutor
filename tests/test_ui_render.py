@@ -79,10 +79,21 @@ def test_review_offers_both_sort_orders(review):
 
 
 def test_review_puts_the_riskiest_item_first(review):
-    """기본 정렬이 '의심 순'이므로 첫 항목에 🔴 가 붙어 있어야 한다."""
+    """기본 정렬이 '의심 순'이므로 심각한 것이 앞에 와야 한다.
+
+    처음에는 `"🔴" in titles[0]` 로 못 박아 뒀다가 바꿨다. 이 페이지는 살아 있는
+    DB 를 읽는데, 검수와 재생성으로 🔴 항목이 0개가 되자 시험이 깨졌다.
+    **고쳐야 할 것이 없어졌다는 이유로 실패하는 시험**은 정렬을 검증하는 게 아니라
+    데이터 상태를 검증하는 것이다. 검증할 성질은 '순서'다.
+    """
+    rank = {"🔴": 3, "🟡": 2, "⚪": 1}
     titles = [e.label for e in review.expander]
     assert titles, "항목이 하나도 렌더되지 않았습니다"
-    assert "🔴" in titles[0], f"첫 항목에 위험 표시가 없습니다: {titles[0]!r}"
+
+    worst = [max((rank[c] for c in t if c in rank), default=0) for t in titles]
+    assert worst == sorted(worst, reverse=True), (
+        f"의심 순 정렬이 뒤집혔습니다: {[t[:24] for t in titles]}"
+    )
 
 
 def test_review_shows_frequency_rank(review):
@@ -94,17 +105,70 @@ def test_review_shows_frequency_rank(review):
 def test_review_form_has_every_editable_field(review):
     labels = [i.label for i in review.text_input] + [a.label for a in review.text_area]
     joined = " ".join(labels)
-    for field in ("뜻", "예문", "사용 노트", "혼동 단어"):
+    for field in ("뜻", "문형", "예문", "사용 노트", "혼동 단어"):
         assert field in joined, f"'{field}' 입력란이 없습니다"
 
 
+# ------------------------------------------------------------------ 시나리오 고르기
+def test_picker_comes_before_the_chat():
+    """시나리오가 33개다. 평평한 목록으로는 못 고르므로 분류를 먼저 보여준다."""
+    at = AppTest.from_file(CHAT_APP, default_timeout=180)
+    at.run()
+    assert not at.exception, f"첫 화면이 터졌습니다: {at.exception}"
+    assert "무엇을 연습할까요" in _texts(at)
+    assert not at.chat_input, "고르기 전에는 입력창이 없어야 합니다"
+
+
+def test_drilling_into_a_category_then_starting():
+    """분류 -> 시나리오 -> 대화. 안으로 한 겹씩 들어가는 흐름이 실제로 이어지는가."""
+    at = AppTest.from_file(CHAT_APP, default_timeout=180)
+    at.run()
+    at.button(key="cat-trouble").click().run()
+    assert not at.exception
+
+    at.button(key="go-pharmacy").click().run()
+    assert not at.exception
+    assert at.title[0].value == "약국에서 약 사기"
+    assert at.chat_input, "대화 화면에는 입력창이 있어야 합니다"
+
+
+def test_settings_survive_choosing_a_scenario():
+    """교정 강도를 바꿔 두고 대화를 시작하면 그 값이 유지돼야 한다.
+
+    예전에는 위젯에 key 없이 value= 로 세션 상태를 되먹였다. 그러면 위젯이 다시
+    만들어질 때 기본값으로 풀려서, 강도를 낮춰 놓고 대화를 시작하면 도로 올라갔다.
+    """
+    at = AppTest.from_file(CHAT_APP, default_timeout=180)
+    at.run()
+    at.select_slider(key="strictness").set_value("gentle").run()
+    at.radio(key="level").set_value("B1").run()
+
+    at.button(key="cat-food").click().run()
+    at.button(key="go-cafe_order").click().run()
+
+    assert at.session_state["strictness"] == "gentle", "교정 강도가 풀렸습니다"
+    assert at.session_state["level"] == "B1", "레벨이 풀렸습니다"
+    assert at.select_slider(key="strictness").value == "gentle"
+    assert at.radio(key="level").value == "B1"
+
+
 # ------------------------------------------------------------------ 채팅 페이지
+def _open_chat(timeout: int = 300):
+    """선택 화면을 지나 대화 화면까지 들어간다.
+
+    첫 화면이 시나리오 고르기로 바뀌었으므로, 대화를 보려면 두 번 눌러야 한다.
+    """
+    at = AppTest.from_file(CHAT_APP, default_timeout=timeout)
+    at.run()
+    at.button(key="cat-food").click().run()
+    at.button(key="go-cafe_order").click().run()
+    assert not at.exception, f"대화 화면 진입에서 터졌습니다: {at.exception}"
+    return at
+
+
 @pytest.fixture(scope="module")
 def chat():
-    at = AppTest.from_file(CHAT_APP, default_timeout=300)
-    at.run()
-    assert not at.exception, f"채팅 페이지가 터졌습니다: {at.exception}"
-    return at
+    return _open_chat()
 
 
 @pytest.mark.live
@@ -113,10 +177,16 @@ def test_chat_page_renders(chat):
 
 
 @pytest.mark.live
-def test_chat_sidebar_has_the_three_controls(chat):
-    assert [s.label for s in chat.sidebar.selectbox] == ["시나리오"]
+def test_chat_sidebar_has_the_controls(chat):
+    """시나리오 선택은 사이드바 목록에서 본문 드릴다운으로 옮겼다.
+
+    사이드바에는 대화 내내 바꿀 수 있어야 하는 것만 남긴다 — 레벨과 교정 강도,
+    그리고 다른 시나리오로 나가는 문.
+    """
+    assert not chat.sidebar.selectbox, "시나리오 목록이 사이드바에 남아 있습니다"
     assert any(r.label == "레벨" for r in chat.sidebar.radio)
     assert any(s.label == "교정 강도" for s in chat.sidebar.select_slider)
+    assert any("다른 시나리오" in b.label for b in chat.sidebar.button)
 
 
 @pytest.mark.live
@@ -153,8 +223,7 @@ def test_say_bar_shows_a_hint_and_hides_the_answer(chat):
 
 @pytest.mark.live
 def test_pressing_the_button_reveals_the_english():
-    at = AppTest.from_file(CHAT_APP, default_timeout=300)
-    at.run()
+    at = _open_chat()
     button = next(b for b in at.button if b.label == "🔤 답 표시")
     button.click().run()
     assert not at.exception
@@ -167,8 +236,7 @@ def test_pressing_the_button_reveals_the_english():
 @pytest.mark.live
 def test_sending_a_message_streams_and_renders_a_turn():
     """스트리밍 경로를 UI 째로 통과시킨다. 여기서 터지면 실사용에서 터진다."""
-    at = AppTest.from_file(CHAT_APP, default_timeout=300)
-    at.run()
+    at = _open_chat()
     at.chat_input[0].set_value("I want ice americano").run()
     assert not at.exception, f"전송 중 터졌습니다: {at.exception}"
 

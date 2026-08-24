@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import logging
+from collections import Counter
 from collections.abc import AsyncIterator, Iterator
 from contextlib import asynccontextmanager
 from typing import Literal
@@ -18,6 +19,7 @@ from .llm.factory import get_client
 from .report.schemas import SessionReport
 from .report.service import ReportService
 from .session_store import SqliteSessionStore
+from .tutor.categories import CATEGORIES
 from .tutor.loader import Scenario, get_scenarios
 from .tutor.schemas import TurnResponse
 from .tutor.service import TutorService
@@ -51,10 +53,12 @@ store = SqliteSessionStore()
 class ScenarioOut(BaseModel):
     id: str
     title: str
+    category: str
     level: str
     situation: str
     goal: str
     opening_line: str
+    opening_line_ko: str
     opening_say_en: str
     opening_say_more: str
     opening_hint_ko: str
@@ -68,7 +72,7 @@ class ChatRequest(BaseModel):
     scenario_id: str
     message: str = Field(min_length=1, max_length=1000)
     session_id: str | None = None
-    level: Literal["A1", "A2"] | None = None
+    level: Literal["A1", "A2", "B1"] | None = None
     strictness: Strictness = DEFAULT_STRICTNESS
 
 
@@ -92,6 +96,31 @@ def healthz() -> dict[str, object]:
 @app.get("/scenarios", response_model=list[ScenarioOut])
 def list_scenarios() -> list[ScenarioOut]:
     return [ScenarioOut.of(s) for s in get_scenarios().values()]
+
+
+class CategoryOut(BaseModel):
+    id: str
+    label: str
+    emoji: str
+    blurb: str
+    count: int
+
+
+@app.get("/categories", response_model=list[CategoryOut])
+def list_categories() -> list[CategoryOut]:
+    """시나리오 분류. 화면이 '분류 고르기 -> 그 안에서 고르기'로 들어가기 위한 것.
+
+    개수를 함께 내려준다 — 비어 있는 분류를 눌러 놓고 아무것도 없는 화면을
+    보는 일이 없어야 한다.
+    """
+    counted = Counter(s.category for s in get_scenarios().values())
+    return [
+        CategoryOut(
+            id=c.id, label=c.label, emoji=c.emoji, blurb=c.blurb, count=counted.get(c.id, 0)
+        )
+        for c in CATEGORIES
+        if counted.get(c.id, 0)
+    ]
 
 
 class StrictnessOut(BaseModel):

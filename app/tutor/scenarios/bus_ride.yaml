@@ -1,0 +1,12 @@
+id: bus_ride
+title: 버스 기사에게 내릴 곳 묻기
+category: getting_around
+level: A1
+ai_role: a bus driver at the front of a city bus
+situation: 학습자가 버스에 탔어요. 내릴 정류장을 지나칠까 봐 걱정돼요.
+goal: 목적지에 가는 버스가 맞는지 확인하고, 도착하면 알려 달라고 부탁하기
+opening_line: "Good morning! Where are you going?"
+opening_line_ko: "안녕하세요! 어디 가세요?"
+opening_say_en: "Central Park. Does this bus go there?"
+opening_say_more: "Central Park, please. Can you tell me when we arrive?"
+opening_hint_ko: 어디 가냐고 물었어요. Does this bus go to ~ 는 '이 버스 ~ 가요?' 예요.

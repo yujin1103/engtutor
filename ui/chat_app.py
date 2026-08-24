@@ -27,6 +27,14 @@ def fetch_scenarios() -> list[dict[str, Any]]:
     return res.json()
 
 
+@st.cache_data(ttl=30)
+def fetch_categories() -> list[dict[str, Any]]:
+    """분류 목록. 개수까지 서버가 세어 내려주므로 UI 가 다시 세지 않는다."""
+    res = httpx.get(f"{API_BASE_URL}/categories", timeout=10.0)
+    res.raise_for_status()
+    return res.json()
+
+
 @st.cache_data(ttl=300)
 def fetch_strictness() -> list[dict[str, Any]]:
     """교정 강도 선택지는 서버가 내려준다 — 문구를 UI 가 복제하지 않는다."""
@@ -66,16 +74,22 @@ def stream_turn(payload: dict[str, Any]) -> Iterator[dict[str, Any]]:
                 continue
 
 
-def start_session(scenario: dict[str, Any], level: str) -> None:
+def start_session(scenario: dict[str, Any]) -> None:
+    """대화를 처음부터 시작한다.
+
+    레벨과 교정 강도는 여기서 건드리지 않는다. 그 둘은 사이드바 위젯이 소유하는
+    값이라(`key=`), 위젯이 만들어진 뒤에 코드가 덮어쓰면 Streamlit 이 예외를 던진다.
+    설정은 시나리오를 바꿔도 유지되는 게 맞기도 하다.
+    """
     st.session_state.session_id = None
     st.session_state.scenario_id = scenario["id"]
-    st.session_state.level = level
     st.session_state.report = None
     st.session_state.revealed = False
     st.session_state.history = [
         {
             "role": "assistant",
             "reply": scenario["opening_line"],
+            "reply_ko": scenario["opening_line_ko"],
             "corrections": [],
             "say_en": scenario["opening_say_en"],
             "say_more": scenario["opening_say_more"],
@@ -93,6 +107,12 @@ def _render_corrections(items: list[dict[str, Any]], *, strike: bool) -> None:
 
 def render_turn(turn: dict[str, Any]) -> None:
     st.markdown(turn["reply"])
+    # 왕초보는 **상대의 영어도 못 읽는다.** 힌트는 다음에 뭘 말할지를 알려줄 뿐,
+    # 방금 상대가 뭐라고 했는지는 알려주지 않는다. 접어 두는 이유는 say_en 과 같다 —
+    # 먼저 영어로 읽어 보고, 막히면 연다.
+    if turn.get("reply_ko"):
+        with st.expander("🇰🇷 해석 보기", expanded=False):
+            st.markdown(turn["reply_ko"])
     corrections = turn.get("corrections") or []
     # 실제 오류와 '더 자연스럽게'를 분리한다. 왕초보에게 둘을 같은 무게로 보여주면 위축된다.
     mistakes = [c for c in corrections if c.get("kind", "mistake") == "mistake"]
@@ -158,6 +178,10 @@ def render_report(report: dict[str, Any]) -> None:
             with st.container(border=True):
                 confused = f" · 헷갈리는 단어: {', '.join(t['confused_with'])}" if t["confused_with"] else ""
                 st.markdown(f"**{t['word']}** — {t['meaning_ko']}{confused}")
+                # 문형은 뜻보다 자주 틀리는 지점이다. 있으면 예문 바로 위에 붙여
+                # '형태 -> 그 형태를 쓴 문장' 순서로 읽히게 한다.
+                if t.get("pattern"):
+                    st.markdown(f"`{t['pattern']}`")
                 st.markdown(f"_{t['example']}_")
                 st.caption(t["usage_note"])
 
@@ -165,52 +189,143 @@ def render_report(report: dict[str, Any]) -> None:
 # ---------------------------------------------------------------- 사이드바
 try:
     scenarios = fetch_scenarios()
+    categories = fetch_categories()
 except httpx.HTTPError as exc:
     st.error(f"API 에 연결하지 못했습니다 ({API_BASE_URL}).\n\n{exc}")
     st.stop()
 
+BY_ID = {s["id"]: s for s in scenarios}
+LEVELS = ("A1", "A2", "B1")
+LEVEL_LABEL = {"A1": "A1 · 왕초보", "A2": "A2 · 기초", "B1": "B1 · 조금 익숙"}
+
+
+def scenario_cards(items: list[dict[str, Any]]) -> None:
+    """시나리오 카드 두 줄 배치. 카드 하나가 곧 '시작' 버튼이다."""
+    if not items:
+        st.info("여기에 맞는 시나리오가 아직 없어요.")
+        return
+    cols = st.columns(2)
+    for i, s in enumerate(items):
+        with cols[i % 2]:
+            with st.container(border=True):
+                st.markdown(f"**{s['title']}**")
+                st.caption(f"{LEVEL_LABEL.get(s['level'], s['level'])}  ·  🎯 {s['goal']}")
+                if st.button("시작하기", key=f"go-{s['id']}", use_container_width=True):
+                    start_session(s)
+                    st.rerun()
+
+
+def render_picker() -> None:
+    """분류를 고르고 그 안으로 들어간다.
+
+    시나리오가 3개일 때는 목록 하나로 충분했다. 33개가 되면 평평한 목록에서
+    학습자가 '뭘 골라야 하지'로 멈춘다. 그래서 한 겹 안으로 들어가는 구조로 둔다.
+
+    (원형 배치처럼 보이게 하려면 커스텀 컴포넌트가 필요하다. 클릭을 파이썬으로
+    돌려받을 방법이 없어서, 같은 '안으로 들어가는' 흐름을 카드로 구현했다.)
+    """
+    st.title("🗣️ 무엇을 연습할까요?")
+
+    needle = st.text_input(
+        "찾기", placeholder="카페, 택시, 병원, 환불...", key="picker_query"
+    ).strip()
+    if needle:
+        hits = [
+            s for s in scenarios
+            if needle in s["title"] or needle in s["situation"] or needle in s["goal"]
+        ]
+        st.caption(f"'{needle}' — {len(hits)}개")
+        scenario_cards(hits)
+        return
+
+    chosen = st.session_state.get("picker_category")
+    if chosen is None:
+        st.caption(f"상황을 하나 고르세요. 전부 {len(scenarios)}개의 대화가 있어요.")
+        cols = st.columns(3)
+        for i, c in enumerate(categories):
+            with cols[i % 3]:
+                with st.container(border=True):
+                    st.markdown(f"### {c['emoji']}  {c['label']}")
+                    st.caption(f"{c['blurb']}  ·  {c['count']}개")
+                    if st.button("들어가기", key=f"cat-{c['id']}", use_container_width=True):
+                        st.session_state.picker_category = c["id"]
+                        st.rerun()
+        return
+
+    category = next((c for c in categories if c["id"] == chosen), None)
+    back, head = st.columns([1, 4], vertical_alignment="center")
+    if back.button("← 뒤로", use_container_width=True):
+        st.session_state.picker_category = None
+        st.rerun()
+    if category:
+        head.markdown(f"### {category['emoji']} {category['label']}")
+        st.caption(category["blurb"])
+    scenario_cards([s for s in scenarios if s["category"] == chosen])
+
+
+# 지금 고른 시나리오. 없으면 아래에서 고르는 화면을 그린다.
+scenario = BY_ID.get(st.session_state.get("scenario_id"))
+
 with st.sidebar:
     st.header("설정")
-    titles = {s["id"]: s["title"] for s in scenarios}
-    selected_id = st.selectbox("시나리오", options=list(titles), format_func=lambda i: titles[i])
-    scenario = next(s for s in scenarios if s["id"] == selected_id)
 
-    level = st.radio("레벨", options=["A1", "A2"], horizontal=True, index=0 if scenario["level"] == "A1" else 1)
+    # key 로 상태를 Streamlit 이 소유하게 한다. 예전에는 value= 로 세션 상태를
+    # 되먹였는데, 그러면 위젯이 다시 만들어질 때 기본값으로 풀린다
+    # (교정 강도를 gentle 로 두고 대화하면 balanced 로 돌아가던 버그).
+    # 라벨은 여기 적지 않는다 — /strictness 가 내려주는 값만 쓴다.
+    st.session_state.setdefault("level", "A1")
+    st.radio(
+        "레벨", options=LEVELS, horizontal=True, key="level",
+        format_func=lambda v: v,
+        help="A1 왕초보 · A2 기초 · B1 조금 익숙. 시나리오를 바꿔도 유지돼요.",
+    )
 
     modes = {m["key"]: m for m in fetch_strictness()}
-    strictness = st.select_slider(
+    st.session_state.setdefault("strictness", "balanced")
+    st.select_slider(
         "교정 강도",
         options=list(modes),
-        value=st.session_state.get("strictness", "balanced"),
+        key="strictness",
         format_func=lambda k: modes[k]["label"],
     )
-    st.session_state.strictness = strictness
-    st.caption(modes[strictness]["caption"])
-
-    st.caption(f"**상황** — {scenario['situation']}")
-    st.caption(f"**목표** — {scenario['goal']}")
+    st.caption(modes[st.session_state.strictness]["caption"])
 
     st.divider()
 
-    has_session = bool(st.session_state.get("session_id"))
-    if st.button("📘 대화 끝내고 리포트 보기", use_container_width=True, disabled=not has_session):
-        with st.spinner("리포트를 만드는 중..."):
-            try:
-                res = httpx.post(
-                    f"{API_BASE_URL}/sessions/{st.session_state.session_id}/report",
-                    timeout=REPORT_TIMEOUT,
-                )
-                res.raise_for_status()
-                st.session_state.report = res.json()
-            except httpx.HTTPStatusError as exc:
-                st.error(f"오류 {exc.response.status_code}: {exc.response.text[:300]}")
-            except httpx.HTTPError as exc:
-                st.error(f"리포트 생성 실패: {exc}")
-        st.rerun()
+    if scenario is None:
+        st.caption("시나리오를 고르면 여기에 상황과 목표가 나와요.")
+    else:
+        st.caption(f"**상황** — {scenario['situation']}")
+        st.caption(f"**목표** — {scenario['goal']}")
+        if scenario["level"] != st.session_state.level:
+            st.caption(f"이 시나리오는 {LEVEL_LABEL[scenario['level']]} 에 맞춰 만들었어요.")
 
-    if st.button("🔄 대화 새로 시작", use_container_width=True):
-        start_session(scenario, level)
-        st.rerun()
+        if st.button("🗂️ 다른 시나리오 고르기", use_container_width=True):
+            st.session_state.scenario_id = None
+            st.session_state.pop("history", None)
+            st.rerun()
+
+        st.divider()
+
+        has_session = bool(st.session_state.get("session_id"))
+        if st.button("📘 대화 끝내고 리포트 보기", use_container_width=True, disabled=not has_session):
+            with st.spinner("리포트를 만드는 중..."):
+                try:
+                    res = httpx.post(
+                        f"{API_BASE_URL}/sessions/{st.session_state.session_id}/report",
+                        timeout=REPORT_TIMEOUT,
+                    )
+                    res.raise_for_status()
+                    st.session_state.report = res.json()
+                except httpx.HTTPStatusError as exc:
+                    st.error(f"오류 {exc.response.status_code}: {exc.response.text[:300]}")
+                except httpx.HTTPError as exc:
+                    st.error(f"리포트 생성 실패: {exc}")
+            st.rerun()
+
+        if st.button("🔄 대화 새로 시작", use_container_width=True):
+            start_session(scenario)
+            st.rerun()
 
     st.divider()
     health = fetch_health()
@@ -218,9 +333,13 @@ with st.sidebar:
     st.caption(f"{icon} {health.get('detail', '?')}")
 
 # ---------------------------------------------------------------- 본문
-if "history" not in st.session_state or st.session_state.get("scenario_id") != selected_id:
-    start_session(scenario, level)
-st.session_state.level = level
+if scenario is None:
+    render_picker()
+    st.stop()
+
+selected_id = scenario["id"]
+if "history" not in st.session_state:
+    start_session(scenario)
 
 st.title(scenario["title"])
 

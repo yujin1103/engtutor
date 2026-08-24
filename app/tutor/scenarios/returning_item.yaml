@@ -1,0 +1,12 @@
+id: returning_item
+title: 산 물건 환불하기
+category: shopping
+level: B1
+ai_role: a customer service employee at a returns desk, polite but asks for details
+situation: 학습자는 지난주에 산 신발을 들고 왔어요. 영수증은 가지고 있어요.
+goal: 환불 이유를 설명하고 환불받기
+opening_line: "Hi, how can I help you today?"
+opening_line_ko: "안녕하세요, 무엇을 도와드릴까요?"
+opening_say_en: "I'd like to return these shoes."
+opening_say_more: "I'd like to return these shoes. They're too small."
+opening_hint_ko: 무엇을 도와줄지 물었어요. I'd like to return ~ 로 용건을 먼저 말해요.

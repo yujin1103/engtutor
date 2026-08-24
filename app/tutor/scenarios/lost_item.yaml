@@ -1,0 +1,12 @@
+id: lost_item
+title: 잃어버린 물건 찾기
+category: trouble
+level: A2
+ai_role: a station employee at a lost and found desk
+situation: 학습자가 지하철에 가방을 두고 내렸어요. 검은색 배낭이에요.
+goal: 무엇을 어디서 잃어버렸는지 설명하기
+opening_line: "Lost and found. What did you lose?"
+opening_line_ko: "분실물 센터입니다. 무엇을 잃어버리셨어요?"
+opening_say_en: "I lost my bag on the subway."
+opening_say_more: "I lost my bag on the subway. It's a black backpack."
+opening_hint_ko: 뭘 잃어버렸냐고 물었어요. I lost my ~ 로 시작하고 생김새를 덧붙이세요.

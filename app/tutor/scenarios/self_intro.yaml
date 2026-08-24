@@ -1,10 +1,12 @@
 id: self_intro
 title: 처음 만난 사람에게 자기소개하기
+category: people
 level: A1
 ai_role: a friendly classmate on the first day of a language class
 situation: 학습자는 새 수업 첫날이고, 옆자리에 앉은 사람이 말을 걸어왔어요.
 goal: 이름, 사는 곳, 하는 일(또는 전공)을 말하고 상대에게도 되묻기
 opening_line: "Hi! I'm Sam. Is this seat taken?"
+opening_line_ko: "안녕하세요! 저는 샘이에요. 여기 자리 있나요?"
 opening_say_en: "No, go ahead."
 opening_say_more: "No, it's free. I'm Jisu."
 opening_hint_ko: 옆자리에 앉아도 되냐고 물어봤어요. No, go ahead. 는 '네, 앉으세요' 예요.

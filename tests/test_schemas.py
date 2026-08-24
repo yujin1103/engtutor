@@ -40,7 +40,9 @@ def test_every_object_forbids_extra_properties():
 
 def test_schema_requires_all_fields():
     schema = turn_response_schema()
-    assert set(schema["required"]) == {"reply", "corrections", "say_en", "say_more", "hint_ko"}
+    assert set(schema["required"]) == {
+        "reply", "reply_ko", "corrections", "say_en", "say_more", "hint_ko",
+    }
 
 
 def test_repair_note_lists_every_required_field():
@@ -69,7 +71,7 @@ def test_repair_note_mentions_kind_values():
 
 def test_turn_response_accepts_empty_corrections():
     turn = TurnResponse.model_validate(
-        {"reply": "Sure! What size?", "corrections": [], "say_en": "Yes.", "say_more": "Yes, please.", "hint_ko": "사이즈를 말해보세요."}
+        {"reply": "Sure! What size?", "reply_ko": "네, 알겠어요.", "corrections": [], "say_en": "Yes.", "say_more": "Yes, please.", "hint_ko": "사이즈를 말해보세요."}
     )
     assert turn.corrections == []
 
@@ -102,6 +104,42 @@ def test_turn_response_rejects_missing_reply():
 def test_scenarios_load():
     scenarios = load_scenarios()
     assert {"cafe_order", "self_intro", "directions"} <= set(scenarios)
+
+
+def test_every_scenario_belongs_to_a_known_category():
+    """분류를 오타 내면 화면 어디에도 안 나온다. 로딩 시점에 걸려야 한다."""
+    from app.tutor.categories import BY_ID
+
+    for scenario in load_scenarios().values():
+        assert scenario.category in BY_ID, f"{scenario.id}: 모르는 분류 {scenario.category!r}"
+
+
+def test_scenarios_are_ordered_by_category_then_level():
+    """화면에 나오는 순서가 곧 난이도 순이어야 한다. 정렬을 UI 가 다시 하지 않는다."""
+    from app.tutor.categories import sort_key
+
+    keys = [(sort_key(s.category), s.level) for s in load_scenarios().values()]
+    assert keys == sorted(keys)
+
+
+def test_an_unknown_category_is_rejected(tmp_path):
+    (tmp_path / "bad.yaml").write_text(
+        "id: bad\ntitle: 나쁜 시나리오\ncategory: 없는분류\nlevel: A1\n"
+        "ai_role: someone\nsituation: 상황\ngoal: 목표\n"
+        'opening_line: "Hi."\nopening_line_ko: "안녕하세요."\n'
+        'opening_say_en: "Hi."\nopening_say_more: "Hello there."\n'
+        "opening_hint_ko: 인사예요.\n",
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="모르는 분류"):
+        load_scenarios(tmp_path)
+
+
+def test_b1_is_a_valid_level(tmp_path):
+    """A1~A2 를 끝낸 학습자가 갈 곳이 없으면 앱을 떠난다."""
+    levels = {s.level for s in load_scenarios().values()}
+    assert levels <= {"A1", "A2", "B1"}
+    assert "B1" in levels, "B1 시나리오가 하나도 없습니다"
 
 
 @pytest.mark.parametrize("scenario_id", ["cafe_order", "self_intro", "directions"])

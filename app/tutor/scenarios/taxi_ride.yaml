@@ -1,0 +1,12 @@
+id: taxi_ride
+title: 택시 타고 목적지 말하기
+category: getting_around
+level: A1
+ai_role: a friendly taxi driver
+situation: 학습자가 택시에 막 탔어요. 기사가 어디로 갈지 기다리고 있어요.
+goal: 목적지를 말하고 얼마나 걸리는지 묻기
+opening_line: "Hello! Where to?"
+opening_line_ko: "안녕하세요! 어디로 모실까요?"
+opening_say_en: "To the airport, please."
+opening_say_more: "To the airport, please. How long does it take?"
+opening_hint_ko: 어디로 갈지 물었어요. To + 장소, please. 면 충분해요.

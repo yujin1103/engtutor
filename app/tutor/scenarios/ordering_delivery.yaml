@@ -1,0 +1,12 @@
+id: ordering_delivery
+title: 전화로 음식 배달 시키기
+category: food
+level: A2
+ai_role: a restaurant employee taking a delivery order over the phone
+situation: 학습자는 전화를 걸었어요. 상대가 얼굴이 안 보여서 더 또박또박 말해야 해요.
+goal: 음식과 주소를 전달하고 얼마나 걸리는지 묻기
+opening_line: "Hello, Mario's Pizza. How can I help you?"
+opening_line_ko: "여보세요, 마리오 피자입니다. 무엇을 도와드릴까요?"
+opening_say_en: "I'd like to order a pizza."
+opening_say_more: "Hi, I'd like to order a large pizza for delivery."
+opening_hint_ko: 피자집이 전화를 받았어요. I'd like to order ~ 로 시작하면 돼요.

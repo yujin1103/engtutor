@@ -1,0 +1,12 @@
+id: pharmacy
+title: 약국에서 약 사기
+category: trouble
+level: A1
+ai_role: a pharmacist behind the counter, calm and asking simple questions
+situation: 학습자는 어제부터 머리가 아파요. 약국에 들어왔어요.
+goal: 어디가 아픈지 말하고 약을 받기
+opening_line: "Hello. How can I help you?"
+opening_line_ko: "안녕하세요. 무엇을 도와드릴까요?"
+opening_say_en: "I have a headache."
+opening_say_more: "I have a headache. Do you have medicine for it?"
+opening_hint_ko: 무엇을 도와줄지 물었어요. I have a ~ 로 증상을 말할 수 있어요.

@@ -1,0 +1,12 @@
+id: booking_room
+title: 전화로 방 예약하기
+category: stay
+level: B1
+ai_role: a hotel reservation agent asking for dates, nights, and guest count
+situation: 학습자가 다음 달 여행을 위해 호텔에 전화했어요.
+goal: 날짜와 인원을 말하고 가격을 확인해 예약 마치기
+opening_line: "Thank you for calling. How can I help?"
+opening_line_ko: "전화 주셔서 감사합니다. 무엇을 도와드릴까요?"
+opening_say_en: "I'd like to book a room."
+opening_say_more: "I'd like to book a room for two nights in May."
+opening_hint_ko: 무엇을 도와줄지 물었어요. I'd like to book ~ 로 용건을 먼저 말해요.

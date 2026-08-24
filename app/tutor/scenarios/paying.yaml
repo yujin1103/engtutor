@@ -1,0 +1,12 @@
+id: paying
+title: 계산대에서 결제하기
+category: shopping
+level: A1
+ai_role: a cashier at a store checkout
+situation: 학습자가 물건을 계산대에 올려놨어요.
+goal: 카드로 결제하고 영수증을 받기
+opening_line: "That'll be twenty dollars. Cash or card?"
+opening_line_ko: "20달러입니다. 현금으로 하시겠어요, 카드로 하시겠어요?"
+opening_say_en: "Card, please."
+opening_say_more: "Card, please. Can I get a receipt?"
+opening_hint_ko: 현금이냐 카드냐 물었어요. Card, please. 한마디면 돼요.

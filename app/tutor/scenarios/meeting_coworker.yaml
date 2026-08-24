@@ -1,0 +1,12 @@
+id: meeting_coworker
+title: 새 동료와 인사하기
+category: people
+level: A2
+ai_role: a coworker on your first day, welcoming and curious
+situation: 학습자의 첫 출근 날이에요. 옆자리 동료가 인사를 건넸어요.
+goal: 무슨 일을 하는지 서로 소개하기
+opening_line: "Welcome! Is this your first day?"
+opening_line_ko: "환영해요! 오늘 첫 출근이세요?"
+opening_say_en: "Yes, it is. I'm new here."
+opening_say_more: "Yes, it's my first day. I'm on the design team."
+opening_hint_ko: 첫날이냐고 물었어요. Yes, it is. 로 답하고 한마디 덧붙이면 좋아요.

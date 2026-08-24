@@ -74,7 +74,7 @@ def test_matches_the_real_json_for_every_prefix():
     assert extract_string(full, "hint_ko") == (payload["hint_ko"], True)
 
 
-@pytest.mark.parametrize("field", ["reply", "say_en", "say_more", "hint_ko"])
+@pytest.mark.parametrize("field", ["reply", "reply_ko", "say_en", "say_more", "hint_ko"])
 def test_every_string_field_is_extractable(field):
     from app.tutor.schemas import TurnResponse
 
@@ -82,6 +82,7 @@ def test_every_string_field_is_extractable(field):
         reply="Sure!",
         corrections=[],
         say_en="Large.",
+        reply_ko="네, 알겠어요.",
         say_more="A large one, please.",
         hint_ko="사이즈를 물어봤어요.",
     )

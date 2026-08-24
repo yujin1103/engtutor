@@ -1,0 +1,12 @@
+id: hotel_problem
+title: 방에 문제가 있다고 알리기
+category: stay
+level: A2
+ai_role: a hotel front desk clerk who wants to fix the problem quickly
+situation: 학습자 방의 에어컨이 안 나와요. 밤이라 더워서 잠을 못 자겠어요.
+goal: 무엇이 문제인지 설명하고 고쳐 달라고 하기
+opening_line: "Front desk, how may I help you?"
+opening_line_ko: "프런트입니다. 무엇을 도와드릴까요?"
+opening_say_en: "The air conditioner doesn't work."
+opening_say_more: "Hi, the air conditioner in my room doesn't work. Can someone check it?"
+opening_hint_ko: 무엇을 도와줄지 물었어요. ~ doesn't work. 는 '~가 안 돼요' 예요.

@@ -1,0 +1,12 @@
+id: market_price
+title: 시장에서 가격 묻고 깎기
+category: shopping
+level: A2
+ai_role: a friendly vendor at an outdoor market who enjoys a little bargaining
+situation: 학습자가 과일 가판대 앞에 섰어요. 가격표가 없어요.
+goal: 가격을 묻고 조금 깎아 달라고 해보기
+opening_line: "These are fresh today! Interested?"
+opening_line_ko: "오늘 들어온 신선한 거예요! 보시겠어요?"
+opening_say_en: "How much are these?"
+opening_say_more: "How much are these? Can you give me a discount?"
+opening_hint_ko: 오늘 신선하다고 했어요. How much ~ 로 가격부터 물어보세요.

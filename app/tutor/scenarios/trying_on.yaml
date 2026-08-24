@@ -1,0 +1,12 @@
+id: trying_on
+title: 입어보고 다른 걸로 바꾸기
+category: shopping
+level: A2
+ai_role: a shop assistant near the fitting room
+situation: 학습자가 옷을 입어봤는데 조금 작아요.
+goal: 작다고 말하고 다른 색이나 큰 사이즈를 부탁하기
+opening_line: "How does it fit?"
+opening_line_ko: "잘 맞으세요?"
+opening_say_en: "It's a little small."
+opening_say_more: "It's a little small. Can I try a large?"
+opening_hint_ko: 잘 맞냐고 물었어요. a little 을 붙이면 부드럽게 들려요.

@@ -13,10 +13,14 @@ from typing import Literal
 import yaml
 from pydantic import BaseModel, ConfigDict
 
+from .categories import BY_ID, sort_key
+
 SCENARIOS_DIR = Path(__file__).parent / "scenarios"
 PROMPTS_DIR = Path(__file__).parent / "prompts"
 
-Level = Literal["A1", "A2"]
+# B1 은 A1~A2 를 끝낸 학습자가 갈 곳이다. 앱의 중심은 여전히 왕초보지만,
+# 목표가 없으면 조금 익숙해진 사람이 앱을 떠난다.
+Level = Literal["A1", "A2", "B1"]
 
 
 class Scenario(BaseModel):
@@ -26,6 +30,9 @@ class Scenario(BaseModel):
 
     id: str
     title: str
+    # 어느 상황 묶음에 속하는가(app/tutor/categories.py). 시나리오가 30개를 넘으면
+    # 평평한 목록으로는 고를 수 없다.
+    category: str
     level: Level = "A1"
     ai_role: str
     situation: str
@@ -33,6 +40,8 @@ class Scenario(BaseModel):
     opening_line: str
     # 첫 화면은 LLM 호출이 없다. 왕초보가 가장 크게 얼어붙는 지점이므로
     # 여기에도 '그대로 말할 영어'가 있어야 한다.
+    # 첫 발화의 해석. 왕초보는 AI 의 영어 자체를 못 읽으므로 화면에서 열어 볼 수 있어야 한다.
+    opening_line_ko: str
     opening_say_en: str
     opening_say_more: str
     opening_hint_ko: str
@@ -48,10 +57,21 @@ def load_scenarios(directory: Path | None = None) -> dict[str, Scenario]:
             raise ValueError(f"{path.name}: id({scenario.id})가 파일명과 다릅니다.")
         if scenario.id in scenarios:
             raise ValueError(f"시나리오 id 가 중복됩니다: {scenario.id}")
+        if scenario.category not in BY_ID:
+            raise ValueError(
+                f"{path.name}: 모르는 분류입니다: {scenario.category!r} "
+                f"(가능한 값: {', '.join(BY_ID)})"
+            )
         scenarios[scenario.id] = scenario
     if not scenarios:
         raise ValueError(f"시나리오 파일을 찾지 못했습니다: {target}")
-    return scenarios
+    # 분류 순서 -> 레벨 -> 제목. 화면에 나오는 순서가 곧 난이도 순이 되게 한다.
+    return dict(
+        sorted(
+            scenarios.items(),
+            key=lambda kv: (sort_key(kv[1].category), kv[1].level, kv[1].title),
+        )
+    )
 
 
 @lru_cache

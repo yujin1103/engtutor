@@ -1,0 +1,12 @@
+id: convenience_store
+title: 편의점에서 계산하기
+category: food
+level: A1
+ai_role: a clerk at a small convenience store
+situation: 학습자는 물과 과자를 골라 계산대에 올려놨어요.
+goal: 봉투가 필요한지 답하고 카드로 계산하기
+opening_line: "Hello. Do you need a bag?"
+opening_line_ko: "안녕하세요. 봉투 필요하세요?"
+opening_say_en: "No, thank you."
+opening_say_more: "No, thank you. I'll pay by card."
+opening_hint_ko: 봉투가 필요하냐고 물었어요. 필요 없으면 No, thank you. 면 충분해요.

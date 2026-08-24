@@ -1,0 +1,12 @@
+id: subway_help
+title: 지하철에서 갈아타는 법 묻기
+category: getting_around
+level: A2
+ai_role: a helpful stranger waiting on the subway platform
+situation: 학습자는 노선도를 보고 있는데 어디서 갈아타야 할지 모르겠어요.
+goal: 어느 역에서 갈아타는지 알아내기
+opening_line: "You look lost. Do you need help?"
+opening_line_ko: "길을 못 찾으시는 것 같네요. 도와드릴까요?"
+opening_say_en: "Yes. How do I get to City Hall?"
+opening_say_more: "Yes, please. Which line goes to City Hall?"
+opening_hint_ko: 도와줄까요? 라고 물었어요. How do I get to ~ 는 '~에 어떻게 가요' 예요.

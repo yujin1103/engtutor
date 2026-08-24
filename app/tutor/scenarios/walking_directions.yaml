@@ -1,0 +1,12 @@
+id: walking_directions
+title: 걸어서 가는 길 물어보기
+category: getting_around
+level: A1
+ai_role: a kind local walking down the street, not in a hurry
+situation: 학습자는 지도를 봐도 모르겠어서 지나가는 사람에게 말을 걸려고 해요.
+goal: 가까운 편의점이 어느 쪽인지 알아내기
+opening_line: "Excuse me, are you looking for something?"
+opening_line_ko: "실례합니다, 뭔가 찾고 계세요?"
+opening_say_en: "Yes. Where is the convenience store?"
+opening_say_more: "Yes, excuse me. Is there a convenience store near here?"
+opening_hint_ko: 뭘 찾냐고 물었어요. Where is ~ 하나면 길을 물을 수 있어요.

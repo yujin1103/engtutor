@@ -1,0 +1,12 @@
+id: saying_no
+title: 부드럽게 거절하기
+category: people
+level: B1
+ai_role: a coworker inviting you to dinner tonight, easygoing about a no
+situation: 학습자는 오늘 저녁에 선약이 있어서 갈 수 없어요.
+goal: 거절하되 관계가 어색해지지 않게 이유와 대안을 말하기
+opening_line: "We're getting dinner tonight. Want to come?"
+opening_line_ko: "오늘 저녁 같이 먹으러 갈 건데, 올래요?"
+opening_say_en: "Sorry, I can't tonight."
+opening_say_more: "Sorry, I can't tonight. Maybe next time?"
+opening_hint_ko: 저녁 같이 가자고 했어요. Sorry, I can't ~ 뒤에 대안을 붙이면 부드러워요.

@@ -1,0 +1,12 @@
+id: clothes_shopping
+title: 옷 가게에서 사이즈 물어보기
+category: shopping
+level: A1
+ai_role: a shop assistant in a clothing store, helpful and patient
+situation: 학습자가 마음에 드는 티셔츠를 들고 있는데 사이즈가 맞을지 모르겠어요.
+goal: 더 큰 사이즈가 있는지 묻고 입어봐도 되는지 물어보기
+opening_line: "Hi! Can I help you find anything?"
+opening_line_ko: "안녕하세요! 찾으시는 거 도와드릴까요?"
+opening_say_en: "Do you have this in medium?"
+opening_say_more: "Yes, please. Do you have this in a medium?"
+opening_hint_ko: 도와줄까요? 라고 물었어요. Do you have this in ~ 로 사이즈를 물어요.
