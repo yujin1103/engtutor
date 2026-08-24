@@ -70,7 +70,24 @@ class _FakeClient:
 
     def chat_json(self, **kwargs):
         self.calls += 1
+        self.messages = kwargs.get("messages")
         return dict(self._payload)
+
+
+class _SequenceClient(_FakeClient):
+    """호출마다 다른 응답을 준다. 재시도 동작을 보려는 것."""
+
+    def __init__(self, *payloads):
+        super().__init__(payloads[0])
+        self._queue = list(payloads)
+        self.sent: list[list[dict]] = []
+
+    def chat_json(self, **kwargs):
+        self.calls += 1
+        self.sent.append(kwargs.get("messages"))
+        # 다 떨어지면 마지막 응답을 반복한다 (재시도 횟수를 시험이 강제하지 않도록)
+        payload = self._queue.pop(0) if len(self._queue) > 1 else self._queue[0]
+        return dict(payload)
 
 
 _GOOD = {
@@ -90,12 +107,36 @@ def test_generate_one_returns_entry():
 
 
 def test_generate_rejects_a_different_headword():
-    """모델이 다른 단어로 바꿔치기하면 실패로 처리해야 한다."""
+    """모델이 다른 단어로 바꿔치기하면 실패로 처리해야 한다.
+
+    실제로 arrange -> arrive 로 바뀌어 NGSL 배치에서 딱 한 단어가 빠졌다.
+    비슷하게 생긴 고빈도 단어로 끌려가는 실패라 검사를 느슨하게 하면 안 된다.
+    """
     client = _FakeClient({**_GOOD, "word": "lend"})
     result = WordGenerator(client).generate_one("borrow")
     assert not result.ok
     assert "lend" in result.error
-    assert client.calls == 2  # 온도를 낮춰 1회 재시도
+    assert client.calls == 3  # 온도를 낮추며 두 번 재시도
+
+
+def test_retry_tells_the_model_what_went_wrong():
+    """같은 요청을 그대로 반복하면 대개 똑같이 실패한다. 무엇이 틀렸는지 알려줘야 한다."""
+    client = _SequenceClient({**_GOOD, "word": "lend"})
+    WordGenerator(client).generate_one("borrow")
+
+    first, second = client.sent[0], client.sent[1]
+    assert len(first) == 1, "1차 요청에는 수리 지시문이 붙지 않는다"
+    note = second[-1]["content"]
+    assert "lend" in note, "무엇을 잘못했는지가 안 들어갔다"
+    assert '"borrow"' in note, "올바른 표제어를 명시해야 한다"
+
+
+def test_retry_recovers_the_headword():
+    """1차에 다른 단어를 뱉어도 재시도로 복구되면 성공이다 (arrange 사례)."""
+    client = _SequenceClient({**_GOOD, "word": "lend"}, _GOOD)
+    result = WordGenerator(client).generate_one("borrow")
+    assert result.ok and result.entry.word == "borrow"
+    assert client.calls == 2
 
 
 def test_generate_many_preserves_order():

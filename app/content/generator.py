@@ -33,6 +33,16 @@ class GenerationResult:
         return self.entry is not None
 
 
+def _repair_note(target: str, exc: Exception) -> str:
+    """직전 실패를 그대로 알려 주는 재시도 지시문."""
+    return (
+        f'SYSTEM NOTE: your previous answer was rejected. Reason: {exc}. '
+        f'The "word" field must be exactly "{target}" — never a different, similar-looking, '
+        f'or more common word. Describe "{target}" itself. '
+        "Reply again with ONLY the JSON object required by the schema."
+    )
+
+
 class WordGenerator:
     def __init__(self, client: LLMClient) -> None:
         self._client = client
@@ -40,23 +50,35 @@ class WordGenerator:
         self._schema = json_schema_for(WordEntry)
 
     def generate_one(self, word: str) -> GenerationResult:
-        for temperature in (0.5, 0.1):  # 실패하면 온도를 낮춰 1회 재시도
+        target = word.strip().lower()
+        ask: list[dict[str, str]] = [{"role": "user", "content": f"Headword: {word}"}]
+        last: Exception | None = None
+
+        # 온도를 낮추며 재시도하되, 두 번째부터는 **무엇이 틀렸는지** 알려준다.
+        # 같은 요청을 그대로 반복하면 대개 똑같이 실패한다 (TutorService 와 같은 이유).
+        for temperature in (0.5, 0.1, 0.0):
             try:
                 raw = self._client.chat_json(
                     system=self._system,
-                    messages=[{"role": "user", "content": f"Headword: {word}"}],
+                    messages=ask,
                     schema=self._schema,
                     temperature=temperature,
                     max_tokens=768,
                 )
                 entry = WordEntry.model_validate(raw)
                 # 모델이 다른 단어로 바꿔치기하는 경우가 있어 확인한다.
-                if entry.word != word.strip().lower():
+                # arrange -> arrive 처럼 비슷하게 생긴 고빈도 단어로 끌려간다.
+                if entry.word != target:
                     raise ValueError(f"다른 단어를 생성했습니다: {entry.word!r}")
                 return GenerationResult(word=word, entry=entry)
             except (LLMError, ValidationError, ValueError) as exc:
                 last = exc
                 logger.debug("[%s] 생성 실패(temperature=%s): %s", word, temperature, exc)
+                ask = [
+                    {"role": "user", "content": f"Headword: {word}"},
+                    {"role": "user", "content": _repair_note(target, exc)},
+                ]
+
         return GenerationResult(word=word, entry=None, error=str(last))
 
     def generate_many(self, words: list[str], *, concurrency: int = 4) -> list[GenerationResult]:
