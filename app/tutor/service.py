@@ -21,8 +21,9 @@ MAX_HISTORY_MESSAGES = 12
 _REPAIR_NOTE = (
     "SYSTEM NOTE: your previous output did not match the required JSON schema. "
     "Reply again with ONLY a JSON object containing exactly these keys: "
-    "reply (string), corrections (array of objects with original/better/note), "
-    "hint_ko (string). No markdown fence, no commentary."
+    "reply (string), corrections (array of objects with original/kind/better/note "
+    "where kind is 'mistake' or 'polish'), hint_ko (string, Korean). "
+    "No markdown fence, no commentary."
 )
 
 

@@ -35,15 +35,17 @@ docker compose exec ollama ollama pull qwen3:14b   # 약 9GB, 최초 1회
 - API 문서: http://localhost:8000/docs
 - 헬스체크: http://localhost:8000/healthz
 
-### 3) Claude API 모드 (데모용)
-
-`.env`에서 `LLM_BACKEND=anthropic`으로 바꾸고, 9GB 모델 없이 두 서비스만 띄운다.
+### 3) 단어 검수 UI (선택)
 
 ```powershell
-docker compose up -d api ui
+docker compose --profile review up -d review   # http://localhost:8502
 ```
 
-`api`에 `depends_on`을 걸지 않았기 때문에 서비스명을 지정하면 `ollama`가 따라 올라오지 않는다.
+> **백엔드는 로컬 Ollama 전용이다.** 상용 API는 쓰지 않는다.
+> `LLM_BACKEND=anthropic` 경로가 코드에 남아 있지만 운영에서는 쓰지 않으며,
+> 백엔드 교체 가능성을 증명하는 용도다. 그 경우 `docker compose up -d api ui` 로
+> 9GB 모델 없이 두 서비스만 띄울 수 있다 — `api`에 `depends_on`을 걸지 않았기 때문에
+> 서비스명을 지정하면 `ollama`가 따라 올라오지 않는다.
 
 ### 4) 종료
 
@@ -115,10 +117,12 @@ POST /sessions/{session_id}/report
 
 LLM 호출은 **세션당 1회**뿐이다. 교정 기록은 `corrections` 테이블 값을 그대로 싣는다.
 
-> **리포트는 API 백엔드 사용을 권장한다.** 총평과 패턴 요약은 대화 전체를 읽고 추상화하는
-> 작업이라 로컬 7~14B 모델에서는 품질 편차가 크다. 리포트를 뽑기 전에 `.env`의
-> `LLM_BACKEND=anthropic`으로 바꾸고 `docker compose restart api` 하면 같은 세션을 그대로
-> 이어서 쓸 수 있다. 대화 자체는 로컬 모델로 충분하다.
+> **이 프로젝트는 로컬 Ollama만 쓴다.** 상용 API는 사용하지 않는다.
+> Anthropic 백엔드 구현이 남아 있는 것은 **호출부가 백엔드를 몰라야 한다**는 설계를
+> 실제로 증명하기 위해서다(`tests/test_backends.py`). 필요해지면 `.env`의
+> `LLM_BACKEND`만 바꾸면 되고 애플리케이션 코드는 한 줄도 건드리지 않는다.
+> 실측상 `qwen3:14b` 의 리포트 품질은 충분했다 — 개별 교정 2건을
+> "의문문에서 조동사 자리를 자주 놓쳐요" 같은 상위 패턴으로 묶어낸다.
 
 리포트를 생성하면 세션은 종료 처리되어(`ended_at` 기록) 더 이상 대화를 이어갈 수 없다.
 

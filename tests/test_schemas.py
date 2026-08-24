@@ -43,6 +43,30 @@ def test_schema_requires_all_three_fields():
     assert set(schema["required"]) == {"reply", "corrections", "hint_ko"}
 
 
+def test_repair_note_lists_every_required_field():
+    """재시도 지시문이 스키마와 어긋나면 재시도 경로가 구조적으로 실패한다.
+
+    실제로 kind 를 추가하면서 이 문자열을 안 고쳐, 1차 실패한 턴에게
+    '필수 필드를 빼라'고 가르치고 있었다. 두 곳을 강제로 묶어 둔다.
+    """
+    from app.tutor.service import _REPAIR_NOTE
+
+    schema = turn_response_schema()
+    required = list(schema["required"])
+    required += schema["properties"]["corrections"]["items"]["required"]
+
+    missing = [f for f in required if f not in _REPAIR_NOTE]
+    assert not missing, f"_REPAIR_NOTE 에 빠진 필수 필드: {missing}"
+
+
+def test_repair_note_mentions_kind_values():
+    """kind 는 enum 이라 값까지 알려주지 않으면 모델이 임의 값을 넣는다."""
+    from app.tutor.service import _REPAIR_NOTE
+
+    for value in ("mistake", "polish"):
+        assert value in _REPAIR_NOTE
+
+
 def test_turn_response_accepts_empty_corrections():
     turn = TurnResponse.model_validate(
         {"reply": "Sure! What size?", "corrections": [], "hint_ko": "사이즈를 말해보세요."}
