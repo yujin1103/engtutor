@@ -126,6 +126,51 @@ docker compose exec api python scripts/smoke_chat.py --strictness gentle
 docker compose exec api python scripts/smoke_chat.py --strictness strict
 ```
 
+### 응답 스트리밍 — 빈 화면을 보는 시간
+
+JSON 전체가 완성될 때까지 기다렸다가 한 번에 그리면 그동안 화면이 비어 있다.
+왕초보에게 몇 초의 침묵은 "고장"으로 읽힌다.
+
+스키마 필드 순서가 `reply` → `corrections` → `say_en`/`say_more` → `hint_ko` 라서
+**`reply` 가 가장 먼저 완성된다.** 생성 중인 버퍼에서 `reply` 만 긁어내 흘려보낸다
+(`app/llm/partial_json.py` — 아직 유효하지 않은 JSON 이라 `json.loads` 를 못 쓴다).
+
+| | 비스트리밍 | 스트리밍 |
+|---|---|---|
+| 첫 글자 | 1.8s | **0.1s** |
+| 전체 완료 | 1.8s | 1.8s |
+
+총 시간은 그대로다. 줄어드는 건 빈 화면을 보는 시간뿐이고, 그게 목적이다.
+
+교정과 힌트는 검증이 끝난 뒤 한 번에 그린다 — 반쯤 만들어진 교정을 학습자에게
+보여 주지 않기 위해서다. 1차 응답이 스키마 검증에 걸리면 `reset` 사건으로 이미
+보여준 글자를 폐기하고 재시도한다. 화면과 DB 가 어긋나면 안 되기 때문이다.
+
+`format`(스키마 강제)은 스트리밍에서도 그대로 걸려 있어, **최종 결과물의 구조 보장은
+비스트리밍과 동일하다.** `LLMClient.chat_json_stream` 은 추상 메서드가 아니라서
+스트리밍을 지원하지 않는 백엔드(Anthropic)도 같은 계약으로 동작한다.
+
+```powershell
+docker compose exec api python scripts/smoke_chat.py --stream
+docker compose exec api python scripts/probe_stream.py   # 지연 원인 진단
+```
+
+#### 지연은 대부분 큐 대기였다
+
+`probe_stream.py` 로 재보니 Ollama 자체 계측과 벽시계가 어긋났다.
+
+| | NGSL 배치 동시 실행 중 | GPU 유휴 |
+|---|---|---|
+| 프롬프트 처리(프리필) | 0.02s | 0.02s |
+| 토큰 생성 | 2.06s | 2.06s |
+| **실제 벽시계** | **8.64s** | **2.39s** |
+
+계산량은 똑같다. 차이 6.5초는 전부 **큐 대기**였다 — `OLLAMA_NUM_PARALLEL=1` 이라
+Ollama 가 한 번에 한 요청만 처리하는데, 배치가 동시 4개를 던지고 있었다.
+프리필 병목도 `<think>` 유출도 아니다.
+
+동시 사용자 지연을 걱정한다면 프롬프트를 줄이는 게 아니라 이 값을 손봐야 한다는 뜻이다.
+
 ### 교정의 두 등급
 
 `Correction.kind`로 나눈다. 왕초보에게 "틀렸다"는 신호를 남발하면 위축되기 때문이다.
@@ -181,7 +226,14 @@ docker compose exec api python content/batch_generate.py --wordlist content/data
 이미 생성된 단어는 자동으로 건너뛴다(`--redo`로 강제). **사람이 승인한 항목은 배치가 덮어쓰지 않는다** —
 검수 결과를 배치가 날리면 검수가 무의미해지기 때문이다.
 
-실측(qwen3:14b, `--concurrency 4`): **60단어 93.7초 (0.64단어/초)**. NGSL 2,800단어면 약 73분.
+실측(qwen3:14b, `--concurrency 4`): **NGSL 2,801단어 완주**, 0.6단어/초.
+`OLLAMA_NUM_PARALLEL=1` 이라 `--concurrency 4` 는 GPU 병렬이 아니라 큐를 채울 뿐이다.
+
+배치 중 **`arrange` 한 단어가 실패**했다. 모델이 `arrange` 대신 `arrive` 를 생성했고
+표제어 대조 검사가 막았다. 온도만 낮춰 같은 요청을 반복하니 두 번 다 `arrive` 가
+나왔고, 거부 사유와 올바른 표제어를 명시하는 수리 지시문을 붙이자 한 번에 복구됐다.
+비슷하게 생긴 고빈도 단어로 끌려가는 실패라 대조 검사는 느슨하게 두지 않는다 —
+잘못된 표제어로 사전에 들어가면 검수자도 알아채기 어렵다.
 
 ### 2) 검수
 
@@ -310,7 +362,7 @@ LLMClient.chat_json(system, messages, schema)
 
 ```
 app/
-├── main.py            FastAPI: /chat · /scenarios · /strictness · /healthz · /sessions/{id}/report
+├── main.py            FastAPI: /chat · /chat/stream(SSE) · /scenarios · /strictness · /healthz · /sessions/{id}/report
 ├── config.py          .env 로딩 (pydantic-settings)
 ├── session_store.py   SqliteSessionStore + InMemorySessionStore (같은 Protocol)
 ├── db/                models.py(sessions/turns/corrections) · crud.py · database.py
@@ -333,7 +385,7 @@ ui/chat_app.py         Streamlit 채팅 UI
 content/               batch_generate.py · review_app.py · data/
 tests/                 스키마·시나리오·DB·리포트·콘텐츠·백엔드 전환
 tests/security/        인젝션 케이스 14종 + 판정 로직 (표와 공유)
-scripts/               smoke_chat.py · security_report.py
+scripts/               smoke_chat.py · probe_stream.py · security_report.py
 ```
 
 ### 설계 메모
