@@ -147,17 +147,10 @@ def test_generate_many_preserves_order():
 # ---------------------------------------------------------------- 저장 + 검수 게이트
 @pytest.fixture()
 def db(tmp_path, monkeypatch):
-    monkeypatch.setenv("DB_PATH", str(tmp_path / "content.db"))
-    from app import config
+    from .conftest import temporary_database
 
-    config.get_settings.cache_clear()
-    import importlib
-
-    from app.db import database
-
-    importlib.reload(database)
-    database.init_db()
-    return database
+    with temporary_database(tmp_path / "content.db", monkeypatch) as database:
+        yield database
 
 
 def _entry(**over) -> WordEntry:

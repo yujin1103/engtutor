@@ -14,22 +14,12 @@ from app.tutor.schemas import Correction, TurnResponse, json_schema_for
 @pytest.fixture()
 def sqlite_store(tmp_path, monkeypatch):
     """임시 DB 파일로 SqliteSessionStore 를 만든다."""
-    monkeypatch.setenv("DB_PATH", str(tmp_path / "test.db"))
+    from .conftest import temporary_database
 
-    from app import config
+    with temporary_database(tmp_path / "test.db", monkeypatch):
+        from app.session_store import SqliteSessionStore
 
-    config.get_settings.cache_clear()
-
-    import importlib
-
-    from app.db import database
-
-    importlib.reload(database)
-    database.init_db()
-
-    from app.session_store import SqliteSessionStore
-
-    return SqliteSessionStore()
+        yield SqliteSessionStore()
 
 
 def _turn(reply: str, corrections: list[Correction] | None = None) -> TurnResponse:
