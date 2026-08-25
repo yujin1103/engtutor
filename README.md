@@ -336,6 +336,9 @@ docker compose exec api python content/screen_words.py --code headword_absent --
 | `example_ignores_pattern` | 🟡 | 문형이 `listen to` 인데 예문에 `to` 가 없음 |
 | `duplicate_example` | ⚪ | 예문 공유. `I am a student.` 는 be·i·student 모두에 정당하다 |
 | `confused_with_malformed` | ⚪ | `"chip (as in 'a piece')"` 처럼 단어 자리에 해설이 들어감 |
+| `pos_claim_wrong` | 🟡 | `'abroad'는 명사로만` — abroad 는 부사다. 사전에 그 품사가 아예 없음 |
+| `pos_claim_overreach` | ⚪ | `'name'은 명사로만` — 틀리진 않게 들리지만 name 은 동사이기도 하다 |
+| `countability_claim_unchecked` | ⚪ | 가산성을 단정함. 사전으로 확인이 안 되니 사람에게 넘긴다 |
 
 `duplicate_example` 을 처음엔 🔴 로 뒀다가 되돌렸다. 멀쩡한 25개가 큐 맨 앞을
 차지했기 때문이다. **오탐은 사람 시간을 낭비하고, 미탐은 나쁜 항목을 뒤로 민다** —
@@ -354,6 +357,48 @@ docker compose exec api python content/screen_words.py --code headword_absent --
 83개 재생성에서 76개가 이 경로로 고쳐졌다. 남은 7개(`else`, `nowhere`, `extent` 등)는
 모델이 세 번 다 자연스러운 우회 표현을 골랐다 — 그건 사람이 30초면 고친다.
 **그게 검수 큐가 존재하는 이유다.**
+
+#### 사전과 대조한다 — 없는 단어와 틀린 품사
+
+규칙만으로는 못 잡는 게 있다. **문장이 멀쩡하고 단어도 멀쩡한데 내용이 거짓인 경우**다.
+
+> `restaurant` — "동사로는 'restaurate'가 있어요 (비교적 드묾)"
+> `harbor` — "'구두'를 의미하는 'habor'와 발음이 비슷해요"
+
+`restaurate` 도 `habor` 도 존재하지 않는다. 후자는 없는 단어를 만들고 **그 뜻까지 지어냈다.**
+
+전수 조사했다. `usage_note` 의 인용 영어, `example`, `pattern`, `confused_with` 에서
+토큰 4,004개를 뽑아 WordNet 에 조회하고, 남은 후보를 사람이 읽었다.
+**결과 13건** — 지어낸 파생어 6, 외국어 혼입 3(`oranje` 네덜란드어 · `ayer` 스페인어 ·
+`luft` 독일어), 철자 오류 3, 비표준형 1. 전부 교정했다.
+
+검사기에 LLM 을 쓰지 않는다. **환각을 LLM 으로 검사하면 검사기도 환각한다.**
+사전은 WordNet(`app/content/lexicon.py`) — CLAUDE.md §3.5 가 지정한 교차 확인 자원이다.
+
+```powershell
+docker compose exec api python content/apply_fixes.py --dry-run   # 확인만
+docker compose exec api python content/apply_fixes.py             # 적용
+```
+
+교정은 SQL 이 아니라 **데이터 파일**(`content/data/manual_fixes.yaml`)에 이유와 함께 둔다.
+배치를 다시 돌려도 이 스크립트 한 번이면 판단이 복원된다. 교정본도 생성물과 **같은
+스키마와 같은 선별기**를 통과시킨다 — 손으로 썼다고 검증을 건너뛰면 고치면서 새 결함을
+넣어도 아무도 모른다.
+
+**사전이 없어도 앱은 돌아간다.** nltk 나 코퍼스가 없으면 품사 대조가 조용히 꺼진다.
+다만 가산성 호출은 사전이 필요 없으므로 그때도 계속 뜬다 — 검사가 통째로 사라지면
+없는 줄도 모른 채 지나간다. 코퍼스는 런타임이 아니라 이미지에 굽는다(`Dockerfile`).
+
+감사 기록 전문은 **[docs/hallucinations.md](docs/hallucinations.md)**.
+
+##### 재현율을 택했다
+
+SemCor 태깅 빈도가 있는 뜻으로만 좁히면 품사 모순 판정이 48건에서 30건으로 줄어
+조용해진다. 그런데 그때 빠지는 것에 `team`(team up)·`golf`·`burden` 처럼 **진짜 오류가
+섞여 있었다.** 선별기는 승인하지 않고 순서만 매기므로 오탐 비용이 미탐 비용보다 낮다.
+
+품사 단정 검사를 넣고 큐가 165 → **251건**이 됐다. 결함이 는 게 아니라
+**안 보이던 것이 보이게 된 것이다.**
 
 ### 3) 검수
 

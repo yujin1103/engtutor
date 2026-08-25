@@ -21,6 +21,7 @@ from dataclasses import dataclass
 from typing import Literal, Protocol
 
 from ..tutor.korean import has_hangul
+from . import lexicon
 
 Severity = Literal["high", "medium", "low"]
 
@@ -251,6 +252,95 @@ def pattern_forms(pattern: str, word: str) -> list[tuple[str, ...]]:
     return forms
 
 
+# ---------------------------------------------------------------------------
+# 품사 단정 검사
+#
+# 생성된 설명이 가장 자주 저지르는 거짓이 품사 단정이다. NGSL 2,801개 중
+# "…로만 쓰인다" 형태의 주장이 123건 있었고, 표본을 읽어 보니 상당수가 틀렸다 —
+# "'name'은 명사로만 쓰이고" (name 은 동사다), "'abroad'는 명사로만" (부사다).
+#
+# 이건 없는 단어보다 잡기 어렵다. 단어는 전부 실재하고 **주장만 거짓**이라서
+# 존재 검사로는 하나도 안 걸린다. 사전의 품사 태그와 대조해야 드러난다.
+#
+# 주어가 한국어인 주장은 판정하지 않는다 — "한국어 '이점'은 명사로만 쓰이지만"
+# 은 한국어에 대한 말이라 영어 사전으로 반증할 수 없다. 실제로 20건이 그랬다.
+_QUOTE = r"['\"‘’“”]?"
+_POS_ONLY_CLAIM = re.compile(
+    _QUOTE + r"([A-Za-z][A-Za-z\-]{1,24})" + _QUOTE + r"\s*(?:은|는)\s*(명사|동사|형용사|부사)로만"
+)
+
+# "'X'는 동사로는 쓰지 않아요" 처럼 특정 품사를 부정하는 주장.
+_POS_DENIAL_CLAIM = re.compile(
+    _QUOTE + r"([A-Za-z][A-Za-z\-]{1,24})" + _QUOTE
+    + r"\s*(?:은|는)[^.!?\n]{0,40}?(명사|동사|형용사|부사)로는[^.!?\n]{0,20}?(?:않|안 )"
+)
+
+# 가산성 주장. WordNet 에는 가산성 정보가 없어서 **판정할 수 없다** — 사람에게 넘긴다.
+# advice 를 불가산이라 한 건 맞지만, adviser 를 불가산이라 한 항목도 실제로 있었다.
+_COUNTABILITY_CLAIM = re.compile(r"불가산|가산명사|셀 수 (?:없|있)")
+
+
+def _pos_claim_findings(row: WordLike) -> list[Finding]:
+    """설명의 품사 단정을 사전과 대조한다. 사전이 없으면 아무것도 하지 않는다."""
+    out: list[Finding] = []
+    note = row.usage_note
+
+    # 품사 대조만 사전이 필요하다. 가산성 호출은 사전 없이도 해야 한다 —
+    # 사전이 없다고 "사람이 봐 주세요"까지 사라지면 검사가 조용히 약해진다.
+    for match in _POS_ONLY_CLAIM.finditer(note) if lexicon.available() else ():
+        target, claimed_ko = match.group(1), match.group(2)
+        actual = lexicon.parts_of_speech(target)
+        if actual is None:
+            continue  # 사전에 없는 단어는 "모른다"지 "틀렸다"가 아니다
+        claimed = lexicon.KO_POS[claimed_ko]
+        actual_ko = "·".join(lexicon.POS_KO[p] for p in lexicon.ALL_POS if p in actual)
+        if claimed not in actual:
+            out.append(
+                Finding(
+                    "pos_claim_wrong",
+                    "medium",
+                    f"'{target}' — {claimed_ko}라고 했는데 사전에는 {actual_ko} 뜻만 있어요",
+                )
+            )
+        elif actual - {claimed}:
+            # 교육적 단순화일 수 있어서 심각도를 낮춘다. 다만 'name 은 명사로만'
+            # 처럼 학습자가 그대로 외우면 틀리는 것도 여기 들어온다.
+            others = "·".join(lexicon.POS_KO[p] for p in lexicon.ALL_POS if p in actual - {claimed})
+            out.append(
+                Finding(
+                    "pos_claim_overreach",
+                    "low",
+                    f"'{target}' — {claimed_ko}로만이라고 했는데 {others} 뜻도 있어요",
+                )
+            )
+
+    for match in _POS_DENIAL_CLAIM.finditer(note) if lexicon.available() else ():
+        target, denied_ko = match.group(1), match.group(2)
+        actual = lexicon.parts_of_speech(target)
+        if actual is None:
+            continue
+        if lexicon.KO_POS[denied_ko] in actual:
+            out.append(
+                Finding(
+                    "pos_claim_wrong",
+                    "medium",
+                    f"'{target}' — {denied_ko}로 안 쓴다고 했는데 사전에 {denied_ko} 뜻이 있어요",
+                )
+            )
+
+    if _COUNTABILITY_CLAIM.search(note):
+        # 판정이 아니라 호출이다. 사전에 가산성 정보가 없으니 사람이 봐야 한다.
+        out.append(
+            Finding(
+                "countability_claim_unchecked",
+                "low",
+                "가산성을 단정했어요 — 사전으로 확인이 안 되니 사람이 봐 주세요",
+            )
+        )
+
+    return out
+
+
 def screen(row: WordLike) -> list[Finding]:
     """한 항목만 보고 판단할 수 있는 검사."""
     out: list[Finding] = []
@@ -311,6 +401,8 @@ def screen(row: WordLike) -> list[Finding]:
                     f"예문이 문형을 안 보여줘요 — {'·'.join(closest)} 가 예문에 없어요",
                 )
             )
+
+    out.extend(_pos_claim_findings(row))
 
     if row.level not in VALID_LEVELS:
         out.append(Finding("bad_level", "medium", f"레벨 값이 이상해요: {row.level!r}"))
