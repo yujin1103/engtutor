@@ -238,3 +238,29 @@ def word_tips_for(
         )
         for r in db.execute(stmt).scalars()
     ]
+
+
+def cloze_candidates(
+    db: DbSession,
+    *,
+    level: str | None = None,
+    reviewed_only: bool = False,
+    limit: int = 60,
+) -> list[WordRow]:
+    """빈칸 문제로 쓸 후보를 **빈도 순**으로 준다.
+
+    빈도 순인 이유는 검수 UI 와 같다 — 학습자가 열 문제만 풀고 그만두더라도
+    그 열 개가 가장 자주 쓰는 단어여야 한다.
+
+    여기서는 SQL 로 걸러낼 수 있는 것만 거른다. 안전 판정(선별기 통과 여부)은
+    파이썬이 해야 해서 tutor.cloze.is_safe_to_serve 가 맡는다. 그래서 호출부가
+    필요한 개수보다 넉넉히 받아 걸러 쓰도록 limit 기본값을 크게 잡았다.
+    """
+    stmt = select(WordRow).where(WordRow.example != "")
+    if level:
+        stmt = stmt.where(WordRow.level == level)
+    if reviewed_only:
+        stmt = stmt.where(WordRow.reviewed.is_(True))
+    # rank 가 없는 단어(NGSL 목록 밖)는 뒤로 보낸다.
+    stmt = stmt.order_by(WordRow.rank.is_(None), WordRow.rank, WordRow.word).limit(limit)
+    return list(db.execute(stmt).scalars())

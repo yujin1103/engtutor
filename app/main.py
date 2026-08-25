@@ -20,6 +20,8 @@ from .report.schemas import SessionReport
 from .report.service import ReportService
 from .session_store import SqliteSessionStore
 from .tutor.categories import CATEGORIES
+from .tutor import cloze as cloze_mod
+from .tutor.levels import DEFAULT_LEVEL
 from .tutor.loader import Scenario, get_scenarios
 from .tutor.schemas import TurnResponse
 from .tutor.service import TutorService
@@ -236,6 +238,107 @@ def chat_stream(req: ChatRequest) -> StreamingResponse:
             # 나중에 Caddy 뒤에 둘 때 프록시가 버퍼링해 스트리밍이 죽는 걸 막는다.
             "X-Accel-Buffering": "no",
         },
+    )
+
+
+# --------------------------------------------------------------- 빈칸 채우기
+#
+# 완전 초보는 문장을 통째로 만들지 못한다. 한 칸만 채우게 하면 시작할 수 있다.
+# 문제는 LLM 이 만들지 않는다 — 검수를 거친 예문에서 표제어를 **지워서** 만든다.
+# 새로 만들어지는 정보가 없으니 새로 틀릴 것도 없다(app/tutor/cloze.py).
+
+
+class ClozeOut(BaseModel):
+    """학습자에게 내보내는 빈칸. **정답은 넣지 않는다** — 채점은 서버가 한다."""
+
+    word: str
+    level: str
+    meaning_ko: str
+    sentence: str
+    pattern: str | None = None
+    reviewed: bool
+
+
+class ClozeAnswerRequest(BaseModel):
+    word: str
+    said: str = Field(description="학습자가 말했거나 적은 답")
+
+
+class ClozeAnswerOut(BaseModel):
+    verdict: Literal["correct", "wrong_form", "wrong_word", "not_a_word", "empty"]
+    ok: bool
+    said: str
+    answer: str
+    message_ko: str
+
+
+@app.get("/cloze", response_model=list[ClozeOut])
+def list_cloze(
+    level: str = DEFAULT_LEVEL,
+    count: int = 10,
+    offset: int = 0,
+    speech: bool = False,
+    reviewed_only: bool = False,
+) -> list[ClozeOut]:
+    """빈칸 문제를 빈도 순으로 준다.
+
+    `speech=true` 면 기능어 빈칸을 뺀다 — `and` 를 마이크에 대고 말하는 건 연습이
+    아니고, 짧고 강세 없는 낱말은 전사가 가장 많이 흔들린다.
+    """
+    from .db import crud
+    from .db.database import db_session
+
+    count = max(1, min(count, 50))
+    with db_session() as db:
+        # 안전 판정과 음성 판정이 파이썬 쪽에 있어서 넉넉히 받아 걸러 쓴다.
+        rows = crud.cloze_candidates(
+            db, level=level, reviewed_only=reviewed_only, limit=(offset + count) * 6 + 60
+        )
+        out: list[ClozeOut] = []
+        for row in rows:
+            item = cloze_mod.make_item(row)
+            if item is None or not cloze_mod.is_safe_to_serve(row):
+                continue
+            if speech and not cloze_mod.is_speakable(item):
+                continue
+            out.append(
+                ClozeOut(
+                    word=item.word,
+                    level=item.level,
+                    meaning_ko=item.meaning_ko,
+                    sentence=item.sentence,
+                    pattern=item.pattern,
+                    reviewed=item.reviewed,
+                )
+            )
+    return out[offset : offset + count]
+
+
+@app.post("/cloze/answer", response_model=ClozeAnswerOut)
+def answer_cloze(req: ClozeAnswerRequest) -> ClozeAnswerOut:
+    """채점은 서버가 한다. 정답이 클라이언트로 미리 나가지 않는다."""
+    from sqlalchemy import select
+
+    from .db.database import db_session
+    from .db.models import WordRow
+
+    with db_session() as db:
+        row = db.execute(
+            select(WordRow).where(WordRow.word == req.word.strip().lower())
+        ).scalar_one_or_none()
+        if row is None:
+            raise HTTPException(status_code=404, detail=f"모르는 단어예요: {req.word}")
+        item = cloze_mod.make_item(row)
+    if item is None:
+        raise HTTPException(status_code=422, detail=f"빈칸을 만들 수 없는 항목이에요: {req.word}")
+
+    result = cloze_mod.grade(item, req.said)
+    return ClozeAnswerOut(
+        verdict=result.verdict,
+        ok=result.ok,
+        said=result.said,
+        answer=result.answer,
+        message_ko=result.message_ko,
     )
 
 

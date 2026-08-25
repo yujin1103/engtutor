@@ -152,3 +152,32 @@ def known(word: str) -> bool | None:
         parts = [p for p in w.split("-") if p]
         return bool(parts) and all(known(p) for p in parts)
     return False
+
+
+@lru_cache(maxsize=8192)
+def lemmas(word: str) -> frozenset[str]:
+    """이 단어가 가질 수 있는 원형들. 사전에 없으면 자기 자신만.
+
+    품사마다 원형이 다르다 — `listening` 은 명사로는 그대로지만 동사로는 `listen`
+    이다. 하나만 고르면(첫 품사) 틀린 쪽을 집는다. 그래서 전부 모아 집합으로 준다.
+
+    빈칸 채우기에서 **'뜻은 맞는데 형태가 틀린' 답**을 가려내는 데 쓴다. 이 프로젝트의
+    전제가 "왕초보는 뜻이 아니라 형태에서 틀린다"이므로, 그 둘을 같은 오답으로 묶으면
+    정작 가르쳐야 할 것을 못 가르친다.
+    """
+    w = word.strip().lower().strip("-'’")
+    if not w:
+        return frozenset()
+    found = {w}
+    wn = _corpus()
+    if wn is not None:
+        for pos in ALL_POS:
+            base = wn.morphy(w, pos)
+            if base:
+                found.add(str(base))
+    return frozenset(found)
+
+
+def same_lemma(a: str, b: str) -> bool:
+    """두 단어가 같은 원형을 공유하는가. `borrowed` 와 `borrow` 는 참."""
+    return bool(lemmas(a) & lemmas(b))
