@@ -1,0 +1,108 @@
+# 사람이 확인해 손으로 고친 항목. 배치 재생성이 덮어쓰면 안 되는 교정이다.
+#
+# 왜 손으로 고치는가
+# ------------------
+# 프롬프트를 고쳐도 환각은 확률적으로 다시 나온다. 이미 생성된 유한한 집합에서
+# **확인된 거짓**을 지우는 일은 재생성(확률적)이 아니라 교정(결정적)으로 해야 한다.
+#
+# 선정 기준: WordNet 에 없고 사람이 확인한 결과 실재하지 않는 영어 단어를 언급한 항목.
+# 판정 근거는 docs/hallucinations.md 에 있다.
+#
+# 적용:  docker compose exec api python content/apply_fixes.py
+# 확인만: docker compose exec api python content/apply_fixes.py --dry-run
+
+- word: fact
+  removed: [factful]
+  reason: "'factful' 은 존재하지 않는다. 'fact 는 명사라서 동사로는 factful 처럼 쓰지 않는다'는 설명 자체가 성립하지 않는다."
+  meaning_ko: "사실 (실제로 있었던 일)"
+  pattern: "a/the + fact"
+  usage_note: "fact 는 명사예요. 'a fact', 'the facts' 처럼 셀 수 있어요. 말하다가 '사실은' 하고 덧붙일 때는 'in fact' 를 자주 써요."
+  confused_with: [truth, reality]
+
+- word: analysis
+  removed: [analysist]
+  reason: "'analysist' 는 존재하지 않는다(분석하는 사람은 analyst). 또한 문형이 '불가산명사 (an analysis X)' 였는데 analysis 는 가산명사이고, 같은 항목의 예문이 'an analysis' 를 쓰고 있어 자기모순이었다."
+  meaning_ko: "분석, 해석"
+  pattern: "an/the + analysis"
+  usage_note: "analysis 는 셀 수 있어요. 'an analysis' 가 맞고, 두 개 이상은 'analyses' 로 바뀌어요. 분석하는 사람은 'analyst' 예요."
+  confused_with: [analyst]
+
+- word: restaurant
+  removed: [restaurate]
+  reason: "'restaurate' 는 존재하지 않는다. restaurant 의 동사형이라는 설명은 통째로 지어낸 것이다."
+  meaning_ko: "음식점"
+  pattern: "a/the + restaurant"
+  usage_note: "restaurant 은 명사예요. 식당에서 밥을 먹는다고 할 때는 'eat at a restaurant' 처럼 at 을 써요."
+  confused_with: [cafe, bar]
+
+- word: kitchen
+  removed: [kitcheny]
+  reason: "'kitcheny' 는 존재하지 않는다. kitchen 의 형용사형이라는 설명은 지어낸 것이다."
+  meaning_ko: "주방"
+  pattern: "a/the + kitchen"
+  usage_note: "kitchen 은 명사예요. 다른 명사 앞에 붙여서 'kitchen table'(부엌 식탁), 'kitchen knife'(부엌칼) 처럼 쓸 수 있어요."
+  confused_with: []
+
+- word: orange
+  removed: [oranje]
+  reason: "'oranje' 는 네덜란드어 철자다. '오렌지색은 oranje 라고 발음해요' 는 영어 설명으로 거짓이다."
+  meaning_ko: "오렌지(과일), 주황색"
+  pattern: "orange + 명사"
+  usage_note: "과일 하나를 말할 때는 셀 수 있어요 — 'an orange', 'two oranges'. 색이나 맛을 말할 때는 뒤에 명사를 붙여 'orange juice' 처럼 써요."
+  confused_with: [lemon]
+
+- word: harbor
+  removed: [habor]
+  reason: "'habor' 는 존재하지 않는다. 게다가 그것이 '구두'를 뜻한다는 설명까지 붙어 있었다. confused_with 에도 같은 단어가 들어가 있었다."
+  meaning_ko: "항구"
+  pattern: "a/the + harbor"
+  usage_note: "harbor 는 배가 머무는 항구예요. 영국식 철자는 'harbour' 예요. 도착했다고 말할 때는 'arrive at the harbor' 처럼 at 을 써요."
+  confused_with: [port]
+
+- word: breathe
+  removed: [respirate]
+  reason: "'respirate' 는 표준 영어가 아니다(표준형은 respire, 그나마 의학 문맥). 왕초보에게 비교 대상으로 제시할 단어가 아니다. 대신 실제로 헷갈리는 breath 를 넣는다."
+  meaning_ko: "숨 쉬다"
+  pattern: "breathe + in/out"
+  usage_note: "breathe 는 '숨 쉬다' 라는 동사예요. 'breathe in' 은 들이마시고, 'breathe out' 은 내쉬는 거예요. 명사 '숨' 은 'breath' 라서 철자가 달라요."
+  confused_with: [breath]
+
+- word: air
+  removed: [ayer]
+  reason: "'ayer' 는 스페인어로 '어제' 다. 영어 단어가 아니다. 같은 칸의 heir 는 실제 동음이의 혼동이라 남긴다. 문형의 'air + 목적어' 도 air 를 타동사로 만드는 표기라 고친다."
+  meaning_ko: "공기"
+  pattern: "air + 명사"
+  usage_note: "air 는 셀 수 없어요. 'an air' 라고 하지 않고 'fresh air', 'some air' 처럼 써요. 공기 관련 물건은 'air conditioner' 처럼 air 를 명사 앞에 붙여 만들어요."
+  confused_with: [heir]
+
+- word: cultural
+  removed: [culturalist]
+  reason: "'culturalist' 는 표준 영어가 아니다. 문형 'adjective: -한' 은 영어가 하나도 없는 품사 라벨이라 문형 칸의 용도에 맞지 않는다."
+  meaning_ko: "문화적인"
+  pattern: "cultural + 명사"
+  usage_note: "cultural 은 형용사라서 명사 앞에 써요 — 'cultural festival', 'cultural difference'. 명사 '문화' 는 'culture' 예요."
+  confused_with: [culture]
+
+- word: increasingly
+  removed: [growingly]
+  reason: "'growingly' 는 표준 영어가 아니다."
+  meaning_ko: "점점 더"
+  pattern: "increasingly + 형용사"
+  usage_note: "increasingly 는 '점점 더' 라는 뜻의 부사예요. 'increasingly popular' 처럼 형용사 앞에 자주 붙어요. 일상 대화에서는 'more and more' 가 더 편해요."
+  confused_with: [more and more]
+
+- word: root
+  removed: [luft]
+  reason: "'luft' 는 독일어로 '공기' 다. root 와 아무 관계가 없다. 문형 'root + 의 (소유격)' 은 한국어 조사를 문형으로 적은 것이다."
+  meaning_ko: "뿌리"
+  pattern: "a/the + root"
+  usage_note: "root 는 식물의 뿌리예요. 보통 여러 개라서 'roots' 처럼 복수로 자주 써요. 길을 뜻하는 'route' 와 발음이 비슷하니 헷갈리지 마세요."
+  confused_with: [route]
+
+- word: salt
+  removed: [sault, solt]
+  reason: "'sault', 'solt' 둘 다 영어 단어가 아니다. 그리고 설명은 '소금은 불가산명사라 a salt 는 틀리다' 로 맞는 말을 하는데 문형은 'a/the + salt' 여서 자기모순이었다."
+  meaning_ko: "소금"
+  pattern: "some/any + salt"
+  usage_note: "salt 는 셀 수 없어요. 'a salt' 는 안 되고 'some salt', 'any salt' 처럼 써요."
+  confused_with: [sugar]
