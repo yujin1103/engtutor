@@ -49,6 +49,11 @@ SessionLocal = sessionmaker(bind=engine, autoflush=False, expire_on_commit=False
 _ADDED_COLUMNS: dict[str, dict[str, str]] = {
     "corrections": {"kind": "VARCHAR(16) NOT NULL DEFAULT 'mistake'"},
     "words": {"rank": "INTEGER", "reviewed_by": "VARCHAR(32)", "pattern": "VARCHAR(120)"},
+    "turns": {
+        "input_mode": "VARCHAR(8) NOT NULL DEFAULT 'text'",
+        "transcript": "TEXT",
+        "transcript_words": "JSON",
+    },
 }
 
 

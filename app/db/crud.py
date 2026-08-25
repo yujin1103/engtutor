@@ -43,13 +43,33 @@ def _next_index(db: DbSession, session_id: str) -> int:
 
 
 def record_turn(
-    db: DbSession, *, session_id: str, user_text: str, turn: TurnResponse
+    db: DbSession,
+    *,
+    session_id: str,
+    user_text: str,
+    turn: TurnResponse,
+    input_mode: str = "text",
+    transcript: str | None = None,
+    transcript_words: list[dict] | None = None,
 ) -> None:
-    """사용자 발화와 그에 대한 assistant 응답(+교정)을 한 번에 기록한다."""
+    """사용자 발화와 그에 대한 assistant 응답(+교정)을 한 번에 기록한다.
+
+    음성 입력이면 `user_text` 는 학습자가 **확정한** 문장이고 `transcript` 는
+    STT 가 들은 것이다. 둘이 다를 수 있고, 그 차이가 STT 를 믿어도 되는지에 대한
+    답이 된다(app/tutor/transcript.py). 타자 입력이면 transcript 는 None 이다.
+    """
     index = _next_index(db, session_id)
 
     db.add(
-        TurnRow(session_id=session_id, turn_index=index, role="user", content=user_text)
+        TurnRow(
+            session_id=session_id,
+            turn_index=index,
+            role="user",
+            content=user_text,
+            input_mode=input_mode,
+            transcript=transcript,
+            transcript_words=transcript_words,
+        )
     )
     assistant = TurnRow(
         session_id=session_id,

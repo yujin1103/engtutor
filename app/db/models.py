@@ -47,6 +47,16 @@ class TurnRow(Base):
     role: Mapped[str] = mapped_column(String(16))  # user | assistant
     content: Mapped[str] = mapped_column(Text)
     hint_ko: Mapped[str | None] = mapped_column(Text, default=None)
+    # 타자면 "text", 음성이면 "voice". 나중에 둘을 갈라서 보려면 지금 남겨야 한다.
+    input_mode: Mapped[str] = mapped_column(String(8), default="text")
+    # 음성 입력에서 **STT 가 들은 것**. content 는 학습자가 확정한 것이라 다를 수 있고,
+    # 그 차이가 이 앱에서 가장 알고 싶은 것이다 — 이 STT 를 믿어도 되는가.
+    # 한 칸에만 저장하면 전사도 차이도 함께 사라진다. app/tutor/transcript.py 참고.
+    transcript: Mapped[str | None] = mapped_column(Text, default=None)
+    # 낱말별 확률: [{"word": "iced", "probability": 0.88}, ...]
+    # 화면에 자신 없는 단어를 표시하는 데 쓰고, **확신했는데 학습자가 고친 자리**를
+    # 세는 데 쓴다. 후자가 Whisper 가 틀린 영어를 매끄럽게 고친 흔적이다.
+    transcript_words: Mapped[list[dict] | None] = mapped_column(JSON, default=None)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_utcnow)
 
     session: Mapped[SessionRow] = relationship(back_populates="turns")

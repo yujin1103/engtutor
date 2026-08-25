@@ -32,7 +32,16 @@ class SessionStore(Protocol):
 
     def get(self, session_id: str) -> Session | None: ...
 
-    def record_turn(self, session_id: str, *, user_text: str, turn: TurnResponse) -> None: ...
+    def record_turn(
+        self,
+        session_id: str,
+        *,
+        user_text: str,
+        turn: TurnResponse,
+        input_mode: str = "text",
+        transcript: str | None = None,
+        transcript_words: list[dict] | None = None,
+    ) -> None: ...
 
     def corrections(self, session_id: str) -> list[Correction]: ...
 
@@ -57,7 +66,18 @@ class InMemorySessionStore:
     def get(self, session_id: str) -> Session | None:
         return self._sessions.get(session_id)
 
-    def record_turn(self, session_id: str, *, user_text: str, turn: TurnResponse) -> None:
+    def record_turn(
+        self,
+        session_id: str,
+        *,
+        user_text: str,
+        turn: TurnResponse,
+        input_mode: str = "text",
+        transcript: str | None = None,
+        transcript_words: list[dict] | None = None,
+    ) -> None:
+        # 인메모리 저장소는 전사를 보관하지 않는다 — 대화 흐름만 재현하면 되고,
+        # 전사는 나중에 되돌아볼 때 값이 있는 것이라 영속 저장소의 몫이다.
         session = self._sessions[session_id]
         session.messages.append({"role": "user", "content": user_text})
         session.messages.append({"role": "assistant", "content": turn.reply})
@@ -103,12 +123,29 @@ class SqliteSessionStore:
                 ended=row.ended_at is not None,
             )
 
-    def record_turn(self, session_id: str, *, user_text: str, turn: TurnResponse) -> None:
+    def record_turn(
+        self,
+        session_id: str,
+        *,
+        user_text: str,
+        turn: TurnResponse,
+        input_mode: str = "text",
+        transcript: str | None = None,
+        transcript_words: list[dict] | None = None,
+    ) -> None:
         from .db import crud
         from .db.database import db_session
 
         with db_session() as db:
-            crud.record_turn(db, session_id=session_id, user_text=user_text, turn=turn)
+            crud.record_turn(
+                db,
+                session_id=session_id,
+                user_text=user_text,
+                turn=turn,
+                input_mode=input_mode,
+                transcript=transcript,
+                transcript_words=transcript_words,
+            )
 
     def corrections(self, session_id: str) -> list[Correction]:
         from .db import crud

@@ -72,10 +72,19 @@ class ScenarioOut(BaseModel):
 
 class ChatRequest(BaseModel):
     scenario_id: str
+    # 음성 입력이면 학습자가 **확정한** 문장이다. 전사 그대로가 아니라 고친 뒤의 것.
     message: str = Field(min_length=1, max_length=1000)
     session_id: str | None = None
     level: Literal["A1", "A2", "B1"] | None = None
     strictness: Strictness = DEFAULT_STRICTNESS
+    # --- 음성 입력에서만 채워진다. 타자면 전부 비어 있고 동작은 지금과 같다. ---
+    input_mode: Literal["text", "voice"] = "text"
+    # STT 가 들은 것. message 와 다를 수 있고, 그 차이가 STT 를 믿어도 되는지에
+    # 대한 답이 된다(app/tutor/transcript.py).
+    transcript: str | None = Field(default=None, max_length=2000)
+    # 낱말별 확률. 자신 없는 단어를 화면에 표시하고, **확신했는데 학습자가 고친
+    # 자리**를 세는 데 쓴다. 후자가 STT 가 틀린 영어를 매끄럽게 고친 흔적이다.
+    transcript_words: list[dict] | None = None
 
 
 class ChatResponse(BaseModel):
@@ -169,7 +178,14 @@ def _finalize(session_id: str, req: ChatRequest, turn: TurnResponse) -> TurnResp
         turn = turn.model_copy(
             update={"corrections": [c for c in turn.corrections if c.kind != "polish"]}
         )
-    store.record_turn(session_id, user_text=req.message, turn=turn)
+    store.record_turn(
+        session_id,
+        user_text=req.message,
+        turn=turn,
+        input_mode=req.input_mode,
+        transcript=req.transcript,
+        transcript_words=req.transcript_words,
+    )
     return turn
 
 
