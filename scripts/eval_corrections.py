@@ -59,7 +59,7 @@ def build_system(scenario_id: str, level: str, strictness: str) -> str:
     return service.build_system(scenario, level, strictness)
 
 
-def ask(model: str, system: str, text: str, *, num_ctx: int, temperature: float):
+def ask(model: str, system: str, text: str, *, num_ctx: int, temperature: float, level: str):
     payload = {
         "model": model,
         "messages": [
@@ -76,7 +76,9 @@ def ask(model: str, system: str, text: str, *, num_ctx: int, temperature: float)
         res = client.post(f"{OLLAMA}/api/chat", json=payload)
         res.raise_for_status()
         content = (res.json().get("message") or {}).get("content", "")
-    return TurnResponse.model_validate(json.loads(content))
+    # 레벨을 넘겨야 say_en/say_more 상한이 실제 동작과 같아진다. 안 넘기면
+    # 가장 느슨한 값이 적용돼 A1 의 과다 출력을 놓친다.
+    return TurnResponse.model_validate(json.loads(content), context={"level": level})
 
 
 def main() -> int:
@@ -122,6 +124,7 @@ def main() -> int:
                 probe["say"],
                 num_ctx=args.num_ctx,
                 temperature=args.temperature,
+                level=args.level,
             )
         except Exception as exc:  # 스키마 실패도 결과다 — 숨기지 않는다
             return {"probe": probe, "error": str(exc)[:200]}

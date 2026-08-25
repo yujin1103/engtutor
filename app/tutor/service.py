@@ -97,13 +97,13 @@ class TutorService:
         messages = self._messages(scenario, history, user_text)
 
         try:
-            return self._ground(scenario, user_text, self._call(system, messages, temperature=0.7))
+            return self._ground(scenario, user_text, self._call(system, messages, temperature=0.7, level=level))
         except (LLMError, ValidationError) as first:
             logger.warning("턴 응답 1차 실패, 재시도합니다: %s", first)
 
         try:
             return self._ground(
-                scenario, user_text, self._call(system, self._repair(messages), temperature=0.2)
+                scenario, user_text, self._call(system, self._repair(messages), temperature=0.2, level=level)
             )
         except (LLMError, ValidationError) as second:
             raise LLMError(f"두 번 시도했지만 유효한 응답을 받지 못했습니다: {second}") from second
@@ -127,7 +127,7 @@ class TutorService:
 
         streamed = False
         try:
-            for event in self._stream_call(system, messages, temperature=0.7):
+            for event in self._stream_call(system, messages, temperature=0.7, level=level):
                 streamed = streamed or event["type"] == "delta"
                 if event["type"] == "turn":
                     event["turn"] = self._ground(scenario, user_text, event["turn"])
@@ -143,7 +143,7 @@ class TutorService:
 
         try:
             turn = self._ground(
-                scenario, user_text, self._call(system, self._repair(messages), temperature=0.2)
+                scenario, user_text, self._call(system, self._repair(messages), temperature=0.2, level=level)
             )
         except (LLMError, ValidationError) as second:
             raise LLMError(f"두 번 시도했지만 유효한 응답을 받지 못했습니다: {second}") from second
@@ -198,7 +198,7 @@ class TutorService:
         return [*messages, {"role": "user", "content": _REPAIR_NOTE}]
 
     def _stream_call(
-        self, system: str, messages: list[Message], *, temperature: float
+        self, system: str, messages: list[Message], *, temperature: float, level: str
     ) -> Iterator[TurnEvent]:
         for chunk in self._client.chat_json_stream(
             system=system,
@@ -208,14 +208,14 @@ class TutorService:
             stream_field="reply",
         ):
             if chunk["done"]:
-                turn = TurnResponse.model_validate(chunk["data"])
+                turn = TurnResponse.model_validate(chunk["data"], context={"level": level})
                 yield TurnEvent(type="turn", text="", turn=turn)
                 return
             if chunk["delta"]:
                 yield TurnEvent(type="delta", text=chunk["delta"], turn=None)
 
     def _call(
-        self, system: str, messages: list[Message], *, temperature: float
+        self, system: str, messages: list[Message], *, temperature: float, level: str
     ) -> TurnResponse:
         raw = self._client.chat_json(
             system=system,
@@ -223,4 +223,4 @@ class TutorService:
             schema=self._schema,
             temperature=temperature,
         )
-        return TurnResponse.model_validate(raw)
+        return TurnResponse.model_validate(raw, context={"level": level})

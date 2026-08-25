@@ -7,9 +7,10 @@ from __future__ import annotations
 
 from typing import Any, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, ValidationInfo, field_validator
 
 from .korean import normalize, reject_hangul, require_english, require_korean
+from .levels import say_limits
 
 
 CorrectionKind = Literal["mistake", "polish"]
@@ -91,12 +92,20 @@ class TurnResponse(BaseModel):
     # 여기서 거부하면 재시도 경로로 넘어가고, 재시도까지 실패하면 오류가 나간다 —
     # 학습자에게 한국어 reply 를 보여주는 것보다 낫다(fail-closed).
     _chk_reply = field_validator("reply")(lambda v: reject_hangul(v, "reply"))
-    _chk_say = field_validator("say_en")(
-        lambda v: require_english(v, "say_en", max_words=5, max_chars=32)
-    )
-    _chk_more = field_validator("say_more")(
-        lambda v: require_english(v, "say_more", max_words=10, max_chars=64)
-    )
+    @field_validator("say_en", "say_more")
+    @classmethod
+    def _chk_say_fields(cls, value: str, info: ValidationInfo) -> str:
+        """따라 말할 영어 필드. 상한은 **레벨에 따라 다르다.**
+
+        레벨은 `model_validate(..., context={"level": ...})` 로 들어온다. 문맥이
+        없으면 가장 느슨한 값이 쓰인다 — 문맥이 없다는 이유로 정상 출력을 거부해
+        재시도를 만들면 안 되기 때문이다. levels.say_limits 참고.
+        """
+        level = (info.context or {}).get("level")
+        max_words, max_chars = say_limits(level, info.field_name)
+        return require_english(
+            value, info.field_name, max_words=max_words, max_chars=max_chars
+        )
     _fix_hint = field_validator("hint_ko")(lambda v: require_korean(normalize(v), "hint_ko"))
     # 해석 칸에 영어가 그대로 돌아오면 학습자에게는 아무 도움이 안 된다.
     _fix_reply_ko = field_validator("reply_ko")(lambda v: require_korean(normalize(v), "reply_ko"))
