@@ -4,6 +4,11 @@
 #   clean    문법도 맞고 상황에도 자연스럽다. 교정이 나오면 오탐이다.
 #   mistake  왕초보가 실제로 저지르는 오류가 들어 있다. 못 잡으면 미탐이다.
 #
+# error_phrase 는 STT 측정용이다(scripts/eval_stt.py). 오류가 실제로 들어 있는
+# **연속된 조각**이라, 전사에 그대로 남으면 오류가 살아남은 것이고 사라졌으면
+# STT 가 매끄럽게 고쳐 버린 것이다. 어순 오류도 이걸로 잡힌다 — 낱말이 다 있어도
+# 순서가 바뀌면 조각이 깨진다.
+#
 # 오탐과 미탐의 비용이 다르다. 미탐은 배울 기회를 한 번 놓치는 것이고,
 # 오탐은 맞게 말한 학습자에게 틀렸다고 하는 것이다. 후자가 훨씬 비싸다.
 
@@ -26,13 +31,13 @@
 - {scenario: directions, expect: clean, say: "I'm looking for the bank."}
 - {scenario: directions, expect: clean, say: "Can you say that again, please?"}
 
-- {scenario: cafe_order, expect: mistake, say: "I want ice americano", why: "ice -> iced"}
-- {scenario: cafe_order, expect: mistake, say: "Can I get a ice americano?", why: "a -> an, ice -> iced"}
-- {scenario: cafe_order, expect: mistake, say: "How much cost this coffee?", why: "어순 + 조동사"}
-- {scenario: self_intro, expect: mistake, say: "I am live in Seoul", why: "be + 일반동사 중복"}
-- {scenario: self_intro, expect: mistake, say: "I working at hospital since 3 year", why: "다중 오류"}
-- {scenario: self_intro, expect: mistake, say: "My hobby is listen to music", why: "listen -> listening"}
-- {scenario: self_intro, expect: mistake, say: "I'm interesting in movies.", why: "interesting -> interested"}
-- {scenario: directions, expect: mistake, say: "How I can go to subway station?", why: "어순 + 관사"}
-- {scenario: directions, expect: mistake, say: "How long it takes?", why: "어순 + 조동사"}
-- {scenario: directions, expect: mistake, say: "He don't know the way.", why: "주어-동사 일치"}
+- {scenario: cafe_order, expect: mistake, say: "I want ice americano", why: "ice -> iced", error_phrase: "ice americano"}
+- {scenario: cafe_order, expect: mistake, say: "Can I get a ice americano?", why: "a -> an, ice -> iced", error_phrase: "a ice"}
+- {scenario: cafe_order, expect: mistake, say: "How much cost this coffee?", why: "어순 + 조동사", error_phrase: "much cost this"}
+- {scenario: self_intro, expect: mistake, say: "I am live in Seoul", why: "be + 일반동사 중복", error_phrase: "am live"}
+- {scenario: self_intro, expect: mistake, say: "I working at hospital since 3 year", why: "다중 오류", error_phrase: "i working at"}
+- {scenario: self_intro, expect: mistake, say: "My hobby is listen to music", why: "listen -> listening", error_phrase: "is listen to"}
+- {scenario: self_intro, expect: mistake, say: "I'm interesting in movies.", why: "interesting -> interested", error_phrase: "interesting in"}
+- {scenario: directions, expect: mistake, say: "How I can go to subway station?", why: "어순 + 관사", error_phrase: "how i can"}
+- {scenario: directions, expect: mistake, say: "How long it takes?", why: "어순 + 조동사", error_phrase: "long it takes"}
+- {scenario: directions, expect: mistake, say: "He don't know the way.", why: "주어-동사 일치", error_phrase: "he don't"}

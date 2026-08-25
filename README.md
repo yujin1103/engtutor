@@ -355,6 +355,51 @@ POST /chat
 }
 ```
 
+### STT 를 붙일지는 재고 정한다
+
+아직 안 붙였다. 판단 근거가 될 측정 도구만 만들어 뒀다.
+
+```powershell
+docker compose exec api pip install -r requirements-stt.txt
+docker compose exec api python scripts/eval_stt.py --list          # 읽을 문장
+docker compose exec api python scripts/eval_stt.py --audio-dir .review/audio
+```
+
+`correction_probes.yaml` 의 **틀린 문장 10개**를 사람이 소리 내어 읽어 녹음하고,
+전사가 그 오류를 **살려 뒀는지** 센다. 각 문장에는 오류가 들어 있는 연속된 조각
+(`error_phrase`)이 붙어 있다.
+
+```
+[O] I want ice americano                     <- 'ice americano' 가 그대로 남음. 오류 생존
+[X] I want ice americano                     <- 'an iced americano' 로 들림. 오류가 사라짐
+    들림: I want an iced americano
+```
+
+연속된 조각이어야 하는 이유는 어순 오류 때문이다. `How I can go` 가 `How can I go`
+로 바뀌면 **낱말은 다 있는데 오류만 사라진다.** 집합으로 보면 그걸 놓친다.
+
+#### WER 이 낮은 게 좋은 게 아니다
+
+이 앱에서 중요한 것은 **학습자가 말한 대로 적었는가**이지 표준 영어에 가까운가가
+아니다. 그래서 오류 생존율과 WER 을 같이 재고, **둘이 반대로 움직이는지**를 본다.
+반대로 움직인다면 잘 알아듣는 모델일수록 오류를 덮는다는 뜻이고, 이 앱에는
+**작고 덜 똑똑한 모델**이 맞다는 결론이 된다. `--naive` 로 prior 억제 설정
+(`temperature=0`, `condition_on_previous_text=False`)이 실제로 듣는지도 같이 잰다.
+
+정확도는 **장치와 무관하다** — GPU 는 속도만 바꾼다. 그래서 api 컨테이너에 CUDA 를
+넣지 않고 CPU·int8 로 돈다. 모델은 `.review/whisper` 에 받아 두어 컨테이너를
+다시 만들어도 살아남는다.
+
+#### 배관을 확인하다 결함을 하나 찾았다
+
+무음 파일로 스크립트를 통과시켜 봤더니 Whisper 가 `"I'm sorry"` 를 **56번 반복해
+지어냈다.** 학습자가 마이크만 누르고 말을 안 하면 앱에서도 똑같이 벌어진다.
+`vad_filter=True` 로 막았다 — 지어낸 낱말 1,090건이 0이 됐다. **앱에 붙일 때도
+같은 설정이 필요하다.**
+
+판정 로직은 녹음 전에 시험으로 고정해 뒀다(`tests/test_eval_stt.py`). 녹음은 사람이
+해야 하는 일이라 다시 하기 어렵고, 판정기가 틀리면 그 수고가 통째로 헛것이 된다.
+
 ## 빈칸 채우기 (완전 초보용)
 
 완전 초보는 문장을 통째로 만들지 못한다. **한 칸만 채우게 하면 시작할 수 있다.**
