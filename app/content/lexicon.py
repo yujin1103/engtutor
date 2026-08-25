@@ -32,6 +32,7 @@ None 을 준다. 선별기는 해당 검사를 조용히 건너뛴다 — 사전
 from __future__ import annotations
 
 import logging
+import re
 from functools import lru_cache
 
 logger = logging.getLogger(__name__)
@@ -94,14 +95,60 @@ def parts_of_speech(word: str) -> frozenset[str] | None:
     return frozenset(found) if found else None
 
 
+# WordNet 이 담지 않는 닫힌 부류. 실재하는데 사전에 없어서, 존재 검사에 그대로
+# 쓰면 the·of·although 가 전부 "없는 단어"로 잡힌다. 실제로 오탐 40건이 이것이었다.
+#
+# 품사 조회에는 쓰지 않는다 — parts_of_speech 는 WordNet 만 본다. 존재와 품사는
+# 다른 질문이고, 여기 있는 단어의 품사를 지어내면 품사 검사가 통째로 거짓이 된다.
+FUNCTION_WORDS: frozenset[str] = frozenset(
+    """
+    a an the this that these those
+    i you he she it we they me him her us them my your his its our their
+    mine yours hers ours theirs myself yourself himself herself itself
+    ourselves yourselves themselves
+    am is are was were be been being do does did done doing have has had having
+    will would shall should can could may might must ought need dare
+    and or but nor so yet for because if unless although though while whereas whilst
+    when where how why what which who whom whose whether than then
+    to of in on at by with from into onto upon about over under above below
+    between among through during before after since until against across behind
+    beside beyond within without toward towards versus via per
+    not no there here too very just only also even still already ever never
+    some any each every all both few many much more most less least other another
+    such one none
+    something anything nothing everything someone anyone everyone nobody
+    somebody anybody everybody somewhere anywhere everywhere nowhere
+    somehow anyhow anyway somewhat elsewhere else
+    please thanks thank hello hi hey bye ok okay yes yeah yep no nope
+    let lets gonna wanna gotta cannot
+    s t re ve ll d m
+    """.split()
+)
+
+# 축약형의 뒷조각. don't -> don + t 처럼 쪼개져 들어온다.
+_CONTRACTION = re.compile(r"^[a-z]+['’](s|t|re|ve|ll|d|m)$")
+
+
 def known(word: str) -> bool | None:
-    """이 단어가 사전에 있는가. 굴절형은 원형으로 되돌려 본다. 모르면 None."""
+    """이 단어가 실재하는가. 모르면 None.
+
+    굴절형은 원형으로 되돌려 보고, 기능어와 축약형은 사전을 보지 않고 통과시킨다.
+    None 과 False 는 다르다 — None 은 사전 자체가 없다는 뜻이다.
+    """
+    w = word.strip().lower().strip("-'’")
+    if not w:
+        return None
+    if w in FUNCTION_WORDS or _CONTRACTION.match(word.strip().lower()):
+        return True
     wn = _corpus()
     if wn is None:
         return None
-    w = word.strip().lower()
-    if not w:
-        return None
     if wn.synsets(w):
         return True
-    return any(wn.morphy(w, pos) for pos in ALL_POS)
+    if any(wn.morphy(w, pos) for pos in ALL_POS):
+        return True
+    # 하이픈 합성어는 조각이 모두 실재하면 실재로 본다 (grown-up, e-mail).
+    if "-" in w:
+        parts = [p for p in w.split("-") if p]
+        return bool(parts) and all(known(p) for p in parts)
+    return False

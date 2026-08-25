@@ -18,6 +18,14 @@ services:
     environment:
       OLLAMA_HOST: 0.0.0.0:11434
       OLLAMA_KEEP_ALIVE: 30m   # 턴마다 9GB 모델을 언로드/로드하지 않도록
+      # 평가·배치는 처리량이 중요해서 동시 슬롯을 연다. 슬롯마다 KV 캐시가
+      # 따로 잡히는데 qwen3:14b·num_ctx 4096 기준 슬롯당 약 0.64GB 라
+      # 4슬롯이면 2.6GB — 모델 9.3GB 를 올리고도 16GB 안에 들어간다.
+      #
+      # 주의: scripts/bench_latency.py 는 이 값이 1이라는 전제로 지연을 잰다.
+      # 지연을 잴 때는 다른 요청을 절대 겹치지 말 것 — 큐 대기가 측정에 섞이면
+      # 2.39s 가 8.64s 로 보인다.
+      OLLAMA_NUM_PARALLEL: 4
     healthcheck:
       test: ["CMD", "ollama", "list"]
       interval: 10s

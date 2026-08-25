@@ -1,0 +1,38 @@
+# 교정 정확도 측정용 발화 모음. LLM 이 만들지 않았다 — 사람이 라벨을 붙였다.
+#
+# expect:
+#   clean    문법도 맞고 상황에도 자연스럽다. 교정이 나오면 오탐이다.
+#   mistake  왕초보가 실제로 저지르는 오류가 들어 있다. 못 잡으면 미탐이다.
+#
+# 오탐과 미탐의 비용이 다르다. 미탐은 배울 기회를 한 번 놓치는 것이고,
+# 오탐은 맞게 말한 학습자에게 틀렸다고 하는 것이다. 후자가 훨씬 비싸다.
+
+- {scenario: cafe_order, expect: clean, say: "Can I get a hot latte, please?"}
+- {scenario: cafe_order, expect: clean, say: "I'd like a small coffee."}
+- {scenario: cafe_order, expect: clean, say: "How much is it?", why: "가격 질문. 주문 문장으로 바뀌던 자리"}
+- {scenario: cafe_order, expect: clean, say: "For here, please."}
+- {scenario: cafe_order, expect: clean, say: "Yes, that's all. Thank you."}
+- {scenario: cafe_order, expect: clean, say: "Can I pay by card?"}
+- {scenario: cafe_order, expect: clean, say: "Do you have iced tea?"}
+- {scenario: self_intro, expect: clean, say: "I'm from Seoul."}
+- {scenario: self_intro, expect: clean, say: "I work at a hospital."}
+- {scenario: self_intro, expect: clean, say: "Nice to meet you."}
+- {scenario: self_intro, expect: clean, say: "I have two brothers."}
+- {scenario: self_intro, expect: clean, say: "I like watching movies."}
+- {scenario: self_intro, expect: clean, say: "What do you do?"}
+- {scenario: directions, expect: clean, say: "Excuse me, where is the subway station?"}
+- {scenario: directions, expect: clean, say: "Is it far from here?"}
+- {scenario: directions, expect: clean, say: "Thank you for your help."}
+- {scenario: directions, expect: clean, say: "I'm looking for the bank."}
+- {scenario: directions, expect: clean, say: "Can you say that again, please?"}
+
+- {scenario: cafe_order, expect: mistake, say: "I want ice americano", why: "ice -> iced"}
+- {scenario: cafe_order, expect: mistake, say: "Can I get a ice americano?", why: "a -> an, ice -> iced"}
+- {scenario: cafe_order, expect: mistake, say: "How much cost this coffee?", why: "어순 + 조동사"}
+- {scenario: self_intro, expect: mistake, say: "I am live in Seoul", why: "be + 일반동사 중복"}
+- {scenario: self_intro, expect: mistake, say: "I working at hospital since 3 year", why: "다중 오류"}
+- {scenario: self_intro, expect: mistake, say: "My hobby is listen to music", why: "listen -> listening"}
+- {scenario: self_intro, expect: mistake, say: "I'm interesting in movies.", why: "interesting -> interested"}
+- {scenario: directions, expect: mistake, say: "How I can go to subway station?", why: "어순 + 관사"}
+- {scenario: directions, expect: mistake, say: "How long it takes?", why: "어순 + 조동사"}
+- {scenario: directions, expect: mistake, say: "He don't know the way.", why: "주어-동사 일치"}

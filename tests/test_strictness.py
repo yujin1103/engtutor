@@ -38,11 +38,19 @@ def test_levels_produce_different_prompts():
     assert len(texts) == 3, "세 단계가 실제로 다른 지시를 내려야 한다"
 
 
-def test_gentle_forbids_polish():
-    """유연 모드의 핵심 — polish 를 아예 만들지 않는다."""
+def test_gentle_drops_polish_instead_of_relabelling_it():
+    """유연 모드의 핵심 — polish 를 만들지 않는다. 단 **이름만 바꿔 다는 것**까지 막아야 한다.
+
+    처음 문구는 `kind 는 항상 "mistake" 입니다. "polish" 는 절대 만들지 마세요` 였다.
+    모델은 이걸 '침묵하라'가 아니라 '이름을 바꿔 달라'로 읽었다 — 맞는 문장 54회 중
+    7회에 mistake 가 붙었다(balanced 는 0회). 배출구를 막으면 남은 관으로 나온다.
+    문구를 고치자 맞는 문장에 붙은 mistake 가 7 -> 3, 화면에 보이는 오탐은 0% 가 됐다.
+    측정: scripts/eval_corrections.py
+    """
     text = prompt_for("gentle")
     assert "polish" in text
-    assert "절대 만들지 마세요" in text
+    assert "이름만 바꿔 달지" in text, "polish 를 mistake 로 재라벨하는 걸 막는 문장이 있어야 한다"
+    assert "항상" not in text, "'kind 는 항상 mistake' 류 문구가 돌아오면 재라벨이 되살아난다"
     assert not show_polish("gentle")
 
 
