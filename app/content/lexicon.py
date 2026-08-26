@@ -13,6 +13,10 @@ NGSL 2,801개 전수 조사에서 없는 단어 13건이 나왔다 — docs/hall
 WordNet(CLAUDE.md §3.5 가 교차 확인용으로 지정한 공개 자원). 표제어의 품사
 집합을 준다 — `name` 이 명사이자 동사라는 사실이 여기 있다.
 
+WordNet 이 모르는 일상어(`americano`, `latte`, `wifi`)는 Wiktionary 로 확인해
+`data/lexicon_extra.yaml` 에 출처와 함께 담아 두고 여기서 함께 본다. 만들어 넣는 게
+아니라 **조회해서 적어 둔 것**이다 — scripts/verify_words.py 가 만든다.
+
 한계를 알고 써야 한다
 ---------------------
 WordNet 은 **내용어 사전**이다. 기능어(although, whereas), 약어(app, pdf),
@@ -33,7 +37,9 @@ from __future__ import annotations
 
 import logging
 import re
+import threading
 from functools import lru_cache
+from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
@@ -56,20 +62,32 @@ KO_POS: dict[str, str] = {v: k for k, v in POS_KO.items()}
 _wordnet = None
 _load_failed = False
 
+# nltk 의 WordNet 리더는 **스레드 안전하지 않다.** 코퍼스가 zip 안에 있고 파일
+# 핸들 하나를 공유해서, 두 스레드가 동시에 조회하면 `assert self.fp is None` 로
+# 죽는다(단어 확인 스크립트를 4개 스레드로 돌리다 실제로 겪었다).
+#
+# 부르는 쪽은 이미 여럿이 병렬이다 — 배치 생성기(스레드 4개), FastAPI 요청 스레드풀.
+# 그래서 잠금은 여기서 건다. 조회 결과는 lru_cache 로 남으므로 두 번째부터는
+# 잠금 앞까지 오지도 않는다.
+_lock = threading.Lock()
+
 
 def _corpus():
     """WordNet 리더를 한 번만 연다. 없으면 None 을 돌려주고 다시 시도하지 않는다."""
     global _wordnet, _load_failed
     if _wordnet is not None or _load_failed:
         return _wordnet
-    try:
-        from nltk.corpus import wordnet
+    with _lock:
+        if _wordnet is not None or _load_failed:
+            return _wordnet
+        try:
+            from nltk.corpus import wordnet
 
-        wordnet.synsets("test")  # 코퍼스가 실제로 내려받아져 있는지 여기서 드러난다
-        _wordnet = wordnet
-    except Exception as exc:  # ImportError, LookupError 둘 다
-        _load_failed = True
-        logger.info("WordNet 을 못 열어 어휘 검사를 건너뜁니다: %s", exc)
+            wordnet.synsets("test")  # 코퍼스가 실제로 내려받아져 있는지 여기서 드러난다
+            _wordnet = wordnet
+        except Exception as exc:  # ImportError, LookupError 둘 다
+            _load_failed = True
+            logger.info("WordNet 을 못 열어 어휘 검사를 건너뜁니다: %s", exc)
     return _wordnet
 
 
@@ -78,21 +96,109 @@ def available() -> bool:
     return _corpus() is not None
 
 
+# ---------------------------------------------------------------------------
+# WordNet 이 모르는 실재어
+#
+# WordNet 2006년 판이라 그 뒤에 자리 잡은 일상어를 모른다 — `americano`, `latte`,
+# `smoothie`, `wifi`, `charger`. 이 앱의 첫 시나리오가 카페 주문인데 `americano` 를
+# "없는 단어"로 판정하면, 빈칸 채점이 학습자에게 "그런 단어가 없어요"라고 말한다.
+#
+# 그렇다고 코드에 단어를 적어 넣으면 그게 곧 지어낸 사전이 된다. 그래서 **확인한
+# 것만** 파일에 담고, 항목마다 Wiktionary 출처를 함께 남긴다
+# (scripts/verify_words.py 가 조회해서 만든다. 사람이 손으로 늘리지 않는다).
+_EXTRA_PATH = Path(__file__).parent / "data" / "lexicon_extra.yaml"
+_extra: dict[str, dict] | None = None
+
+
+def extra_lexicon() -> dict[str, dict]:
+    """WordNet 밖에서 확인된 표제어들. 파일이 없으면 빈 사전."""
+    global _extra
+    if _extra is None:
+        try:
+            import yaml
+
+            loaded = yaml.safe_load(_EXTRA_PATH.read_text(encoding="utf-8")) or {}
+            _extra = {str(k).strip().lower(): dict(v or {}) for k, v in loaded.items()}
+        except FileNotFoundError:
+            _extra = {}
+        except Exception as exc:  # 깨진 파일 하나로 앱이 안 뜨면 안 된다
+            logger.warning("추가 사전을 못 읽었습니다: %s", exc)
+            _extra = {}
+    return _extra
+
+
+# ---------------------------------------------------------------------------
+# 바깥에서 만든 등급표
+#
+# 이 앱의 level(A1/A2/B1)은 LLM 이 붙인다. 프롬프트에 "부풀리지 말라"고 적어 놓고도
+# 2,801개 중 1,899개(68%)가 B1 으로 나왔다. 모델이 붙인 등급을 모델로 검사하면
+# 같은 편향이 두 번 들어가므로, 밖에서 만든 표와 대조한다.
+#
+# CEFR-J Vocabulary Profile 1.5 (Tono Laboratory, TUFS). content/prepare_cefrj.py 가
+# 표제어와 레벨만 옮겨 온다 — 뜻·예문은 가져오지 않는다.
+_LEVELS_PATH = Path(__file__).parent / "data" / "cefrj_levels.csv"
+_levels: dict[str, str] | None = None
+
+LEVEL_ORDER = ("A1", "A2", "B1", "B2", "C2")
+
+
+def reference_level(word: str) -> str | None:
+    """바깥 등급표가 보는 이 단어의 레벨. 표에 없으면 None("모른다")."""
+    global _levels
+    if _levels is None:
+        table: dict[str, str] = {}
+        try:
+            for line in _LEVELS_PATH.read_text(encoding="utf-8").splitlines():
+                if not line or line.startswith("#") or line.startswith("word,"):
+                    continue
+                head, _, level = line.partition(",")
+                level = level.strip().upper()
+                if head and level in LEVEL_ORDER:
+                    table[head.strip().lower()] = level
+        except FileNotFoundError:
+            logger.info("등급표가 없어 레벨 대조를 건너뜁니다: %s", _LEVELS_PATH)
+        except Exception as exc:
+            logger.warning("등급표를 못 읽었습니다: %s", exc)
+        _levels = table
+    w = word.strip().lower()
+    if w in _levels:
+        return _levels[w]
+    # 굴절형은 원형으로 한 번 더 본다 — 표는 원형만 담는다.
+    for base in lemmas(w):
+        if base in _levels:
+            return _levels[base]
+    return None
+
+
+def level_distance(ours: str, theirs: str) -> int | None:
+    """두 등급이 몇 칸 떨어져 있는가. 모르는 등급이 섞이면 None."""
+    try:
+        return LEVEL_ORDER.index(ours.upper()) - LEVEL_ORDER.index(theirs.upper())
+    except ValueError:
+        return None
+
+
 @lru_cache(maxsize=8192)
 def parts_of_speech(word: str) -> frozenset[str] | None:
     """이 단어가 가질 수 있는 품사들. 사전에 없거나 사전이 없으면 None.
 
     None 과 빈 집합은 다르다. None 은 "모른다", 빈 집합은 있을 수 없다(그래서
     안 돌려준다). 이 구분이 무너지면 사전에 없는 단어를 전부 결함으로 만든다.
+
+    WordNet 이 먼저다. WordNet 이 모르는 말만 추가 사전을 본다 — 두 사전이 겹칠 때
+    어느 쪽을 믿을지 고민할 일을 아예 만들지 않는다.
     """
-    wn = _corpus()
-    if wn is None:
-        return None
     w = word.strip().lower()
     if not w:
         return None
-    found = {pos for pos in ALL_POS if wn.synsets(w, pos=pos)}
-    return frozenset(found) if found else None
+    wn = _corpus()
+    if wn is not None:
+        with _lock:
+            found = {pos for pos in ALL_POS if wn.synsets(w, pos=pos)}
+        if found:
+            return frozenset(found)
+    tags = {t for t in (extra_lexicon().get(w, {}).get("pos") or []) if t in ALL_POS}
+    return frozenset(tags) if tags else None
 
 
 # WordNet 이 담지 않는 닫힌 부류. 실재하는데 사전에 없어서, 존재 검사에 그대로
@@ -129,6 +235,7 @@ FUNCTION_WORDS: frozenset[str] = frozenset(
 _CONTRACTION = re.compile(r"^[a-z]+['’](s|t|re|ve|ll|d|m)$")
 
 
+@lru_cache(maxsize=8192)
 def known(word: str) -> bool | None:
     """이 단어가 실재하는가. 모르면 None.
 
@@ -140,18 +247,115 @@ def known(word: str) -> bool | None:
         return None
     if w in FUNCTION_WORDS or _CONTRACTION.match(word.strip().lower()):
         return True
+    if w in extra_lexicon():
+        return True  # WordNet 밖에서 확인된 말 (americano, latte, wifi ...)
     wn = _corpus()
     if wn is None:
         return None
-    if wn.synsets(w):
-        return True
-    if any(wn.morphy(w, pos) for pos in ALL_POS):
-        return True
+    with _lock:
+        if wn.synsets(w):
+            return True
+        if any(wn.morphy(w, pos) for pos in ALL_POS):
+            return True
     # 하이픈 합성어는 조각이 모두 실재하면 실재로 본다 (grown-up, e-mail).
     if "-" in w:
         parts = [p for p in w.split("-") if p]
         return bool(parts) and all(known(p) for p in parts)
     return False
+
+
+_VOWELS = "aeiou"
+
+
+def _doubles_final_consonant(base: str) -> bool:
+    """-ed·-ing 를 붙일 때 끝 자음을 겹치는 형태인가. run -> running, stop -> stopped.
+
+    자음-모음-자음으로 끝나면 겹친다. w·x·y 는 겹치지 않는다(play -> playing).
+    강세까지 보지는 않으므로 visit -> visitted 를 만들어 낸다 — 그래도 되는 이유는
+    이 함수가 **형태를 만들어 내는 쪽이 아니라 되돌려 확인하는 쪽**에만 쓰이기
+    때문이다. 없는 형태를 만들면 후보가 하나 덜 붙을 뿐이고, 있는 형태를 만들면
+    가짜 원형이 붙는다. 그래서 넉넉한 쪽이 아니라 좁은 쪽으로 틀린다.
+    """
+    if len(base) < 3:
+        return False
+    c1, v, c2 = base[-3], base[-2], base[-1]
+    return c1 not in _VOWELS and v in _VOWELS and c2 not in _VOWELS and c2 not in "wxy"
+
+
+def _regular_forms(base: str) -> set[str]:
+    """원형에서 규칙적으로 만들어지는 굴절형들. 규칙 밖의 것은 만들지 않는다."""
+    if len(base) < 3:
+        return set()
+    forms: set[str] = set()
+    hard_y = base.endswith("y") and base[-2] not in _VOWELS
+
+    # 복수·3인칭 -s
+    if base.endswith(("s", "x", "z", "ch", "sh")):
+        forms.add(base + "es")
+    elif hard_y:
+        forms.add(base[:-1] + "ies")
+    elif base.endswith("o"):
+        forms.update({base + "s", base + "es"})
+    else:
+        forms.add(base + "s")
+
+    # 과거 -ed, 진행 -ing, 비교급 -er/-est
+    if base.endswith("e"):
+        forms.update({base + "d", base[:-1] + "ing", base + "r", base + "st"})
+    elif hard_y:
+        stem = base[:-1]
+        forms.update({stem + "ied", base + "ing", stem + "ier", stem + "iest"})
+    elif _doubles_final_consonant(base):
+        twin = base + base[-1]
+        forms.update({twin + "ed", twin + "ing", twin + "er", twin + "est"})
+    else:
+        forms.update({base + "ed", base + "ing", base + "er", base + "est"})
+    return forms
+
+
+def _extra_bases(word: str, pos: str, wn) -> set[str]:
+    """morphy 가 놓친 원형들. WordNet 의 비공개 경로를 쓰므로 실패해도 넘어간다.
+
+    왜 필요한가
+    -----------
+    `wn.morphy` 는 **후보를 하나만** 돌려주고, 표면형 자체가 표제어이면 거기서
+    멈춘다. `years`·`minutes`·`instructions`·`days` 는 WordNet 에 독립 표제어라
+    (`minutes` = 회의록) 원형 `year`·`minute` 를 영영 못 준다. 빈칸 채우기에서
+    이건 "형태만 틀렸다"를 "다른 단어다"로 바꾼다 — 이 앱이 가르치겠다는 바로 그
+    자리다. 예문 3,641개 토큰 중 42개가 여기 걸렸다.
+
+    왜 그대로 다 받지 않는가
+    ------------------------
+    `wn._morphy` 는 접미사를 떼는 규칙을 전부 적용해 후보를 만든다. 그래서 진짜
+    원형(years -> year) 옆에 가짜(as -> a, rated -> rat, serves -> serf, uses -> us)가
+    같이 나온다. 42개 중 11개가 가짜였다.
+
+    그래서 출처를 갈라 다르게 다룬다.
+    - **예외 목록**(사전이 손으로 적어 둔 불규칙: teeth -> tooth, best -> good)은 믿는다.
+    - **규칙**으로 나온 것은 원형에서 굴절형을 **되만들어** 표면형이 나오는지 본다.
+      rat 의 과거는 ratted 라서 rated 가 안 나오고, serf 의 복수는 serfs 라서
+      serves 가 안 나온다. 이 검사로 가짜 11개 중 10개가 걸러진다
+      (남는 건 species -> specie 하나인데, 실제로 관련된 단어다).
+    """
+    try:
+        candidates = [str(b) for b in wn._morphy(word, pos)]
+        exceptions = {str(b) for b in wn._exception_map[pos].get(word, ())}
+    except Exception:  # nltk 내부 구조는 바뀔 수 있다. 바뀌면 예전 동작으로 돌아간다.
+        return set()
+
+    found: set[str] = set()
+    for base in candidates:
+        if base == word:
+            continue
+        if base in exceptions:
+            found.add(base)
+            continue
+        # 기능어와 두 글자 이하는 규칙이 만들어 낸 껍데기다 (as -> a, us -> u).
+        if base in FUNCTION_WORDS or len(base) < 3:
+            continue
+        if word in _regular_forms(base):
+            found.add(base)
+    return found
 
 
 @lru_cache(maxsize=8192)
@@ -171,10 +375,12 @@ def lemmas(word: str) -> frozenset[str]:
     found = {w}
     wn = _corpus()
     if wn is not None:
-        for pos in ALL_POS:
-            base = wn.morphy(w, pos)
-            if base:
-                found.add(str(base))
+        with _lock:  # nltk 리더는 스레드 안전하지 않다 — _corpus 의 주석 참고
+            for pos in ALL_POS:
+                base = wn.morphy(w, pos)
+                if base:
+                    found.add(str(base))
+                found |= _extra_bases(w, pos, wn)
     return frozenset(found)
 
 

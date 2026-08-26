@@ -1,0 +1,218 @@
+# WordNet 이 모르는데 실재하는 말. **조회해서 적은 것이지 지어낸 것이 아니다.**
+#
+# WordNet 은 2006년 판이라 그 뒤 자리 잡은 일상어를 모른다 — americano, latte,
+# smoothie, wifi. 이 앱의 첫 시나리오가 카페 주문인데 americano 를 '없는 단어'로
+# 판정하면 빈칸 채점이 학습자에게 '그런 단어가 없어요'라고 말한다.
+#
+# 항목마다 Wiktionary 뜻풀이와 주소를 남긴다. 손으로 늘리지 말고
+# `scripts/verify_words.py` 로 다시 만든다.
+#
+# pos 는 품사 대조에 쓰는 태그(n/v/a/r)이고, pos_raw 는 Wiktionary 가 적은 그대로다.
+americano:
+  gloss: A drink made of espresso coffee diluted with hot water.
+  glosses:
+  - '[Noun] A drink made of espresso coffee diluted with hot water.'
+  - '[Noun] A cocktail made with Campari, sweet vermouth, and club soda.'
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/americano#English
+app:
+  gloss: An application (program), especially a small one designed for a mobile device.
+  glosses:
+  - An application (program), especially a small one designed for a mobile device.
+  - application
+  - application (to a college etc.)
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/app#English
+barcode:
+  gloss: Any set of machine-readable parallel bars or concentric circles, varying in width, spacing, or
+    height, encoding information according to a symbology.
+  glosses:
+  - '[Noun] Any set of machine-readable parallel bars or concentric circles, varying in width, spacing,
+    or height, encoding information according to a symbology.'
+  - '[Noun] A portion of a gene that identifies a particular species.'
+  - '[Verb] To apply a barcode (machine-readable code) to.'
+  pos:
+  - n
+  - v
+  pos_raw:
+  - Noun
+  - Verb
+  source: https://en.wiktionary.org/wiki/barcode#English
+barista:
+  gloss: A person who prepares coffee in a coffee shop for customers.
+  glosses:
+  - '[Noun] A person who prepares coffee in a coffee shop for customers.'
+  - '[Verb] To work as a barista.'
+  pos:
+  - n
+  - v
+  pos_raw:
+  - Noun
+  - Verb
+  source: https://en.wiktionary.org/wiki/barista#English
+bibimbap:
+  gloss: A Korean dish of white rice topped with vegetables, beef, a whole egg, and gochujang (chili pepper
+    paste).
+  glosses:
+  - '[Noun] A Korean dish of white rice topped with vegetables, beef, a whole egg, and gochujang (chili
+    pepper paste).'
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/bibimbap#English
+bulgogi:
+  gloss: A Korean dish of shredded (usually marinated) beef with vegetables.
+  glosses:
+  - '[Noun] A Korean dish of shredded (usually marinated) beef with vegetables.'
+  - '[Noun] Any of various Korean dishes of grilled meat in this style.'
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/bulgogi#English
+carry-on:
+  gloss: Taken onto an airplane (or a ferry, etc.) with a passenger, rather than checked.
+  glosses:
+  - Taken onto an airplane (or a ferry, etc.) with a passenger, rather than checked.
+  - That luggage or baggage which is taken onto an airplane (or a ferry, etc.) with a passenger, rather
+    than checked.
+  - A palaver; a disorderly or absurd situation.
+  pos:
+  - a
+  - n
+  pos_raw:
+  - Adjective
+  - Noun
+  source: https://en.wiktionary.org/wiki/carry-on#English
+dine-in:
+  gloss: Eaten on the premises where one purchased it.
+  glosses:
+  - Eaten on the premises where one purchased it.
+  - Being or relating to premises where one can eat one's purchases.
+  pos:
+  - a
+  pos_raw:
+  - Adjective
+  source: https://en.wiktionary.org/wiki/dine-in#English
+hairdryer:
+  gloss: A small electrical appliance for drying hair, by generating a stream of hot air.
+  glosses:
+  - A small electrical appliance for drying hair, by generating a stream of hot air.
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/hairdryer#English
+hoodie:
+  gloss: A sweatshirt with an integral hood and, sometimes, a large kangaroo pocket at the front.<!--do
+    not add anything about who wears them or how these are used to avoid detection by CCTV cameras, etc,
+    as t
+  glosses:
+  - A sweatshirt with an integral hood and, sometimes, a large kangaroo pocket at the front.<!--do not
+    add anything about who wears them or how these are used to avoid detection by CCTV cameras, etc, as
+    t
+  - A foreskin.
+  - The hooded crow, .
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/hoodie#English
+kimchi:
+  gloss: A Korean dish made of vegetables, such as cabbage or radishes, that are salted, seasoned, and
+    stored in sealed containers to undergo lactic acid fermentation.
+  glosses:
+  - '[Noun] A Korean dish made of vegetables, such as cabbage or radishes, that are salted, seasoned,
+    and stored in sealed containers to undergo lactic acid fermentation.'
+  - '[Noun] A Korean person.'
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/kimchi#English
+matcha:
+  gloss: A type of powdered green tea, traditionally used in Japanese tea ceremonies.
+  glosses:
+  - '[Noun] A type of powdered green tea, traditionally used in Japanese tea ceremonies.'
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/matcha#English
+nonsmoking:
+  gloss: alternative form of non-smoking
+  glosses:
+  - alternative form of non-smoking
+  pos:
+  - a
+  pos_raw:
+  - Adjective
+  source: https://en.wiktionary.org/wiki/nonsmoking#English
+ramen:
+  gloss: Soup noodles of wheat, with various ingredients (Japanese-Chinese style).
+  glosses:
+  - '[Noun] Soup noodles of wheat, with various ingredients (Japanese-Chinese style).'
+  - '[Noun] A type of instant noodles.'
+  - '[Interjection] amen'
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  - Interjection
+  source: https://en.wiktionary.org/wiki/ramen#English
+round-trip:
+  gloss: alternative spelling of round trip
+  glosses:
+  - alternative spelling of round trip
+  - alternative spelling of roundtrip
+  pos:
+  - n
+  - v
+  pos_raw:
+  - Noun
+  - Verb
+  source: https://en.wiktionary.org/wiki/round-trip#English
+stir-fry:
+  gloss: To fry quickly in hot oil whilst constantly stirring, especially in a wok or similar pan.
+  glosses:
+  - To fry quickly in hot oil whilst constantly stirring, especially in a wok or similar pan.
+  - Food cooked in this manner.
+  - Any of a class of dishes based on Chinese cuisine, typically comprising strips of meat, vegetable
+    and/or noodles, stir-fried and served coated in a sticky sauce.
+  pos:
+  - n
+  - v
+  pos_raw:
+  - Verb
+  - Noun
+  source: https://en.wiktionary.org/wiki/stir-fry#English
+sugar-free:
+  gloss: 'Of food, drink, medication, chewing gum, etc: not containing sugar (and usually sweetened with
+    a sugar substitute instead).'
+  glosses:
+  - 'Of food, drink, medication, chewing gum, etc: not containing sugar (and usually sweetened with a
+    sugar substitute instead).'
+  pos:
+  - a
+  pos_raw:
+  - Adjective
+  source: https://en.wiktionary.org/wiki/sugar-free#English
+whenever:
+  gloss: At any time that
+  glosses:
+  - At any time that
+  - At the (single) time that, no matter when
+  - Every time that
+  pos:
+  - r
+  pos_raw:
+  - Conjunction
+  - Adverb
+  source: https://en.wiktionary.org/wiki/whenever#English

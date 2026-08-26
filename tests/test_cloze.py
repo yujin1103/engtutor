@@ -99,6 +99,19 @@ def test_the_right_word_in_the_wrong_form_is_its_own_verdict():
     assert "borrow" in result.message_ko
 
 
+@needs_lexicon
+def test_a_plural_answer_still_recognizes_the_singular():
+    """복수형이 그 자체로 사전 표제어인 단어들(years, minutes, days)에서 놓치던 자리.
+
+    `year` 라고 답한 학습자는 단어를 아는 것이다. 그걸 "다른 단어예요"로 돌려주면
+    이 앱이 가르치겠다고 한 것 — 뜻이 아니라 형태 — 을 정작 못 가르친다.
+    """
+    item = _item(word="year", example="I lived here for two years.")
+    assert item.answer == "years"
+    result = grade(item, "year")
+    assert result.verdict == "wrong_form"
+
+
 def test_a_different_word_is_a_different_verdict():
     assert grade(_item(), "lend").verdict == "wrong_word"
 
