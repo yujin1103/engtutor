@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import logging
+import re
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from pathlib import Path
@@ -20,6 +21,28 @@ from .schemas import WordEntry
 logger = logging.getLogger(__name__)
 
 PROMPTS_DIR = Path(__file__).parent / "prompts"
+
+# 장면 묶음 이름 -> 모델에게 줄 한 줄 설명. 예문을 그 장면의 문장으로 만들기 위한
+# 것이라 시나리오 제목처럼 구체적이어야 한다. 없는 이름은 그대로 넘긴다.
+TOPIC_SCENES: dict[str, str] = {
+    "cafe": "ordering a drink at a coffee shop counter",
+    "fastfood": "ordering at a fast food counter",
+    "food": "eating out and talking about food",
+    "grocery": "shopping at a supermarket",
+    "transport": "taking the subway, a bus or a taxi",
+    "airport": "checking in and going through an airport",
+    "hotel": "checking into a hotel and asking for things",
+    "shopping": "buying clothes in a shop",
+    "money": "paying, getting change, asking for a refund",
+    "health": "describing symptoms at a clinic or pharmacy",
+    "daily": "talking about the weather, dates and daily plans",
+    "home": "talking about home, devices and deliveries",
+    "talk": "small talk and keeping a conversation going",
+    "number": "saying numbers out loud — prices, times, quantities",
+    "weekday": "making plans on a certain day of the week",
+    "month": "saying dates — months and days of the month",
+    "ordinal": "saying which one in order — a date, a floor, a turn",
+}
 
 
 @dataclass
@@ -49,9 +72,20 @@ class WordGenerator:
         self._system = (PROMPTS_DIR / "word_system.md").read_text(encoding="utf-8")
         self._schema = json_schema_for(WordEntry)
 
-    def generate_one(self, word: str) -> GenerationResult:
+    def generate_one(self, word: str, topic: str | None = None) -> GenerationResult:
         target = word.strip().lower()
-        ask: list[dict[str, str]] = [{"role": "user", "content": f"Headword: {word}"}]
+        prompt = f"Headword: {word}"
+        if topic:
+            # 장면을 알려 주면 예문이 그 장면의 문장이 된다. 회화 앱들이 어휘를
+            # 유닛(장면)에 매어 두는 이유가 이것이다 — 학습자는 같은 말을 롤플레이에서
+            # 한 번, 단어 카드에서 한 번 만나야 붙는다.
+            scene = TOPIC_SCENES.get(topic, topic)
+            prompt += (
+                f"\nScene: {scene}\n"
+                "Write the example as a sentence someone actually says in that scene. "
+                "Keep it inside the 8-word limit."
+            )
+        ask: list[dict[str, str]] = [{"role": "user", "content": prompt}]
         last: Exception | None = None
 
         # 온도를 낮추며 재시도하되, 두 번째부터는 **무엇이 틀렸는지** 알려준다.
@@ -75,13 +109,19 @@ class WordGenerator:
                 last = exc
                 logger.debug("[%s] 생성 실패(temperature=%s): %s", word, temperature, exc)
                 ask = [
-                    {"role": "user", "content": f"Headword: {word}"},
+                    {"role": "user", "content": prompt},
                     {"role": "user", "content": _repair_note(target, exc)},
                 ]
 
         return GenerationResult(word=word, entry=None, error=str(last))
 
-    def generate_many(self, words: list[str], *, concurrency: int = 4) -> list[GenerationResult]:
+    def generate_many(
+        self,
+        words: list[str],
+        *,
+        concurrency: int = 4,
+        topics: dict[str, str] | None = None,
+    ) -> list[GenerationResult]:
         """동시 호출. 로컬 GPU 한 장이라 과하게 올리면 오히려 느려진다.
 
         캡스톤(E:/Capstone_dub)에서 LLM 배치에 max_workers=10 이 검증됐지만,
@@ -89,9 +129,55 @@ class WordGenerator:
         """
         if not words:
             return []
+        packs = topics or {}
         workers = max(1, min(concurrency, len(words)))
         with ThreadPoolExecutor(max_workers=workers) as pool:
-            return list(pool.map(self.generate_one, words))
+            return list(pool.map(lambda w: self.generate_one(w, packs.get(w)), words))
+
+
+def declares_no_rank(path: Path) -> bool:
+    """목록이 스스로 "내 순서는 빈도가 아니다" 라고 밝혔는가.
+
+    NGSL 은 파일 순서가 곧 빈도 순서지만, 장면별로 묶은 목록(content/data/app_words.txt)은
+    순서에 그런 뜻이 없다. 그걸 빈도로 읽으면 `americano` 가 `the` 보다 자주 쓰는 말이
+    된다. 목록 맨 위에 `# rank: none` 한 줄을 두면 순위를 건드리지 않는다.
+    """
+    for line in path.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if not stripped:
+            continue
+        if not stripped.startswith("#"):
+            return False  # 주석 구역이 끝났다
+        if stripped.lower().replace(" ", "").startswith("#rank:none"):
+            return True
+    return False
+
+
+_TOPIC_DIRECTIVE = re.compile(r"^#\s*topic\s*:\s*([a-z][a-z0-9_-]{0,31})\s*$", re.I)
+
+
+def load_topics(path: Path) -> dict[str, str]:
+    """표제어 -> 장면 묶음. `# topic: cafe` 아래 나오는 단어들이 그 묶음이다.
+
+    다른 회화 앱들이 '유닛'이라 부르는 것을 파일에서 그대로 표현한다. 선언이 없는
+    구간의 단어는 묶음이 없다(NGSL 같은 일반 어휘). 순서를 바꿔도 뜻이 안 변하도록
+    **선언 뒤에 오는 줄에만** 적용한다.
+    """
+    topics: dict[str, str] = {}
+    current = ""
+    for line in path.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if not stripped:
+            continue
+        if stripped.startswith("#"):
+            found = _TOPIC_DIRECTIVE.match(stripped)
+            if found:
+                current = found.group(1).lower()
+            continue
+        word = stripped.split(",")[0].strip().strip('"').lower()
+        if word and current and word not in topics:
+            topics[word] = current
+    return topics
 
 
 def load_wordlist(path: Path, *, limit: int | None = None) -> list[str]:
@@ -106,7 +192,9 @@ def load_wordlist(path: Path, *, limit: int | None = None) -> list[str]:
         if not line or line.startswith("#"):
             continue
         word = line.split(",")[0].strip().strip('"').lower()
-        if not word or not word.isascii() or not word.replace("'", "").isalpha():
+        # 하이픈은 표제어의 일부다 — `check-in`, `take-out`, `thirty-first`.
+        # 예전에는 여기서 조용히 걸러져서, 목록에 적어도 생성되지 않았다.
+        if not word or not word.isascii() or not word.replace("'", "").replace("-", "").isalpha():
             continue
         if word in seen:
             continue

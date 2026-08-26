@@ -48,7 +48,12 @@ SessionLocal = sessionmaker(bind=engine, autoflush=False, expire_on_commit=False
 # 여기서 직접 채워 넣는다. 토이 규모라 Alembic 을 들이는 대신 이 정도로 충분하다.
 _ADDED_COLUMNS: dict[str, dict[str, str]] = {
     "corrections": {"kind": "VARCHAR(16) NOT NULL DEFAULT 'mistake'"},
-    "words": {"rank": "INTEGER", "reviewed_by": "VARCHAR(32)", "pattern": "VARCHAR(120)"},
+    "words": {
+        "rank": "INTEGER",
+        "reviewed_by": "VARCHAR(32)",
+        "pattern": "VARCHAR(120)",
+        "topic": "VARCHAR(32)",
+    },
     "turns": {
         "input_mode": "VARCHAR(8) NOT NULL DEFAULT 'text'",
         "transcript": "TEXT",

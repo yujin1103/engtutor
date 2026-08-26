@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from datetime import datetime, timezone
 
-from sqlalchemy import func, or_, select
+from sqlalchemy import case, func, or_, select
 from sqlalchemy.orm import Session as DbSession
 from sqlalchemy.orm import selectinload
 
@@ -135,19 +135,27 @@ def existing_words(db: DbSession) -> set[str]:
     return set(db.execute(select(WordRow.word)).scalars())
 
 
-def upsert_word(db: DbSession, entry: WordEntry) -> WordRow:
+def upsert_word(db: DbSession, entry: WordEntry, *, topic: str | None = None) -> WordRow:
     """배치 생성 결과 저장. 항상 reviewed=False 로 들어간다.
 
     이미 있는 단어를 다시 생성하면 내용만 갱신하되, 사람이 이미 승인한 항목은
     건드리지 않는다(검수 결과를 배치가 덮어쓰면 안 된다).
+
+    `topic` 은 **줄 때만** 쓴다. 없다고 지우면, 장면 없는 목록으로 한 번만 다시
+    돌려도 묶음이 통째로 날아간다.
     """
     row = db.execute(select(WordRow).where(WordRow.word == entry.word)).scalar_one_or_none()
     if row is None:
         row = WordRow(word=entry.word, reviewed=False)
         db.add(row)
     elif row.reviewed:
+        if topic and not row.topic:
+            row.topic = topic  # 묶음은 내용이 아니라 분류라 승인된 항목에도 붙인다
+            db.flush()
         return row
 
+    if topic:
+        row.topic = topic
     row.level = entry.level
     row.meaning_ko = entry.meaning_ko
     row.pattern = entry.pattern
@@ -204,6 +212,25 @@ def assign_ranks(db: DbSession, words: list[str]) -> int:
         rank = ranks.get(row.word)
         if rank is not None and row.rank != rank:
             row.rank = rank
+            changed += 1
+    return changed
+
+
+def assign_topics(db: DbSession, topics: dict[str, str]) -> int:
+    """표제어에 장면 묶음을 붙인다. LLM 을 부르지 않는다.
+
+    목록 파일에 `# topic:` 을 나중에 적었을 때, 이미 생성된 항목에 소급 적용하려고
+    쓴다. 묶음은 내용이 아니라 분류라 승인된 항목에도 붙인다 — 검수 결과를
+    덮어쓰는 게 아니다.
+    """
+    wanted = {w.strip().lower(): t for w, t in topics.items() if t}
+    if not wanted:
+        return 0
+    changed = 0
+    for row in db.execute(select(WordRow).where(WordRow.word.in_(wanted))).scalars():
+        topic = wanted.get(row.word)
+        if topic and row.topic != topic:
+            row.topic = topic
             changed += 1
     return changed
 
@@ -271,11 +298,23 @@ def word_tips_for(
     ]
 
 
+def topics(db: DbSession) -> list[tuple[str, int, int]]:
+    """(장면 묶음, 전체, 검수 완료). 묶음 없는 일반 어휘는 빠진다."""
+    stmt = (
+        select(WordRow.topic, func.count(WordRow.id), func.sum(case((WordRow.reviewed, 1), else_=0)))
+        .where(WordRow.topic.is_not(None))
+        .group_by(WordRow.topic)
+        .order_by(WordRow.topic)
+    )
+    return [(str(t), int(n), int(r or 0)) for t, n, r in db.execute(stmt)]
+
+
 def cloze_candidates(
     db: DbSession,
     *,
     level: str | None = None,
     reviewed_only: bool = False,
+    topic: str | None = None,
     limit: int = 60,
 ) -> list[WordRow]:
     """빈칸 문제로 쓸 후보를 **빈도 순**으로 준다.
@@ -292,6 +331,10 @@ def cloze_candidates(
         stmt = stmt.where(WordRow.level == level)
     if reviewed_only:
         stmt = stmt.where(WordRow.reviewed.is_(True))
+    if topic:
+        # 장면을 고르면 그 장면 말만 낸다. 카페 연습 직전에 카페 단어를 푸는 게
+        # 빈도 상위 열 개를 푸는 것보다 그 대화에 실제로 도움이 된다.
+        stmt = stmt.where(WordRow.topic == topic)
     # rank 가 없는 단어(NGSL 목록 밖)는 뒤로 보낸다.
     stmt = stmt.order_by(WordRow.rank.is_(None), WordRow.rank, WordRow.word).limit(limit)
     return list(db.execute(stmt).scalars())

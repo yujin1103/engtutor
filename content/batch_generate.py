@@ -23,12 +23,20 @@ from pathlib import Path
 # 컨테이너에서 `python content/batch_generate.py` 로 직접 실행할 수 있게 한다.
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from app.content.generator import WordGenerator, load_wordlist  # noqa: E402
+from app.content.generator import (  # noqa: E402
+    WordGenerator,
+    declares_no_rank,
+    load_topics,
+    load_wordlist,
+)
 from app.db import crud  # noqa: E402
 from app.db.database import db_session, init_db  # noqa: E402
 from app.llm.factory import get_client  # noqa: E402
 
 DEFAULT_WORDLIST = Path(__file__).parent / "data" / "starter_words.txt"
+
+# 이보다 짧은 목록의 순서는 빈도로 보지 않는다. NGSL 은 2,801개, 시작용 목록도 60개다.
+MIN_RANKED_WORDS = 50
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 logger = logging.getLogger("batch_generate")
@@ -48,6 +56,58 @@ def _normalize_existing() -> int:
                 changed += 1
                 logger.info("정규화: %s", row.word)
     logger.info("완료: %d건 수정", changed)
+    return 0
+
+
+def _relevel(dry_run: bool) -> int:
+    """LLM 이 매긴 레벨을 바깥 등급표와 대조해 **내리는 방향으로만** 고친다.
+
+    왜 내리기만 하는가
+    ------------------
+    2,890개를 CEFR-J 등급표(6,867 표제어)와 맞춰 보니 일치가 46% 였고, 어긋난 방향이
+    한쪽으로 쏠려 있었다 — 등급표가 A1 이라 보는 단어 166개, A2 라 보는 단어 554개를
+    우리는 B1 이라고 붙여 놨다. 프롬프트에 "레벨을 부풀리지 말라"고 적어 두었는데도
+    2,801개 중 1,899개가 B1 이었다. **B1 이 미분류 통이 된 것이다.**
+
+    반대 방향(등급표가 더 어렵게 보는 것)은 건드리지 않는다. `passport` 를 등급표는
+    B1 으로 보지만 이 앱은 공항 시나리오를 A1 으로 가르친다 — 장면에 매인 단어의
+    난이도는 그 장면이 정한다. 실측된 결함은 부풀림 한 방향뿐이므로 그것만 고친다.
+
+    승인된 항목은 건드리지 않는다. 사람이 정한 것을 표가 덮으면 안 된다.
+    """
+    from app.content import lexicon
+
+    init_db()
+    changed: list[tuple[str, str, str]] = []
+    with db_session() as db:
+        for row in crud.list_words(db, limit=100_000):
+            if row.reviewed:
+                continue
+            theirs = lexicon.reference_level(row.word)
+            if theirs is None or theirs not in ("A1", "A2", "B1"):
+                continue  # 표에 없거나, 표가 더 어렵게 보는 구간(B2+)이다
+            gap = lexicon.level_distance(row.level, theirs)
+            if gap is None or gap <= 0:
+                continue  # 같거나, 우리가 이미 더 쉽게 본 경우
+            changed.append((row.word, row.level, theirs))
+            if not dry_run:
+                crud.save_word_edits(db, row.id, level=theirs)
+
+    logger.info("%s: %d개", "내릴 대상" if dry_run else "레벨 조정", len(changed))
+    for word, before, after in changed[:15]:
+        logger.info("  %-16s %s -> %s", word, before, after)
+    if len(changed) > 15:
+        logger.info("  … %d개 더", len(changed) - 15)
+    if not dry_run:
+        with db_session() as db:
+            from sqlalchemy import func, select
+
+            from app.db.models import WordRow
+
+            spread = db.execute(
+                select(WordRow.level, func.count()).group_by(WordRow.level).order_by(WordRow.level)
+            ).all()
+        logger.info("레벨 분포: %s", " · ".join(f"{lv} {n}" for lv, n in spread))
     return 0
 
 
@@ -102,10 +162,27 @@ def main() -> int:
         action="store_true",
         help="LLM 호출 없이 목록 순서를 빈도 순위로만 기록한다",
     )
+    parser.add_argument(
+        "--topics-only",
+        action="store_true",
+        help="LLM 호출 없이 목록의 `# topic:` 만 이미 저장된 항목에 붙인다",
+    )
+    parser.add_argument(
+        "--relevel",
+        action="store_true",
+        help="LLM 호출 없이 바깥 등급표와 대조해 부풀려진 레벨을 내린다",
+    )
     args = parser.parse_args()
 
     if args.normalize_existing:
         return _normalize_existing()
+
+    if args.relevel:
+        return _relevel(args.dry_run)
+
+    # 표제어 -> 장면 묶음. DB 를 보고 도는 경로(--missing-pattern/--flagged)에서는
+    # 이미 저장된 묶음을 그대로 두면 되므로 비워 둔다.
+    topics: dict[str, str] = {}
 
     if args.missing_pattern or args.flagged:
         # 목록 파일이 아니라 DB 가 대상이다. 2,801개를 통째로 다시 돌릴 이유가 없다 —
@@ -133,14 +210,39 @@ def main() -> int:
 
         init_db()
         words = load_wordlist(args.wordlist, limit=args.limit)
+        topics = load_topics(args.wordlist)
+        if topics:
+            names = sorted(set(topics.values()))
+            logger.info("장면 묶음 %d개: %s", len(names), ", ".join(names))
+        if args.topics_only:
+            with db_session() as db:
+                changed = crud.assign_topics(db, topics)
+            logger.info("장면 묶음 기록: %d개", changed)
+            return 0
 
         # 목록에 등장하는 순서가 곧 빈도 순서다(NGSL). 검수 우선순위로 쓰려면
         # 생성 성공 여부와 무관하게 매번 기록해 둔다.
+        #
+        # 단, **짧은 목록의 순서는 빈도가 아니다.** 실패한 단어 5개를 다시 돌리려고
+        # 임시 파일로 부르면 그 파일의 2번째 단어가 rank 2 가 돼 `and` 와 같은 자리에
+        # 앉는다. 실제로 그렇게 seventeen 이 2위가 됐다. 목록이 짧으면 순위를 건드리지
+        # 않는다 — 빈도 목록은 원래 길다.
         if not args.dry_run:
-            with db_session() as db:
-                changed = crud.assign_ranks(db, load_wordlist(args.wordlist))
-            if changed:
-                logger.info("빈도 순위 기록: %d개", changed)
+            full = load_wordlist(args.wordlist)
+            if declares_no_rank(args.wordlist):
+                logger.info("목록이 `# rank: none` 을 선언해 빈도 순위는 건드리지 않습니다.")
+            elif len(full) < MIN_RANKED_WORDS:
+                logger.info(
+                    "목록이 %d개뿐이라 빈도 순위는 건드리지 않습니다 "
+                    "(순위는 %d개 이상인 목록에서만 기록합니다).",
+                    len(full),
+                    MIN_RANKED_WORDS,
+                )
+            else:
+                with db_session() as db:
+                    changed = crud.assign_ranks(db, full)
+                if changed:
+                    logger.info("빈도 순위 기록: %d개", changed)
         if args.rank_only:
             return 0
 
@@ -165,7 +267,7 @@ def main() -> int:
 
     for offset in range(0, len(words), args.batch_size):
         chunk = words[offset : offset + args.batch_size]
-        results = generator.generate_many(chunk, concurrency=args.concurrency)
+        results = generator.generate_many(chunk, concurrency=args.concurrency, topics=topics)
 
         if args.dry_run:
             for r in results:
@@ -183,7 +285,7 @@ def main() -> int:
             with db_session() as db:
                 for r in results:
                     if r.ok:
-                        crud.upsert_word(db, r.entry)
+                        crud.upsert_word(db, r.entry, topic=topics.get(r.word))
 
         ok += sum(1 for r in results if r.ok)
         failed += sum(1 for r in results if not r.ok)

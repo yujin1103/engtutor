@@ -52,6 +52,7 @@ def load_words() -> list[dict]:
                 "usage_note": r.usage_note,
                 "confused_with": list(r.confused_with or []),
                 "rank": r.rank,
+                "topic": r.topic,
                 "reviewed": r.reviewed,
                 "reviewed_by": r.reviewed_by,
             }
@@ -94,6 +95,14 @@ with st.sidebar:
         help="의심 순: 선별기가 지적한 항목이 먼저, 그 다음은 빈도 순. 빈도 순: NGSL 순위대로(자주 쓰는 단어 먼저).",
     )
     flagged_only = st.checkbox("지적된 것만 보기", value=False)
+    # 장면 묶음. 검수를 장면 단위로 끊을 수 있어야 "카페 팩만 승인하고 시연"이 된다.
+    packs = sorted({w["topic"] for w in words if w["topic"]})
+    topic = st.selectbox(
+        "장면 묶음",
+        ["전체", "묶음 없음 (일반 어휘)", *packs],
+        index=0,
+        help="NGSL 일반 어휘에는 묶음이 없습니다. 장면 어휘만 따로 훑을 때 씁니다.",
+    )
     query = st.text_input("검색 (단어 · 뜻)", placeholder="borrow")
     st.divider()
     st.caption("생성은 AI, 검수는 사람, 서빙은 DB")
@@ -138,12 +147,21 @@ st.divider()
 wanted_reviewed = {"미검수": False, "검수 완료": True, "전체": None}[view]
 needle = query.strip().lower()
 
+def _in_pack(item: dict) -> bool:
+    if topic == "전체":
+        return True
+    if topic == "묶음 없음 (일반 어휘)":
+        return not item["topic"]
+    return item["topic"] == topic
+
+
 items = [
     w
     for w in words
     if (wanted_reviewed is None or w["reviewed"] is wanted_reviewed)
     and (not needle or needle in w["word"].lower() or needle in w["meaning_ko"].lower())
     and (not flagged_only or findings.get(w["word"]))
+    and _in_pack(w)
 ]
 
 if order == "의심 순":
@@ -163,7 +181,7 @@ for item in page_items:
     worst = _worst(found)
     marks = "".join(ICON[f["severity"]] for f in found[:3])
     badge = "✅" if item["reviewed"] else "⏳"
-    place = f"#{item['rank']}" if item["rank"] else "—"
+    place = f"#{item['rank']}" if item["rank"] else (f"🏷 {item['topic']}" if item["topic"] else "—")
     title = f"{badge} {marks} **{item['word']}** `{place}` — {item['meaning_ko']}"
 
     with st.expander(title, expanded=not item["reviewed"] and worst is not None):

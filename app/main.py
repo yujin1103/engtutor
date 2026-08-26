@@ -275,6 +275,14 @@ class ClozeOut(BaseModel):
     reviewed: bool
 
 
+class TopicOut(BaseModel):
+    """장면 묶음 하나. 다른 회화 앱의 '유닛'에 해당한다."""
+
+    topic: str
+    total: int
+    reviewed: int
+
+
 class ClozeAnswerRequest(BaseModel):
     word: str
     said: str = Field(description="학습자가 말했거나 적은 답")
@@ -288,6 +296,16 @@ class ClozeAnswerOut(BaseModel):
     message_ko: str
 
 
+@app.get("/cloze/topics", response_model=list[TopicOut])
+def list_topics() -> list[TopicOut]:
+    """장면 묶음 목록. 빈칸을 장면별로 낼 수 있게 UI 가 먼저 물어본다."""
+    from .db import crud
+    from .db.database import db_session
+
+    with db_session() as db:
+        return [TopicOut(topic=t, total=n, reviewed=r) for t, n, r in crud.topics(db)]
+
+
 @app.get("/cloze", response_model=list[ClozeOut])
 def list_cloze(
     level: str = DEFAULT_LEVEL,
@@ -295,11 +313,15 @@ def list_cloze(
     offset: int = 0,
     speech: bool = False,
     reviewed_only: bool = False,
+    topic: str | None = None,
 ) -> list[ClozeOut]:
     """빈칸 문제를 빈도 순으로 준다.
 
     `speech=true` 면 기능어 빈칸을 뺀다 — `and` 를 마이크에 대고 말하는 건 연습이
     아니고, 짧고 강세 없는 낱말은 전사가 가장 많이 흔들린다.
+
+    `topic` 을 주면 그 장면 묶음(cafe, hotel, health …)만 낸다. 카페 대화 직전에
+    카페 단어를 푸는 게 빈도 상위 열 개를 푸는 것보다 그 대화에 실제로 도움이 된다.
     """
     from .db import crud
     from .db.database import db_session
@@ -308,7 +330,11 @@ def list_cloze(
     with db_session() as db:
         # 안전 판정과 음성 판정이 파이썬 쪽에 있어서 넉넉히 받아 걸러 쓴다.
         rows = crud.cloze_candidates(
-            db, level=level, reviewed_only=reviewed_only, limit=(offset + count) * 6 + 60
+            db,
+            level=level,
+            reviewed_only=reviewed_only,
+            topic=topic,
+            limit=(offset + count) * 6 + 60,
         )
         out: list[ClozeOut] = []
         for row in rows:

@@ -104,6 +104,13 @@ class WordRow(Base):
     # NGSL 빈도 순위(1이 가장 자주 쓰임). 검수 우선순위로 쓴다 — 300개만 검수해도
     # 가장 많이 쓰는 300개를 얻어야 하기 때문이다. 목록 밖 단어는 NULL.
     rank: Mapped[int | None] = mapped_column(Integer, nullable=True, index=True)
+    # 장면 묶음. 'cafe', 'hotel', 'health' … NGSL 일반 어휘는 NULL 이다.
+    #
+    # 빈도 목록만으로는 카페에서 쓸 말을 모을 수 없다 — NGSL 2,801개에 `americano`
+    # 도 `towel` 도 없었다. 그래서 장면별로 묶은 어휘를 따로 넣고, 그 묶음 이름을
+    # 여기 남긴다. 검수를 장면 단위로 끊어서 할 수 있고(카페 팩만 승인하고 시연),
+    # 빈칸도 그 장면 것만 낼 수 있다. 다른 회화 앱들이 '유닛'이라 부르는 것과 같다.
+    topic: Mapped[str | None] = mapped_column(String(32), nullable=True, index=True)
     # 승인해야 True. 리포트에는 True 인 것만 나간다.
     reviewed: Mapped[bool] = mapped_column(Boolean, default=False, index=True)
     # 누가 승인했는지. 검수 UI 에서 사람이 누르면 "human", 그 밖에는 모델 이름을

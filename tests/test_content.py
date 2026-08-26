@@ -5,7 +5,7 @@ from __future__ import annotations
 import pytest
 from pydantic import ValidationError
 
-from app.content.generator import WordGenerator, load_wordlist
+from app.content.generator import WordGenerator, declares_no_rank, load_wordlist
 from app.content.schemas import WordEntry
 from app.tutor.schemas import Correction, json_schema_for
 
@@ -64,6 +64,28 @@ def test_load_wordlist_reads_csv_first_column(tmp_path):
     path = tmp_path / "ngsl.csv"
     path.write_text('"borrow",1234\n"lend",567\n', encoding="utf-8")
     assert load_wordlist(path, limit=1) == ["borrow"]
+
+
+def test_a_list_can_declare_that_its_order_is_not_frequency(tmp_path):
+    """장면별로 묶은 목록의 순서를 빈도로 읽으면 americano 가 the 보다 앞에 온다."""
+    path = tmp_path / "app_words.txt"
+    path.write_text("# rank: none\n# 장면별 묶음\nlatte\nsubway\n", encoding="utf-8")
+    assert declares_no_rank(path)
+    assert load_wordlist(path) == ["latte", "subway"]
+
+
+def test_a_plain_list_still_carries_its_order(tmp_path):
+    """NGSL 은 파일 순서가 곧 빈도 순서다. 선언이 없으면 예전 그대로 동작해야 한다."""
+    path = tmp_path / "ngsl.csv"
+    path.write_text("# NGSL headwords\nbe,1\nand,2\n", encoding="utf-8")
+    assert not declares_no_rank(path)
+
+
+def test_the_declaration_must_be_in_the_comment_block(tmp_path):
+    """단어가 시작된 뒤에 나오는 `# rank: none` 은 목록의 선언이 아니다."""
+    path = tmp_path / "words.txt"
+    path.write_text("borrow\n# rank: none\nlend\n", encoding="utf-8")
+    assert not declares_no_rank(path)
 
 
 # ---------------------------------------------------------------- 생성
