@@ -1,0 +1,159 @@
+# rank: none
+#
+# 이 앱이 실제로 쓰는데 NGSL 에 없는 말.
+#
+# 아래 순서는 **장면별 묶음이지 빈도가 아니다.** 그래서 맨 위에 `rank: none` 을 적어
+# 둔다 — 이 파일로 배치를 돌려도 빈도 순위(words.rank)를 건드리지 않는다.
+#
+# 어디서 나왔나
+# -------------
+# `scripts/coverage_gap.py` 가 시나리오 33개·측정 발화·실제 대화 기록·자가 대화
+# (시나리오당 6턴)를 훑어, 단어 표(NGSL 2,801개)가 덮지 못한 토큰을 뽑았다.
+# 전체의 5.8%(토큰 349개, 종류 57개)가 덮이지 않았고, 그중 이름·지명·오타를
+# 빼고 남은 것이 아래다. 가장 자주 나온 것은 `americano` 로 63번이었다 —
+# 카페 주문이 이 앱의 첫 시나리오인데 그 단어에 항목이 없었다.
+#
+# NGSL 은 **글**의 빈도 목록이라 말로 하는 장면의 말(음료 이름, 지하철, 두통,
+# 수건, 영수증)이 통째로 빠져 있다. 목록을 하나 더 사 오는 대신, 이 앱이 실제로
+# 쓰는 말을 세어서 그것만 더한다.
+#
+# 닫힌 부류는 채워서 넣는다
+# -------------------------
+# 숫자와 요일은 말뭉치에 일부만 나왔다(nine, three, forty, Saturday). 그런데
+# 이건 닫힌 부류라, 나온 것만 넣으면 학습자가 "다섯 개 주세요"를 못 한다.
+# 부류가 쓰인다는 게 확인됐으므로 부류를 채워서 넣는다.
+#
+# 안 넣은 것
+# ----------
+# - 이름·지명: Jisu, Sam, Kim, Seoul, Mario's — 배역이지 어휘가 아니다.
+# - 모델이 흘린 상위 어휘: availability, inconvenience, promptly — A1 대화에서
+#   나올 말이 아니다. 표에 넣을 게 아니라 레벨 제어에서 볼 문제다.
+# - 조각·군더더기: th, p, pm, roleplay 같은 토막.
+# - 한 번씩만 스친 것: website, app, math, pepperoni, runny — 장면에 붙어 있지
+#   않아서 미뤘다. 자가 대화를 더 돌려 다시 나오면 그때 넣는다.
+#
+# 실행:
+#   docker compose exec api python content/batch_generate.py --wordlist content/data/app_words.txt
+
+# --- 음료·음식 (카페·패스트푸드·배달 시나리오) ---
+# topic: cafe
+americano
+latte
+pizza
+burger
+fries
+flavor
+
+# --- 이동·길 (지하철·버스·공항 시나리오) ---
+# topic: transport
+subway
+airport
+passport
+destination
+backpack
+
+# --- 가게·계산 (편의점·시장·환불 시나리오) ---
+# topic: money
+receipt
+refund
+convenience
+
+# --- 숙소 (호텔 체크인·요청·문제 시나리오) ---
+# topic: hotel
+reservation
+towel
+conditioner
+
+# --- 몸 (병원·약국 시나리오) ---
+# topic: health
+headache
+fever
+allergy
+sneeze
+
+# --- 대화를 굴리는 말 ---
+# topic: talk
+pardon
+awesome
+hobby
+korean
+
+# --- 숫자 (닫힌 부류라 채워 넣는다) ---
+# topic: number
+two
+three
+four
+five
+six
+seven
+eight
+nine
+ten
+eleven
+twelve
+thirteen
+fourteen
+fifteen
+sixteen
+seventeen
+eighteen
+nineteen
+twenty
+thirty
+forty
+fifty
+sixty
+seventy
+eighty
+ninety
+hundred
+thousand
+
+# --- 달 (닫힌 부류. 예약·항공권에 날짜가 반드시 나온다) ---
+# topic: month
+january
+february
+march
+april
+may
+june
+july
+august
+september
+october
+november
+december
+
+# --- 서수 (닫힌 부류. 날짜와 층수에 쓴다 — "the third floor") ---
+# topic: ordinal
+first
+second
+third
+fourth
+fifth
+sixth
+seventh
+eighth
+ninth
+tenth
+eleventh
+twelfth
+thirteenth
+fourteenth
+fifteenth
+sixteenth
+seventeenth
+eighteenth
+nineteenth
+twentieth
+thirtieth
+
+# --- 요일 (닫힌 부류라 채워 넣는다) ---
+# topic: weekday
+monday
+tuesday
+wednesday
+thursday
+friday
+saturday
+sunday

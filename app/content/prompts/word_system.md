@@ -11,7 +11,9 @@ You will be given ONE English headword. Produce one entry for it.
   Do not inflate levels.
 - `meaning_ko`: the Korean meaning. **If Koreans routinely confuse this word with another,
   disambiguate inside parentheses** — `빌리다 (내가 빌려 오는 쪽)`, not just `빌리다`.
-  One line. No bullet lists.
+  One line. No bullet lists. **A number word is written in Hangul with the digits beside it —
+  `마흔 (40)`, never a bare `40`.** Korean has two number systems and the learner needs the
+  word, not the figure.
 - `pattern`: the **grammatical shape** this word takes in a sentence — the form, not the meaning.
   Write the headword with whatever must come with it, **40 characters or fewer**:
   `listen to + 목적어`, `enjoy + -ing`, `advice: 불가산명사 (an advice X)`, `arrive at/in + 장소`.
