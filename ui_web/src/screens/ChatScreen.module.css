@@ -1,0 +1,78 @@
+/* 화면의 뼈대만 여기 둔다. 말풍선·힌트 바·입력칸의 모양은 각자
+   chat/*.module.css 에 있다 — 부품을 옮겨도 이 파일이 따라오지 않게. */
+
+/* 아래 고정 영역: 힌트 바 → (음성) → 입력칸 순서. 이 순서가 곧 사용 순서다.
+   막혔을 때 위를 보고, 말하거나 치고, 보낸다. */
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+/* 상단바의 끝내기. 한 판에 한 번 누르는 것이라 눈에 덜 띄게 두되,
+   누르는 면적은 다른 버튼과 같이 준다. */
+.finish {
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.finish:active {
+  background: var(--surface-2);
+}
+
+.finish:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.confirm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.confirmText {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-dim);
+}
+
+.confirmButtons {
+  display: flex;
+  gap: var(--gap-sm);
+}
+
+/* 되돌릴 수 없는 쪽(리포트 보기)에 더 넓은 자리를 준다. 대신 취소가
+   왼쪽에 오게 둬서, 습관적으로 오른쪽을 누르던 사람도 한 번은 읽게 된다. */
+.confirmButtons > *:first-child {
+  flex: 1;
+}
+
+.confirmButtons > *:last-child {
+  flex: 2;
+}
+
+/* 상단바 오른쪽. 설정과 끝내기가 나란히 선다. */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-xs);
+}
+
+.gear {
+  border: 0;
+  background: none;
+  font-size: 20px;
+  line-height: 1;
+  padding: 0 6px;
+  /* 아이콘은 작아도 손가락은 크다. 터치 영역은 따로 지킨다. */
+  min-width: var(--tap-min);
+  min-height: var(--tap-min);
+  cursor: pointer;
+}

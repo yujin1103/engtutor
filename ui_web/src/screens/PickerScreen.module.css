@@ -1,0 +1,230 @@
+.search {
+  width: 100%;
+  min-height: var(--tap-min);
+  margin-bottom: var(--gap);
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.lead {
+  margin-bottom: var(--gap);
+}
+
+/* 분류 여섯 개. 폰 세로에서 두 줄씩 세 칸이면 스크롤 없이 한눈에 들어온다.
+   세 칸으로 하면 카드가 좁아져 글씨가 두 줄로 접힌다. */
+.categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap);
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-xs);
+  /* 카드 전체가 버튼이다. 폰에서 작은 글씨를 정확히 겨냥하게 하지 않는다. */
+  min-height: 116px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  text-align: left;
+  transition: transform 80ms ease;
+}
+
+.category:active {
+  transform: scale(0.98);
+}
+
+.emoji {
+  font-size: 1.7rem;
+  line-height: 1.2;
+}
+
+.categoryLabel {
+  font-weight: 700;
+}
+
+.blurb {
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.count {
+  margin-top: auto;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+}
+
+/* 시나리오 목록 */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  width: 100%;
+  min-height: 64px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  text-align: left;
+  transition: transform 80ms ease;
+}
+
+.row:active {
+  transform: scale(0.99);
+}
+
+.rowText {
+  flex: 1;
+  min-width: 0;
+}
+
+.rowTitle {
+  font-weight: 600;
+}
+
+.rowGoal {
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chevron {
+  flex: none;
+  color: var(--text-dim);
+}
+
+.badge {
+  flex: none;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-dim);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.empty {
+  padding: 32px var(--gap);
+  color: var(--text-dim);
+  text-align: center;
+}
+
+/* 고른 뒤 보는 상세 */
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.detailHead {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-sm);
+}
+
+.detailTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.block {
+  padding: 14px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.blockLabel {
+  margin-bottom: var(--gap-xs);
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* AI 의 첫 대사. 이 화면에서 제일 중요한 줄이라 말풍선으로 따로 세운다 —
+   사용자가 "시작하면 이 말을 듣는다" 를 미리 알고 들어가게 하려는 것이다. */
+.opening {
+  padding: 14px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+}
+
+.openingEn {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.openingKo {
+  margin-top: var(--gap-xs);
+  color: var(--text-dim);
+  font-size: 0.92rem;
+}
+
+.levelNote {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+/* 단어 연습장으로 가는 문. 대화와 **나란한** 갈래라 분류 격자 안에 끼우지 않고
+   한 줄을 통째로 차지하게 뒀다. 격자 안에 넣으면 일곱 번째 상황으로 읽힌다. */
+.practice {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  width: 100%;
+  min-height: 68px;
+  margin-bottom: var(--gap);
+  padding: 12px 14px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+  text-align: left;
+  transition: transform 80ms ease;
+}
+
+.practice:active {
+  transform: scale(0.99);
+}
+
+.practiceEmoji {
+  flex: none;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.practiceText {
+  flex: 1;
+  min-width: 0;
+}
+
+.practiceTitle {
+  display: block;
+  font-weight: 700;
+}
+
+.practiceBlurb {
+  display: block;
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}

@@ -44,6 +44,18 @@ def _codes(findings):
     return {f.code for f in findings}
 
 
+def test_a_meaning_that_mixes_foreign_script_is_flagged_even_though_it_has_hangul():
+    """한글이 하나라도 있으면 통과였다 — `bagel` 의 뜻이 `백일(백面包)` 로 저장돼 있다.
+
+    검수 큐가 이것들을 맨 앞으로 올려야 하고, 미검수 항목은 이 지적 때문에
+    출제 문(`cloze.is_safe_to_serve`)을 통과하지 못한다.
+    """
+    codes = _codes(screen(_row(word="bagel", meaning_ko="백일(백面包), 빵 종류")))
+    assert "meaning_foreign_script" in codes
+    assert "meaning_not_korean" not in codes  # 한글은 있다. 그게 예전에 통과한 이유다
+    assert "meaning_foreign_script" not in _codes(screen(_row()))
+
+
 # ------------------------------------------------------------------ 굴절 인식
 @pytest.mark.parametrize(
     ("word", "sentence"),

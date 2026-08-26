@@ -49,10 +49,12 @@ def load_words() -> list[dict]:
                 "meaning_ko": r.meaning_ko,
                 "pattern": r.pattern,
                 "example": r.example,
+                "example_ko": r.example_ko,
                 "usage_note": r.usage_note,
                 "confused_with": list(r.confused_with or []),
                 "rank": r.rank,
                 "topic": r.topic,
+                "track": r.track,
                 "reviewed": r.reviewed,
                 "reviewed_by": r.reviewed_by,
             }
@@ -82,6 +84,8 @@ def _worst(found: list[dict]) -> str | None:
 
 
 words = load_words()
+# 지적 목록은 **거르기 전 전체**로 만든다. 복제 검사가 표 전체를 봐야 하기 때문이다 —
+# 토익 항목만 보고 있어도 같은 설명이 생활 회화 쪽에 있으면 알아야 한다.
 findings = load_findings() if words else {}
 
 # ---------------------------------------------------------------- 사이드바
@@ -95,6 +99,18 @@ with st.sidebar:
         help="의심 순: 선별기가 지적한 항목이 먼저, 그 다음은 빈도 순. 빈도 순: NGSL 순위대로(자주 쓰는 단어 먼저).",
     )
     flagged_only = st.checkbox("지적된 것만 보기", value=False)
+    # 트랙. 토익 어휘 2,260개가 들어오면서 검수 큐가 한 통으로는 감당이 안 된다.
+    # 고른 트랙이 위쪽 숫자(진행률·미검수)에도 그대로 걸린다 — 검수하는 사람이
+    # 알고 싶은 것은 "토익 2,260개 중 몇 개를 승인했나"이지 전체 합이 아니다.
+    tracks = sorted({w["track"] for w in words})
+    TRACK_KO = {"general": "생활 회화", "toeic": "토익"}
+    track = st.radio(
+        "트랙",
+        ["전체", *tracks],
+        index=0,
+        format_func=lambda t: TRACK_KO.get(t, t),
+        help="생활 회화(NGSL·장면 팩)와 토익(TSL·BSL)은 어휘도 예문 상황도 다른 묶음입니다.",
+    )
     # 장면 묶음. 검수를 장면 단위로 끊을 수 있어야 "카페 팩만 승인하고 시연"이 된다.
     packs = sorted({w["topic"] for w in words if w["topic"]})
     topic = st.selectbox(
@@ -109,6 +125,9 @@ with st.sidebar:
     st.caption("선별기는 순서만 매깁니다. 승인은 사람만 합니다.")
 
 st.title("📚 단어 콘텐츠 검수")
+
+if track != "전체":
+    words = [w for w in words if w["track"] == track]
 
 total = len(words)
 approved = sum(1 for w in words if w["reviewed"])
@@ -135,6 +154,12 @@ if no_pattern:
         f"문형이 비어 있는 항목 **{no_pattern}개**. 한 줄씩 손으로 채울 일이 아니라 배치가 채울 일이라 "
         "선별기는 이걸 지적하지 않습니다 — "
         "`docker compose exec api python content/batch_generate.py --missing-pattern`"
+    )
+no_gloss = sum(1 for w in words if not (w["example_ko"] or "").strip())
+if no_gloss:
+    st.caption(
+        f"예문 해석이 비어 있는 항목 **{no_gloss}개**. 문형과 마찬가지로 배치가 채울 일입니다 — "
+        "`docker compose exec api python content/batch_generate.py --missing-example-ko`"
     )
 if flagged:
     st.caption(
@@ -212,6 +237,15 @@ for item in page_items:
                 value=item["example"],
                 key=f"ex-{item['id']}",
             )
+            # 예문을 고쳤으면 해석도 같이 고쳐야 한다. 그래서 바로 아래에 둔다.
+            # 비워 두면 배치가 나중에 채운다 — 손으로 다 칠 칸이 아니다.
+            example_ko = st.text_input(
+                "예문 해석 (한국어 · 그 문장의 뜻)",
+                value=item["example_ko"] or "",
+                key=f"exko-{item['id']}",
+                help="낱말 뜻이 아니라 위 문장을 통째로 옮긴 것입니다. "
+                "연습장이 빈칸 옆에 이걸 그대로 보여줍니다.",
+            )
             usage = st.text_area(
                 "사용 노트 (한국어)", value=item["usage_note"], height=90, key=f"usage-{item['id']}"
             )
@@ -234,6 +268,9 @@ for item in page_items:
                         # 세는 쿼리에서 빠져 배치가 영영 채우지 않는다.
                         pattern=pattern.strip() or None,
                         example=example.strip(),
+                        # pattern 과 같은 이유로 빈 칸은 NULL 이다. 빈 문자열이면
+                        # '해석이 빠진 항목'을 세는 쿼리에서 빠져 배치가 안 채운다.
+                        example_ko=example_ko.strip() or None,
                         usage_note=usage.strip(),
                         confused_with=[w.strip() for w in confused.split(",") if w.strip()],
                         reviewed=approve,

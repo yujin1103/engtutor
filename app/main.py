@@ -16,6 +16,7 @@ from pydantic import BaseModel, Field
 
 from .config import get_settings
 from .db.database import init_db
+from .db.models import TRACK_GENERAL
 from .llm.base import LLMError
 from .llm.factory import get_client
 from .report.schemas import SessionReport
@@ -24,6 +25,7 @@ from .session_store import SqliteSessionStore
 from .stt import SttUnavailable, get_stt_service
 from .tutor.categories import CATEGORIES
 from .tutor import cloze as cloze_mod
+from .tutor import practice
 from .tutor.levels import DEFAULT_LEVEL
 from .tutor.loader import Scenario, get_scenarios
 from .tutor.schemas import TurnResponse
@@ -40,6 +42,7 @@ from .tutor.strictness import (
 from .tutor.strictness import (
     LABELS as STRICTNESS_LABELS,
 )
+from .web import mount_spa
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -171,7 +174,18 @@ def _resolve(req: ChatRequest):
             raise HTTPException(status_code=404, detail="세션을 찾을 수 없습니다. 새로 시작하세요.")
         if session.ended:
             raise HTTPException(status_code=409, detail="이미 종료된 세션입니다. 새로 시작하세요.")
+        # **레벨은 요청이 이긴다.** 세션에 굳은 값을 쓰면, 화면의 난이도 조절기가
+        # 살아 있는 것처럼 생겼는데 실제로는 대화를 시작할 때 한 번만 먹는다.
+        # 학습자가 "너무 어렵다" 고 낮춰도 아무 일이 안 일어나고, 낮추려면 하던
+        # 대화를 버려야 한다. 그건 조절기가 아니다.
+        #
+        # 바꾼 값은 세션에도 적는다 — 리포트가 마지막에 실제로 쓰인 레벨을 적게 하려고.
+        if req.level and req.level != session.level:
+            store.set_level(session.id, req.level)
+            session.level = req.level
     else:
+        # 시나리오의 level 은 **요청에 레벨이 없을 때만** 쓰는 기본값이다. 목록에
+        # 보이는 레벨 뱃지는 "이 상황은 이 정도에 맞춰 만들었다"는 권장이지 설정이 아니다.
         session = store.create(scenario_id=scenario.id, level=req.level or scenario.level)
     return scenario, session
 
@@ -382,8 +396,27 @@ def _stt_unavailable_message(service) -> str:
 # 새로 만들어지는 정보가 없으니 새로 틀릴 것도 없다(app/tutor/cloze.py).
 
 
+class PosHintOut(BaseModel):
+    """빈칸의 품사 힌트. **정답 낱말은 들어 있지 않다** — 품사 이름만 나간다.
+
+    `source` 를 함께 내보내는 이유는 화면이 근거보다 세게 말하지 못하게 하기
+    위해서다. `slot` 은 관사·조동사로 자리를 좁힌 것("여기엔 명사가 들어가요"),
+    `word` 는 정답 낱말이 가질 수 있는 품사 전부("이 낱말은 명사로도 동사로도
+    써요")다. 그대로 쓸 문구는 `text_ko` 에 이미 담겨 있다.
+    """
+
+    pos: list[str]
+    labels_ko: list[str]
+    text_ko: str
+    source: Literal["slot", "word"]
+
+
 class ClozeOut(BaseModel):
-    """학습자에게 내보내는 빈칸. **정답은 넣지 않는다** — 채점은 서버가 한다."""
+    """학습자에게 내보내는 빈칸. **정답은 넣지 않는다** — 채점은 서버가 한다.
+
+    `example_ko` 와 `pos_hint` 는 나중에 붙은 칸이라 기본값이 있다. 예전 화면이
+    이 응답을 그대로 읽어도 깨지지 않는다.
+    """
 
     word: str
     level: str
@@ -391,12 +424,24 @@ class ClozeOut(BaseModel):
     sentence: str
     pattern: str | None = None
     reviewed: bool
+    # 이 문장의 한국어 해석. **가리지 않고 그대로 보여 준다** — 시험이 아니라
+    # 연습장이고, 뜻을 알아야 구나 절로도 답할 수 있다. 792/3,245 만 채워져 있어
+    # 대부분 None 이고, 없으면 안 보여줄 뿐 지어내지 않는다.
+    example_ko: str | None = None
+    # 품사를 말할 근거가 없으면 None 이다(기능어 빈칸, WordNet 이 모르는 낱말).
+    # 그때는 힌트 없이 낸다 — 힌트 없는 빈칸도 빈칸으로 성립한다.
+    pos_hint: PosHintOut | None = None
+    topic: str | None = None
 
 
 class TopicOut(BaseModel):
     """장면 묶음 하나. 다른 회화 앱의 '유닛'에 해당한다."""
 
     topic: str
+    # 학습자가 읽을 이름. 화면이 `{"cafe": "카페"}` 를 따로 들고 있게 하지 않는다 —
+    # 그러면 팩을 하나 더 만들 때마다 서버와 화면 두 곳을 고쳐야 하고, 한쪽을
+    # 빠뜨리면 화면에만 영어 이름이 남는다. 나중에 붙은 칸이라 기본값을 둔다.
+    label_ko: str = ""
     total: int
     reviewed: int
 
@@ -404,14 +449,85 @@ class TopicOut(BaseModel):
 class ClozeAnswerRequest(BaseModel):
     word: str
     said: str = Field(description="학습자가 말했거나 적은 답")
+    explain: bool = Field(
+        default=True,
+        description="설명 카드를 함께 받을지. 채점만 필요하면 false 로 두면 DB 조회가 준다",
+    )
+
+
+class AlternativeOut(BaseModel):
+    word: str
+    meaning_ko: str
+    pos_ko: list[str]
+    reviewed: bool
+
+
+class AlternativesOut(BaseModel):
+    """같은 품사의 다른 낱말들. `label_ko` 가 **무엇을 근거로 모았는지**를 말한다.
+
+    "이 자리에 올 수 있어요"가 아니다. WordNet 은 품사를 알지 그 자리에서 뜻이
+    통하는지는 모르므로, 화면에는 `label_ko` 를 그대로 띄워야 한다.
+    """
+
+    basis: Literal["topic", "rank", "level"]
+    label_ko: str
+    words: list[AlternativeOut]
+
+
+class UnverifiedOut(BaseModel):
+    """아직 사람이 확인하지 않은 설명. 승인된 항목이면 이 상자 자체가 없다.
+
+    확인된 환각 13건이 전부 `usage_note` 와 `confused_with` 에 있었다. 그래서
+    같은 이름의 최상위 칸과 **자리를 갈라** 두었다 — 화면이 실수로 같은 자리에
+    그릴 수 없게 구조로 막는다.
+    """
+
+    usage_note: str | None = None
+    confused_with: list[str] = []
+    note_ko: str
+
+
+class ClozeExplainOut(BaseModel):
+    """답을 낸 뒤 보여 줄 설명. 전부 `words` 행과 WordNet 에서만 온다."""
+
+    word: str
+    answer: str
+    meaning_ko: str
+    example: str
+    example_ko: str | None = None
+    pattern: str | None = None
+    topic: str | None = None
+    topic_ko: str | None = None
+    pos: list[str] = []
+    pos_ko: list[str] = []
+    pos_text_ko: str | None = None
+    reviewed: bool
+    usage_note: str | None = None
+    confused_with: list[str] = []
+    unverified: UnverifiedOut | None = None
+    alternatives: AlternativesOut | None = None
+    hint: PosHintOut | None = None
 
 
 class ClozeAnswerOut(BaseModel):
-    verdict: Literal["correct", "wrong_form", "wrong_word", "not_a_word", "empty"]
+    """채점 결과. 판정이 늘었고 설명이 붙었다 — 기존 필드는 그대로다.
+
+    `right_pos`·`wrong_pos` 는 예전에 `wrong_word` 하나로 뭉쳐 있던 것을 가른
+    것이다. 품사를 비교할 수 없을 때(기능어, 사전이 모르는 낱말)는 지금도
+    `wrong_word` 로 온다.
+    """
+
+    verdict: Literal[
+        "correct", "wrong_form", "right_pos", "wrong_pos", "wrong_word", "not_a_word", "empty"
+    ]
     ok: bool
     said: str
     answer: str
     message_ko: str
+    # 실제로 판정한 낱말. 구·절로 답하면(`a pen`) 그 안의 머리 낱말이라 said 와 다르다.
+    head: str | None = None
+    said_pos: list[str] = []
+    explain: ClozeExplainOut | None = None
 
 
 @app.get("/cloze/topics", response_model=list[TopicOut])
@@ -421,7 +537,10 @@ def list_topics() -> list[TopicOut]:
     from .db.database import db_session
 
     with db_session() as db:
-        return [TopicOut(topic=t, total=n, reviewed=r) for t, n, r in crud.topics(db)]
+        return [
+            TopicOut(topic=t, label_ko=practice.topic_ko(t) or t, total=n, reviewed=r)
+            for t, n, r in crud.topics(db)
+        ]
 
 
 @app.get("/cloze", response_model=list[ClozeOut])
@@ -432,6 +551,7 @@ def list_cloze(
     speech: bool = False,
     reviewed_only: bool = False,
     topic: str | None = None,
+    track: str = TRACK_GENERAL,
 ) -> list[ClozeOut]:
     """빈칸 문제를 빈도 순으로 준다.
 
@@ -440,6 +560,17 @@ def list_cloze(
 
     `topic` 을 주면 그 장면 묶음(cafe, hotel, health …)만 낸다. 카페 대화 직전에
     카페 단어를 푸는 게 빈도 상위 열 개를 푸는 것보다 그 대화에 실제로 도움이 된다.
+
+    `track` 은 어느 어휘 트랙에서 낼지다. 기본은 생활 회화(`general`)이고, 토익
+    어휘는 `track=toeic` 으로만 나온다. **기본값이 곧 안전장치다** — 이 값을 빼먹은
+    호출은 왕초보용 낱말만 받는다. 토익 어휘 2,260개가 같은 표에 있으므로 반대로
+    두면 카페 주문을 연습하는 학습자에게 `reimbursement` 가 빈칸으로 나간다.
+
+    `level=""` 이면 레벨로 가르지 않는다. 장면 팩을 낼 때 필요하다 — 카페 60개를
+    A1 으로 자르면 8개가 남아 연습이 성립하지 않는다. 팩은 그 자리에서 쓰는 말을
+    모은 것이지 난이도로 묶은 것이 아니다. 이미 `crud.cloze_candidates` 가 빈
+    값을 "안 가른다" 로 읽고 있었고, 단어 연습장 화면이 그 성질에 기대므로
+    여기 적어 계약으로 못 박는다(tests/test_practice.py).
     """
     from .db import crud
     from .db.database import db_session
@@ -452,6 +583,7 @@ def list_cloze(
             level=level,
             reviewed_only=reviewed_only,
             topic=topic,
+            track=track,
             limit=(offset + count) * 6 + 60,
         )
         out: list[ClozeOut] = []
@@ -461,22 +593,90 @@ def list_cloze(
                 continue
             if speech and not cloze_mod.is_speakable(item):
                 continue
-            out.append(
-                ClozeOut(
-                    word=item.word,
-                    level=item.level,
-                    meaning_ko=item.meaning_ko,
-                    sentence=item.sentence,
-                    pattern=item.pattern,
-                    reviewed=item.reviewed,
-                )
-            )
+            out.append(_cloze_out(item))
     return out[offset : offset + count]
+
+
+def _cloze_out(item: cloze_mod.ClozeItem) -> ClozeOut:
+    """문제 하나를 응답으로. **`item.answer` 는 여기서 나가지 않는다.**
+
+    나가는 것은 빈칸 문장, 낱말 뜻, 문장 해석, 품사 이름뿐이다. 해석은 답을 일부
+    드러내지만 그건 결정한 것이다 — 뜻을 알아야 `pen`·`a pen`·`your pen` 처럼
+    구로도 답할 수 있고, 뜻을 안 주면 왕초보에게는 과제가 성립하지 않는다.
+
+    `word` 칸에 표제어가 그대로 들어 있는 것은 남겨 둔다. 채점할 때 어느 항목인지
+    가리키는 열쇠이고(`POST /cloze/answer` 가 이 값을 받는다) 이미 그렇게 쓰이고
+    있다. 대신 **정답으로 적어 낼 표면형**은 `sentence`·`pattern`·`meaning_ko`·
+    `example_ko` 어디에도 없어야 한다 — `pattern` 이 2,882개에서 흘리고 있었다.
+    """
+    hint = cloze_mod.pos_hint(item)
+    mask = cloze_mod.mask_answer
+    return ClozeOut(
+        word=item.word,
+        level=item.level,
+        meaning_ko=mask(item.meaning_ko, item.word) or "",
+        sentence=item.sentence,
+        pattern=mask(item.pattern, item.word),
+        reviewed=item.reviewed,
+        example_ko=mask(item.example_ko, item.word),
+        topic=item.topic,
+        pos_hint=None if hint is None else PosHintOut(**vars(hint)),
+    )
+
+
+def _explain_out(card: practice.Explanation) -> ClozeExplainOut:
+    """설명 카드를 응답으로. 승인 전 설명은 `unverified` 상자를 벗어나지 않는다."""
+    alts = card.alternatives
+    return ClozeExplainOut(
+        word=card.word,
+        answer=card.answer,
+        meaning_ko=card.meaning_ko,
+        example=card.example,
+        example_ko=card.example_ko,
+        pattern=card.pattern,
+        topic=card.topic,
+        topic_ko=card.topic_ko,
+        pos=list(card.pos),
+        pos_ko=list(card.pos_ko),
+        pos_text_ko=card.pos_text_ko,
+        reviewed=card.reviewed,
+        usage_note=card.usage_note,
+        confused_with=list(card.confused_with),
+        unverified=(
+            None
+            if card.unverified is None
+            else UnverifiedOut(
+                usage_note=card.unverified.usage_note,
+                confused_with=list(card.unverified.confused_with),
+                note_ko=card.unverified.note_ko,
+            )
+        ),
+        alternatives=(
+            None
+            if alts is None
+            else AlternativesOut(
+                basis=alts.basis,
+                label_ko=alts.label_ko,
+                words=[AlternativeOut(**vars(w)) for w in alts.words],
+            )
+        ),
+        hint=None if card.hint is None else PosHintOut(**vars(card.hint)),
+    )
 
 
 @app.post("/cloze/answer", response_model=ClozeAnswerOut)
 def answer_cloze(req: ClozeAnswerRequest) -> ClozeAnswerOut:
-    """채점은 서버가 한다. 정답이 클라이언트로 미리 나가지 않는다."""
+    """채점하고, **왜 그런지 설명한다.** 정답이 클라이언트로 미리 나가지 않는다.
+
+    새 엔드포인트로 가르지 않고 이 자리를 넓혔다. 설명을 만드는 데 필요한 것이
+    채점에 이미 있는 것과 같기 때문이다 — `words` 행 하나와 빈칸 하나. 따로 두면
+    화면이 답을 낼 때마다 두 번 왕복하고, 두 번째 요청은 첫 번째가 무엇을
+    판정했는지 다시 계산해야 한다. 늘어난 필드는 전부 기본값이 있어서 예전
+    화면은 그대로 돈다.
+
+    `explain=false` 로 예전 크기의 응답만 받을 수도 있다. 검수 UI 처럼 채점만
+    필요한 곳에서 후보 조회(같은 장면 낱말 240개 훑기)를 안 하게 하려는 것이다.
+    """
     from sqlalchemy import select
 
     from .db.database import db_session
@@ -489,16 +689,23 @@ def answer_cloze(req: ClozeAnswerRequest) -> ClozeAnswerOut:
         if row is None:
             raise HTTPException(status_code=404, detail=f"모르는 단어예요: {req.word}")
         item = cloze_mod.make_item(row)
-    if item is None:
-        raise HTTPException(status_code=422, detail=f"빈칸을 만들 수 없는 항목이에요: {req.word}")
+        if item is None:
+            raise HTTPException(
+                status_code=422, detail=f"빈칸을 만들 수 없는 항목이에요: {req.word}"
+            )
+        result = cloze_mod.grade(item, req.said)
+        # 설명 카드는 세션 안에서 만든다 — 후보를 고르려면 DB 를 한 번 더 봐야 한다.
+        card = _explain_out(practice.explain(db, row, item)) if req.explain else None
 
-    result = cloze_mod.grade(item, req.said)
     return ClozeAnswerOut(
         verdict=result.verdict,
         ok=result.ok,
         said=result.said,
         answer=result.answer,
         message_ko=result.message_ko,
+        head=result.head or None,
+        said_pos=list(result.said_pos),
+        explain=card,
     )
 
 
@@ -536,3 +743,11 @@ def session_report(session_id: str) -> SessionReport:
 
     store.end(session.id)
     return report
+
+
+# ─────────────────────────────────────────────── 화면 (React 빌드 결과)
+#
+# **반드시 맨 마지막이다.** 이 줄이 `/` 아래를 통째로 잡는 catch-all 을 등록하는데,
+# 라우트는 등록 순서대로 맞춰 보므로 위의 API 들보다 앞서면 `/chat` 이 화면에
+# 가려진다. 새 엔드포인트는 항상 이 줄 **위에** 추가한다.
+mount_spa(app)

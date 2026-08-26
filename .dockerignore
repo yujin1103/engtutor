@@ -13,3 +13,5 @@ data
 *.pem
 *.key
 README.md
+ui_web/node_modules
+ui_web/dist

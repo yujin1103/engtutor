@@ -1,0 +1,379 @@
+/* 단어 연습장의 모양. 문제 카드 하나와 설명 카드 하나가 전부다.
+ *
+ * 화면 가운데를 문장 하나가 크게 차지한다. 폰에서 한 손으로 보는 앱이라
+ * 문장·해석·힌트가 한 화면에 다 들어와야 답을 쓰기 시작할 수 있다. */
+
+.meta {
+  margin-bottom: var(--gap-sm);
+  color: var(--text-dim);
+  font-size: 0.82rem;
+}
+
+/* ───────────────────────────── 문제 */
+
+.question {
+  padding: 18px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.sentence {
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.75;
+  /* 긴 문장이 좁은 폰에서 가로로 삐져나가지 않게. */
+  overflow-wrap: anywhere;
+}
+
+/* 빈칸. 밑줄만으로는 폰에서 잘 안 보여서 옅은 바탕을 함께 깐다. */
+.blank {
+  display: inline-block;
+  min-width: 4.5ch;
+  padding: 0 0.2em;
+  border-bottom: 3px solid var(--accent);
+  border-radius: 3px 3px 0 0;
+  background: var(--accent-soft);
+  vertical-align: baseline;
+}
+
+/* 답을 낸 뒤 그 자리에 들어가는 낱말. 같은 자리라 눈이 바로 따라간다. */
+.filled {
+  display: inline-block;
+  padding: 0 0.2em;
+  border-bottom: 3px solid var(--accent);
+  border-radius: 3px 3px 0 0;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* 문장의 한국어 해석. 답이 일부 드러나지만 가리지 않는다 — 시험이 아니라
+   연습장이고, 뜻을 알아야 구나 절로도 답할 수 있다. */
+.gloss {
+  margin-top: var(--gap-sm);
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+.hint {
+  display: inline-block;
+  margin-top: var(--gap);
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ───────────────────────────── 판정 */
+
+.verdict {
+  margin-top: var(--gap);
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* 맞았다. */
+.right {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* 형태만 틀렸거나 품사는 맞았다. **틀린 게 아니라 거의 온 것**이라 빨강을 안 쓴다. */
+.close {
+  border-color: var(--accent);
+  background: var(--surface);
+}
+
+.miss {
+  border-color: var(--danger);
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+/* 아직 겨눠 보지도 못했다. 다시 쓰라는 뜻이라 실패색을 안 쓴다. */
+.again {
+  background: var(--surface-2);
+}
+
+.reveal {
+  margin-top: var(--gap-sm);
+}
+
+/* ───────────────────────────── 설명 */
+
+.explain {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  margin-top: var(--gap);
+}
+
+.section {
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.label {
+  margin-bottom: var(--gap-xs);
+  color: var(--text-dim);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.headword {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--gap-sm);
+}
+
+.headwordEn {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.headwordKo {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+/* 품사표. "이 낱말은 명사로도 동사로도 써요" 를 서버 문장 그대로 쓰고,
+   칩은 그 문장을 눈으로 짚어 주는 역할만 한다. */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-xs);
+  margin-top: var(--gap-sm);
+}
+
+.tag {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.posText {
+  margin-top: var(--gap-sm);
+  font-size: 0.95rem;
+}
+
+.example {
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.exampleKo {
+  margin-top: var(--gap-xs);
+  color: var(--text-dim);
+  font-size: 0.92rem;
+}
+
+.pattern {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.95rem;
+  overflow-wrap: anywhere;
+}
+
+.note {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.confused {
+  margin-top: var(--gap-sm);
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+/* 아직 사람이 확인하지 않은 설명. **승인된 설명과 같은 모양으로 그리면 안 된다** —
+   서버가 자리를 갈라서 보내는 이유가 그거다. 점선과 옅은 바탕으로 눈에서도 가른다. */
+.unverified {
+  padding: 14px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+}
+
+.unverifiedNote {
+  margin-bottom: var(--gap-sm);
+  color: var(--text-dim);
+  font-size: 0.82rem;
+}
+
+/* 섹션 **안에서** 확인 전인 값을 가르는 상자. 위의 `.unverified` 와 같은 점선을
+   쓰는 게 요점이다 — 카드 어디서든 점선이면 "아직 사람이 안 본 것" 하나로 읽히게
+   하려는 것이다. 승인된 값(표제어 옆의 뜻, 채운 바탕의 후보 줄)과는 자리도 모양도
+   겹치지 않는다. */
+.inset {
+  margin-top: var(--gap-sm);
+  padding: 10px 12px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+}
+
+/* 상자가 무엇인지 말하는 한 줄. **겁주는 색을 안 쓴다** — 틀렸다는 말이 아니라
+   아직 안 봤다는 말이고, 3,241/3,245 가 여기 걸리므로 빨강이면 앱이 온통 경고가
+   된다. 옅은 글씨로 조용히 적어 두고 학습자는 계속 읽어 나가면 된다. */
+.insetNote {
+  margin-bottom: var(--gap-sm);
+  color: var(--text-dim);
+  font-size: 0.82rem;
+}
+
+/* 같은 품사의 다른 낱말들. */
+.alts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+  margin-top: var(--gap-sm);
+}
+
+.alt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--gap-xs) var(--gap-sm);
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+
+/* 확인 전인 후보 한 줄. 상자로도 갈렸지만 줄 자체도 채운 바탕이 아니라 점선이다 —
+   승인된 줄과 나란히 놓였을 때 눈이 바로 가른다.
+   **`.alt` 뒤에 있어야 한다.** 두 클래스를 한 줄에 같이 걸어서 무게가 같고, 위에
+   두면 `.alt` 의 채운 바탕이 이겨서 갈라 놓은 게 화면에서 도로 합쳐진다.
+   (실제로 그렇게 썼다가 빌드된 CSS 를 읽어 보고 발견했다.) */
+.altUnchecked {
+  border: 1px dashed var(--border);
+  background: transparent;
+}
+
+.altWord {
+  font-weight: 700;
+}
+
+.altMeaning {
+  flex: 1;
+  min-width: 0;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+}
+
+.altPos {
+  color: var(--text-dim);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+/* ───────────────────────────── 아래 고정 */
+
+.form {
+  display: flex;
+  gap: var(--gap-sm);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  min-height: var(--tap-min);
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  appearance: none;
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+}
+
+.actions {
+  display: flex;
+  gap: var(--gap-sm);
+}
+
+.actions > * {
+  flex: 1;
+}
+
+/* ───────────────────────────── 장면 고르기 */
+
+.lead {
+  margin-bottom: var(--gap);
+}
+
+.all {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-xs);
+  width: 100%;
+  margin-bottom: var(--gap);
+  padding: 14px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+  text-align: left;
+}
+
+.allTitle {
+  font-weight: 700;
+}
+
+.topics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap);
+}
+
+.topic {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-xs);
+  min-height: 76px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  text-align: left;
+  transition: transform 80ms ease;
+}
+
+.topic:active,
+.all:active {
+  transform: scale(0.98);
+}
+
+.topicLabel {
+  font-weight: 700;
+}
+
+.count {
+  margin-top: auto;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+}
+
+.empty {
+  padding: 32px var(--gap);
+  color: var(--text-dim);
+  text-align: center;
+}

@@ -1,0 +1,81 @@
+.screen {
+  display: flex;
+  flex-direction: column;
+  /* dvh 는 사파리 주소창이 접혔다 펴져도 화면 높이를 맞게 잡아 준다.
+     100vh 만 쓰면 아래쪽 버튼이 주소창에 가려 안 눌린다. vh 는 옛 브라우저용 예비값. */
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  /* 데스크톱에서 가운데 칸의 경계를 알아볼 수 있게. 폰에서는 화면 밖이라 안 보인다. */
+  background: var(--bg);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-sm);
+  padding: calc(var(--safe-top) + var(--gap-sm)) var(--gap) var(--gap-sm);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  /* 목록을 내려도 제목과 뒤로가기는 손 닿는 곳에 남아 있어야 한다. */
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.back {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* 아이콘은 작아 보여도 누르는 면적은 48px 을 지킨다 — 한 손으로 쓰는 앱이다. */
+  width: var(--tap-min);
+  height: var(--tap-min);
+  margin-left: -10px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.back:active {
+  background: var(--surface-2);
+}
+
+.title {
+  flex: 1;
+  min-width: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  /* 시나리오 제목이 길어도 줄이 늘어나 바가 출렁이지 않게 한 줄로 자른다. */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.action {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-xs);
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  /* 목록 끝에서 계속 당겼을 때 페이지 전체가 튀거나 새로고침되지 않게 한다. */
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: var(--gap) var(--gap) var(--gap-lg);
+}
+
+.footer {
+  flex: none;
+  padding: var(--gap-sm) var(--gap) calc(var(--gap-sm) + var(--safe-bottom));
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}

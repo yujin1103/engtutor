@@ -38,3 +38,11 @@ Thumbs.db
 
 # 터널 개인키 (절대 커밋 금지)
 /deploy/keys/
+
+# --- 폰용 React 클라이언트 (ui_web) ---
+# 의존성. 파일이 수만 개다. compose 는 named volume 에 두지만, 호스트에서
+# 직접 npm 을 돌린 경우를 대비해 막아 둔다.
+ui_web/node_modules/
+# 빌드 결과. FastAPI 가 `/` 로 서빙하는 그것이지만 소스가 아니라 산출물이다
+# (`docker compose run --rm web npm run build` 로 언제든 다시 만든다).
+ui_web/dist/

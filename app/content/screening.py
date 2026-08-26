@@ -20,7 +20,7 @@ from collections import Counter
 from dataclasses import dataclass
 from typing import Literal, Protocol
 
-from ..tutor.korean import has_hangul
+from ..tutor.korean import has_hangul, reject_foreign_script
 from . import lexicon
 
 Severity = Literal["high", "medium", "low"]
@@ -385,6 +385,27 @@ def screen(row: WordLike) -> list[Finding]:
 
     if not has_hangul(row.meaning_ko):
         out.append(Finding("meaning_not_korean", "high", "뜻이 한국어가 아니에요"))
+    else:
+        # 한글이 **하나라도** 있으면 위 검사는 통과다. 그래서 한글과 한자가 섞인 뜻이
+        # 그대로 나갔다 — `bagel 백일(백面包)`, `sigh 叹气하다`, `spicy 매운, 辛い`.
+        # 출제 가능 2,950개 중 14개였고, 다섯은 기본 장면 팩 안에 있었다.
+        #
+        # 검사기는 이미 있었다(`reject_foreign_script`). 후보 목록에만 걸려 있었을
+        # 뿐이다. 여기 걸어 두면 두 가지가 같이 된다: 검수 큐가 이것들을 맨 앞으로
+        # 올리고, 미검수 항목은 `cloze.is_safe_to_serve` 를 통과하지 못한다.
+        # (승인된 항목까지 막는 것은 이 함수의 일이 아니라 출제 문의 일이다 —
+        #  사람이 승인해도 왕초보가 `叹气` 를 읽게 되지는 않으므로 그쪽에도 건다.)
+        try:
+            reject_foreign_script(row.meaning_ko, "meaning_ko")
+        except ValueError:
+            out.append(
+                Finding(
+                    "meaning_foreign_script",
+                    "high",
+                    f"뜻에 학습자가 못 읽는 글자가 섞였어요: {row.meaning_ko[:40]!r}",
+                )
+            )
+
     if not has_hangul(row.usage_note):
         out.append(Finding("usage_not_korean", "high", "설명이 한국어가 아니에요"))
     if has_hangul(row.example):

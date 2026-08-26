@@ -1,0 +1,15 @@
+/* 고르는 부분의 모양은 settings/SettingsFold.module.css 에 있다.
+   여기에는 이 화면에만 있는 글줄 둘만 남겨 둔다. */
+
+.lead {
+  margin-bottom: var(--gap);
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.note {
+  margin-top: var(--gap-lg);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}

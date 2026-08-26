@@ -1,0 +1,302 @@
+/* 리포트 화면의 모양. 폰 세로 화면에서 위에서 아래로 한 번 훑는 것을 기준으로 잡았다. */
+
+/* ───────────────────────────── 기다리는 동안 */
+
+.waiting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-sm);
+  /* 스크롤 없이 화면 가운데쯤에 오게. 위쪽에 붙어 있으면 빈 화면처럼 보인다. */
+  padding: 48px var(--gap) 32px;
+  text-align: center;
+}
+
+.waitingSpinner {
+  width: 34px;
+  height: 34px;
+  margin-bottom: var(--gap-sm);
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 800ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 애니메이션을 줄이는 설정이면 원이 멈춘다. 그때는 초 세는 숫자가 유일한
+   "살아 있다" 신호라서, 아래 .waitingClock 은 절대 부수적인 장식이 아니다. */
+
+.waitingTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.waitingNote {
+  max-width: 30ch;
+  color: var(--text-dim);
+}
+
+.waitingClock {
+  /* 등폭 숫자. 자릿수가 바뀔 때 글자가 흔들리면 멈춘 것처럼 보인다. */
+  font-variant-numeric: tabular-nums;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.2;
+}
+
+.waitingWhy {
+  max-width: 32ch;
+  margin-top: var(--gap);
+  padding-top: var(--gap);
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* ───────────────────────────── 리포트 본문 */
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-lg);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+}
+
+.headLine {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-sm);
+}
+
+.headTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.headCount {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.badge {
+  flex: none;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-dim);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* 오늘 어땠는지. 리포트에서 제일 먼저 읽히는 자리라 색을 준다. */
+.summary {
+  padding: 16px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-sm);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.sectionCount {
+  padding: 1px 9px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-dim);
+  font-size: 0.78rem;
+}
+
+.sectionCaption {
+  margin-top: -4px;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.empty {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text-dim);
+}
+
+/* 반복된 버릇 */
+.patterns {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pattern {
+  position: relative;
+  padding: 12px 14px 12px 34px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  line-height: 1.5;
+}
+
+.pattern::before {
+  content: "!";
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+/* 교정 한 건 */
+.fix {
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+/* polish 는 틀린 게 아니다. 왼쪽 띠를 흐리게 해서 "덜 급한 것" 으로 읽히게 한다. */
+.fixPolish {
+  border-left-color: var(--border);
+}
+
+.fixOriginal {
+  color: var(--text-dim);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.fixArrow {
+  margin: 2px 0;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.fixBetter {
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.fixNote {
+  margin-top: var(--gap-sm);
+  padding-top: var(--gap-sm);
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* 오늘 배운 표현 */
+.learned {
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.learnedEn {
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.learnedKo {
+  margin-top: var(--gap-xs);
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* 단어 팁 */
+.tip {
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.tipHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--gap-sm);
+}
+
+.tipWord {
+  font-size: 1.12rem;
+  font-weight: 700;
+}
+
+.tipMeaning {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+}
+
+.tipExample {
+  margin-top: var(--gap-sm);
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.tipNote {
+  margin-top: var(--gap-sm);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-dim);
+}
+
+.tipConfused {
+  margin-top: var(--gap-sm);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}

@@ -1,0 +1,243 @@
+.thread {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+/* ───────────────────────────── 상대(AI) */
+
+/* 말풍선 + 해석 + 교정을 한 덩어리로 묶는다. 사이 간격을 좁게 둬야
+   “이 교정은 이 턴의 것” 이라는 게 눈으로 읽힌다. */
+.aiBlock {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+  max-width: 88%;
+}
+
+.aiBubble {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius) var(--radius) var(--radius) 4px;
+  background: var(--surface);
+}
+
+/* 영어 본문. 왕초보가 읽는 글이라 본문보다 키우고 줄간격을 넉넉히 준다. */
+.aiText {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  /* 긴 낱말이 화면 밖으로 나가 가로 스크롤이 생기는 것을 막는다. */
+  overflow-wrap: anywhere;
+}
+
+/* 글자가 오는 중이라는 표시. 커서 하나면 충분하고, 이게 있으면 멈춘 것과 구분된다. */
+.caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.05em;
+  margin-left: 2px;
+  vertical-align: -2px;
+  background: var(--accent);
+  animation: blink 900ms step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* 아직 한 글자도 안 온 동안의 점 셋. */
+.dots {
+  display: flex;
+  gap: 5px;
+  padding: 6px 0;
+}
+
+.dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text-dim);
+  animation: bounce 1.2s ease-in-out infinite;
+}
+
+.dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+  0%,
+  60%,
+  100% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 1;
+  }
+}
+
+.waiting {
+  padding-left: 2px;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+.waitingMore {
+  padding-left: 2px;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+/* ───────────────────────────── 나 */
+
+.myBubble {
+  align-self: flex-end;
+  display: flex;
+  gap: var(--gap-sm);
+  max-width: 88%;
+  padding: 12px 14px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius) var(--radius) 4px var(--radius);
+  background: var(--accent-soft);
+  overflow-wrap: anywhere;
+}
+
+/* 보내다 실패한 말. 지워 버리면 뭘 말했는지 잊어버리므로 남기되,
+   대화에 들어간 말과 확실히 달라 보이게 한다. */
+.myFailed {
+  border-style: dashed;
+  border-color: var(--danger);
+  background: var(--danger-soft);
+}
+
+.mic {
+  flex: none;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ───────────────────────────── 접히는 칸 (해석 · 교정) */
+
+.fold {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  /* 한 손으로 누르는 앱이다. 글자는 작아도 누르는 면적은 지킨다. */
+  min-height: var(--tap-min);
+  padding: 0 14px;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+
+/* 사파리는 목록 표식을 이 가상요소로 그린다. list-style 만으로는 안 없어진다. */
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.summary::after {
+  margin-left: auto;
+  content: "▾";
+  transition: transform 120ms ease;
+}
+
+.fold[open] .summary::after {
+  transform: rotate(180deg);
+}
+
+.foldBody {
+  padding: 0 14px 14px;
+  font-size: 0.95rem;
+}
+
+.fixes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+}
+
+.corrections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  margin: 0;
+  padding: 0 14px 14px;
+  list-style: none;
+}
+
+.correction {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* 틀린 표현에는 줄을 긋는다. “이건 쓰지 마세요” 가 글자 하나 없이 전해진다. */
+.original {
+  color: var(--text-dim);
+  text-decoration: line-through;
+  overflow-wrap: anywhere;
+}
+
+/* 다듬을 것(polish)은 틀린 게 아니라 줄을 긋지 않는다. */
+.originalPlain {
+  color: var(--text-dim);
+  overflow-wrap: anywhere;
+}
+
+.better {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.note {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* ───────────────────────────── 실패 */
+
+.failure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+  padding: var(--gap) 14px;
+  border: 1px solid var(--danger);
+  border-radius: var(--radius);
+  background: var(--danger-soft);
+}
+
+.failureText {
+  color: var(--danger);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.failureHint {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.failureButtons {
+  display: flex;
+  gap: var(--gap-sm);
+}
+
+.failureButtons > * {
+  flex: 1;
+}

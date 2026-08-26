@@ -53,6 +53,10 @@ _ADDED_COLUMNS: dict[str, dict[str, str]] = {
         "reviewed_by": "VARCHAR(32)",
         "pattern": "VARCHAR(120)",
         "topic": "VARCHAR(32)",
+        "example_ko": "TEXT",
+        # 기존 3,245개는 전부 생활 회화 트랙이다. NOT NULL DEFAULT 라 ALTER 한 번으로
+        # 그렇게 채워진다 — 따로 UPDATE 를 돌릴 필요가 없다.
+        "track": "VARCHAR(16) NOT NULL DEFAULT 'general'",
     },
     "turns": {
         "input_mode": "VARCHAR(8) NOT NULL DEFAULT 'text'",

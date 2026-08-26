@@ -1,0 +1,153 @@
+/* 폰에서 한 손으로 쓰는 것을 기준으로 잡았다. 누르는 것은 화면 아래에 크게 하나,
+   읽는 것은 그 위에 늘 같은 자리. */
+
+.bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.row {
+  display: flex;
+  gap: var(--gap-sm);
+}
+
+/* 마이크는 이 화면에서 가장 많이 눌리는 것이다. 48px 최소치보다 더 크게 잡는다 —
+   말하려고 드는 순간에는 화면을 안 보고 누르게 된다. */
+.mic {
+  flex: 1;
+  min-height: 56px;
+  font-size: 1.02rem;
+}
+
+.stop {
+  flex: 1;
+  min-height: 56px;
+  border-color: var(--danger);
+  background: var(--danger-soft);
+  color: var(--danger);
+  font-size: 1.02rem;
+}
+
+/* 취소는 실수로 눌리면 녹음이 날아간다. 옆에 작게 둔다. */
+.side {
+  flex: none;
+  min-height: 56px;
+  padding: 0 14px;
+}
+
+/* 녹음 중인 것을 색 하나로만 알리지 않는다 — 점 + 시계 + 글자, 셋이 같이 말한다.
+   (색만 쓰면 색각 이상이나 밝은 햇빛 아래서 사라진다) */
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--danger);
+  animation: pulse 1.1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.elapsed {
+  margin-left: auto;
+  /* 초가 넘어갈 때마다 글자 폭이 달라져 버튼이 흔들리지 않게. */
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 700ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.notice:empty {
+  display: none;
+}
+
+.hint {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+/* 확인 칸. 대화 말풍선과 확실히 달라 보여야 한다 — 이건 상대가 한 말이 아니라
+   학습자가 손볼 수 있는 자기 말이다. */
+.review {
+  padding: var(--gap) 14px calc(var(--gap) + 2px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+}
+
+.askLabel {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.askCaption {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.draft {
+  width: 100%;
+  margin-top: var(--gap-xs);
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  /* 높이는 내용에 맞춰 JS 가 잡는다(VoiceBarView 의 useEffect). CSS 만으로는
+     textarea 가 안 늘어나서, 긴 전사가 글자 중간에서 잘린 채 보였다.
+     여기서는 바닥과 천장만 정한다 — 30vh 를 넘으면 그때부터 스크롤해서
+     보내기 버튼을 화면 밖으로 밀어내지 않는다. */
+  min-height: 68px;
+  max-height: 30vh;
+  overflow-y: auto;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.draft:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.review .row {
+  margin-top: var(--gap-sm);
+}
+
+/* CSS 모듈은 클래스 이름을 전부 바꾸므로 여기서 전역 `.btn` 을 이름으로 집을 수 없다.
+   두 버튼이 폭을 반씩 나눠 갖게 하는 것이 전부라 자식 선택자로 둔다. */
+.review .row > * {
+  flex: 1;
+}
+
+/* 마이크를 아예 쓸 수 없는 경우. 빨간 경고로 그리지 않는다 — 고장이 아니라
+   "여기서는 안 되니 타자로 하라" 는 안내이고, 문장에 그 대안이 들어 있다. */
+.blocked {
+  display: flex;
+  gap: var(--gap-sm);
+  align-items: flex-start;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}

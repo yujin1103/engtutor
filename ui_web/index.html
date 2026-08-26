@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!--
+      viewport-fit=cover: 노치·홈 인디케이터 아래까지 화면을 쓰고, 안전 영역은
+      CSS 의 env(safe-area-inset-*) 로 직접 비운다.
+      확대를 막지 않는다(user-scalable=no 를 쓰지 않는다) — 눈이 나쁜 사람이
+      글자를 키울 수 있어야 한다. 입력칸 자동 확대는 글자 크기 16px 로 막았다.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f7f5f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#17150f" media="(prefers-color-scheme: dark)" />
+    <!-- 홈 화면에 추가했을 때 브라우저 껍데기 없이 뜨게 한다. -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="영어 연습" />
+    <title>영어 회화 연습</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

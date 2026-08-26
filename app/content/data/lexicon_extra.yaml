@@ -8,6 +8,14 @@
 # `scripts/verify_words.py` 로 다시 만든다.
 #
 # pos 는 품사 대조에 쓰는 태그(n/v/a/r)이고, pos_raw 는 Wiktionary 가 적은 그대로다.
+albeit:
+  gloss: Although, despite (it) being
+  glosses:
+  - Although, despite (it) being
+  pos: []
+  pos_raw:
+  - Conjunction
+  source: https://en.wiktionary.org/wiki/albeit#English
 americano:
   gloss: A drink made of espresso coffee diluted with hot water.
   glosses:
@@ -18,6 +26,30 @@ americano:
   pos_raw:
   - Noun
   source: https://en.wiktionary.org/wiki/americano#English
+amid:
+  gloss: In the middle of; in the center of; surrounded by
+  glosses:
+  - In the middle of; in the center of; surrounded by
+  pos:
+  - n
+  pos_raw:
+  - Preposition
+  - Noun
+  source: https://en.wiktionary.org/wiki/amid#English
+anytime:
+  gloss: At any time
+  glosses:
+  - At any time
+  - A form of you're welcome in response to thank you or thanks
+  - suitable for any time; not associated with any particular time
+  pos:
+  - a
+  - r
+  pos_raw:
+  - Adverb
+  - Interjection
+  - Adjective
+  source: https://en.wiktionary.org/wiki/anytime#English
 app:
   gloss: An application (program), especially a small one designed for a mobile device.
   glosses:
@@ -91,6 +123,33 @@ carry-on:
   - Adjective
   - Noun
   source: https://en.wiktionary.org/wiki/carry-on#English
+ceasefire:
+  gloss: In warfare, an agreed end to hostilities for a specific purpose. (Typically only temporary)
+  glosses:
+  - In warfare, an agreed end to hostilities for a specific purpose. (Typically only temporary)
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/ceasefire#English
+counterparty:
+  gloss: The other party to a financial transaction
+  glosses:
+  - The other party to a financial transaction
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/counterparty#English
+coworker:
+  gloss: Somebody with whom one works
+  glosses:
+  - Somebody with whom one works
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/coworker#English
 dine-in:
   gloss: Eaten on the premises where one purchased it.
   glosses:
@@ -101,6 +160,24 @@ dine-in:
   pos_raw:
   - Adjective
   source: https://en.wiktionary.org/wiki/dine-in#English
+distractor:
+  gloss: alternative spelling of distracter
+  glosses:
+  - alternative spelling of distracter
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/distractor#English
+flextime:
+  gloss: alternative form of flexitime
+  glosses:
+  - alternative form of flexitime
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/flextime#English
 hairdryer:
   gloss: A small electrical appliance for drying hair, by generating a stream of hot air.
   glosses:
@@ -125,6 +202,19 @@ hoodie:
   pos_raw:
   - Noun
   source: https://en.wiktionary.org/wiki/hoodie#English
+hotline:
+  gloss: A telephone line that is always staffed and able to give immediate assistance
+  glosses:
+  - A telephone line that is always staffed and able to give immediate assistance
+  - A direct line between two people, especially one between heads of state to be used in an emergency
+  - To communicate over a telephone hotline
+  pos:
+  - n
+  - v
+  pos_raw:
+  - Noun
+  - Verb
+  source: https://en.wiktionary.org/wiki/hotline#English
 kimchi:
   gloss: A Korean dish made of vegetables, such as cabbage or radishes, that are salted, seasoned, and
     stored in sealed containers to undergo lactic acid fermentation.
@@ -137,6 +227,20 @@ kimchi:
   pos_raw:
   - Noun
   source: https://en.wiktionary.org/wiki/kimchi#English
+login:
+  gloss: 'Credentials: the combination of a user''s identification and password used to enter a computer,
+    program, network etc'
+  glosses:
+  - 'Credentials: the combination of a user''s identification and password used to enter a computer, program,
+    network etc'
+  - The process or an instance of logging in
+  pos:
+  - n
+  - v
+  pos_raw:
+  - Noun
+  - Verb
+  source: https://en.wiktionary.org/wiki/login#English
 matcha:
   gloss: A type of powdered green tea, traditionally used in Japanese tea ceremonies.
   glosses:
@@ -146,6 +250,17 @@ matcha:
   pos_raw:
   - Noun
   source: https://en.wiktionary.org/wiki/matcha#English
+multi:
+  gloss: clipping of multistan
+  glosses:
+  - clipping of multistan
+  - A multituberculate
+  - A contract bridge convention whereby the opening bid of 2♦ shows several possible types of hands
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/multi#English
 nonsmoking:
   gloss: alternative form of non-smoking
   glosses:
@@ -155,6 +270,39 @@ nonsmoking:
   pos_raw:
   - Adjective
   source: https://en.wiktionary.org/wiki/nonsmoking#English
+payout:
+  gloss: An amount of money paid out
+  glosses:
+  - An amount of money paid out
+  - The value of dividends paid to shareholders
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/payout#English
+policymaker:
+  gloss: One involved in the formulation of policies, especially politicians, lobbyists, and activists
+  glosses:
+  - One involved in the formulation of policies, especially politicians, lobbyists, and activists
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/policymaker#English
+pre:
+  gloss: (something significant)
+  glosses:
+  - (something significant)
+  - clipping of predrinks
+  - clipping of precum
+  pos:
+  - n
+  - v
+  pos_raw:
+  - Preposition
+  - Noun
+  - Verb
+  source: https://en.wiktionary.org/wiki/pre#English
 ramen:
   gloss: Soup noodles of wheat, with various ingredients (Japanese-Chinese style).
   glosses:
@@ -167,6 +315,46 @@ ramen:
   - Noun
   - Interjection
   source: https://en.wiktionary.org/wiki/ramen#English
+refundable:
+  gloss: Able to be refunded in case of customer dissatisfaction, loss, breakage etc
+  glosses:
+  - Able to be refunded in case of customer dissatisfaction, loss, breakage etc
+  - Something that is eligible to be refunded
+  pos:
+  - a
+  - n
+  pos_raw:
+  - Adjective
+  - Noun
+  source: https://en.wiktionary.org/wiki/refundable#English
+reinvest:
+  gloss: To invest again, give another investment
+  glosses:
+  - To invest again, give another investment
+  pos:
+  - v
+  pos_raw:
+  - Verb
+  source: https://en.wiktionary.org/wiki/reinvest#English
+reinvestment:
+  gloss: The condition of being reinvested
+  glosses:
+  - The condition of being reinvested
+  - A second or subsequent investment in the same thing
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/reinvestment#English
+repairperson:
+  gloss: synonym of repairer, a person who repairs things
+  glosses:
+  - synonym of repairer, a person who repairs things
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/repairperson#English
 round-trip:
   gloss: alternative spelling of round trip
   glosses:
@@ -179,6 +367,15 @@ round-trip:
   - Noun
   - Verb
   source: https://en.wiktionary.org/wiki/round-trip#English
+smartphone:
+  gloss: A mobile phone with more advanced features and greater computing capacity than a feature phone
+  glosses:
+  - A mobile phone with more advanced features and greater computing capacity than a feature phone
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/smartphone#English
 stir-fry:
   gloss: To fry quickly in hot oil whilst constantly stirring, especially in a wok or similar pan.
   glosses:
@@ -193,6 +390,27 @@ stir-fry:
   - Verb
   - Noun
   source: https://en.wiktionary.org/wiki/stir-fry#English
+stockmarket:
+  gloss: alternative form of stock market
+  glosses:
+  - alternative form of stock market
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/stockmarket#English
+subprime:
+  gloss: Less than prime; inferior
+  glosses:
+  - Less than prime; inferior
+  - A subprime loan
+  pos:
+  - a
+  - n
+  pos_raw:
+  - Adjective
+  - Noun
+  source: https://en.wiktionary.org/wiki/subprime#English
 sugar-free:
   gloss: 'Of food, drink, medication, chewing gum, etc: not containing sugar (and usually sweetened with
     a sugar substitute instead).'
@@ -204,6 +422,28 @@ sugar-free:
   pos_raw:
   - Adjective
   source: https://en.wiktionary.org/wiki/sugar-free#English
+tuple:
+  gloss: A finite sequence of terms
+  glosses:
+  - A finite sequence of terms
+  - A single row in a relational database
+  - A set of comma-separated values passed to a program or operating system as a parameter to a function
+    call
+  pos:
+  - n
+  pos_raw:
+  - Noun
+  source: https://en.wiktionary.org/wiki/tuple#English
+unauthorize:
+  gloss: To disown the authority of; to repudiate.<ref> </ref>
+  glosses:
+  - To disown the authority of; to repudiate.<ref> </ref>
+  - To withdraw authorization or permissions from
+  pos:
+  - v
+  pos_raw:
+  - Verb
+  source: https://en.wiktionary.org/wiki/unauthorize#English
 whenever:
   gloss: At any time that
   glosses:
@@ -216,3 +456,22 @@ whenever:
   - Conjunction
   - Adverb
   source: https://en.wiktionary.org/wiki/whenever#English
+whereby:
+  gloss: By which
+  glosses:
+  - By which
+  pos:
+  - r
+  pos_raw:
+  - Adverb
+  source: https://en.wiktionary.org/wiki/whereby#English
+whoever:
+  gloss: Who ever
+  glosses:
+  - Who ever
+  - Any person or persons that
+  - The person that (no matter who)
+  pos: []
+  pos_raw:
+  - Pronoun
+  source: https://en.wiktionary.org/wiki/whoever#English

@@ -14,6 +14,7 @@ from app.tutor.cloze import (
     BLANK,
     ClozeItem,
     grade,
+    is_answerable,
     is_safe_to_serve,
     is_speakable,
     make_item,
@@ -112,8 +113,15 @@ def test_a_plural_answer_still_recognizes_the_singular():
     assert result.verdict == "wrong_form"
 
 
+@needs_lexicon
 def test_a_different_word_is_a_different_verdict():
-    assert grade(_item(), "lend").verdict == "wrong_word"
+    """`lend` 는 예전에 wrong_word 였다. 지금은 품사가 겹치는 것을 따로 본다.
+
+    가른 이유는 tests/test_practice.py 에 있다. 여기서는 **맞음이 아니라는 것**만
+    지킨다 — 판정 이름이 늘어도 정답이 아닌 답이 통과하면 안 된다.
+    """
+    result = grade(_item(), "lend")
+    assert not result.ok and result.verdict == "right_pos"
 
 
 @needs_lexicon
@@ -146,6 +154,87 @@ def test_an_unreviewed_item_with_findings_is_held_back():
 
 def test_a_clean_unreviewed_item_is_servable():
     assert is_safe_to_serve(_row())
+
+
+# --- 문제로 성립하는가 (승인과 무관하게 늘 본다) --------------------------------
+#
+# 아래 셋은 전부 한 가지를 묻는다: **화면에 그 낱말의 한국어 이름이 남는가.**
+# 검사기는 원래도 있었는데 후보 목록에만 걸려 있어서, 같은 값이 문제 본문으로
+# 나가는 것은 아무도 안 막고 있었다.
+
+
+def test_a_meaning_the_learner_cannot_read_is_not_served():
+    """출제 가능 2,950개 중 14개의 뜻에 한자·가나·키릴이 섞여 있었다."""
+    assert not is_safe_to_serve(
+        _row(word="bagel", example="I want a bagel.", meaning_ko="백일(백面包), 빵 종류")
+    )
+    assert not is_safe_to_serve(
+        _row(word="spicy", example="This soup is spicy.", meaning_ko="매운, 辛い")
+    )
+
+
+def test_approval_does_not_make_foreign_script_readable():
+    """`reviewed` 는 "내용을 믿을 수 있는가"에 답할 뿐이다.
+
+    사람이 승인해도 왕초보가 `叹气` 를 읽게 되지는 않는다. 그래서 이 문은
+    선별기와 달리 승인으로 열리지 않는다.
+    """
+    assert not is_safe_to_serve(
+        _row(word="sigh", example="I heard him sigh.", meaning_ko="叹气하다", reviewed=True)
+    )
+
+
+def test_a_meaning_whose_korean_name_is_masked_away_is_not_served():
+    """`turnstile (지하철, 버스 등에 있는 출입문)` 은 가리면 괄호만 남는다.
+
+    괄호 안은 부연이지 그 낱말의 한국어 이름이 아니다. 이름이 사라지면 학습자가
+    화면 어디에서도 답을 고를 근거를 볼 수 없다.
+    """
+    assert not is_safe_to_serve(
+        _row(
+            word="turnstile",
+            example="Where is the turnstile?",
+            meaning_ko="turnstile (지하철, 버스 등에 있는 출입문)",
+        )
+    )
+
+
+def test_a_meaning_that_keeps_its_korean_name_outside_the_parentheses_still_serves():
+    """가려도 되는 것과 안 되는 것을 가른다 — 이름이 괄호 밖에 살아 있으면 문제가 된다."""
+    row = _row(
+        word="concentration",
+        example="I need more concentration on my work.",
+        meaning_ko="집중, 중점 (집중력: concentration level)",
+        pattern=None,
+    )
+    assert is_safe_to_serve(row)
+
+
+def test_a_sentence_that_still_shows_the_answer_is_not_served():
+    """`make_item` 은 첫 등장만 지운다. 두 번째 `as` 가 답을 그대로 알려 준다."""
+    item = make_item(_row(word="as", example="He is as tall as his father."))
+    assert item is not None and item.sentence == f"He is {BLANK} tall as his father."
+    assert not is_answerable(item)
+
+
+def test_a_sentence_that_only_shows_a_related_form_still_serves():
+    """정답 표면형만 본다. `mentions` 로 넓게 잡으면 이런 것까지 버린다.
+
+    `The ____ did a magic trick.` 의 정답은 `magician` 이라 `magic` 이 남아 있어도
+    답을 알려 주지 않는다. 전수에서 `mentions` 기준 5개, 정확일치 기준 1개였다.
+    """
+    row = _row(word="magic", example="The magician did a magic trick.", pattern=None)
+    item = make_item(row)
+    assert item is not None and item.answer == "magician"
+    assert is_answerable(item)
+
+
+def test_an_unreadable_gloss_drops_the_gloss_and_keeps_the_item():
+    """해석은 없어도 문제가 성립한다. 뜻과 달리 항목까지 버릴 이유가 없다."""
+    row = _row(example_ko="스ープ 한 그릇 주세요.")
+    item = make_item(row)
+    assert item is not None and item.example_ko is None
+    assert is_safe_to_serve(row)
 
 
 # --- 음성으로 답하기 적당한가 --------------------------------------------------

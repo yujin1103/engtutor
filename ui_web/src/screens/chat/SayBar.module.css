@@ -1,0 +1,78 @@
+.bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+}
+
+.head {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-sm);
+}
+
+.hint {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  /* 힌트가 길어도 바가 세 줄 넘게 자라지 않게 자른다 — 이 바가 커지면
+     입력칸이 엄지에서 멀어지고, 키보드를 올렸을 때 대화가 안 보인다. */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+.reveal {
+  flex: none;
+  /* 자주 누르는 버튼이 아니라 48px 을 다 쓰지는 않지만, 손가락으로 놓치지 않을 만큼은 준다. */
+  min-height: 36px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.reveal:active {
+  background: var(--surface-2);
+}
+
+.lines {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+}
+
+/* 그대로 말하면 되는 문장. 대화 본문과 섞이지 않게 상자에 담는다. */
+.say,
+.sayMore,
+.fallback {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  font-size: 1rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  /* 길게 눌러 복사하는 건 막지 않는다 — 읽고 치는 게 기본이지만 선택은 남긴다. */
+  user-select: text;
+}
+
+.sayMore,
+.fallback {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+.fallbackNote {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}

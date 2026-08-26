@@ -78,6 +78,42 @@ services:
       - "8501:8501"
     restart: unless-stopped
 
+
+  # 폰에서 쓰는 React 클라이언트의 개발 서버.
+  #
+  # 왜 컨테이너냐: 호스트에도 api 이미지에도 node 가 없다. 개발 도구 하나
+  # 때문에 호스트에 런타임을 깔지 않는다 — 저장소를 받은 사람이
+  # `docker compose up -d web` 한 줄로 같은 환경을 얻어야 한다.
+  #
+  # 이건 **개발용**이다. 운영에서는 FastAPI 가 `npm run build` 결과를 `/` 로
+  # 서빙하므로 이 서비스가 필요 없다. 그래야 앱과 API 가 같은 출처가 되고,
+  # 터널의 인증서 한 장으로 HTTPS 가 해결된다 —
+  # **폰 브라우저는 HTTPS 가 아니면 마이크를 내주지 않는다.**
+  # (그래서 http://localhost:5173 에서는 마이크가 되지만 http://<LAN IP>:5173 에서는 안 된다)
+  web:
+    image: node:22-alpine
+    container_name: engtutor-web
+    working_dir: /workspace/ui_web
+    # npm install 을 명령에 넣어 둔다. 이미지를 따로 만들지 않으므로 컨테이너를
+    # 새로 만들 때 의존성이 없을 수 있는데, node_modules 볼륨이 살아 있으면
+    # npm 이 할 일이 없다고 판단하고 몇 초 만에 넘어간다.
+    command: sh -c "npm install --no-audit --no-fund && npm run dev -- --host 0.0.0.0"
+    volumes:
+      - .:/workspace           # 소스 수정 -> HMR 로 즉시 반영
+      # node_modules 는 named volume 에 둔다. NTFS 바인드 위에서 수만 개의 작은
+      # 파일을 만들면 설치도 기동도 몇 배 느리다 — ollama_models · whisper_models 를
+      # 볼륨에 둔 것과 같은 이유다. 바인드 마운트 위에 겹쳐 덮어 호스트의
+      # ui_web/node_modules 와 섞이지 않게 한다.
+      - web_node_modules:/workspace/ui_web/node_modules
+    environment:
+      # dev 서버가 /scenarios 같은 요청을 넘길 곳. localhost 가 아니라 서비스명.
+      VITE_API_PROXY_TARGET: http://api:8000
+      # NTFS -> WSL2 경계에서는 inotify 가 안 넘어온다. api 의
+      # WATCHFILES_FORCE_POLLING 과 같은 이유로 파일 감시를 폴링으로 돌린다.
+      VITE_WATCH_POLLING: "true"
+    ports:
+      - "5173:5173"
+    restart: unless-stopped
   # 단어 검수 UI. 필요할 때만 띄우면 되므로 profile 뒤에 둔다.
   #   docker compose --profile review up -d review
   review:
@@ -111,6 +147,7 @@ services:
     profiles: ["expose"]
     depends_on:
       - ui
+      - api
     env_file:
       - .env
     volumes:
@@ -128,6 +165,19 @@ services:
     # 줄 들여쓰기를 **전부 같게** 맞춘다. YAML 접힘(>)은 더 깊이 들여쓴 줄을
     # 접지 않고 개행을 그대로 남기는데, 그러면 `exec autossh -M 0 -N` 에서
     # 명령이 끊겨 autossh 가 사용법만 출력하고 끝난다.
+    #
+    # 터널이 무엇을 내보낼지는 TUNNEL_TARGET 으로 정한다. VM 쪽 nginx 는 손대지
+    # 않는다 — 원격 포트(TUNNEL_REMOTE_PORT)는 그대로다.
+    #   api:8000 (기본) FastAPI. `/` 로 React 빌드(ui_web/dist)를, 그 아래로 API 를 준다.
+    #   ui:8501         Streamlit. 데스크톱·검수용으로 남아 있는 화면.
+    #
+    # **왜 api 가 기본인가.** 폰에서 쓰려고 만든 것이기 때문이다.
+    #   - 앱과 API 가 같은 출처라 CORS 가 없다.
+    #   - **폰 브라우저는 HTTPS 가 아니면 마이크를 안 내준다.** 같은 출처면
+    #     터널이 씌워 주는 인증서 한 장으로 화면과 API 가 함께 HTTPS 가 된다.
+    #   - Streamlit 은 폰에서 웹소켓이 끊기면 서버가 답을 다 만들어 놓고도
+    #     화면이 멈춰 있었다. 그 증상을 고치려고 React 클라이언트를 만들었다.
+    # Streamlit 을 다시 내보내려면 .env 에 TUNNEL_TARGET=ui:8501 한 줄이면 된다.
     command: >
       'set -e;
       : "$${TUNNEL_HOST:?.env 에 TUNNEL_HOST 를 넣으세요 (예: engtutor.duckdns.org)}";
@@ -138,10 +188,11 @@ services:
       -o StrictHostKeyChecking=accept-new
       -o UserKnownHostsFile=/tmp/known_hosts
       -i /tmp/k
-      -R 127.0.0.1:$${TUNNEL_REMOTE_PORT:-8501}:ui:8501
+      -R 127.0.0.1:$${TUNNEL_REMOTE_PORT:-8501}:$${TUNNEL_TARGET:-api:8000}
       $${TUNNEL_USER:-ubuntu}@$${TUNNEL_HOST}'
     restart: unless-stopped
 
 volumes:
   ollama_models:                # NTFS 바인드 마운트는 9GB 모델 로딩이 느려서 named volume 사용
   whisper_models:               # 같은 이유. faster-whisper small 약 500MB
+  web_node_modules:             # 같은 이유. npm 의존성은 파일이 수만 개라 NTFS 에서 특히 느리다

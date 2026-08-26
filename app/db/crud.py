@@ -12,7 +12,7 @@ from sqlalchemy.orm import selectinload
 from ..content import lexicon
 from ..content.schemas import WordEntry, WordTip
 from ..tutor.schemas import Correction, TurnResponse
-from .models import CorrectionRow, SessionRow, TurnRow, WordRow
+from .models import TRACK_GENERAL, CorrectionRow, SessionRow, TurnRow, WordRow
 
 
 def create_session(db: DbSession, *, session_id: str, scenario_id: str, level: str) -> SessionRow:
@@ -29,6 +29,17 @@ def get_session(db: DbSession, session_id: str) -> SessionRow | None:
         .options(selectinload(SessionRow.turns).selectinload(TurnRow.corrections))
     )
     return db.execute(stmt).scalar_one_or_none()
+
+
+def set_session_level(db: DbSession, session_id: str, level: str) -> None:
+    """세션의 레벨을 바꾼다.
+
+    레벨은 대화 중에도 바뀔 수 있다(app/main.py 의 `_resolve` 참고). 마지막에
+    실제로 쓰인 값을 적어 둬야 리포트가 "이 세션은 몇 레벨이었나"를 맞게 적는다.
+    """
+    row = get_session(db, session_id)
+    if row is not None:
+        row.level = level
 
 
 def list_sessions(db: DbSession, *, limit: int = 50) -> list[SessionRow]:
@@ -135,7 +146,14 @@ def existing_words(db: DbSession) -> set[str]:
     return set(db.execute(select(WordRow.word)).scalars())
 
 
-def upsert_word(db: DbSession, entry: WordEntry, *, topic: str | None = None) -> WordRow:
+def upsert_word(
+    db: DbSession,
+    entry: WordEntry,
+    *,
+    topic: str | None = None,
+    track: str = TRACK_GENERAL,
+    rank: int | None = None,
+) -> WordRow:
     """배치 생성 결과 저장. 항상 reviewed=False 로 들어간다.
 
     이미 있는 단어를 다시 생성하면 내용만 갱신하되, 사람이 이미 승인한 항목은
@@ -143,10 +161,20 @@ def upsert_word(db: DbSession, entry: WordEntry, *, topic: str | None = None) ->
 
     `topic` 은 **줄 때만** 쓴다. 없다고 지우면, 장면 없는 목록으로 한 번만 다시
     돌려도 묶음이 통째로 날아간다.
+
+    `track` 은 **새로 만들 때만** 쓴다. 이미 있는 행의 트랙은 어떤 배치도 바꾸지
+    않는다 — TSL 1,250개 중 149개(`airport`·`refund`·`lobby` …)가 이미 장면 팩으로
+    생활 회화 트랙에 들어와 있는데, 토익 목록에 있다는 이유로 옮겨 버리면 카페·공항
+    팩에서 그 낱말이 사라진다. 먼저 들어간 트랙이 그 낱말의 트랙이다.
+
+    `rank` 는 **행을 새로 만들 때만** 적는다. 이미 있는 행의 순위는 `assign_ranks`
+    가 맡는다 — 저쪽만 "먼저 실은 목록이 이긴다"는 규칙을 알고 있고, 배치는 생성
+    전에 이미 그 함수를 돌린다. 여기서도 적으면 두 번째 목록이 첫 번째 목록의
+    순위를 덮어 `client`(TOEIC 3위)가 1264위가 된다. 실제로 그렇게 됐었다.
     """
     row = db.execute(select(WordRow).where(WordRow.word == entry.word)).scalar_one_or_none()
     if row is None:
-        row = WordRow(word=entry.word, reviewed=False)
+        row = WordRow(word=entry.word, reviewed=False, track=track, rank=rank)
         db.add(row)
     elif row.reviewed:
         if topic and not row.topic:
@@ -166,16 +194,90 @@ def upsert_word(db: DbSession, entry: WordEntry, *, topic: str | None = None) ->
     return row
 
 
-def words_missing_pattern(db: DbSession, *, include_reviewed: bool = False) -> list[str]:
+def words_missing_pattern(
+    db: DbSession, *, track: str | None = None, include_reviewed: bool = False
+) -> list[str]:
     """문형이 비어 있는 단어. pattern 이 생기기 전에 만들어진 항목을 찾는다.
 
     2,801개를 통째로 다시 돌릴 이유가 없다 — 빠진 것만 채우면 된다.
     승인된 항목은 기본으로 제외한다(배치가 검수 결과를 덮어쓰지 않는다는 규칙 그대로).
     """
     stmt = select(WordRow.word).where(or_(WordRow.pattern.is_(None), WordRow.pattern == ""))
+    if track:
+        stmt = stmt.where(WordRow.track == track)
     if not include_reviewed:
         stmt = stmt.where(WordRow.reviewed.is_(False))
     return list(db.execute(stmt.order_by(WordRow.rank.is_(None), WordRow.rank)).scalars())
+
+
+def words_missing_example_ko(
+    db: DbSession,
+    *,
+    topic: str | None = None,
+    track: str | None = None,
+    include_reviewed: bool = False,
+) -> list[str]:
+    """예문 해석이 비어 있는 단어. words_missing_pattern 과 같은 모양이다.
+
+    **장면(topic)이 붙은 것을 앞에 세운다.** 단어 연습장이 장면으로 문제를 고르기
+    때문이다 — 카페 팩을 풀 수 있으려면 카페 60개의 해석이 먼저 있어야 하고,
+    빈도 상위 60개의 해석은 그 화면에 한 문장도 안 나온다. 장면 안에서는 빈도 순,
+    장면 없는 일반 어휘는 그 뒤에 역시 빈도 순으로 붙는다.
+
+    예문이 없는 항목은 옮길 것이 없으므로 빠진다. 승인된 항목도 기본으로 빠진다
+    (배치가 검수 결과를 덮어쓰지 않는다는 규칙 그대로).
+    """
+    stmt = select(WordRow.word).where(
+        or_(WordRow.example_ko.is_(None), WordRow.example_ko == ""),
+        WordRow.example != "",
+    )
+    if not include_reviewed:
+        stmt = stmt.where(WordRow.reviewed.is_(False))
+    if topic:
+        stmt = stmt.where(WordRow.topic == topic)
+    if track:
+        # 트랙 하나만 채우고 싶을 때가 있다 — 토익 2,260개의 해석을 붙이는 동안
+        # 생활 회화 쪽 순서에 끼어들 이유가 없다.
+        stmt = stmt.where(WordRow.track == track)
+    stmt = stmt.order_by(
+        WordRow.topic.is_(None), WordRow.topic, WordRow.rank.is_(None), WordRow.rank, WordRow.word
+    )
+    return list(db.execute(stmt).scalars())
+
+
+def word_examples(db: DbSession, words: list[str]) -> list[tuple[str, str, str]]:
+    """(표제어, 낱말 뜻, 예문). 해석 백필이 모델에게 줄 세 칸만 뜬다.
+
+    행 객체를 그대로 넘기지 않는 이유는 생성기가 동시 호출이라서다 — 세션에 매인
+    ORM 객체가 스레드로 넘어가면 언제 무엇이 로드되는지가 불분명해진다.
+    입력 순서를 그대로 지킨다(대상 순서가 곧 우선순위다).
+    """
+    wanted = [w.strip().lower() for w in words]
+    rows = {
+        r.word: r
+        for r in db.execute(select(WordRow).where(WordRow.word.in_(wanted))).scalars()
+    }
+    return [
+        (rows[w].word, rows[w].meaning_ko, rows[w].example)
+        for w in wanted
+        if w in rows and rows[w].example
+    ]
+
+
+def set_example_ko(
+    db: DbSession, word: str, gloss: str, *, include_reviewed: bool = False
+) -> bool:
+    """예문 해석 한 칸만 쓴다. 나머지 칸은 건드리지 않는다.
+
+    upsert_word 를 쓰지 않는 이유가 이것이다 — 저쪽은 항목 전체를 갈아 끼우므로
+    해석을 붙이려다 예문·설명까지 새로 쓰인다. 승인된 항목은 기본으로 거른다.
+    """
+    row = db.execute(select(WordRow).where(WordRow.word == word.strip().lower())).scalar_one_or_none()
+    if row is None or (row.reviewed and not include_reviewed):
+        return False
+    row.example_ko = gloss
+    db.flush()
+    return True
 
 
 def list_words(
@@ -183,12 +285,21 @@ def list_words(
     *,
     reviewed: bool | None = None,
     query: str | None = None,
+    track: str | None = None,
     limit: int = 50,
     offset: int = 0,
 ) -> list[WordRow]:
+    """`track` 을 주지 않으면 트랙으로 가르지 않는다.
+
+    검수 UI 와 소급 수정(정규화·레벨 조정)이 이 함수로 표를 통째로 훑는데, 그
+    자리에서는 트랙이 관심사가 아니다 — 어느 트랙이든 표기 규칙은 같다. 학습자에게
+    문제로 내보내는 조회(`cloze_candidates`)만 기본이 생활 회화 트랙이다.
+    """
     stmt = select(WordRow)
     if reviewed is not None:
         stmt = stmt.where(WordRow.reviewed.is_(reviewed))
+    if track:
+        stmt = stmt.where(WordRow.track == track)
     if query:
         like = f"%{query.strip().lower()}%"
         stmt = stmt.where(or_(WordRow.word.like(like), WordRow.meaning_ko.like(like)))
@@ -196,19 +307,48 @@ def list_words(
     return list(db.execute(stmt).scalars())
 
 
-def assign_ranks(db: DbSession, words: list[str]) -> int:
+def rank_map(words: list[str], *, offset: int = 0) -> dict[str, int]:
+    """목록 순서를 표제어 -> 순위로. 같은 낱말이 두 번 나오면 앞의 자리를 쓴다."""
+    ranks: dict[str, int] = {}
+    for i, word in enumerate(words, start=1):
+        ranks.setdefault(word.strip().lower(), i + offset)
+    return ranks
+
+
+def assign_ranks(
+    db: DbSession,
+    words: list[str],
+    *,
+    track: str = TRACK_GENERAL,
+    offset: int = 0,
+    keep_existing: bool = False,
+) -> int:
     """단어 목록의 순서를 빈도 순위로 기록한다. 1이 가장 자주 쓰이는 단어.
 
     NGSL 은 파일에 등장하는 순서가 곧 빈도 순서인데, 그 정보가 저장 시점에
     사라지고 있었다. 검수를 중간에 멈춰도 **가장 많이 쓰는 단어부터** 승인돼
     있어야 리포트에 실제로 도움이 된다.
+
+    **그 트랙의 행에만 적는다.** 순위는 트랙 안에서만 뜻이 있다 — TSL 로 이 함수를
+    트랙 없이 돌리면 이미 장면 팩에 들어와 있는 `vacation` 이 TSL 2위를 얻어
+    NGSL 2위(`and`)와 나란히 서고, 생활 회화 연습장의 출제 순서가 조용히 뒤집힌다.
+
+    `offset` 은 한 트랙에 목록을 **이어 붙일 때** 쓴다. TSL 1,250 뒤에 BSL 을
+    1251 부터 잇는 식이다. 두 목록의 1위는 서로 다른 코퍼스에서 나온 값이라 그냥
+    합치면 순위가 겹쳐 정렬이 뒤엉킨다(content/data/bsl.csv 의 `# rank-offset:`).
+
+    `keep_existing` 은 이어 붙이는 목록이 **먼저 온 목록의 순위를 덮지 않게** 한다.
+    두 목록은 겹친다 — BSL 1,744개 중 525개가 이미 TSL 에 있는 낱말이었고, 이 빗장
+    없이 BSL 을 돌렸더니 TOEIC 3위인 `client` 가 1264위로, `goods`(TSL 15위)가
+    1252위로 밀렸다. 토익 화면의 첫 장이 통째로 다른 낱말들로 채워졌다는 뜻이다.
+    한 트랙에서 **한 낱말의 순위는 그것을 먼저 실은 목록이 정한다.**
     """
-    ranks = {}
-    for i, word in enumerate(words, start=1):
-        ranks.setdefault(word.strip().lower(), i)
+    ranks = rank_map(words, offset=offset)
 
     changed = 0
-    for row in db.execute(select(WordRow)).scalars():
+    for row in db.execute(select(WordRow).where(WordRow.track == track)).scalars():
+        if keep_existing and row.rank is not None:
+            continue
         rank = ranks.get(row.word)
         if rank is not None and row.rank != rank:
             row.rank = rank
@@ -235,10 +375,12 @@ def assign_topics(db: DbSession, topics: dict[str, str]) -> int:
     return changed
 
 
-def count_words(db: DbSession, *, reviewed: bool | None = None) -> int:
+def count_words(db: DbSession, *, reviewed: bool | None = None, track: str | None = None) -> int:
     stmt = select(func.count(WordRow.id))
     if reviewed is not None:
         stmt = stmt.where(WordRow.reviewed.is_(reviewed))
+    if track:
+        stmt = stmt.where(WordRow.track == track)
     return int(db.execute(stmt).scalar_one())
 
 
@@ -298,14 +440,21 @@ def word_tips_for(
     ]
 
 
-def topics(db: DbSession) -> list[tuple[str, int, int]]:
-    """(장면 묶음, 전체, 검수 완료). 묶음 없는 일반 어휘는 빠진다."""
+def topics(db: DbSession, *, track: str | None = TRACK_GENERAL) -> list[tuple[str, int, int]]:
+    """(장면 묶음, 전체, 검수 완료). 묶음 없는 일반 어휘는 빠진다.
+
+    기본이 생활 회화 트랙인 이유는 이 목록이 그 화면의 것이기 때문이다. 지금은
+    토익 트랙에 장면이 하나도 붙어 있지 않아 결과가 같지만, 나중에 누가 붙이면
+    카페·호텔 목록에 회의·송장 묶음이 섞여 나온다. `track=None` 이면 전부 센다.
+    """
     stmt = (
         select(WordRow.topic, func.count(WordRow.id), func.sum(case((WordRow.reviewed, 1), else_=0)))
         .where(WordRow.topic.is_not(None))
         .group_by(WordRow.topic)
         .order_by(WordRow.topic)
     )
+    if track:
+        stmt = stmt.where(WordRow.track == track)
     return [(str(t), int(n), int(r or 0)) for t, n, r in db.execute(stmt)]
 
 
@@ -315,6 +464,7 @@ def cloze_candidates(
     level: str | None = None,
     reviewed_only: bool = False,
     topic: str | None = None,
+    track: str = TRACK_GENERAL,
     limit: int = 60,
 ) -> list[WordRow]:
     """빈칸 문제로 쓸 후보를 **빈도 순**으로 준다.
@@ -325,8 +475,13 @@ def cloze_candidates(
     여기서는 SQL 로 걸러낼 수 있는 것만 거른다. 안전 판정(선별기 통과 여부)은
     파이썬이 해야 해서 tutor.cloze.is_safe_to_serve 가 맡는다. 그래서 호출부가
     필요한 개수보다 넉넉히 받아 걸러 쓰도록 limit 기본값을 크게 잡았다.
+
+    **트랙 기본값이 생활 회화**인 것이 이 함수에서 제일 중요한 한 줄이다. 토익
+    어휘 2,260개가 같은 표에 있으므로 여기서 트랙을 안 좁히면 카페 주문을 연습하는
+    왕초보에게 `reimbursement` 가 빈칸으로 나간다. 호출부가 매번 기억해야 하는
+    규칙으로 두지 않고 기본값으로 박아 둔다 — 잊어도 왕초보 화면은 그대로다.
     """
-    stmt = select(WordRow).where(WordRow.example != "")
+    stmt = select(WordRow).where(WordRow.example != "", WordRow.track == track)
     if level:
         stmt = stmt.where(WordRow.level == level)
     if reviewed_only:
@@ -338,3 +493,56 @@ def cloze_candidates(
     # rank 가 없는 단어(NGSL 목록 밖)는 뒤로 보낸다.
     stmt = stmt.order_by(WordRow.rank.is_(None), WordRow.rank, WordRow.word).limit(limit)
     return list(db.execute(stmt).scalars())
+
+
+def cloze_alternatives(
+    db: DbSession,
+    *,
+    word: str,
+    topic: str | None,
+    rank: int | None,
+    level: str | None,
+    track: str = TRACK_GENERAL,
+    limit: int = 240,
+) -> list[WordRow]:
+    """같은 자리에 올 법한 다른 낱말의 **후보**를 준다. 여기서 고르지는 않는다.
+
+    품사 대조는 WordNet 이 하는 일이라 SQL 로 못 한다. 그래서 이 함수는 넉넉히
+    퍼 올리고, 품사로 거르는 것은 `tutor.practice` 가 맡는다. `cloze_candidates` 가
+    안전 판정을 파이썬에 맡기는 것과 같은 분업이다.
+
+    무엇을 후보로 보는가 — 두 가지뿐이고, 둘 다 **아는 사실**이다.
+
+    1. **같은 장면(topic)**. 카페 어휘 60개는 실제로 같은 상황에서 쓰는 말이라
+       "같은 장면에서 쓰는 명사예요"라고 말할 수 있다.
+    2. 장면이 없으면 **빈도가 가까운 것**. 3,245개 중 장면이 붙은 것은 444개뿐이라
+       대부분이 여기로 온다. 빈도가 가깝다는 것은 난이도가 비슷하다는 뜻이지
+       그 자리에 들어간다는 뜻이 아니다 — 화면 문구도 딱 그만큼만 말한다.
+
+    두 경우 다 **그 자리에 넣어도 뜻이 통하는지는 모른다.** WordNet 은 품사를 알지
+    문맥을 모른다. 그래서 이 함수 이름을 alternatives 가 아니라 후보로 읽어야 한다.
+
+    셋째 조건은 **같은 트랙**이다. 빈도가 가깝다는 말 자체가 트랙 안에서만 성립한다 —
+    NGSL 300위와 TSL 300위는 다른 코퍼스의 300위라 나란히 놓을 근거가 없다.
+    화면 문구가 "비슷하게 자주 쓰는 명사예요" 이므로 이 조건이 곧 그 문구의 참·거짓이다.
+    """
+    stmt = select(WordRow).where(
+        WordRow.word != word.strip().lower(), WordRow.example != "", WordRow.track == track
+    )
+    if topic:
+        stmt = stmt.where(WordRow.topic == topic).order_by(
+            WordRow.rank.is_(None), WordRow.rank, WordRow.word
+        )
+    elif rank is not None:
+        # 빈도가 가까운 순. NGSL 목록 밖(rank NULL)은 빈도를 모르니 후보로 쓰지 않는다.
+        stmt = stmt.where(WordRow.rank.is_not(None)).order_by(
+            func.abs(WordRow.rank - rank), WordRow.word
+        )
+    else:
+        # 빈도도 장면도 모르면 같은 레벨의 자주 쓰는 말로 대신한다. 그마저 없으면 빈손.
+        if not level:
+            return []
+        stmt = stmt.where(WordRow.level == level).order_by(
+            WordRow.rank.is_(None), WordRow.rank, WordRow.word
+        )
+    return list(db.execute(stmt.limit(limit)).scalars())

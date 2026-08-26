@@ -32,6 +32,8 @@ class SessionStore(Protocol):
 
     def get(self, session_id: str) -> Session | None: ...
 
+    def set_level(self, session_id: str, level: str) -> None: ...
+
     def record_turn(
         self,
         session_id: str,
@@ -65,6 +67,11 @@ class InMemorySessionStore:
 
     def get(self, session_id: str) -> Session | None:
         return self._sessions.get(session_id)
+
+    def set_level(self, session_id: str, level: str) -> None:
+        session = self._sessions.get(session_id)
+        if session is not None:
+            session.level = level
 
     def record_turn(
         self,
@@ -122,6 +129,13 @@ class SqliteSessionStore:
                 messages=crud.messages_of(row),  # type: ignore[arg-type]
                 ended=row.ended_at is not None,
             )
+
+    def set_level(self, session_id: str, level: str) -> None:
+        from .db import crud
+        from .db.database import db_session
+
+        with db_session() as db:
+            crud.set_session_level(db, session_id, level)
 
     def record_turn(
         self,

@@ -1,0 +1,117 @@
+.fold {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.row {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+/* 접힌 줄 전체가 버튼이다. 폰에서는 화살표 하나를 겨냥하게 하지 않는다. */
+.head {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-sm);
+  width: 100%;
+  min-height: var(--tap-min);
+  padding: 10px 14px;
+  border: 0;
+  background: transparent;
+  text-align: left;
+}
+
+.head:active {
+  background: var(--surface-2);
+}
+
+.headLabel {
+  flex: none;
+  font-weight: 700;
+}
+
+/* 지금 값. 접혀 있을 때 이 글자가 유일한 정보라 흐리게 두지 않는다. */
+.headValue {
+  flex: 1;
+  min-width: 0;
+  color: var(--accent);
+  font-weight: 600;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chevron {
+  flex: none;
+  color: var(--text-dim);
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform 120ms ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.panel {
+  padding: 0 10px 10px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  width: 100%;
+  min-height: var(--tap-min);
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  text-align: left;
+}
+
+.option[aria-checked="true"] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.mark {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+}
+
+.option[aria-checked="true"] .mark {
+  border-color: var(--accent);
+  /* 안쪽을 두꺼운 테두리로 채운다. 점을 따로 그리지 않아도 라디오처럼 보인다. */
+  border-width: 7px;
+}
+
+.optionText {
+  flex: 1;
+  min-width: 0;
+}
+
+.optionTitle {
+  display: block;
+  font-weight: 600;
+}
+
+.optionCaption {
+  display: block;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}

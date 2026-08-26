@@ -15,6 +15,7 @@
 from __future__ import annotations
 
 import re
+import string
 
 _HANGUL = re.compile(r"[가-힣]")
 
@@ -80,6 +81,114 @@ def reject_hangul(text: str, field: str) -> str:
     """
     if has_hangul(text):
         raise ValueError(f"{field} 는 영어여야 합니다. 한글이 섞였습니다: {text[:60]!r}")
+    return text
+
+
+# 한국어 칸에 영어 낱말이 두 개 이상 잇달아 나오는 자리. 이건 영어 원문이 통째로
+# 새어 들어온 흔적이다 — 해석 칸에 "펜 좀 빌려도 될까요? (Can I borrow your pen?)"
+# 처럼 원문을 덧붙이는 실패가 잦다.
+#
+# 한 낱말은 여기서 막지 않는다. 무엇이 남아도 되는 한 낱말인지는 아래
+# `reject_untranslated_latin` 이 목록으로 판정한다 — 여기서 낱말 하나까지 막으면
+# `Wi-Fi 비밀번호가 뭐예요?` 가 "영어 원문이 섞였다"는 엉뚱한 이유로 거부된다.
+_ENGLISH_RUN = re.compile(r"[A-Za-z][A-Za-z'’\-]*(?:\s+[A-Za-z][A-Za-z'’\-]*)+")
+
+
+def reject_english_run(text: str, field: str) -> str:
+    """한국어 칸에 영어 원문이 섞여 들어왔는지 본다. require_korean 의 보완재.
+
+    require_korean 은 **한글이 있는가**만 본다. 그래서 원문을 옆에 붙여 놓은 답,
+    즉 한글도 있고 영어 문장도 있는 답이 그대로 통과한다. 해석 칸은 원문을 가린
+    채 보여줄 수도 있어야 하므로 여기서 막는다.
+    """
+    found = _ENGLISH_RUN.search(text)
+    if found:
+        raise ValueError(
+            f"{field} 에 영어 원문이 섞였습니다. 한국어 해석만 적어야 합니다: {found.group()!r}"
+        )
+    return text
+
+
+# 한국어 칸에 남아도 되는 글자 — 한글·자모, 영문·숫자, 공백, 흔한 문장부호.
+#
+# 화이트리스트인 이유가 있다. 처음에는 한자와 가나만 막았다 — 저장된 항목 중
+# `bagel` 의 뜻이 '백일(백面包)' 이었고, 해석 생성에서 '알레르기体质입니다' 와
+# '스ープ 한 그릇' 이 나왔기 때문이다. 그렇게 막고 756개를 채웠더니 이번에는
+# `pharmacist` 의 해석이 '약사가 мне 약을 주었어요' 였다. 키릴 문자다.
+# 모델이 흘리는 문자 집합을 미리 다 셀 수는 없다. 막을 것을 세는 대신
+# **남겨도 되는 것**을 센다.
+_JAMO = re.compile(r"[ㄱ-ㅎㅏ-ㅣ]")
+_PUNCT_OK = set(string.punctuation) | set(string.whitespace) | set("’‘“”·…—–₩°")
+
+
+def _is_readable(ch: str) -> bool:
+    if _HANGUL.match(ch) or _JAMO.match(ch):
+        return True
+    if ch.isascii() and ch.isalnum():
+        return True
+    return ch in _PUNCT_OK
+
+
+# 한국어 칸에 그대로 남아도 되는 로마자. 여기 없는 로마자는 **아직 옮기지 않은 영어**로 본다.
+#
+# 왜 목록으로 세는가
+# ------------------
+# 원래는 `_ENGLISH_RUN`(로마자 두 낱말 이상)만 막았다. 낱말 하나는 정상이라고 봤기
+# 때문이다 — `Wi-Fi 비밀번호가 뭐예요?` 를 죽이지 않으려는 것이었다. 그런데 실제로
+# 나온 실패는 낱말 하나도 아니었다: `크로issant와 커피 하나 주세요`, `나oodles를 먹을
+# 때`, `turnstile은 어디에 있어요?`. 한글에 로마자가 **붙어 버려서** 공백이 없고,
+# 그래서 두 낱말로 세어지지 않는다. 조사가 붙은 `turnstile은` 과 정상적인 `Wi-Fi가` 는
+# 생김새가 같아서, 붙었는지 여부로는 둘을 가를 수 없다.
+#
+# 그래서 여기서도 막을 것이 아니라 **남겨도 되는 것을 센다**(reject_foreign_script 와
+# 같은 이유). 한국어 문장에 로마자로 적히는 말은 닫힌 부류다 — 단위(cm), 두문자어(ATM),
+# 그리고 관용적으로 로마자로 쓰는 몇 개(Wi-Fi). 그 밖의 로마자는 옮기다 만 영어다.
+#
+# 사람 이름(Tom)은 이 목록에 없다. 예전 주석은 `제 이름은 Tom 이에요` 를 정상으로
+# 봤지만, 학습자에게 나가는 해석은 `제 이름은 톰이에요` 가 낫고, 거부해 봐야 재시도
+# 한 번이다. 반쯤 옮긴 낱말을 통과시키는 값보다 그 비용이 싸다.
+_LATIN_KEPT: frozenset[str] = frozenset(
+    """
+    wi-fi wifi ok a4
+    cm mm km kg ml oz
+    """.split()
+)
+
+# 두문자어. 새로 나올 것을 미리 다 셀 수 없어 모양으로 받는다 — ATM, TV, USB, KTX, A4.
+# 대문자만 허용하는 것이 핵심이다. 옮기다 만 낱말은 소문자로 남는다(issant, oodles).
+_ACRONYM = re.compile(r"^[A-Z]{1,5}\d?$")
+_LATIN_TOKEN = re.compile(r"[A-Za-z][A-Za-z'’\-]*\d?")
+
+
+def reject_untranslated_latin(text: str, field: str) -> str:
+    """한국어 칸에 **옮기다 만 영어 낱말**이 남았는지 본다.
+
+    reject_english_run 이 못 보는 자리를 본다. 저쪽은 공백으로 이어진 두 낱말
+    이상만 보므로 `크로issant` 처럼 한글에 붙어 버린 조각을 한 낱말로 세고 넘긴다.
+    """
+    for token in _LATIN_TOKEN.findall(text):
+        if token.lower() in _LATIN_KEPT or _ACRONYM.match(token):
+            continue
+        raise ValueError(
+            f"{field} 에 한국어로 옮기지 않은 영어가 남았습니다: {token!r} "
+            f"({text[:60]!r}). 단위·두문자어가 아니면 한글로 옮겨야 합니다."
+        )
+    return text
+
+
+def reject_foreign_script(text: str, field: str) -> str:
+    """한국어 칸에 학습자가 못 읽는 글자가 섞였는지 본다.
+
+    require_korean 은 한글이 하나라도 있으면 통과시킨다. 그래서 한글과 한자가,
+    한글과 키릴 문자가 섞인 답이 그대로 나간다. 왕초보는 그 글자들을 못 읽으므로
+    이건 표기 문제가 아니라 읽을 수 없는 문구를 내보내는 결함이다.
+    """
+    bad = [c for c in text if not _is_readable(c)]
+    if bad:
+        raise ValueError(
+            f"{field} 에 학습자가 못 읽는 글자가 섞였습니다"
+            f"({''.join(dict.fromkeys(bad))}): {text[:60]!r}"
+        )
     return text
 
 

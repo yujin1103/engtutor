@@ -1,0 +1,201 @@
+/* 앱 전체가 함께 쓰는 것만 여기 둔다 — 색·간격 같은 값(토큰), 아주 기본적인 초기화,
+ * 그리고 버튼·카드처럼 화면 넷이 똑같이 생겨야 하는 조각 몇 개.
+ *
+ * 화면에만 쓰는 모양은 여기 적지 않고 그 화면 옆의 `*.module.css` 에 적는다.
+ * CSS 모듈은 클래스 이름을 파일마다 다르게 만들어 주므로, 네 사람이 각자 화면을
+ * 만들어도 `.card` 가 서로를 덮어쓰는 일이 없다. 라이브러리를 안 넣고도
+ * 이름 충돌을 막을 수 있어서 이걸 골랐다.
+ *
+ * **모바일 우선이다.** 기준은 세로로 든 폰이고, 데스크톱은 가운데 한 칸으로
+ * 좁혀서 보여줄 뿐이다.
+ */
+
+:root {
+  /* 손가락으로 누를 수 있는 최소 크기. 애플·구글 지침이 44~48px 이고 그중 큰 쪽을 쓴다.
+     버튼을 만들 때 min-height 를 이 값보다 작게 두지 말 것. */
+  --tap-min: 48px;
+
+  /* 폰 세로 폭에서 읽기 좋은 한 칸. 데스크톱에서는 이 폭으로 가운데 정렬된다. */
+  --page-max: 560px;
+
+  --gap-xs: 4px;
+  --gap-sm: 8px;
+  --gap: 12px;
+  --gap-lg: 20px;
+  --radius: 14px;
+  --radius-sm: 10px;
+
+  /* 홈 인디케이터(아이폰) 위로 버튼이 겹치지 않게 하는 여백. */
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-top: env(safe-area-inset-top, 0px);
+
+  --bg: #f7f5f2;
+  --surface: #ffffff;
+  --surface-2: #f0ede8;
+  --border: #e2ddd6;
+  --text: #241f1a;
+  --text-dim: #6b6259;
+  --accent: #b4531f;
+  --accent-ink: #ffffff;
+  --accent-soft: #fbeee4;
+  --danger: #a32b1f;
+  --danger-soft: #fdeceb;
+  --shadow: 0 1px 2px rgb(36 31 26 / 8%), 0 6px 16px rgb(36 31 26 / 6%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17150f;
+    --surface: #221f19;
+    --surface-2: #2c2820;
+    --border: #3b352c;
+    --text: #f0ebe3;
+    --text-dim: #a89e91;
+    --accent: #e08a4e;
+    --accent-ink: #241f1a;
+    --accent-soft: #33281e;
+    --danger: #f08b7f;
+    --danger-soft: #3a231f;
+    --shadow: none;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  /* 17px. 한글은 16px 이면 폰에서 빽빽해 보인다. */
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  /* 폰을 가로로 돌렸다 세우면 사파리가 글자를 제멋대로 키운다. */
+  -webkit-text-size-adjust: 100%;
+}
+
+/* 탭할 때 파란 사각형이 번쩍이는 것을 없앤다. 누른 느낌은 :active 로 직접 준다. */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  /* 300ms 더블탭 확대 대기를 없앤다 — 이게 있으면 버튼이 굼떠 보인다. */
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+/* iOS 사파리는 글자가 16px 보다 작은 입력칸에 포커스가 가면 화면을 확대해 버린다.
+   한 번 확대되면 스스로 돌아오지 않아 대화가 통째로 어그러진다. */
+input,
+textarea,
+select {
+  font-size: max(16px, 1rem);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+/* ───────────────────────────── 화면 넷이 함께 쓰는 조각 */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-sm);
+  min-height: var(--tap-min);
+  padding: 0 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  transition: transform 80ms ease, background-color 120ms ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+  background: var(--surface-2);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+  transform: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn-primary:active {
+  background: var(--accent);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.muted {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+/* 오류는 반드시 눈에 띄어야 한다. 이 앱은 조용히 실패하지 않는 게 목적이다. */
+.alert {
+  padding: var(--gap) 14px;
+  border: 1px solid var(--danger);
+  border-radius: var(--radius-sm);
+  background: var(--danger-soft);
+  color: var(--danger);
+  font-size: 0.95rem;
+}
+
+/* 화면을 만들다 만 자리. 다음 단계가 채운다. */
+.placeholder {
+  padding: var(--gap-lg);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  color: var(--text-dim);
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
