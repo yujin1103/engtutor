@@ -9,6 +9,7 @@ from sqlalchemy import func, or_, select
 from sqlalchemy.orm import Session as DbSession
 from sqlalchemy.orm import selectinload
 
+from ..content import lexicon
 from ..content.schemas import WordEntry, WordTip
 from ..tutor.schemas import Correction, TurnResponse
 from .models import CorrectionRow, SessionRow, TurnRow, WordRow
@@ -241,12 +242,22 @@ def word_tips_for(
     if not tokens:
         return []
 
-    stmt = (
-        select(WordRow)
-        .where(WordRow.word.in_(tokens), WordRow.reviewed.is_(True))
-        .order_by(WordRow.level, WordRow.word)
-        .limit(limit)
+    # 표제어는 원형으로 저장돼 있는데 교정 문장에는 굴절형이 나온다 — `working`,
+    # `years`, `came`. 글자 그대로만 맞추면 그 팁이 통째로 빠진다. 실제 교정 70건에서
+    # 그대로 맞은 토큰이 350개일 때 원형으로만 맞는 토큰이 66개 더 있었다.
+    # 사전이 없는 환경에서는 lemmas 가 자기 자신만 돌려주므로 예전 동작 그대로다.
+    wanted = set(tokens)
+    for token in tokens:
+        wanted |= {base for base in lexicon.lemmas(token) if len(base) >= 2}
+
+    rows = list(
+        db.execute(
+            select(WordRow).where(WordRow.word.in_(wanted), WordRow.reviewed.is_(True))
+        ).scalars()
     )
+    # 학습자가 실제로 쓴 그 단어를 먼저 보여준다. 원형으로만 이어진 것(am -> be)은
+    # 뒤로 미룬다 — 자리가 다섯뿐이라 순서가 곧 무엇을 버리느냐다.
+    rows.sort(key=lambda r: (r.word not in tokens, r.level, r.word))
     return [
         WordTip(
             word=r.word,
@@ -256,7 +267,7 @@ def word_tips_for(
             usage_note=r.usage_note,
             confused_with=list(r.confused_with or []),
         )
-        for r in db.execute(stmt).scalars()
+        for r in rows[:limit]
     ]
 
 

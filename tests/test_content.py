@@ -263,6 +263,71 @@ def test_word_tips_only_include_reviewed(db):
         assert tips[0].confused_with == ["lend"]
 
 
+def test_word_tips_find_the_word_through_its_inflected_form(db):
+    """교정 문장은 굴절형을 쓴다 — `borrowed`. 표제어는 원형이라 글자가 다르다.
+
+    글자 그대로만 맞추면 학습자가 방금 틀린 그 단어의 팁이 리포트에서 빠진다.
+    실제 교정 70건에서 이렇게 놓치는 토큰이 66개였다.
+    """
+    from app.content import lexicon
+    from app.db import crud
+
+    if not lexicon.available():
+        pytest.skip("WordNet 코퍼스가 없습니다")
+
+    with db.db_session() as s:
+        crud.upsert_word(s, _entry())
+        crud.save_word_edits(s, crud.list_words(s)[0].id, reviewed=True)
+
+    corrections = [
+        Correction(
+            kind="mistake",
+            original="I borrowed you pen",
+            better="I borrowed your pen.",
+            note="your 가 맞아요.",
+        )
+    ]
+    with db.db_session() as s:
+        assert [t.word for t in crud.word_tips_for(s, corrections)] == ["borrow"]
+
+
+def test_word_tips_show_the_learners_own_word_first(db):
+    """자리가 다섯뿐이라 순서가 곧 무엇을 버리느냐다. 그대로 쓴 단어가 먼저다."""
+    from app.content import lexicon
+    from app.db import crud
+    from app.content.schemas import WordEntry
+
+    if not lexicon.available():
+        pytest.skip("WordNet 코퍼스가 없습니다")
+
+    lend = WordEntry(
+        word="lend",
+        level="A1",
+        meaning_ko="빌려주다 (내가 주는 쪽)",
+        pattern="lend + 사람 + 물건",
+        example="Can you lend me a pen?",
+        usage_note="빌려 오는 쪽은 borrow 예요.",
+        confused_with=["borrow"],
+    )
+    with db.db_session() as s:
+        crud.upsert_word(s, _entry())
+        crud.upsert_word(s, lend)
+        for row in crud.list_words(s):
+            crud.save_word_edits(s, row.id, reviewed=True)
+
+    # lend 는 글자 그대로, borrow 는 굴절형(borrowed)으로만 등장한다.
+    corrections = [
+        Correction(
+            kind="mistake",
+            original="I borrowed a pen",
+            better="Can you lend me a pen?",
+            note="빌려주는 쪽이라 lend 예요.",
+        )
+    ]
+    with db.db_session() as s:
+        assert [t.word for t in crud.word_tips_for(s, corrections)][0] == "lend"
+
+
 def test_word_tips_empty_without_corrections(db):
     from app.db import crud
 
