@@ -569,11 +569,17 @@ vad_filter=False  무음 3초 -> 'I have 20 years old. Please explain me this so
 끄면 무음에서 `initial_prompt` 를 그대로 받아 적는다.
 
 ```powershell
-# 데모 전에 모델을 미리 올려 첫 요청의 2~3초를 없앤다
-docker compose exec api python -c "from app.stt import get_stt_service; get_stt_service().load()"
-
 # STT 상태 확인 (enabled / installed / model / loaded)
 curl http://localhost:8000/healthz
+```
+
+**데모 전에 예열하려면 실제로 한 번 말해 보면 된다.** `docker compose exec api
+python -c "...load()"` 는 듣지 않는다 — 그건 별도 프로세스에서 모델을 올렸다 버리는
+것이고, 요청을 받는 uvicorn 프로세스는 여전히 비어 있다. 실제로 재 보면 그 뒤에도
+`healthz` 의 `loaded` 가 `false` 다. 서버를 데우는 것은 `/stt` 로 가는 요청뿐이다.
+
+```powershell
+docker compose exec -T api python -c "import httpx; print(httpx.post('http://localhost:8000/stt', files={'file': ('warm.m4a', open('.review/audio/iphone/01.m4a','rb').read(), 'audio/mp4')}, timeout=120).json()['text'])"
 ```
 
 `.env` 로 끌 수 있다(`STT_ENABLED=false`). 꺼도 앱의 나머지는 그대로 돌고, 마이크만
