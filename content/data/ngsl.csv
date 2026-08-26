@@ -1,5 +1,5 @@
 # NGSL headwords — 빈도 구간(band) 순서로 정렬됨
-# 출처: Browne, Culligan & Phillips (NGSL, CC BY) / 기계가독 변환본 CC0
+# 출처: Browne, Culligan & Phillips (NGSL, CC BY-SA 4.0) / 기계가독 변환본 CC0
 # 형식: word,band  (배치 스크립트는 첫 컬럼만 읽는다)
 be,1000
 and,1000

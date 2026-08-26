@@ -7,7 +7,7 @@
 #   borrow/lend/rent · say/tell/speak/talk · listen/hear · look/see/watch
 #   come/go · bring/take · spend/cost/pay · remember/forget
 #
-# 실제 NGSL(약 2,800단어, CC BY)로 돌리려면 content/data/README.md 를 보세요.
+# 실제 NGSL(약 2,800단어, CC BY-SA 4.0)로 돌리려면 content/data/README.md 를 보세요.
 #
 # 형식: 한 줄에 한 단어. '#' 로 시작하면 주석. CSV 도 됩니다(첫 컬럼을 단어로 읽음).
 

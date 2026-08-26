@@ -3,7 +3,7 @@
 원본 출처
 ---------
 New General Service List (NGSL) — Browne, C., Culligan, B., & Phillips, J. (2013, rev. 2023)
-공식: https://www.newgeneralservicelist.com/   (CC BY)
+공식: https://www.newgeneralservicelist.com/   (CC BY-SA 4.0)
 기계가독 변환본: https://github.com/lpmi-13/machine_readable_wordlists  (CC0-1.0)
 
 ⚠️ 예전에 쓰이던 newgeneralservicelist.**org** 는 원저자가 소유권을 잃은 도메인이다.
@@ -58,7 +58,7 @@ def convert(source: Path, out: Path, *, bands: tuple[str, ...] = BAND_ORDER) -> 
 
     lines = [
         "# NGSL headwords — 빈도 구간(band) 순서로 정렬됨",
-        "# 출처: Browne, Culligan & Phillips (NGSL, CC BY) / 기계가독 변환본 CC0",
+        "# 출처: Browne, Culligan & Phillips (NGSL, CC BY-SA 4.0) / 기계가독 변환본 CC0",
         "# 형식: word,band  (배치 스크립트는 첫 컬럼만 읽는다)",
         *[f"{w},{b}" for w, b in rows],
     ]

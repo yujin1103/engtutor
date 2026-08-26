@@ -12,14 +12,29 @@
 
 New General Service List — 약 **2,801 표제어**로 영어 텍스트의 90% 이상을 커버하는 공개 목록.
 
-- 원저: **Browne, C., Culligan, B., & Phillips, J.** (2013, 개정 2023) — **CC BY**
+- 원저: **Browne, C., Culligan, B., & Phillips, J.** (2013, 개정 2023) — **CC BY-SA 4.0**
 - 공식: <https://www.newgeneralservicelist.com/>
 - 기계가독 변환본: <https://github.com/lpmi-13/machine_readable_wordlists> (CC0-1.0)
 
 > ⚠️ **`newgeneralservicelist.org` 는 인용하지 마세요.** 원저자가 소유권을 잃은 도메인이고,
 > 현재 제3자가 원문을 복제해 도박 트래픽 유도에 쓰고 있습니다. 공식은 **`.com`** 입니다.
 
-CC BY이므로 결과물을 공개할 때 **출처를 표기**하세요.
+> ⚠️ **CC BY 가 아니라 CC BY-SA 입니다.** 2026-08-26 에 공식 페이지에서 확인했습니다 —
+> "is licensed under a Creative Commons Attribution-ShareAlike 4.0". 이 저장소의 예전
+> 표기(CC BY)가 틀렸습니다. 출처 표기만으로는 부족하고, **목록에서 파생된 것을 공개하면
+> 같은 조건으로 공유**해야 합니다. `ngsl.csv` 와 그 순서(빈도 순위)가 여기 해당합니다.
+> LLM 이 새로 쓴 뜻·예문·설명은 NGSL 텍스트의 파생물이 아니라 별개입니다.
+
+### 같은 집안의 다른 목록 (전부 CC BY-SA 4.0)
+
+이 앱이 **말하기** 앱이라는 점에서 하나만 짚어 둔다. NGSL 은 **글**의 빈도 목록이다.
+같은 저자들이 말뭉치의 구어 부분만 뽑은 **NGSL-Spoken(721 표제어)** 을 따로 낸다 —
+비대본 구어의 약 90%를 덮는다고 밝히고 있다. 그 밖에 NAWL(학술 959), TSL(TOEIC 1,255),
+BSL(비즈니스 1,700), 그리고 **SUP**(요일·달·숫자 같은 닫힌 부류 52개)가 있다.
+
+다만 확인해 보니 **구어 목록에도 `americano`·`latte`·`towel` 은 없다.** 빈도 목록은
+장면에 매인 구체명사를 담지 않는다 — 그것이 `app_words.txt` 와 `topic_words.txt` 가
+따로 있는 이유다.
 
 ### 갱신하려면
 
