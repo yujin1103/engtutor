@@ -1,0 +1,153 @@
+# 예문 해석(example_ko)을 사람이 읽고 고친 것.
+#
+# 왜 손으로 고치는가
+# ------------------
+# 해석의 거짓은 결정론적 검사로 못 잡는다. 지금 걸려 있는 네 검사
+# (외국 문자 · 옮기다 만 로마자 · 수 · 표제어 뜻 흔적)는 전부 통과시키면서
+# **뜻이 반대이거나 다른 물건을 가리키는** 해석이 그대로 남는다.
+#
+# 실측: 카페·패스트푸드·음식 팩 129개를 사람이 읽어 **22개(17%)** 가 명백히 틀렸다.
+# 같은 129개에 검사기 4종을 돌리면 0건이다.
+#
+# 가장 나쁜 것은 `pork` 였다 — "I want a pork burger" 의 해석이 "소고기 버거" 였다.
+# **정반대를 가르친다.** 왕초보는 해석을 보고 빈칸을 채우므로, 해석이 틀리면
+# 학습자가 옳게 답하고도 오답 처리된다.
+#
+# 적용:  docker compose exec api python content/apply_fixes.py --glosses
+# 확인만: docker compose exec api python content/apply_fixes.py --glosses --dry-run
+#
+# manual_fixes.yaml 과 나눠 둔 이유: 저쪽은 "실재하지 않는 영어 낱말"을 지우는 일이고
+# (판정 근거 docs/hallucinations.md), 이쪽은 번역의 정확성이다. 판정 방법도 다르다 —
+# 저쪽은 사전 조회로 좁히고, 이쪽은 사람이 영어와 한국어를 나란히 읽는 수밖에 없다.
+
+# ── 뜻이 반대이거나 다른 물건을 가리킨다 ─────────────────────────
+- word: pork
+  example_ko: "돼지고기 버거 하나 주세요."
+  reason: "'소고기 버거' 였다. pork 는 돼지고기다 — 정반대를 가르치고 있었다."
+
+- word: ketchup
+  example_ko: "감자튀김에 케첩 좀 주세요."
+  reason: "'치킨소스' 는 케첩이 아니다."
+
+- word: coleslaw
+  example_ko: "버거에 코울슬로 곁들여 주세요."
+  reason: "'라이스볼' 은 코울슬로(양배추 샐러드)가 아니다."
+
+- word: outlet
+  example_ko: "제 노트북 쓸 콘센트가 어디에 있나요?"
+  reason: "'전원 어댑터' 였다. outlet 은 벽에 있는 콘센트다."
+
+- word: sushi
+  example_ko: "초밥을 한번 먹어보고 싶어요."
+  reason: "'회' 는 sashimi 다. sushi 는 초밥."
+
+- word: octopus
+  example_ko: "저는 문어를 안 좋아해요."
+  reason: "'우리가 먹는 게 조개, 게, 오징어 같은 거예요' — 원문(I don't like octopus)과 아무 상관이 없다."
+
+- word: squid
+  example_ko: "저는 오징어를 안 좋아해요."
+  reason: "'우리가 먹는 게 조개예요' — 원문과 무관하고 조개는 clam 이다."
+
+- word: milkshake
+  example_ko: "초콜릿 밀크셰이크 하나 주세요."
+  reason: "'마시멜로 쉐이크' 였다."
+
+- word: pastry
+  example_ko: "크루아상과 페이스트리 하나씩 주세요."
+  reason: "'베이글' 이었다. pastry 는 베이글이 아니다."
+
+- word: roast
+  example_ko: "미디엄 로스트 커피로 주세요."
+  reason: "'중불로' 는 요리 화력이다. medium roast 는 원두 볶음 정도."
+
+- word: bean
+  example_ko: "콩 수프 있나요?"
+  reason: "'빈 수프' 는 empty soup 으로 읽힌다."
+
+- word: chewy
+  example_ko: "이 사탕은 쫄깃해요."
+  reason: "'씹는 게 좋아요' 는 취향 진술이다. chewy 는 식감."
+
+- word: salty
+  example_ko: "이 수프는 너무 짜요."
+  reason: "원문은 soup 인데 '라면' 이라고 옮겼다."
+
+- word: broth
+  example_ko: "이 수프는 닭 육수가 진해요."
+  reason: "'브로스' 는 옮기다 만 말이다. 육수."
+
+- word: bibimbap
+  example_ko: "비빔밥 한번 먹어보고 싶어요."
+  reason: "'시도해 보고 싶어요' 는 번역투다. try 는 먹어보다."
+
+- word: matcha
+  example_ko: "말차 라떼 하나 주세요."
+  reason: "'매치라떼' 는 없는 말이다."
+
+# ── 빈칸이 될 낱말이 해석에서 증발했다 ──────────────────────────
+- word: mug
+  example_ko: "머그잔에 커피 한 잔 주세요."
+  reason: "'커피 한 잔 주세요' 라 mug 의 흔적이 없다. 해석이 빈칸의 단서인데 그 단서가 사라지면 문제가 성립하지 않는다."
+
+# ── 없는 말·오타 ──────────────────────────────────────────
+- word: cashier
+  example_ko: "계산원이 저에게 거스름돈을 주었어요."
+  reason: "'줄돈' 은 없는 말이다."
+
+- word: straw
+  example_ko: "주스에 빨대 하나 주세요."
+  reason: "'스푸이' 는 없는 말이다."
+
+- word: crispy
+  example_ko: "바삭한 감자튀김으로 주세요."
+  reason: "'크리스피한 프라이즈' — 프라이즈는 오타이고 crispy 도 옮기지 않았다."
+
+- word: mushroom
+  example_ko: "버섯 올린 감자튀김 주세요."
+  reason: "'프라이스' 는 오타다."
+
+- word: soup
+  example_ko: "수프 한 그릇 주세요."
+  reason: "'소프' 는 오타다."
+
+- word: tuna
+  example_ko: "참치 초밥 먹고 싶어요."
+  reason: "'타우나' 는 없는 말이다."
+
+- word: cookie
+  example_ko: "커피에 곁들여 쿠키 하나 주세요."
+  reason: "'곁들어' 는 오타다."
+
+# ── 어색하거나 문체가 어긋난다 (뜻은 통한다) ─────────────────────
+- word: cabbage
+  example_ko: "저는 양배추를 안 좋아해요."
+  reason: "'나는' 은 이 앱의 해요체와 어긋나고, cabbage 는 배추가 아니라 양배추다."
+
+- word: chopsticks
+  example_ko: "저는 면을 먹을 때 젓가락을 써요."
+  reason: "'나는' 문체 어긋남."
+
+- word: pickled
+  example_ko: "저는 절인 무를 좋아해요."
+  reason: "'나는' 문체 어긋남."
+
+- word: steamed
+  example_ko: "저는 흰쌀밥을 좋아해요."
+  reason: "'증기로 데친 밥' — 밥은 데치는 것이 아니다. steamed rice 는 흰밥."
+
+- word: stew
+  example_ko: "이 소고기 스튜가 맛있어요."
+  reason: "'찌개' 는 다른 음식이다."
+
+- word: butter
+  example_ko: "제 토스트에 버터 좀 발라 주시겠어요?"
+  reason: "'내' 는 문체 어긋남. on my toast 는 얹는 것보다 바르는 것."
+
+- word: dine-in
+  example_ko: "매장에서 마실 커피로 주세요."
+  reason: "'테이크아웃이 아니라 매장에서 마실 수 있는 커피를 주세요' 는 왕초보에게 너무 길다."
+
+- word: strawberry
+  example_ko: "딸기 우유 하나 주세요."
+  reason: "'필요해요' 보다 주문 문장이 장면에 맞다."
