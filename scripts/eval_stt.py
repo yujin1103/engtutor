@@ -29,7 +29,8 @@ CUDA 를 넣지 않고 CPU·int8 로 돈다. 짧은 문장 열 개면 몇 분이
 
 준비
 ----
-    docker compose exec api pip install -r requirements-stt.txt
+faster-whisper 는 이미지에 들어 있다(requirements.txt). 읽을 문장부터 확인한다.
+
     docker compose exec api python scripts/eval_stt.py --list
 
 실행
@@ -116,7 +117,14 @@ def print_reading_list(probes: list[dict], directory: Path) -> None:
     print()
 
 
-def transcribe(model, path: Path, *, naive: bool) -> tuple[str, list[dict]]:
+def transcribe(
+    model,
+    path: Path,
+    *,
+    naive: bool,
+    beam_size: int = 0,
+    initial_prompt: str = "",
+) -> tuple[str, list[dict]]:
     """전사한다. `naive` 면 기본값으로 — prior 억제 설정이 효과가 있는지 보려고."""
     # 무음이 들어오면 Whisper 는 "I'm sorry" 같은 말을 **끝없이 지어낸다**. 실제로
     # 무음 파일로 배관을 확인하다 겪었다. 학습자가 마이크만 누르고 말을 안 하면
@@ -127,6 +135,18 @@ def transcribe(model, path: Path, *, naive: bool) -> tuple[str, list[dict]]:
         # 일부러 주지 않는다 — 그게 바로 모델을 표준 영어 쪽으로 미는 손잡이다.
         options["temperature"] = 0.0
         options["condition_on_previous_text"] = False
+    if beam_size:
+        # 빔 서치는 **가장 그럴듯한 문장**을 고르는 장치다. 그럴듯함은 곧 문법성이라,
+        # 빔이 넓을수록 학습자의 오류가 후보에서 밀려난다. faster-whisper 의 기본값이
+        # beam_size=5 · best_of=5 라서 여태 잰 것은 전부 빔 5 였다. 1 이면 그리디 —
+        # 매 자리에서 1등만 뽑고 **문장 전체의 그럴듯함은 보지 않는다.**
+        options["beam_size"] = beam_size
+        options["best_of"] = beam_size
+    if initial_prompt:
+        # 이 손잡이는 앞서 **일부러 비워 뒀다** — 표준 영어 표본을 주면 모델이 그쪽으로
+        # 밀린다고 봤기 때문이다. 그렇다면 학습자 영어 표본을 주면 반대로 밀릴 수도
+        # 있다. 같은 손잡이를 반대로 돌리는 것이라, 되는지는 재 봐야 안다.
+        options["initial_prompt"] = initial_prompt
     segments, _ = model.transcribe(str(path), **options)
 
     text_parts: list[str] = []
@@ -145,6 +165,12 @@ def main() -> int:
     parser.add_argument("--models", nargs="+", default=["base", "small", "large-v3"])
     parser.add_argument("--list", action="store_true", help="읽을 문장과 파일 이름만 출력")
     parser.add_argument("--naive", action="store_true", help="prior 억제 없이 기본값으로 전사")
+    parser.add_argument(
+        "--beam-size", type=int, default=0, help="1 이면 그리디. 0 이면 기본값(빔 5)"
+    )
+    parser.add_argument(
+        "--initial-prompt", default="", help="문체 표본. 학습자 영어를 주면 어떻게 되는지 보려고"
+    )
     # 모델은 크다(base 150MB · small 500MB · large-v3 3GB). 컨테이너 안에 받으면
     # 재생성할 때마다 다시 받는다. 바인드 마운트된 곳에 두어 살아남게 한다.
     parser.add_argument("--cache-dir", type=Path, default=Path(".review/whisper"))
@@ -165,8 +191,8 @@ def main() -> int:
     try:
         from faster_whisper import WhisperModel
     except ImportError:
-        print("faster-whisper 가 없습니다:")
-        print("  docker compose exec api pip install -r requirements-stt.txt")
+        print("faster-whisper 가 없습니다. 이미지가 오래된 것입니다:")
+        print("  docker compose build api && docker compose up -d api")
         return 1
 
     results: dict[str, list[dict]] = {}
@@ -176,7 +202,14 @@ def main() -> int:
         model = WhisperModel(
             name, device="cpu", compute_type="int8", download_root=str(args.cache_dir)
         )
-        note = "  (기본값 — prior 억제 없음)" if args.naive else ""
+        marks = []
+        if args.naive:
+            marks.append("기본값 — prior 억제 없음")
+        if args.beam_size:
+            marks.append("그리디 beam=1" if args.beam_size == 1 else f"beam={args.beam_size}")
+        if args.initial_prompt:
+            marks.append("학습자 문체 프롬프트")
+        note = f"  ({' · '.join(marks)})" if marks else ""
         print()
         print("=" * 72)
         print(f"{name}{note}")
@@ -186,7 +219,13 @@ def main() -> int:
         for i, probe in enumerate(probes, 1):
             path = audio_for(args.audio_dir, i)
             assert path is not None
-            text, words = transcribe(model, path, naive=args.naive)
+            text, words = transcribe(
+                model,
+                path,
+                naive=args.naive,
+                beam_size=args.beam_size,
+                initial_prompt=args.initial_prompt,
+            )
             survived = contains_phrase(text, probe["error_phrase"])
             exact = tokens(text) == tokens(probe["say"])
             # edits(들은 것, 실제로 말한 것) — 학습자가 고친 것과 같은 방향으로 본다.
