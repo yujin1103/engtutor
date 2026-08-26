@@ -10,6 +10,7 @@ from __future__ import annotations
 import pytest
 from pydantic import ValidationError
 
+from app.content import lexicon
 from app.content.schemas import WordEntry
 from app.content.screening import (
     mentions,
@@ -67,6 +68,44 @@ def test_inflections_count_as_a_mention(word, sentence):
 @pytest.mark.parametrize(
     ("word", "sentence"),
     [
+        ("freeze", "The water froze in the fridge."),
+        ("hide", "She hid the key under the mat."),
+        ("bite", "The dog bit my hand."),
+    ],
+)
+def test_an_irregular_the_table_never_learned_still_counts(word, sentence):
+    """손으로 적은 불규칙 표는 언제나 모자란다.
+
+    `freeze` 가 빠져 있어서 멀쩡한 예문이 "표제어를 안 쓴다"고 **거부됐다** —
+    문형 백필에서 세 번 연속 같은 이유로 떨어졌다. 어간이 바뀌는 형태는
+    앞부분 대조로도 못 잡으므로, 사전이 아는 것은 사전에게 묻는다.
+    """
+    if not lexicon.available():
+        pytest.skip("WordNet 코퍼스가 없습니다")
+    assert mentions(sentence, word)
+
+
+@pytest.mark.parametrize(
+    ("word", "sentence"),
+    [
+        ("dine-in", "I want to order a coffee for dine-in."),
+        ("check-in", "What time is check in?"),
+        ("take-out", "Is this takeout or for here?"),
+        ("carry-on", "I have one carry-on bag."),
+    ],
+)
+def test_a_hyphenated_headword_is_found_in_the_example(word, sentence):
+    """토큰으로 쪼개면 `dine-in` 이 dine 과 in 이 돼 영원히 안 잡힌다.
+
+    실제로 예문에 그대로 들어 있는데 "표제어를 안 쓴다"고 거부됐다. 붙여 쓰거나
+    띄어 쓴 형태도 같은 말로 본다 — 학습자가 보는 것은 같은 말이다.
+    """
+    assert mentions(sentence, word)
+
+
+@pytest.mark.parametrize(
+    ("word", "sentence"),
+    [
         ("age", "How old are you?"),
         ("hand", "Pass me the book, please."),
         ("country", "Where are you from?"),
@@ -82,6 +121,38 @@ def test_a_related_word_is_not_a_mention(word, sentence):
 # ------------------------------------------------------------------ 단일 항목
 def test_a_good_entry_has_no_findings():
     assert screen(_row()) == []
+
+
+def test_a_made_up_headword_is_caught():
+    """NGSL 전수 조사에서 `restaurate`·`habor`·`oranje` 13건이 나왔다.
+
+    그때는 던져 쓰는 스크립트로 잡았는데, 그러면 다음 배치에서 또 들어온다.
+    """
+    if not lexicon.available():
+        pytest.skip("WordNet 코퍼스가 없습니다")
+    found = _codes(
+        screen(_row(word="habor", example="I saw a habor.", usage_note="항구를 뜻해요."))
+    )
+    assert "headword_not_in_dictionary" in found
+
+
+def test_a_word_the_dictionary_verified_is_not_called_made_up():
+    """`americano` 는 WordNet 에 없지만 확인해서 등록한 말이다. 여기서 걸리면 안 된다."""
+    if "americano" not in lexicon.extra_lexicon():
+        pytest.skip("추가 사전에 아직 없습니다")
+    found = _codes(
+        screen(
+            _row(
+                word="americano",
+                meaning_ko="아메리카노 (물을 넣은 커피)",
+                pattern="an/the + americano",
+                example="I'll have an americano, please.",
+                usage_note="에스프레소에 물을 넣은 커피예요. 그냥 coffee 라고 하면 다른 걸 줄 수 있어요.",
+                confused_with=["espresso"],
+            )
+        )
+    )
+    assert "headword_not_in_dictionary" not in found
 
 
 def test_headword_absent_is_high():

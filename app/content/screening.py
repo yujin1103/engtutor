@@ -208,6 +208,16 @@ def mentions(text: str, word: str) -> bool:
     """
     w = word.strip().lower()
     lowered = text.lower()
+
+    # 하이픈·아포스트로피가 든 표제어는 토큰 분해로는 영원히 못 찾는다 — `dine-in` 이
+    # dine 과 in 으로, `o'clock` 이 o 와 clock 으로 쪼개진다. 실제로 예문에 그대로
+    # 들어 있는데 "표제어를 안 쓴다"고 거부돼 배치에서 14개가 떨어졌다.
+    # 붙여 쓰거나 띄어 쓴 형태도 같은 말로 본다 (`take-out`/`take out`/`takeout`).
+    if "-" in w or "'" in w:
+        parts = [re.escape(p) for p in re.split(r"[-']", w) if p]
+        if parts and re.search(r"\b" + r"[\s'-]?".join(parts) + r"\b", lowered):
+            return True
+
     # 축약형을 푼 토큰을 더한다. 빼지는 않는다 — can't 는 원본에서만 can 이 보이고,
     # I'm 은 푼 쪽에서만 am 이 보인다. 둘 다 필요하다.
     tokens = set(_WORD_TOKEN.findall(lowered))
@@ -215,7 +225,13 @@ def mentions(text: str, word: str) -> bool:
     if w in tokens or any(t in _IRREGULAR.get(w, ()) for t in tokens):
         return True
     stems = _stems(w)
-    return any(t.startswith(s) and len(t) - len(s) <= 3 for t in tokens for s in stems)
+    if any(t.startswith(s) and len(t) - len(s) <= 3 for t in tokens for s in stems):
+        return True
+    # 손으로 적은 불규칙 표는 언제나 모자란다 — `freeze` 가 빠져 있어서
+    # "The water froze in the fridge." 가 표제어를 안 쓴 예문으로 **거부됐다**.
+    # 앞부분 대조로는 froze/freeze 처럼 어간이 바뀌는 것을 잡을 수 없다.
+    # 사전이 아는 것은 사전에게 묻는다. 사전이 없으면 여기까지가 답이다.
+    return any(lexicon.same_lemma(t, w) for t in tokens)
 
 
 def pattern_forms(pattern: str, word: str) -> list[tuple[str, ...]]:
@@ -345,6 +361,19 @@ def screen(row: WordLike) -> list[Finding]:
     """한 항목만 보고 판단할 수 있는 검사."""
     out: list[Finding] = []
     word = row.word.strip().lower()
+
+    # 표제어가 실재하는 말인가. NGSL 2,801개 전수 조사에서 `restaurate`·`habor`·
+    # `oranje` 13건이 나왔다(docs/hallucinations.md). 그때는 던져 쓰는 스크립트로
+    # 잡았는데, 그러면 다음 배치에서 또 들어온다. 사전이 없으면(None) 판정하지 않는다.
+    if lexicon.known(word) is False:
+        out.append(
+            Finding(
+                "headword_not_in_dictionary",
+                "high",
+                f"'{word}' — 사전에 없는 말이에요. 지어낸 단어이거나 철자가 틀렸을 수 있어요"
+                " (실재하는데 사전이 모르는 말이면 scripts/verify_words.py 로 확인해 등록하세요)",
+            )
+        )
 
     in_example = mentions(row.example, word)
     in_note = mentions(row.usage_note, word)
