@@ -1,6 +1,9 @@
 # --- API ---
 fastapi>=0.115
 uvicorn[standard]>=0.32
+# /stt 의 파일 업로드(multipart)를 FastAPI 가 파싱하는 데 필요하다. 없으면 앱이
+# 뜨는 데는 문제가 없고 그 엔드포인트만 500 으로 죽는다 — 그래서 명시해 둔다.
+python-multipart>=0.0.9
 pydantic>=2.9
 pydantic-settings>=2.5
 httpx>=0.27
@@ -15,6 +18,12 @@ streamlit>=1.40
 
 # --- 테스트 ---
 pytest>=8.3
+
+# --- 음성 입력 (STT) ---
+# 측정을 마치고 채택했으므로 requirements-stt.txt 에서 옮겨 왔다. 손으로 설치하는
+# 상태로 두면 이미지를 다시 만들 때마다 /stt 가 조용히 503 이 된다.
+# 오디오 디코딩(PyAV)과 VAD(onnxruntime)는 이것이 함께 끌고 온다.
+faster-whisper>=1.0
 
 # --- 어휘 사실 확인 (환각 검사) ---
 # WordNet 조회로 생성된 콘텐츠의 품사 단정을 반증한다. 코퍼스는 Dockerfile 에서

@@ -7,6 +7,9 @@
 # --- 데이터 (로컬 생성물) ---
 # 런타임 생성물만. content/data/ 는 소스라 루트에만 앵커링한다.
 /data/
+# 내려받은 모델 가중치. compose 는 named volume 을 쓰지만, 컨테이너 없이 돌리거나
+# STT_MODEL_DIR 을 저장소 안으로 바꾸는 경우를 대비해 막아 둔다 — small 만 500MB 다.
+/models/
 *.db
 *.db-journal
 *.sqlite3

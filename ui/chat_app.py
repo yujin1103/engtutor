@@ -5,6 +5,7 @@ API 는 compose 네트워크 이름(http://api:8000)으로 부른다 — localho
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 from collections.abc import Iterator
@@ -16,6 +17,9 @@ import streamlit as st
 API_BASE_URL = os.getenv("API_BASE_URL", "http://api:8000")
 CHAT_TIMEOUT = 180.0    # 로컬 14B 모델은 첫 턴이 느릴 수 있다
 REPORT_TIMEOUT = 300.0  # 리포트는 대화 전체를 넣으므로 더 길게
+# CPU 전사는 오디오 1초당 0.3초쯤 쓴다(한 문장이면 1초 안쪽). 첫 요청에만 모델을
+# 올리는 2초가 더 붙으므로 넉넉하게 둔다.
+STT_TIMEOUT = 120.0
 
 st.set_page_config(page_title="engtutor", page_icon="🗣️", layout="centered")
 
@@ -74,6 +78,121 @@ def stream_turn(payload: dict[str, Any]) -> Iterator[dict[str, Any]]:
                 continue
 
 
+def transcribe(audio: bytes, filename: str, mime: str) -> dict[str, Any] | None:
+    """녹음을 `/stt` 로 보내 글자를 받아온다.
+
+    전사는 api 컨테이너가 한다. ui 이미지에는 faster-whisper 가 없고 넣을 이유도
+    없다 — 오디오 바이트만 HTTP 로 넘기면 된다.
+
+    빈 `text` 는 오류가 아니다. 마이크만 누르고 말을 안 한 흔한 경우라 200 으로
+    오고, 화면이 "안 들렸어요" 를 그린다. 진짜 실패면 이유를 화면에 적고 None.
+    """
+    try:
+        res = httpx.post(
+            f"{API_BASE_URL}/stt",
+            # 필드 이름은 반드시 file 이다 — 서버 계약.
+            files={"file": (filename, audio, mime)},
+            timeout=STT_TIMEOUT,
+        )
+    except httpx.HTTPError as exc:
+        st.error(f"녹음을 보내지 못했습니다: {exc}")
+        return None
+
+    if res.status_code >= 400:
+        # 413(너무 김) · 400(오디오가 아님) · 503(STT 꺼짐)의 detail 은 한국어로
+        # 오고 "다음에 뭘 하면 되는지"까지 들어 있다. 우리가 다시 쓰지 않는다.
+        try:
+            detail = res.json().get("detail") or res.text[:300]
+        except ValueError:
+            detail = res.text[:300]
+        st.error(f"{detail}")
+        return None
+
+    return res.json()
+
+
+def reset_voice() -> None:
+    """마이크와 전사를 비운다.
+
+    `st.audio_input` 은 세션 상태로 값을 지울 수 없게 막혀 있다(writes_allowed=False).
+    그래서 key 를 갈아 빈 위젯을 새로 만든다. 안 그러면 이미 보낸 녹음이 rerun 마다
+    그대로 돌아와, 같은 말을 두 번 받아쓰고 두 번 보낸다.
+    """
+    st.session_state.mic_round = st.session_state.get("mic_round", 0) + 1
+    st.session_state.mic_id = None
+    st.session_state.stt_text = ""
+    st.session_state.stt_words = []
+    # voice_draft 는 위젯 key 다. 위젯이 만들어진 뒤에는 값을 덮어쓸 수 없고 지울 수만 있다.
+    st.session_state.pop("voice_draft", None)
+
+
+def voice_bar() -> tuple[str, dict[str, Any]] | None:
+    """마이크 → 전사 → 확인 칸. 학습자가 보내기를 누르면 (확정 문장, 음성 필드).
+
+    **어디를 보라고 찍어주지 않는다.** 두 방법을 재 봤고 둘 다 소음이었다 —
+    확신도 낮은 낱말을 흐리게 하면 정확도 20%(10개를 흐리게 해서 진짜 2개를 잡는다),
+    CTC 를 증인으로 세워 불일치를 표시하면 낱말의 31%에 깃발이 선다. 확신 오류가
+    하필 문법 오류 자리에 있어서 그렇다 — 모델은 표준형을 확신하고 적는다.
+    정확히 찍을 수 없다는 걸 쟀으니 찍는 시늉을 하지 않고, 통째로 고칠 수 있게 둔다.
+
+    문구가 **"말한 대로 나왔나요?"** 인 것도 그래서다. "고쳐 주세요" 로 쓰면
+    학습자가 자기 오류를 스스로 지운다 — 이 앱은 그 오류를 교정해 주려고 존재한다.
+    """
+    round_no = st.session_state.get("mic_round", 0)
+    # key 에 회차를 넣는다. st.audio_input 은 세션 상태로 비울 수 없어서(위 reset_voice)
+    # 새 위젯을 만드는 것이 유일한 비우는 방법이다.
+    audio = st.audio_input("🎤 눌러서 말해보세요", key=f"mic_{round_no}")
+
+    if audio is not None:
+        raw = audio.getvalue()
+        # rerun 마다 같은 바이트가 돌아온다. 해시로 새 녹음일 때만 전사한다 —
+        # 안 그러면 화면이 한 번 다시 그려질 때마다 1초씩 CPU 를 태운다.
+        ident = hashlib.sha1(raw).hexdigest()
+        if ident != st.session_state.get("mic_id"):
+            st.session_state.mic_id = ident
+            with st.spinner("듣고 있어요..."):
+                got = transcribe(raw, "speech.wav", audio.type or "audio/wav")
+            heard = (got or {}).get("text", "").strip()
+            st.session_state.stt_text = heard
+            st.session_state.stt_words = (got or {}).get("words") or []
+            # 위젯 key 에 값을 넣어 Streamlit 이 상태를 소유하게 한다. value= 로
+            # 되먹이면 설정이 풀리던 옛 버그가 재발한다(README '설정이 풀리던 버그').
+            st.session_state.voice_draft = heard
+
+    heard = st.session_state.get("stt_text", "")
+    if not heard:
+        if st.session_state.get("mic_id"):
+            # 빈 전사는 오류가 아니다. 마이크만 누르고 말을 안 한 흔한 경우이고,
+            # vad_filter 가 무음에서 지어낸 말을 막아 준 정상 동작이다.
+            st.info("안 들렸어요. 조금 더 크게, 다시 말해볼까요?")
+        return None
+
+    with st.container(border=True):
+        st.markdown("**말한 대로 나왔나요?**")
+        st.caption("영어가 틀렸어도 그대로 두세요. 말한 그대로여야 교정을 받을 수 있어요.")
+        draft = st.text_area(
+            "말한 대로 나왔나요?",
+            key="voice_draft",
+            label_visibility="collapsed",
+            height=80,
+        )
+        left, right = st.columns(2)
+        send = left.button("보내기", type="primary", use_container_width=True)
+        if right.button("다시 말하기", use_container_width=True):
+            reset_voice()
+            st.rerun()
+
+    if send and draft.strip():
+        return draft.strip(), {
+            "input_mode": "voice",
+            # 학습자가 고치기 전, STT 가 원래 들은 것. 화면에는 안 쓰고 저장만 한다 —
+            # 실사용 기록이 쌓이면 녹음 20개보다 나은 답을 준다.
+            "transcript": heard,
+            "transcript_words": st.session_state.get("stt_words") or [],
+        }
+    return None
+
+
 def start_session(scenario: dict[str, Any]) -> None:
     """대화를 처음부터 시작한다.
 
@@ -85,6 +204,7 @@ def start_session(scenario: dict[str, Any]) -> None:
     st.session_state.scenario_id = scenario["id"]
     st.session_state.report = None
     st.session_state.revealed = False
+    reset_voice()  # 이전 대화에서 남은 녹음이 새 대화로 딸려 오지 않게
     st.session_state.history = [
         {
             "role": "assistant",
@@ -332,6 +452,12 @@ with st.sidebar:
     icon = "🟢" if health.get("reachable") else "🔴"
     st.caption(f"{icon} {health.get('detail', '?')}")
 
+    # 마이크를 그릴지 말지. 꺼져 있는데 그려 두면 누를 때마다 503 만 본다.
+    stt_health = health.get("stt") or {}
+    STT_READY = bool(stt_health.get("enabled") and stt_health.get("installed"))
+    if not STT_READY:
+        st.caption("🎙️ 음성 입력 꺼짐 — 타자로만 연습해요")
+
 # ---------------------------------------------------------------- 본문
 if scenario is None:
     render_picker()
@@ -392,21 +518,40 @@ def render_say_bar() -> None:
 
 render_say_bar()
 
+user_text: str | None = None
+voice_fields: dict[str, Any] = {}
+
 if st.session_state.get("report"):
     st.divider()
     render_report(st.session_state.report)
     st.info("리포트가 나온 세션은 종료됐어요. 계속하려면 **대화 새로 시작**을 눌러주세요.")
-elif user_text := st.chat_input("영어로 말해보세요"):
+else:
+    # 말하기와 타자를 나란히 둔다. 음성이 타자를 **대체하지 않는다** — 전사가 학습자
+    # 오류의 서너 번에 한 번을 지우기 때문이다(측정: small 이 두 기기에서 67% / 56%).
+    spoken = voice_bar()
+    typed = st.chat_input("영어로 말해보세요")
+    if spoken is not None:
+        user_text, voice_fields = spoken
+        # 보낸 녹음은 즉시 비운다. 안 비우면 rerun 때 같은 바이트가 돌아와 같은 말을
+        # 다시 보낸다.
+        reset_voice()
+    elif typed:
+        user_text = typed
+
+if user_text:
     st.session_state.history.append({"role": "user", "content": user_text})
     with st.chat_message("user"):
         st.markdown(user_text)
 
     payload = {
         "scenario_id": selected_id,
+        # 음성이면 **학습자가 확인한** 문장이다. 전사 그대로가 아니다.
         "message": user_text,
         "session_id": st.session_state.session_id,
         "level": st.session_state.level,
         "strictness": st.session_state.get("strictness", "balanced"),
+        # 음성일 때만 채워진다. 타자면 빈 dict 라 요청이 이전과 완전히 같다.
+        **voice_fields,
     }
     with st.chat_message("assistant"):
         box = st.empty()

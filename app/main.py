@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import io
 import json
 import logging
 from collections import Counter
@@ -9,16 +10,18 @@ from collections.abc import AsyncIterator, Iterator
 from contextlib import asynccontextmanager
 from typing import Literal
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 
+from .config import get_settings
 from .db.database import init_db
 from .llm.base import LLMError
 from .llm.factory import get_client
 from .report.schemas import SessionReport
 from .report.service import ReportService
 from .session_store import SqliteSessionStore
+from .stt import SttUnavailable, get_stt_service
 from .tutor.categories import CATEGORIES
 from .tutor import cloze as cloze_mod
 from .tutor.levels import DEFAULT_LEVEL
@@ -101,6 +104,9 @@ def healthz() -> dict[str, object]:
         "detail": client.describe(),
         "reachable": client.ping(),
         "scenarios": len(get_scenarios()),
+        # 음성 인식은 없어도 앱이 도는 선택 기능이라 상태를 따로 보여 준다.
+        # loaded 는 첫 요청 전에는 false 다 — 500MB 를 미리 올리지 않기 때문이다.
+        "stt": get_stt_service().describe(),
     }
 
 
@@ -254,6 +260,118 @@ def chat_stream(req: ChatRequest) -> StreamingResponse:
             # 나중에 Caddy 뒤에 둘 때 프록시가 버퍼링해 스트리밍이 죽는 걸 막는다.
             "X-Accel-Buffering": "no",
         },
+    )
+
+
+# --------------------------------------------------------------- 음성 입력
+#
+# 서버가 하는 일은 **오디오를 글자로 옮기는 한 단계뿐**이다. 화면은 그 글자를
+# 통째로 고칠 수 있는 칸에 넣고 "말한 대로 나왔나요?" 만 묻는다. 확신도가 낮은
+# 낱말을 흐리게 찍어 주는 방법은 재 봤더니 소음이었다(정확도 20%).
+#
+# 확인이 끝난 문장은 평소처럼 /chat 의 `message` 로 오고, 전사 원본은 같은 요청의
+# `transcript` · `transcript_words` 로 온다. 둘의 차이가 이 STT 를 믿어도 되는지에
+# 대한 답이 된다(app/tutor/transcript.py).
+
+
+class SttWordOut(BaseModel):
+    """낱말 하나와 STT 가 그것에 준 확률.
+
+    화면에 표시하라고 주는 값이 아니다. `/chat` 에 `transcript_words` 로 그대로
+    되돌려 보내 기록에 남기라고 주는 값이다.
+    """
+
+    word: str
+    probability: float | None = None
+
+
+class SttResponse(BaseModel):
+    text: str
+    words: list[SttWordOut]
+    duration_ms: int          # 서버가 전사에 쓴 시간
+    audio_seconds: float      # 오디오 길이. 지연이 길이 탓인지 구분하려고 함께 준다
+    model: str
+
+
+@app.post("/stt", response_model=SttResponse)
+def transcribe_audio(file: UploadFile = File(...)) -> SttResponse:
+    """녹음 파일 하나를 받아 전사한다. webm · wav · m4a · mp3 · ogg 를 그대로 받는다.
+
+    - 말이 안 들리면 **빈 `text` 를 200 으로** 돌려준다. 마이크만 누르고 말을 안 한
+      흔한 경우라 오류가 아니다. 화면이 "안 들렸어요" 를 그리면 된다.
+    - 파일이 상한을 넘으면 413. CPU 전사는 오디오 1초당 약 0.3초를 쓰므로 긴 파일
+      하나가 서버를 오래 붙잡는다.
+    - STT 가 꺼져 있거나 faster-whisper 가 없으면 503. 나머지 기능은 그대로 돈다.
+
+    동기 함수로 둔다 — 전사는 CPU 를 다 쓰는 작업이라 async 안에서 돌리면 그 동안
+    이벤트 루프가 멈춰 대화 스트리밍까지 같이 끊긴다. FastAPI 가 스레드풀에서
+    돌려 주는 편이 맞다.
+    """
+    settings = get_settings()
+    limit = int(settings.stt_max_upload_mb * 1024 * 1024)
+
+    # 통째로 읽어 놓고 크기를 재면 이미 늦다. 읽으면서 넘는 순간 끊는다.
+    chunks: list[bytes] = []
+    total = 0
+    while True:
+        chunk = file.file.read(1 << 20)
+        if not chunk:
+            break
+        total += len(chunk)
+        if total > limit:
+            raise HTTPException(
+                status_code=413,
+                detail=(
+                    f"녹음이 너무 큽니다({settings.stt_max_upload_mb:.0f}MB 까지). "
+                    "짧게 나눠서 말해 보세요."
+                ),
+            )
+        chunks.append(chunk)
+
+    service = get_stt_service()
+    if not service.enabled or not service.installed():
+        raise HTTPException(status_code=503, detail=_stt_unavailable_message(service))
+
+    if total == 0:
+        # 빈 파일. 모델을 올릴 것도 없이 '안 들렸다' 와 같은 답을 준다.
+        return SttResponse(
+            text="", words=[], duration_ms=0, audio_seconds=0.0, model=settings.stt_model
+        )
+
+    try:
+        result = service.transcribe(io.BytesIO(b"".join(chunks)))
+    except SttUnavailable as exc:
+        raise HTTPException(status_code=503, detail=str(exc)) from exc
+    except Exception as exc:  # 깨진 파일 · 오디오가 아닌 것
+        logger.exception("전사 실패: %s", file.filename)
+        raise HTTPException(
+            status_code=400,
+            detail=f"오디오를 읽지 못했습니다. 다시 녹음해 주세요. ({type(exc).__name__})",
+        ) from exc
+
+    logger.info(
+        "전사: %.2fs 오디오 -> %dms, %d낱말 %r",
+        result.audio_seconds,
+        result.duration_ms,
+        len(result.words),
+        result.text[:60],
+    )
+    return SttResponse(
+        text=result.text,
+        words=[SttWordOut(**w) for w in result.words],
+        duration_ms=result.duration_ms,
+        audio_seconds=result.audio_seconds,
+        model=result.model,
+    )
+
+
+def _stt_unavailable_message(service) -> str:
+    """503 에 설치·설정 안내를 담는다. 여기서 막히면 다음에 뭘 할지가 보여야 한다."""
+    if not service.enabled:
+        return "음성 입력이 꺼져 있습니다. .env 에서 STT_ENABLED=true 로 켜고 api 를 다시 시작하세요."
+    return (
+        "faster-whisper 가 설치돼 있지 않습니다. "
+        "`docker compose build api` 로 이미지를 다시 만든 뒤 `docker compose up -d api` 하세요."
     )
 
 

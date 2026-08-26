@@ -39,6 +39,15 @@ services:
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     volumes:
       - .:/workspace           # 코드 수정 -> 재빌드 없이 즉시 반영
+      # Whisper 모델(small, 약 500MB). 이미지에 굽지 않고 볼륨에 둔다 — 이미지를
+      # 다시 만들 때마다 500MB 를 다시 받으면 빌드가 매번 느려진다. 여기 두면
+      # 컨테이너를 지웠다 만들어도 살아남는다.
+      #
+      # NTFS 바인드 마운트가 아니라 named volume 인 이유는 ollama_models 와 같다:
+      # 큰 모델 파일을 NTFS 경계 너머에서 읽으면 로딩이 느리다.
+      # 처음 한 번은 받아야 한다(`docker compose exec api python -c
+      # "from app.stt import get_stt_service; get_stt_service().load()"`).
+      - whisper_models:/models/whisper
     env_file:
       - .env
     environment:
@@ -135,3 +144,4 @@ services:
 
 volumes:
   ollama_models:                # NTFS 바인드 마운트는 9GB 모델 로딩이 느려서 named volume 사용
+  whisper_models:               # 같은 이유. faster-whisper small 약 500MB
