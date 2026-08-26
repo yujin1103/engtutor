@@ -406,8 +406,21 @@ docker compose exec api python scripts/eval_stt.py --audio-dir .review/audio
 
 ```powershell
 curl "http://localhost:8000/cloze?level=A1&count=10&speech=true"
+curl "http://localhost:8000/cloze/topics"                    # 장면 묶음 목록
+curl "http://localhost:8000/cloze?topic=cafe&level=A1"       # 카페 단어만
 curl -X POST http://localhost:8000/cloze/answer -H "Content-Type: application/json" `
      -d '{"word":"say","said":"say"}'
+```
+
+`topic` 을 주면 그 장면 어휘만 낸다. **카페 대화 직전에 카페 단어를 푸는 게 빈도
+상위 열 개를 푸는 것보다 그 대화에 실제로 도움이 된다** — 다른 회화 앱들이 어휘를
+유닛(장면)에 매어 두는 이유와 같다.
+
+```
+GET /cloze?topic=cafe&level=A1
+  cookie   Can I have a ____ with my coffee?
+  donut    I'll have a ____ and coffee.
+  muffin   Can I have a blueberry ____?
 ```
 
 ```
@@ -438,6 +451,29 @@ LLM 에게 만들게 하면 없는 단어를 정답으로 낸다. 전수 조사�
 
 대소문자와 문장부호는 무시한다 — 음성 전사가 마음대로 붙이는 것들이라 그걸로
 틀렸다고 하면 안 된다.
+
+#### 사전이 원형을 하나만 주고 있었다
+
+`wrong_form` 판정은 "원형이 같은가"로 하는데, 그 원형 조회가 **복수형에서 통째로
+실패하고 있었다.** `years` 의 원형을 물으면 `years` 가 돌아온다 — WordNet 에
+`years`·`minutes`·`days`·`instructions` 가 **독립 표제어로 있어서**(minutes = 회의록)
+`morphy` 가 거기서 멈춘다. `year` 라고 답한 학습자가 "다른 단어예요"를 받았다.
+이 앱이 가르치겠다고 한 바로 그 자리다.
+
+후보를 전부 받는 경로(`wn._morphy`)로 바꾸면 진짜 원형과 가짜가 같이 나온다 —
+예문 3,641개 토큰 중 42개가 여기 걸렸고 그중 11개가 가짜였다(`as` → `a`,
+`rated` → `rat`, `serves` → `serf`, `uses` → `us`). 그래서 출처를 갈라 다르게 다룬다.
+
+| 출처 | 어떻게 다루나 | 왜 |
+|---|---|---|
+| 사전의 예외 목록 | 그대로 믿는다 | `teeth` → `tooth`, `best` → `good` 은 사람이 적어 둔 불규칙이다 |
+| 접미사 떼기 규칙 | **되만들어 확인한다** | `rat` 의 과거는 `ratted` 라서 `rated` 가 안 나오고, `serf` 의 복수는 `serfs` 라서 `serves` 가 안 나온다 |
+| 기능어·두 글자 이하 | 버린다 | `as` → `a`, `us` → `u` 는 규칙이 만든 껍데기다 |
+
+가짜 11개 중 10개가 걸러지고(남는 `species` → `specie` 는 실제로 관련된 단어다),
+놓치던 원형 14개가 붙었다. 되만드는 규칙은 **넉넉한 쪽이 아니라 좁은 쪽으로** 틀리게
+써 놨다 — 형태를 하나 덜 만들면 후보가 하나 줄지만, 없는 형태를 만들면 가짜 원형이
+붙기 때문이다.
 
 ### 음성으로 답할 것만 고른다
 
@@ -600,6 +636,7 @@ docker compose exec api python content/screen_words.py --code headword_absent --
 
 | 검사 | 심각도 | 실제로 잡은 것 |
 |---|---|---|
+| `headword_not_in_dictionary` | 🔴 | 표제어가 사전에 없음 — `restaurate`·`habor`·`oranje` 13건이 이랬다 |
 | `headword_absent` | 🔴 | 예문·설명 어디에도 표제어가 없음 — 다른 단어를 설명한 것 |
 | `usage_not_korean` | 🔴 | `calm` 의 설명이 통째로 영어였다 |
 | `duplicate_usage_note` | 🔴 | 앞 항목 설명을 그대로 베낌 (한 항목만 봐서는 안 보인다) |
@@ -610,6 +647,12 @@ docker compose exec api python content/screen_words.py --code headword_absent --
 | `pos_claim_wrong` | 🟡 | `'abroad'는 명사로만` — abroad 는 부사다. 사전에 그 품사가 아예 없음 |
 | `pos_claim_overreach` | ⚪ | `'name'은 명사로만` — 틀리진 않게 들리지만 name 은 동사이기도 하다 |
 | `countability_claim_unchecked` | ⚪ | 가산성을 단정함. 사전으로 확인이 안 되니 사람에게 넘긴다 |
+
+`headword_not_in_dictionary` 는 나중에 붙였다. 환각 13건을 처음 잡을 때는 던져 쓰는
+스크립트였는데, **그러면 다음 배치에서 또 들어온다.** 검사로 굳혀 두면 생성 시점부터
+막힌다. 반대 방향도 필요하다 — 실재하는데 WordNet 이 모르는 말(`americano`)을 이 검사가
+지적하면 안 되므로, `scripts/verify_words.py --audit-db` 로 **표에 있는 말은 사전이
+알도록** 맞춰 둔다(지금 3,245개 중 모르는 말 0개).
 
 `duplicate_example` 을 처음엔 🔴 로 뒀다가 되돌렸다. 멀쩡한 25개가 큐 맨 앞을
 차지했기 때문이다. **오탐은 사람 시간을 낭비하고, 미탐은 나쁜 항목을 뒤로 민다** —
@@ -704,11 +747,195 @@ docker compose exec api python content/batch_generate.py --wordlist content/data
 리포트를 만들 때 교정에 등장한 단어를 `words` 테이블과 매칭해 **`reviewed=true`인 항목만** 붙인다.
 미검수 항목은 절대 새어 나가지 않는다(테스트로 고정).
 
+매칭은 **원형으로** 한다. 표제어는 `borrow` 인데 교정 문장에는 `borrowed`·`working`·
+`years` 가 나오므로, 글자 그대로 맞추면 학습자가 방금 틀린 그 단어의 팁이 통째로
+빠진다. 실제 교정 70건에서 그대로 맞은 토큰이 350개일 때 **원형으로만 맞는 토큰이
+66개** 더 있었다. 자리가 다섯뿐이라 순서도 정해 둔다 — 학습자가 실제로 쓴 그 단어가
+먼저고, 원형으로만 이어진 것(`am` → `be`)은 뒤로 민다.
+
+### 단어를 더 넣어야 하나 — 앱이 쓰는 말을 세어서 정한다
+
+NGSL 은 **글**의 빈도 목록이다. 이 앱은 카페에서 아메리카노를 시키고 지하철역을 묻고
+호텔에 수건을 부탁한다. 그 말들이 목록에 없다.
+
+```powershell
+docker compose exec api python scripts/coverage_gap.py
+docker compose exec api python scripts/coverage_gap.py --play 6 --corpus .review/selfplay.json
+```
+
+`scripts/coverage_gap.py` 는 학습자가 **영어로 마주치는 것만** 센다 — 시나리오 33개의
+영어 칸, 사람이 쓴 측정 발화, DB 에 쌓인 대화와 교정. `--play` 를 주면 앱이 스스로와
+대화한 기록을 더한다. 학습자 쪽은 **앱이 내놓은 `say_more` 를 그대로 말한다** — 따라
+말하라고 준 문장이 곧 학습자가 쓸 말이므로, 밖에서 다른 모델을 데려오면 이 앱이 아니라
+그 모델의 어휘를 재게 된다. 대화 문맥도 앱과 같게 자른다(최근 12개 + 첫 발화).
+
+측정 결과(시나리오 33개 × 6턴, 토큰 6,013 · 종류 439):
+
+| 단어 표 | 덮지 못한 종류 | 덮지 못한 토큰 |
+|---|---|---|
+| NGSL 2,801개 | 57 (13.0%) | 349 (5.8%) |
+| +말뭉치 어휘 60개 (2,861) | 23 (5.2%) | 115 (1.9%) |
+| +장면 어휘 팩 355개 (3,245) | 21 (4.8%) | 111 (1.8%) |
+
+가장 자주 빠진 말이 **`americano` 63번**이었다. 카페 주문이 이 앱의 첫 시나리오인데
+그 단어에 항목이 없었다. 그다음이 `subway`(20), `headache`(12), `latte`(11) —
+전부 NGSL 밖이다. 숫자(`two`·`nine`·`forty`)와 요일(`saturday`)도 빠져 있었다.
+
+넣은 것은 `content/data/app_words.txt` 60개다. 숫자·요일·달·서수는 말뭉치에 일부만
+나왔지만 **닫힌 부류라 채워서** 넣었다 — 나온 것만 넣으면 학습자가 "다섯 개 주세요"나
+"3월 5일"을 못 한다. 남은 23개는 이름(`Jisu`, `Seoul`), 토막(`th`, `p`), 그리고 모델이
+A1 대화에서 흘린 상위 어휘(`availability`, `inconvenience`, `promptly`)다. 마지막 것은
+표에 넣을 게 아니라 레벨 제어에서 볼 문제라 남겨 뒀다.
+
+> 마지막 줄이 거의 안 움직인 것에 주의. **말뭉치는 이미 말한 것밖에 못 찾는다.**
+> 장면 어휘 355개의 값은 이 숫자가 아니라, 학습자가 카페에서 실제로 말할 `napkin`·
+> `straw`·`refill` 을 이제 표가 안다는 데 있다. 자가 대화가 그 말을 한 적이 없을 뿐이다.
+> 그래서 다음 팩은 말뭉치가 아니라 **장면 목록에서** 시작한다.
+
+#### 숫자의 뜻은 한글이 아니었다
+
+배치를 돌리자 `forty`·`sixty`·`eighty` 등 7개가 스키마에서 거부됐다. 모델이
+`meaning_ko` 에 `40` 이라고 썼기 때문이다. `require_korean` 은 필드 오염 인젝션을
+막는 방어층이라(`hint_ko` 를 `PWNED` 로 바꾸는 공격) **한글이 없으면 거부**한다.
+숫자 단어에서는 그게 오탐이지만, 살아 있는 대화 경로가 쓰는 방어를 콘텐츠 편의로
+느슨하게 할 수는 없다. 그래서 프롬프트 쪽에 한 줄을 더했다 — "숫자는 `마흔 (40)`
+처럼 한글 수사와 함께". 같은 5개를 다시 돌려 **0/5 → 5/5**.
+
+### 다른 회화·단어 앱들은 어떻게 하나 — 조사하고 같은 구조를 넣었다
+
+말뭉치만 보면 우리가 이미 말한 것밖에 못 찾는다. 그래서 **밖을 먼저 봤다.**
+
+| 앱 | 어휘를 무엇으로 묶나 |
+|---|---|
+| Duolingo | 유닛 제목이 전부 할 수 있는 말이다 — "Order food and drink", "Ask for directions". CEFR 레벨당 약 800단어 |
+| Memrise | 콘텐츠 단위 이름이 **Scenario** 다 (호텔 체크인, 장보기) |
+| Drops | 유닛 = 장면, 그 안의 토픽 = 장면 속 순간 ("Restaurant Talk" → 메뉴 읽기 / 주문 / 계산) |
+| Speak(스픽) · Cake(케이크) | 빈도가 아니라 상황·목적으로 색인한다 (여행 영어, 면접, 일상 표현) |
+| Cambridge A2 Key | 알파벳 순 핵심 목록 + **주제 목록 25개**(Food and Drink, Travel and Transport …) |
+
+공통점이 하나다. **빈도는 주제 안에서 순서를 정하는 데만 쓰고, 묶는 축은 장면이다.**
+이 앱은 시나리오 33개를 이미 갖고 있으면서 거기 붙은 단어 목록이 없었다. 없던 것은
+콘텐츠가 아니라 **연결**이었다.
+
+그리고 목록을 하나 더 사 올 수 있는지도 확인했다. 결론은 **없다** 이다.
+
+| 자원 | 라이선스 | 쓸 수 있나 |
+|---|---|---|
+| NGSL / NGSL-Spoken / NAWL / TSL / BSL | **CC BY-SA 4.0** | 쓴다. 단 이 저장소가 CC BY 라고 적어 둔 것은 틀렸다(아래) |
+| CEFR-J Vocabulary Profile 1.5 | 인용 조건부 무료(연구·상업) | **쓴다** — 레벨 대조에 |
+| Oxford 3000/5000, Cambridge EVP | 전부 저작권 보유 | 못 쓴다. 체크리스트로만 본다 |
+| Anki "4000 Essential English Words" | 시판 교재(Compass) 재배포 | 못 쓴다 (CLAUDE.md §9) |
+| Tatoeba 한영 대역 | CC BY 2.0 FR | 라이선스는 되는데 **한국어가 붙은 영어 문장이 18,018개뿐**이라 얇다 |
+
+가장 중요한 발견은 이것이다 — **구어 전용 공개 목록(NGSL-Spoken 721개)에도
+`americano`·`latte`·`towel` 은 없다.** 빈도 목록은 장면에 매인 구체명사를 담지 않는다.
+그래서 남이 만든 목록을 가져오는 대신 **우리 장면에 맞는 어휘를 직접 만들고 사전으로
+검증**하는 쪽으로 갔다.
+
+### 장면 어휘 팩 — 355개
+
+```powershell
+# 1) 후보를 모은다 (장면 12개, LLM)      2) 사전으로 판정한다 (LLM 아님)
+docker compose exec api python scripts/verify_words.py --words .review/candidates.json `
+    --skip-existing --out content/data/topic_words.txt
+# 3) 항목을 생성한다 (장면을 프롬프트에 함께 준다)
+docker compose exec api python content/batch_generate.py --wordlist content/data/topic_words.txt
+```
+
+| 단계 | 개수 |
+|---|---|
+| 장면 12개에서 받은 후보 | 795 |
+| 중복 제외 | 634 |
+| 이미 표에 있음(굴절형 포함) | −277 |
+| 사전 판정 대상 | 357 |
+| **확인됨** | **355** (WordNet 346 · Wiktionary 9) |
+| 버림 | 2 (`to-go`, `cold-brew` — 사전에 그 형태가 없다) |
+| 항목 생성 성공 | 355 (첫 판 341 + 하이픈 표제어 14는 아래 버그를 고친 뒤) |
+| 선별기 지적 | high 0 · medium 39 · low 14 (장면 어휘 444개 기준) |
+
+단어 표는 **2,801 → 3,245**, 장면이 붙은 어휘는 444개다.
+
+`words.topic` 에 장면 이름이 들어간다. 검수 UI 에 묶음 필터가 생기고,
+`GET /cloze?topic=cafe` 로 그 장면 단어만 낼 수 있다. **카페 대화 직전에 카페 단어를
+푸는 게 빈도 상위 열 개를 푸는 것보다 그 대화에 실제로 도움이 된다.**
+
+생성할 때 장면을 함께 준다. 같은 단어라도 예문이 달라진다.
+
+| 단어 | 장면 없이 | 장면을 주고 |
+|---|---|---|
+| latte | I want a latte, please. | I'll have a latte, please. |
+| pizza | I want to eat pizza. | I want a pizza, please. |
+| flavor | What is the flavor of this ice cream? | What flavors do you have for the coffee? |
+
+#### 사전을 검사기로 쓸 때 밟은 세 개의 지뢰
+
+**1. Wiktionary 는 폐어까지 담는다.** 존재만 보고 통과시켰더니 우리가 환각으로
+지웠던 `restaurate` 가 되살아났다 — 실제로 표제어가 있다("To restore",
+`{{lb|en|obsolete|or|nonstandard}}`). 그래서 위키텍스트의 **꼬리표**를 읽어
+*꼬리표 없는 현대 뜻이 하나라도 있을 때만* 통과시킨다. `tumbler` 는 낡은 뜻이
+여럿이어도 '유리컵'으로 살아남고, `restaurate` 는 떨어진다.
+
+**2. User-Agent 에 한글을 넣었더니 요청이 아예 나가지 않았다.** httpx 가 헤더를
+ASCII 로 인코딩하다 죽는데, 재시도 루프가 그 예외를 삼켜서 `hoodie`·`app`·`hairdryer`
+같은 멀쩡한 낱말 11개가 **"사전에 없음"으로 기록**됐다. 막힌 것을 없는 것으로 적으면
+검사기가 조용히 거짓말을 한다. 지금은 못 물어본 것과 없는 것을 다르게 적는다.
+
+**3. nltk 의 WordNet 리더는 스레드 안전하지 않다.** 코퍼스가 zip 안에 있고 파일
+핸들을 공유해서, 스레드 4개로 조회하니 `assert self.fp is None` 로 죽었다. 배치
+생성기도 요청 스레드풀도 이미 병렬이라 잠금은 `lexicon` 안에 걸었다.
+
+**4. 하이픈이 든 표제어가 통째로 떨어졌다.** `dine-in` 의 예문이
+"I want to order a coffee for **dine-in**." 인데 "표제어를 안 쓴다"고 거부됐다 —
+검사기가 낱말을 `[a-z]+` 로 쪼개서 `dine` 과 `in` 으로 갈라 놓기 때문이다. 355개 중
+14개(`check-in`·`t-shirt`·`o'clock`·`x-ray`…)가 여기서 죽었다. 목록 파서도 같은
+이유로 하이픈 낱말을 **조용히 건너뛰고 있었다** — 목록에 적어도 생성되지 않았다.
+지금은 붙여 쓰든 띄어 쓰든 하이픈으로 쓰든 같은 말로 본다.
+
+#### 레벨이 한쪽으로 부풀려져 있었다
+
+`level`(A1/A2/B1)은 LLM 이 붙인다. 프롬프트에 "부풀리지 말라"고 적어 두었는데도
+2,801개 중 1,899개가 B1 이었다. 모델이 매긴 것을 모델로 검사할 수는 없어서
+**바깥 등급표(CEFR-J Vocabulary Profile 1.5, TUFS)** 와 맞춰 봤다.
+
+```
+우리 x CEFR-J          A1     A2     B1     B2
+  A1                  338     16      8      1
+  A2                  352    175     69      7
+  B1                  166    554    789    327     <- B1 이 미분류 통이 됐다
+```
+
+일치 46%(1,302/2,802). A1 이라고 붙인 것은 정확한데(338/363), B1 은 절반 이상이
+사실 A1·A2 였다. 그래서 **내리는 방향으로만** 고친다
+(`batch_generate.py --relevel`). 반대 방향은 건드리지 않는다 — 등급표는 `passport`
+를 B1 으로 보지만 이 앱은 공항 시나리오를 A1 으로 가르친다. **장면에 매인 단어의
+난이도는 그 장면이 정한다.** 실측된 결함은 부풀림 한 방향뿐이므로 그것만 고친다.
+
+1,090개가 내려갔다. 레벨 분포가 **A1 314 → 970**(A2 998 · B1 1,277)이 되면서
+`GET /cloze?level=A1` 이 고를 수 있는 문제가 세 배로 늘었다. 승인된 항목은 건드리지
+않는다 — 사람이 정한 것을 표가 덮으면 안 된다.
+
+> ⚠️ NGSL 은 **CC BY 가 아니라 CC BY-SA 4.0** 이다. 공식 페이지에서 확인했고
+> (2026-08-26), 이 저장소가 그동안 CC BY 라고 적어 둔 것은 틀렸다. 출처 표기만으로는
+> 부족하고 목록에서 파생된 것은 같은 조건으로 공유해야 한다. `content/data/README.md`
+> 에 적어 뒀다.
+
+#### 짧은 목록이 빈도 순위를 덮어쓰고 있었다
+
+실패한 5개만 임시 파일로 다시 돌렸더니 그 파일의 2번째 단어 `seventeen` 이
+**`rank` 2번**이 됐다 — `and` 와 같은 자리다. 배치는 `--wordlist` 의 순서를 곧 빈도
+순위로 기록하는데, 임시 파일의 순서에는 그런 뜻이 없다. 목록이 스스로 밝히게 했다:
+맨 위에 `# rank: none` 이 있으면 순위를 건드리지 않고, 50개 미만인 목록도 건드리지
+않는다(빈도 목록은 원래 길다).
+
 ### 단어 목록
 
 `content/data/starter_words.txt`는 **NGSL이 아니라** 파이프라인을 바로 돌려보기 위해 직접 고른
 60단어다(borrow/lend, say/tell/speak/talk 처럼 한국인이 실제로 헷갈리는 짝 위주).
-실제 NGSL(약 2,800단어, CC BY)로 돌리는 법은 `content/data/README.md` 참고.
+실제 NGSL(약 2,800단어, **CC BY-SA 4.0**)로 돌리는 법은 `content/data/README.md` 참고.
+
+`content/data/app_words.txt`는 위 측정에서 나온 60단어다 — 이 앱이 실제로 쓰는데
+NGSL 에 없는 말(`americano`, `subway`, `headache`, 숫자, 요일). 순서가 장면별 묶음이라
+맨 위에 `# rank: none` 을 달아 뒀다.
 
 > 시판 단어책·이북 등 저작물에서 예문·해설을 수집하는 코드는 작성하지 않는다.
 > 교차 확인이 필요하면 공개 자원만 쓴다 — Wiktionary, WordNet, Tatoeba(CC BY).
