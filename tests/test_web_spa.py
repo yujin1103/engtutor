@@ -41,7 +41,7 @@ def built(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
 
 # ─────────────────────────────────────────────── API 가 먼저다
 
-@pytest.mark.parametrize("path", ["/scenarios", "/categories", "/strictness"])
+@pytest.mark.parametrize("path", ["/scenarios", "/categories", "/strictness", "/grammar"])
 def test_API_경로는_화면에_가려지지_않는다(client: TestClient, path: str, built: Path) -> None:
     response = client.get(path)
     assert response.status_code == 200

@@ -8,6 +8,7 @@ import logging
 from collections import Counter
 from collections.abc import AsyncIterator, Iterator
 from contextlib import asynccontextmanager
+from functools import lru_cache
 from typing import Literal
 
 from fastapi import FastAPI, File, HTTPException, UploadFile
@@ -25,6 +26,7 @@ from .session_store import SqliteSessionStore
 from .stt import SttUnavailable, get_stt_service
 from .tutor.categories import CATEGORIES
 from .tutor import cloze as cloze_mod
+from .tutor import grammar
 from .tutor import practice
 from .tutor.levels import DEFAULT_LEVEL
 from .tutor.loader import Scenario, get_scenarios
@@ -859,6 +861,106 @@ def session_report(session_id: str) -> SessionReport:
 
     store.end(session.id)
     return report
+
+
+# ─────────────────────────────────────────────── 문법 문제 (토익 Part 5 형)
+
+
+class GrammarChoiceOut(BaseModel):
+    """보기 하나. **어느 모양인지는 보내지 않는다** — 그게 곧 정답이다.
+
+    `sending` 옆에 '동명사' 라고 적어 두면 "to 뒤에는 동사원형" 을 아는 학습자가
+    문장을 안 읽고도 고를 수 있다. 모양 이름은 채점한 뒤에야 나간다.
+    """
+
+    word: str
+
+
+class GrammarOut(BaseModel):
+    """학습자에게 내보내는 문제. **정답을 넣지 않는다** — 채점은 서버가 한다.
+
+    보기 순서도 여기서 굳혀 보낸다. 화면이 섞으면 새로고침마다 답의 자리가 달라져
+    서버가 채점한 것과 학습자가 본 화면이 어긋난다.
+    """
+
+    id: str
+    rule: str
+    rule_title: str
+    sentence: str
+    sentence_ko: str
+    choices: list[GrammarChoiceOut]
+
+
+class GrammarAnswerRequest(BaseModel):
+    id: str = Field(description="GET /grammar 가 준 문제 id")
+    chosen: str = Field(description="학습자가 고른 보기의 낱말")
+
+
+class GrammarAnswerOut(BaseModel):
+    ok: bool
+    answer: str
+    chosen: str
+    message_ko: str
+    # 보기 넷이 각각 어느 모양인지. 채점한 뒤에만 나간다.
+    why_ko: list[str]
+
+
+@lru_cache(maxsize=1)
+def _grammar_index() -> dict[str, tuple[str, object]]:
+    """문제 id → (규칙 이름, 문제). 채점이 id 하나로 문제를 되찾게 한다.
+
+    문제는 데이터 파일에서 결정론적으로 만들어지므로 미리 다 펼쳐 둬도 된다
+    (지금 151개다). 화면이 문제를 통째로 돌려보내게 하면 학습자가 보기를 바꿔
+    보낼 수 있어서, **서버가 갖고 있는 것으로만 채점한다.**
+    """
+    out: dict[str, tuple[str, object]] = {}
+    for name, rule in grammar.rules().items():
+        for item in grammar.items_of(rule):
+            out[item.id] = (name, item)
+    return out
+
+
+@app.get("/grammar", response_model=list[GrammarOut])
+def list_grammar(rule: str = "to_infinitive", count: int = 10, offset: int = 0) -> list[GrammarOut]:
+    """문법 문제를 준다. 모르는 규칙 이름이면 빈 배열이다(404 가 아니다).
+
+    빈 배열로 두는 이유는 화면이 이것을 목록으로 그리기 때문이다 — 규칙이 아직
+    없는 것과 문제가 떨어진 것을 화면에서 같게 다루는 편이 낫다.
+    """
+    known = grammar.rules()
+    if rule not in known:
+        return []
+    count = max(1, min(count, 50))
+    offset = max(0, offset)
+    picked = grammar.items_of(known[rule])[offset : offset + count]
+    return [
+        GrammarOut(
+            id=item.id,
+            rule=item.rule,
+            rule_title=known[rule].title,
+            sentence=item.sentence,
+            sentence_ko=item.sentence_ko,
+            choices=[GrammarChoiceOut(word=c.word) for c in item.choices],
+        )
+        for item in picked
+    ]
+
+
+@app.post("/grammar/answer", response_model=GrammarAnswerOut)
+def answer_grammar(req: GrammarAnswerRequest) -> GrammarAnswerOut:
+    """채점하고 왜 그런지 말한다. 보기 넷의 정체는 여기서 처음 나간다."""
+    found = _grammar_index().get(req.id)
+    if found is None:
+        raise HTTPException(status_code=404, detail=f"모르는 문제예요: {req.id}")
+    rule_name, item = found
+    verdict = grammar.grade(item, req.chosen, grammar.rules()[rule_name])  # type: ignore[arg-type]
+    return GrammarAnswerOut(
+        ok=verdict.ok,
+        answer=verdict.answer,
+        chosen=verdict.chosen,
+        message_ko=verdict.message_ko,
+        why_ko=verdict.why_ko,
+    )
 
 
 # ─────────────────────────────────────────────── 화면 (React 빌드 결과)

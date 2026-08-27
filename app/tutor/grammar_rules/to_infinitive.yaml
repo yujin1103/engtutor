@@ -1,0 +1,113 @@
+# 손으로 쓰고 검수한 문장 틀. 배치 생성물이 아니다.
+rule: to_infinitive
+title: to 다음에는 동사원형
+explain_ko: "to 뒤에는 늘 **동사원형**이 와요. -ing 형도, -s 형도, 과거형도 아니에요."
+
+# 왜 문장을 손으로 쓰는가
+# ----------------------
+# 토익 예문에서 'to + 동사원형' 을 확실히 캘 수 있는 것은 109건뿐이고 그중 84건이
+# 'need to' 다. 그대로 내면 문제가 죄다 "We need to ______" 로 나온다.
+# 나머지 161건의 to 는 전치사라(to work, to our company) 규칙 자체가 다르다.
+#
+# 그래서 to 를 데리고 오는 표현을 골고루 담은 틀을 손으로 쓴다. 각 틀의 verbs 는
+# 그 문장에 실제로 들어가 말이 되는 동사만 적는다 — 이 목록이 곧 사람의 검수다.
+#
+# ko 는 낱말 자리를 '~' 로 비워 둔 문장 뜻이다. 학습자는 이것과 낱말 뜻을 함께 본다.
+# 문제는 뜻이 아니라 **형태**를 묻는 것이라 이것으로 충분하다.
+
+frames:
+  - text: "Please remember to ___ the invoice."
+    ko: "송장을 ~하는 것을 잊지 마세요."
+    verbs: [send, check, sign, pay, file, review, print, attach, cancel, confirm, process]
+
+  - text: "Don't forget to ___ the report."
+    ko: "보고서를 ~하는 것을 잊지 마세요."
+    verbs: [submit, sign, print, attach, review, send, finish, complete, publish, translate]
+
+  - text: "We agreed to ___ the contract."
+    ko: "우리는 계약서를 ~하기로 했어요."
+    verbs: [sign, review, cancel, extend, renew, amend, translate, check]
+
+  - text: "The manager decided to ___ the meeting."
+    ko: "부장님이 회의를 ~하기로 했어요."
+    verbs: [postpone, cancel, attend, record, schedule, arrange, join]
+
+  - text: "She promised to ___ the package today."
+    ko: "그분이 오늘 소포를 ~하기로 했어요."
+    verbs: [deliver, send, ship, collect, return, check, track]
+
+  - text: "We hope to ___ the project on time."
+    ko: "우리는 그 일을 제때 ~하기를 바라요."
+    verbs: [finish, complete, deliver, launch, submit, start]
+
+  - text: "He offered to ___ the customer."
+    ko: "그분이 고객을 ~하겠다고 했어요."
+    verbs: [help, call, assist, contact, meet, serve]
+
+  - text: "They plan to ___ a new branch."
+    ko: "그들은 새 지점을 ~할 계획이에요."
+    verbs: [open, build, establish, launch, close, visit]
+
+  - text: "It is important to ___ the deadline."
+    ko: "마감을 ~하는 것이 중요해요."
+    verbs: [meet, extend, confirm, check, announce]
+
+  - text: "Please try to ___ the problem."
+    ko: "문제를 ~해 보세요."
+    verbs: [solve, fix, avoid, report, explain, identify, describe]
+
+  - text: "We are able to ___ the order today."
+    ko: "오늘 주문을 ~할 수 있어요."
+    verbs: [process, ship, cancel, confirm, deliver, change, check]
+
+  - text: "The company failed to ___ the goods."
+    ko: "그 회사는 물건을 ~하지 못했어요."
+    verbs: [deliver, ship, supply, provide, sell, store]
+
+  - text: "I would like to ___ a reservation."
+    ko: "예약을 ~하고 싶어요."
+    verbs: [make, cancel, confirm, change, check]
+
+  - text: "We expect to ___ the results next week."
+    ko: "우리는 다음 주에 결과를 ~할 것으로 봐요."
+    verbs: [receive, announce, publish, share, review, discuss]
+
+  - text: "The team wants to ___ productivity."
+    ko: "그 팀은 생산성을 ~하고 싶어 해요."
+    verbs: [improve, measure, raise, discuss, report]
+
+  - text: "Please be sure to ___ the door."
+    ko: "문을 꼭 ~해 주세요."
+    verbs: [lock, close, open, check, paint]
+
+  - text: "He refused to ___ the document."
+    ko: "그분은 서류를 ~하기를 거절했어요."
+    verbs: [sign, submit, share, approve, translate, review]
+
+  - text: "We managed to ___ the costs."
+    ko: "우리는 비용을 ~해 냈어요."
+    verbs: [reduce, minimize, control, cover, calculate, estimate]
+
+  - text: "It is easy to ___ this machine."
+    ko: "이 기계는 ~하기 쉬워요."
+    verbs: [operate, use, fix, clean, move, damage]
+
+  - text: "The client asked us to ___ the price."
+    ko: "고객이 우리에게 가격을 ~해 달라고 했어요."
+    verbs: [reduce, confirm, explain, adjust, check, raise]
+
+  - text: "We continue to ___ our customers."
+    ko: "우리는 고객을 계속 ~하고 있어요."
+    verbs: [serve, support, help, contact, visit]
+
+  - text: "You should learn to ___ the software."
+    ko: "그 소프트웨어를 ~하는 법을 배우세요."
+    verbs: [use, operate, update, test, describe]
+
+  - text: "I need to ___ a visa before the trip."
+    ko: "여행 전에 비자를 ~해야 해요."
+    verbs: [obtain, get, renew, request]
+
+  - text: "The staff began to ___ the room."
+    ko: "직원들이 방을 ~하기 시작했어요."
+    verbs: [clean, prepare, decorate, paint, arrange, inspect]

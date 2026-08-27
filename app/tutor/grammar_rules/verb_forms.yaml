@@ -1,0 +1,110 @@
+# 동사 하나가 가지는 다른 모양들. **손으로 골라 검수했다.**
+#
+# 왜 코드가 만들지 않고 여기 적어 두는가
+# --------------------------------------
+# 만들려고 해 봤고, 안전하게는 안 된다. WordNet 은 **표면 철자를 검사하지 못한다** —
+# `morphy('builded')` 도 `known('attachs')` 도 참을 돌려준다. 접미사를 떼어 원형에
+# 닿기만 하면 통과시키기 때문이다(그게 원형 찾기의 일이지 철자 검사의 일이 아니다).
+# 색인 원본(`all_lemma_names`)은 반대로 너무 좁다 — `announcing`·`canceling` 같은
+# 멀쩡한 형태가 표제어에 없다. 완전한 표면형 사전은 이 환경에 없다.
+#
+# 그리고 -ing 의 자음 겹치기는 **강세**에 달려 있어 규칙으로 정할 수 없다.
+# prefer→preferring 인데 offer→offering 이고, open→opening 이지 openning 이 아니다.
+#
+# 그래서 이 프로젝트의 원칙 그대로 한다 — 미리 만들고, 사람이 보고, 서빙은 조회.
+# `openning`·`builded` 같은 것이 학습자 앞에 놓일 길이 아예 없다.
+#
+# 고를 때 걷어낸 것들: `extensor`(해부학 용어), `solvent`(다른 뜻), `annunciatory`·
+# `obtention`·`jointure`·`servitor`(왕초보가 평생 안 볼 말), `decor`(뜻이 잘렸다).
+#
+# 칸 이름이 곧 학습자에게 보여줄 이름이다 — ing=동명사, noun=명사, adj=형용사,
+# past=과거형, s=3인칭 단수. 오답 셋은 이 중에서 고른다.
+
+verbs:
+  adjust:    {ing: adjusting,     noun: adjustment,     adj: adjustable}
+  amend:     {ing: amending,      noun: amendment,      past: amended}
+  announce:  {ing: announcing,    noun: announcement,   past: announced}
+  approve:   {ing: approving,     noun: approval,       past: approved}
+  arrange:   {ing: arranging,     noun: arrangement,    past: arranged}
+  assist:    {ing: assisting,     noun: assistance,     past: assisted}
+  attach:    {ing: attaching,     noun: attachment,     past: attached}
+  attend:    {ing: attending,     noun: attendance,     past: attended}
+  avoid:     {ing: avoiding,      noun: avoidance,      adj: avoidable}
+  build:     {ing: building,      noun: builder,        past: built}
+  calculate: {ing: calculating,   noun: calculation,    past: calculated}
+  call:      {ing: calling,       noun: caller,         past: called}
+  cancel:    {ing: canceling,     noun: cancellation,   past: canceled}
+  change:    {ing: changing,      past: changed,        s: changes}
+  check:     {ing: checking,      past: checked,        s: checks}
+  clean:     {ing: cleaning,      noun: cleaner,        past: cleaned}
+  close:     {ing: closing,       noun: closure,        past: closed}
+  collect:   {ing: collecting,    noun: collection,     past: collected}
+  complete:  {ing: completing,    noun: completion,     past: completed}
+  confirm:   {ing: confirming,    noun: confirmation,   past: confirmed}
+  contact:   {ing: contacting,    past: contacted,      s: contacts}
+  control:   {ing: controlling,   noun: controller,     past: controlled}
+  cover:     {ing: covering,      noun: coverage,       past: covered}
+  damage:    {ing: damaging,      past: damaged,        s: damages}
+  decorate:  {ing: decorating,    noun: decoration,     adj: decorative}
+  deliver:   {ing: delivering,    noun: delivery,       past: delivered}
+  describe:  {ing: describing,    noun: description,    adj: descriptive}
+  discuss:   {ing: discussing,    noun: discussion,     past: discussed}
+  establish: {ing: establishing,  noun: establishment,  past: established}
+  estimate:  {ing: estimating,    noun: estimation,     past: estimated}
+  explain:   {ing: explaining,    noun: explanation,    past: explained}
+  extend:    {ing: extending,     noun: extension,      adj: extensive}
+  file:      {ing: filing,        past: filed,          s: files}
+  finish:    {ing: finishing,     past: finished,       s: finishes}
+  fix:       {ing: fixing,        past: fixed,          s: fixes}
+  get:       {ing: getting,       past: got,            s: gets}
+  help:      {ing: helping,       noun: helper,         past: helped}
+  identify:  {ing: identifying,   noun: identification, adj: identifiable}
+  improve:   {ing: improving,     noun: improvement,    past: improved}
+  inspect:   {ing: inspecting,    noun: inspection,     past: inspected}
+  join:      {ing: joining,       past: joined,         s: joins}
+  launch:    {ing: launching,     past: launched,       s: launches}
+  lock:      {ing: locking,       noun: locker,         past: locked}
+  make:      {ing: making,        noun: maker,          past: made}
+  measure:   {ing: measuring,     noun: measurement,    adj: measurable}
+  meet:      {ing: meeting,       past: met,            s: meets}
+  minimize:  {ing: minimizing,    noun: minimization,   past: minimized}
+  move:      {ing: moving,        noun: movement,       past: moved}
+  obtain:    {ing: obtaining,     adj: obtainable,      past: obtained}
+  open:      {ing: opening,       noun: opener,         past: opened}
+  operate:   {ing: operating,     noun: operation,      past: operated}
+  paint:     {ing: painting,      noun: painter,        past: painted}
+  pay:       {ing: paying,        noun: payment,        past: paid}
+  postpone:  {ing: postponing,    noun: postponement,   past: postponed}
+  prepare:   {ing: preparing,     noun: preparation,    past: prepared}
+  print:     {ing: printing,      noun: printer,        past: printed}
+  process:   {ing: processing,    noun: processor,      past: processed}
+  provide:   {ing: providing,     noun: provision,      past: provided}
+  publish:   {ing: publishing,    noun: publication,    past: published}
+  raise:     {ing: raising,       past: raised,         s: raises}
+  receive:   {ing: receiving,     noun: receiver,       past: received}
+  record:    {ing: recording,     noun: recorder,       past: recorded}
+  reduce:    {ing: reducing,      noun: reduction,      past: reduced}
+  renew:     {ing: renewing,      noun: renewal,        past: renewed}
+  report:    {ing: reporting,     noun: reporter,       past: reported}
+  request:   {ing: requesting,    past: requested,      s: requests}
+  return:    {ing: returning,     past: returned,       s: returns}
+  review:    {ing: reviewing,     noun: reviewer,       past: reviewed}
+  schedule:  {ing: scheduling,    past: scheduled,      s: schedules}
+  sell:      {ing: selling,       noun: seller,         past: sold}
+  send:      {ing: sending,       noun: sender,         past: sent}
+  serve:     {ing: serving,       noun: server,         past: served}
+  share:     {ing: sharing,       past: shared,         s: shares}
+  ship:      {ing: shipping,      noun: shipment,       past: shipped}
+  sign:      {ing: signing,       noun: signature,      past: signed}
+  solve:     {ing: solving,       noun: solution,       past: solved}
+  start:     {ing: starting,      past: started,        s: starts}
+  store:     {ing: storing,       noun: storage,        past: stored}
+  submit:    {ing: submitting,    noun: submission,     past: submitted}
+  supply:    {ing: supplying,     noun: supplier,       past: supplied}
+  support:   {ing: supporting,    adj: supportive,      past: supported}
+  test:      {ing: testing,       past: tested,         s: tests}
+  track:     {ing: tracking,      past: tracked,        s: tracks}
+  translate: {ing: translating,   noun: translation,    past: translated}
+  update:    {ing: updating,      past: updated,        s: updates}
+  use:       {ing: using,         noun: user,           adj: usable}
+  visit:     {ing: visiting,      noun: visitor,        past: visited}

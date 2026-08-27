@@ -23,6 +23,7 @@ export const API_PREFIXES = [
   "/stt",
   "/cloze", // /cloze 와 /cloze/topics, /cloze/answer
   "/words", // 읽기용 낱말 목록 (토익 화면)
+  "/grammar", // /grammar 와 /grammar/answer (토익 문법 문제)
   "/sessions", // /sessions/{id}/report
   // 스키마를 눈으로 확인할 때 쓴다. 운영에서도 FastAPI 가 같은 자리에 준다.
   "/openapi.json",
