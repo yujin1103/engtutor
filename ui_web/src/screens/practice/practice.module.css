@@ -377,3 +377,50 @@
   color: var(--text-dim);
   text-align: center;
 }
+
+/* ───────────────────────────── 철자 단서
+
+   영어를 아예 모르는 학습자를 위한 자리. 뜻과 해석을 다 읽고도 첫 글자를 못
+   적는 사람이 있고, 그 사람에게 빈칸은 문제가 아니라 벽이다.
+
+   눈에 덜 띄게 둔다 — 필요한 사람만 누르면 되고, 처음부터 시선을 끌면
+   문장을 읽기 전에 힌트부터 보게 된다. */
+.spell {
+  margin-top: var(--gap);
+}
+
+.spellStep {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--gap-sm);
+  margin-top: var(--gap-sm);
+}
+
+.spellLabel {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+/* 밑줄 모양(`s _ _ _`)은 글자 폭이 같아야 자리가 눈에 들어온다. */
+.spellShape {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.spellText {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.spellMore {
+  margin-top: var(--gap-sm);
+  min-height: var(--tap-min);
+  font-size: 0.9rem;
+}

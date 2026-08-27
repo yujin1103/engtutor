@@ -398,6 +398,25 @@ def _stt_unavailable_message(service) -> str:
 # 새로 만들어지는 정보가 없으니 새로 틀릴 것도 없다(app/tutor/cloze.py).
 
 
+class SpellHintOut(BaseModel):
+    """철자 단서 한 걸음. **정답을 통째로 드러내는 단계는 없다.**
+
+    영어를 아예 모르는 학습자를 위한 것이다. 지금 빈칸이 주는 단서는 낱말 뜻·문장
+    해석·문형·품사뿐이고 넷 다 한국어라, 알파벳을 못 읽는 사람은 뜻을 다 알고도
+    첫 글자를 못 적는다. 그 사람에게 빈칸은 문제가 아니라 벽이다.
+
+    응답에 단계를 다 실어 보내고 **언제 보여줄지는 화면이 정한다.** 한 걸음마다
+    서버에 다시 묻게 하면 답을 적는 도중에 왕복이 생기고, 무엇보다 이건 시험이
+    아니라 연습장이다 — 해석을 가리지 않고 그대로 보여 주기로 한 것과 같은 결정이다.
+    """
+
+    step: int
+    label_ko: str
+    text_ko: str
+    # 아직 안 드러난 글자를 밑줄로 둔 모양. `s _ _ _`
+    shape: str
+
+
 class PosHintOut(BaseModel):
     """빈칸의 품사 힌트. **정답 낱말은 들어 있지 않다** — 품사 이름만 나간다.
 
@@ -434,6 +453,8 @@ class ClozeOut(BaseModel):
     # 그때는 힌트 없이 낸다 — 힌트 없는 빈칸도 빈칸으로 성립한다.
     pos_hint: PosHintOut | None = None
     topic: str | None = None
+    # 철자 단서. 답이 한 글자면 빈 목록이다 — 글자 수가 곧 정답이라 줄 것이 없다.
+    spell_hints: list[SpellHintOut] = []
 
 
 class TopicOut(BaseModel):
@@ -739,6 +760,7 @@ def _cloze_out(item: cloze_mod.ClozeItem) -> ClozeOut:
         example_ko=mask(item.example_ko, item.word),
         topic=item.topic,
         pos_hint=None if hint is None else PosHintOut(**vars(hint)),
+        spell_hints=[SpellHintOut(**vars(h)) for h in cloze_mod.spell_hints(item)],
     )
 
 

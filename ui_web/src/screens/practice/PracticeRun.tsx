@@ -21,6 +21,7 @@ import { Screen } from "../../components/Screen";
 import type { ClozeAnswerOut } from "../../api/types";
 import { ExplainCard } from "./ExplainCard";
 import { opensExplanation, splitBlank, toneOf } from "./flow";
+import { SpellHints } from "./SpellHints";
 import { useDeck } from "./useDeck";
 
 import styles from "./practice.module.css";
@@ -186,6 +187,13 @@ export function PracticeRun({ topic, label, track, onBack }: PracticeRunProps) {
             낱말의 품사를 말한 것("이 낱말은 명사로도 동사로도 써요")은 근거가
             달라서, 화면이 `labels_ko` 로 문장을 지으면 둘이 뒤섞인다. */}
         {item.pos_hint && <p className={styles.hint}>{item.pos_hint.text_ko}</p>}
+
+        {/* 철자 단서. 답을 내기 전까지만 보여 준다 — 판정이 나온 뒤에는 정답이
+            이미 문장에 들어가 있어서 힌트가 남아 있으면 그 자리만 어수선해진다.
+            자동으로 펴지 않는 이유는 SpellHints 에 적어 두었다. */}
+        {!judged && (
+          <SpellHints hints={item.spell_hints ?? []} resetKey={stamp} />
+        )}
       </div>
 
       {phase.at === "broken" && (

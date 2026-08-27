@@ -12,6 +12,7 @@ import {
   BLANK,
   PAGE,
   UNCHECKED_NOTE_KO,
+  hintButtonKo,
   meaningOf,
   nextOffset,
   opensExplanation,
@@ -237,4 +238,17 @@ test("설명이 아예 없으면 상자도 안 만든다", () => {
   const { checked, unchecked } = splitNotes(card({ usage_note: "   " }));
   assert.equal(checked, null);
   assert.equal(unchecked, null);
+});
+
+test("힌트 버튼: 처음에는 '힌트 보기', 뒤로는 남은 개수를 적는다", () => {
+  assert.equal(hintButtonKo(0, 3), "힌트 보기");
+  assert.equal(hintButtonKo(1, 3), "힌트 더 보기 (2개 남음)");
+  assert.equal(hintButtonKo(2, 3), "힌트 더 보기 (1개 남음)");
+});
+
+test("힌트 버튼: 다 폈으면 null — 버튼을 그리지 않는다", () => {
+  // 남아 있으면 학습자는 아직 볼 것이 있다고 읽고, 눌러 보고 나서야 없다는 걸 안다.
+  assert.equal(hintButtonKo(3, 3), null);
+  assert.equal(hintButtonKo(4, 3), null);
+  assert.equal(hintButtonKo(0, 0), null);
 });

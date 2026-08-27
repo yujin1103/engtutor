@@ -240,3 +240,22 @@ export function splitNotes(card: ClozeExplainOut): {
 
   return { checked, unchecked };
 }
+
+// ─────────────────────────────────────────────── 철자 단서
+
+/**
+ * 힌트 버튼에 적을 말. 몇 걸음 폈는지에 따라 달라진다.
+ *
+ * 문구를 여기 두는 이유는 다른 규칙들과 같다 — 화면을 훑어서는 어긋난 걸 알기
+ * 어렵다. 마지막 걸음까지 편 뒤에도 버튼이 남아 있으면 학습자는 아직 볼 것이
+ * 있다고 읽고, 눌러 보고 나서야 없다는 걸 안다. 그래서 `null` 이면 버튼 자체를
+ * 안 그린다.
+ *
+ * 남은 개수를 적는 이유: 처음 누를 때 이게 몇 걸음짜리인지 모르면 "누르면 답이
+ * 나오나" 싶어서 안 누른다. 영어를 아예 모르는 사람에게 그 망설임이 곧 벽이다.
+ */
+export function hintButtonKo(opened: number, total: number): string | null {
+  const left = total - opened;
+  if (left <= 0) return null;
+  return opened === 0 ? "힌트 보기" : `힌트 더 보기 (${left}개 남음)`;
+}

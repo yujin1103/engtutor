@@ -205,6 +205,27 @@ export interface PosHintOut {
   source: "slot" | "word";
 }
 
+/**
+ * 철자 단서 한 걸음. **정답을 통째로 드러내는 단계는 없다** — 마지막까지 봐도
+ * 최소 한 글자는 밑줄로 남는다.
+ *
+ * 영어를 아예 모르는 학습자를 위한 것이다. 지금 빈칸이 주는 단서(낱말 뜻·문장
+ * 해석·문형·품사)는 넷 다 한국어라, 알파벳을 못 읽는 사람은 뜻을 다 알고도 첫
+ * 글자를 못 적는다. 그 사람에게 빈칸은 문제가 아니라 벽이다.
+ *
+ * 서버가 단계를 다 실어 보내고 **언제 보여줄지는 화면이 정한다.** 한 걸음마다
+ * 서버에 다시 물으면 답을 적는 도중에 왕복이 생긴다.
+ */
+export interface SpellHintOut {
+  step: number;
+  /** "글자 수" · "첫 글자" · "앞 절반" */
+  label_ko: string;
+  /** 화면에 그대로 띄울 한 문장. */
+  text_ko: string;
+  /** 아직 안 드러난 글자를 밑줄로 둔 모양. `s _ _ _` */
+  shape: string;
+}
+
 export interface ClozeOut {
   /** 채점할 때 어느 항목인지 가리키는 열쇠. **정답 표면형이 아니다.** */
   word: string;
@@ -223,6 +244,11 @@ export interface ClozeOut {
   example_ko?: string | null;
   pos_hint?: PosHintOut | null;
   topic?: string | null;
+  /**
+   * 철자 단서. 답이 한 글자면 빈 배열이다 — 글자 수가 곧 정답이라 줄 것이 없다.
+   * 예전 응답에는 없던 칸이라 optional 이다.
+   */
+  spell_hints?: SpellHintOut[];
 }
 
 /** 장면 묶음 하나. 다른 회화 앱의 '유닛'에 해당한다. */

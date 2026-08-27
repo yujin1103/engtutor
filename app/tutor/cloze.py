@@ -61,6 +61,8 @@ __all__ = [
     "pos_hint",
     "pos_of",
     "readable_ko",
+    "SpellHint",
+    "spell_hints",
 ]
 
 # 예문에서 낱말을 집는다. 축약형과 하이픈 합성어는 한 낱말로 본다.
@@ -387,6 +389,126 @@ def pos_hint(item: ClozeItem) -> PosHint | None:
         # 사용자가 원한 바로 그 학습 지점 — "이 단어가 동사도 되고 명사도 되는지".
         text = "이 낱말은 " + "로도 ".join(labels) + "로도 써요."
     return PosHint(pos=ordered, labels_ko=labels, text_ko=text, source=source)
+
+
+@dataclass(frozen=True)
+class SpellHint:
+    """빈칸을 못 채우는 학습자에게 **한 걸음씩** 내주는 철자 단서.
+
+    왜 필요한가 — 지금 단서로는 알파벳을 못 읽는 사람에게 과제가 성립하지 않는다.
+    빈칸이 주는 것은 낱말 뜻·문장 해석·문형·품사뿐이고 넷 다 **한국어**다. 영어를
+    아예 모르는 사람은 뜻을 다 알고도 첫 글자를 못 적는다. 그 사람에게 빈칸은
+    문제가 아니라 벽이다.
+
+    왜 한 번에 다 주지 않는가 — 다 주면 연습이 아니라 베껴 쓰기가 된다. 그래서
+    단계로 나누고, 어느 단계까지 볼지는 학습자가 정한다.
+
+    `shape` 는 아직 안 드러난 글자를 밑줄로 둔 모양이다(`s _ _ _`). 글자가 아닌
+    것(아포스트로피·하이픈)은 철자가 아니라 짜임이라 처음부터 보여 준다.
+    """
+
+    step: int
+    label_ko: str
+    text_ko: str
+    shape: str
+
+
+# 글자 수를 세는 우리말. '네 글자' 처럼 고유어로 센다.
+_COUNT_KO: tuple[str, ...] = (
+    "", "한", "두", "세", "네", "다섯", "여섯", "일곱", "여덟", "아홉", "열",
+    "열한", "열두",
+)
+
+
+def _count_ko(n: int) -> str:
+    return _COUNT_KO[n] if n < len(_COUNT_KO) else str(n)
+
+
+# 알파벳을 우리말로 읽었을 때 **받침으로 끝나는** 것. 엘·엠·엔·알 넷뿐이다.
+# 나머지는 에이·비·에프(프)·에이치(치)·에스(스)처럼 모음이나 받침 없는 글자로 끝난다.
+_FINAL_CONSONANT = frozenset("lmnr")
+
+# 그중 받침이 ㄹ 인 것. '으로' 는 ㄹ 뒤에 붙지 않는다 — '엘로'·'알로' 이지
+# '엘으로' 가 아니다. 그래서 조사 둘이 서로 다른 집합을 본다.
+_FINAL_RIEUL = frozenset("lr")
+
+
+def _with_ro(letters: str) -> str:
+    """'a 로' / 'n 으로' / 'l 로'. 여러 글자면 마지막 글자가 정한다.
+
+    학습자가 영어를 아예 모른다는 전제로 쓰는 문구라 조사가 어긋나면 바로 눈에 띈다.
+    """
+    tail = letters[-1:].lower()
+    ro = "으로" if tail in _FINAL_CONSONANT and tail not in _FINAL_RIEUL else "로"
+    return f"'{letters}' {ro}"
+
+
+def _with_yeyo(letters: str) -> str:
+    """'a 예요' / 'n 이에요'. 받침이 ㄹ 이어도 이쪽은 '이에요' 다(엘이에요)."""
+    tail = letters[-1:].lower()
+    return f"'{letters}' {'이에요' if tail in _FINAL_CONSONANT else '예요'}"
+
+
+def _shape(answer: str, revealed: int) -> str:
+    """앞에서부터 `revealed` 글자만 드러낸 모양. 나머지는 밑줄이다."""
+    seen = 0
+    out: list[str] = []
+    for ch in answer:
+        if not ch.isalpha():
+            # 아포스트로피·하이픈은 철자가 아니라 짜임이다. 가리면 오히려 어렵다.
+            out.append(ch)
+            continue
+        seen += 1
+        out.append(ch if seen <= revealed else "_")
+    return " ".join(out)
+
+
+def spell_hints(item: ClozeItem) -> tuple[SpellHint, ...]:
+    """이 빈칸에 줄 수 있는 철자 단서 전부. 짧은 답에는 적게 나온다.
+
+    **정답을 통째로 드러내는 단계는 만들지 않는다.** 마지막 단계까지 봐도 최소
+    한 글자는 밑줄로 남는다 — 그 한 글자를 학습자가 적어야 연습이 성립한다.
+    그래서 두 글자짜리 답(`am`, `it`)은 글자 수 하나만 나온다. 거기서 첫 글자를
+    주면 남는 것이 없다.
+
+    답의 대소문자는 낮춘다. 문장 맨 앞이라 대문자인 것(`It`)을 그대로 보여 주면
+    철자가 아니라 자리 때문에 생긴 모양을 철자로 가르치게 된다. 채점은 어차피
+    대소문자를 가리지 않는다.
+    """
+    answer = item.answer.strip().lower()
+    letters = sum(1 for ch in answer if ch.isalpha())
+    if letters < 2:
+        # 한 글자짜리 답(`a`, `I`)은 글자 수가 곧 정답이다.
+        return ()
+
+    out = [
+        SpellHint(
+            step=1,
+            label_ko="글자 수",
+            text_ko=f"{_count_ko(letters)} 글자예요.",
+            shape=_shape(answer, 0),
+        )
+    ]
+    if letters >= 3:
+        out.append(
+            SpellHint(
+                step=2,
+                label_ko="첫 글자",
+                text_ko=f"{_with_ro(answer[:1])} 시작해요.",
+                shape=_shape(answer, 1),
+            )
+        )
+    if letters >= 5:
+        half = letters // 2
+        out.append(
+            SpellHint(
+                step=3,
+                label_ko="앞 절반",
+                text_ko=f"앞 {_count_ko(half)} 글자는 {_with_yeyo(answer[:half])}.",
+                shape=_shape(answer, half),
+            )
+        )
+    return tuple(out)
 
 
 def grade(item: ClozeItem, said: str) -> ClozeResult:

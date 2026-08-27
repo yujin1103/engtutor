@@ -19,7 +19,10 @@ from app.tutor.cloze import (
     is_speakable,
     make_item,
     normalize,
+    spell_hints,
 )
+from app.tutor.cloze import _with_ro, _with_yeyo  # noqa: E402  조사 규칙을 따로 시험한다
+
 
 needs_lexicon = pytest.mark.skipif(not lexicon.available(), reason="WordNet 코퍼스가 없습니다")
 
@@ -267,3 +270,101 @@ def test_the_answer_never_reaches_the_client():
     from app.main import ClozeOut
 
     assert "answer" not in ClozeOut.model_fields
+
+
+# ── 철자 단서 (영어를 아예 모르는 학습자용) ────────────────────────────
+
+
+def _spelled(answer: str, sentence: str = "I ____ it.") -> ClozeItem:
+    return ClozeItem(
+        word=answer.lower(),
+        level="A1",
+        meaning_ko="뜻",
+        sentence=sentence,
+        answer=answer,
+        pattern=None,
+        rank=1,
+        reviewed=False,
+    )
+
+
+def test_spell_hints_never_spell_out_the_whole_answer():
+    """마지막 단계까지 봐도 최소 한 글자는 밑줄로 남는다.
+
+    다 드러내면 연습이 아니라 베껴 쓰기가 된다. 그 한 글자를 학습자가 적어야
+    과제가 성립한다.
+    """
+    for answer in ("am", "and", "have", "because", "understand"):
+        for hint in spell_hints(_spelled(answer)):
+            assert "_" in hint.shape, f"{answer} 의 {hint.label_ko} 가 답을 다 드러냅니다"
+
+
+def test_spell_hints_are_empty_for_a_one_letter_answer():
+    """`a` 는 글자 수가 곧 정답이라 줄 단서가 없다."""
+    assert spell_hints(_spelled("a")) == ()
+
+
+def test_spell_hints_grow_with_the_answer():
+    """짧은 답에는 적게 준다 — 두 글자짜리에 첫 글자를 주면 남는 것이 없다."""
+    assert len(spell_hints(_spelled("am"))) == 1
+    assert len(spell_hints(_spelled("and"))) == 2
+    assert len(spell_hints(_spelled("because"))) == 3
+
+
+def test_spell_hint_steps_are_numbered_in_order():
+    steps = [h.step for h in spell_hints(_spelled("because"))]
+    assert steps == sorted(steps)
+    assert steps == list(range(1, len(steps) + 1))
+
+
+def test_spell_hints_lower_the_case_of_a_sentence_initial_answer():
+    """`It is a book.` 의 답은 `It` 이지만 철자 단서는 소문자로 준다.
+
+    문장 맨 앞이라 대문자인 것을 그대로 보여 주면, 자리 때문에 생긴 모양을
+    철자로 가르치게 된다. 채점은 어차피 대소문자를 가리지 않는다.
+    """
+    hints = spell_hints(_spelled("It", "____ is a book."))
+    assert all("I" not in h.shape for h in hints)
+    assert hints[0].shape == "_ _"
+
+
+def test_spell_hint_keeps_punctuation_visible():
+    """아포스트로피는 철자가 아니라 짜임이다. 가리면 오히려 어렵다."""
+    hints = spell_hints(_spelled("don't"))
+    assert all("'" in h.shape for h in hints)
+
+
+def test_spell_hint_counts_only_letters():
+    """`don't` 는 다섯 글자가 아니라 네 글자다."""
+    assert spell_hints(_spelled("don't"))[0].text_ko == "네 글자예요."
+
+
+def test_letter_particles_follow_the_korean_reading():
+    """`'n' 으로` 이고 `'a' 로` 다. 한글로 읽었을 때 받침이 남는 것만 '으로'.
+
+    받침이 ㄹ 인 `l`(엘)·`r`(알)은 '으로' 를 안 쓴다 — '엘로' 이지 '엘으로' 가
+    아니다. 그래서 조사 둘이 서로 다른 집합을 본다.
+    """
+    assert _with_ro("n") == "'n' 으로"
+    assert _with_ro("m") == "'m' 으로"
+    assert _with_ro("l") == "'l' 로"
+    assert _with_ro("r") == "'r' 로"
+    assert _with_ro("a") == "'a' 로"
+    assert _with_ro("s") == "'s' 로"
+    assert _with_yeyo("n") == "'n' 이에요"
+    assert _with_yeyo("l") == "'l' 이에요"
+    assert _with_yeyo("a") == "'a' 예요"
+
+
+def test_spell_hints_reach_the_learner():
+    """응답에 실려 나가는지까지 본다 — 만들어 놓고 안 보내면 없는 것과 같다."""
+    from fastapi.testclient import TestClient
+
+    from app.main import app
+
+    body = TestClient(app).get("/cloze", params={"count": 5, "level": ""}).json()
+    assert body
+    assert any(row["spell_hints"] for row in body)
+    for row in body:
+        for hint in row["spell_hints"]:
+            assert set(hint) == {"step", "label_ko", "text_ko", "shape"}
