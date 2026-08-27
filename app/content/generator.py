@@ -45,11 +45,10 @@ TOPIC_SCENES: dict[str, str] = {
     "home": "talking about home, devices and deliveries",
     "talk": "small talk and keeping a conversation going",
     "number": "saying numbers out loud — prices, times, quantities",
-    "weekday": "making plans on a certain day of the week",
-    "month": "saying dates — months and days of the month",
+    "date": "saying dates and times — months, weekdays, today and tomorrow, the clock",
+
     "ordinal": "saying which one in order — a date, a floor, a turn",
 }
-
 
 # 트랙 -> 예문을 쓸 상황. 장면 묶음(TOPIC_SCENES)과 같은 자리에 같은 방식으로 들어간다.
 #
@@ -69,7 +68,6 @@ TRACK_SCENES: dict[str, str] = {
     ),
 }
 
-
 @dataclass
 class GenerationResult:
     word: str
@@ -80,7 +78,6 @@ class GenerationResult:
     def ok(self) -> bool:
         return self.entry is not None
 
-
 def _repair_note(target: str, exc: Exception) -> str:
     """직전 실패를 그대로 알려 주는 재시도 지시문."""
     return (
@@ -89,7 +86,6 @@ def _repair_note(target: str, exc: Exception) -> str:
         f'or more common word. Describe "{target}" itself. '
         "Reply again with ONLY the JSON object required by the schema."
     )
-
 
 class WordGenerator:
     def __init__(self, client: LLMClient) -> None:
@@ -164,7 +160,6 @@ class WordGenerator:
         with ThreadPoolExecutor(max_workers=workers) as pool:
             return list(pool.map(lambda w: self.generate_one(w, packs.get(w), track), words))
 
-
 @dataclass(frozen=True)
 class GlossTask:
     """해석을 붙일 대상 하나. DB 행을 그대로 넘기지 않는다.
@@ -186,7 +181,6 @@ class GlossTask:
     # 기본값이 빈 문자열인 이유: 노트 없이 만든 GlossTask 도 그대로 돌아야 한다.
     usage_note: str = ""
 
-
 @dataclass
 class GlossResult:
     word: str
@@ -197,7 +191,6 @@ class GlossResult:
     def ok(self) -> bool:
         return self.example_ko is not None
 
-
 def _gloss_repair_note(example: str, exc: Exception) -> str:
     """해석 재시도 지시문. 무엇이 틀렸는지 그대로 알려 준다."""
     return (
@@ -207,7 +200,6 @@ def _gloss_repair_note(example: str, exc: Exception) -> str:
         "and never repeat the English. "
         "Reply again with ONLY the JSON object required by the schema."
     )
-
 
 class GlossGenerator:
     """이미 저장된 예문에 한국어 해석만 붙인다.
@@ -285,7 +277,6 @@ class GlossGenerator:
         with ThreadPoolExecutor(max_workers=workers) as pool:
             return list(pool.map(self.gloss_one, tasks))
 
-
 def declares_no_rank(path: Path) -> bool:
     """목록이 스스로 "내 순서는 빈도가 아니다" 라고 밝혔는가.
 
@@ -303,10 +294,8 @@ def declares_no_rank(path: Path) -> bool:
             return True
     return False
 
-
 _TRACK_DIRECTIVE = re.compile(r"^#\s*track\s*:\s*([a-z][a-z0-9_-]{0,15})\s*$", re.I)
 _RANK_OFFSET_DIRECTIVE = re.compile(r"^#\s*rank-offset\s*:\s*(\d{1,6})\s*$", re.I)
-
 
 def load_track(path: Path) -> str | None:
     """목록이 선언한 트랙. `# track: toeic` 한 줄이면 그 파일은 토익 목록이다.
@@ -326,7 +315,6 @@ def load_track(path: Path) -> str | None:
             return found.group(1).lower()
     return None
 
-
 def load_rank_offset(path: Path) -> int:
     """`# rank-offset: 1250` — 이 목록의 순위를 그만큼 뒤에서 시작한다.
 
@@ -344,7 +332,6 @@ def load_rank_offset(path: Path) -> int:
             return int(found.group(1))
     return 0
 
-
 def _header(path: Path) -> list[str]:
     """맨 위 주석 구역의 줄들. 선언은 여기서만 읽는다(declares_no_rank 와 같은 규칙)."""
     lines: list[str] = []
@@ -357,9 +344,7 @@ def _header(path: Path) -> list[str]:
         lines.append(stripped)
     return lines
 
-
 _TOPIC_DIRECTIVE = re.compile(r"^#\s*topic\s*:\s*([a-z][a-z0-9_-]{0,31})\s*$", re.I)
-
 
 def load_topics(path: Path) -> dict[str, str]:
     """표제어 -> 장면 묶음. `# topic: cafe` 아래 나오는 단어들이 그 묶음이다.
@@ -383,7 +368,6 @@ def load_topics(path: Path) -> dict[str, str]:
         if word and current and word not in topics:
             topics[word] = current
     return topics
-
 
 def load_wordlist(path: Path, *, limit: int | None = None) -> list[str]:
     """단어 목록 파일을 읽는다. 한 줄에 한 단어, `#` 로 시작하면 주석.

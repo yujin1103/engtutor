@@ -1,0 +1,12 @@
+id: train_ticket
+title: 기차표 사기
+category: getting_around
+level: A2
+ai_role: a station clerk selling tickets at a counter
+situation: 기차역 매표소예요. 다음 기차표를 사려고 줄을 섰습니다.
+goal: 가는 곳과 시간을 말하고 표를 사기
+opening_line: Hello. Where are you going today?
+opening_line_ko: 안녕하세요. 오늘 어디 가세요?
+opening_say_en: To Busan, please.
+opening_say_more: One ticket to Busan, please.
+opening_hint_ko: 어디 가냐고 물었어요. To Busan, please. 는 '부산으로 주세요' 라는 뜻이에요.

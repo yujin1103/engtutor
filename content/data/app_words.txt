@@ -110,12 +110,21 @@ hundred
 thousand
 
 # --- 달 (닫힌 부류. 예약·항공권에 날짜가 반드시 나온다) ---
-# topic: month
+# --- 날짜·시간 (닫힌 부류가 많아 채워 넣는다) ---
+#
+# `march` 와 `may` 는 여기 없다. 두 낱말의 행은 이미 다른 뜻이 차지하고 있다 —
+# `march` 는 '행진하다'(빈도 2450), `may` 는 '~해도 된다'(빈도 96). 표 한 행에
+# 표제어 하나라 달 이름을 따로 둘 수 없고, 억지로 이 팩에 넣으면 날짜를 배우러 온
+# 학습자에게 '행진하다' 가 빈칸으로 나간다. 대신 두 낱말의 설명에 달 이름도 같은
+# 철자라는 것을 적어 두었다.
+#
+# 달 이름만으로는 팩이 되지 않는다. 사용자가 그렇게 말했다 — "날짜 부분은 1월부터
+# 12월까지밖에 안 나오는 게 아쉽다". 날짜를 말하려면 요일과 오늘·내일, 시각까지
+# 한자리에 있어야 한다. 그래서 month·weekday 를 이 팩으로 합치고 시간 낱말을 더했다.
+# topic: date
 january
 february
-march
 april
-may
 june
 july
 august
@@ -123,6 +132,33 @@ september
 october
 november
 december
+monday
+tuesday
+wednesday
+thursday
+friday
+saturday
+sunday
+today
+tomorrow
+yesterday
+tonight
+weekend
+week
+month
+year
+date
+appointment
+schedule
+morning
+afternoon
+evening
+noon
+midnight
+o'clock
+hour
+minute
+half
 
 # --- 서수 (닫힌 부류. 날짜와 층수에 쓴다 — "the third floor") ---
 # topic: ordinal
@@ -148,12 +184,3 @@ nineteenth
 twentieth
 thirtieth
 
-# --- 요일 (닫힌 부류라 채워 넣는다) ---
-# topic: weekday
-monday
-tuesday
-wednesday
-thursday
-friday
-saturday
-sunday

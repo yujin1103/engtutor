@@ -1,0 +1,12 @@
+id: takeout_order
+title: 포장 주문하기
+category: food
+level: A1
+ai_role: a cheerful staff member at a takeout counter
+situation: 음식을 사서 가져가려고 해요. 매장에서 먹지 않습니다.
+goal: 포장이라고 말하고 주문 끝내기
+opening_line: Hello! For here or to go?
+opening_line_ko: 안녕하세요! 드시고 가세요, 가져가세요?
+opening_say_en: To go, please.
+opening_say_more: To go, please. One sandwich.
+opening_hint_ko: 여기서 먹을지 가져갈지 물었어요. To go, please. 는 '포장해 주세요' 라는 뜻이에요.

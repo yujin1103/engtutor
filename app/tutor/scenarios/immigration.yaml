@@ -1,0 +1,12 @@
+id: immigration
+title: 입국 심사 받기
+category: getting_around
+level: A2
+ai_role: a calm immigration officer at the airport
+situation: 비행기에서 내려 입국 심사대 앞에 섰어요. 여권을 냅니다.
+goal: 온 이유와 머무는 기간을 짧게 답하기
+opening_line: Passport, please. What is the purpose of your visit?
+opening_line_ko: 여권 주세요. 방문 목적이 무엇인가요?
+opening_say_en: Travel.
+opening_say_more: I'm here for travel, for one week.
+opening_hint_ko: 왜 왔냐고 물었어요. Travel. 은 '여행이요' 라는 뜻이에요.

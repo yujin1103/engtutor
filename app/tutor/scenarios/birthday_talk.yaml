@@ -1,0 +1,12 @@
+id: birthday_talk
+title: 생일 이야기하기
+category: people
+level: A1
+ai_role: a curious classmate making small talk after class
+situation: 수업이 끝나고 옆자리 사람이 말을 걸어요. 생일 이야기가 나왔어요.
+goal: 자기 생일이 몇 월인지 말하고 상대 생일도 물어보기
+opening_line: By the way, when is your birthday?
+opening_line_ko: 그런데 생일이 언제예요?
+opening_say_en: It's in May.
+opening_say_more: My birthday is in May. When is yours?
+opening_hint_ko: 생일이 언제냐고 물었어요. It's in May. 는 '5월이에요' 라는 뜻이에요.

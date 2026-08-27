@@ -91,10 +91,7 @@ cloudy
 commute
 foggy
 humid
-midnight
 nap
-noon
-o'clock
 rainy
 slippery
 snowy

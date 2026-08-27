@@ -1,0 +1,12 @@
+id: hotel_checkout
+title: 호텔에서 체크아웃하기
+category: stay
+level: A1
+ai_role: a polite front desk clerk in the morning
+situation: 아침에 호텔을 떠나려고 프런트에 왔어요.
+goal: 체크아웃하고 짐을 잠깐 맡기기
+opening_line: Good morning! Checking out?
+opening_line_ko: 좋은 아침이에요! 체크아웃하시나요?
+opening_say_en: Yes, room 302.
+opening_say_more: Yes. Room 302. Can I leave my bags here?
+opening_hint_ko: 체크아웃하냐고 물었어요. Yes, room 302. 는 '네, 302호예요' 라는 뜻이에요.

@@ -1,0 +1,12 @@
+id: allergy_order
+title: 못 먹는 음식 말하기
+category: food
+level: A2
+ai_role: an attentive waiter taking an order at a small restaurant
+situation: 메뉴를 고르는데 못 먹는 재료가 있어요. 미리 말해야 합니다.
+goal: 알레르기나 못 먹는 것을 말하고 다른 메뉴를 추천받기
+opening_line: Are you ready to order?
+opening_line_ko: 주문하시겠어요?
+opening_say_en: I can't eat nuts.
+opening_say_more: I'm allergic to nuts. What do you recommend?
+opening_hint_ko: 주문할 준비가 됐냐고 물었어요. I can't eat nuts. 는 '견과류를 못 먹어요' 라는 뜻이에요.

@@ -1,0 +1,12 @@
+id: asking_time
+title: 지금 몇 시인지 묻기
+category: people
+level: A1
+ai_role: a kind stranger waiting at a bus stop
+situation: 버스 정류장에서 시계가 없어 시간을 모르겠어요. 옆 사람에게 물어봅니다.
+goal: 시간을 묻고, 들은 시각을 알아듣기
+opening_line: Oh, hello. Are you waiting for the bus too?
+opening_line_ko: 어, 안녕하세요. 버스 기다리세요?
+opening_say_en: Yes. What time is it?
+opening_say_more: Yes, I am. Excuse me, what time is it now?
+opening_hint_ko: 버스를 기다리냐고 물었어요. What time is it? 은 '지금 몇 시예요?' 라는 뜻이에요.

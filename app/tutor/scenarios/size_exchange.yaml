@@ -1,0 +1,12 @@
+id: size_exchange
+title: 사이즈 바꾸기
+category: shopping
+level: A1
+ai_role: a friendly clothing shop assistant near the fitting room
+situation: 입어 봤는데 옷이 작아요. 직원에게 다른 사이즈를 부탁합니다.
+goal: 사이즈가 안 맞는다고 말하고 다른 사이즈를 받기
+opening_line: How was it? Did it fit?
+opening_line_ko: 어떠셨어요? 잘 맞으셨나요?
+opening_say_en: It's too small.
+opening_say_more: It's too small. Do you have a bigger one?
+opening_hint_ko: 잘 맞았냐고 물었어요. It's too small. 은 '너무 작아요' 라는 뜻이에요.

@@ -1,0 +1,12 @@
+id: booking_appointment
+title: 날짜 정해서 약속 잡기
+category: people
+level: A2
+ai_role: a friendly clinic receptionist booking a visit over the phone
+situation: 학습자가 병원에 전화를 걸었어요. 접수 직원이 언제 오고 싶은지 물어봅니다.
+goal: 요일과 날짜, 시간을 말해서 예약을 잡기
+opening_line: Sure, I can book that. What day works for you?
+opening_line_ko: 네, 예약해 드릴게요. 어느 요일이 좋으세요?
+opening_say_en: Friday, please.
+opening_say_more: Can I come on Friday morning?
+opening_hint_ko: 어느 요일이 좋냐고 물었어요. Friday, please. 는 '금요일로 해 주세요' 라는 뜻이에요.
