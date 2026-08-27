@@ -409,6 +409,16 @@ def screen(row: WordLike) -> list[Finding]:
                 )
             )
 
+    repeated = repeated_meaning(row.meaning_ko)
+    if repeated:
+        out.append(
+            Finding(
+                "meaning_repeats",
+                "medium",
+                f"뜻에 '{repeated}' 가 두 번 들어 있어요 — 한 자리가 비어 나온 거예요",
+            )
+        )
+
     if not has_hangul(row.usage_note):
         out.append(Finding("usage_not_korean", "high", "설명이 한국어가 아니에요"))
     else:
@@ -503,6 +513,35 @@ def screen(row: WordLike) -> list[Finding]:
         out.append(Finding("usage_note_too_long", "low", f"설명이 {len(row.usage_note)}자예요"))
 
     return out
+
+
+_MEANING_SPLIT = re.compile(r"[,;·/]")
+
+
+def repeated_meaning(meaning: str) -> str | None:
+    """뜻 칸에 같은 말이 두 번 들어 있으면 그 말을 돌려준다.
+
+    뜻은 쉼표로 여러 갈래를 적는 칸인데(`빌리다, 대여하다`), 두 자리에 같은 말이
+    들어가면 갈래를 하나 적은 것과 다르지 않다. 그러면서 학습자에게는 "두 가지 뜻이
+    있다"고 말하는 셈이라 더 나쁘다.
+
+    실측으로 출제되는 5,083개 중 36개가 그랬다. `very` 가 '매우, 매우', `say` 가
+    '말하다, 말하다 (말의 내용을 강조할 때)', `it` 이 '그것, 그것' 이었다. 빈도 1위
+    `be` 부터 걸리므로 학습자가 앱을 켜자마자 만난다.
+
+    괄호 안은 떼고 본다 — '창백한 (색상), 창백한 (얼굴)' 은 괄호로 갈래를 나눈 것처럼
+    보이지만 앞말이 같아서 목록으로는 같은 말이 두 번이다. 실제로 `pale` 이 그랬다.
+    """
+    bare = _PATTERN_OPTIONAL.sub(" ", meaning or "")
+    seen: set[str] = set()
+    for piece in _MEANING_SPLIT.split(bare):
+        token = piece.strip()
+        if not token:
+            continue
+        if token in seen:
+            return token
+        seen.add(token)
+    return None
 
 
 def screen_all(rows: list[WordLike]) -> dict[str, list[Finding]]:

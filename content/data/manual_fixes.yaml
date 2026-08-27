@@ -1870,3 +1870,161 @@
   reason: "뜻이 '중요한, 중요한' 으로 같은 말을 두 번 적어 두었다."
   meaning_ko: "중요한, 소중한"
 
+
+# ── 뜻 칸에 같은 말이 두 번 든 36개 (2026-08-27) ────────────────────
+#
+# `very` 가 '매우, 매우', `say` 가 '말하다, 말하다 (말의 내용을 강조할 때)',
+# `it` 이 '그것, 그것' 이었다. 뜻은 쉼표로 갈래를 적는 칸인데 두 자리에 같은 말이
+# 들어가면 갈래를 하나 적은 것과 다르지 않고, 그러면서 학습자에게는 "두 가지 뜻이
+# 있다"고 말하는 셈이라 더 나쁘다. 빈도 1위 `be` 부터 걸려서 앱을 켜자마자 만난다.
+#
+# 열어 보니 뜻이 아예 틀린 것도 섞여 있었다 — `runner` 가 '달리다(운동), 달리다
+# (경주), 실행하다' 로 **사람이 아니라 동작**이었고, `ray` 는 '레이(빛의 줄기)' 로
+# 옮기다 만 말이었다.
+
+- word: "be"
+  reason: "뜻이 '되다, 있는다 (존재하다), 되다 (상태)' 로 '되다' 가 두 번이었고 '있는다' 는 없는 활용이다."
+  meaning_ko: "이다, 있다"
+
+- word: "it"
+  reason: "뜻이 '그것, 그것' 이었다."
+  meaning_ko: "그것"
+
+- word: "they"
+  reason: "뜻이 '그들, 그녀들, 그들' 로 '그들' 이 두 번이었다. 영어 they 는 남녀를 가리지 않아서 '그녀들' 을 따로 적을 이유도 없다."
+  meaning_ko: "그들, 그 사람들"
+
+- word: "say"
+  reason: "뜻이 '말하다, 말하다 (말의 내용을 강조할 때)' 로 같은 말이 두 번이었다."
+  meaning_ko: "말하다 (한 말을 그대로 옮길 때)"
+
+- word: "make"
+  reason: "뜻이 '만들다, 만들다 (음식, 물건 등)' 로 같은 말이 두 번이었다."
+  meaning_ko: "만들다 (음식이나 물건을)"
+
+- word: "very"
+  reason: "뜻이 '매우, 매우' 였다."
+  meaning_ko: "매우, 아주"
+
+- word: "most"
+  reason: "뜻이 '대부분, 대부분' 이었다."
+  meaning_ko: "대부분의, 가장"
+
+- word: "always"
+  reason: "뜻이 '항상, 항상' 이었다."
+  meaning_ko: "항상, 늘"
+
+- word: "almost"
+  reason: "뜻이 '거의, 거의' 였다."
+  meaning_ko: "거의, 하마터면"
+
+- word: "continue"
+  reason: "뜻이 '계속하다, 계속하다' 였다."
+  meaning_ko: "계속하다, 이어서 하다"
+
+- word: "forward"
+  reason: "뜻이 '앞으로, 앞으로 (방향), 전달하다' 로 '앞으로' 가 두 번이었다. 예문은 이메일을 전달하는 쓰임이라 그쪽을 앞에 뒀다."
+  meaning_ko: "전달하다; 앞으로 (방향)"
+
+- word: "especially"
+  reason: "뜻이 '특히, 특히' 였다."
+  meaning_ko: "특히, 그중에서도"
+
+- word: "claim"
+  reason: "뜻이 '주장하다, 주장하다 (특히 권리나 책임을)' 로 같은 말이 두 번이었다."
+  meaning_ko: "주장하다 (사실이라고 우기다)"
+
+- word: "particularly"
+  reason: "뜻이 '특히, 특히' 였다."
+  meaning_ko: "특히, 유난히"
+
+- word: "art"
+  reason: "뜻이 '예술, 예술' 이었다."
+  meaning_ko: "예술, 미술"
+
+- word: "runner"
+  reason: "뜻이 '달리다 (운동), 달리다 (경주), 실행하다' 였다 — runner 는 동작이 아니라 **달리는 사람**이다. 예문 'The project runner is late again.' 도 영어에서 잘 쓰지 않는 말이라 함께 바꿨다."
+  meaning_ko: "달리는 사람, 주자"
+  pattern: "a/the + runner"
+  example: "The runner won the race."
+  usage_note: "달리기를 하는 사람이 runner 예요. 동사 '달리다' 는 run 이고, 경주 자체는 race 라고 해요."
+
+- word: "nearly"
+  reason: "뜻이 '거의, 거의' 였다."
+  meaning_ko: "거의, 하마터면"
+
+- word: "positive"
+  reason: "뜻이 '긍정적인, 긍정적인' 이었다."
+  meaning_ko: "긍정적인, 확신하는"
+
+- word: "ray"
+  reason: "뜻이 '레이(빛의 줄기), 레이(물결의 줄기)' 로 '레이' 가 두 번이었고, '레이' 는 ray 를 옮기다 만 말이다."
+  meaning_ko: "광선, 빛줄기"
+
+- word: "loudly"
+  reason: "뜻이 '크게, 크게 (말하거나 소리를 내는 방식)' 로 같은 말이 두 번이었다."
+  meaning_ko: "크게, 큰 소리로"
+
+- word: "committee"
+  reason: "뜻이 '위원회, 위원회' 였다."
+  meaning_ko: "위원회"
+
+- word: "highly"
+  reason: "뜻이 '매우, 매우 (형용사 앞에 쓰는 부사어)' 로 같은 말이 두 번이었다."
+  meaning_ko: "매우, 대단히"
+
+- word: "extremely"
+  reason: "뜻이 '매우, 매우' 였다."
+  meaning_ko: "극도로, 아주"
+
+- word: "affair"
+  reason: "뜻이 '사건, 일, 사건 (보통 중요한 일)' 로 '사건' 이 두 번이었다."
+  meaning_ko: "일, 사건 (보통 중요한)"
+
+- word: "atmosphere"
+  reason: "뜻이 '분위기, 대기 (공기), (특정 장소의) 분위기' 로 '분위기' 가 두 번이었다."
+  meaning_ko: "분위기; 대기 (공기)"
+
+- word: "yield"
+  reason: "뜻이 '양보하다, 양보하다 (다른 사람의 요구에 따르다)' 로 같은 말이 두 번이었다."
+  meaning_ko: "양보하다, 따르다"
+
+- word: "diverse"
+  reason: "뜻이 '다양한, 다양한' 이었다."
+  meaning_ko: "다양한, 여러 가지의"
+
+- word: "soil"
+  reason: "뜻이 '흙, 흙' 이었다."
+  meaning_ko: "흙, 토양"
+
+- word: "virtually"
+  reason: "뜻이 '거의, 거의 (실제로는 아님)' 로 같은 말이 두 번이었다."
+  meaning_ko: "사실상, 거의"
+
+- word: "contend"
+  reason: "뜻이 '주장하다, 주장하다 (논리적으로)' 로 같은 말이 두 번이었다."
+  meaning_ko: "주장하다 (근거를 들어)"
+
+- word: "hugely"
+  reason: "뜻이 '매우, 매우 (강조해서)' 로 같은 말이 두 번이었다."
+  meaning_ko: "엄청나게, 크게"
+
+- word: "allege"
+  reason: "뜻이 '주장하다 (증거가 없이), 주장하다 (비난의 의미로)' 로 '주장하다' 가 두 번이었다."
+  meaning_ko: "주장하다 (증거 없이 남을 탓하며)"
+
+- word: "greenhouse"
+  reason: "뜻이 '온실, 온실' 이었다."
+  meaning_ko: "온실"
+
+- word: "barely"
+  reason: "뜻이 '거의 없이, 거의 없이' 였다."
+  meaning_ko: "간신히, 겨우"
+
+- word: "pale"
+  reason: "뜻이 '연한, 창백한 (색상), 창백한 (얼굴)' 로 '창백한' 이 두 번이었다."
+  meaning_ko: "연한 (색); 창백한 (얼굴)"
+
+- word: "confer"
+  reason: "뜻이 '논의하다, 논의하다 (다른 사람과 함께)' 로 같은 말이 두 번이었다."
+  meaning_ko: "상의하다 (여럿이 함께)"

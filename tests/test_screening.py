@@ -15,6 +15,7 @@ from app.content.schemas import WordEntry
 from app.content.screening import (
     mentions,
     pattern_forms,
+    repeated_meaning,
     risk_score,
     screen,
     screen_all,
@@ -81,6 +82,27 @@ def test_english_inside_a_korean_note_is_not_foreign_script():
     """설명은 영어 낱말을 인용해야 하는 칸이다 — 그것까지 막으면 검사가 못 쓴다."""
     codes = _codes(screen(_row(usage_note="빌려주는 쪽은 lend 예요. 'Can I borrow this?' 처럼 써요.")))
     assert "usage_foreign_script" not in codes
+
+
+def test_a_meaning_that_says_the_same_thing_twice_is_flagged():
+    """뜻은 쉼표로 갈래를 적는 칸이다. 두 자리에 같은 말이 들어가면 갈래가 아니다.
+
+    실측: 출제되는 5,083개 중 36개가 그랬다. `very` 가 '매우, 매우', `it` 이
+    '그것, 그것' 이었고 빈도 1위 `be` 부터 걸린다 — 앱을 켜자마자 만난다는 뜻이다.
+    """
+    assert repeated_meaning("매우, 매우") == "매우"
+    assert repeated_meaning("말하다, 말하다 (말의 내용을 강조할 때)") == "말하다"
+    # 괄호로 갈래를 나눈 것처럼 보여도 앞말이 같으면 같은 말이 두 번이다(`pale`).
+    assert repeated_meaning("연한, 창백한 (색상), 창백한 (얼굴)") == "창백한"
+    assert "meaning_repeats" in _codes(screen(_row(meaning_ko="빌리다, 빌리다")))
+
+
+def test_a_meaning_with_real_branches_is_left_alone():
+    """갈래를 여럿 적는 것은 정상이다. 그것까지 막으면 검사가 못 쓰인다."""
+    assert repeated_meaning("빌리다 (내가 빌려 오는 쪽)") is None
+    assert repeated_meaning("전달하다; 앞으로 (방향)") is None
+    assert repeated_meaning("") is None
+    assert "meaning_repeats" not in _codes(screen(_row()))
 
 
 def test_two_confusable_words_may_not_share_the_same_hint():
