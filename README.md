@@ -1098,6 +1098,35 @@ docker compose exec api python content/apply_fixes.py --glosses --dry-run   # �
 docker compose exec api python content/apply_fixes.py --glosses             # 적용
 ```
 
+##### 고친 것만 기록하면 검수를 이어서 못 한다
+
+교정 YAML 두 개는 **고친 것만** 담는다. 그래서 "읽었는데 고칠 데가 없었다" 는 판정이
+어디에도 안 남았다 — 사람이 쓴 시간의 절반이 흔적 없이 사라진다.
+
+실제로 잃었다. 빈도 상위 150개를 읽다 중간에 멈췄더니 **어디까지 읽었는지 알 방법이
+없어** 처음부터 다시 읽어야 했다. 고친 것은 YAML 에 있었지만, 읽고 통과시킨 것은
+없는 것과 구별이 안 됐다.
+
+그래서 대장을 따로 둔다. `content/data/review_log.yaml` 은 구간(pass)마다 그때 읽은
+표제어를 통째로 적는다. 무엇을 고쳤는지는 여전히 교정 YAML 이 갖고, 대장은
+**무엇을 읽었는가**만 갖는다.
+
+```powershell
+docker compose exec api python content/review_ledger.py --status         # 진도
+docker compose exec api python content/review_ledger.py --show 40        # 안 읽은 40개를 항목째로
+docker compose exec api python content/review_ledger.py --record top150-a --what "빈도 1~40위" --words-from /tmp/w.txt
+```
+
+과거 구간 중 되살릴 수 있었던 것은 둘뿐이다 — 팩 단위로 통째로 읽은 장면 팩 463개와,
+교정 YAML 에 이름이 오른 낱말. 검사기가 걸어 준 것만 골라 읽은 구간의 무변경 판정은
+이미 사라진 뒤였다.
+
+**`- word: on` 함정이 여기서 특히 나쁘다.** 따옴표가 없으면 PyYAML 이 불리언 `True` 로
+읽고, `str()` 하면 `'true'` 가 된다. 대장에서는 이게 **있지도 않은 낱말을 읽었다고
+기록하면서 진짜 `on` 은 안 읽은 줄도 모르게** 만든다 — 검수를 건너뛰는 방향으로
+조용히 틀린다. 그래서 불리언으로 읽힌 표제어는 되살리지 않고 버리며 알린다
+(`True` 가 `on` 이었는지 `yes` 였는지는 복원할 수 없다).
+
 ##### 같은 검사를 거꾸로 쓰면 틀린 `meaning_ko` 탐지기가 된다
 
 교정본 32건을 넣으면서 **자동 검사 4종을 교정본에도 돌렸다.** 사람이 고친 해석인데도
@@ -1724,7 +1753,7 @@ app/
     ├── loader.py      시나리오·프롬프트 로딩
     └── service.py     프롬프트 조립 → LLM → 검증 → 1회 재시도
 ui/chat_app.py         Streamlit 채팅 UI
-content/               batch_generate.py · screen_words.py · review_app.py
+content/               batch_generate.py · screen_words.py · review_ledger.py · review_app.py
                        measure_pattern_coverage.py · data/
 tests/                 스키마·시나리오·DB·리포트·콘텐츠·선별·스트리밍·백엔드 전환
 tests/security/        인젝션 케이스 14종 + 판정 로직 (표와 공유)
