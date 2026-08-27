@@ -149,6 +149,29 @@ def test_a_gloss_the_batch_would_wipe_is_flagged(db):
 
 
 # ------------------------------------------------------------------ 데이터 파일
+def test_the_batch_does_not_wipe_a_gloss_a_human_wrote():
+    """이 빗장이 없으면 배치가 사람의 판단을 조용히 지운다.
+
+    실제로 그럴 뻔했다. 손으로 쓴 해석 17개가 `reject_unrelated_gloss` 에 걸렸는데
+    전부 **맞는 해석인데 저장된 뜻과 글자가 안 겹치는** 경우였다 — `journalist` 의
+    해석 '언론인' 과 저장된 뜻 '기자', `classroom` 의 '교실' 과 '수업을 듣는 공간'.
+    그 검사는 뜻을 다른 말로 옮길 수 있는 낱말에서 헛짚는데, 걸린 해석은 배치가
+    비우고 LLM 으로 다시 채운다.
+    """
+    import sys as _sys
+    from pathlib import Path as _Path
+
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "content"))
+    import batch_generate
+
+    kept = batch_generate.human_glossed()
+    assert "pork" in kept  # 첫 검수에서 '소고기 버거' 를 고친 낱말
+    assert len(kept) > 100
+
+    # 파일이 없어도 배치가 멈추면 안 된다.
+    assert batch_generate.human_glossed(_Path("없는파일.yaml")) == set()
+
+
 def test_every_recorded_gloss_fix_is_shaped_right():
     """33건 중 하나가 오타로 말없이 건너뛰어지는 것을 막는다."""
     fixes = yaml.safe_load(GLOSS_FIXES.read_text(encoding="utf-8"))

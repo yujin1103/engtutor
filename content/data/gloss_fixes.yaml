@@ -202,8 +202,8 @@
   reason: "'바스로브'는 한국어에 없는 말이에요. bathrobe 를 옮기다 만 로마자라 meaning_ko 대로 '목욕 가운'이라고 써야 해요."
 
 - word: bathroom
-  example_ko: "화장실이 어디예요?"
-  reason: "usage_note 의 \"the 를 붙이면 욕실, 안 붙이면 화장실\"은 사실이 아니에요. 관사로 뜻이 갈리지 않아요. 해석의 '어디에요'는 '어디예요'가 맞는 표기이고, meaning_ko 도 예문 뜻(화장실)과 어긋나요."
+  example_ko: "우리 새집에는 큰 욕실이 하나 있어요."
+  reason: "관사로 욕실과 화장실이 갈린다는 설명은 사실이 아니었다. 그리고 해석이 restroom 과 글자까지 똑같아(둘 다 '화장실이 어디예요?') 답이 갈리지 않아서, bathroom 에만 있는 욕실 뜻으로 예문을 옮겼다."
 
 - word: battery
   example_ko: "제 휴대폰 배터리가 다 됐어요."
@@ -796,3 +796,838 @@
 - word: jam
   example_ko: "지하철이 사람으로 꽉 찼어요."
   reason: "뜻을 '교통 체증; 꽉 막히다' 로 고치고 나니 옛 해석 '붐비네요' 가 그 뜻과 한 글자도 겹치지 않아 자동 검사에 걸렸다. 되짚기가 잡아 준 자리다."
+
+# ── 토익 해석 보수 · 단서가 겹치던 쌍 가르기 (2026-08-27) ─────────
+#
+# 두 가지를 한꺼번에 고친다.
+#
+# 1. **해석이 아예 없던 토익 낱말 86개.** 백필이 장면 팩과 빈도 상위 일반
+#    어휘만 채우고 토익 트랙을 안 채웠다. 배치를 다시 돌리니 92개가 검사에
+#    걸렸는데 걸린 해석이 멀쩡했다 — `configuration` 의 해석 '서버 설정을
+#    확인하세요' 가 저장된 뜻 '구성, 배열' 과 글자가 안 겹친다는 이유였다.
+#    되짚기 검사는 구체 명사에서는 듣지만 추상 어휘에서는 헛짚는다. 그래서 손으로 썼다.
+#
+# 2. **같은 단서로 답이 둘이던 쌍.** 사용자가 신고했다 — postpone 과
+#    reschedule 의 해석이 둘 다 '미루다' 여서 어느 낱말을 쓰라는 건지 알 수 없었다.
+#    `confused_with` 를 잣대로 훑어 92쌍을 찾아 갈랐다. 그중 14쌍은 **한 문장에
+#    둘 다 들어가서**(`The book is ___ the table.` 에는 on 도 over 도 된다)
+#    해석으로는 갈 수 없어 예문을 옮겼다.
+
+- word: about
+  example_ko: "이 책은 한국 역사에 관한 내용이에요."
+  reason: "'It costs ___ 10 dollars.' 에는 roughly 도 about 도 똑같이 들어간다 — 이 뜻에서 둘은 정말 바꿔 쓸 수 있어서 해석으로는 갈릴 수 없다. about 에만 있고 roughly 에는 없는 '~에 관한' 뜻으로 예문을 바꿨다. a 의 '~됩니다' 는 해요체로 고쳤다."
+
+- word: accrue
+  example_ko: "고객님 계좌에 매달 이자가 붙어요."
+  reason: "'늘어나다'는 increase, '쌓이다'는 accumulate 로 읽히니 이자에만 쓰는 '붙다'로 갈랐고, 저장된 뜻 '적립되다'는 포인트 쪽 말이라 고쳤어요."
+
+- word: activate
+  example_ko: "먼저 계정을 활성화해 주세요."
+  reason: "'활성화하다'는 계정을 쓸 수 있게 켜는 뜻이라 단순히 시작하는 start와 갈려요. (검증: 해석은 그대로 좋아요. 그런데 저장된 뜻 '시작시키다'가 confused_with의 start와 그대로 겹치고 우리말로도 어색한데 앞사람이 손대지 않았어요. usage_fix에서 start와 갈라 놓았으니 뜻에서도 그 말을 빼야 앞뒤가 맞아요.)"
+
+- word: adequately
+  example_ko: "그 보고서는 필요한 만큼 준비되지 않았어요."
+  reason: "sufficiently 와 뜻이 가까워 '필요한 만큼'을 붙여 요구 수준을 채운다는 결을 살렸고, properly(제대로)와도 갈리게 했어요. 저장된 설명이 adequately 를 형용사라고 해서 고쳤어요. (검증: 저장된 설명이 adequately 를 형용사라 한 걸 고친 건 옳아요. 하지만 해석에 '충분히'를 남겨 두면 confused_with 의 sufficiently 가 그대로 답이 돼요 — '충분히'는 sufficiently 의 자리예요. '충분히'를 덜어 내고 '필요한 만큼'만 남겨 갈림을 살렸고, 저장된 뜻 '충분히, 충분하게'도 같은 이유로 옮겼어요.)"
+
+- word: another
+  example_ko: "질문 하나 더 있으신가요?"
+  reason: "other 는 뒤에 복수(questions)가 오는 '나머지 여럿', another 는 '하나 더'다. a 는 '그 밖에'로 나머지를 가리키게 하고, b 는 '하나 더'로 수를 못박아 갈랐다. 원래 a 해석 '다른 질문 있으십니까?' 는 이 앱의 해요체가 아니라 함께 고쳤다."
+
+- word: anybody
+  example_ko: "혹시 답 아시는 분 있나요?"
+  reason: "anybody 와 anyone 은 뜻이 완전히 같아서 어떤 예문을 써도 서로 들어간다 — 해석으로 갈릴 수 있는 쌍이 아니다. 다만 두 해석의 '누구나 ~ 아시나요?' 는 오역이라(anybody 는 '누구 한 사람이라도' 다) 그것만 바로잡았다. 연습장에서는 둘 중 하나를 빼야 한다."
+
+- word: anyone
+  example_ko: "혹시 길 아시는 분 있나요?"
+  reason: "anybody 와 anyone 은 뜻이 완전히 같아서 어떤 예문을 써도 서로 들어간다 — 해석으로 갈릴 수 있는 쌍이 아니다. 다만 두 해석의 '누구나 ~ 아시나요?' 는 오역이라(anybody 는 '누구 한 사람이라도' 다) 그것만 바로잡았다. 연습장에서는 둘 중 하나를 빼야 한다."
+
+- word: apart
+  example_ko: "두 사람은 지금 따로 살아요."
+  reason: "away 는 거리가 멀다는 쪽이고 apart 는 붙어 있지 않고 따로 있다는 쪽이에요. a 해석에 '따로'를 넣어 b 의 '멀리 떨어져'와 갈랐어요. 다만 'The hotel is apart from ~' 은 영어로 어색해요. apart from 은 보통 '~을 빼고'라는 뜻이라 예문 자체를 다시 쓰는 게 좋아요. (검증: 앞사람도 'The hotel is apart from the city center.' 가 틀린 영어라고 적어 놓고 해석만 고쳤어요. apart from 은 '~을 빼고'라서, 해석을 아무리 잘 붙여도 학습자에게 안 쓰는 표현을 외우게 해요. 예문 교체 제안: \"They live apart now.\" 위 해석은 그 새 예문 것이에요. b(away) 카드도 '멀리 떨어져'라 far 가 답으로 들어올 여지가 남아 있어요.)"
+
+- word: appreciate
+  example_ko: "도와주신 걸 정말 소중하게 생각해요."
+  reason: "thank 는 사람에게 하는 인사, appreciate 는 상대가 해 준 일을 소중히 여긴다는 뜻이다. b 를 '소중하게 생각해요' 로 바꿔 인사말과 갈랐다. 앞 쌍의 grateful('고마운 마음이에요') 과도 겹치지 않는다."
+
+- word: appropriate
+  example_ko: "이 드레스는 파티에 입기 적절한 옷이에요."
+  reason: "appropriate 는 자리와 예의에 맞는 쪽, suitable 은 목적과 조건에 맞는 쪽이다. 저장된 뜻에서도 '적절한' 은 appropriate 에만, '알맞은' 은 suitable 에만 있어 그 대응어로 갈랐다. 둘 다 '어울리는 옷' 이던 것을 각각의 대응어로 못박았다."
+
+- word: approximate
+  example_ko: "배송은 대략 이틀 뒤에 도착할 거예요."
+  reason: "'대략'으로 어림수임을 남겼지만 about·roughly도 같은 자리에 들어가서 답이 하나로 갈리지 않으니 예문을 바꾸는 편이 좋겠고, 저장된 뜻의 '약간의'는 틀려서 고쳤어요."
+
+- word: assess
+  example_ko: "선생님이 우리 프로젝트의 수준을 가늠하셨어요."
+  reason: "assess 는 수준·정도를 재서 값을 매기는 쪽, evaluate 는 좋은지 나쁜지 따져 판단하는 쪽이다. a 에 '수준을 가늠하다' 를 넣어 b 의 '평가하다' 와 갈랐다. b 의 '우리의 프로젝트' 는 번역투라 '우리 프로젝트' 로 다듬었다. (검증: assess/evaluate 쌍. '수준을 가늠하다' 와 '평가하다' 로 갈린 건 맞고 시제(과거/미래)도 예문과 맞아요. 다만 assess 의 저장된 뜻 '평가하다, 평가를 하다' 는 같은 말을 두 번 적은 것이라, 그대로 두면 해석만 갈리고 뜻은 evaluate 와 그대로 겹칩니다. 앞사람은 significant 의 같은 오류는 짚으면서 이건 놓쳤어요.)"
+
+- word: assist
+  example_ko: "이 일 좀 거들어 주시겠어요?"
+  reason: "assist 는 help 의 격식형이라 어떤 예문을 써도 help 가 들어간다. 예문을 바꿔도 해결되지 않으므로 해석에서 '돕다'(help) 와 '지원하다'(assist) 로 대응어를 갈랐다. 다만 이 쌍은 한국어로 완전히는 갈리지 않는다 — 둘 중 하나를 연습장에서 빼는 편이 낫다. (검증: help/assist 쌍. '지원해 주시겠어요' 는 학습자가 support 를 먼저 떠올리는 말이고, assist me with this 는 자원을 대 주는 게 아니라 곁에서 일을 거드는 거라 뜻도 어긋나요. '거들다' 로 바꾸면 help='돕다' 와 대응어가 갈리고 번역도 정확해져요. 다만 끝내 완전히는 안 갈리니 둘 중 하나를 빼라는 결론에는 동의해요. help 쪽 '도와줄 수 있나요?' 는 그대로 두면 돼요.)"
+
+- word: axis
+  example_ko: "이 도표는 가로축과 세로축을 뚜렷하게 보여 줘요."
+  reason: "'선'은 line, '막대'는 rod 가 되니 도표의 기준선을 뜻하는 '축'을 남겼고, 원문의 x 와 y 는 영어 글자라 '가로'와 '세로'로 옮겼어요."
+
+- word: baby
+  example_ko: "얘가 제 아기예요."
+  reason: "baby 는 아직 걷지도 못하는 갓난쟁이고 child 는 그보다 자란 아이예요. '아기'와 '아이'가 그 차이를 담고 있어 답이 갈려요. 다만 두 해석 모두 사람을 '이건'이라고 불러 놓았는데 한국어로는 안 되는 말이라 '얘가'로 고쳤어요. (검증: 사람을 '이건'이라 부르던 걸 '얘가'로 고친 건 맞아요. 해석은 앞사람 것 그대로 두고, 겹치던 뜻만 채웠어요 — baby 의 뜻이 '아이, 신생아'로 시작해서 child 의 '아이'와 그대로 부딪혀요.)"
+
+- word: booklet
+  example_ko: "서비스 안내 소책자 하나 받을 수 있을까요?"
+  reason: "'소책자'는 묶여 있는 책자만 가리켜서 낱장인 flyer·leaflet, 접이식인 brochure와 갈려요. (검증: 해석은 좋아서 그대로 둬요. 다만 앞사람은 usage_fix에서 flyer·brochure와 갈라 놓고 저장된 뜻의 '홍보물'은 손대지 않았는데, 그 말이 남아 있으면 학습자가 flyer 쪽으로 끌려요. 뜻만 고쳐요.)"
+
+- word: boot
+  example_ko: "겨울에 신을 부츠가 필요해요."
+  reason: "b 해석이 '신발' 이라 shoe 와 구별이 안 됐다. boot 은 발목 위까지 올라오는 신발이니 '부츠' 로 못박았다. 저장된 뜻 '발가락이 없고 발뒤꿈치가 있는' 은 틀렸고, usage_note 의 '스니커는 발가락이 있는 신발' 도 말이 안 되는 설명이라 함께 고쳐야 한다. (검증: shoe/boot 쌍. '부츠' 로 못박아 shoe 의 '신발' 과 가른 건 맞아요. 앞사람이 저장된 뜻이 틀렸다고 지적만 하고 고쳐 놓지 않아서 채웠어요. 하나 더 — 예문 'I need a new boot for winter.' 는 영어가 어색해요. 신발은 짝으로 말하니 boots 라야 해서 예문 쪽도 손볼 데가 남아 있어요.)"
+
+- word: bounce
+  example_ko: "공이 벽에 부딪혀 통통 튀었어요."
+  reason: "bounce 는 통통 튀는 움직임 자체이고, rebound 는 부딪힌 데서 되돌아 나오는 것이다. 해석을 '통통 튀다' 와 '되튀어 나오다' 로 갈랐다."
+
+- word: cafeteria
+  example_ko: "구내식당에서 같이 밥 먹어요."
+  reason: "'구내식당'은 직장·학교 안의 식당만 가리켜서 restaurant(음식점)나 dining hall과 답이 겹치지 않아요. (검증: '우리 구내식당에서'는 '우리 회사 구내식당'으로 붙어 읽혀서 Let's가 사라지고 평서문이 돼요. '같이'를 넣어 청유임을 살렸어요. 또 앞사람은 note에 '직장·학교'라 써 놓고 저장된 뜻('직장 내')은 그대로 뒀는데, 학교 구내식당도 cafeteria라 뜻도 함께 고쳐요.)"
+
+- word: character
+  example_ko: "그분은 품성이 착한 사람이에요."
+  reason: "personality 는 남에게 드러나는 성격이고, character 는 그 사람 속에 밴 품성이다. 해석을 '성격' 과 '품성' 으로 갈랐다."
+
+- word: charter
+  example_ko: "회의 때문에 비행기 한 대를 전세 냈어요."
+  reason: "'빌리다'로 쓰면 borrow 와 rent 가 답이 되니 '전세 내다'로 갈랐고, 저장된 뜻 '임대하다'는 빌려주는 쪽으로 읽혀서 고쳤어요."
+
+- word: check
+  example_ko: "지금 몇 시인지 좀 봐 주시겠어요?"
+  reason: "confirm 은 맞다고 못박아 주는 것, check 는 한번 살펴보는 것이다. 둘 다 '확인해 주시겠어요?' 여서 갈리지 않던 걸 '맞는지 확정해 주다' 와 '몇 시인지 봐 주다' 로 나눴다."
+
+- word: child
+  example_ko: "얘가 제 아이예요."
+  reason: "baby 는 아직 걷지도 못하는 갓난쟁이고 child 는 그보다 자란 아이예요. '아기'와 '아이'가 그 차이를 담고 있어 답이 갈려요. 다만 두 해석 모두 사람을 '이건'이라고 불러 놓았는데 한국어로는 안 되는 말이라 '얘가'로 고쳤어요."
+
+- word: circulation
+  example_ko: "그 보고서는 아직 여러 사람 손을 거쳐 돌고 있어요."
+  reason: "'돌고 있다'로 사람들 사이를 도는 상태를 드러내 한 번 나눠 주는 distribution, 회전인 rotation과 갈랐어요. (검증: 해석은 좋아요. 그런데 저장된 뜻에 '회전'이 들어 있어 confused_with의 rotation과 그대로 겹치는데 앞사람이 손대지 않았어요. 뜻을 '회람, 유통'으로 고쳐 예문 쓰임과 맞춰요.)"
+
+- word: cite
+  example_ko: "선생님은 유명한 문구를 근거로 들어 말씀하셨어요."
+  reason: "cite 는 근거로 끌어다 대는 것이고, quote 는 남의 말을 그대로 옮기는 것이다. 해석을 '근거로 들다' 와 '그대로 옮기다' 로 갈랐다. 원래 cite 쪽은 '인용문을 인용하셨어요' 로 같은 말이 겹쳐 있기도 했다."
+
+- word: classroom
+  example_ko: "여기가 저희 새 교실이에요."
+  reason: "meeting room 은 '회의실', lecture hall 은 '강당'으로 갈리도록 학교에서 쓰는 말인 '교실'을 그대로 썼어요."
+
+- word: company
+  example_ko: "그녀는 큰 회사에 다녀요."
+  reason: "company 는 일하는 곳으로서의 '회사', enterprise 는 규모를 앞세운 '기업' 이다. a 는 '회사에 다니다' 로 좁히고 b 는 '규모가 큰 기업' 으로 갈랐다. 다만 한국어에서 회사와 기업이 겹치고 company 의 저장된 뜻에도 '기업' 이 들어 있어 완전히는 갈리지 않으니, company 의 뜻에서 '기업' 을 빼는 게 좋다. (검증: company/enterprise 쌍. 솔직히 해석 손질은 큰 몫을 하지 않았어요 — 원래도 '회사' 와 '기업' 으로 갈려 있었고 '다녀요'·'규모가 큰' 은 다듬은 정도예요(문장 자체는 자연스러우니 되돌릴 것까진 없어요). 진짜 고칠 곳은 앞사람 말대로 뜻이라, company 의 뜻에서 '기업' 을 뺀 것을 적어 둡니다.)"
+
+- word: complain
+  example_ko: "저는 소음에 대해 불평해요."
+  reason: "complaint 는 명사 '불만'이고 complain 은 동사 '불평하다'예요. b 해석의 '불만을 품어요'는 마음속에만 담아 둔다는 뜻이라 실제로 입 밖에 내는 complain 과 어긋나요. '불평해요'로 바꾸니 a 의 '불만을 제기했어요'와 품사부터 갈려요."
+
+- word: compromise
+  example_ko: "우리는 서로 양보해서 가격을 정했어요."
+  reason: "compromise 는 양쪽이 조금씩 양보해 합의를 보는 것이고 negotiate 는 조건을 두고 이야기를 주고받는 과정이에요. '가격에 양보했어요'는 한국어로도 어색해서 '서로 양보해서 가격을 정했어요'로 고쳤고, 이러면 b 의 '협상했어요'와 확실히 갈려요."
+
+- word: compulsory
+  example_ko: "의무 교육은 여섯 살에 시작해요."
+  reason: "'training is compulsory for all employees' 와 'mandatory' 는 그 문장에서 정말 바꿔 써도 되는 말이라 해석으로는 못 가려요. 반면 서식의 필수 입력 칸은 mandatory field 라고만 하고 compulsory field 라고는 안 쓰니, b 예문을 그리로 바꿔 답을 하나로 만들었어요. a 는 '~입니다'를 해요체로 고쳤어요. (검증: b 만 바꿔서는 반만 풀려요. a 카드는 'This training is ___ for all employees.' 그대로라 mandatory 라고 써도 똑같이 맞는 영어예요 — 이건 해석으로 절대 못 막아요. compulsory 는 'compulsory education'처럼 굳은 짝이 있으니 예문을 그리로 옮겨야 답이 하나가 돼요. 예문 교체 제안: \"Compulsory education starts at age six.\" 위 해석은 그 새 예문 것이에요.)"
+
+- word: concentrate
+  example_ko: "지금 하시는 일에 정신을 집중해 주세요."
+  reason: "focus 는 주의를 한 곳에 맞추는 쪽이라 초점이라는 말이 어울리고, concentrate 는 흩어진 정신을 한데 모으는 쪽이다. 해석을 '초점을 맞추다' 와 '정신을 집중하다' 로 갈라 두면 답이 하나로 정해진다."
+
+- word: confine
+  example_ko: "의견은 주제에만 국한해서 말해 주세요."
+  reason: "limit·restrict 는 둘 다 '제한하다'로 겹치니, 범위 밖으로 못 나가게 묶어 둔다는 confine 의 결을 '~에만 국한하다'로 드러냈어요."
+
+- word: confirm
+  example_ko: "회의 시간을 확정해 주시겠어요?"
+  reason: "confirm 은 맞다고 못박아 주는 것, check 는 한번 살펴보는 것이다. 둘 다 '확인해 주시겠어요?' 여서 갈리지 않던 걸 '맞는지 확정해 주다' 와 '몇 시인지 봐 주다' 로 나눴다. (검증: confirm/check 쌍. 갈래를 나눈 방향은 맞는데 '맞는지 확정해 주다' 는 확인과 확정을 한 문장에 섞어 놓은 어색한 말이에요. 실제로 쓰는 '회의 시간을 확정해 주시겠어요?' 로 하면 자연스럽고 check 의 '몇 시인지 봐 주시겠어요?' 와도 그대로 갈려요. check 쪽 해석은 그대로 두면 돼요.)"
+
+- word: conjunction
+  example_ko: "저희는 이 두 프로젝트의 연계를 논의해야 해요."
+  reason: "예문은 접속사 이야기가 아니라 두 프로젝트를 함께 묶는 이야기라 '연계'로 옮겼어요. 저장된 뜻이 접속사 하나뿐이라 예문과 어긋나서 고쳤어요. (검증: 예문이 접속사 이야기가 아니라는 지적은 맞아요. 다만 해석을 '어떻게 연계할지'라는 서술형으로 풀어 놓으면 빈칸 자리(the ___ of these two projects)가 명사인 게 안 보여서 link·connect 같은 동사를 떠올리게 돼요. maximization 에서 앞사람이 직접 쓴 기준대로 명사 '연계'로 되돌렸어요.)"
+
+- word: considerate
+  example_ko: "동료들의 시간을 배려해 주세요."
+  reason: "'친절하다'는 kind, '사려 깊다'는 thoughtful 로 읽히니, 남의 사정을 헤아려 준다는 뜻이 또렷한 '배려하다'를 썼어요."
+
+- word: consignment
+  example_ko: "위탁으로 보낸 책이 오늘 도착했어요."
+  reason: "'배송'이면 delivery, '화물'만 쓰면 shipment 가 되니 계약을 걸고 맡겨 보낸다는 '위탁'을 남겼고, 저장된 뜻의 '위임'은 권한을 넘긴다는 다른 말이라 고쳤어요."
+
+- word: continental
+  example_ko: "회의 때 낼 대륙식 아침 식사가 필요해요."
+  reason: "'대륙식'이라고 해야 continent 나 continuing 이 끼어들지 않고, 저장된 뜻·설명의 '대륙을 가로지르는'은 사실이 아니라 함께 고쳤어요."
+
+- word: correspondence
+  example_ko: "우리가 주고받은 서신을 확인해 보세요."
+  reason: "'주고받은'을 넣어 오간 것 전체라는 뜻을 남겼고, 그래서 letter(편지 한 통)·document(서류)는 답이 안 돼요."
+
+- word: credential
+  example_ko: "회의에 쓸 자격 증명 서류가 필요해요."
+  reason: "certificate(증명서)·document(문서)와 갈리도록 '자격을 증명할 서류'로 썼어요. 예문이 단수 credential 을 쓰고 있는데 실제로는 복수로 쓰는 말이라 설명에 적었어요. (검증: 보통 복수 credentials 로 쓴다는 지적은 맞아요. 두 가지를 고쳤어요 — 앞사람 해석의 '회의에 들어가려면'은 원문 for the meeting 에 없는 입장(入場) 상황을 지어낸 것이라 덜어 냈고, 저장된 뜻 '자격증'은 곧 certificate 여서 confused_with 와 겹치니 '자격을 증명하는 서류'로 좁혔어요.)"
+
+- word: customize
+  example_ko: "보고서를 그 고객 요구에 맞게 고쳐 만들 수 있을까요?"
+  reason: "personalize 는 사람 하나하나에 맞추는 것이고, customize 는 쓰임새나 요구에 맞게 고쳐 만드는 것이다. 해석을 '개인에게 맞게' 와 '요구에 맞게 고쳐 만들다' 로 갈랐다."
+
+- word: damn
+  example_ko: "그거 엄청 비싸네요."
+  reason: "damn 은 거친 욕설성 강조라 '엄청' 쪽이고, really 는 점잖은 '정말' 이다. a 가 '정말로' 여서 really 와 그대로 겹쳤던 걸 갈랐다. 저장된 뜻 '비꼬는 말로 쓰임' 도 틀렸다 — 비꼼이 아니라 거친 강조다. 애초에 왕초보용 연습장에 넣을 낱말이 아니니 빼는 걸 권한다. (검증: damn/really 쌍. '엄청' 과 '정말' 로 갈리기는 하지만 거친 말투 자체는 해석에 남지 않아요 — 이 낱말은 해석으로 살릴 수 있는 낱말이 아니에요. 저장된 뜻이 '비꼬는 말' 이라 틀렸다고 지적만 하고 고쳐 놓지 않아서 채웠고, 왕초보 연습장에서 빼자는 데는 동의해요.)"
+
+- word: deductible
+  example_ko: "그 치료비를 세금에서 공제받을 수 있나요?"
+  reason: "reimbursement 는 '환급', taxable 은 '과세 대상'으로 갈리므로 세금 계산에서 빼 준다는 뜻이 드러나게 '공제받다'를 썼어요. (검증: 해석은 정확해요 — reimbursement(환급)·taxable(과세 대상)과 갈려요. 뜻을 비워 둔 게 문제예요: 저장된 '보험에서 감액 가능한'은 틀렸어요. 보험의 deductible 은 가입자가 먼저 내는 '자기부담금'이라는 명사 뜻이지 '감액 가능한'이 아니에요. 예문이 세금 공제이니 그쪽으로 좁혔어요.)"
+
+- word: defendant
+  example_ko: "그 피고가 저희 의뢰인이에요."
+  reason: "소송에서 고소한 쪽인 plaintiff 는 '원고'라서, '피고'라고 쓰면 답이 하나로 정해져요."
+
+- word: deficiency
+  example_ko: "저희 생산 공정에 미흡한 점이 있어요."
+  reason: "shortage 는 '물량이 모자람', deficit 은 '적자'로 갈리므로, 갖춰야 할 것이 제대로 갖춰지지 않았다는 뜻이 드러나게 '미흡한 점'으로 썼어요."
+
+- word: defy
+  example_ko: "이 계획은 모든 논리를 거스르고 있어요."
+  reason: "disobey 는 '따르지 않다', ignore 는 '무시하다'로 갈리므로, 정면으로 맞선다는 defy 의 결을 '거스르다'로 썼어요."
+
+- word: dependency
+  example_ko: "우리에게는 이 소프트웨어에 대한 의존 관계가 하나 있어요."
+  reason: "dependence 는 의존하고 있는 상태 자체이고, dependency 는 하나 둘 셀 수 있는 의존 관계나 의존 대상이다. 해석을 '의존하고 있어요' 와 '의존 관계가 하나 있어요' 로 갈랐다. 참고로 dependence 쪽 예문은 관사가 빠져 어색하니 나중에 손보는 게 좋다."
+
+- word: describe
+  example_ko: "그 남자가 어떻게 생겼는지 말해 주실 수 있나요?"
+  reason: "illustrate 는 보기를 들어 알기 쉽게 보여 주는 것이고 describe 는 어떻게 생겼는지·어떤지를 말로 그려 주는 것이에요. 둘 다 '설명해 주실 수 있나요'였던 것을 '예를 들어'와 '어떻게 생겼는지'로 갈랐어요."
+
+- word: desirable
+  example_ko: "이 자리는 누구나 탐내는 자리예요."
+  reason: "'탐내다'로 원한다는 뜻을 남겨 유리하다는 favorable, 매력 있다는 attractive와 갈랐어요. (검증: 해석은 좋아요 — '탐내는'이 favorable·attractive와 갈려요. 다만 뜻에서 '바람직한'을 빼 버린 건 지나쳐요. desirable outcome처럼 '바람직한'이 이 낱말의 대표 뜻이라 예문 하나에 맞추자고 지울 게 아니에요. 저장된 '원하는'(원하는 쪽이 아니라 원함을 받는 쪽이라 틀려요)만 걷어내고 되살려요.)"
+
+- word: difficult
+  example_ko: "옆집 사람은 상대하기 까다로워요."
+  reason: "'hard to solve' 와 'difficult to solve' 는 그 문장에서 정말 바꿔 써도 되는 말이라 해석을 아무리 고쳐도 답이 둘로 남아요. 반면 사람을 두고 '까다롭다'고 할 때는 difficult 만 되고 hard person 은 다른 뜻이라, b 예문을 사람 이야기로 바꿔 답을 하나로 만들었어요. (검증: 예문을 사람 이야기로 옮긴 판단은 맞아요 — 'hard person' 은 다른 뜻이라 답이 하나로 서요. 다만 '옆집 분은 … 사람이에요'는 한 문장 안에서 '분'과 '사람'이 부딪혀요. 영어 예문 'My neighbor is a difficult person.' 은 그대로 두고 해석만 다듬었어요.)"
+
+- word: dilemma
+  example_ko: "저희는 그 프로젝트를 두고 이러지도 저러지도 못하는 상황이에요."
+  reason: "problem·issue 는 '문제'로만 옮기면 겹치므로, dilemma 만 가지는 양자택일의 곤란함을 '이러지도 저러지도 못하는'으로 드러냈어요."
+
+- word: dimension
+  example_ko: "이 상자의 가로세로 치수가 어떻게 되나요?"
+  reason: "dimension 은 가로·세로·높이 같은 방향별 치수, size 는 전체 크기다. a 를 '가로세로 치수' 로 바꿔 b 의 '크기' 와 갈랐다."
+
+- word: discount
+  example_ko: "이 셔츠는 10% 할인이 돼요."
+  reason: "sale 은 파는 쪽이 벌이는 '세일' 이고, discount 는 값에서 깎아 주는 '할인' 액수다. 둘 다 '할인 중이에요' 였던 걸 '세일' 과 '할인' 으로 대응어를 갈랐다. b 는 10% 라는 액수가 붙는 자리라 sale 이 들어갈 수 없다."
+
+- word: dismal
+  example_ko: "그 매출 보고서는 형편없었어요."
+  reason: "sad(슬픈)·depressing(우울하게 만드는)과 갈리도록, 실적이 나쁘다는 이 예문의 쓰임을 '형편없다'로 옮겼어요. 저장된 뜻이 감정 쪽으로만 적혀 있어 고쳤어요."
+
+- word: dispatch
+  example_ko: "저희가 내일 청구서를 발송할게요."
+  reason: "그냥 '보내다'라고 하면 send 도 답이 되니, 공식 문서를 부치는 뜻이 드러나는 '발송하다'로 갈랐어요."
+
+- word: distribution
+  example_ko: "샘플 배포 내역을 확인해 주세요."
+  reason: "'배포'는 여러 사람에게 나눠 주는 것이라 delivery(배송)·allocation(배정)과 답이 갈려요."
+
+- word: doubtful
+  example_ko: "저는 그 프로젝트 일정이 지켜질지 미덥지 않아요."
+  reason: "uncertain 은 '확실하지 않다', suspicious 는 '수상하다'로 갈리므로, 잘 될 것 같지 않다는 doubtful 의 결을 '미덥지 않다'로 썼어요. (검증: 해석은 좋아요 — '의심스럽다'를 쓰면 suspicious 와 곧장 겹치는데 '미덥지 않다'가 그걸 피해요. 그런데 뜻을 비워 둬서 저장된 '의심스러운'이 그대로 남아요. 한국어에서 '의심스럽다'는 오히려 suspicious 쪽으로 읽히니 뜻도 '확신이 없는'으로 옮겨 해석과 맞췄어요.)"
+
+- word: dull
+  example_ko: "이 보고서는 아주 밋밋해요."
+  reason: "저장된 뜻의 '예루'는 한국어에 없는 말이라 고쳤고, '지루한'을 쓰면 boring, '무미건조한'을 쓰면 dry 도 답이 되어서 '밋밋해요'로 갈랐어요."
+
+- word: duly
+  example_ko: "그 양식에 정해진 절차대로 서명해 주세요."
+  reason: "properly 는 '제대로', correctly 는 '올바르게'로 갈리도록 격식과 절차를 뜻하는 '정해진 절차대로'를 썼어요. 예문 자체가 어색한 문장이라 붙는 자리를 설명에 적었어요. (검증: '정해진 절차대로'가 properly(제대로)·correctly(올바르게)와 갈리는 건 맞아요. 두 가지를 손봤어요 — '서식'은 문서의 양식(틀)을 뜻해서 서명하는 종이를 가리키기엔 어색하니 '양식'으로 바꿨고, 저장된 뜻 '올바르게, 적절하게'는 그대로 두면 properly·correctly 와 뜻 칸에서 겹쳐서 옮겼어요. 예문 자체가 어색한 영어라는 지적(보통 duly signed 처럼 과거분사 앞)도 맞아요.)"
+
+- word: dump
+  example_ko: "제 책상에 서류를 아무렇게나 쏟아 놓지 마세요."
+  reason: "'던지다'로 쓰면 throw 가 답이 되니 한꺼번에 부려 놓는다는 '아무렇게나 쏟아 놓다'로 갈랐어요."
+
+- word: enterprise
+  example_ko: "그녀는 규모가 큰 기업에서 일해요."
+  reason: "company 는 일하는 곳으로서의 '회사', enterprise 는 규모를 앞세운 '기업' 이다. a 는 '회사에 다니다' 로 좁히고 b 는 '규모가 큰 기업' 으로 갈랐다. 다만 한국어에서 회사와 기업이 겹치고 company 의 저장된 뜻에도 '기업' 이 들어 있어 완전히는 갈리지 않으니, company 의 뜻에서 '기업' 을 빼는 게 좋다."
+
+- word: erase
+  example_ko: "그거 발표 자료에서 지워 주실 수 있나요?"
+  reason: "scratch 는 줄을 그어 목록에서 빼는 '취소' 쪽이고, erase 는 글자를 지워 없애는 쪽이다. a 를 '빼 주다' 로 바꿔 b 의 '지워 주다' 와 갈랐다. 저장된 뜻 '자르다, 지우다' 는 어긋난다 — scratch 의 기본은 '긁다' 이고 '자르다' 뜻은 없다."
+
+- word: escort
+  example_ko: "제가 회의실까지 모셔다 드릴게요."
+  reason: "'모셔다 드리다'로 목적지까지 데려다준다는 뜻을 남겨 accompany(같이 가다)·guard(지키다)와 갈랐고, 저장된 뜻 '반경을 지키다'는 말이 되지 않아 고쳤어요."
+
+- word: evaluate
+  example_ko: "선생님이 우리 프로젝트를 평가할 거예요."
+  reason: "assess 는 수준·정도를 재서 값을 매기는 쪽, evaluate 는 좋은지 나쁜지 따져 판단하는 쪽이다. a 에 '수준을 가늠하다' 를 넣어 b 의 '평가하다' 와 갈랐다. b 의 '우리의 프로젝트' 는 번역투라 '우리 프로젝트' 로 다듬었다."
+
+- word: exam
+  example_ko: "저는 내일 시험을 봐요."
+  reason: "test 는 수업 중에 보는 가벼운 확인, exam 은 학교에서 치르는 정식 시험이다. 한국어 '테스트' 와 '시험' 이 그 차이를 그대로 갖고 있어서 둘로 갈랐다. 저장된 풀이의 'Test 는 시험을 주는 사람을 의미해요' 는 틀린 설명이다."
+
+- word: floor
+  example_ko: "고양이가 방바닥에 있어요."
+  reason: "ground 는 바깥의 땅바닥이고 floor 는 건물 안의 바닥이에요. 둘 다 그냥 '바닥'이라 겹쳤던 것을 '땅바닥'과 '방바닥'으로 갈랐어요."
+
+- word: flotation
+  example_ko: "그 회사의 주식 상장이 지난주에 발표됐어요."
+  reason: "저장된 뜻의 '유동성'은 liquidity 에 해당하는 다른 말이라 버리고, floating 과 갈리도록 '주식 상장'으로 못박았어요."
+
+- word: flourish
+  example_ko: "우리 회사는 기술 업계에서 활짝 꽃피우고 있어요."
+  reason: "prosper 는 돈을 벌며 잘되는 번창이고, flourish 는 기세가 활짝 피어 왕성해지는 쪽이다. 해석을 '번창하다' 와 '활짝 꽃피우다' 로 갈랐다. 원래는 둘 다 '잘 나가고 있어요' 여서 구분이 없었다."
+
+- word: focus
+  example_ko: "지금 하시는 일에 초점을 맞춰 주세요."
+  reason: "focus 는 주의를 한 곳에 맞추는 쪽이라 초점이라는 말이 어울리고, concentrate 는 흩어진 정신을 한데 모으는 쪽이다. 해석을 '초점을 맞추다' 와 '정신을 집중하다' 로 갈라 두면 답이 하나로 정해진다."
+
+- word: forbid
+  example_ko: "사장님은 사무실에서 담배를 못 피우게 해요."
+  reason: "prohibit 은 규정이나 법이 공식으로 금하는 것이라 주어가 방침이고, forbid 은 힘 있는 사람이 못 하게 막는 것이라 주어가 사장이에요. '규정이 금지한다'와 '사람이 못 하게 한다'로 갈랐어요. b 는 forbids 라 현재인데 해석이 과거였던 것과 a 의 '~습니다' 문체도 고쳤어요."
+
+- word: forget
+  example_ko: "열쇠를 깜빡하고 안 가져왔어요."
+  reason: "lose 는 잃어버려 못 찾는 것이고 forget one's keys 는 깜빡하고 안 챙긴 것이에요. '잃어버리다'와 '깜빡하다'로 갈랐어요. a 의 '저의 열쇠를'은 번역투라 '열쇠를'로 줄였어요."
+
+- word: forthcoming
+  example_ko: "곧 열릴 회의는 중요한 자리예요."
+  reason: "upcoming 과 뜻이 거의 겹치는 낱말이라 해석만으로는 완전히 가르기 어려워요. 공지문에 쓰는 말투로 '곧 열릴'을 골랐고, 이 자료에 upcoming 이 표제어로 없어 답이 갈릴 여지는 적어요."
+
+- word: gather
+  example_ko: "공원에 다 같이 모여요."
+  reason: "gather 는 여럿이 한곳에 모이는 것, meet 는 사람을 만나는 것이다. a 가 '만나요' 여서 meet 와 겹쳤던 걸 '다 같이 모여요' 로 바꿨다. b 는 will 이라 '만날 거예요' 로 시제도 맞췄다."
+
+- word: gauge
+  example_ko: "고객이 얼마나 만족하는지 가늠해 봐야 해요."
+  reason: "measure(측정하다)·assess(평가하다)와 갈리도록 '가늠하다'를 썼어요. 저장된 설명은 gauge 를 measure 보다 정확한 말처럼 적어 두었는데 실제로는 반대예요."
+
+- word: getaway
+  example_ko: "이 스트레스 많은 일에서 잠시 벗어날 짧은 여행이 필요해요."
+  reason: "'탈출'이나 '도망'을 쓰면 escape 와 run away 가 답이 되니 '짧은 여행'으로 갈랐고, 저장된 뜻이 동사로 적혀 있어 명사로 고쳤어요."
+
+- word: goal
+  example_ko: "그는 경기에서 골을 넣었어요."
+  reason: "두 예문이 'My ___ is to learn English.' 로 사실상 같은 문장이라 objective 도 goal 도 들어간다 — 해석을 어떻게 고쳐도 답이 하나로 안 정해진다. goal 에만 있는 '득점' 뜻으로 예문을 바꿨다. 다만 goal 의 저장된 뜻이 '목표, 목적' 뿐이라 '골, 득점' 을 뜻에 보태야 한다. a 의 '~입니다' 는 해요체로 고쳤다. (검증: objective/goal 쌍. 예문을 '골을 넣었어요' 로 옮긴 처방은 맞고, 뜻에 '골, 득점' 을 보태야 한다고 해 놓고 적지 않아서 채웠어요. 그런데 이걸로 다 풀리지 않아요 — 같은 자료의 target 항목이 아직 'My target is to learn English well.'('저의 목표는 영어를 잘 배우는 것입니다') 라서 objective 의 '제 목표는 영어를 배우는 거예요' 와 그대로 겹쳐요. target 예문도 함께 갈아야 objective 의 답이 하나로 정해져요.)"
+
+- word: grateful
+  example_ko: "도와주셔서 저는 정말 고마운 마음이 들어요."
+  reason: "thank 는 상대에게 건네는 인사말(동사), grateful 은 내 마음 상태를 말하는 형용사다. b 를 '저는 ~ 고마운 마음이에요' 로 바꿔 주어의 상태임을 드러냈다. 원래 두 해석의 '~합니다' 는 이 앱 문체가 아니라 해요체로 고쳤다. (검증: thank/grateful 쌍. 갈래를 나눈 방향(인사말 대 마음 상태)은 맞아요. 다만 '저는 ~ 고마운 마음이에요' 는 주어와 서술어가 맞지 않아요 — 고마운 건 제가지 '마음' 이 아니니까요. '고마운 마음이 들어요' 로 하면 문장이 서고 thank 의 '고마워요' 와도 그대로 갈려요. thank 쪽 해석은 손댈 것 없어요.)"
+
+- word: ground
+  example_ko: "공이 땅바닥에 있어요."
+  reason: "ground 는 바깥의 땅바닥이고 floor 는 건물 안의 바닥이에요. 둘 다 그냥 '바닥'이라 겹쳤던 것을 '땅바닥'과 '방바닥'으로 갈랐어요."
+
+- word: hard
+  example_ko: "이 빵은 아주 딱딱해요."
+  reason: "'hard to solve' 와 'difficult to solve' 는 그 문장에서 정말 바꿔 써도 되는 말이라 해석을 아무리 고쳐도 답이 둘로 남아요. 반면 사람을 두고 '까다롭다'고 할 때는 difficult 만 되고 hard person 은 다른 뜻이라, b 예문을 사람 이야기로 바꿔 답을 하나로 만들었어요. (검증: 앞사람이 b 만 바꿔서 문제가 반만 풀렸어요. a 카드는 여전히 'This math problem is ___ to solve.' 라서 학습자가 difficult 라고 써도 똑같이 맞는 영어예요 — 해석을 어떻게 고쳐도 이건 못 막아요. hard 는 저장된 뜻에 이미 있는 '단단한' 쪽으로 옮겨야 답이 하나가 돼요. 예문 교체 제안: \"This bread is very hard.\" 위 해석은 그 새 예문의 해석이에요.)"
+
+- word: hedge
+  example_ko: "지연이 생길 수도 있으니 위험을 미리 분산해 둬야 해요."
+  reason: "'막다'나 '지키다'로 쓰면 defend 와 protect 가 답이 되니, 미리 손해를 나눠 둔다는 뜻의 '위험을 분산하다'로 갈랐어요. (검증: 가른 방향은 맞아요 — defend·protect 를 걷어내려면 '위험을 분산'이 필요합니다. 고친 건 두 가지예요. 첫째, '있을지 모를 지연에 대비해'는 번역투라 '지연이 생길 수도 있으니'로 풀었어요. 둘째, 저장된 뜻 '여러 가지를 동시에 준비하다'는 분산 투자 쪽 설명이지 hedge 의 핵심이 아니라 '미리 대비해 두다'로 바로잡았어요.)"
+
+- word: hi
+  example_ko: "안녕, 잘 지내요?"
+  reason: "hi 는 친한 사이에 던지는 가벼운 인사, hello 는 처음 보는 사람이나 전화에도 쓰는 인사다. hi 쪽 해석만 '안녕' 으로 바꾸면 '안녕하세요' 가 붙은 문제는 hello 로 정해진다."
+
+- word: historic
+  example_ko: "이건 역사에 길이 남을 중요한 건물이에요."
+  reason: "'This is a ___ building.' 에는 둘 다 들어가 해석으로 못 가른다. historical 은 역사를 다루거나 역사 속에 있는 것에 쓰고 역사 소설이 그 대표 표현이라 그 문장으로 바꿨다. historic 쪽은 '역사에 길이 남을' 로 중요하다는 뜻을 살렸다."
+
+- word: historical
+  example_ko: "그분은 전쟁을 다룬 역사 소설을 썼어요."
+  reason: "'This is a ___ building.' 에는 둘 다 들어가 해석으로 못 가른다. historical 은 역사를 다루거나 역사 속에 있는 것에 쓰고 역사 소설이 그 대표 표현이라 그 문장으로 바꿨다. historic 쪽은 '역사에 길이 남을' 로 중요하다는 뜻을 살렸다."
+
+- word: horrible
+  example_ko: "이 음식은 맛이 끔찍해요."
+  reason: "'This food is ___.' 에는 horrible 도 terrible 도 그냥 들어가서 해석으로는 못 가른다. terrible 은 'be terrible at' 으로 무엇을 못한다는 뜻이 되고 여기에는 horrible 을 쓰지 않으므로 그 문장으로 바꿨다. horrible 쪽은 '끔찍하다' 로 역겨운 느낌을 살렸다."
+
+- word: illustrate
+  example_ko: "이 개념을 예를 들어 설명해 주실 수 있나요?"
+  reason: "illustrate 는 보기를 들어 알기 쉽게 보여 주는 것이고 describe 는 어떻게 생겼는지·어떤지를 말로 그려 주는 것이에요. 둘 다 '설명해 주실 수 있나요'였던 것을 '예를 들어'와 '어떻게 생겼는지'로 갈랐어요."
+
+- word: important
+  example_ko: "이건 중요한 회의예요."
+  reason: "significant 는 뜻이나 차이가 커서 눈에 띄는 쪽, important 는 그냥 중요한 쪽이다. 둘 다 '중요한' 이던 걸 '의미가 큰' 과 '중요한' 으로 갈랐다. 원래 두 해석의 '~입니다' 는 해요체로 고쳤고, significant 의 저장된 뜻 '중요한, 중요한' 은 같은 말이 두 번 적힌 것이라 손봐야 한다."
+
+- word: increase
+  example_ko: "가격이 10% 증가했어요."
+  reason: "increase 는 양이나 수가 늘어나는 증가이고, rise 는 값이 위로 올라가는 오름이다. increase 쪽 해석만 '증가했어요' 로 바꾸면 '올랐어요' 가 보이는 문제는 rise 로 정해진다. 숫자 10% 는 그대로 두었다."
+
+- word: individual
+  example_ko: "이건 각자 알아서 정하는 선택이에요."
+  reason: "individual 은 여럿 가운데 하나하나, 곧 '각자'라는 뜻이고 private 는 남에게 열려 있지 않은 '전용, 사적인'이라는 뜻이에요. 둘 다 '개인'으로 옮겨 놔서 겹쳤던 것을 '각자'와 '전용'으로 갈랐고, '~입니다' 문체도 해요체로 고쳤어요."
+
+- word: individually
+  example_ko: "물품을 하나씩 개별로 확인해 주세요."
+  reason: "'하나씩 개별로'는 한 건 한 건 따로 본다는 뜻이라 그냥 따로인 separately, 낱개를 세는 each와 갈려요."
+
+- word: infer
+  example_ko: "저는 회의가 취소됐다고 추론해요."
+  reason: "'추론해요'로 근거를 딛고 판단한다는 뜻을 남겨 assume(가정하다)·guess(짐작하다)와 갈랐어요."
+
+- word: inherent
+  example_ko: "이 프로젝트에는 처음부터 따라붙는 위험이 커요."
+  reason: "intrinsic 은 그 자체가 본래 지니고 있는 것이고 inherent 는 그것에 처음부터 딸려 오는 것이에요. 둘 다 '고유한'이라고 옮겨 놔서 겹쳤어요. '본래 지닌'과 '처음부터 따라붙는'으로 갈랐고, b 원문에는 very 가 없는데 붙어 있던 '매우'와 '~습니다' 문체도 고쳤어요."
+
+- word: interface
+  example_ko: "새 시스템과 연동할 수 있나요?"
+  reason: "'연결하다'는 connect, '잇다'는 link 로 읽히니 서로 맞물려 돌아간다는 '연동하다'로 갈랐고, 저장된 뜻은 명사 풀이뿐이라 예문의 동사 쓰임과 어긋나 고쳤어요."
+
+- word: intrinsic
+  example_ko: "이 프로젝트가 본래 지닌 가치는 높아요."
+  reason: "intrinsic 은 그 자체가 본래 지니고 있는 것이고 inherent 는 그것에 처음부터 딸려 오는 것이에요. 둘 다 '고유한'이라고 옮겨 놔서 겹쳤어요. '본래 지닌'과 '처음부터 따라붙는'으로 갈랐고, b 원문에는 very 가 없는데 붙어 있던 '매우'와 '~습니다' 문체도 고쳤어요."
+
+- word: irrelevant
+  example_ko: "이 세부 사항은 우리 프로젝트와 아무 상관이 없어요."
+  reason: "irrelevant 는 지금 하는 이야기에 상관없어 끌어올 필요가 없다는 쪽이고 unrelated 는 둘 사이에 이어진 데가 없어 아예 별개라는 쪽이에요. 똑같이 '관련이 없어요'였던 것을 '상관이 없어요'와 '별개예요'로 갈랐고, b 의 '우리의'라는 번역투도 없앴어요."
+
+- word: journalist
+  example_ko: "그분은 언론인이에요."
+  reason: "reporter 는 현장에서 취재해 소식을 전하는 기자이고, journalist 는 기자와 편집자를 아우르는 언론인이다. 해석을 '취재 기자' 와 '언론인' 으로 갈랐다."
+
+- word: junior
+  example_ko: "우리 팀 저연차 개발자가 그 프로젝트를 맡고 있어요."
+  reason: "'저연차'로 경력 순서를 드러내 senior와 반대쪽에 놓았고, 실력이 서툴다는 beginner('초보자')와도 갈랐어요."
+
+- word: leap
+  example_ko: "고양이가 담을 한 번에 훌쩍 뛰어넘었어요."
+  reason: "leap 은 jump 보다 힘껏, 멀리, 단번에 뛰는 것이다. 그냥 '뛰어넘었어요' 는 jump 쪽에 두고 leap 쪽에만 '한 번에 훌쩍' 을 넣어 힘의 크기를 드러냈다."
+
+- word: lose
+  example_ko: "열쇠를 잃어버렸어요."
+  reason: "lose 는 잃어버려 못 찾는 것이고 forget one's keys 는 깜빡하고 안 챙긴 것이에요. '잃어버리다'와 '깜빡하다'로 갈랐어요. a 의 '저의 열쇠를'은 번역투라 '열쇠를'로 줄였어요."
+
+- word: lucrative
+  example_ko: "이 일은 돈벌이가 아주 좋아요."
+  reason: "lucrative 는 돈이 많이 들어온다는 쪽이라 일자리나 장사에 쓰고, profitable 은 들인 것보다 이익이 남는다는 쪽이라 사업이나 프로젝트에 써요. 둘 다 '매우 수익성이 있어요'였던 것을 '돈벌이가 좋다'와 '이익이 남는다'로 갈랐어요."
+
+- word: mandatory
+  example_ko: "서식에서 이 칸은 반드시 채워야 해요."
+  reason: "'training is compulsory for all employees' 와 'mandatory' 는 그 문장에서 정말 바꿔 써도 되는 말이라 해석으로는 못 가려요. 반면 서식의 필수 입력 칸은 mandatory field 라고만 하고 compulsory field 라고는 안 쓰니, b 예문을 그리로 바꿔 답을 하나로 만들었어요. a 는 '~입니다'를 해요체로 고쳤어요."
+
+- word: manufacture
+  example_ko: "이 공장에서는 자동차를 제조해요."
+  reason: "manufacture 는 공장에서 기계로 찍어 내는 제조이고, produce 는 만들어 낸다는 더 넓은 생산이다. 한국어 제조와 생산이 그대로 이 둘에 붙는 말이라 해석을 그 두 낱말로 갈랐다. 덧붙여 원래 해석의 '만듭니다' 는 이 앱의 해요체가 아니었다."
+
+- word: maximization
+  example_ko: "저희에게는 생산성의 최대화가 필요해요."
+  reason: "maximum 은 '최대치'라는 값이고 maximization 은 그렇게 끌어올리는 일이라, 명사 '최대화'로 써서 빈칸에 들어갈 형태가 갈리게 했어요."
+
+- word: meet
+  example_ko: "저는 친구를 공원에서 만날 거예요."
+  reason: "gather 는 여럿이 한곳에 모이는 것, meet 는 사람을 만나는 것이다. a 가 '만나요' 여서 meet 와 겹쳤던 걸 '다 같이 모여요' 로 바꿨다. b 는 will 이라 '만날 거예요' 로 시제도 맞췄다."
+
+- word: merchandise
+  example_ko: "판매 상품의 품질을 확인해야 해요."
+  reason: "merchandise 는 가게에 내놓고 파는 판매 상품이고 goods 는 싣고 나르고 주고받는 물품이에요. '상품'과 '물품'만으로는 학습자가 못 가르니 a 에 '판매'를 붙여 갈랐어요."
+
+- word: microscope
+  example_ko: "현미경 좀 써도 될까요?"
+  reason: "헷갈릴 낱말이 없어 예문 그대로 옮겼고 '현미경'이 답을 하나로 정해 줘요."
+
+- word: militia
+  example_ko: "저희는 민병대 훈련소를 다녀왔어요."
+  reason: "저장된 뜻 '자위대'는 일본 군대를 가리키는 다른 말이라 틀렸고, military·army 와 갈리도록 '민병대'로 못박았어요."
+
+- word: motor
+  example_ko: "이 차에는 강력한 모터가 달려 있어요."
+  reason: "motor 는 전기로 돌아가는 장치고 engine 은 연료를 태워 힘을 내는 장치예요. 한국어도 '모터'와 '엔진'을 따로 쓰는데 a 해석이 motor 를 '엔진'이라고 옮겨 놔서 겹쳤어요. a 를 '모터'로 바꾸니 갈려요. a 의 저장된 뜻 '모터, 엔진'도 둘을 섞어 놓은 것이라 손봐야 해요. (검증: 해석 판단은 맞아요 — 원래 것이 motor 를 '엔진'이라 옮겨 engine 카드와 답이 같아졌어요. 앞사람이 짚기만 하고 안 고친 뜻을 채웠어요. 뜻에 '엔진'이 남아 있으면 학습자가 이 카드에서도 engine 을 떠올려요. b 의 '이 차는 큰 엔진이 있어요'는 '이 차에는'이 더 자연스럽지만 답은 이미 갈려요.)"
+
+- word: motorcycle
+  example_ko: "제 오토바이를 수리해야 해요."
+  reason: "'오토바이'는 자전거인 bike, 스쿠터인 scooter와 우리말에서부터 갈리는 낱말이에요."
+
+- word: multi
+  example_ko: "여러 언어를 지원하는 시스템이 필요해요."
+  reason: "빈칸 뒤에 language 가 남아 있어 '여러 언어'만으로 답이 정해지고, 설명에 있던 '형용사로 쓰는 경우는 별로 없다'는 사실이 아니라 고쳤어요."
+
+- word: neat
+  example_ko: "책상이 아주 깔끔하네요."
+  reason: "'깨끗하다'로 쓰면 clean, '정리됐다'로 쓰면 tidy 가 답이 될 수 있어서, 손댈 데 없이 잘 정돈된 상태를 뜻하는 '깔끔하다'를 썼어요."
+
+- word: noisy
+  example_ko: "이 사무실은 회의하기엔 너무 시끄러워요."
+  reason: "'시끄럽다'는 장소가 소란하다는 뜻이라 소리가 크다는 loud, 거슬린다는 annoying과 갈려요."
+
+- word: nominal
+  example_ko: "명목상 비용은 50달러지만 배송비는 따로예요."
+  reason: "real 과 actual 은 '실제'라서 정반대 자리에 오니 '명목상'으로 갈랐고, 저장된 뜻 '이름의, 명칭의'는 한국어로 읽히지 않아 고쳤어요."
+
+- word: norm
+  example_ko: "여기서는 이게 일반적인 방식이에요."
+  reason: "'관습'이나 '전통'을 쓰면 custom 과 tradition 이 답이 되니, 다들 그렇게 한다는 뜻의 '일반적인 방식'으로 갈랐어요."
+
+- word: normal
+  example_ko: "시험 전에 긴장하는 건 정상이에요."
+  reason: "'This is a(n) ___ day.' 는 ordinary 와 normal 이 정말 바꿔 써도 되는 자리다. normal 에만 있고 ordinary 에는 없는 '정상이다' 뜻으로 예문을 바꿨다 — ordinary 는 이 문장에 들어가지 않는다."
+
+- word: normally
+  example_ko: "저는 평소에 8시에 아침을 먹어요."
+  reason: "normally 는 별일 없는 평소라면 그렇다는 쪽이고 usually 는 열에 아홉은 그렇다는 빈도예요. 둘 다 '보통'이었던 것을 '평소 같으면'과 '대개'로 갈랐어요. (검증: 둘 다 '보통'이라 가른 건 맞아요. 다만 '평소 같으면'은 오늘은 그러지 않았다는 뜻까지 얹어요 — 원문에 없는 정보예요. '평소에'면 충분해요. 두 낱말의 저장된 뜻이 '보통은, 일반적으로'와 '보통, 일반적으로'로 사실상 같으니 뜻도 함께 갈라야 해요.)"
+
+- word: objective
+  example_ko: "제 목적은 영어를 배우는 거예요."
+  reason: "target 은 맞힐려고 겨냥하는 지점이고, objective 는 이루려는 목적이다. 해석을 '겨냥한 목표' 와 '목적' 으로 갈랐다. 원래 두 해석은 '저의 목표는' 으로 똑같았고 문체도 이 앱의 해요체가 아니었다."
+
+- word: obligate
+  example_ko: "저희는 금요일까지 납품할 의무가 있어요."
+  reason: "compel 은 억지로 시킨다는 쪽이라 '의무가 있어요'로 갈랐고, 설명에 있던 '말이예요'는 '말이에요'가 맞아 함께 고쳤어요."
+
+- word: obscure
+  example_ko: "보고서의 이 부분은 무슨 말인지 알아보기 어려워요."
+  reason: "vague 를 '두루뭉술함'으로 밀어내고 obscure 쪽은 '알아보기 어렵다'로 옮겼어요. 저장된 설명은 vague 를 '일부러 애매하게 말하는 것'이라 했는데 그런 뜻이 아니라 고쳤어요. (검증: 해석과 usage 는 옳아요 — 저장된 설명이 vague 를 '일부러 애매하게 말하는 것'이라 한 건 사실이 아니에요. 그런데 뜻을 비워 둬서 저장된 '모호한, 불분명한'이 남는데 '모호한'은 곧 vague 의 뜻이라, 앞사람이 usage 에서 세운 구분이 뜻 칸에서 도로 무너져요. 뜻도 해석과 같은 결로 맞췄어요.)"
+
+- word: obtain
+  example_ko: "여행 전에 비자를 발급받아야 해요."
+  reason: "'발급받다'로 공식 절차를 거친다는 뜻을 드러내 get·receive가 답이 될 여지를 막았어요."
+
+- word: "on"
+  example_ko: "회의는 월요일 아침에 있어요."
+  reason: "on 은 표면에 닿아 있는 것, over 는 닿지 않고 위를 지나거나 떠 있는 것이다. 그런데 'The book is ___ the table.' 에는 둘 다 들어가서 해석으로는 절대 안 갈린다. 그래서 on 쪽을 요일 앞에 쓰는 용법으로 바꿨다. over 쪽 해석은 닿지 않고 떠 있다는 느낌을 살렸지만, 사실 'The book is over the table.' 자체가 어색한 문장이라 나중에 예문을 손보는 게 좋다."
+
+- word: ongoing
+  example_ko: "그 프로젝트는 끝나지 않고 계속되고 있어요."
+  reason: "underway 는 이미 시작되어 굴러가기 시작했다는 쪽에 무게가 있고, ongoing 은 끝나지 않고 계속된다는 쪽이다. 해석에 '이미 시작해서' 와 '끝나지 않고 계속' 을 각각 넣었다."
+
+- word: other
+  example_ko: "그 밖에 다른 질문 있으신가요?"
+  reason: "other 는 뒤에 복수(questions)가 오는 '나머지 여럿', another 는 '하나 더'다. a 는 '그 밖에'로 나머지를 가리키게 하고, b 는 '하나 더'로 수를 못박아 갈랐다. 원래 a 해석 '다른 질문 있으십니까?' 는 이 앱의 해요체가 아니라 함께 고쳤다."
+
+- word: over
+  example_ko: "책이 탁자 위쪽에 떠 있어요."
+  reason: "on 은 표면에 닿아 있는 것, over 는 닿지 않고 위를 지나거나 떠 있는 것이다. 그런데 'The book is ___ the table.' 에는 둘 다 들어가서 해석으로는 절대 안 갈린다. 그래서 on 쪽을 요일 앞에 쓰는 용법으로 바꿨다. over 쪽 해석은 닿지 않고 떠 있다는 느낌을 살렸지만, 사실 'The book is over the table.' 자체가 어색한 문장이라 나중에 예문을 손보는 게 좋다."
+
+- word: overdue
+  example_ko: "그 보고서는 회의 제출 기한을 넘겼어요."
+  reason: "'기한을 넘겼다'로 마감 기준임을 드러내 시간이 늦었다는 late와 갈랐어요. (검증: '회의 기한'은 '회의의 기한'으로도 읽혀서 무엇의 기한인지 흐려져요. '제출'을 넣어 못 박았어요. overdue for the meeting이 회의에 맞춰 냈어야 한다는 뜻이라 없는 정보를 더한 것도 아니에요.)"
+
+- word: parameter
+  example_ko: "이 프로젝트의 제약 조건과 허용 범위는 어떻게 되나요?"
+  reason: "'조건'만 쓰면 condition, '범위'만 쓰면 range 가 답이 되니 둘을 한꺼번에 가리키는 자리라는 걸 드러내 parameter 쪽으로 갈랐어요."
+
+- word: parcel
+  example_ko: "소포가 오늘 아침에 도착했어요."
+  reason: "'소포'는 부쳐 보낸 물건이라 우리말 '택배'로 옮기는 package와 답이 갈려요."
+
+- word: payback
+  example_ko: "이건 제가 꼭 되갚아 줄 거예요."
+  reason: "revenge 는 '복수', retaliation 은 '보복'으로 갈리도록 payback 쪽은 '되갚다'라는 말로 옮겼어요. (검증: 해석은 좋아요 — payback 은 글자 그대로 pay back 이라 '되갚다'가 revenge(복수)·retaliation(보복)과 가장 잘 갈려요. 다만 뜻을 손대지 않아 저장된 '보복, 갚음'이 그대로 남는데, 그러면 앞사람이 세운 retaliation=보복 이라는 구분이 뜻 칸에서 무너져요. 뜻을 '앙갚음'으로 옮겨 해석과 결을 맞췄어요.)"
+
+- word: peak
+  example_ko: "후지산 봉우리는 아주 높아요."
+  reason: "peak 은 뾰족하게 솟은 봉우리, top 은 그냥 맨 위쪽이다. 둘 다 '정상' 이던 것을 '봉우리' 와 '맨 위' 로 갈랐다."
+
+- word: percentage
+  example_ko: "커피를 좋아하는 사람은 몇 퍼센트나 되나요?"
+  reason: "percentage 는 백 분의 몇인지 숫자로 답이 나오는 말이고, proportion 은 전체에서 차지하는 몫이다. 해석을 '몇 퍼센트' 와 '전체에서 차지하는 비중' 으로 갈랐다. 원래는 둘 다 '비율' 이어서 구분이 안 됐다."
+
+- word: personality
+  example_ko: "그분은 성격이 다정해요."
+  reason: "personality 는 남에게 드러나는 성격이고, character 는 그 사람 속에 밴 품성이다. 해석을 '성격' 과 '품성' 으로 갈랐다."
+
+- word: personalize
+  example_ko: "보고서를 그 고객 개인에게 맞게 바꿀 수 있을까요?"
+  reason: "personalize 는 사람 하나하나에 맞추는 것이고, customize 는 쓰임새나 요구에 맞게 고쳐 만드는 것이다. 해석을 '개인에게 맞게' 와 '요구에 맞게 고쳐 만들다' 로 갈랐다."
+
+- word: phone
+  example_ko: "제 휴대폰은 가방 안에 있어요."
+  reason: "'전화하다' 뜻으로는 telephone 과 phone 이 같은 말이고 telephone 이 예스러울 뿐이라 해석으로 갈 수 없다. 손에 들고 다니는 휴대폰은 phone 이라고만 하지 telephone 이라고 하지 않으므로, phone 쪽을 물건을 가리키는 문장으로 바꿨다."
+
+- word: polish
+  example_ko: "보내기 전에 이 이메일 좀 다듬어 줄 수 있어요?"
+  reason: "'다듬다'는 이미 된 글을 매끄럽게 손보는 것이라 개선한다는 improve, 정교하게 만든다는 refine과 결이 달라요."
+
+- word: poorly
+  example_ko: "그 보고서는 부실하게 작성됐어요."
+  reason: "'약하게'는 weakly, '나쁘게'는 badly 로 읽히니 글의 완성도가 떨어진다는 뜻의 '부실하게'로 갈랐고, 저장된 뜻 '부족하게, 약하게'도 이 쓰임과 어긋나 고쳤어요."
+
+- word: preliminary
+  example_ko: "이건 예비 회의예요."
+  reason: "'예비'는 본 회의 전 준비 단계라는 뜻이라 initial(첫)·early(이른)과 갈리고, 저장된 설명은 '초기'와의 차이를 거꾸로 적어 고쳤어요. (검증: 저장된 설명이 거꾸로였다는 지적은 맞아요. 다만 저장된 뜻 첫머리의 '초기의'가 initial과 그대로 겹치는데 그대로 뒀어요. 해석에서 initial과 갈라 놓고 뜻에서 도로 붙여 놓으면 헛일이라 뜻도 고쳐요.)"
+
+- word: private
+  example_ko: "여기는 개인 전용 방이에요."
+  reason: "individual 은 여럿 가운데 하나하나, 곧 '각자'라는 뜻이고 private 는 남에게 열려 있지 않은 '전용, 사적인'이라는 뜻이에요. 둘 다 '개인'으로 옮겨 놔서 겹쳤던 것을 '각자'와 '전용'으로 갈랐고, '~입니다' 문체도 해요체로 고쳤어요."
+
+- word: produce
+  example_ko: "이 공장에서는 자동차를 생산해요."
+  reason: "manufacture 는 공장에서 기계로 찍어 내는 제조이고, produce 는 만들어 낸다는 더 넓은 생산이다. 한국어 제조와 생산이 그대로 이 둘에 붙는 말이라 해석을 그 두 낱말로 갈랐다. 덧붙여 원래 해석의 '만듭니다' 는 이 앱의 해요체가 아니었다."
+
+- word: profitable
+  example_ko: "이 프로젝트는 이익이 아주 많이 남아요."
+  reason: "lucrative 는 돈이 많이 들어온다는 쪽이라 일자리나 장사에 쓰고, profitable 은 들인 것보다 이익이 남는다는 쪽이라 사업이나 프로젝트에 써요. 둘 다 '매우 수익성이 있어요'였던 것을 '돈벌이가 좋다'와 '이익이 남는다'로 갈랐어요."
+
+- word: progressive
+  example_ko: "이 문제에는 진보적인 접근 방식이 필요해요."
+  reason: "conservative(보수적인)·traditional(전통적인)과 정반대라 답이 갈리고, 예문의 approach 를 그대로 '접근 방식'으로 옮겼어요."
+
+- word: prohibit
+  example_ko: "이 방침은 사무실에서 흡연을 금지해요."
+  reason: "prohibit 은 규정이나 법이 공식으로 금하는 것이라 주어가 방침이고, forbid 은 힘 있는 사람이 못 하게 막는 것이라 주어가 사장이에요. '규정이 금지한다'와 '사람이 못 하게 한다'로 갈랐어요. b 는 forbids 라 현재인데 해석이 과거였던 것과 a 의 '~습니다' 문체도 고쳤어요."
+
+- word: proportion
+  example_ko: "커피를 좋아하는 사람이 전체에서 차지하는 비중은 얼마나 되나요?"
+  reason: "percentage 는 백 분의 몇인지 숫자로 답이 나오는 말이고, proportion 은 전체에서 차지하는 몫이다. 해석을 '몇 퍼센트' 와 '전체에서 차지하는 비중' 으로 갈랐다. 원래는 둘 다 '비율' 이어서 구분이 안 됐다."
+
+- word: prosecutor
+  example_ko: "검사가 회의에서 또렷하게 말했어요."
+  reason: "'검사'는 lawyer, judge 와 겹치지 않아 답이 하나로 정해지고, 저장된 뜻과 설명이 검사를 '피고를 대표하는 사람'이라고 해 정반대라서 고쳤어요."
+
+- word: prospectus
+  example_ko: "회의 전에 투자 설명서를 검토해 주세요."
+  reason: "plan 은 '계획서', summary 는 '요약'으로 갈리도록 '투자 설명서'로 좁혔어요. 저장된 패턴이 불가산명사라고 적어 두었는데 prospectus 는 셀 수 있는 명사예요."
+
+- word: prosper
+  example_ko: "우리 회사는 기술 업계에서 번창하고 있어요."
+  reason: "prosper 는 돈을 벌며 잘되는 번창이고, flourish 는 기세가 활짝 피어 왕성해지는 쪽이다. 해석을 '번창하다' 와 '활짝 꽃피우다' 로 갈랐다. 원래는 둘 다 '잘 나가고 있어요' 여서 구분이 없었다."
+
+- word: prototype
+  example_ko: "저희한테 새 앱의 시제품이 있어요."
+  reason: "sample 은 '견본', model 은 '모형'으로 갈리도록 '시제품'을 썼어요. 저장된 뜻의 '시제'는 말이 잘린 것이라 '시제품'으로 바로잡았어요."
+
+- word: quote
+  example_ko: "선생님은 유명한 말을 그대로 옮겨 말씀하셨어요."
+  reason: "cite 는 근거로 끌어다 대는 것이고, quote 는 남의 말을 그대로 옮기는 것이다. 해석을 '근거로 들다' 와 '그대로 옮기다' 로 갈랐다. 원래 cite 쪽은 '인용문을 인용하셨어요' 로 같은 말이 겹쳐 있기도 했다."
+
+- word: rainfall
+  example_ko: "내일 서울의 강수량을 확인해 보세요."
+  reason: "'날씨'라고 하면 weather, '비'라고 하면 rain 이 답이 되니 양을 가리키는 '강수량'을 썼고, 저장된 뜻의 '강도'는 이 낱말의 뜻이 아니라 빼고 고쳤어요."
+
+- word: really
+  example_ko: "그거 정말 비싼가요?"
+  reason: "damn 은 거친 욕설성 강조라 '엄청' 쪽이고, really 는 점잖은 '정말' 이다. a 가 '정말로' 여서 really 와 그대로 겹쳤던 걸 갈랐다. 저장된 뜻 '비꼬는 말로 쓰임' 도 틀렸다 — 비꼼이 아니라 거친 강조다. 애초에 왕초보용 연습장에 넣을 낱말이 아니니 빼는 걸 권한다."
+
+- word: rebound
+  example_ko: "공이 벽에 맞고 되튀어 나왔어요."
+  reason: "bounce 는 통통 튀는 움직임 자체이고, rebound 는 부딪힌 데서 되돌아 나오는 것이다. 해석을 '통통 튀다' 와 '되튀어 나오다' 로 갈랐다."
+
+- word: receiver
+  example_ko: "그 소포의 수취인은 이 선생님이에요."
+  reason: "같은 자료의 recipient 예문이 'The recipient of the invoice is Mr. Lee.' 로 구조가 똑같아서, 우편물에 쓰는 말인 '수취인'을 골라 서류를 받는 recipient(수신인·수령인) 쪽과 갈리게 했어요."
+
+- word: recipient
+  example_ko: "청구서의 수취인은 이 씨예요."
+  reason: "'받는 사람'이라고 쓰면 receiver도 답이 되니, 지정된 사람을 뜻하는 '수취인'을 썼고 sender와도 갈려요."
+
+- word: remodel
+  example_ko: "다음 달에 사무실을 리모델링할 거예요."
+  reason: "renovate 는 낡은 것을 손봐 새것처럼 만드는 쪽, remodel 은 구조와 배치를 바꾸는 쪽이다. a 를 '새로 손보다' 로 바꾸고 b 는 한국어로 굳어진 '리모델링' 을 남겨 갈랐다. 원래 a 의 '내달' 은 잘 안 쓰는 말이라 '다음 달' 로 고쳤다."
+
+- word: renovate
+  example_ko: "다음 달에 사무실을 새로 손볼 거예요."
+  reason: "renovate 는 낡은 것을 손봐 새것처럼 만드는 쪽, remodel 은 구조와 배치를 바꾸는 쪽이다. a 를 '새로 손보다' 로 바꾸고 b 는 한국어로 굳어진 '리모델링' 을 남겨 갈랐다. 원래 a 의 '내달' 은 잘 안 쓰는 말이라 '다음 달' 로 고쳤다. (검증: renovate/remodel 쌍. '새로 손보다' 와 '리모델링' 으로 가른 것도, '내달' 을 '다음 달' 로 고친 것도 맞아요. 다만 renovate 의 저장된 뜻이 '수리하다, 리모델링하다' 라 뜻 쪽에서 remodel 과 그대로 겹쳐요. 뜻에서 '리모델링' 을 빼야 갈림이 유지돼요.)"
+
+- word: renter
+  example_ko: "세입자의 신원 조회 자료를 확인해 봐야 해요."
+  reason: "'세입자'로 빌려 쓰는 쪽임을 못 박아 landlord와 갈랐고, 저장된 '임대차인'은 없는 말이라 고쳤어요."
+
+- word: reporter
+  example_ko: "그분은 취재 기자예요."
+  reason: "reporter 는 현장에서 취재해 소식을 전하는 기자이고, journalist 는 기자와 편집자를 아우르는 언론인이다. 해석을 '취재 기자' 와 '언론인' 으로 갈랐다."
+
+- word: restraint
+  example_ko: "저희는 지출을 스스로 자제해야 해요."
+  reason: "control 은 '통제', discipline 은 '규율'로 읽히므로, 스스로 억누른다는 restraint 의 핵심을 '스스로 자제하다'로 넣었어요."
+
+- word: robust
+  example_ko: "이 문제를 풀려면 탄탄한 해결책이 필요해요."
+  reason: "'강한'이라고 하면 strong 이 답이 되니, 어떤 상황에도 버틴다는 뜻이 드러나는 '탄탄한'으로 갈랐어요."
+
+- word: roughly
+  example_ko: "대략 10달러 정도 해요."
+  reason: "'It costs ___ 10 dollars.' 에는 roughly 도 about 도 똑같이 들어간다 — 이 뜻에서 둘은 정말 바꿔 쓸 수 있어서 해석으로는 갈릴 수 없다. about 에만 있고 roughly 에는 없는 '~에 관한' 뜻으로 예문을 바꿨다. a 의 '~됩니다' 는 해요체로 고쳤다."
+
+- word: route
+  example_ko: "역까지 가는 경로가 어떻게 되나요?"
+  reason: "route 는 어디를 거쳐 가는지 정해진 경로이고, way 는 그냥 가는 길이다. route 쪽 해석만 '경로' 로 바꾸면 '길' 이 보이는 문제는 way 로 정해진다."
+
+- word: safely
+  example_ko: "택배를 안전하게 배달해 주세요."
+  reason: "'안전하게'라는 부사꼴로 써서 형용사 safe·명사 safety가 아닌 safely만 답이 되게 했고, 저장된 설명은 '안전하게 전달해 주세요'가 어색하다고 했는데 사실이 아니라 고쳤어요."
+
+- word: sale
+  example_ko: "이 셔츠는 지금 세일 중이에요."
+  reason: "sale 은 파는 쪽이 벌이는 '세일' 이고, discount 는 값에서 깎아 주는 '할인' 액수다. 둘 다 '할인 중이에요' 였던 걸 '세일' 과 '할인' 으로 대응어를 갈랐다. b 는 10% 라는 액수가 붙는 자리라 sale 이 들어갈 수 없다."
+
+- word: scratch
+  example_ko: "그거 목록에서 빼 주실 수 있나요?"
+  reason: "scratch 는 줄을 그어 목록에서 빼는 '취소' 쪽이고, erase 는 글자를 지워 없애는 쪽이다. a 를 '빼 주다' 로 바꿔 b 의 '지워 주다' 와 갈랐다. 저장된 뜻 '자르다, 지우다' 는 어긋난다 — scratch 의 기본은 '긁다' 이고 '자르다' 뜻은 없다. (검증: scratch/erase 쌍. '빼 주다' 와 '지워 주다' 로 가른 건 맞아요. 저장된 뜻 '자르다, 지우다 (표면에서), 긁다' 가 틀렸다고 지적만 하고 고쳐 놓지 않아서 채웠어요 — scratch 는 '긁다' 가 기본이고 목록에서 줄 그어 빼는 쓰임이 이 예문의 자리예요.)"
+
+- word: significant
+  example_ko: "이건 의미가 큰 사건이에요."
+  reason: "significant 는 뜻이나 차이가 커서 눈에 띄는 쪽, important 는 그냥 중요한 쪽이다. 둘 다 '중요한' 이던 걸 '의미가 큰' 과 '중요한' 으로 갈랐다. 원래 두 해석의 '~입니다' 는 해요체로 고쳤고, significant 의 저장된 뜻 '중요한, 중요한' 은 같은 말이 두 번 적힌 것이라 손봐야 한다. (검증: significant/important 쌍. '의미가 큰' 과 '중요한' 으로 가른 것도, '~입니다' 를 해요체로 고친 것도 맞아요. 뜻 '중요한, 중요한' 을 손봐야 한다고 해 놓고 적지 않아서 채웠어요 — 뜻을 그대로 두면 해석만 갈리고 important 와 그대로 겹쳐요.)"
+
+- word: size
+  example_ko: "이 가방 크기가 어떻게 되나요?"
+  reason: "dimension 은 가로·세로·높이 같은 방향별 치수, size 는 전체 크기다. a 를 '가로세로 치수' 로 바꿔 b 의 '크기' 와 갈랐다."
+
+- word: sketch
+  example_ko: "로고 밑그림 좀 볼 수 있을까요?"
+  reason: "'초안'이라고 하면 draft, '개요'라고 하면 outline 이 답이 되니 그림이라는 게 드러나는 '밑그림'으로 갈랐고, 저장된 뜻도 '초안'이 앞에 있어 고쳤어요."
+
+- word: specially
+  example_ko: "이 보고서는 특별히 팀장님을 위한 거예요."
+  reason: "'특별히 ~를 위한'으로 목적을 콕 집는 쓰임을 살려 강조에 쓰는 especially('특히')와 갈랐어요."
+
+- word: stall
+  example_ko: "우리는 시간을 끌어서 회의를 내일로 넘겨야 해요."
+  reason: "stall 은 일부러 시간을 끌어 늦추는 것이고, postpone 은 일정을 뒤로 옮겨 잡는 것이다. stall 쪽 해석에 '시간을 끌어서' 를 넣으면 그냥 '미루어야 해요' 인 문제는 postpone 으로 정해진다."
+
+- word: sterling
+  example_ko: "작업물의 흠잡을 데 없는 품질이 정말 인상적이에요."
+  reason: "저장된 뜻의 '양의'는 이 예문과 아무 상관이 없어서 버리고, sterling 이 품질을 칭찬하는 말이라는 점을 '흠잡을 데 없는'으로 살렸어요."
+
+- word: suitable
+  example_ko: "이 셔츠는 파티에 입기 알맞은 옷이에요."
+  reason: "appropriate 는 자리와 예의에 맞는 쪽, suitable 은 목적과 조건에 맞는 쪽이다. 저장된 뜻에서도 '적절한' 은 appropriate 에만, '알맞은' 은 suitable 에만 있어 그 대응어로 갈랐다. 둘 다 '어울리는 옷' 이던 것을 각각의 대응어로 못박았다."
+
+- word: sunscreen
+  example_ko: "회의 전에 선크림 바르는 것 잊지 마세요."
+  reason: "'자외선 차단제'는 sunblock 도 가리켜서 '선크림'으로 갈랐고, 설명의 '피부에 덜 자극적이다'는 근거 없는 말이라 고쳤어요."
+
+- word: super
+  example_ko: "이 보고서는 엄청 중요해요."
+  reason: "very 는 '아주', really 는 '정말'로 두고 super 에는 구어체 강조인 '엄청'을 붙였어요. 저장된 설명의 'Super well 은 틀려요'는 사실이 아니라 고쳤어요."
+
+- word: suppress
+  example_ko: "회의 중에 화를 억눌러야 했어요."
+  reason: "'참다'로 쓰면 hold back 이 답이 되니 눌러 둔다는 '억누르다'로 갈랐고, 저장된 뜻과 설명이 '감정, 감정'처럼 겹치고 앞뒤가 맞지 않아 고쳤어요. (검증: '억누르다'로 hold back(참다)을 가른 건 맞고 저장된 뜻의 '감정, 감정' 겹침을 고친 것도 옳아요. 고친 건 '회의 동안'이에요 — 한국어에서는 '회의하는 동안'이라야 자연스럽고 명사에 바로 붙이면 번역투로 읽혀서 '회의 중에'로 바꿨어요. repress 는 무의식에 묻는 쪽이라 '억눌러야 했어요'와 갈립니다.)"
+
+- word: target
+  example_ko: "제가 겨냥한 목표는 영어를 잘 배우는 거예요."
+  reason: "target 은 맞힐려고 겨냥하는 지점이고, objective 는 이루려는 목적이다. 해석을 '겨냥한 목표' 와 '목적' 으로 갈랐다. 원래 두 해석은 '저의 목표는' 으로 똑같았고 문체도 이 앱의 해요체가 아니었다."
+
+- word: terrible
+  example_ko: "저는 수학을 정말 못해요."
+  reason: "'This food is ___.' 에는 horrible 도 terrible 도 그냥 들어가서 해석으로는 못 가른다. terrible 은 'be terrible at' 으로 무엇을 못한다는 뜻이 되고 여기에는 horrible 을 쓰지 않으므로 그 문장으로 바꿨다. horrible 쪽은 '끔찍하다' 로 역겨운 느낌을 살렸다."
+
+- word: test
+  example_ko: "내일 우리는 테스트를 봐요."
+  reason: "test 는 수업 중에 보는 가벼운 확인, exam 은 학교에서 치르는 정식 시험이다. 한국어 '테스트' 와 '시험' 이 그 차이를 그대로 갖고 있어서 둘로 갈랐다. 저장된 풀이의 'Test 는 시험을 주는 사람을 의미해요' 는 틀린 설명이다."
+
+- word: thank
+  example_ko: "도와주셔서 고마워요."
+  reason: "thank 는 상대에게 건네는 인사말(동사), grateful 은 내 마음 상태를 말하는 형용사다. b 를 '저는 ~ 고마운 마음이에요' 로 바꿔 주어의 상태임을 드러냈다. 원래 두 해석의 '~합니다' 는 이 앱 문체가 아니라 해요체로 고쳤다."
+
+- word: thoroughly
+  example_ko: "보고서를 철저히 확인해 주세요."
+  reason: "'꼼꼼히'는 구석구석 빠짐없이라는 뜻이라 completely·fully에 대응하는 '완전히'와 갈려요. (검증: '꼼꼼히'는 우리말에서 carefully와 그대로 겹쳐요. carefully는 confused_with에 없지만 'Please check the report ___'에 아무 저항 없이 들어가는 흔한 낱말이라 답이 둘이 돼요. '철저히'는 completely('완전히')와도 갈리고 carefully와도 갈려요. 뜻 고침은 앞사람 것을 그대로 살려요.)"
+
+- word: top
+  example_ko: "그 산의 맨 위는 아주 높아요."
+  reason: "peak 은 뾰족하게 솟은 봉우리, top 은 그냥 맨 위쪽이다. 둘 다 '정상' 이던 것을 '봉우리' 와 '맨 위' 로 갈랐다."
+
+- word: trace
+  example_ko: "경찰이 용의자가 남긴 흔적을 되짚고 있어요."
+  reason: "trace 는 남은 흔적을 거꾸로 되짚어 찾아내는 것이고, track 은 움직이는 대상을 계속 따라가는 것이다. 해석에 '흔적을 되짚다' 와 '움직임을 계속 따라가다' 를 각각 넣었다."
+
+- word: track
+  example_ko: "경찰이 용의자의 움직임을 계속 따라가고 있어요."
+  reason: "trace 는 남은 흔적을 거꾸로 되짚어 찾아내는 것이고, track 은 움직이는 대상을 계속 따라가는 것이다. 해석에 '흔적을 되짚다' 와 '움직임을 계속 따라가다' 를 각각 넣었다."
+
+- word: translator
+  example_ko: "회의에 번역가가 필요해요."
+  reason: "translator 는 글을 옮기는 번역가, interpreter 는 말을 그 자리에서 옮기는 통역사다. 한국어에 두 낱말이 따로 있는데 원래 translator 쪽 해석이 '통역사' 로 잘못 붙어 있어 답이 뒤집혀 있었다. 번역가로 바로잡았다."
+
+- word: trim
+  example_ko: "이 문서를 조금 쳐내서 다듬어 주시겠어요?"
+  reason: "cut 은 '자르다'로 두고 trim 에는 '쳐내서 다듬다'를 썼어요. 저장된 뜻과 설명에 있는 '가다(I'll trim to the airport)'는 영어에 없는 쓰임이라 지웠어요."
+
+- word: unauthorize
+  example_ko: "지금은 그 접근 허가를 거둘 수 없어요."
+  reason: "cancel 은 '취소하다'로 겹치니 authorize 를 되돌린다는 뜻이 드러나게 '허가를 거두다'로 썼어요. 다만 unauthorize 자체가 영어에서 쓰지 않는 낱말이라 설명에 적어 두었어요."
+
+- word: uncertain
+  example_ko: "배송 날짜가 아직 불확실해요."
+  reason: "'I'm ___ about the delivery date.' 에는 둘 다 들어간다. 차이는 uncertain 은 사람뿐 아니라 일 자체가 정해지지 않았다고도 말할 수 있고 unsure 는 그렇게 못 쓴다는 점이다. 그래서 uncertain 쪽을 날짜가 주어인 문장으로 바꾸고, unsure 쪽은 사람이 확신 없는 것으로 남겼다."
+
+- word: undermine
+  example_ko: "이 정책은 저희 팀의 자신감을 밑에서부터 무너뜨려요."
+  reason: "'약하게 만들다'는 weaken 이 답이 되니 '밑에서부터 무너뜨리다'로 갈랐고, 저장된 뜻의 '뒤에서 흔들다'는 이 낱말의 그림과 달라 고쳤어요. (검증: '밑에서부터 무너뜨리다'로 weaken·erode 를 가른 건 그대로 살렸어요. 고친 건 하나 — 원문 our team's 의 '우리'가 빠져 있었어요. 이 앱 문체대로 '저희 팀의'를 넣었습니다. 저장된 뜻 '뒤에서 흔들다'를 버린 판단에도 동의해요.)"
+
+- word: underway
+  example_ko: "그 프로젝트는 이미 시작해서 진행에 들어갔어요."
+  reason: "underway 는 이미 시작되어 굴러가기 시작했다는 쪽에 무게가 있고, ongoing 은 끝나지 않고 계속된다는 쪽이다. 해석에 '이미 시작해서' 와 '끝나지 않고 계속' 을 각각 넣었다."
+
+- word: unrelated
+  example_ko: "이 주제는 우리 프로젝트와는 별개예요."
+  reason: "irrelevant 는 지금 하는 이야기에 상관없어 끌어올 필요가 없다는 쪽이고 unrelated 는 둘 사이에 이어진 데가 없어 아예 별개라는 쪽이에요. 똑같이 '관련이 없어요'였던 것을 '상관이 없어요'와 '별개예요'로 갈랐고, b 의 '우리의'라는 번역투도 없앴어요."
+
+- word: unsure
+  example_ko: "저는 배송 날짜에 확신이 없어요."
+  reason: "'I'm ___ about the delivery date.' 에는 둘 다 들어간다. 차이는 uncertain 은 사람뿐 아니라 일 자체가 정해지지 않았다고도 말할 수 있고 unsure 는 그렇게 못 쓴다는 점이다. 그래서 uncertain 쪽을 날짜가 주어인 문장으로 바꾸고, unsure 쪽은 사람이 확신 없는 것으로 남겼다."
+
+- word: unusually
+  example_ko: "회의가 유난히 일찍 시작됐어요."
+  reason: "'유난히'는 평소와 다르다는 뜻이라 usually·normally에 해당하는 '보통'과 정반대로 갈려요. (검증: '회의가 시작했어요'는 회의가 스스로 시작한 꼴이라 '시작됐어요'가 맞아요. 저장된 뜻의 '특이하게'는 peculiarly 쪽이라 '유난히'를 쓴 해석과 어긋나서 뜻도 함께 고쳐요. usually·normally와 정반대로 갈린다는 판단은 맞아요.)"
+
+- word: upstairs
+  example_ko: "사무실은 위층에 있어요."
+  reason: "'위층에'로 층을 딱 집어 downstairs(아래층)·above(위에)와 갈랐어요."
+
+- word: usually
+  example_ko: "저는 대개 7시에 아침을 먹어요."
+  reason: "normally 는 별일 없는 평소라면 그렇다는 쪽이고 usually 는 열에 아홉은 그렇다는 빈도예요. 둘 다 '보통'이었던 것을 '평소 같으면'과 '대개'로 갈랐어요."
+
+- word: van
+  example_ko: "가게 밖에 승합차가 한 대 있어요."
+  reason: "truck 은 짐칸이 따로 난 화물차고 van 은 짐이나 사람을 함께 태우는 승합차예요. b 해석이 van 을 '트럭'이라고 옮겨 놔서 두 문제의 답이 아예 같아졌어요. '승합차'로 고쳤어요. b 의 저장된 뜻 '버스 중 하나'도 틀린 말이에요. (검증: 해석이 van 을 '트럭'이라 옮겨 truck 카드와 답이 아예 같았으니 고친 게 맞아요. 앞사람이 틀렸다고만 한 뜻 '버스 중 하나'를 채웠어요 — 그 뜻을 두면 학습자가 bus 를 떠올려요. a 의 '밖에는 큰 트럭이 있어요'도 '밖에 큰 트럭이 한 대 있어요'가 더 자연스러워요.)"
+
+- word: vase
+  example_ko: "꽃병이 탁자 위에 있어요."
+  reason: "'꽃병'이라고 꽃을 못 박아 jar·pot과 갈랐고, 저장된 설명의 'jar보다 예쁘게 생겼다'는 구별 기준이 아니라 고쳤어요."
+
+- word: waiter
+  example_ko: "남자 종업원이 저희에게 메뉴판을 가져다줬어요."
+  reason: "두 낱말의 차이는 딱 하나, 남자냐 여자냐다. 해석에 '남자 종업원' 과 '여자 종업원' 을 넣으면 바로 갈린다. 원래 waitress 쪽 해석이 '웨이터' 로 되어 있어 아예 틀린 상태였다."
+
+- word: waitress
+  example_ko: "여자 종업원이 저희에게 메뉴판을 가져다줬어요."
+  reason: "두 낱말의 차이는 딱 하나, 남자냐 여자냐다. 해석에 '남자 종업원' 과 '여자 종업원' 을 넣으면 바로 갈린다. 원래 waitress 쪽 해석이 '웨이터' 로 되어 있어 아예 틀린 상태였다."
+
+- word: with
+  example_ko: "저는 친구랑 공원에 갔어요."
+  reason: "together 는 '함께' 라는 뜻만 얹는 부사이고, with 는 뒤에 사람이 반드시 붙는 전치사다. 해석에서 '함께' 는 together 쪽에만 남기고, with 쪽은 '친구랑' 처럼 조사로만 표시했다. 그러면 '함께' 가 보이는 문제는 together, 조사만 있는 문제는 with 가 된다."
+
+- word: yen
+  example_ko: "가격은 10,000엔이에요."
+  reason: "화폐 단위를 '엔'으로 적어 won(원)·dollar(달러)와 갈랐고, 저장된 뜻이 '원'으로 되어 있어 바로잡았어요."
+
+- word: bust
+  example_ko: "복사기가 또 고장 났어요."
+  reason: "예문이 'I'll bust around the office first.' 였는데 영어에 없는 표현이다. bust 에 '폭주하다' 라는 뜻도 없다. 뜻·예문·해석이 서로 어긋난 채였다."
+
+- word: inter
+  example_ko: "그들은 다음 주에 시신을 묻을 거예요."
+  reason: "예문이 'Inter the documents and send them to the client.' 였다. 동사 inter 에는 '사이에 끼우다' 라는 뜻이 없어서 영어가 성립하지 않았고, 뜻·설명도 통째로 틀렸다."
+
+- word: strike
+  example_ko: "그는 성냥을 그어 촛불을 켰어요."
+  reason: "'그는 공을 세게 쳤어요' 가 hit 의 해석과 글자까지 똑같았다. 공을 치는 문장에서는 두 낱말이 정말 바꿔 써도 되므로 strike 만 쓰는 자리로 예문을 옮겼다."
+
+# ── 자동 검사가 못 잡은 충돌 셋. 사용자가 신고한 것과 그 이웃들이다 ──────
+#
+# postpone / reschedule 은 두 해석의 글자 겹침이 0.04 라 `gloss_collision` 에
+# 안 걸린다. 학습자에게는 똑같이 '미루다' 하나로 읽히는데 기계에게는 다른
+# 문장이다 — 이 부류는 사람이 읽어야 한다.
+
+- word: postpone
+  example_ko: "회의를 내일로 미뤄야 해요."
+  reason: "reschedule 의 해석과 둘 다 '미루다' 여서 어느 낱말을 쓰라는 건지 알 수 없었다. 이쪽에 '미루다' 를 두고 reschedule 쪽을 '일정을 다시 잡다' 로 옮겼다. '우리는 … 미루어야' 의 번역투도 덜어 냈다."
+
+- word: reschedule
+  example_ko: "회의 일정을 내일로 다시 잡을 수 있을까요?"
+  reason: "해석이 '미팅을 내일로 미룰 수 있을까요?' 여서 postpone 과 갈리지 않았다. reschedule 은 미루는 것이 아니라 **일정을 다시 잡는 것**이라 그 말을 넣었다. 사용자가 신고한 자리다."
+
+- word: crucial
+  example_ko: "이건 아주 중대한 회의예요."
+  reason: "해석이 important 와 글자까지 똑같았다('이건 중요한 회의예요'). crucial 은 없으면 일이 안 되는 결정적인 쪽이라 '중대한' 으로 갈랐다."
+
+- word: till
+  example_ko: "계산원이 돈을 계산대 서랍에 넣었어요."
+  reason: "예문을 계산대 서랍 뜻으로 옮겼는데 해석이 '8시까지 기다릴게요' 로 남아 있었다 — 예문과 해석이 아예 다른 문장이 될 뻔했다."
+

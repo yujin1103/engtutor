@@ -27,6 +27,8 @@ import sys
 import time
 from pathlib import Path
 
+import yaml
+
 # 컨테이너에서 `python content/batch_generate.py` 로 직접 실행할 수 있게 한다.
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
@@ -123,6 +125,22 @@ def _relevel(dry_run: bool) -> int:
     return 0
 
 
+GLOSS_FIXES = Path(__file__).parent / "data" / "gloss_fixes.yaml"
+
+
+def human_glossed(path: Path | None = None) -> set[str]:
+    """사람이 해석을 손으로 적어 둔 표제어. 배치가 이 낱말들의 해석을 지우면 안 된다.
+
+    파일이 없으면 빈 집합이다 — 이 빗장 때문에 배치가 안 도는 일은 없어야 한다.
+    """
+    target = path or GLOSS_FIXES
+    try:
+        fixes = yaml.safe_load(target.read_text(encoding="utf-8")) or []
+    except OSError:
+        return set()
+    return {str(f["word"]).strip().lower() for f in fixes if isinstance(f, dict) and f.get("word")}
+
+
 def _clear_stale_glosses(db) -> list[tuple[str, str]]:
     """지금 규칙으로 다시 봐서 통과 못 하는 해석을 비운다. LLM 을 부르지 않는다.
 
@@ -133,6 +151,17 @@ def _clear_stale_glosses(db) -> list[tuple[str, str]]:
 
     승인된 항목은 건드리지 않는다. 비운 것은 (표제어, 이유) 로 돌려준다 — 규칙을
     새로 넣은 판에서는 이 목록이 곧 그 규칙의 실측 결과다.
+
+    **사람이 적어 둔 해석도 건드리지 않는다.** `gloss_fixes.yaml` 에 이름이 있는
+    낱말은 건너뛴다. 이 빗장이 없으면 이 함수가 사람의 판단을 조용히 지운다 —
+    실제로 그럴 뻔했다. 손으로 쓴 해석 17개가 `reject_unrelated_gloss` 에 걸렸는데,
+    전부 **맞는 해석인데 저장된 뜻과 글자가 안 겹치는** 경우였다(`journalist` 의
+    해석 '언론인' 과 저장된 뜻 '기자', `classroom` 의 '교실' 과 '수업을 듣는 공간').
+    그 검사는 구체 명사에서는 듣지만 뜻을 다른 말로 옮길 수 있는 낱말에서는 헛짚는다.
+
+    승인(`reviewed`)으로 막지 않는 이유는, 승인은 항목 전체에 대한 사람의 판단이고
+    해석 교정은 칸 하나에 대한 판단이라서다. 해석 하나 고쳤다고 나머지 다섯 칸까지
+    승인된 것으로 만들면 검수 큐가 뜻을 잃는다.
     """
     from app.content.schemas import (
         clean_gloss,
@@ -141,9 +170,10 @@ def _clear_stale_glosses(db) -> list[tuple[str, str]]:
         reject_wrong_number,
     )
 
+    kept = human_glossed()
     cleared: list[tuple[str, str]] = []
     for row in crud.list_words(db, limit=100_000):
-        if row.reviewed or not row.example_ko:
+        if row.reviewed or not row.example_ko or row.word in kept:
             continue
         try:
             clean_gloss(row.example_ko)
