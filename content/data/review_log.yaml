@@ -1442,3 +1442,47 @@ passes:
   - yen
   - yield
   - zipper
+- id: top150-a
+  date: '2026-08-27'
+  what: 빈도 2~50위 기능어 40개 — 26개가 거짓·비문이었다
+  words:
+  - a
+  - all
+  - and
+  - as
+  - at
+  - but
+  - by
+  - can
+  - do
+  - for
+  - from
+  - go
+  - have
+  - he
+  - i
+  - if
+  - in
+  - know
+  - like
+  - more
+  - not
+  - of
+  - one
+  - or
+  - she
+  - so
+  - that
+  - there
+  - think
+  - this
+  - time
+  - to
+  - we
+  - what
+  - when
+  - which
+  - who
+  - will
+  - would
+  - you

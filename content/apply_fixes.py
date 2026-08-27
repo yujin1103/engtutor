@@ -177,6 +177,29 @@ def apply_gloss_fixes(db, fixes: list[dict], *, dry_run: bool) -> tuple[int, int
     return applied, skipped, flagged
 
 
+def yaml_booleans(fixes: list[dict]) -> list[str]:
+    """따옴표가 없어 불리언으로 읽힌 낱말을 찾는다. 자리와 함께 돌려준다.
+
+    PyYAML 은 `on`·`off`·`yes`·`no`·`true`·`false` 를 따옴표 없이 쓰면 불리언으로
+    읽는다. 영어 표제어에는 하필 그 여섯이 다 있다.
+
+    두 번 물렸다. 처음에는 `- word: on` 이 True 가 되어 적용이 멈췄고, 다음에는
+    `confused_with: [no, never]` 의 no 가 False 가 되어 pydantic 이 스무 줄짜리
+    타입 오류를 뱉었다. 둘 다 원인이 화면에 안 나온다 — 오류 어디에도 'no' 라는
+    글자가 없다. 그래서 YAML 을 고치라고 **낱말을 짚어** 말해 준다.
+    """
+    bad: list[str] = []
+    for i, fix in enumerate(fixes):
+        if not isinstance(fix, dict):
+            continue
+        if isinstance(fix.get("word"), bool):
+            bad.append(f"{i + 1}번째 항목의 word: {fix['word']!r}")
+        for j, c in enumerate(fix.get("confused_with") or []):
+            if isinstance(c, bool):
+                bad.append(f"{fix.get('word', '?')} 의 confused_with[{j}]: {c!r}")
+    return bad
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -192,6 +215,15 @@ def main() -> int:
     path = args.fixes or (GLOSS_FIXES if args.glosses else FIXES)
     fixes = yaml.safe_load(path.read_text(encoding="utf-8")) or []
     logger.info("교정 %d건을 읽었습니다: %s", len(fixes), path)
+
+    booleans = yaml_booleans(fixes)
+    if booleans:
+        for where in booleans:
+            logger.error("따옴표가 없어 불리언으로 읽혔습니다 — %s", where)
+        logger.error(
+            "YAML 에서 그 낱말을 따옴표로 묶으세요. on/off/yes/no/true/false 가 이렇게 됩니다."
+        )
+        return 1
 
     init_db()
     with db_session() as db:

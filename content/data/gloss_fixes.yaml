@@ -2036,3 +2036,51 @@
   example_ko: "오늘 밤에 회의가 있어요."
   reason: "tonight 은 '오늘 밤' 인데 해석이 '오늘 저녁' 이라 evening 쪽으로 읽혔다."
 
+
+# ── 기능어 구간(빈도 2~50위) ─────────────────────────────────────
+#
+# 이 구간에서 가장 나쁜 것은 `would` 였다 — "I would like some coffee" 의 해석이
+# "커피 좀 **드리고** 싶어요" 였다. 주는 쪽과 받는 쪽이 뒤바뀌어 있다.
+#
+# 예문을 고친 것(of · so · more)은 해석도 함께 바꾼다. 예문만 고치면 해석이
+# 남아서 빈칸의 단서가 문장과 어긋난다.
+
+- word: "would"
+  example_ko: "커피 좀 마시고 싶어요."
+  reason: "'커피 좀 드리고 싶어요' 였다. I would like some coffee 는 내가 마시고 싶다는 뜻이다 — 주는 쪽과 받는 쪽이 뒤바뀌어 정반대를 가르쳤다."
+
+- word: "there"
+  example_ko: "우리 집 근처에 공원이 있어요."
+  reason: "'저 집 근처에' 였다. my house 는 '우리 집' 이다."
+
+- word: "of"
+  example_ko: "이건 제 가족 사진이에요."
+  reason: "예문이 명사구(a photo of my family)인데 해석은 '제 가족의 사진입니다' 로 문장이었다. 예문을 문장으로 고치면서 해석도 맞춘다."
+
+- word: "so"
+  example_ko: "늦어서 집에 갔어요."
+  reason: "예문을 앞 절이 있는 문장으로 고쳤다(So I went to the store → It was late, so I went home). 해석도 그에 맞춘다."
+
+- word: "more"
+  example_ko: "이 가방은 저것보다 더 비싸요."
+  reason: "예문이 비문(more hot)이라 고쳤다. 해석도 새 예문에 맞춘다."
+
+- word: "go"
+  example_ko: "우리 공원에 가요."
+  reason: "해석이 **비어 있었다**. 빈도 30위인데 연습장에서 단서 없이 나갔다."
+
+- word: "a"
+  example_ko: "저는 고양이를 한 마리 봤어요."
+  reason: "'고양이 하나를 봤어요' 는 한국어에서 어색하다. 동물은 '한 마리' 로 센다."
+
+- word: "for"
+  example_ko: "이 선물은 당신 거예요."
+  reason: "'이 선물은 당신에게요' 는 문장이 되다 만 말이다."
+
+- word: "as"
+  example_ko: "그는 아버지만큼 키가 커요."
+  reason: "'키가 크죠' 는 이 자리에 어울리지 않는 말투다."
+
+- word: "time"
+  example_ko: "회의는 몇 시예요?"
+  reason: "'미팅 시간은 언제인가요' 였다. What time 은 '몇 시' 이고, meeting 은 '회의' 로 적는다."

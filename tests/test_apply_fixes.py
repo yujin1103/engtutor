@@ -184,3 +184,34 @@ def test_every_recorded_gloss_fix_is_shaped_right():
         assert fix.get("reason"), f"{fix['word']}: 왜 고쳤는지가 없습니다"
         # 교정본도 생성물과 같은 스키마를 통과해야 한다.
         assert clean_gloss(fix["example_ko"])
+
+
+def test_unquoted_headword_is_named_not_buried_in_a_type_error():
+    """따옴표 없는 `on`·`no` 를 **낱말을 짚어** 알린다.
+
+    PyYAML 은 on/off/yes/no/true/false 를 따옴표 없이 쓰면 불리언으로 읽는다.
+    영어 표제어에는 하필 그 여섯이 다 있다. 두 번 물렸다 — `- word: on` 이 True 가
+    되어 적용이 멈췄고, `confused_with: [no, never]` 의 no 가 False 가 되어
+    pydantic 이 스무 줄짜리 타입 오류를 뱉었다.
+
+    둘 다 **오류 어디에도 'on' 이나 'no' 라는 글자가 없다.** 그래서 못 찾는다.
+    """
+    fixes = yaml.safe_load("- word: on\n- word: not\n  confused_with: [no, never]\n")
+    found = apply_fixes.yaml_booleans(fixes)
+
+    assert len(found) == 2
+    assert "word: True" in found[0]
+    assert "confused_with[0]" in found[1] and "not" in found[1]
+
+
+def test_quoted_headwords_pass():
+    """따옴표로 묶으면 아무 말도 하지 않는다."""
+    fixes = yaml.safe_load('- word: "on"\n- word: not\n  confused_with: ["no", never]\n')
+    assert apply_fixes.yaml_booleans(fixes) == []
+
+
+def test_the_real_fix_files_have_no_unquoted_booleans():
+    """실제 교정 YAML 두 개를 시험한다. 이게 걸리면 적용이 통째로 멈춘다."""
+    for path in (apply_fixes.FIXES, apply_fixes.GLOSS_FIXES):
+        fixes = yaml.safe_load(path.read_text(encoding="utf-8")) or []
+        assert apply_fixes.yaml_booleans(fixes) == [], f"{path.name} 에 따옴표 없는 낱말이 있습니다"
