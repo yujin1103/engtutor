@@ -246,6 +246,54 @@ export interface ClozeQuery {
   speech?: boolean;
   reviewed_only?: boolean;
   topic?: string;
+  /**
+   * 어느 어휘 트랙에서 낼지. 빼면 서버 기본값인 생활 회화(`general`)다 —
+   * 그 기본값이 안전장치라서 화면이 잊어도 왕초보에게 `reimbursement` 가 안 나온다.
+   */
+  track?: string;
+}
+
+// ─────────────────────────────────────────────── 낱말 목록 (읽기용)
+
+/**
+ * 읽기용 낱말 하나. 빈칸(`ClozeOut`)과 달리 **가리는 것이 없다** —
+ * 이 낱말을 외우러 온 사람에게 보여주는 것이라 지울 것이 없다.
+ *
+ * CEFR 레벨이 없는 것은 빠뜨린 게 아니다. 토익 어휘는 난이도가 아니라 **빈도**로
+ * 줄 세운 목록이고, 같은 화면에 A1/B1 딱지가 붙으면 학습자가 그걸 순서로 읽는다.
+ */
+export interface WordCardOut {
+  word: string;
+  /** 빈도 순위. 1이 가장 자주 쓰인다. 트랙 안에서만 뜻이 있는 값이다. */
+  rank: number | null;
+  meaning_ko: string;
+  example: string;
+  /** 예문 그 문장의 해석. 2,252개 중 2,128개만 채워져 있어 없을 수 있다. */
+  example_ko: string | null;
+  pattern: string | null;
+  reviewed: boolean;
+}
+
+export interface WordPageOut {
+  total: number;
+  /**
+   * 다음 장을 받을 자리. **서버가 정해 준다** — 안전 판정에 걸린 행이 중간에서
+   * 빠지므로 `offset + items.length` 로 계산하면 그만큼씩 앞으로 밀린다.
+   * 끝에 닿으면 `null`.
+   */
+  next_offset: number | null;
+  items: WordCardOut[];
+}
+
+export interface WordQuery {
+  track?: string;
+  offset?: number;
+  count?: number;
+  /**
+   * 단어장. 표제어를 쉼표로 이어 보내면 그것들만 빈도 순으로 돌려준다
+   * (`offset`·`count` 는 무시된다). 서버 상한은 200개.
+   */
+  words?: string;
 }
 
 export interface ClozeAnswerRequest {

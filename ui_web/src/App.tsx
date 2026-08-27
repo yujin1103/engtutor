@@ -11,6 +11,7 @@ import { PickerScreen } from "./screens/PickerScreen";
 import { PracticeScreen } from "./screens/PracticeScreen";
 import { ReportScreen } from "./screens/ReportScreen";
 import { SettingsScreen } from "./screens/SettingsScreen";
+import { ToeicScreen } from "./screens/ToeicScreen";
 import { useCatalog } from "./state/catalog";
 
 export default function App() {
@@ -75,7 +76,16 @@ export default function App() {
     case "practice":
       // 목록 셋(`catalog`)을 안 쓰는 유일한 화면이다. 연습장이 읽는 것은
       // `words` 테이블이지 시나리오가 아니다.
-      return <PracticeScreen onBack={back} />;
+      //
+      // `track` 이 실려 오면 장면 고르기를 건너뛴다 — 토익 화면에서 "빈칸으로
+      // 연습" 을 누른 경우다. 같은 연습장을 다른 어휘로 여는 것뿐이라 화면을
+      // 새로 만들지 않았다.
+      return <PracticeScreen track={route.track} onBack={back} />;
+
+    case "toeic":
+      return (
+        <ToeicScreen onBack={back} onPractice={() => go({ name: "practice", track: "toeic" })} />
+      );
 
     case "settings":
       return <SettingsScreen strictness={catalog.strictness} onBack={back} />;
@@ -87,6 +97,7 @@ export default function App() {
           catalog={catalog}
           onStart={(scenario) => go({ name: "chat", scenarioId: scenario.id })}
           onOpenPractice={() => go({ name: "practice" })}
+          onOpenToeic={() => go({ name: "toeic" })}
           onOpenSettings={() => go({ name: "settings" })}
         />
       );

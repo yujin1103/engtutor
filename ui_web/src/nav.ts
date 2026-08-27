@@ -16,8 +16,15 @@ export type Route =
   | { name: "chat"; scenarioId: string }
   /** 대화를 끝내고 보는 화면. 어느 세션인지 알아야 리포트를 만들 수 있다. */
   | { name: "report"; sessionId: string; scenarioId: string }
-  /** 단어 연습장. 대화와 나란한 두 번째 갈래라 첫 화면에서 바로 들어온다. */
-  | { name: "practice" }
+  /**
+   * 단어 연습장. 대화와 나란한 두 번째 갈래라 첫 화면에서 바로 들어온다.
+   *
+   * `track` 이 있으면 장면 고르기를 건너뛰고 그 트랙을 바로 푼다 — 토익 화면에서
+   * "빈칸으로 연습" 을 누른 경우다. 없으면 지금까지대로 장면부터 고른다.
+   */
+  | { name: "practice"; track?: string }
+  /** 토익 낱말을 빈도 순으로 훑는 화면. 연습장과 달리 읽는 자리다. */
+  | { name: "toeic" }
   | { name: "settings" };
 
 export const HOME: Route = { name: "picker" };
@@ -34,6 +41,7 @@ function routeOf(state: unknown): Route | null {
     name === "chat" ||
     name === "report" ||
     name === "practice" ||
+    name === "toeic" ||
     name === "settings"
   ) {
     return value as Route;

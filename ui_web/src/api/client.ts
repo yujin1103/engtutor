@@ -19,6 +19,8 @@ import type {
   StrictnessOut,
   SttResponse,
   TopicOut,
+  WordPageOut,
+  WordQuery,
   ClozeQuery,
 } from "./types";
 
@@ -175,13 +177,23 @@ export function getClozeTopics(signal?: AbortSignal): Promise<TopicOut[]> {
   return request("/cloze/topics", { signal });
 }
 
-export function getCloze(query: ClozeQuery = {}, signal?: AbortSignal): Promise<ClozeOut[]> {
+/**
+ * 정해진 값만 실어 보낸다. `undefined` 를 그냥 넘기면 `"undefined"` 라는 글자가 붙는다.
+ *
+ * 인터페이스에는 인덱스 시그니처가 없어서 `Record<string, unknown>` 을 못 받는다.
+ * 값 타입만 묶어 두면 `ClozeQuery`·`WordQuery` 가 그대로 들어온다.
+ */
+function queryString(query: object): string {
   const params = new URLSearchParams();
   for (const [key, value] of Object.entries(query)) {
     if (value !== undefined && value !== null) params.set(key, String(value));
   }
   const qs = params.toString();
-  return request(`/cloze${qs ? `?${qs}` : ""}`, { signal });
+  return qs ? `?${qs}` : "";
+}
+
+export function getCloze(query: ClozeQuery = {}, signal?: AbortSignal): Promise<ClozeOut[]> {
+  return request(`/cloze${queryString(query)}`, { signal });
 }
 
 export function postClozeAnswer(
@@ -189,4 +201,11 @@ export function postClozeAnswer(
   signal?: AbortSignal,
 ): Promise<ClozeAnswerOut> {
   return request("/cloze/answer", json(req, signal));
+}
+
+// ─────────────────────────────────────────────── 낱말 목록 (읽기용)
+
+/** 한 트랙의 낱말을 빈도 순으로 한 장. 빈칸과 달리 가려진 칸이 없다. */
+export function getWords(query: WordQuery = {}, signal?: AbortSignal): Promise<WordPageOut> {
+  return request(`/words${queryString(query)}`, { signal });
 }

@@ -458,6 +458,63 @@ def topics(db: DbSession, *, track: str | None = TRACK_GENERAL) -> list[tuple[st
     return [(str(t), int(n), int(r or 0)) for t, n, r in db.execute(stmt)]
 
 
+def track_total(db: DbSession, *, track: str = TRACK_GENERAL) -> int:
+    """그 트랙에서 화면에 낼 수 있는 행 수. 예문 없는 행은 빼고 센다.
+
+    화면이 "몇 개짜리 목록인가"를 먼저 알아야 하는데, 매 장마다 표를 통째로
+    훑을 수는 없어서 SQL 로 한 번에 센다. 파이썬 쪽 안전 판정까지 반영한 수는
+    아니다 — 그건 트랙 하나를 다 훑어야 나오고 실측 220ms 다. 토익 화면은
+    진도를 백분율이 아니라 **빈도 순위**로 보여 주므로 이 차이가 눈에 띄지 않는다.
+    """
+    stmt = select(func.count(WordRow.id)).where(WordRow.track == track, WordRow.example != "")
+    return int(db.execute(stmt).scalar_one())
+
+
+def words_by_rank(
+    db: DbSession,
+    *,
+    track: str = TRACK_GENERAL,
+    offset: int = 0,
+    limit: int = 30,
+) -> list[WordRow]:
+    """한 트랙의 낱말을 **빈도 순**으로 한 장. 읽기용 목록이 쓴다.
+
+    `cloze_candidates` 와 갈라 둔 이유가 둘이다. 저쪽은 레벨·장면으로 좁히고
+    넉넉히 받아 걸러 쓰라고 만든 것이라 `offset` 이 없고, 무엇보다 **차례가
+    안정적이어야 한다** — 목록 화면은 사용자가 어디까지 봤는지 기억했다가 그
+    자리로 돌아오므로, 같은 offset 이 늘 같은 낱말이어야 한다.
+
+    rank 가 없는 행은 뒤로 보낸다. 토익 트랙은 2,252개 전부 rank 가 있어서
+    지금은 해당이 없지만, 목록을 하나 더 이어 붙이면 생긴다.
+    """
+    stmt = (
+        select(WordRow)
+        .where(WordRow.track == track, WordRow.example != "")
+        .order_by(WordRow.rank.is_(None), WordRow.rank, WordRow.word)
+        .limit(limit)
+        .offset(offset)
+    )
+    return list(db.execute(stmt).scalars())
+
+
+def words_named(db: DbSession, words: list[str], *, track: str | None = None) -> list[WordRow]:
+    """이름을 준 낱말들을 빈도 순으로. 단어장이 쓴다.
+
+    화면이 담아 둔 것은 표제어뿐이고 내용은 늘 여기서 다시 읽는다. 카드를 폰에
+    복사해 두면 나중에 뜻을 고쳐도 그 사람의 단어장에는 옛 뜻이 영영 남는다 —
+    `squid` 의 뜻이 '감자전' 이던 시절에 담아 둔 카드가 그렇다.
+    """
+    wanted = [w.strip().lower() for w in words if w.strip()]
+    if not wanted:
+        return []
+    stmt = select(WordRow).where(WordRow.word.in_(wanted))
+    if track:
+        stmt = stmt.where(WordRow.track == track)
+    rows = list(db.execute(stmt).scalars())
+    rows.sort(key=lambda r: (r.rank is None, r.rank or 0, r.word))
+    return rows
+
+
 def cloze_candidates(
     db: DbSession,
     *,

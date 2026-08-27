@@ -55,7 +55,7 @@ interface Failure {
   detail: string;
 }
 
-export function useDeck(topic: string | null): Deck {
+export function useDeck(topic: string | null, track?: string): Deck {
   const [request, setRequest] = useState<Request>({ offset: 0, nonce: 0 });
   const [page, setPage] = useState<Page | null>(null);
   const [failure, setFailure] = useState<Failure | null>(null);
@@ -79,6 +79,9 @@ export function useDeck(topic: string | null): Deck {
         // 기능어 빈칸을 뺀다. `I like coffee ____ tea.` 의 답은 `and` 인데,
         // 그 자리에는 품사 힌트도 설명도 붙일 게 없어서 연습장이 할 말이 없다.
         speech: true,
+        // 안 주면 서버 기본값인 생활 회화 트랙이다. 토익 화면에서 들어올 때만
+        // 'toeic' 이 실린다 — 기본값이 안전장치라 여기서 지어내지 않는다.
+        track,
         count: PAGE,
         offset,
       },
@@ -102,7 +105,7 @@ export function useDeck(topic: string | null): Deck {
     );
 
     return () => controller.abort();
-  }, [topic, offset, nonce]);
+  }, [topic, track, offset, nonce]);
 
   // 지금 요청의 결과만 본다. 짝이 안 맞으면 아직 기다리는 중이다.
   const fresh = page && page.nonce === nonce ? page : null;

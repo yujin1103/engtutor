@@ -30,6 +30,12 @@ export interface PracticeRunProps {
   topic: string | null;
   /** 화면 위에 적을 이름("카페", "전체 낱말"). */
   label: string;
+  /**
+   * 어느 어휘 트랙을 풀지. 안 주면 서버 기본값인 생활 회화다.
+   * 토익 화면이 이 자리를 써서 **같은 연습장을 토익 낱말로 연다** — 화면을
+   * 하나 더 만들지 않는다. 푸는 방식이 같은데 화면이 둘이면 둘 다 낡는다.
+   */
+  track?: string;
   onBack: () => void;
 }
 
@@ -40,8 +46,8 @@ type Phase =
   | { at: "judged"; result: ClozeAnswerOut; open: boolean }
   | { at: "broken"; detail: string };
 
-export function PracticeRun({ topic, label, onBack }: PracticeRunProps) {
-  const { state, next, retry } = useDeck(topic);
+export function PracticeRun({ topic, label, track, onBack }: PracticeRunProps) {
+  const { state, next, retry } = useDeck(topic, track);
   const [text, setText] = useState("");
   const [phase, setPhase] = useState<Phase>({ at: "asking" });
   const inputRef = useRef<HTMLInputElement | null>(null);

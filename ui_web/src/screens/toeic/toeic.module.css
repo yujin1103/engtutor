@@ -1,0 +1,172 @@
+/* 토익 낱말 목록의 모양. 카드가 죽 이어지는 화면 하나가 전부다.
+ *
+ * 연습장(practice.module.css)이 문장 하나를 크게 보여주는 화면이라면 이쪽은
+ * 훑는 화면이다. 그래서 카드 높이를 낮게 잡고, 한 화면에 서너 장이 들어오게 했다.
+ * 폰에서 엄지로 굴리면서 읽는 것이 기준이다. */
+
+.tabs {
+  display: flex;
+  gap: var(--gap-sm);
+  margin-bottom: var(--gap);
+}
+
+.tab {
+  display: flex;
+  flex: 1;
+  gap: var(--gap-xs);
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap-min);
+  padding: 0 var(--gap);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.tabOn {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* 탭 옆의 개수. 숫자가 커도 탭이 흔들리지 않게 고정폭 느낌으로 둔다. */
+.count {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.tabOn .count {
+  color: var(--accent);
+}
+
+.lead {
+  margin: 0 0 var(--gap);
+  font-size: 0.88rem;
+}
+
+/* 문단 안에 섞이는 글자 버튼. "처음부터 보기" 하나뿐이다. */
+.link {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  text-decoration: underline;
+}
+
+/* ───────────────────────────── 낱말 카드 */
+
+.card {
+  margin-bottom: var(--gap-sm);
+  padding: var(--gap) 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+/* 외웠다고 표시한 카드. **지우지 않고 옅게만 만든다** — 목록에서 빼면 다시
+   만날 수 없고, 다시 만나야 진짜 외운 것이 된다. */
+.knownCard {
+  background: var(--surface-2);
+  opacity: 0.66;
+}
+
+.head {
+  display: flex;
+  gap: var(--gap-sm);
+  align-items: center;
+  margin-bottom: var(--gap-xs);
+}
+
+/* 자주 쓰이는 차례. 이 화면의 축이라 낱말 앞에 둔다. */
+.rank {
+  min-width: 3.2ch;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.word {
+  flex: 1;
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.marks {
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--gap-xs);
+}
+
+/* 표시 버튼은 작지만 누를 수는 있어야 한다. 높이를 32px 로 낮추는 대신
+   좌우 여백을 넉넉히 줘서 손가락이 닿을 면적을 만든다. */
+.mark {
+  min-height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.markOn {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.meaning {
+  margin: 0 0 var(--gap-sm);
+  font-size: 0.98rem;
+  overflow-wrap: anywhere;
+}
+
+.example {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.exampleKo {
+  margin: 2px 0 0;
+  color: var(--text-dim);
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+/* ───────────────────────────── 목록 끝 */
+
+.more {
+  width: 100%;
+  min-height: var(--tap-min);
+  margin-top: var(--gap-sm);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.more:disabled {
+  color: var(--text-dim);
+}
+
+.end,
+.empty {
+  padding: var(--gap-lg) 0;
+  font-size: 0.9rem;
+  text-align: center;
+}

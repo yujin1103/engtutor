@@ -31,12 +31,27 @@ type TopicsState =
   | { status: "ready"; topics: TopicOut[] }
   | { status: "failed"; detail: string };
 
-export function PracticeScreen({ onBack }: { onBack: () => void }) {
+export interface PracticeScreenProps {
+  onBack: () => void;
+  /**
+   * 어느 어휘 트랙을 풀지. 주면 **장면 고르기를 건너뛰고** 바로 푼다 —
+   * 토익 화면에서 "빈칸으로 연습" 을 누른 경우다. 그 트랙에는 장면이 하나도
+   * 안 붙어 있어서 고를 것도 없고, 이미 무엇을 풀지 정하고 온 사람에게
+   * 화면을 한 겹 더 태울 이유도 없다.
+   */
+  track?: string;
+}
+
+/** 트랙마다 화면 위에 적을 이름. 모르는 값이면 그냥 '단어' 라고 한다. */
+const TRACK_LABEL: Record<string, string> = { toeic: "토익 단어" };
+
+export function PracticeScreen({ onBack, track }: PracticeScreenProps) {
   const [state, setState] = useState<TopicsState>({ status: "loading" });
   const [attempt, setAttempt] = useState(0);
   const [chosen, setChosen] = useState<Chosen | null>(null);
 
   useEffect(() => {
+    if (track) return; // 장면을 안 고르므로 목록을 받을 이유가 없다.
     const controller = new AbortController();
     getClozeTopics(controller.signal).then(
       (topics) => setState({ status: "ready", topics }),
@@ -52,12 +67,26 @@ export function PracticeScreen({ onBack }: { onBack: () => void }) {
       },
     );
     return () => controller.abort();
-  }, [attempt]);
+  }, [attempt, track]);
 
   const retry = useCallback(() => {
     setState({ status: "loading" });
     setAttempt((n) => n + 1);
   }, []);
+
+  if (track) {
+    // 트랙을 정하고 들어온 길. 뒤로 가면 고르기 화면이 아니라 온 곳으로 돌아간다 —
+    // 여기에는 고를 것이 없어서 고르기를 보여주면 막다른 화면이 된다.
+    return (
+      <PracticeRun
+        key={`track:${track}`}
+        topic={null}
+        label={TRACK_LABEL[track] ?? "단어"}
+        track={track}
+        onBack={onBack}
+      />
+    );
+  }
 
   if (chosen) {
     return (

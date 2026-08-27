@@ -27,6 +27,8 @@ export interface PickerScreenProps {
   onStart: (scenario: ScenarioOut) => void;
   /** 단어 연습장으로. 대화와 **나란한** 갈래라 여기서 바로 들어간다. */
   onOpenPractice: () => void;
+  /** 토익 낱말 목록으로. 연습장과 나란한 갈래다 — 하나는 풀고 하나는 훑는다. */
+  onOpenToeic: () => void;
   onOpenSettings: () => void;
 }
 
@@ -34,6 +36,7 @@ export function PickerScreen({
   catalog,
   onStart,
   onOpenPractice,
+  onOpenToeic,
   onOpenSettings,
 }: PickerScreenProps) {
   const { level } = useSettings();
@@ -170,6 +173,23 @@ export function PickerScreen({
               <span className={styles.practiceTitle}>단어 연습장</span>
               <span className={styles.practiceBlurb}>
                 빈칸에 들어갈 말을 찾고, 왜 그런지까지 배워요
+              </span>
+            </span>
+            <span className={styles.chevron} aria-hidden="true">
+              ›
+            </span>
+          </button>
+
+          {/* 세 번째 갈래. 연습장 바로 아래에 같은 모양으로 세운다 — 둘 다
+              "대화 말고 낱말" 쪽이고, 하나는 풀고 하나는 훑는다. */}
+          <button type="button" className={styles.practice} onClick={onOpenToeic}>
+            <span className={styles.practiceEmoji} aria-hidden="true">
+              📗
+            </span>
+            <span className={styles.practiceText}>
+              <span className={styles.practiceTitle}>토익 단어</span>
+              <span className={styles.practiceBlurb}>
+                시험에 자주 나오는 차례로 훑고, 단어장에 담아요
               </span>
             </span>
             <span className={styles.chevron} aria-hidden="true">

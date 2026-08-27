@@ -446,6 +446,44 @@ class TopicOut(BaseModel):
     reviewed: int
 
 
+class WordCardOut(BaseModel):
+    """읽기용 낱말 하나. 빈칸(`ClozeOut`)과 달리 **가리는 것이 없다.**
+
+    두 화면이 같은 표를 읽지만 하는 일이 반대다. 연습장은 답을 숨겨야 하므로
+    `mask_answer` 로 뜻·해석에서 표제어 흔적을 지우고, 이 목록은 그 낱말을
+    외우러 온 사람에게 보여주는 것이라 지울 것이 없다. 그래서 스키마를 따로 뒀다 —
+    한 스키마에 `masked` 같은 깃발을 두면 언젠가 반대로 세팅된 채 나간다.
+
+    CEFR 레벨은 넣지 않는다. 토익 어휘는 난이도로 묶은 목록이 아니라 **빈도로 줄
+    세운** 목록이고, 같은 화면에 A1/B1 딱지가 붙으면 학습자가 그걸 순서로 읽는다.
+    축은 `rank` 하나다.
+    """
+
+    word: str
+    # 빈도 순위. 1이 가장 자주 쓰인다. **트랙 안에서만 뜻이 있는 값이다.**
+    rank: int | None = None
+    meaning_ko: str
+    example: str
+    # 예문 그 문장의 해석. 2,252개 중 2,128개만 채워져 있어 없을 수 있다.
+    example_ko: str | None = None
+    pattern: str | None = None
+    reviewed: bool
+
+
+class WordPageOut(BaseModel):
+    """낱말 목록 한 장.
+
+    `next_offset` 을 서버가 정해 준다. 안전 판정에 걸린 행이 중간에서 빠지므로
+    화면이 `offset + len(items)` 로 다음 자리를 계산하면 그만큼씩 앞으로
+    밀린다 — 걸러진 낱말 자리에 다음 낱말이 당겨져 오는 게 아니라, 그 뒤가
+    통째로 건너뛰어진다. 끝에 닿으면 `null` 이다.
+    """
+
+    total: int
+    next_offset: int | None
+    items: list[WordCardOut]
+
+
 class ClozeAnswerRequest(BaseModel):
     word: str
     said: str = Field(description="학습자가 말했거나 적은 답")
@@ -541,6 +579,84 @@ def list_topics() -> list[TopicOut]:
             TopicOut(topic=t, label_ko=practice.topic_ko(t) or t, total=n, reviewed=r)
             for t, n, r in crud.topics(db)
         ]
+
+
+def _word_card(row) -> WordCardOut:
+    """행 하나를 읽기용 카드로. 가리는 것이 없다(`_cloze_out` 과 반대다)."""
+    return WordCardOut(
+        word=row.word,
+        rank=row.rank,
+        meaning_ko=row.meaning_ko,
+        example=row.example,
+        example_ko=row.example_ko,
+        pattern=row.pattern,
+        reviewed=row.reviewed,
+    )
+
+
+# 단어장 한 번에 받아올 수 있는 낱말 수. 폰 주소 길이(대개 2,000자 안팎)를 넘기지
+# 않으려는 값이기도 하다 — 표제어 평균 8자면 200개가 1,800자쯤이다.
+MAX_SAVED_WORDS = 200
+
+
+@app.get("/words", response_model=WordPageOut)
+def list_words(
+    track: str = TRACK_GENERAL,
+    offset: int = 0,
+    count: int = 30,
+    words: str | None = None,
+) -> WordPageOut:
+    """한 트랙의 낱말을 **빈도 순으로 읽기용** 한 장씩 준다.
+
+    빈칸(`/cloze`)과 무엇이 다른가. 저쪽은 문제라서 답을 숨기고 한 번에 한 문장씩
+    나가지만, 이건 외우러 온 사람이 죽 훑는 목록이라 뜻·예문·해석을 그대로 보여
+    준다. 같은 표를 읽어도 나가는 모양이 반대다.
+
+    `track` 기본값이 생활 회화인 것은 `/cloze` 와 같은 이유다 — 빼먹은 호출이
+    왕초보용 낱말을 받게 해 둔다. 토익 어휘는 `track=toeic` 으로만 나온다.
+
+    안전 판정(`is_safe_to_serve`)을 여기서도 통과시킨다. 목록에 보이는 낱말은
+    그 자리에서 "빈칸으로 연습" 을 누를 수 있어야 하는데, 두 화면의 문이 다르면
+    목록에 있던 낱말이 연습에서는 안 나온다. 걸러진 만큼 다음 자리를 당겨
+    채우려고 넉넉히 읽어 온다.
+
+    `words` 는 **단어장**이 쓴다. 사용자가 담아 둔 낱말을 쉼표로 이어 보내면 그것들만
+    빈도 순으로 돌려준다. 화면이 카드 내용을 통째로 저장하지 않고 표제어만 들고
+    있게 하려는 것이다 — 내용을 폰에 복사해 두면 오늘처럼 뜻을 고친 뒤에도
+    `squid` 의 단어장 카드에는 '감자전' 이 영영 남는다.
+    """
+    from .db import crud
+    from .db.database import db_session
+
+    count = max(1, min(count, 60))
+    with db_session() as db:
+        if words is not None:
+            wanted = [w.strip().lower() for w in words.split(",") if w.strip()][:MAX_SAVED_WORDS]
+            rows = crud.words_named(db, wanted, track=track) if wanted else []
+            picked = [_word_card(r) for r in rows if cloze_mod.is_safe_to_serve(r)]
+            return WordPageOut(total=len(picked), next_offset=None, items=picked)
+
+        total = crud.track_total(db, track=track)
+        items: list[WordCardOut] = []
+        cursor = max(0, offset)
+        # 걸러지는 비율이 토익 트랙에서 6.7% 라 두 배면 거의 늘 한 장을 채운다.
+        # 못 채우면 아래 while 이 한 번 더 읽는다.
+        while len(items) < count and cursor < total:
+            rows = crud.words_by_rank(db, track=track, offset=cursor, limit=count * 2)
+            if not rows:
+                break
+            for row in rows:
+                cursor += 1
+                if not cloze_mod.is_safe_to_serve(row):
+                    continue
+                items.append(_word_card(row))
+                if len(items) == count:
+                    break
+        return WordPageOut(
+            total=total,
+            next_offset=cursor if cursor < total and items else None,
+            items=items,
+        )
 
 
 @app.get("/cloze", response_model=list[ClozeOut])
