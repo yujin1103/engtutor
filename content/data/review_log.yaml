@@ -1486,3 +1486,47 @@ passes:
   - will
   - would
   - you
+- id: top150-b
+  date: '2026-08-27'
+  what: 빈도 51~99위 기능어 40개 — 34개가 거짓·비문이었다
+  words:
+  - after
+  - also
+  - any
+  - back
+  - because
+  - come
+  - could
+  - day
+  - even
+  - find
+  - give
+  - good
+  - here
+  - how
+  - into
+  - just
+  - look
+  - many
+  - mean
+  - much
+  - new
+  - 'no'
+  - now
+  - only
+  - out
+  - people
+  - right
+  - should
+  - some
+  - such
+  - take
+  - than
+  - then
+  - thing
+  - up
+  - use
+  - way
+  - well
+  - where
+  - work

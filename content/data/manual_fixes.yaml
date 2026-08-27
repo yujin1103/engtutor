@@ -2516,3 +2516,176 @@
   reason: "설명이 ''what time' 은 '언제' 가 아니라 '언제인가요?' 처럼 시간을 물을 때 써요' 였다 — 말이 되지 않고, 같은 것을 time 항목에서 또 다르게 틀렸다. what time 은 '몇 시' 다."
   pattern: "what + 동사 / what + 명사"
   usage_note: "무엇인지 물을 때 써요 — What is your name? 뒤에 명사를 붙여 what time(몇 시), what color(무슨 색)처럼도 써요. 정해진 것 중에서 고르라고 물을 때는 which 를 써요."
+
+# ── 기능어 구간 이어서(빈도 51~99위) — 40개 중 34개 ──────────────────────
+#
+# 앞 40개가 65% 였는데 이 40개는 85% 다. 같은 자리에서 같은 방식으로 틀린다 —
+# 품사를 잘못 부르고(up 은 '접속사', out 은 '접미사'), 한국어와 없는 대조를 만들고
+# ('한국어 하루는 시간을 의미하지만, 날은 날짜를 의미해요'), 예문이 설명을 반박한다
+# (come 은 '말하는 사람이 움직일 때' 라면서 예문이 When will you come to Korea?).
+
+- word: "up"
+  reason: "'up 은 방향을 나타내는 접속사예요' 가 거짓이다 — 접속사가 아니다. ''go up' 은 'go up to the store' 처럼 목적지가 필요해요' 도 거짓이다. go up 만으로 쓴다."
+  meaning_ko: "위로, 위에"
+  pattern: "up + 명사 / 동사 + up"
+  usage_note: "위쪽을 가리켜요 — go up, look up. 뒤에 명사가 오기도 하고(up the stairs) 동사에 붙어 뜻을 바꾸기도 해요: stand up(일어서다), give up(포기하다). 반대는 down 이에요."
+
+- word: "some"
+  reason: "''any' 와는 다르게 문장 중간에 쓸 수 있어요' 는 뜻을 알 수 없는 말이고, some 과 any 의 진짜 차이(그렇다고 하는 문장 / 아니라고 하거나 묻는 문장)를 말하지 않았다."
+  usage_note: "'조금·몇 개' 라는 뜻으로 명사 앞에 붙여요 — some water, some apples. 그렇다고 말하는 문장에 쓰고, 아니라고 하거나 물을 때는 any 로 바꿔요: I don't have any money. 다만 권할 때는 물음에도 some 을 써요: Would you like some coffee?"
+
+- word: "out"
+  reason: "''out' 은 방향이나 상태를 나타내는 접미사로 쓰일 수 있어요' 가 거짓이다 — 접미사가 아니다."
+  usage_note: "'밖으로' 예요 — go out(나가다), take it out(꺼내다). 동사 뒤에 붙어 뜻을 바꾸기도 해요: run out of(다 떨어지다). 반대는 in 이에요."
+
+- word: "good"
+  reason: "뜻에 '잘 가는' 이 들어 있었는데 good 의 뜻이 아니다. ''good' 은 형용사로, '좋다' 는 동사예요' 도 성립하지 않는 대조다 — 한국어 '좋다' 는 형용사다. 혼동 목록의 'good at' 도 낱말이 아니라 구다."
+  meaning_ko: "좋은, 잘하는"
+  usage_note: "명사 앞에 붙여 '좋은' 이라는 뜻이에요 — a good book. 잘한다고 할 때는 good at 을 쓰고 뒤에 -ing 가 와요: I'm good at cooking. 동사를 꾸밀 때는 good 이 아니라 well 이에요: She sings well."
+  confused_with: [well, better, best]
+
+- word: "people"
+  reason: "문형이 'a/the + people' 이었다. a people 은 '민족' 이라는 다른 뜻이라 왕초보 화면에 그대로 나가면 안 된다."
+  pattern: "people + 복수 동사"
+  usage_note: "'사람들' 이에요 — 이미 여럿이라 -s 를 붙이지 않아요. 한 사람은 person 이에요. 뒤에 오는 동사도 복수로 받아요: People are waiting."
+
+- word: "take"
+  reason: "문형 한 칸에 설명이 통째로 들어가 예순 자를 넘겼다. 설명의 '가져가다와 take 는 방향이 중요해요' 도 문장이 되지 않는다."
+  pattern: "take + 목적어"
+  usage_note: "손에 들고 가는 쪽이 take 예요. 이쪽으로 가져오는 것은 bring 이에요 — I'll take this to school(가져가다) / Bring it here(가져오다). 시간이 얼마나 걸리는지에도 써요: It takes ten minutes."
+
+- word: "no"
+  reason: "'영어에서는 문장의 맨 앞에만 쓰고, 뒤에 다른 말을 이어줘야 해요' 가 거짓이다 — No. 하나로 끝내는 말이다. 그리고 no + 명사(no money)라는 흔한 쓰임이 빠져 있었다."
+  usage_note: "'아니요' 라는 대답이에요 — No, thank you. 혼자서도 쓰고, 명사 앞에 붙여 '하나도 없다' 는 뜻도 돼요: I have no money. 동사를 부정할 때는 no 가 아니라 not 을 써요."
+  confused_with: [not, none, "yes"]
+
+- word: "well"
+  reason: "뜻에 '건강하다 (명사로 쓸 때)' 가 있었는데 그때 well 은 형용사다. 명사 well 은 '우물' 이라 아예 다른 말이다."
+  meaning_ko: "잘, 건강한"
+  usage_note: "동사를 꾸며 '잘' 이라는 뜻이에요 — She sings well. 명사를 꾸미는 '좋은' 은 good 이에요. 몸이 괜찮다고 할 때도 써요: I'm well, thank you."
+
+- word: "because"
+  reason: "설명이 'why 를 대답할 때는 because of + 명사가 자연스러워요' 라고 해서 because 와 because of 의 진짜 차이(뒤에 문장이 오는가 명사가 오는가)를 흐려 놓았다."
+  usage_note: "이유를 말해요. 뒤에 문장이 통째로 와요 — I stayed home because it rained. 명사 하나만 올 때는 because of 로 바꿔요: because of the rain."
+
+- word: "just"
+  reason: "''I just ate' 는 '방금 먹었어요' 보다 더 강하게 '지금 먹었어요' 라는 뉘앙스' 는 근거가 없다. just 는 그냥 '방금' 이다."
+  usage_note: "'방금' 이라는 뜻으로 제일 많이 써요 — I just arrived. '그냥·조금' 이라는 뜻도 있어요: Just a moment(잠깐만요), I just want water(그냥 물만 주세요)."
+
+- word: "come"
+  reason: "''come' 은 움직이는 주체가 말하는 사람일 때 쓰는 거예요' 가 거짓이고, 같은 항목의 예문이 그것을 반박한다 — When will you come to Korea? 에서 움직이는 사람은 you 다."
+  usage_note: "듣는 사람이나 말하는 사람 쪽으로 오는 것이 come 이에요 — Come here! 그 자리에서 멀어지면 go 예요. 그래서 부르면 I'm coming 이라고 답해요."
+
+- word: "could"
+  reason: "'Could은' 은 조사가 틀렸고 '쓰죠' 는 다른 항목들과 말투가 어긋난다. can 의 과거라는, 왕초보가 실제로 막히는 지점도 빠져 있었다."
+  usage_note: "can 의 과거예요 — When I was young, I could run fast. 부탁할 때도 써요: Could you help me? Can you 보다 부드럽고 공손해요."
+
+- word: "than"
+  reason: "설명이 '보다는 than 을 써야 해요. 보다와 혼동하지 말고' 로 동어반복이었다. 정보가 없다."
+  usage_note: "둘을 견줄 때 뒤에 붙여요 — bigger than this, more expensive than that. 앞에는 -er 이 붙은 형용사나 more 가 와요. 소리가 비슷한 then(그 다음에)과 헷갈리지 마세요."
+
+- word: "now"
+  reason: "문형과 설명이 '문장 맨 앞' 으로 못 박혀 있었다. now 는 문장 끝에 더 자주 온다 — I'm going home now."
+  pattern: "now + 문장 / 문장 + now"
+  usage_note: "'지금' 이에요. 문장 앞에도 뒤에도 올 수 있어요 — Now I'm going home. / I'm going home now. right now 라고 하면 '당장' 이라는 뜻이 세져요."
+
+- word: "then"
+  reason: "'then 은 주로 문장 시작에 써요' 라고 못 박아 놓고, 같은 항목의 예문에서는 then 이 문장 중간에 있다."
+  usage_note: "'그 다음에' 예요. 문장 앞에도 오고 쉼표 뒤에도 와요 — I went to the store, then I came home. 소리가 비슷한 than(~보다)과 헷갈리지 마세요."
+
+- word: "also"
+  reason: "예문이 'I like apples, also oranges.' 였는데 영어에서 그렇게 쓰지 않는다. also 는 보통 동사 앞에 들어간다."
+  example: "I also like oranges."
+  usage_note: "'~도' 예요. 보통 동사 앞에 넣어요 — I also like oranges. be 동사일 때는 뒤에 와요: She is also a student. 문장 끝에 붙일 때는 also 말고 too 를 써요."
+
+- word: "only"
+  reason: "뜻에 '다만만' 이라는 없는 말이 있었다. ''I eat only vegetables' 는 'I only eat vegetables' 보다 덜 자연스러워요' 도 근거가 없다 — only 는 꾸밀 말 바로 앞에 놓는 것이 원칙이다."
+  meaning_ko: "오직, ~만"
+  usage_note: "'~만' 이에요. 꾸미고 싶은 말 바로 앞에 놓는 게 원칙이에요 — I eat only vegetables(채소만 먹어요). 말할 때는 동사 앞에 놓는 일이 많아요: I only eat vegetables."
+
+- word: "look"
+  reason: "'보기만 하면 look, 실제로 사용하면 see 를 써요' 는 뜻을 알 수 없는 말이다. 둘의 차이는 일부러 보는가 저절로 보이는가다."
+  usage_note: "일부러 눈을 돌려 보는 것이 look 이에요 — Look at that dog! 눈에 저절로 들어오는 것은 see, 한동안 지켜보는 것은 watch 예요: I see a dog / I watch TV."
+
+- word: "give"
+  reason: "''give' 는 주는 사람, 'borrow' 는 빌리는 사람이예요' 는 문장이 성립하지 않고 '이예요' 오타까지 있다. give 의 짝은 borrow 가 아니라 get 이다."
+  usage_note: "누구에게 무엇을 주는 것이에요. 사람과 물건을 나란히 놓거나(give me some water) to 를 붙여요(give it to me). 반대로 받는 것은 get 이에요."
+  confused_with: [get, lend, take]
+
+- word: "new"
+  reason: "''new bread' 는 '새로 구운 빵' 이지, '신선한 빵' 은 아니에요' 는 영어에서 잘 쓰지 않는 말을 예로 든 것이다. 갓 구운 빵은 fresh bread 라고 한다."
+  usage_note: "처음 나온 것, 산 지 얼마 안 된 것에 써요 — a new phone. 반대는 old 예요. 음식이 상하지 않았다고 할 때는 new 가 아니라 fresh 를 써요: fresh bread."
+
+- word: "way"
+  reason: "설명이 '길을 가리킬 때는 the way to + 장소, 방법을 말할 때는 the way to + 목적' 이라 둘을 구분하지 못했다 — 형태가 같으니 예로 갈라 보여야 한다."
+  usage_note: "'길' 이면서 '방법' 이에요 — the way to the station(역 가는 길), a good way to learn(배우는 좋은 방법). 길을 물을 때는 How do I get to ~? 도 많이 써요."
+
+- word: "find"
+  reason: "설명에 반말('친구를 찾아냈어')이 섞여 다른 항목들과 말투가 어긋났다. 그리고 과거형이 found 라는, 왕초보가 실제로 막히는 지점이 빠져 있었다."
+  usage_note: "찾던 것을 찾아냈을 때 써요 — I found my keys. 사람을 만나는 것은 meet 이에요. 과거형은 found 로 모양이 바뀌어요."
+
+- word: "any"
+  reason: "'any 는 부정문이나 질문에서만 써요' 가 거짓이다 — Any color is fine 처럼 그렇다고 하는 문장에도 쓴다."
+  usage_note: "아니라고 하거나 물어볼 때 some 대신 써요 — I don't have any money. Do you have any questions? '아무거나' 라는 뜻으로 그렇다고 하는 문장에도 써요: Any color is fine."
+
+- word: "day"
+  reason: "'한국어 하루는 시간을 의미하지만, 날은 날짜를 의미해요. 오늘 날은 오늘과 같아요' 는 뜻을 알 수 없는 말이다. 게다가 'What day is it?' 을 '오늘 몇일이에요?' 라고 옮겼는데 그건 요일을 묻는 말이고, '몇일' 은 '며칠' 의 잘못이다."
+  usage_note: "'하루' 이면서 '날' 이에요 — a day off(쉬는 날), three days(사흘). What day is it? 은 무슨 요일인지 묻는 말이에요. 날짜를 물을 때는 What's the date? 예요."
+
+- word: "where"
+  reason: "문형이 'where + be + 목적어' 였는데 그건 주어다. ''where do you live?' 처럼 문장에서 목적어가 필요해요' 도 문장이 되지 않는다."
+  pattern: "where + be + 주어"
+  usage_note: "장소를 물을 때 써요 — Where is the bathroom? 뒤에 문장을 붙일 때는 do 를 빌려 와요: Where do you live?"
+
+- word: "should"
+  reason: "뜻이 '해야 할 것, 하지 말아야 할 것' 이었다 — '하지 말아야 할 것' 은 should 가 아니라 shouldn't 다."
+  meaning_ko: "~하는 게 좋다, ~해야 한다"
+  usage_note: "그러는 게 좋겠다고 말할 때 써요 — You should eat more vegetables. must 나 have to 보다 부드러워요. 하지 말라고 할 때는 shouldn't 예요."
+
+- word: "right"
+  reason: "문형이 'right + 형용사' 였는데 right 는 형용사라 뒤에 명사가 온다. 혼동 목록의 'right side' 도 낱말이 아니라 구이고, '오른쪽' 의 짝인 left 가 빠져 있었다."
+  pattern: "the right + 명사"
+  usage_note: "'맞는' 이라는 뜻이에요 — the right way, You're right. '오른쪽' 이라는 뜻도 있어요: Turn right. 어느 쪽 뜻인지는 문장이 정해 줘요."
+  confused_with: [correct, left, wrong]
+
+- word: "how"
+  reason: "뜻의 '어떻게 되다' 는 how 의 뜻이 아니다. 설명도 '한국어 어떻게는 문장에서 위치가 자유로워요' 라고 한국어만 말하고 how 에 대해서는 말하지 않았다."
+  meaning_ko: "어떻게"
+  usage_note: "방법을 물을 때 써요 — How do you go to school? 형용사 앞에 붙여 정도를 묻기도 해요: How old are you?(몇 살이에요?), How much is it?(얼마예요?)"
+
+- word: "back"
+  reason: "''back' 은 시간이나 순서를 나타낼 때 더 자주 쓰여요' 는 근거가 없다. back 의 중심 뜻은 '되돌아' 이고 같은 항목의 예문(I'll be back)도 그 뜻이다."
+  meaning_ko: "되돌아, 다시; 뒤"
+  pattern: "동사 + back"
+  usage_note: "'되돌아' 라는 뜻으로 동사 뒤에 붙여요 — come back(돌아오다), go back(돌아가다), I'll be back(다시 올게요). 몸의 '등' 이나 '뒤쪽' 을 가리키기도 해요: the back of the room."
+
+- word: "mean"
+  reason: "문형이 'mean to + 목적어' 였는데 뒤에 오는 것은 동사원형이다. 설명 속 해석 '(의도적으로 당신을 상처주려고 하지 않았어요.)' 도 한국어로 잘 쓰지 않는 말이다."
+  pattern: "mean + 목적어 / mean to + 동사원형"
+  usage_note: "'무슨 뜻이다' 라는 말이에요 — What does this word mean? 일부러 그랬다고 할 때는 mean to 를 쓰고 뒤에 동사원형이 와요: I didn't mean to hurt you(일부러 그런 건 아니에요)."
+
+- word: "even"
+  reason: "뜻의 '오히려' 는 even 의 뜻이 아니다. 그리고 예문 해석에서 even 이 통째로 사라져 있었다."
+  meaning_ko: "심지어, ~까지도"
+  usage_note: "뜻밖이라는 느낌을 얹어요 — She even tried(시도까지 했다). 꾸미고 싶은 말 바로 앞에 놓아요. even though 는 '~인데도' 라는 다른 뜻이에요."
+
+- word: "here"
+  reason: "문형이 'here + 예/아니요 (현재 위치를 묻는 질문에)' 로 뜻을 알 수 없었고, '한국어 여기는 여기에 있는 사람을 가리킨다' 도 거짓이다. 예문 'Are we here yet?' 도 영어에서는 there 를 쓴다(Are we there yet?). 혼동 목록의 here's 는 낱말이 아니다."
+  pattern: "동사 + here"
+  example: "Sit here, please."
+  usage_note: "'여기' 예요. 동사 뒤에 붙여 자리를 가리켜요 — Sit here. Come here. 저쪽은 there 예요. Here you are 는 물건을 건네며 '여기 있어요' 라고 할 때 써요."
+  confused_with: [there, this]
+
+- word: "many"
+  reason: "'많은 (불가산명사)는 much 예요' 는 문장이 되다 만 말이다."
+  usage_note: "여러 개를 말할 때 써요 — many people, many books. 물이나 시간처럼 개수로 세지 않는 것에는 much 를 써요: much water."
+
+- word: "such"
+  reason: "예로 든 'so big a problem' 은 왕초보가 쓸 말이 아니고, '(둘 다 가능하지만 such이 더 자연스러워요)' 는 조사도 틀렸다."
+  usage_note: "'정말 ~한' 이라는 느낌을 명사에 얹어요 — such a beautiful day, such good news. 형용사나 부사에는 such 대신 so 를 써요: so beautiful."
+
+- word: "much"
+  reason: "내용은 맞았지만 '불가산명사'·'가산명사'는 왕초보가 못 읽는 문법 용어다. 게다가 가산성을 단정한 설명은 선별기가 '사람이 봐 주세요'로 잡아 두기 때문에, 미검수인 채로는 연습장에 나가지도 못했다 — 빈도 90위가 그렇게 막혀 있었다."
+  meaning_ko: "많은, 많이"
+  pattern: "much + 명사 (money, time, water 등)"
+  usage_note: "물·시간·돈처럼 개수로 세지 않는 것에 써요 — much water, much time. 하나둘 세는 것에는 many 를 써요: many books. 보통 아니라고 하거나 물을 때 써요: I don't have much time."

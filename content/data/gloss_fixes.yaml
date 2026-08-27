@@ -2084,3 +2084,41 @@
 - word: "time"
   example_ko: "회의는 몇 시예요?"
   reason: "'미팅 시간은 언제인가요' 였다. What time 은 '몇 시' 이고, meeting 은 '회의' 로 적는다."
+
+# ── 기능어 구간 이어서(빈도 51~99위) ────────────────────────────
+#
+# `even` 이 앞서 본 `mug` 와 같은 종류다 — 뜻이 틀린 게 아니라 표제어가 해석에서
+# 통째로 사라졌다. "I can't believe she even tried" 의 해석이 "그녀가 시도했다고
+# 믿을 수 없어요" 여서, 정작 배우는 낱말인 even 이 단서에 없었다.
+
+- word: "even"
+  example_ko: "그녀가 시도까지 했다니 믿기지 않아요."
+  reason: "'그녀가 시도했다고 믿을 수 없어요' 였다 — 배우는 낱말인 even 이 해석에서 사라져 빈칸의 단서가 되지 못했다."
+
+- word: "how"
+  example_ko: "잘 지내세요?"
+  reason: "'잘 지내셨나요?' 는 과거를 묻는 말이라 How are you? 와 시제가 어긋난다."
+
+- word: "then"
+  example_ko: "가게에 갔다가 집으로 돌아왔어요."
+  reason: "'쇼핑몰에 갔다가' 였다. the store 는 쇼핑몰이 아니라 가게다."
+
+- word: "only"
+  example_ko: "저는 채소만 먹어요."
+  reason: "'오직 채식만 먹어요' 였다. vegetables 는 '채소' 이고, '채식' 은 먹는 방식을 가리키는 다른 말이다."
+
+- word: "some"
+  example_ko: "밥 좀 주세요."
+  reason: "'쌀 좀 주세요' 였다. 식탁에서 rice 는 '밥' 이다 — 쌀을 달라고 하는 자리가 아니다."
+
+- word: "well"
+  example_ko: "그녀는 노래를 잘해요."
+  reason: "'그녀는 잘 부릅니다' 는 무엇을 부르는지가 빠져 문장이 되다 말았다."
+
+- word: "also"
+  example_ko: "저는 오렌지도 좋아해요."
+  reason: "예문을 자연스러운 말로 고쳤다(I like apples, also oranges → I also like oranges). 해석도 그에 맞춘다."
+
+- word: "here"
+  example_ko: "여기 앉으세요."
+  reason: "예문을 고쳤다(Are we here yet? → Sit here, please). 영어에서는 그 자리에 there 를 쓴다."
