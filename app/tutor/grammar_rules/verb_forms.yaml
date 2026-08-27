@@ -48,9 +48,11 @@ verbs:
   decorate:  {ing: decorating,    noun: decoration,     adj: decorative}
   deliver:   {ing: delivering,    noun: delivery,       past: delivered}
   describe:  {ing: describing,    noun: description,    adj: descriptive}
+  design:    {ing: designing,     noun: designer,       past: designed}
   discuss:   {ing: discussing,    noun: discussion,     past: discussed}
   establish: {ing: establishing,  noun: establishment,  past: established}
   estimate:  {ing: estimating,    noun: estimation,     past: estimated}
+  expand:    {ing: expanding,     noun: expansion,      adj: expansive}
   explain:   {ing: explaining,    noun: explanation,    past: explained}
   extend:    {ing: extending,     noun: extension,      adj: extensive}
   file:      {ing: filing,        past: filed,          s: files}

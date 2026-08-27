@@ -25,6 +25,11 @@ export type Route =
   | { name: "practice"; track?: string }
   /** 토익 낱말을 빈도 순으로 훑는 화면. 연습장과 달리 읽는 자리다. */
   | { name: "toeic" }
+  /**
+   * 토익 Part 5 형 4지선다 문법 문제. 어느 규칙을 풀지는 여기 담지 않는다 —
+   * 규칙 목록을 주는 엔드포인트가 아직 없어서 서버 기본값을 그대로 받는다.
+   */
+  | { name: "grammar" }
   | { name: "settings" };
 
 export const HOME: Route = { name: "picker" };
@@ -42,6 +47,9 @@ function routeOf(state: unknown): Route | null {
     name === "report" ||
     name === "practice" ||
     name === "toeic" ||
+    // 이 줄을 빠뜨리면 타입은 통과하는데 뒤로가기가 조용히 첫 화면으로 떨어진다.
+    // 위의 유니온과 **여기 둘 다** 고쳐야 한 화면이 산다.
+    name === "grammar" ||
     name === "settings"
   ) {
     return value as Route;

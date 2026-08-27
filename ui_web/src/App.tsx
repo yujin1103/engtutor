@@ -7,6 +7,7 @@ import { ErrorNotice, Loading } from "./components/Notice";
 import { Screen } from "./components/Screen";
 import { HOME, useNav } from "./nav";
 import { ChatScreen } from "./screens/ChatScreen";
+import { GrammarScreen } from "./screens/GrammarScreen";
 import { PickerScreen } from "./screens/PickerScreen";
 import { PracticeScreen } from "./screens/PracticeScreen";
 import { ReportScreen } from "./screens/ReportScreen";
@@ -87,6 +88,11 @@ export default function App() {
         <ToeicScreen onBack={back} onPractice={() => go({ name: "practice", track: "toeic" })} />
       );
 
+    case "grammar":
+      // 연습장과 같이 `catalog` 를 안 쓴다. 이 화면이 읽는 것은 손으로 검수한
+      // 문장 틀(`app/tutor/grammar_rules/`)이지 시나리오가 아니다.
+      return <GrammarScreen onBack={back} />;
+
     case "settings":
       return <SettingsScreen strictness={catalog.strictness} onBack={back} />;
 
@@ -98,6 +104,7 @@ export default function App() {
           onStart={(scenario) => go({ name: "chat", scenarioId: scenario.id })}
           onOpenPractice={() => go({ name: "practice" })}
           onOpenToeic={() => go({ name: "toeic" })}
+          onOpenGrammar={() => go({ name: "grammar" })}
           onOpenSettings={() => go({ name: "settings" })}
         />
       );

@@ -409,3 +409,74 @@ export interface ClozeAnswerOut {
   said_pos: string[];
   explain?: ClozeExplainOut | null;
 }
+
+// ─────────────────────────────────────────────── 문법 문제 (토익 Part 5 형)
+
+/**
+ * 보기 하나. **칸이 `word` 뿐인 것이 핵심이다.**
+ *
+ * 이 낱말이 어느 모양인지(동사원형·-ing 형·명사…)는 여기 안 온다. 서버 쪽
+ * 주석 그대로 "그게 곧 정답" 이라서다 — `sending` 옆에 '동명사' 라고 적혀
+ * 있으면 "to 뒤에는 동사원형" 을 아는 학습자가 문장을 안 읽고도 고른다.
+ * 모양 이름은 채점한 뒤 `GrammarAnswerOut.why_ko` 로 처음 나온다.
+ */
+export interface GrammarChoiceOut {
+  word: string;
+}
+
+/**
+ * 문제 하나. **정답 칸이 없다** — 채점은 서버가 한다.
+ *
+ * `choices` 의 **차례를 화면에서 섞지 않는다.** 서버가 문제마다 고정된
+ * 자리바꿈으로 굳혀 보내는 값이라, 화면이 다시 섞으면 같은 문제를 다시 열
+ * 때마다 답의 자리가 옮겨 다닌다("아까는 ②였는데").
+ */
+export interface GrammarOut {
+  /** 채점할 때 어느 문제인지 가리키는 열쇠. 정답과 아무 관계 없는 자리 번호다. */
+  id: string;
+  rule: string;
+  /** 이 문제가 묻는 규칙의 이름("to 다음에는 동사원형"). 화면에 그대로 띄운다. */
+  rule_title: string;
+  /** `____` 가 한 번 들어 있는 영어 문장. */
+  sentence: string;
+  /** 낱말 자리를 '~' 로 비워 둔 한국어 뜻. 이 문제가 묻는 것은 뜻이 아니라 **형태**다. */
+  sentence_ko: string;
+  choices: GrammarChoiceOut[];
+}
+
+export interface GrammarQuery {
+  /**
+   * 어느 규칙을 풀지. **화면이 이 값을 지어내지 않는다** — 규칙 목록을 주는
+   * 엔드포인트가 아직 없어서, 빼고 서버 기본값을 받은 뒤 응답의 `rule_title` 로
+   * 무엇을 푸는지 학습자에게 알린다. 모르는 이름을 보내면 404 가 아니라
+   * **빈 배열**이 온다(규칙이 아직 없는 것과 문제가 떨어진 것을 같게 다룬다).
+   */
+  rule?: string;
+  count?: number;
+  offset?: number;
+}
+
+export interface GrammarAnswerRequest {
+  /**
+   * `GET /grammar` 가 준 문제 id. 문제를 통째로 돌려보내지 않는 것이 요점이다 —
+   * 서버는 자기가 가진 것으로만 채점한다.
+   */
+  id: string;
+  /** 학습자가 고른 보기의 낱말. */
+  chosen: string;
+}
+
+export interface GrammarAnswerOut {
+  ok: boolean;
+  /** 정답 낱말. **답을 낸 뒤에만 온다.** */
+  answer: string;
+  /** 서버가 실제로 채점한 값. 보낸 값을 다듬은 것이라 화면이 누른 글자와 다를 수 있다. */
+  chosen: string;
+  /** 판정과 규칙 설명이 한 문장에 담겨 온다. 다시 쓰지 않고 그대로 보여준다. */
+  message_ko: string;
+  /**
+   * 보기 넷이 각각 어느 모양인지. `"send — 동사원형  ← 정답"` 처럼 정답 표시까지
+   * 문장 안에 들어 있다 — 화면이 이 줄을 다시 짓거나 표시를 덧붙이지 않는다.
+   */
+  why_ko: string[];
+}

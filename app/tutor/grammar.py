@@ -39,7 +39,8 @@
 from __future__ import annotations
 
 import hashlib
-from dataclasses import dataclass
+import secrets
+from dataclasses import dataclass, replace
 from functools import lru_cache
 from pathlib import Path
 
@@ -143,33 +144,65 @@ class GrammarItem:
 def verb_forms() -> dict[str, VerbForms]:
     """검수된 동사 모양 표. 파일이 곧 진실이라 한 번만 읽는다."""
     doc = yaml.safe_load(FORMS_FILE.read_text(encoding="utf-8")) or {}
-    return {w: VerbForms(**f) for w, f in (doc.get("verbs") or {}).items()}
+    return {w: VerbForms.model_validate(f) for w, f in (doc.get("verbs") or {}).items()}
 
 
 @lru_cache(maxsize=1)
 def rules() -> dict[str, Rule]:
-    """규칙 파일 전부. `verb_forms.yaml` 은 규칙이 아니라 재료라 뺀다."""
+    """규칙 파일 전부. `verb_forms.yaml` 은 규칙이 아니라 재료라 뺀다.
+
+    `loader.load_scenarios` 와 같은 것들을 본다. 파일 이름과 안의 이름이 어긋나면
+    사람이 파일을 못 찾고, 이름이 겹치면 **한쪽이 말없이 사라진다** — 둘 다 시작할
+    때 시끄럽게 멈추는 편이 낫다. 오류에 파일 이름을 붙이는 것도 같은 이유다.
+
+    틀이 부르는 동사가 형태 표에 없는 것도 여기서 잡는다. 그냥 두면 `make_item` 이
+    None 을 돌려주고 그 짝이 조용히 사라진다 — 오타 하나로 열 문제가 없어져도
+    아무도 모른다.
+    """
     out: dict[str, Rule] = {}
+    forms = verb_forms()
     for path in sorted(RULES_DIR.glob("*.yaml")):
         if path == FORMS_FILE:
             continue
-        rule = Rule(**(yaml.safe_load(path.read_text(encoding="utf-8")) or {}))
+        rule = Rule.model_validate(yaml.safe_load(path.read_text(encoding="utf-8")) or {})
+        if rule.rule != path.stem:
+            raise ValueError(f"{path.name}: rule({rule.rule})이 파일명과 다릅니다.")
+        if rule.rule in out:
+            raise ValueError(f"규칙 이름이 중복됩니다: {rule.rule}")
+        unknown = sorted({v for f in rule.frames for v in f.verbs if v not in forms})
+        if unknown:
+            raise ValueError(
+                f"{path.name}: 형태 표({FORMS_FILE.name})에 없는 동사입니다: {', '.join(unknown)}"
+            )
         out[rule.rule] = rule
+    if not out:
+        raise ValueError(f"규칙 파일을 찾지 못했습니다: {RULES_DIR}")
     return out
 
 
-def _order(item_id: str, count: int) -> list[int]:
-    """보기 순서를 **문제마다 고정된** 자리바꿈으로 정한다.
+# 보기 순서를 섞는 데 쓰는 **응답 밖의 값**. 프로세스마다 새로 뽑는다.
+#
+# 왜 필요한가: 이게 없으면 보기 순서가 정답에 대한 검증 가능한 커밋먼트가 된다.
+# 씨앗 재료(규칙 이름·틀 문장·정답 동사)가 전부 응답 안에 있거나 응답에서 복원되고
+# 후보는 넷뿐이라, 넷을 다 해시해 관측한 순서와 맞는 것을 고르면 정답이 나온다.
+# 되읽기 어려운 해시를 써도 소용이 없다 — 역상을 구하는 게 아니라 넷을 쳐 보는 것이다.
+#
+# 그래서 씨앗에 응답 밖의 값을 섞는다. 프로세스가 다시 뜨면 순서가 바뀌는데,
+# 그건 학습자에게 보이지 않는 상태라 상관없다 — 한 번 푸는 동안은 고정이다.
+_ORDER_SALT = secrets.token_bytes(16)
+
+
+def _order(seed: str, count: int) -> list[int]:
+    """보기 순서를 **한 프로세스 안에서 문제마다 고정된** 자리바꿈으로 정한다.
 
     화면에서 섞으면 새로고침할 때마다 답 번호가 달라져서, 서버가 채점한 결과와
     학습자가 본 화면이 어긋난다. 그렇다고 매번 무작위로 섞으면 같은 문제를 다시
     풀 때 답이 옮겨 다녀 학습자가 "아까는 ②였는데" 하고 헷갈린다.
 
-    그래서 문제 id 를 씨앗으로 쓴다. 같은 문제는 언제 봐도 같은 순서고, 다른
-    문제끼리는 답의 자리가 흩어진다. `random` 을 쓰지 않는 이유는 씨앗을 심는
-    전역 상태가 이 함수 밖의 코드에까지 영향을 주기 때문이다.
+    `random` 을 쓰지 않는 이유는 씨앗을 심는 전역 상태가 이 함수 밖의 코드에까지
+    영향을 주기 때문이다.
     """
-    digest = hashlib.sha256(item_id.encode("utf-8")).digest()
+    digest = hashlib.sha256(_ORDER_SALT + seed.encode("utf-8")).digest()
     slots = list(range(count))
     out: list[int] = []
     for i in range(count):
@@ -178,7 +211,7 @@ def _order(item_id: str, count: int) -> list[int]:
     return out
 
 
-def make_item(rule: Rule, frame: Frame, verb: str) -> GrammarItem | None:
+def make_item(rule: Rule, frame: Frame, verb: str, index: int = 0) -> GrammarItem | None:
     """틀 하나와 동사 하나로 문제를 만든다. 보기를 넷 못 채우면 None.
 
     None 을 돌려주는 것은 결함이 아니라 정상이다 — 어떤 동사는 검수된 모양이
@@ -202,12 +235,16 @@ def make_item(rule: Rule, frame: Frame, verb: str) -> GrammarItem | None:
     if len(picked) < CHOICE_COUNT:
         return None
 
-    # **id 에 정답을 넣지 않는다.** `to_infinitive:Please remember...:send` 처럼
-    # 읽을 수 있는 id 를 쓰면 정답을 응답에서 뺀 것이 아무 소용이 없다 — 화면이
-    # id 만 보고 답을 안다. 그래서 같은 재료로 매번 같은 값이 나오되 되읽을 수는
-    # 없는 짧은 지문을 쓴다.
+    # **id 에 정답이 들어가면 안 된다.** 처음에는 `to_infinitive:Please
+    # remember...:send` 로 지었다가 id 만 읽으면 답이 보였고, 다음에는 그 문자열의
+    # 해시를 썼는데 그것도 새는 길이었다 — 씨앗 재료가 전부 응답에서 복원되고
+    # 후보는 넷뿐이라 넷을 해시해 맞는 것을 고르면 된다. 되읽기 어려운 것과
+    # 맞혀 보기 어려운 것은 다른 성질이다.
+    #
+    # 그래서 id 를 정답과 아무 관계 없는 **자리 번호**로 둔다. 규칙 안에서 몇
+    # 번째 문제인지만 가리키므로 해시해 볼 재료 자체가 없다.
     seed = f"{rule.rule}:{frame.text}:{verb}"
-    item_id = hashlib.sha256(seed.encode("utf-8")).hexdigest()[:12]
+    item_id = f"{rule.rule}#{index:04d}"
     order = _order(seed, CHOICE_COUNT)
     return GrammarItem(
         id=item_id,
@@ -230,15 +267,34 @@ def items_of(rule: Rule) -> list[GrammarItem]:
 
     무작위로 섞지는 않는다. 같은 호출이 매번 다른 것을 돌려주면 시험을 쓸 수 없고,
     `offset` 으로 다음 쪽을 받는 화면이 문제를 건너뛰거나 두 번 받는다.
+
+    **한 바퀴씩 도는 것으로는 부족하다.** 틀마다 동사 수가 달라서(4개짜리부터
+    11개짜리까지) 짧은 틀이 먼저 바닥나고, 끝에 가면 남은 긴 틀 둘이 번갈아 나온다
+    — 실제로 147번부터 문장이 딱 두 개로 갈마들었다. 막으려던 바로 그 현상이
+    목록 뒤쪽에서 되살아난 것이다.
+
+    그래서 자리마다 **남은 것이 가장 많은 틀**을 집는다. 그러면 긴 틀이 목록 전체에
+    고르게 흩어지고, 어느 자리에서 잘라 봐도 같은 문장이 붙어 나오지 않는다.
     """
     rows = [
         [item for verb in frame.verbs if (item := make_item(rule, frame, verb)) is not None]
         for frame in rule.frames
     ]
     out: list[GrammarItem] = []
-    for i in range(max((len(r) for r in rows), default=0)):
-        out.extend(r[i] for r in rows if i < len(r))
-    return out
+    remaining = [list(r) for r in rows]
+    last = -1
+    while any(remaining):
+        # 남은 것이 많은 틀부터. 같으면 원래 차례대로, 그리고 **직전에 낸 틀은
+        # 뒤로 미룬다** — 남은 것이 하나뿐일 때 같은 문장이 이어 붙는 것을 막는다.
+        pick = max(
+            (i for i, r in enumerate(remaining) if r),
+            key=lambda i: (len(remaining[i]), i != last, -i),
+        )
+        out.append(remaining[pick].pop(0))
+        last = pick
+    # id 는 **내보내는 차례**의 자리 번호다. 틀을 돌아가며 뽑은 뒤에 찍어야
+    # `offset` 으로 받는 쪽과 번호가 맞는다.
+    return [replace(item, id=f"{rule.rule}#{n:04d}") for n, item in enumerate(out)]
 
 
 def _copula(word: str) -> str:

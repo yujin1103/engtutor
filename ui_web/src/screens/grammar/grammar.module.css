@@ -1,0 +1,224 @@
+/* 문법 문제의 모양. 문장 하나와 보기 넷, 그리고 판정 뒤의 해설이 전부다.
+ *
+ * 연습장(`practice.module.css`)과 값이 겹치는 자리가 많은데 일부러 그렇게 뒀다 —
+ * 문장 카드와 빈칸이 두 화면에서 다르게 생기면 학습자는 다른 앱에 온 줄 안다.
+ * 겹치는 것을 global.css 로 올리지 않은 이유는 그 파일에 적혀 있다: 화면에만
+ * 쓰는 모양은 그 화면 옆에 둔다. */
+
+.meta {
+  margin-bottom: var(--gap-xs);
+  color: var(--text-dim);
+  font-size: 0.82rem;
+}
+
+/* 지금 배우는 규칙 이름. 문제보다 먼저 눈에 들어와야 한다 — 이 화면은 문제를
+   맞히러 오는 곳이 아니라 규칙 하나를 익히러 오는 곳이다. */
+.rule {
+  margin-bottom: var(--gap);
+  color: var(--accent);
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+
+/* ───────────────────────────── 문제 */
+
+.question {
+  padding: 18px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.sentence {
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.75;
+  /* 긴 문장이 좁은 폰에서 가로로 삐져나가지 않게. */
+  overflow-wrap: anywhere;
+}
+
+/* 빈칸. 밑줄만으로는 폰에서 잘 안 보여서 옅은 바탕을 함께 깐다. */
+.blank {
+  display: inline-block;
+  min-width: 4.5ch;
+  padding: 0 0.2em;
+  border-bottom: 3px solid var(--accent);
+  border-radius: 3px 3px 0 0;
+  background: var(--accent-soft);
+  vertical-align: baseline;
+}
+
+/* 판정 뒤 그 자리에 들어가는 정답. 같은 자리라 눈이 바로 따라간다. */
+.filled {
+  display: inline-block;
+  padding: 0 0.2em;
+  border-bottom: 3px solid var(--accent);
+  border-radius: 3px 3px 0 0;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* 낱말 자리를 '~' 로 비워 둔 뜻. 가리지 않는다 — 묻는 것은 뜻이 아니라 형태다. */
+.gloss {
+  margin-top: var(--gap-sm);
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+/* ───────────────────────────── 보기 넷
+
+   한 줄에 하나씩 세운다. 두 칸 격자로 하면 `submission` 같은 긴 낱말이 접히고,
+   접힌 보기와 안 접힌 보기가 나란히 놓이면 길이가 단서처럼 읽힌다. */
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+  margin-top: var(--gap);
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  width: 100%;
+  /* 카드 전체가 버튼이다. 폰에서 작은 글씨를 정확히 겨냥하게 하지 않는다. */
+  min-height: 56px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  text-align: left;
+  transition: transform 80ms ease, background-color 120ms ease;
+}
+
+.choice:active {
+  transform: scale(0.99);
+  background: var(--surface-2);
+}
+
+/* 판정이 난 뒤에는 못 누른다. 흐려지기만 하고 자리는 그대로다 — 넷을 견주는
+   것이 이 문제의 배울 거리라 답을 낸 뒤에도 넷이 다 보여야 한다. */
+.choice:disabled {
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+/* 번호(①②③④). 폭이 같아야 낱말의 시작 자리가 넷 다 같아진다. */
+.marker {
+  flex: none;
+  width: 1.4em;
+  color: var(--text-dim);
+  font-size: 1.05rem;
+}
+
+.choiceWord {
+  flex: 1;
+  min-width: 0;
+  font-size: 1.08rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* '정답' · '내가 고른 것'. 색만으로 말하지 않으려고 두는 자리다. */
+.choiceTag {
+  flex: none;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-dim);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+/* 채점을 기다리는 동안 눌린 보기. 되돌아온 것이 없어도 누른 티는 나야 한다. */
+.picking {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* 정답 줄. 맞혔든 틀렸든 **늘 이 색이다** — 학습자가 찾는 것은 정답 한 줄이다. */
+.answer {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* 틀리게 고른 줄. 맞힌 경우에는 이 클래스가 붙을 자리가 없다
+   (`flow.markOf` 가 정답을 먼저 본다). */
+.wrong {
+  border-color: var(--danger);
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+/* 고르지도 않았고 답도 아닌 줄. 판정 전에는 넷이 다 이것이다. */
+.plain {
+  /* 기본 모양 그대로. 클래스 이름을 비워 두지 않는 것은 `styles[mark]` 가
+     늘 무언가를 찾게 하기 위해서다 — 없으면 className 에 undefined 가 찍힌다. */
+  border-color: var(--border);
+}
+
+/* ───────────────────────────── 판정 */
+
+.verdict {
+  margin-top: var(--gap);
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.right {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.miss {
+  border-color: var(--danger);
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+/* ───────────────────────────── 해설 */
+
+.section {
+  margin-top: var(--gap);
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.label {
+  margin-bottom: var(--gap-xs);
+  color: var(--text-dim);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.why {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 서버가 만든 줄을 그대로 띄운다. 낱말과 설명이 줄표로 이어져 있어서
+   글자 폭이 같아야 넷이 세로로 맞춰 읽힌다. */
+.whyRow {
+  padding: 4px 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.empty {
+  padding: 32px var(--gap);
+  color: var(--text-dim);
+  text-align: center;
+}

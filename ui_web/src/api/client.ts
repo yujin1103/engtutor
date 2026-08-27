@@ -14,6 +14,10 @@ import type {
   ClozeAnswerOut,
   ClozeAnswerRequest,
   ClozeOut,
+  GrammarAnswerOut,
+  GrammarAnswerRequest,
+  GrammarOut,
+  GrammarQuery,
   ScenarioOut,
   SessionReport,
   StrictnessOut,
@@ -208,4 +212,27 @@ export function postClozeAnswer(
 /** 한 트랙의 낱말을 빈도 순으로 한 장. 빈칸과 달리 가려진 칸이 없다. */
 export function getWords(query: WordQuery = {}, signal?: AbortSignal): Promise<WordPageOut> {
   return request(`/words${queryString(query)}`, { signal });
+}
+
+// ─────────────────────────────────────────────── 문법 문제 (토익 Part 5 형)
+
+/**
+ * 한 규칙의 문제를 한 장. **정답은 안 온다** — 채점은 `postGrammarAnswer` 가 한다.
+ *
+ * `rule` 을 빼면 서버 기본값이다. 모르는 이름을 보내도 404 가 아니라 빈 배열이라,
+ * 화면은 "규칙이 없다" 와 "문제가 떨어졌다" 를 같은 자리에서 다루면 된다.
+ */
+export function getGrammar(
+  query: GrammarQuery = {},
+  signal?: AbortSignal,
+): Promise<GrammarOut[]> {
+  return request(`/grammar${queryString(query)}`, { signal });
+}
+
+/** 고른 보기 하나를 채점한다. 문제는 **id 로만** 가리킨다 — 보기를 되돌려 보내지 않는다. */
+export function postGrammarAnswer(
+  req: GrammarAnswerRequest,
+  signal?: AbortSignal,
+): Promise<GrammarAnswerOut> {
+  return request("/grammar/answer", json(req, signal));
 }

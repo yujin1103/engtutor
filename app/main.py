@@ -11,9 +11,11 @@ from contextlib import asynccontextmanager
 from functools import lru_cache
 from typing import Literal
 
-from fastapi import FastAPI, File, HTTPException, UploadFile
-from fastapi.responses import StreamingResponse
-from pydantic import BaseModel, Field
+from fastapi import FastAPI, File, HTTPException, Request, UploadFile
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse, StreamingResponse
+from pydantic import BaseModel, Field, field_validator
+from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from .config import get_settings
 from .db.database import init_db
@@ -58,6 +60,55 @@ async def lifespan(_: FastAPI) -> AsyncIterator[None]:
 
 app = FastAPI(title="engtutor", version="0.2.0", lifespan=lifespan)
 store = SqliteSessionStore()
+
+
+@app.exception_handler(RequestValidationError)
+async def _validation_error(_: Request, exc: RequestValidationError) -> JSONResponse:
+    """422 를 만들다 서버가 부서지지 않게 한다.
+
+    기본 처리기는 **문제가 된 입력을 오류 본문에 그대로 되넣는다.** 그래서 짝이
+    없는 서로게이트 문자(`\\ud800` 하나만 있고 뒤따르는 짝이 없는 것)를 보내면,
+    검증은 제대로 거절해 놓고 그 거절 사유를 JSON 으로 옮기다 UnicodeEncodeError
+    가 나서 **500** 이 나간다. 거절당할 값을 보냈는데 "서버가 부서졌다" 는 답이
+    돌아오는 셈이라, 진짜 고장과 구별이 안 된다.
+
+    한 엔드포인트의 문제가 아니다 — 되돌려 보내는 칸이 있는 자리는 전부 같다
+    (`/cloze/answer` 의 `said`·`word` 도 똑같이 500 이었다). 그래서 필드마다
+    막지 않고 이 문 하나에서 막는다.
+
+    입력을 되넣기는 하되 **옮길 수 있는 글자로 바꿔서** 넣는다. 무엇이 잘못됐는지
+    알려 주는 것이 검증 오류의 일이므로 값을 통째로 지우지는 않는다.
+    """
+    return JSONResponse(status_code=422, content=_utf8_safe(exc.errors()))
+
+
+@app.exception_handler(StarletteHTTPException)
+async def _http_error(_: Request, exc: StarletteHTTPException) -> JSONResponse:
+    """4xx 도 같은 이유로 부서진다. `detail` 에 학습자가 보낸 값이 들어가기 때문이다.
+
+    `raise HTTPException(404, f"모르는 단어예요: {req.word}")` 처럼 입력을 그대로
+    끼워 넣는 자리가 여럿이고, 그 값이 JSON 으로 못 옮기는 글자면 404 대신 500 이
+    나간다. 자리마다 다듬는 대신 나가는 문 하나에서 다듬는다.
+    """
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={"detail": _utf8_safe(exc.detail)},
+        headers=getattr(exc, "headers", None),
+    )
+
+
+def _utf8_safe(value: object) -> object:
+    """JSON 으로 옮길 수 없는 글자를 바꿔 둔다. 구조는 그대로 둔다."""
+    if isinstance(value, str):
+        return value.encode("utf-8", "replace").decode("utf-8")
+    if isinstance(value, dict):
+        return {str(k): _utf8_safe(v) for k, v in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [_utf8_safe(v) for v in value]
+    if isinstance(value, (int, float, bool)) or value is None:
+        return value
+    # ValueError 같은 것이 섞여 온다. 글자로 바꾼 뒤 같은 검사를 한 번 더 받는다.
+    return _utf8_safe(str(value))
 
 
 class ScenarioOut(BaseModel):
@@ -508,8 +559,23 @@ class WordPageOut(BaseModel):
 
 
 class ClozeAnswerRequest(BaseModel):
-    word: str
-    said: str = Field(description="학습자가 말했거나 적은 답")
+    """두 칸 다 **응답으로 되돌아 나가는** 값이라 들어올 때 다듬는다.
+
+    `said` 는 학습자가 자유롭게 적는 칸이라 문법 문제처럼 모양을 못 박을 수 없다.
+    그런데 채점 결과가 그 값을 그대로 되돌려 보내므로, JSON 으로 옮길 수 없는
+    글자(짝 없는 서로게이트)가 들어오면 **응답을 만들다** 500 이 난다. 오류 처리
+    문에서는 못 잡는다 — 성공 응답이기 때문이다. 그래서 들어오는 자리에서 다듬는다.
+
+    길이도 막는다. 5MB 를 보내면 5MB 가 그대로 돌아 나온다.
+    """
+
+    word: str = Field(min_length=1, max_length=64)
+    said: str = Field(max_length=200, description="학습자가 말했거나 적은 답")
+
+    @field_validator("word", "said")
+    @classmethod
+    def _drop_unencodable(cls, value: str) -> str:
+        return value.encode("utf-8", "replace").decode("utf-8")
     explain: bool = Field(
         default=True,
         description="설명 카드를 함께 받을지. 채점만 필요하면 false 로 두면 DB 조회가 준다",
@@ -914,8 +980,28 @@ class GrammarOut(BaseModel):
 
 
 class GrammarAnswerRequest(BaseModel):
-    id: str = Field(description="GET /grammar 가 준 문제 id")
-    chosen: str = Field(description="학습자가 고른 보기의 낱말")
+    """**두 칸 다 모양을 못 박는다.** 그러지 않으면 그대로 되돌아 나가는 값이다.
+
+    되돌려 보내는 칸에 아무거나 받으면 두 가지가 샌다. 5MB 를 보내면 404 의
+    detail 에 5MB 가 담겨 돌아오고, 짝이 없는 서로게이트 문자를 보내면 JSON 으로
+    옮기다 500 이 난다. 학습자가 낼 수 있는 값이 아니라 굳이 만들어 보내는
+    값이지만, 500 은 "서버가 부서졌다" 는 뜻이라 그렇게 답하면 안 된다.
+
+    `id` 는 `to_infinitive#0007` 꼴이고 `chosen` 은 영어 낱말이라 둘 다 모양이
+    정해져 있다. 정해져 있는 것은 pydantic 이 문 앞에서 거르게 둔다.
+    """
+
+    id: str = Field(
+        max_length=64,
+        pattern=r"^[a-z_]{1,32}#[0-9]{1,6}$",
+        description="GET /grammar 가 준 문제 id",
+    )
+    chosen: str = Field(
+        min_length=1,
+        max_length=64,
+        pattern=r"^[A-Za-z][A-Za-z'\- ]*$",
+        description="학습자가 고른 보기의 낱말",
+    )
 
 
 class GrammarAnswerOut(BaseModel):
@@ -928,14 +1014,14 @@ class GrammarAnswerOut(BaseModel):
 
 
 @lru_cache(maxsize=1)
-def _grammar_index() -> dict[str, tuple[str, object]]:
+def _grammar_index() -> dict[str, tuple[str, grammar.GrammarItem]]:
     """문제 id → (규칙 이름, 문제). 채점이 id 하나로 문제를 되찾게 한다.
 
     문제는 데이터 파일에서 결정론적으로 만들어지므로 미리 다 펼쳐 둬도 된다
     (지금 151개다). 화면이 문제를 통째로 돌려보내게 하면 학습자가 보기를 바꿔
     보낼 수 있어서, **서버가 갖고 있는 것으로만 채점한다.**
     """
-    out: dict[str, tuple[str, object]] = {}
+    out: dict[str, tuple[str, grammar.GrammarItem]] = {}
     for name, rule in grammar.rules().items():
         for item in grammar.items_of(rule):
             out[item.id] = (name, item)
@@ -975,7 +1061,7 @@ def answer_grammar(req: GrammarAnswerRequest) -> GrammarAnswerOut:
     if found is None:
         raise HTTPException(status_code=404, detail=f"모르는 문제예요: {req.id}")
     rule_name, item = found
-    verdict = grammar.grade(item, req.chosen, grammar.rules()[rule_name])  # type: ignore[arg-type]
+    verdict = grammar.grade(item, req.chosen, grammar.rules()[rule_name])
     return GrammarAnswerOut(
         ok=verdict.ok,
         answer=verdict.answer,

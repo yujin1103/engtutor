@@ -29,6 +29,8 @@ export interface PickerScreenProps {
   onOpenPractice: () => void;
   /** 토익 낱말 목록으로. 연습장과 나란한 갈래다 — 하나는 풀고 하나는 훑는다. */
   onOpenToeic: () => void;
+  /** 문법 문제로. 연습장이 뜻을 묻는다면 이쪽은 형태를 묻는다. */
+  onOpenGrammar: () => void;
   onOpenSettings: () => void;
 }
 
@@ -37,6 +39,7 @@ export function PickerScreen({
   onStart,
   onOpenPractice,
   onOpenToeic,
+  onOpenGrammar,
   onOpenSettings,
 }: PickerScreenProps) {
   const { level } = useSettings();
@@ -190,6 +193,24 @@ export function PickerScreen({
               <span className={styles.practiceTitle}>토익 단어</span>
               <span className={styles.practiceBlurb}>
                 시험에 자주 나오는 차례로 훑고, 단어장에 담아요
+              </span>
+            </span>
+            <span className={styles.chevron} aria-hidden="true">
+              ›
+            </span>
+          </button>
+
+          {/* 네 번째 갈래. 낱말 쪽 둘과 같은 모양으로 이어 세운다 — 연습장이
+              뜻을 묻는다면 이쪽은 형태를 묻는다. 보기 넷 중에 고르는 것이라
+              영어를 아직 못 쓰는 사람도 첫 문제를 풀 수 있다. */}
+          <button type="button" className={styles.practice} onClick={onOpenGrammar}>
+            <span className={styles.practiceEmoji} aria-hidden="true">
+              🧩
+            </span>
+            <span className={styles.practiceText}>
+              <span className={styles.practiceTitle}>문법 문제</span>
+              <span className={styles.practiceBlurb}>
+                보기 넷 중에 고르고, 나머지 셋이 무엇인지도 배워요
               </span>
             </span>
             <span className={styles.chevron} aria-hidden="true">
