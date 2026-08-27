@@ -2077,10 +2077,6 @@
   example_ko: "이 선물은 당신 거예요."
   reason: "'이 선물은 당신에게요' 는 문장이 되다 만 말이다."
 
-- word: "as"
-  example_ko: "그는 아버지만큼 키가 커요."
-  reason: "'키가 크죠' 는 이 자리에 어울리지 않는 말투다."
-
 - word: "time"
   example_ko: "회의는 몇 시예요?"
   reason: "'미팅 시간은 언제인가요' 였다. What time 은 '몇 시' 이고, meeting 은 '회의' 로 적는다."
@@ -2122,3 +2118,81 @@
 - word: "here"
   example_ko: "여기 앉으세요."
   reason: "예문을 고쳤다(Are we here yet? → Sit here, please). 영어에서는 그 자리에 there 를 쓴다."
+
+# ── 빈도 100~127위 ──────────────────────────────────────────────
+
+- word: "call"
+  example_ko: "나중에 전화해도 될까요?"
+  reason: "'나중에 전화로 연락드릴 수 있을까요?' 는 Can I call you later? 한 마디에 견줘 지나치게 늘어졌다."
+
+- word: "life"
+  example_ko: "당신의 삶은 어떤가요?"
+  reason: "'당신의 삶은 어떻게 되나요?' 는 앞으로 어찌 될지를 묻는 말로 읽힌다. What is your life like? 는 지금이 어떤지를 묻는다."
+
+- word: "place"
+  example_ko: "여기 밥 먹기 좋은 곳이에요."
+  reason: "예문을 명사 place 로 바꿨다(Can I place my bag here? → This is a good place to eat). 뜻이 명사인데 예문만 동사였다."
+
+- word: "still"
+  example_ko: "저는 아직 배고파요."
+  reason: "예문이 'Still hungry?' 라는 조각이라 문장으로 바꿨다(I am still hungry)."
+
+- word: "write"
+  example_ko: "여기에 이름을 써 주시겠어요?"
+  reason: "'여기에 이름을 써 볼 수 있나요?' 는 부탁하는 말투가 되지 않는다."
+
+- word: "leave"
+  example_ko: "가방을 여기 두고 가지 마세요."
+  reason: "'여기서 가방을 두지 마세요' 는 조사가 어긋나 뜻이 흐려졌다. leave 는 '두고 간다' 는 뜻이다."
+
+# ── 빈도 128~155위 ──────────────────────────────────────────────
+
+- word: "own"
+  example_ko: "이건 제 책이에요."
+  reason: "'이것은 제가 직접 쓴 책이에요' 였다. my own book 은 내가 쓴 책이 아니라 내 것인 책이다."
+
+- word: "point"
+  example_ko: "지도에서 역을 가리켜 주시겠어요?"
+  reason: "'가리쳐' 는 '가리켜' 의 잘못이고, 지도 위를 짚는 것이므로 '지도에' 가 아니라 '지도에서' 다."
+
+- word: "old"
+  example_ko: "이 집은 오래됐어요."
+  reason: "'이 집은 오래되다 보니 좀 낡아요' 였다. 원문(This house is old)에 없는 말이 붙었다."
+
+- word: "world"
+  example_ko: "저는 세계를 보고 싶어요."
+  reason: "'세상은 어떻게 생겨먹었나요?' 는 학습자에게 보일 말투가 아니다. 예문도 함께 바꿨다."
+
+# ── 빈도 156~179위 (상위 150개 검수 끝) ──────────────────────────
+
+- word: "might"
+  example_ko: "내일 올지도 몰라요."
+  reason: "'내일 좀 오게 될지도 몰라요' 의 '좀' 은 원문(I might come tomorrow)에 없는 군더더기다."
+
+- word: "case"
+  example_ko: "전화기를 케이스에 넣어 주세요."
+  reason: "'폰 케이스에 전화기를 넣어 주세요' 는 같은 물건을 '폰' 과 '전화기' 로 두 번 말하고, 원문에 없는 '폰 케이스' 를 만들어 냈다."
+
+- word: "woman"
+  example_ko: "저 여자분은 제 선생님이에요."
+  reason: "예문을 바꿨다(This is my mother, a woman → That woman is my teacher)."
+
+- word: "around"
+  example_ko: "모퉁이를 돌면 공원이 있어요."
+  reason: "'너머 귀퉁이에 공원이 있어요' 는 한국어가 되지 않는다. around the corner 는 '모퉁이를 돌면' 이다."
+
+- word: "family"
+  example_ko: "이쪽이 제 가족이에요."
+  reason: "'이것은 제 가족입니다' 는 사람을 '이것' 으로 가리킨다."
+
+- word: "group"
+  example_ko: "학생 한 무리가 기다리고 있어요."
+  reason: "예문을 바꿨다(We are divided into groups → A group of students is waiting). 수동태는 왕초보가 읽을 문장이 아니고, 새 예문은 문형 a group of 도 함께 보여준다."
+
+- word: "system"
+  example_ko: "지하철 체계가 아주 좋아요."
+  reason: "예문을 바꿨다(This computer has a good system → The subway system is very good)."
+
+- word: "as"
+  example_ko: "그녀는 교사로 일해요."
+  reason: "예문을 바꿨다(He is as tall as his father → She works as a teacher). 표제어가 두 번 나와 빈칸 문제가 성립하지 않았다. 앞선 교정('키가 크죠' → '키가 커요')은 그 예문과 함께 사라져 이 한 줄로 합쳤다."

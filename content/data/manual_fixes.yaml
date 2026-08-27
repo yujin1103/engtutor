@@ -2689,3 +2689,291 @@
   meaning_ko: "많은, 많이"
   pattern: "much + 명사 (money, time, water 등)"
   usage_note: "물·시간·돈처럼 개수로 세지 않는 것에 써요 — much water, much time. 하나둘 세는 것에는 many 를 써요: many books. 보통 아니라고 하거나 물을 때 써요: I don't have much time."
+
+# ── 빈도 100~127위 — 24개 중 20개 ────────────────────────────────────
+#
+# 이 구간에서 처음 보는 유형이 하나 나왔다. **뜻과 예문이 서로 다른 낱말을 보여준다.**
+# `place` 의 뜻은 명사('장소, 위치')인데 예문은 동사였다(Can I place my bag here?).
+# 연습장은 예문으로 빈칸을 내고 뜻을 단서로 보여주므로, 이러면 단서가 문제를 가리킨다.
+
+- word: "last"
+  reason: "'내주' 는 요즘 잘 쓰지 않는 말이라 왕초보가 못 읽는다. last 의 다른 뜻('마지막')도 빠져 있었다."
+  usage_note: "지난 것에 써요 — last week(지난주), last year(작년). 앞으로 올 것은 next 예요: next week(다음 주). '마지막' 이라는 뜻도 있어요: the last bus."
+
+- word: "call"
+  reason: "문형 'call + 목적어 (+ someone)' 에 영어 someone 이 한국어 자리에 들어가 있었다. 설명은 call 을 말하지 않고 answer 만 말했다."
+  pattern: "call + 사람"
+  usage_note: "전화를 건다는 뜻이에요 — Can I call you later? 이름을 부르는 데도 써요: They call me Jun. 전화를 받는 것은 answer 예요."
+
+- word: "before"
+  reason: "'한국어 이전에보다 더 구체적인 시간이나 사건을 언급할 때 써요' 는 뜻을 알 수 없는 말이다."
+  usage_note: "어떤 일보다 먼저라는 뜻이에요 — before dinner(저녁 먹기 전에). 반대는 after 예요. 뒤에 문장이 통째로 올 수도 있어요: before you go."
+
+- word: "through"
+  reason: "한국어 문장 사이에 영어 낱말 whereas 가 끼어 있었다 — 'through 는 공간을 지나는 것, whereas across 는 반대편으로 가는 걸 의미해요'."
+  usage_note: "안을 지나 반대편으로 나오는 것이에요 — go through the door, walk through the park. 위로 건너가는 것은 over, 가로질러 건너는 것은 across 예요."
+
+- word: "down"
+  reason: "문형 'go down + 방향' 은 down 이 방향인데 뒤에 또 방향을 받는 것처럼 읽힌다. up 항목과 짝을 맞춘다."
+  pattern: "동사 + down"
+  usage_note: "아래쪽으로 움직이는 것이에요 — go down, sit down, put it down. 반대는 up 이에요. 아래에 있는 상태를 말할 때는 under 를 써요: under the table."
+
+- word: "man"
+  reason: "''man' 은 'woman' 과 달리 성별이 불분명한 경우에도 쓸 수 있어요' 는 요즘 영어에서 권하지 않는 쓰임이라 왕초보에게 가르칠 것이 아니다. 성별을 가리지 않는 '사람' 은 person 이다. 혼동 목록의 men 도 헷갈리는 낱말이 아니라 같은 낱말의 복수형이다."
+  meaning_ko: "남자"
+  usage_note: "어른 남자예요 — a man in the park. 어른 여자는 woman 이에요. 여럿이면 men 으로 모양이 바뀌어요. 성별을 가리지 않고 '사람' 을 말할 때는 person 이나 people 을 써요."
+  confused_with: [woman, person, boy]
+
+- word: "change"
+  reason: "뜻에 '달리다' 가 있었다 — change 는 뛰는 것이 아니다('달라지다' 를 잘못 쓴 것으로 보인다). 설명도 ''달리다' 는 상태 변화를 말하지만' 이라며 그 잘못을 그대로 되풀이했다."
+  meaning_ko: "바꾸다, 달라지다"
+  usage_note: "물건을 바꾸는 데도 쓰고(change the channel) 마음이나 상태가 달라지는 데도 써요(I changed my mind). 가게에서 받는 '거스름돈' 도 change 예요."
+
+- word: "place"
+  reason: "뜻은 명사('장소, 위치')인데 예문은 동사였다 — Can I place my bag here? 배우는 뜻과 예문이 서로 다른 낱말을 보여주고 있었다. ''Where is the place?' 는 '어디에요?'' 도 영어에서 그렇게 말하지 않는다."
+  pattern: "a/the + place"
+  example: "This is a good place to eat."
+  usage_note: "'곳·장소' 라는 뜻의 명사예요 — a good place to eat. 물건을 놓는다는 동사로도 쓰지만 그 자리에는 put 이 더 흔해요: Put your bag here."
+  confused_with: [put, spot, area]
+
+- word: "long"
+  reason: "'시간에 대해 쓸 때는 long 이 아니라 long time 을 써요' 가 거짓이다 — How long does it take? 처럼 그대로 쓴다. 혼동 목록의 'long time' 도 낱말이 아니라 구다."
+  meaning_ko: "긴, 오래"
+  pattern: "long + 명사 / be + long"
+  usage_note: "길이가 길다는 뜻이에요 — a long pencil. 시간이 길 때도 그대로 써요: How long does it take?(얼마나 걸려요?) 키가 크다고 할 때는 long 이 아니라 tall 이에요."
+  confused_with: [tall, short, high]
+
+- word: "between"
+  reason: "뜻이 '두 개 이상의 것들 사이에' 였는데 between 은 둘 사이다. 셋 이상 가운데라면 among 이다."
+  meaning_ko: "(둘) 사이에"
+  usage_note: "둘 사이를 가리켜요 — between the school and the library. 사이에 놓인 둘은 and 로 이어요. 셋 이상 가운데라면 among 을 써요."
+
+- word: "too"
+  reason: "''too much' 는 '너무 많다' 고 하되, 'much' 가 명사 뒤에 오는 경우에만 써요' 는 문장이 되지 않고, ''too many' 는 가산명사 뒤에 써요' 는 거짓이다 — 앞에 온다. 게다가 그 문장 때문에 가산성 단정 검사에 걸려 빈도 117위가 연습장에 나가지 못하고 있었다."
+  meaning_ko: "너무; ~도"
+  usage_note: "'너무' 라는 뜻이에요 — The coffee is too hot. 지나치다는 느낌이라 반가운 말에는 잘 안 붙어요(그냥 정도가 세다는 뜻은 very 예요). 문장 끝에 붙이면 '~도' 라는 다른 뜻이에요: Me too."
+  confused_with: [very, also, so]
+
+- word: "still"
+  reason: "예문이 'Still hungry?' 라는 조각이었다 — 빈칸 문제로 내면 문장이 되지 않는다. ''already' 는 상태가 변했을 때 쓰는 거예요' 도 뜻을 알기 어렵다."
+  example: "I am still hungry."
+  usage_note: "그대로 이어지고 있다는 뜻이에요 — I am still hungry. 이미 끝났으면 already 를 써요: I already ate. 아직 안 했다고 할 때는 yet 이에요: I haven't eaten yet."
+
+- word: "write"
+  reason: "'한국어 작성하다보다 더 일반적으로 써요' 는 영어에 대해 아무것도 말하지 않는다. 과거형이 wrote 라는, 왕초보가 실제로 막히는 지점도 빠져 있었다."
+  usage_note: "글자를 적는 것이에요 — write your name, write a letter. 손으로 쓰는 것이고 자판으로 치는 것은 type 이에요. 과거형은 wrote 로 모양이 바뀌어요."
+
+- word: "same"
+  reason: "''same' 은 명사나 형용사와 함께 쓰고, '같다' 는 동사로 쓰입니다' 는 성립하지 않는 대조이고, 붙은 예('I am the same' → '나는 변함없어')도 앞뒤가 맞지 않는다. 정작 same 앞에 the 를 반드시 붙인다는 것이 빠져 있었다. 혼동 목록의 'same as' 도 낱말이 아니라 구다."
+  usage_note: "앞에 the 를 꼭 붙여요 — the same book. 'a same book' 이라고는 하지 않아요. 무엇과 같은지 말할 때는 as 를 붙여요: the same as that one."
+  confused_with: [different, similar, as]
+
+- word: "lot"
+  reason: "''a lot' 만 쓸 때는 'a lot' 은 수량을 나타내는 부사어예요' 는 같은 말을 되풀이할 뿐 쓰는 법을 알려주지 않는다."
+  usage_note: "'많이' 라는 뜻으로 a lot of 를 통째로 외워 쓰면 돼요 — a lot of food, a lot of friends. 뒤에 무슨 명사가 와도 모양이 안 바뀌어서 many·much 보다 쉬워요. 동사 뒤에 a lot 만 붙이면 '많이' 예요: I eat a lot."
+
+- word: "great"
+  reason: "''Great' 은 명사 앞에 쓰고, '좋다' 는 동사로 쓰여요' 는 good 항목과 똑같이 성립하지 않는 대조다 — 한국어 '좋다' 는 형용사다."
+  usage_note: "good 보다 센 말이에요 — a great restaurant. 맞장구칠 때도 자주 써요: That's great! 크기가 크다는 뜻으로는 요즘 잘 안 쓰고 big 을 써요."
+
+- word: "leave"
+  reason: "문형과 설명의 'leave somewhere' 는 없는 형태다 — leave 뒤에는 장소가 바로 온다(leave home). 과거형 left 도 빠져 있었다."
+  pattern: "leave + 목적어 / leave + 장소"
+  usage_note: "두고 가는 것이에요 — Don't leave your bag here. 그 자리를 떠난다는 뜻도 돼요: I leave home at eight. 과거형은 left 로 모양이 바뀌어요."
+
+- word: "number"
+  reason: "''number' 는 명사와 형용사 모두 쓸 수 있어요' 가 거짓이다 — number 는 명사다. 붙은 예 'a number of people (많은 사람들의)' 도 해석이 어긋난다."
+  usage_note: "'번호' 예요 — a phone number, room number. 세어서 나온 '수' 라는 뜻도 있어요: the number of students(학생 수). 사람에게 물을 때는 What's your number? 라고 해요."
+  confused_with: [figure, amount]
+
+- word: "both"
+  reason: "''both' 는 명사 뒤에만 붙어요' 가 거짓이고, 바로 뒤에 붙은 예문(Both books are interesting)이 그것을 반박한다."
+  usage_note: "둘 다라는 뜻으로 명사 앞에 놓아요 — Both books are interesting. both of them 처럼 of 를 붙이기도 해요. 셋 이상이면 all 을 써요."
+
+# ── 빈도 128~155위 — 24개 중 20개 ────────────────────────────────────
+#
+# 이 구간에서 제일 나쁜 것은 `old` 다. 뜻 칸 맨 앞이 '노래' 였고, 설명이 그 위에
+# "노래는 'old' 가 아니라 'old song' 처럼 명사와 함께 써야 해요" 를 얹었다.
+# 틀린 전제 위에 설명을 쌓으면 이렇게 된다.
+#
+# 그리고 설명이 같은 항목의 예문을 반박하는 것이 또 나왔다 — while 은 "-ing 형식만
+# 쓴다" 면서 예문이 while I worked 이고, become 은 "형용사로는 못 쓴다" 면서 문형이
+# become + 명사/형용사 다.
+
+- word: "own"
+  reason: "설명 말투가 다른 항목들과 달리 반말이었다 — '가진다', '붙는다'."
+  usage_note: "'자기 것' 이라는 뜻으로 my·your 뒤에 붙여요 — my own book(내 책), her own room. 갖고 있다는 동사로도 써요: I own a car."
+
+- word: "point"
+  reason: "'지수(point)는 수치나 의견을 말할 때 쓰는 거예요' 에서 '지수' 는 point 의 뜻이 아니다. 혼동 목록의 'point of view' 도 낱말이 아니라 구다."
+  usage_note: "손가락으로 가리키는 것이에요 — point at the station. 명사로는 '점' 이나 '점수' 예요: five points. 말하려는 요지도 point 라고 해요: My point is..."
+  confused_with: [tip, spot, aim]
+
+- word: "little"
+  reason: "''조금' 은 much 와 함께 쓰일 수 있지만, little 은 only 와 함께 쓰일 수 있어요' 는 문장이 되지 않는다. 정작 little 과 a little 이 뜻이 뒤집힌다는, 이 낱말에서 제일 중요한 것이 빠져 있었다."
+  usage_note: "'거의 없다' 는 뜻이에요 — I have little time(시간이 거의 없어요). a 를 붙이면 뜻이 뒤집혀 '조금 있다' 가 돼요: I have a little time. 크기가 작다는 뜻으로도 써요: a little box."
+  confused_with: [few, small, less]
+
+- word: "help"
+  reason: "'도와주는 사람을 나타낼 때 help 를 쓰고, 도움을 받는 사람은 help 와 함께 나타내야 해요' 는 같은 말을 두 번 하면서 아무것도 알려주지 않는다."
+  usage_note: "도와준다는 뜻이에요 — Can you help me? 무엇을 도와주는지는 뒤에 동사를 붙여 말해요: help me carry this. 명사로 '도움' 도 돼요: I need help."
+
+- word: "ask"
+  reason: "문형에 영어 someone 이 한국어 자리에 들어가 있었다."
+  pattern: "ask + 사람 + to + 동사원형"
+
+- word: "something"
+  reason: "'something 은 존재하는 것을, anything 은 존재하지 않는 것을 말할 때 쓰는 경우가 많아요' 가 거짓이다. 둘의 차이는 존재가 아니라 some 과 any 의 규칙과 같다."
+  usage_note: "'무언가' 예요 — something to eat. 아니라고 하거나 물어볼 때는 anything 으로 바꿔요: I don't have anything. 다만 권할 때는 물음에도 something 을 써요: Would you like something to drink?"
+
+- word: "become"
+  reason: "''I became happy' 는 자연스럽지 않아요. 'I became a happy person' 처럼 명사로 표현해야 해요' 가 거짓이다 — become 뒤에는 형용사가 바로 온다(become cold, become famous). 같은 항목의 문형('become + 명사/형용사')이 그것을 반박한다."
+  usage_note: "무엇이 되거나 어떤 상태로 바뀌는 것이에요 — I became a teacher. 뒤에 형용사도 바로 올 수 있어요: It became cold. 과거형은 became 이에요."
+
+- word: "interest"
+  reason: "뜻이 '관심이 되다' 였는데 한국어로 성립하지 않는 말이고, 설명도 그것을 그대로 되풀이했다. interest·interested·interesting 세 모양을 가르는 것이 이 낱말의 요점이다."
+  meaning_ko: "관심, 흥미"
+  pattern: "interest in + 명사"
+  usage_note: "명사로 '관심' 이에요 — an interest in music. 사람이 관심 있다고 할 때는 interested 로 바꿔 써요: I'm interested in cooking. 무엇이 재미있다고 할 때는 interesting 이에요."
+  confused_with: [interested, interesting, hobby]
+
+- word: "country"
+  reason: "''country' 는 'nation' 보다 더 넓은 의미로 쓰이기도 해요' 는 근거가 없다. countryside 와의 대조는 쓸모가 있어 살렸다."
+  usage_note: "나라예요 — I'm from a small country. 도시 밖의 시골을 가리킬 때도 쓰는데, 그때는 the country 나 countryside 라고 해요."
+
+- word: "old"
+  reason: "뜻 칸 맨 앞에 '노래' 가 들어 있었다 — old 는 노래가 아니다. 설명도 '노래는 old 가 아니라 old song 처럼 명사와 함께 써야 해요' 라며 그 잘못 위에 다시 말을 얹었다."
+  meaning_ko: "오래된, 나이 든"
+  usage_note: "생긴 지 오래됐다는 뜻이에요 — an old house. 사람에게 쓰면 '나이 든' 이에요: an old man. 나이를 말할 때도 써요: I'm twenty years old. 반대는 물건이면 new, 사람이면 young 이에요."
+  confused_with: [new, young, ancient]
+
+- word: "school"
+  reason: "문형이 'school +에서' 로 한글 조사가 영어 문형 자리에 들어가 있었다. 설명도 '학교에 다니는 곳은 school, 학교에 관련된 곳은 school 예요' 로 같은 말을 두 번 했다."
+  pattern: "go to + school"
+  usage_note: "학교예요 — I go to school every day. 건물이 아니라 '공부하러 간다' 는 뜻일 때는 the 를 붙이지 않아요: go to school. 대학은 university 나 college 라고 해요."
+
+- word: "high"
+  reason: "''high' 은' 은 조사가 틀렸다. tall 과의 차이도 더 또렷하게 적는다."
+  usage_note: "위로 많이 올라간 것에 써요 — a high mountain, a high building. 사람이나 나무처럼 가늘고 긴 것에는 tall 을 써요. 수준이 높다는 뜻도 있어요: high quality."
+
+- word: "different"
+  reason: "''이건 다른 거야' 는 'This is different' 만으로 표현할 수 없어요' 가 거짓이다 — 그것만으로 완전한 문장이다."
+  usage_note: "다르다는 뜻이에요 — This is different. 무엇과 다른지 말할 때는 from 을 붙여요: different from that one. 반대는 same 이고 그때는 as 를 붙여요."
+
+- word: "off"
+  reason: "'한국어 꺼다와 유사하지만' 의 '꺼다' 는 없는 말이다 — '끄다' 다."
+  usage_note: "무언가에서 떨어진다는 느낌이에요 — turn off the light(끄다), take off your coat(벗다), get off the bus(내리다). 반대는 on 이에요."
+
+- word: "next"
+  reason: "설명이 '다음에 할 일은 next에요. 다음에는 next에, 다음은 next에 쓰지만' 으로 같은 말을 세 번 되풀이하다 무너졌고, 'next에요' 는 오타다."
+  usage_note: "다음 차례라는 뜻이에요 — next week(다음 주), Who's next?(다음은 누구예요?) 지난 것은 last 예요. 바로 옆이라는 뜻으로는 next to 를 써요: next to the bank."
+
+- word: "end"
+  reason: "''end' 는 목적어가 사물일 때만 써요' 가 거짓이다. 같은 항목의 예문(The movie ends at 10 PM)부터 목적어가 없다."
+  pattern: "end + at/in + 시간 / end up + -ing"
+  usage_note: "끝난다는 뜻이에요 — The movie ends at 10. 명사로 '끝' 도 돼요: the end of the movie. 하다 보니 그렇게 됐다고 할 때는 end up 을 써요: I ended up crying."
+
+- word: "live"
+  reason: "'한국어 살다는 목적어가 필요하지만' 이 거짓이다 — 한국어 '살다' 도 목적어를 받지 않는다. 뒤에 붙은 지적(I live Seoul 은 틀렸다)은 맞아서 살렸다."
+  usage_note: "어디에 산다고 할 때 in 이나 at 을 붙여요 — I live in Seoul. 'I live Seoul' 이라고는 하지 않아요. 사람이 살아 있다는 뜻으로도 써요."
+
+- word: "why"
+  reason: "문형이 'why + 목적어' 였는데 why 뒤에 오는 것은 목적어가 아니라 be 동사나 do 다."
+  pattern: "why + be/do + 주어"
+  usage_note: "이유를 물을 때 써요 — Why are you late? 뒤에 be 동사나 do 가 먼저 오고 그다음에 주어가 와요. 'Why you are late?' 라고 하지 않아요. 대답은 because 로 해요."
+
+- word: "while"
+  reason: "''while' 은 -ing 형식만 쓰고' 가 거짓이고, 같은 항목의 예문(I listened to music while I worked)이 그것을 반박한다."
+  usage_note: "'~하는 동안' 이라는 뜻이에요. 뒤에 문장이 통째로 와요 — while I worked. -ing 를 바로 붙이기도 해요: while working. when 은 한 시점을, while 은 이어지는 동안을 가리켜요."
+
+- word: "world"
+  reason: "설명이 한국어 '세상' 과 '세계' 만 견주고 world 에 대해서는 아무것도 말하지 않았다. 예문 'What's the world like?' 도 왕초보가 쓸 말이 아니다."
+  example: "I want to see the world."
+  usage_note: "'세상·세계' 예요. 앞에 the 를 붙여 the world 로 써요 — the biggest city in the world. 지구라는 덩어리를 가리킬 때는 the earth 라고 해요."
+
+# ── 빈도 156~179위 — 22개 중 16개 (상위 150개 검수 끝) ──────────────────
+#
+# 예문이 영어로 어색한 것이 이 구간에 몰려 있다. woman 의 예문은 "This is my
+# mother, a woman." 이었고 — 사람을 소개하며 '여성입니다' 를 덧붙이지 않는다 —
+# system 은 "This computer has a good system.", group 은 수동태였다.
+
+- word: "might"
+  reason: "설명 안에 '~게 좋을 거예요. 라는 뜻이에요' 처럼 마침표가 문장 가운데 끼어 문장이 끊겼다."
+  usage_note: "아마 그럴 수도 있다는 뜻이에요 — I might come tomorrow. may 와 뜻이 거의 같은데 might 가 조금 더 자신 없는 느낌이에요. 뒤에는 동사원형이 와요."
+
+- word: "must"
+  reason: "'You must wear a helmet' 을 '보호대를 꼭 써야 해요' 라고 옮겼다. helmet 은 헬멧이지 보호대가 아니다."
+  usage_note: "꼭 그래야 한다는 뜻이에요 — I must go now. should 보다 세고 규칙이나 명령에 가까워요: You must wear a helmet(헬멧을 꼭 써야 해요). 일상에서는 have to 를 더 많이 써요."
+
+- word: "include"
+  reason: "'한국어 포함하다와 비슷하지만, 영어에서는 include 가 더 자주 쓰여요' 는 무엇보다 더 자주 쓰인다는 것인지 알 수 없다."
+  usage_note: "안에 들어 있다는 뜻이에요 — The price includes breakfast(가격에 아침이 들어 있어요). 상자나 그릇에 물건이 들어 있을 때는 contain 을 써요."
+
+- word: "course"
+  reason: "''course' 는 'meal' 과는 다르게 식사와는 관련이 없어요' 가 거짓이다 — 코스 요리의 그 코스가 course 다(the main course)."
+  meaning_ko: "강좌, 과정"
+  pattern: "a course in + 과목"
+  usage_note: "배우는 강좌예요 — a course in English. 식사의 '코스' 도 course 라고 해요: the main course. of course 는 '물론이죠' 라는 다른 말이에요."
+  confused_with: [class, subject, lesson]
+
+- word: "house"
+  reason: "'한국어 집은 복수형이 없지만' 은 영어를 배우는 데 쓸모가 없다. house 와 home 의 차이는 살렸다."
+  usage_note: "사람이 사는 건물이에요 — This is my house. 건물 자체를 가리키고, '우리 집' 이라는 따뜻한 느낌은 home 이에요. 여럿이면 houses 예요."
+
+- word: "group"
+  reason: "'한국어 그룹은 ... 집단보다 더 구체적인 의미예요' 는 한국어 낱말끼리만 견주고 영어에 대해서는 말하지 않는다. 예문 'We are divided into groups.' 도 수동태라 왕초보가 읽을 문장이 아니다."
+  pattern: "a group of + 명사"
+  example: "A group of students is waiting."
+  usage_note: "사람이나 물건이 모인 한 무리예요 — a group of students. 앞에 a, 뒤에 of 를 붙이는 꼴로 많이 써요. 함께 일하거나 겨루는 무리는 team 이라고 해요."
+
+- word: "woman"
+  reason: "예문이 'This is my mother, a woman.' 이었다 — 영어에서 사람을 소개하며 '여성입니다' 를 덧붙이지 않는다. 혼동 목록에 girl 하나뿐이라 man 과의 짝도 보이지 않았다."
+  example: "That woman is my teacher."
+  usage_note: "어른 여자예요 — That woman is my teacher. 어른 남자는 man 이에요. 여럿이면 women 으로 모양이 바뀌고 소리도 달라져요. 어린 여자아이는 girl 이에요."
+  confused_with: [man, girl, lady]
+
+- word: "around"
+  reason: "''near' 보다 더 멀리 있지만, 'far away' 보다는 가까워요' 는 근거가 없다. 정작 around 가 '둘레를 돌아' 라는 뜻이라는 것과 '대략' 이라는 흔한 쓰임이 빠져 있었다."
+  usage_note: "둘레나 근처를 가리켜요 — around the corner(모퉁이를 돌면), walk around the park(공원을 한 바퀴 돌다). 숫자 앞에 붙이면 '대략' 이라는 뜻이에요: around ten o'clock."
+
+- word: "family"
+  reason: "설명이 한국어 '가족' 의 범위만 말하고 family 를 쓰는 법에 대해서는 아무것도 말하지 않았다."
+  usage_note: "가족이에요 — This is my family. 한 덩어리로 볼 때는 단수로 받아요. 친척까지 말하려면 relatives 라고 해요."
+
+- word: "let"
+  reason: "뜻에 '잠시 빌려주다' 가 있었는데 그건 lend 다. 혼동 목록의 let's 도 헷갈리는 다른 낱말이 아니라 let us 의 준말이다."
+  meaning_ko: "~하게 해 주다, 허락하다"
+  usage_note: "누가 무엇을 하게 해 준다는 뜻이에요 — Let me help you(제가 도울게요). 뒤에 사람과 동사원형이 차례로 와요: let him go. Let's 는 '~하자' 라는 다른 말이에요."
+  confused_with: [allow, make, permit]
+
+- word: "again"
+  reason: "문형 'again + 문장 (문장 맨 앞 or 뒤)' 에 영어 or 가 한국어 자리에 들어가 있었고, again 은 보통 문장 끝에 온다. 설명도 ''다시' 는 주로 문장 중간에 쓰입니다' 로 한국어만 말했다."
+  pattern: "문장 + again"
+  usage_note: "한 번 더라는 뜻이에요. 보통 문장 끝에 붙여요 — Can we try again? Say it again, please. 두 번이라고 딱 짚어 말할 때는 twice 를 써요."
+
+- word: "kind"
+  reason: "설명이 'kind of' 를 '어느 정도' 라고 옮겼는데 한국어로 어색하다 — '좀·약간' 이다. 그리고 문형이 'kind + of + 명사' 뿐이라 예문(a kind person)이 문형을 보여주지 못했다."
+  pattern: "kind + 명사 / kind of + 명사"
+  usage_note: "마음이 따뜻하다는 뜻이에요 — She is a kind person. kind of 는 아주 다른 말이라 '좀·약간' 이라는 뜻이에요: This is kind of expensive(이거 좀 비싸요). '종류' 라는 뜻도 있어요: What kind of coffee?"
+
+- word: "keep"
+  reason: "문형 한 칸에 세 가지를 넣어 예순 자를 넘겼고, 그 안에 영어 someone 이 한국어 자리에 들어가 있었다."
+  pattern: "keep + 목적어 / keep + -ing"
+  usage_note: "그대로 두거나 계속한다는 뜻이에요 — Please keep the book on the table. 뒤에 -ing 를 붙이면 '계속 ~하다' 예요: keep going. 손에 쥐고 있는 것은 hold 예요."
+
+- word: "hear"
+  reason: "''I hear you' 는 '나는 당신의 말을 들었어' 가 아니라 '나는 당신이 말하고 있어' 라는 의미가 있어요' 는 문장이 되지 않는다. I hear you 는 '무슨 말인지 알겠다' 는 뜻이다."
+  usage_note: "소리가 저절로 귀에 들어오는 것이에요 — I hear a dog barking. 일부러 귀 기울여 듣는 것은 listen 이에요: listen to music. I hear you 는 '무슨 말인지 알겠어요' 라는 뜻으로도 써요."
+
+- word: "system"
+  reason: "''system' 은 'method' 보다 더 구체적인 방법을 말해요' 는 근거가 없다 — 오히려 system 이 더 큰 틀이다. 예문 'This computer has a good system.' 도 영어에서 그렇게 말하지 않는다."
+  example: "The subway system is very good."
+  usage_note: "여러 부분이 짜여 함께 돌아가는 틀이에요 — the subway system, a school system. 컴퓨터 안의 틀도 system 이라고 해요. 한 가지 하는 방법을 말할 때는 method 나 way 를 써요."
+
+- word: "as"
+  reason: "예문 'He is as tall as his father.' 에 표제어가 두 번 나와 빈칸이 답을 못 정했다 — 빈도 21위가 연습장에 아예 나가지 못하고 있었다. as ~ as 는 왕초보에게 중요한 꼴이지만 빈칸 문제로는 성립하지 않으므로, 예문은 as 가 한 번만 나오는 것으로 두고 as ~ as 는 설명에서 보여준다."
+  meaning_ko: "~로서; ~만큼"
+  pattern: "as + 명사"
+  example: "She works as a teacher."
+  usage_note: "'~로서' 라는 뜻이에요 — She works as a teacher(교사로 일해요). 둘이 똑같다고 할 때는 as 를 두 번 써요: as tall as his father(아버지만큼 키가 큰)."
+  confused_with: [like, than]

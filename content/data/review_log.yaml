@@ -1530,3 +1530,85 @@ passes:
   - well
   - where
   - work
+- id: top150-c
+  date: '2026-08-27'
+  what: 빈도 100~127위 24개 — 20개가 고칠 것이었다
+  words:
+  - before
+  - between
+  - both
+  - call
+  - change
+  - down
+  - feel
+  - great
+  - last
+  - leave
+  - life
+  - long
+  - lot
+  - man
+  - number
+  - place
+  - problem
+  - same
+  - show
+  - still
+  - tell
+  - through
+  - too
+  - write
+- id: top150-d
+  date: '2026-08-27'
+  what: 빈도 128~155위 24개 — 20개가 고칠 것이었다
+  words:
+  - ask
+  - become
+  - country
+  - different
+  - each
+  - end
+  - help
+  - high
+  - interest
+  - late
+  - little
+  - live
+  - next
+  - 'off'
+  - old
+  - own
+  - point
+  - school
+  - something
+  - start
+  - talk
+  - while
+  - why
+  - world
+- id: top150-e
+  date: '2026-08-27'
+  what: 빈도 156~179위 22개 — 16개가 고칠 것이었다. 상위 150개 검수 끝
+  words:
+  - again
+  - around
+  - book
+  - case
+  - course
+  - every
+  - family
+  - group
+  - hear
+  - home
+  - house
+  - include
+  - keep
+  - kind
+  - let
+  - might
+  - must
+  - never
+  - report
+  - seem
+  - system
+  - woman
