@@ -83,6 +83,109 @@ def test_english_inside_a_korean_note_is_not_foreign_script():
     assert "usage_foreign_script" not in codes
 
 
+def test_two_confusable_words_may_not_share_the_same_hint():
+    """해석은 장식이 아니라 **과제 지시문**이다. 같은 지시문에 답이 둘이면 문제가 아니다.
+
+    실측: 출제되는 5,084개 중 177개(92쌍)의 단서가 겹쳤다. `waiter`/`waitress` 와
+    `until`/`till` 은 해석이 **글자까지 똑같았다.**
+    """
+    rows = [
+        _row(
+            word="waiter",
+            meaning_ko="웨이터, 남자 종업원",
+            example="The waiter brought us the menu.",
+            usage_note="식당에서 주문을 받는 남자 직원이에요.",
+            confused_with=["waitress"],
+            example_ko="웨이터가 우리에게 메뉴를 가져왔어요.",
+        ),
+        _row(
+            word="waitress",
+            meaning_ko="여자 종업원",
+            example="The waitress brought us the menu.",
+            usage_note="식당에서 주문을 받는 여자 직원이에요.",
+            confused_with=["waiter"],
+            example_ko="웨이터가 우리에게 메뉴를 가져왔어요.",
+        ),
+    ]
+    found = screen_all(rows)
+    assert "gloss_collision" in _codes(found["waiter"])
+    # **양쪽 다** 걸려야 한다. 한쪽만 큐에 올리면 나머지 한쪽은 영영 안 보인다.
+    assert "gloss_collision" in _codes(found["waitress"])
+
+
+def test_the_hint_is_fine_once_the_two_words_are_told_apart():
+    """갈라 주고 나서도 걸리면 못 쓰는 검사다."""
+    rows = [
+        _row(
+            word="waiter",
+            meaning_ko="웨이터, 남자 종업원",
+            example="The waiter brought us the menu.",
+            usage_note="식당에서 주문을 받는 남자 직원이에요.",
+            confused_with=["waitress"],
+            example_ko="남자 종업원이 메뉴를 가져다줬어요.",
+        ),
+        _row(
+            word="waitress",
+            meaning_ko="여자 종업원",
+            example="The waitress brought us the menu.",
+            usage_note="식당에서 주문을 받는 여자 직원이에요.",
+            confused_with=["waiter"],
+            example_ko="여자 종업원이 메뉴를 가져다줬어요.",
+        ),
+    ]
+    assert "gloss_collision" not in _codes(screen_all(rows)["waiter"])
+
+
+def test_a_collision_of_meaning_without_a_collision_of_letters_is_not_caught():
+    """**이 검사가 못 잡는 것을 못 박아 둔다.** 사람이 읽어야 하는 자리다.
+
+    `postpone` 의 해석이 '회의를 내일까지 미루어야 해요', `reschedule` 이
+    '미팅을 내일로 미룰 수 있을까요?' 였다. 학습자에게는 똑같이 '미루다' 하나로
+    읽히는데 글자 겹침은 0.04 다. 어간으로 보는 신호를 얹어 봤지만, 두 낱말이 같은
+    장면을 쓰면 '회의'·'내일' 이 함께 잡혀 고친 뒤에도 계속 걸렸다.
+
+    한국어 뜻이 같은지에는 결정론적 정답기가 없다. 이 시험은 그 한계를 **없는 척하지
+    않으려고** 있다 — 언젠가 이 검사를 넓히려는 사람이 여기서 먼저 읽게 된다.
+    """
+    rows = [
+        _row(
+            word="postpone",
+            meaning_ko="연기하다",
+            example="We need to postpone the meeting until tomorrow.",
+            usage_note="회의나 일정을 뒤로 미룰 때 써요. 취소는 cancel 이에요.",
+            confused_with=["reschedule"],
+            example_ko="회의를 내일까지 미루어야 해요.",
+        ),
+        _row(
+            word="reschedule",
+            meaning_ko="다시 일정을 잡다",
+            example="Can we reschedule the meeting to tomorrow?",
+            usage_note="이미 잡힌 일정을 다른 때로 옮길 때 써요.",
+            confused_with=["postpone"],
+            example_ko="미팅을 내일로 미룰 수 있을까요?",
+        ),
+    ]
+    assert "gloss_collision" not in _codes(screen_all(rows)["postpone"])
+
+
+def test_words_that_are_not_declared_confusable_are_left_alone():
+    """5,497개를 전부 견주면 우연히 닮은 문장이 쏟아진다. 헷갈린다고 적힌 자리만 본다."""
+    rows = [
+        _row(word="postpone", example_ko="회의가 있어요.", confused_with=[]),
+        _row(word="meeting", example_ko="회의가 있어요.", confused_with=[]),
+    ]
+    assert "gloss_collision" not in _codes(screen_all(rows)["postpone"])
+
+
+def test_a_word_without_a_gloss_is_not_a_collision():
+    """해석은 5,497개 중 일부만 채워져 있다. 빈 칸끼리 같다고 걸면 안 된다."""
+    rows = [
+        _row(word="postpone", example_ko=None, confused_with=["reschedule"]),
+        _row(word="reschedule", example_ko=None, confused_with=["postpone"]),
+    ]
+    assert "gloss_collision" not in _codes(screen_all(rows)["postpone"])
+
+
 def test_the_teaching_arrow_is_not_foreign_script():
     """검사를 넓히자 `she`·`sure`·`purely` 가 화살표 때문에 걸렸다 — 오탐이다.
 

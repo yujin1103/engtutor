@@ -39,6 +39,9 @@ MAX_CONFUSED_WITH = 4
 MAX_PATTERN_DISPLAY_CHARS = 60
 
 _WORD_TOKEN = re.compile(r"[a-z]+")
+# 한국어 두 문장이 사실상 같은 말인지 볼 때 걷어내는 것. 띄어쓰기와 문장부호가
+# 달라도 같은 문장은 같다고 봐야 한다.
+_TRIVIA_KO = re.compile(r"[\s.,!?~…·'\"]+")
 
 # 문형에서 괄호 안은 선택 사항이다 — `borrow + 목적어 (+ from + 사람)` 의 from 이
 # 예문에 없다고 지적하면 안 된다.
@@ -526,7 +529,109 @@ def screen_all(rows: list[WordLike]) -> dict[str, list[Finding]]:
                     Finding(code, severity, f"{label}이 다른 {counts[value] - 1}개 항목과 똑같아요")
                 )
 
+    for row, other in colliding_glosses(rows):
+        findings[row.word].append(
+            Finding(
+                "gloss_collision",
+                "high",
+                f"해석이 '{other}' 와 같은 말이에요 — 학습자가 어느 낱말을 쓸지 고를 근거가 없어요",
+            )
+        )
+
     return findings
+
+
+# 해석에서 낱말을 뜯는 규칙. **숫자와 로마자를 반드시 포함한다.**
+# 한글만 뜯었더니 '제 생일은 4월에 있어요' 와 '제 생일은 8월에 있어요' 가 똑같아졌다
+# (둘 다 '월에' 로 남는다). 정작 두 문제를 갈라 주는 것이 숫자인 april/august ·
+# november/december · eleventh/twelfth 가 통째로 오탐이 됐다.
+_TOKEN = re.compile(r"[가-힣0-9A-Za-z]+")
+
+
+def _content(text: str) -> frozenset[str]:
+    """해석에서 뜯은 낱말들. 두 지시문이 사실상 같은 말인지 볼 때 쓴다."""
+    return frozenset(_TOKEN.findall(_TRIVIA_KO.sub(" ", text or "")))
+
+
+def _tells_apart(a: str, b: str) -> bool:
+    """두 해석에 **서로를 가르는 낱말**이 있는가.
+
+    처음에는 글자 조각의 겹침(자카드)으로 쟀는데 못 썼다. '남자 종업원이 메뉴를
+    가져다줬어요' 와 '여자 종업원이 …' 는 87% 가 겹치지만 학습자는 한눈에 구별한다 —
+    **다른 글자 두 개에 구별이 전부 실려 있기** 때문이다. 겹침을 재면 잘 고친 쌍일수록
+    높게 나온다.
+
+    그래서 양을 재지 않고 **있고 없음**을 본다. 한쪽에만 있는 낱말이 하나라도 있으면
+    학습자에게 고를 근거가 있는 것이고, 하나도 없으면 두 문제의 지시문이 같은 말이다.
+    """
+    x, y = _content(a), _content(b)
+    if not x or not y:
+        return True
+    return x != y
+
+
+def colliding_glosses(rows: list[WordLike]) -> list[tuple[WordLike, str]]:
+    """**빈칸의 답이 하나로 정해지지 않는** 쌍을 찾는다. (행, 상대 표제어, 겹침).
+
+    왜 이 검사가 필요한가
+    ---------------------
+    연습장에서 해석은 장식이 아니라 **과제 지시문**이다. 학습자는 빈칸 옆의 한국어를
+    읽고 답을 떠올린다. 그런데 뜻이 비슷한 두 낱말의 해석이 같으면 같은 지시문에
+    답이 둘이 되고, 학습자는 옳게 생각하고도 오답 처리된다.
+
+    실제로 이랬다 — `postpone` 의 해석이 '회의를 내일까지 미루어야 해요', `reschedule`
+    의 해석이 '미팅을 내일로 미룰 수 있을까요?' 였다. 둘 다 '미루다' 라 갈리지 않는다
+    (reschedule 은 **일정을 다시 잡는 것**이라고 써야 갈린다). 더 심한 것은 글자까지
+    똑같은 경우로, `waiter`/`waitress`·`until`/`till`·`test`/`exam` 을 포함해 56개였다.
+
+    왜 아무 쌍이나 보지 않고 `confused_with` 를 쓰나
+    ------------------------------------------------
+    5,497개를 전부 견주면 1,500만 쌍이고, 그중 해석이 비슷한 것은 대개 무관한 우연이다
+    ('회의가 있어요' 는 여러 낱말의 예문에 나온다). 반면 이 자료에는 **어느 낱말끼리
+    헷갈리는지 이미 적혀 있다**(`confused_with`). 학습자가 실제로 헷갈리는 자리만
+    보므로 오탐이 적고, 무엇보다 그 자리가 바로 답이 갈리지 않는 자리다.
+
+    같은 트랙 안에서만 본다. 학습자는 한 번에 한 트랙만 푼다.
+
+    한계 — 글자가 안 겹치는 충돌은 못 잡는다
+    ---------------------------------------
+    정작 위의 `postpone` / `reschedule` 이 이 검사에 안 걸린다. 두 해석의 글자
+    조각 겹침이 **0.04** 라서다. 학습자에게는 똑같이 '미루다' 하나로 읽히는데
+    기계에게는 다른 문장이다.
+
+    어간으로 보는 신호를 얹어 봤지만 못 썼다. 두 낱말이 같은 장면을 쓰면 해석이
+    '회의'·'내일' 을 함께 갖게 되는데, 그건 표제어가 아니라 문장이 겹치는 것이라
+    고친 뒤에도 계속 걸렸다. 한국어 뜻이 같은지는 결정론적으로 못 판정한다 —
+    오늘 하루가 그 이야기였다. 그래서 이 검사는 **글자가 겹치는 부류만** 맡고,
+    뜻이 겹치는 부류는 사람이 읽어서 잡는다(`content/data/gloss_fixes.yaml`).
+    """
+    by_word = {r.word.strip().lower(): r for r in rows}
+    seen: set[tuple[str, str]] = set()
+    out: list[tuple[WordLike, str]] = []
+    for row in rows:
+        gloss = (getattr(row, "example_ko", None) or "").strip()
+        if not gloss:
+            continue
+        for name in getattr(row, "confused_with", None) or []:
+            other = by_word.get(str(name).strip().lower())
+            if other is None or other is row:
+                continue
+            if getattr(other, "track", None) != getattr(row, "track", None):
+                continue
+            theirs = (getattr(other, "example_ko", None) or "").strip()
+            if not theirs:
+                continue
+            key = tuple(sorted((row.word, other.word)))
+            if key in seen:
+                continue
+            if _tells_apart(gloss, theirs):
+                continue
+            seen.add(key)
+            # 양쪽 다 지적한다. 어느 쪽을 고칠지는 사람이 정할 일이고,
+            # 한쪽만 큐에 올리면 나머지 한쪽은 영영 안 보인다.
+            out.append((row, other.word))
+            out.append((other, row.word))
+    return out
 
 
 def risk_score(findings: list[Finding]) -> int:
