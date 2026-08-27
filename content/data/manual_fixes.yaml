@@ -1452,6 +1452,8 @@
 
 - word: nugget
   reason: "문형이 'nugget + of + 고기' 인데 그런 형태로 쓰지 않는다."
+  usage_note: "닭고기를 한 입 크기로 뭉쳐 튀긴 거예요. 날개 부위는 wings 라고 해요."
+  meaning_ko: "너깃 (한 입 크기로 튀긴 닭고기 조각)"
   pattern: "chicken + nuggets (보통 복수형)"
 
 - word: patty
@@ -2028,3 +2030,306 @@
 - word: "confer"
   reason: "뜻이 '논의하다, 논의하다 (다른 사람과 함께)' 로 같은 말이 두 번이었다."
   meaning_ko: "상의하다 (여럿이 함께)"
+
+# ── 위 76개를 쓰다가 드러난 뜻·예문·설명 (2026-08-27) ──────────────
+#
+# 이 묶음에는 뜻이 아예 틀린 것이 유난히 많았다.
+#   sundae   '순대 (소의 위장에서 나온 음식)'  -> 아이스크림 선데
+#   radish   '당근 (뿌리 채소)'               -> 무 (당근은 carrot)
+#   nugget   '윙 (닭고기 조각)'               -> 너깃 (윙은 wings)
+#   ceremony '식사, 의식, 행사'               -> 식, 의식
+#   quarter  '사분위, 1/4'                   -> 4분의 1 (사분위는 통계 용어)
+#
+# 영어 예문이 깨진 것도 여럿이었다 — "I see you at the store.",
+# "Is this exactly your bag?", "There is a band on my finger.".
+
+- word: "absolutely"
+  reason: "really 는 '정말', completely 는 '완전히' 로 자리를 잡고 있어서, 그 둘을 피해 '너무너무' 로 강조만 남겼어요. 원래 설명의 'I absolutely don't like it.' 은 영어로 잘 안 쓰는 문장이라 실제로 쓰는 자리로 바꿨어요."
+  usage_note: "love, hate, right, wrong 처럼 이미 센 말 앞에 붙어서 더 세게 만들어요. Absolutely! 한마디만으로 '완전 그렇죠!' 하고 맞장구치는 데도 써요."
+
+- word: "attempt"
+  reason: "try 는 '해 볼게요·해 봤어요' 로 쓰고, attempt 는 딱딱한 말이라 '시도했어요' 로 갈랐어요. 두 낱말이 같은 칸에 들어가지 않게 문체로 나눈 거예요. (검증: try 와 문체로 가른 착상은 맞아요. 그런데 해석에 '당신에게' 를 넣어 번역투가 됐어요 — 한국어에서는 이 자리에서 상대를 아예 말하지 않아요. 빈칸은 동사 하나라 '당신에게' 를 빼도 잃는 게 없어서 덜어냈어요. 저장된 뜻 '시도하다, 시험하다' 도 안 고치고 지나갔는데 attempt 는 '시험하다' 로 쓰이지 않아요. '시도하다' 로 고쳤어요.)"
+  meaning_ko: "시도하다"
+  example: "I attempted to call you."
+
+- word: "band"
+  reason: "원래 예문 'There is a band on my finger.' 는 반지인지 밴드인지 알 수 없는 문장이라 바꿨어요. 뜻의 '대, 무리' 는 왕초보에게 안 와닿고, 설명은 엉뚱하게 한국어 '반대' 이야기를 하고 있어서 둘 다 고쳤어요. bend(구부리다)·bandage(붕대) 와는 '연주해요' 로 확실히 갈려요. (검증: 원래 예문(There is a band on my finger.)이 반지인지 고무줄인지 알 수 없다는 판단이 맞고, 원래 설명이 엉뚱하게 한국어 '반대' 를 이야기하던 것도 옳게 잡았어요. 한 군데만 고쳤어요: brother 를 '동생' 으로 옮기면 남녀도 위아래도 정해지지 않아서 '남동생' 으로 못박았어요.)"
+  meaning_ko: "밴드 (함께 연주하는 음악 무리), 띠"
+  example: "My brother plays in a rock band."
+  usage_note: "여러 명이 같이 연주하는 음악 무리를 band 라고 해요. 손목에 차거나 묶는 얇은 띠도 band 예요 (a rubber band)."
+
+- word: "boost"
+  reason: "'확 끌어올리다' 로 밀어 올리는 느낌을 살려 increase(늘리다) 와 갈랐어요. raise 와는 영어 문장 자체가 겹치는 자리라, 해석으로 더 좁히기는 어려워 어감으로만 구분했어요. (검증: 앞사람 해석은 will 을 빠뜨려 'This app will boost ~' 의 앞일 뜻이 사라졌어요. '줄 거예요' 로 되살렸습니다. 저장된 뜻 '증가시키다, 향상시키다' 를 그대로 두면 학습자 머릿속에서 increase 와 똑같아지므로 뜻도 '확 끌어올리다, 북돋우다' 로 바꿔 해석과 결을 맞췄어요. increase·raise 를 해석만으로 완전히 가르기는 어렵다는 앞사람 진단에는 동의하며, 채점에서 이 둘을 오답으로 처리하지 않는 편이 좋아요.)"
+  meaning_ko: "확 끌어올리다, 북돋우다"
+
+- word: "brownie"
+  reason: "저장된 뜻의 '초코렛 쿠키' 는 틀렸고 적기도 어긋나요. 브라우니는 쿠키가 아니라 촉촉한 과자예요. 해석에 이름을 그대로 남겨 cookie, chocolate cake 와 갈랐어요."
+  meaning_ko: "브라우니 (네모나게 자른 진한 초콜릿 과자)"
+  usage_note: "촉촉하고 진한 초콜릿 과자를 네모나게 자른 거예요. 얇고 바삭한 건 cookie 예요."
+
+- word: "ceremony"
+  reason: "저장된 뜻의 '식사' 는 말이 되지 않아 고쳤어요. 원래 예문 'There is a ceremony tomorrow.' 는 해석이 '내일 행사가 있어요' 가 되어 event 와 구별이 안 됩니다. '졸업식' 은 곧 graduation ceremony 라서 빈칸 답이 하나로 정해져요."
+  meaning_ko: "식, 의식 (결혼식·졸업식 같은 격식 있는 행사)"
+  example: "The graduation ceremony is on Friday."
+  usage_note: "결혼식은 wedding ceremony, 졸업식은 graduation ceremony 예요. 그냥 모여서 노는 자리는 ceremony 가 아니라 event 예요."
+
+- word: "constantly"
+  reason: "'쉴 새 없이'가 always(항상)·frequently(자주)보다 constantly 에 붙는 말이다. 저장된 설명도 이 결을 맞게 적고 있다. (검증: 해석 '쉴 새 없이' 는 always·frequently 와 갈리게 잘 골랐다. 그런데 meaning_ko 를 그대로 뒀다 — '끊임없이, 항상' 의 '항상' 은 곧 always 이고, always 는 이 낱말의 confused_with 첫 줄에 있다. 뜻풀이가 오답을 가리키는 꼴이라 '끊임없이, 계속해서' 로 바꾼다.)"
+  meaning_ko: "끊임없이, 계속해서"
+  example: "He constantly checks his phone."
+
+- word: "consultant"
+  reason: "'전문가' 로 쓰면 expert 로도 읽혀서 빈칸이 안 정해져요. 한국에서도 그대로 쓰는 말인 '컨설턴트' 를 남겨 두면 advisor(조언자·고문) 쪽으로 새지 않아요. 저장된 뜻은 '전문가' 라 넓고, 설명의 '의사나 변호사처럼' 은 consultant 를 잘못 짚어서 고쳤어요."
+  meaning_ko: "컨설턴트, 자문가 (전문 지식으로 조언해 주고 돈을 받는 사람)"
+  usage_note: "회사나 사람에게 전문가로서 조언해 주는 사람이에요. 조언하는 행동은 동사 consult, 그 일은 consulting 이라고 해요."
+
+- word: "cook"
+  reason: "'밥을 짓다'는 bake(굽다)·prepare(준비하다)와 갈린다. can 을 '줄 알아요'로 옮겨 왕초보 말투에 맞췄다. (검증: 해석은 좋다. '밥을 짓다' 가 bake·prepare 를 밀어내고 can 을 '줄 알아요' 로 옮긴 것도 맞다. 문제는 usage_note 를 손대지 않은 것 — \"'I cook dinner'는 '저는 저녁을 준비해요'보다 더 구체적이에요\" 는 영어 문장과 한국어 번역문을 견주는 말이라 뜻이 통하지 않는다. 이렇게 고쳐라: \"cook은 불로 익혀서 음식을 만드는 거예요. 오븐에 굽는 건 bake고, prepare는 익히는 것까지 포함해 그냥 '준비하다'라 뜻이 더 넓어요.\")"
+  meaning_ko: "요리하다"
+  example: "I can cook rice."
+
+- word: "croissant"
+  reason: "저장된 뜻의 '크림이 들어간 베이글처럼 생긴 빵' 은 두 군데가 틀렸어요. 크루아상에는 크림이 없고 모양도 베이글과 달라요. 해석에 이름을 그대로 두면 bagel, muffin 으로 새지 않아요."
+  meaning_ko: "크루아상 (겹겹이 층이 있는 초승달 모양 빵)"
+  usage_note: "겉이 바삭하고 층이 많은 초승달 모양 빵이에요. 가운데 구멍이 있고 쫄깃한 빵은 bagel 이에요."
+
+- word: "emerge"
+  reason: "'모습을 드러내다'로 가려져 있다가 나온다는 결을 살려 appear(그냥 나타나다)·show 와 갈랐다. 'emerge 는 항상 from 과 함께 써야 한다'는 설명은 거짓이라 고쳤다."
+  usage_note: "가려져 있던 것이 밖으로 드러날 때 써요. 어디서 나왔는지 밝힐 때 'from'을 붙이지만, 'A new problem emerged.'처럼 'from' 없이도 써요."
+
+- word: "engage"
+  reason: "원 예문 'I will engage in the meeting.'은 어색한 데다 39번 participate 예문과 문장이 거의 같아 두 낱말이 구분되지 않는다. engage 만의 '관심을 사로잡다' 쪽으로 예문을 새로 써서 participate·involve 와 갈랐다. meaning_ko 의 '결혼하다'도 틀렸다(약혼은 be engaged to). (검증: 예문 교체와 '결혼하다' 삭제에 동의한다 — 약혼은 be engaged to 가 맞고, 원 예문은 participate 예문과 사실상 같은 문장이라 두 문제가 겹쳤다. 새 예문도 자연스러운 영어다. 다만 해석의 '마음을 사로잡다' 는 애정을 얻는다는 쪽으로 읽혀 win over·captivate 에 가깝다. engage 는 주의·관심을 붙잡는 것이니 '관심을 사로잡아요' 로 바꾼다. usage_fix 에 적힌 'engage + 사람' 설명과도 이쪽이 맞아떨어진다.)"
+  meaning_ko: "관심을 끌다, 사로잡다; 어떤 일에 참여하다"
+  example: "Good teachers engage their students."
+  usage_note: "사람의 관심을 붙잡는다고 할 때는 'engage + 사람'으로 써요. 어떤 일에 참여한다고 할 때는 'engage in'처럼 in을 붙이고, 약혼했다는 말은 'be engaged to'예요."
+
+- word: "exactly"
+  reason: "원래 예문 'Is this exactly your bag?' 은 영어가 안 되는 문장이에요. 저장된 설명이 이미 '정확한 시간을 강조할 때 exactly' 라고 하니 그 쓰임 그대로 시계 문장으로 새로 썼어요. '정확히' 는 really(정말)·completely(완전히) 와 갈려서 답이 하나예요. (검증: 원래 예문이 영어가 안 된다는 판단과 시계 문장으로 바꾼 것 모두 맞아요. 해석도 정확하고 답도 하나예요. 다만 저장된 뜻 '정확하게, 완전히' 를 그냥 뒀는데, '완전히' 는 confused_with 의 completely 를 그대로 가리키고 이 항목의 usage_note 자신이 '완전히' 는 really·completely 를 쓰라고 말하고 있어요. 앞뒤가 맞게 '정확하게, 딱' 으로 고쳤어요.)"
+  meaning_ko: "정확하게, 딱"
+  example: "The train leaves at exactly six o'clock."
+
+- word: "fan"
+  reason: "'팬'이라는 말이 한국어에 그대로 있어 like(좋아하다)·love 로 새지 않는다. meaning_ko 의 '팬이 되다'는 없는 쓰임이라 빼고, 빠져 있던 '선풍기, 부채'를 넣었다."
+  meaning_ko: "팬, 좋아해서 응원하는 사람; 선풍기, 부채"
+
+- word: "fried"
+  reason: "저장된 설명이 'fried rice 는 볶은 밥이 아니고 튀긴 밥' 이라고 했는데 거꾸로예요. 볶음밥이 맞아서 고쳤어요. 해석의 '튀긴' 은 baked(구운), grilled(석쇠에 구운) 와 확실히 갈립니다. (검증: 저장된 설명이 'fried rice 는 볶은 밥이 아니고 튀긴 밥' 이라고 뒤집혀 있던 걸 잡아낸 건 이 묶음에서 가장 값진 고침이에요. 볶음밥이 맞습니다. 해석만 손봤어요. '저는 ~으로 주세요' 는 주어와 끝맺음이 어긋나 걸리는데, 같은 fastfood 항목들(브라우니·콤보·너깃)이 모두 '~로 할게요' 라 문체를 맞췄습니다. '튀긴' 은 baked·grilled 와 확실히 갈려요.)"
+  usage_note: "음식 이름 앞에 붙는 말이에요. fried rice 는 튀긴 밥이 아니라 볶음밥이에요."
+
+- word: "fully"
+  reason: "'꽉'으로 '완전히'를 남겼다. completely·entirely 와 뜻이 겹치는 자리지만 예약이 찼다는 상황에서는 fully booked 가 굳어진 표현이라 답이 잡힌다. '동사 앞에는 안 쓴다'는 설명은 거짓(I fully understand)이라 고쳤다."
+  usage_note: "동사 앞에도 자연스럽게 써요. 'I fully understand.'는 아주 흔한 말이에요. 자리가 다 찼을 때는 'fully booked'가 굳어진 표현이라 그대로 외워 두면 좋아요."
+
+- word: "governor"
+  reason: "'주지사'면 mayor(시장)·president 와 갈린다. 저장된 뜻과 설명의 '주의 장관'은 틀린 말이고, '총독은 과거 일본의 지방 통치자'라는 설명도 엉뚱해서 둘 다 고쳤다."
+  meaning_ko: "주지사 (미국 등에서 주를 이끄는 사람)"
+  usage_note: "미국에서 주를 이끄는 사람이 governor예요. 도시를 이끄는 사람은 mayor(시장)이니 헷갈리지 마세요."
+
+- word: "grilled"
+  reason: "저장된 뜻에 '굽다' 라는 동사형이 섞여 있어 예문 자리에 맞게 '구운' 으로 다듬었어요. 해석의 '구운' 은 fried(튀긴) 와 바로 갈립니다. (검증: 뜻을 '구운' 으로 다듬은 건 맞지만 해석의 '구운' 만으로는 답이 하나가 아니에요. 한국어 '구운' 은 baked(오븐에 구운)와 roasted 도 함께 가리킵니다. 고친 뜻이 이미 '(불에) 구운' 이니 해석에도 '불에' 를 넣어 오븐 쪽과 갈랐어요. 이러면 fried 는 물론 baked 도 답으로 안 읽힙니다.)"
+  meaning_ko: "(불에) 구운"
+
+- word: "hall"
+  reason: "'강당'이면 room(방)·building(건물)과 갈린다. meaning_ko 의 '대청'은 옛 한옥에서 쓰던 말이라 왕초보에게 통하지 않아 고쳤다. (검증: '대청' 이 옛 한옥 말이라 왕초보에게 통하지 않는다는 지적이 맞고, 해석도 room·building 과 갈린다. 다만 미국 영어에서 'in the hall' 은 복도를 뜻할 때가 아주 많은데 뜻풀이에 그 갈래가 통째로 빠져 있다. 학습자가 다른 문장에서 만나면 헷갈릴 자리라 '복도' 를 뜻에 덧붙였다. 해석은 강당 쪽으로 못박혀 있으니 빈칸에는 영향이 없다.)"
+  meaning_ko: "강당, 회관 (여러 사람이 모이는 큰 방); 복도"
+  example: "We had a party in the hall."
+
+- word: "hand"
+  reason: "'건네주다' 는 hand 를 그대로 가리켜요. arm(팔)·finger(손가락) 는 이 자리에 못 들어오고요. 원래 설명이 \"hand 만으로는 '넘기다' 를 표현할 수 없다\" 고 했는데, 제 예문이 바로 그 쓰임이라 앞뒤가 안 맞아서 고쳤어요. (검증: 해석과 고쳐 쓴 설명은 맞아요. 그런데 저장된 뜻이 '손' 하나뿐인데 예문은 동사로 쓰고 있어요 — 뜻과 예문이 어긋나는 자리인데 meaning_fix 를 비워 뒀어요. '손, (손으로) 건네주다' 로 고쳤어요. 참고로 '건네주세요' 는 give 로 새어 나갈 여지가 조금 있지만, 건네다가 hand 를 정확히 가리켜서 이보다 나은 말은 없어요.)"
+  meaning_ko: "손, (손으로) 건네주다"
+  example: "Please hand me the book."
+  usage_note: "hand 는 명사로는 '손' 이지만, 이렇게 동사로 쓰면 '손으로 건네주다' 가 돼요. Please hand me the salt. 처럼 옆 사람에게 넘겨 달라고 할 때 자주 써요."
+
+- word: "heat"
+  reason: "'데우다'는 뜨겁게 만드는 동작이라 상태를 말하는 hot 으로 새지 않는다. 저장된 뜻과 설명은 예문의 쓰임과 맞다. (검증: 해석은 맞고 뜻·예문도 그대로 두면 된다. 놓친 것은 usage_note 다 — 'hot이예요', ''This pot is hot.'이예요' 두 군데가 '이에요' 오타인데 usage_fix 를 비워 뒀다. 이 글도 학습자 화면에 뜬다. 이렇게 고쳐라: \"heat는 무언가를 뜨겁게 만드는 동작이에요. 뜨거운 상태를 말할 때는 hot을 써요. '이 냄비는 뜨거워요'는 'This pot is hot.'이에요.\" 참고로 '데워 주세요' 는 warm 으로도 옮길 수 있지만 confused_with 에 없어 시연에서는 문제되지 않는다.)"
+  meaning_ko: "가열하다, 뜨겁게 하다"
+  example: "Please heat the food."
+
+- word: "holder"
+  reason: "'컵 받침대' 는 곧 cup holder 라서 빈칸이 하나로 정해져요. 저장된 설명은 keep 과 헷갈린다고 했는데 실제로 헷갈릴 자리가 아니라, 쓸모 있는 짝(cup holder, card holder) 으로 바꿔 썼어요. (검증: '컵 받침대' 는 잘못 골랐어요. 한국어에서 '컵 받침' 은 잔 밑에 까는 코스터를 가리키고, 코스터는 고장 나지도 않습니다. 차나 책상에 붙은 cup holder 는 한국에서도 '컵 홀더' 라고 그대로 부르니 그 말을 해석에 남기면 빈칸이 holder 하나로 정해져요. 저장된 뜻 '물건을 잡고 있는 사람 또는 물건' 도 번역투라 다듬었습니다. keep 과는 헷갈릴 자리가 아니라는 앞사람 지적에는 동의해요.)"
+  meaning_ko: "무언가를 끼워 두거나 받쳐 두는 물건; (무엇을) 가진 사람"
+  usage_note: "컵을 끼워 두는 자리는 cup holder, 카드를 넣는 지갑은 card holder 예요. 사람한테 쓰면 '가진 사람' 이라는 뜻이 돼요."
+
+- word: "identity"
+  reason: "원 예문 'What is your national identity?'는 사람에게 대놓고 묻는 말로 어색해서(보통 nationality 를 묻는다) 바꿨다. '신분'은 명사 자리라 identify(확인하다)·identical(똑같은)로 새지 않는다."
+  example: "The police checked his identity."
+
+- word: "improvement"
+  reason: "원 예문 'There is improvement in your English.'는 관사가 빠져 어색하고, 그 해석을 쓰면 '좋아졌다'가 progress 로도 읽혀 답이 둘이 된다. '개선'이 붙는 자리로 예문을 바꿔 progress·development 를 밀어냈다. '동사형은 부자연스럽다'는 설명도 거짓이라 고쳤다."
+  pattern: "need + improvement / improvement + in + 분야"
+  example: "The service needs some improvement."
+  usage_note: "'improvement in + 분야'로 무엇이 좋아졌는지 밝혀요. 동사형 'Your English has improved.'도 아주 자연스러운 말이에요."
+
+- word: "involvement"
+  reason: "'관여'가 interest(관심)·participation 과 갈리는 말이다. your 뒤 명사 자리라 동사 involve 로도 새지 않는다. (검증: 해석은 자연스럽고, 빈칸이 'your ___ in' 명사 자리라 동사 involve 로 새지 않는다는 판단도 맞다. 놓친 것이 둘 있다. 첫째, usage_note 의 '말이예요' 는 '말이에요' 오타다. 둘째, meaning_ko 의 '참여' 는 confused_with 의 participation 과 그대로 겹쳐 답을 흐린다. 뜻은 위와 같이 고치고, usage_note 는 \"어떤 일에 얼마나 관여하는지를 말할 때 써요. 관심만 있는 건 interest고, 직접 나서서 하는 건 participation이에요.\" 로 고쳐라.)"
+  meaning_ko: "관여, 개입 (어떤 일에 얼마나 관여하는지)"
+  example: "What is your involvement in the project?"
+
+- word: "latte"
+  reason: "저장된 뜻의 '따뜻한' 은 틀려요. 아이스 라떼도 latte 예요. 해석에 '라떼' 를 그대로 남겨 coffee(그냥 커피), cappuccino 와 갈랐어요. 설명의 '우유가 없는 커피는 coffee' 도 틀린 말이라 고쳤어요."
+  meaning_ko: "라떼 (우유를 많이 넣은 커피)"
+  usage_note: "에스프레소에 우유를 부은 커피예요. 우유 거품이 두껍게 올라가면 cappuccino 라고 해요."
+
+- word: "merely"
+  reason: "'그냥'으로 쓰면 just 로 새서 '~에 불과하다'로 썼다. usage_note 의 '그저와 바로를 혼동한다', 'merely 는 강조할 때 쓴다'는 둘 다 사실과 다르다(merely 는 오히려 별것 아니라고 낮추는 말)."
+  usage_note: "'~에 지나지 않는다'며 대수롭지 않게 말할 때 써요. 뜻은 'only', 'just'와 거의 같지만 글이나 격식 있는 자리에서 더 자주 보여요."
+
+- word: "muffin"
+  reason: "저장된 뜻과 설명의 '마핀' 은 틀린 적기라 '머핀' 으로 고쳤어요. 해석에 '머핀' 을 남겨 bread, cake 와 갈랐어요."
+  meaning_ko: "머핀 (컵 모양 틀에 구운 작은 빵)"
+  usage_note: "컵 모양 틀에 구운 작은 빵이에요. 크림을 바른 큰 케이크는 cake 예요."
+
+- word: "necessary"
+  reason: "원래 예문은 문법은 맞지만 교과서 냄새가 심하고 해석이 번역투가 될 수밖에 없어서, 식당·숙소에서 그대로 쓰는 짧은 문장으로 바꿨어요. need 는 동사라 'Is a reservation ___?' 자리에 그대로는 못 들어오고, important(중요한) 와도 갈려요."
+  pattern: "be + necessary"
+  example: "Is a reservation necessary?"
+
+
+- word: "pace"
+  reason: "'걸음'을 넣어 speed(빠르기)·rate 로 새지 않게 했다. 'speed 보다 pace 가 더 자연스럽다'는 설명은 너무 넓어(차 속도는 speed) 갈리는 자리를 적어 고쳤다."
+  usage_note: "걷는 걸음이나 일이 나아가는 '진행 속도'를 말할 때 pace를 써요. 차나 인터넷처럼 빠르기 자체를 말할 때는 speed가 자연스러워요."
+
+- word: "paste"
+  reason: "원래 예문 'Can I paste some sauce on my plate?' 는 영어로 말이 되지 않아요. paste 는 소스를 바르는 동작에 쓰지 않아요. 음식 갈래에 맞게 고추장 문장으로 바꿨고, '고추장' 이 곧 red pepper paste 라 빈칸 답이 하나예요."
+  meaning_ko: "장, 걸쭉하게 갠 반죽 (고추장·된장 같은 것)"
+  example: "This stew needs red pepper paste."
+  usage_note: "고추장은 red pepper paste, 된장은 soybean paste 예요. 풀로 붙이거나 컴퓨터에서 붙여 넣을 때도 paste 를 써요."
+
+- word: "pen"
+  reason: "'펜'은 한국어에 그대로 있는 말이라 pencil(연필)·marker 와 헷갈릴 여지가 없다. (검증: 해석과 빈칸은 문제없다 — '펜' 이 한국어에 그대로 있어 pencil·marker 와 헷갈릴 여지가 없다. 놓친 것은 usage_note 다. 'take a pen 이예요' 는 '이에요' 오타이고 앞 띄어쓰기도 어긋나 있는데 usage_fix 를 비워 뒀다. \"펜을 빌릴 때는 borrow a pen, 가져올 때는 bring a pen, 가져갈 때는 take a pen이에요.\" 로 고쳐라.)"
+  meaning_ko: "펜"
+  example: "I need a pen."
+
+- word: "pepper"
+  reason: "예문의 pepper 는 국수에 뿌리는 후추라서, 저장된 뜻 '고추, 고춧가루' 로는 빈칸을 못 채워요. 해석에 '후추' 를 써야 salt(소금), chili(매운 고추) 와 갈립니다."
+  meaning_ko: "후추; 고추, 피망"
+  usage_note: "그냥 pepper 라고 하면 보통 후추예요. 매운 고추는 chili pepper, 피망은 bell pepper 라고 해요."
+
+- word: "period"
+  reason: "원래 예문(르네상스와 위대한 예술)은 해석하면 '시대' 가 되는데 그건 era 도 똑같이 받는 말이라 답이 둘이 돼요. 게다가 왕초보 예문으로 너무 무거워서, '기간' 으로 답이 하나로 굳는 짧은 문장으로 바꿨어요."
+  pattern: "a + period (+ of + 기간)"
+  meaning_ko: "기간, 시기"
+  example: "I lived in Japan for a short period."
+  usage_note: "period 는 '언제부터 언제까지' 하는 기간이에요. time 은 그냥 시간이고, era 는 역사를 크게 나누는 시대라 훨씬 길어요."
+
+- word: "play"
+  reason: "운동 이름 앞의 '하다' 가 곧 play 예요. confused_with 의 game·sport 는 명사라 이 빈칸에 못 들어와요. 원래 설명은 '놀다' 로 쓸 때 꼭 games 를 붙여야 한다고 했는데 사실이 아니라 고쳤어요. (검증: 내용은 다 맞아요 — 원래 usage_note 가 '놀다로 쓸 때 games 를 꼭 붙여야 한다' 고 한 것이 틀렸다는 지적도 옳고요(The kids are playing. 만으로 됩니다). 맞춤법만 고쳤어요: '축구하다' 가 한 낱말이라 '축구 해요' 가 아니라 '축구해요' 로 붙여 써요.)"
+  meaning_ko: "놀다, 연주하다, 경기하다"
+  example: "Let's play soccer."
+  usage_note: "스포츠는 play soccer, 악기는 play the piano 처럼 써요. 아이들이 그냥 노는 것도 The kids are playing. 처럼 목적어 없이 play 만 쓸 수 있어요."
+
+- word: "pump"
+  reason: "'넣다' 만 쓰면 fill 로도 읽혀서 '펌프로' 를 함께 넣어 답을 하나로 묶었어요. push(밀다) 와도 갈립니다. 저장된 설명은 '물건을 펌프하다고 하지 않고 ~ 한다며 쓰세요' 처럼 문장이 깨져 있어 다시 썼어요."
+  meaning_ko: "(펌프로) 밀어 넣다, 퍼 올리다; 펌프"
+  usage_note: "물이나 공기처럼 흐르는 것을 밀어 넣을 때 써요. 자전거에 바람을 넣는 건 pump air into 예요."
+
+- word: "quarter"
+  reason: "'사분위' 는 통계에서 쓰는 다른 말이라 '4분의 1' 로 고쳤어요. 설명도 그 틀린 말 위에 얹혀 있어서 같이 다시 썼고요. fourth 도 4분의 1이지만 a ___ of the pizza 자리에는 quarter 가 굳어진 말이에요."
+  meaning_ko: "4분의 1"
+  usage_note: "전체를 넷으로 나눈 하나예요. 시간에도 써서 a quarter past three 는 세 시 십오 분이고, 미국 동전 25센트도 quarter 라고 해요."
+
+- word: "radish"
+  reason: "저장된 뜻의 '당근' 은 carrot 이라 틀렸어요. 설명의 '당근은 뿌리가 노란색' 도 틀려서 함께 고쳤어요. 해석에 '무' 를 쓰면 carrot 으로 샐 일이 없어요."
+  meaning_ko: "무 (희고 아삭한 뿌리 채소)"
+  usage_note: "무는 radish, 당근은 carrot 이에요. 주황색이고 길쭉하면 carrot 이에요."
+
+- word: "refuse"
+  reason: "'거절하다'를 그대로 남겼다. 빈칸 뒤가 to answer 라 reject·deny 는 문법상 들어갈 수 없어 답이 하나다. 'refuse 가 더 공손하다'는 설명은 거꾸로라서(딱 잘라 거절하는 쪽) 고쳤다."
+  usage_note: "'refuse to + 동사'는 '~하지 않겠다'고 딱 잘라 말하는 거예요. 물건을 거절할 때는 'She refused my gift.'처럼 목적어를 바로 써요. 더 부드럽게 말하고 싶으면 'decline'을 쓰세요."
+
+- word: "repeat"
+  reason: "'다시 한 번 말해 주세요'가 repeat 를 곧장 가리킨다. usage_note 의 'Please repeat this song.'은 영어로 쓰지 않는 말이라 실제로 쓰는 두 문장으로 바꿨다."
+  usage_note: "말을 못 알아들었을 때 'Could you repeat that, please?'라고 해요. 노래를 다시 틀어 달라는 말은 'Can you play it again?'이 자연스러워요."
+
+- word: "respond"
+  reason: "'답장해 주세요' 로 쓰면 reply 가 답이 되고 '대답' 은 answer 라서, respond 만 받는 '응답' 으로 썼어요. 원래 설명의 \"reply 가 더 구체적인 대답\" 은 갈래를 거꾸로 말한 거라 고쳤어요."
+  usage_note: "respond 도 reply 도 뒤에 to 를 붙여 써요 (respond to, reply to). 메일이나 편지에 답을 써서 보내는 건 reply, 어떤 일에 대한 반응까지 넣어 답하는 건 respond 예요."
+
+- word: "restore"
+  reason: "'복원하다'는 원래 상태로 되돌린다는 뜻이라 그냥 고치는 repair·fix 와 갈린다. 설명도 이 차이를 맞게 적고 있어 그대로 뒀다. (검증: 해석과 빈칸은 문제없다. '복원' 이 repair·fix 와 갈린다는 판단도 맞다. 그런데 '설명도 맞게 적고 있어 그대로 뒀다' 는 후하다 — 그 usage_note 는 영어 restore 를 한국어 '복구하다' 와 견주는 글이라 갈피가 잡히지 않고, 정작 confused_with 의 repair·fix 는 한 번도 다루지 않는다. 이렇게 고쳐라: \"망가진 것을 원래 모습 그대로 되돌릴 때 restore를 써요. 쓸 수 있게 고치기만 하는 건 repair나 fix예요.\")"
+  meaning_ko: "원래 상태로 돌리다"
+  example: "The artist restored the painting."
+
+- word: "see"
+  reason: "원래 예문 'I see you at the store.' 는 영어가 깨진 문장이라(만나자는 뜻이면 See you at the store) 새로 썼어요. '보여요' 는 look·watch 로는 바꿔 놓을 수 없어서 답이 하나로 굳어요. 뜻의 '보기' 는 말이 안 돼서 고쳤고, 설명의 'I see the movie' 예시도 어색해서 갈래를 다시 썼어요."
+  meaning_ko: "보이다, 보다 (눈에 들어오다)"
+  example: "I can see the mountain from here."
+  usage_note: "see 는 눈에 저절로 들어와서 보이는 거예요. look 은 일부러 쳐다보는 것, watch 는 움직이는 걸 한동안 지켜보는 거예요. 그래서 텔레비전은 watch TV 라고 하지 see TV 라고는 안 해요."
+
+- word: "slow"
+  reason: "'천천히'라고 쓰면 slowly 로 샐 수 있어 '속도를 줄이다'로 썼다. 뒤에 down 이 남아 있어 답은 slow 하나로 정해진다. 저장된 뜻의 '느긋하다'는 relaxed 쪽이라 뺐고, usage_note 의 'slow + -ing' 은 없는 규칙이라 고쳤다. (검증: 해석과 usage 고침에는 동의한다. 'slow + -ing' 이 없는 규칙이라는 지적도 맞다. 다만 고쳐 쓴 뜻 '느린, 속도가 느린; 속도를 늦추다' 는 앞 두 개가 같은 말이라 '느린; 속도를 늦추다' 로 줄였다. 빈칸은 'Please ___ down.' 이라 뒤에 down 이 남아 slowly·late 가 들어갈 자리가 없고, 답은 하나로 정해진다.)"
+  meaning_ko: "느린; 속도를 늦추다"
+  example: "Please slow down."
+  usage_note: "속도를 줄이라고 할 때는 'slow down'을 써요. 느린 상태는 형용사 'slow'로 'a slow train'처럼 쓰고, '천천히'라는 부사는 'slowly'예요. 'slow' 뒤에 -ing을 붙이는 쓰임은 없어요."
+
+- word: "smoke"
+  reason: "'담배를 피우다'는 fire(불)·burn(타다)과 겹치지 않는다. meaning_ko 의 '연기(물)가 나다'는 한국어로 말이 되지 않아 명사 '연기'로 고쳤다. (검증: 뜻을 '담배를 피우다; 연기' 로 고친 것과 해석은 맞다. 그런데 말이 되지 않는다며 뜻에서 걷어낸 바로 그 '연기(물)' 라는 표현이 usage_note 에 그대로 남아 있는데 usage_fix 를 비워 뒀다 — 같은 흠을 한쪽만 고친 셈이다. usage_note 도 이렇게 고쳐라: \"담배를 피운다고 할 때 동사로 써요. 불에서 나는 연기를 말할 때는 명사로 쓰고요. 'There is smoke from the fire.'처럼요.\")"
+  meaning_ko: "담배를 피우다; 연기"
+  example: "Don't smoke here."
+
+- word: "soda"
+  reason: "'탄산음료' 는 단맛 나는 음료 전체를 가리켜 soda 와 딱 맞아요. 저장된 설명에 '하요' 라는 오타가 있어 다시 썼고, 탄산수와의 구별도 분명히 했어요."
+  usage_note: "지역에 따라 pop 이라고도 해요. 맛이 없이 탄산만 든 물은 sparkling water 나 soda water 예요."
+
+- word: "sparkling"
+  reason: "카페에서 쓰는 뜻은 '번쩍이는' 이 아니라 '탄산이 든' 이라 뜻을 고쳤어요. '탄산수' 가 곧 sparkling water 여서 답이 하나예요. shiny(반짝이는) 쪽으로 새지 않습니다. (검증: 뜻을 '반짝이는' 에서 '탄산이 든' 으로 고친 판단은 맞아요. 그런데 해석을 '탄산수' 로 두면 빈칸 'Can I have a ______ water?' 의 답이 soda 도 됩니다. soda water 가 곧 탄산수이고, soda 는 바로 앞 항목이라 학습자가 그쪽을 씁니다. 카페 차림표에 그대로 쓰는 '스파클링 워터' 를 해석에 남겨 답을 하나로 묶었어요. '탄산' 은 뜻 칸에서 배우게 됩니다. 설명은 '물이나 음료 앞에 붙으면 탄산이 들었다는 뜻이에요. 탄산이 없는 그냥 물은 still water 예요.' 로 두면 맞아요.)"
+  meaning_ko: "탄산이 든 (물·음료); 반짝이는"
+  usage_note: "물이나 음료 앞에 붙으면 탄산이 들었다는 뜻이에요. 탄산이 없는 그냥 물은 still water 라고 해요."
+
+- word: "speak"
+  reason: "언어 이름 앞에는 speak 만 와요. talk 은 '이야기 나누다', say 는 '뭐라고 말하다' 라 '할 줄 아세요' 와 안 붙어요. 뜻이 괄호 안에서 같은 말을 세 번 되풀이해 읽기 힘들어서 간추렸어요."
+  meaning_ko: "말하다, (어떤 언어를) 할 줄 알다"
+
+- word: "stir"
+  reason: "저장된 뜻의 '휘저어 오다' 는 없는 말이라 '휘젓다' 로 고쳤어요. 해석에 '섞다' 를 쓰면 mix 가 답이 되므로 '젓다' 로만 썼어요. 설명에 있던 '와이프가' 는 끼어든 말이라 지웠어요. (검증: 해석은 'Stir the soup gently.' 와 정확히 맞고 '섞다' 를 피해 mix 를 막은 것도 옳아요. 다만 고쳐 쓴 뜻 '휘젓다, 저어 주다' 의 '저어 주다' 는 남에게 해 준다는 말이라 낱말 뜻 자리에 어울리지 않아 '휘젓다, 젓다' 로 다듬었어요. 설명은 '숟가락으로 빙빙 돌려 젓는 게 stir 예요. 여러 재료를 한데 합치는 건 mix 예요.' 가 맞고, 저장된 설명의 '와이프가' 를 지운 것도 옳습니다.)"
+  meaning_ko: "휘젓다, 젓다 (숟가락으로 빙빙 돌려서)"
+  usage_note: "숟가락으로 빙빙 돌려 젓는 게 stir 예요. 여러 재료를 한데 합치는 건 mix 예요."
+
+- word: "stirrer"
+  reason: "저장된 뜻과 설명이 stirrer 를 '작은 스푼' 이라고 했는데 실제로는 막대예요. 해석에 '막대' 를 써야 spoon 이 답으로 읽히지 않아요. (검증: 저장된 뜻의 '혼합기' 와 '작은 스푼' 이 틀렸다는 지적은 맞아요. stirrer 는 얇은 막대입니다. 다만 앞사람이 쓴 '젓개' 는 왕초보가 읽을 일이 없는 낡은 말이라 뜻 칸에서 뺐어요. 한국 카페에서는 '커피 스틱' 이라고 부르니 그 말을 넣는 편이 낫습니다. 해석의 '저을 막대' 가 spoon 을 막아 주는 것도 맞아요.)"
+  meaning_ko: "음료를 젓는 얇은 막대 (커피 스틱)"
+  usage_note: "커피를 저을 때 쓰는 얇은 막대예요. 떠먹는 도구는 spoon 이에요."
+
+- word: "strong"
+  reason: "'힘이 세다' 로 써야 hard(단단한·어려운) 쪽으로 안 새요. 원래 설명의 \"strong 이 powerful 보다 덜 강하다\" 는 세기 차이가 아니라 뜻 자체가 다른 거라 고쳤어요."
+  usage_note: "사람 힘이나 마음이 셀 때 strong 을 써요. powerful 은 힘보다 '영향력이 큰' 쪽이라, a powerful man 은 힘이 센 사람이 아니라 권력이 큰 사람이에요."
+
+- word: "sundae"
+  reason: "저장된 뜻의 '순대' 는 소리만 닮은 딴 말이라 고쳤어요. 설명의 '아이스크림 콘' 도 틀려요. 컵에 담아 시럽을 얹은 후식이에요. 햄버거 가게에서 파는 이름 그대로 '선데' 를 해석에 남겼어요. (검증: '순대' 가 소리만 닮은 딴 말이라는 지적은 맞아요. 그런데 해석을 '선데 아이스크림' 으로 쓰면 빈칸 'I'll have a ______, please.' 에 ice cream 이 그대로 들어맞아 답이 둘이 됩니다. 게다가 한국어에서 '선데 아이스크림' 의 머리말은 '아이스크림' 이라 학습자는 그쪽을 먼저 씁니다. '선데' 만 남겨 답을 하나로 묶었고, 무엇인지는 뜻 칸이 알려 줘요. 설명의 '아이스크림 콘' 이 틀렸다는 지적도 맞습니다.)"
+  meaning_ko: "선데 (아이스크림에 시럽을 얹은 후식)"
+  usage_note: "아이스크림에 초콜릿 시럽 같은 걸 얹은 후식이에요. 소리가 비슷할 뿐 한국 음식 순대와는 전혀 다른 말이에요."
+
+- word: "throughout"
+  reason: "'내내' 가 throughout 을 그대로 가리켜요. during 은 '동안', through 는 '지나서' 라 갈려요. 원래 설명은 '전체에 걸쳐는 더 구체적인 상황에 쓴다' 는 뜻 모를 말이라 during 과의 차이로 바꿨어요."
+  usage_note: "처음부터 끝까지 '내내' 라는 뜻이에요. during 은 그 기간 중에 한 번 일어난 일에도 쓰지만, throughout 은 기간 전부에 걸쳐 있을 때만 써요."
+
+- word: "touch"
+  reason: "'손대다' 로 써서 feel(느껴 보다) 과 갈리게 했어요. 뜻에 있던 '터치하다' 는 화면을 누를 때나 쓰는 말이라 빼고 '만지다, 손대다' 로 고쳤고, 설명도 한국어 낱말 이야기만 하고 있어서 영어 갈래로 다시 썼어요."
+  meaning_ko: "만지다, 손대다"
+  usage_note: "손으로 닿는 건 다 touch 예요. feel 은 만져서 '어떤 느낌인지 알아보다' 라 Feel this cloth. 처럼 쓰고요. touch on 은 손과 상관없이 '어떤 이야기를 살짝 꺼내다' 예요."
+
+- word: "transfer"
+  reason: "'보냈어요' 라고 쓰면 send 가 답이 되어 버려서, 계좌 사이에 옮길 때 쓰는 '이체하다' 로 썼어요. move(옮기다) 와도 갈려요. (검증: '보냈어요' 를 피하고 '이체했어요' 로 쓴 판단이 맞아요 — send·move 로 새지 않아요. 다만 저장된 뜻 '이동시키다, 이전하다' 는 예문의 쓰임(계좌 이체)을 가리키지 못하고 왕초보에게 딱딱하기도 해서 '옮기다, (돈을) 이체하다' 로 고쳤어요.)"
+  meaning_ko: "옮기다, (돈을) 이체하다"
+  example: "They transferred the money to my account."
+
+- word: "trouble"
+  reason: "원래 예문은 한국인 학습자가 '한국말이 어렵다' 고 말하는 꼴이라 앱 안에서 어색해서 English 로 바꿨어요. '어려워요' 라고 쓰면 difficulty 도 답이 되니 have trouble 에 딱 붙는 '애를 먹어요' 로 썼고요. 원래 설명의 '목적어가 필요하다/아니다' 이야기는 사실이 아니라 관사 차이로 고쳤어요."
+  example: "I have trouble speaking English."
+  usage_note: "have trouble + 동사ing 로 '~하기가 힘들다' 를 말해요. problem 은 셀 수 있는 '문제 하나' 라 I have a problem. 처럼 a 를 붙이지만, trouble 은 a 없이 써요."
+
+- word: "try"
+  reason: "'~해 볼게요' 가 try to 예요. attempt 는 '시도했어요' 쪽이라 겹치지 않고, test(시험해 보다) 와도 갈려요. 원래 설명의 \"'to do' 형식은 '시행하다'에 가깝다\" 는 말이 안 되는 소리라 다시 썼어요. (검증: 해석은 맞아요 — '해 볼게요' 가 try to 예요. 그런데 저장된 뜻 '시도하다, 시험하다' 를 안 고치고 지나갔어요. '시험하다' 는 confused_with 의 test 를 그대로 가리키는 말이고 예문(전화를 걸어 보다)의 쓰임과도 어긋나요. '해 보다, 시도하다' 로 고쳤어요. 고쳐 쓴 usage_note 는 맞지만 'try to = 하려고 애쓰다' 한 줄이 자기 해석('한번 해 볼게요')과 살짝 어긋나니 '하려고 하다' 쪽이 나아요.)"
+  meaning_ko: "해 보다, 시도하다"
+  example: "I will try to call you later."
+  usage_note: "try + 명사 는 '한번 해 보다·먹어 보다' 예요 (Try this cake!). try to + 동사 는 '하려고 애쓰다' 고요. attempt 도 뜻은 같지만 딱딱한 말이라 회화에서는 try 를 써요."
+
+- word: "twist"
+  reason: "원래 예문 'Don't twist the bottle.' 은 병 자체를 비튼다는 말이라 어색하고, 뜻을 '망가지다' 로 적어 둔 것도 틀렸어요. 발목 삐는 문장은 turn 이나 bend 로 바꿔 쓸 수 없어서 답이 twisted 하나로 정해져요. (검증: 원 예문과 저장된 뜻('망가지다')이 틀렸다는 진단은 맞지만, 앞사람이 새로 쓴 'I twisted my ankle yesterday.' 는 빈칸 문제로 성립하지 않아요. 해석 '발목을 삐었어요' 를 읽은 왕초보가 떠올릴 낱말은 sprain 이지 twist 가 아니고, 영어에서도 turn one's ankle 이라고 씁니다. 뜻(비틀다)과 해석이 서로 닿지 않는 자리라 예문을 바꿨어요. 수건을 '비틀다' 는 turn·bend 로 못 바꿔 답이 twisted 하나로 정해집니다. 설명(usage_note)은 '손으로 돌려서 꼬거나 비트는 동작이에요. 발목을 삐었을 때도 I twisted my ankle 이라고 해요.' 로 쓰면 앞사람이 살리려던 쓰임도 남습니다.)"
+  meaning_ko: "비틀다, 돌려 꼬다"
+  example: "He twisted the wet towel hard."
+  usage_note: "손으로 돌려 비트는 동작이에요. 발목을 삐는 것도 twist my ankle 이라고 해요."
+
+- word: "vice"
+  reason: "원 예문 'Smoking is a bad vice.'는 vice 에 이미 '나쁘다'가 들어 있어 겹말이 된다. 'his only vice'가 실제로 쓰는 말이다. '나쁜 버릇'이면 virtue(미덕)와 정반대라 답이 하나로 잡힌다."
+  example: "Smoking is his only vice."
