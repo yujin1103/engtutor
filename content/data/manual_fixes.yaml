@@ -106,3 +106,69 @@
   pattern: "some/any + salt"
   usage_note: "salt 는 셀 수 없어요. 'a salt' 는 안 되고 'some salt', 'any salt' 처럼 써요."
   confused_with: [sugar]
+
+# ── 해석 검수에서 딸려 나온 것들 (2026-08-27) ───────────────────────
+#
+# 위쪽 교정과 선정 기준이 다르다. 저기는 "실재하지 않는 영어 낱말"을 사전으로
+# 찾았고, 아래 일곱은 **예문 해석을 사람이 고치다가** 드러났다.
+#
+# 어떻게 드러났나: gloss_fixes.yaml 을 넣으면서 배치의 자동 검사 4종을 같이
+# 돌렸더니 7건이 "해석에 이 낱말의 뜻이 남아 있지 않다"로 걸렸다. 검사기는
+# 해석과 `meaning_ko`·`usage_note` 가 한 조각도 안 겹치는지를 본다. 그런데
+# 걸린 자리를 열어 보니 **틀린 쪽은 해석이 아니라 저장된 뜻**이었다 —
+# `squid` 의 뜻이 '감자전', `straw` 가 '스티로 소프트한 줄기', `tuna` 가
+# '타우나' 였다. 사람이 고친 옳은 해석이 틀린 뜻과 안 겹쳐서 걸린 것이다.
+#
+# 그래서 이 검사에는 쓰임이 하나 더 있다. **사람이 검수한 해석을 잣대로 삼으면
+# 틀린 `meaning_ko` 를 찾아내는 탐지기가 된다.** 방향이 반대일 뿐 같은 검사다.
+
+- word: coleslaw
+  reason: "뜻이 'coleslaw (샐러드 종류)' — 한국어로 옮기지 않고 영어를 그대로 뒀다. 게다가 불가산인데 문형이 'a/the + coleslaw' 였고 예문도 'a coleslaw' 를 쓰고 있었다."
+  meaning_ko: "코울슬로 (양배추 샐러드)"
+  pattern: "some/the + coleslaw (불가산명사)"
+  example: "I'll have coleslaw with my burger."
+  usage_note: "코울슬로는 양배추를 잘게 썰어 마요네즈에 무친 샐러드예요. 셀 수 없어서 'a coleslaw' 대신 그냥 'coleslaw' 나 'some coleslaw' 라고 해요. 줄여서 'slaw' 라고도 해요."
+  confused_with: [slaw]
+
+- word: outlet
+  reason: "뜻이 '전원 공급 장치, 플러그' 였다. 플러그는 꽂는 쪽이고 outlet 은 벽에 있는 구멍이라 정반대다. 해석도 '전원 어댑터' 로 따라가 있었다."
+  meaning_ko: "콘센트 (벽에 있는 전기 구멍)"
+  pattern: "an/the + outlet"
+  usage_note: "벽에 붙어서 전기를 주는 구멍이 outlet 이에요. 우리가 '콘센트' 라고 부르지만 영어에 concent 라는 말은 없어요. 거기 꽂는 쪽은 plug 고, 영국에서는 outlet 을 socket 이라고 해요."
+  confused_with: [plug, socket]
+
+- word: sushi
+  reason: "뜻이 '회' 였다. 회는 sashimi 다. 문형도 불가산인데 'a/the + sushi' 였다."
+  meaning_ko: "초밥"
+  pattern: "some/the + sushi (불가산명사)"
+  usage_note: "sushi 는 식초로 간한 밥 위에 생선을 얹은 초밥이에요. 밥 없이 생선만 썬 회는 sashimi 라고 해요. 셀 수 없어서 'a sushi' 대신 'some sushi' 라고 해요."
+  confused_with: [sashimi]
+
+- word: squid
+  reason: "뜻이 '감자전(물고기 종류)' 이었고 설명은 '감자전은 squid 고 감자는 potato 예요' 로 그 거짓을 두 번 말했다. confused_with 에도 potato 가 들어가 있었다."
+  meaning_ko: "오징어"
+  pattern: "some/the + squid (불가산명사)"
+  usage_note: "squid 는 오징어예요. 음식으로 말할 때는 셀 수 없어서 'I don't like squid.' 처럼 그냥 써요. 튀긴 오징어는 메뉴에 calamari 라고 적혀 있을 때가 많아요."
+  confused_with: [octopus, calamari]
+
+- word: chewy
+  reason: "뜻이 '물이 잘 안 빠지는' 이었다 — chewy 와 아무 상관이 없다. 설명에는 일본어 '嚼りごこちが良い' 가 섞여 있어 왕초보가 읽을 수 없었다."
+  meaning_ko: "쫄깃한, 질긴"
+  pattern: "be동사 + chewy / chewy + 명사"
+  usage_note: "chewy 는 오래 씹게 되는 식감이에요. 떡이나 젤리처럼 쫄깃할 때도 쓰고, 고기가 질길 때도 써요. 반대로 바삭한 것은 crispy 예요."
+  confused_with: [crispy, tough]
+
+- word: straw
+  removed: [styro]
+  reason: "'styro' 는 영어 단어가 아니다(포장재는 styrofoam). 뜻도 '스티로 소프트한 줄기 (종이로 만든 줄기)' 로 말이 되지 않았다."
+  meaning_ko: "빨대"
+  pattern: "a/the + straw"
+  usage_note: "음료를 마실 때 쓰는 빨대예요. 'Can I get a straw?' 처럼 셀 수 있어요. 포장재로 쓰는 스티로폼은 styrofoam 이라서 straw 와 관계없어요. straw 에는 '짚' 이라는 뜻도 있어서 straw hat 은 밀짚모자예요."
+  confused_with: []
+
+- word: tuna
+  reason: "뜻이 '타우나, 생선 종류' 였다. '타우나' 는 한국어에 없는 말이라 뜻 자리에 아무것도 없는 것과 같았고, 해석에도 그대로 옮겨져 있었다."
+  meaning_ko: "참치"
+  pattern: "some/the + tuna (불가산명사)"
+  usage_note: "tuna 는 참치예요. 셀 수 없게 써서 'some tuna', 'tuna sandwich' 처럼 말해요. 연어는 salmon 이에요."
+  confused_with: [salmon]
