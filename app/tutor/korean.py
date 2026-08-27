@@ -118,7 +118,12 @@ def reject_english_run(text: str, field: str) -> str:
 # 모델이 흘리는 문자 집합을 미리 다 셀 수는 없다. 막을 것을 세는 대신
 # **남겨도 되는 것**을 센다.
 _JAMO = re.compile(r"[ㄱ-ㅎㅏ-ㅣ]")
-_PUNCT_OK = set(string.punctuation) | set(string.whitespace) | set("’‘“”·…—–₩°")
+# 화살표는 설명 칸이 실제로 쓰는 기호다 — "He is a doctor. → 그는 의사예요".
+# 이 검사를 설명·문형 칸까지 넓히면서 `she`·`sure`·`purely` 가 화살표 때문에
+# 걸렸다. 못 읽는 글자가 아니라 가르치는 기호라서 남겨도 되는 쪽에 넣는다.
+# 저장된 5,497행 전수로 세어 보면, 이 검사에 걸리는 글자 103종 중 문자 체계가
+# 아닌 것은 이 화살표 하나뿐이다(나머지는 한자·키릴·가나·타이 문자).
+_PUNCT_OK = set(string.punctuation) | set(string.whitespace) | set("’‘“”·…—–₩°→")
 
 
 def _is_readable(ch: str) -> bool:

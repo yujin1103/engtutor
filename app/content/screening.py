@@ -408,6 +408,27 @@ def screen(row: WordLike) -> list[Finding]:
 
     if not has_hangul(row.usage_note):
         out.append(Finding("usage_not_korean", "high", "설명이 한국어가 아니에요"))
+    else:
+        # 뜻 칸과 같은 검사를 설명 칸에도 건다. 안 걸어 둔 동안 31행이 새어 나갔고,
+        # 그건 뜻 칸(21행)보다 많다 — 설명이 제일 긴 한국어 칸이라 미끄러질 자리가
+        # 그만큼 많기 때문이다. 실제로 나온 것: `ward` 의 '病房', `earn` 의
+        # 'работать', `seatbelt` 의 '타ク시'.
+        #
+        # 이 새는 것이 환각이 아니라 **언어 전환**이라는 데 주의할 것. 섞여 나온
+        # 값들은 뜻이 맞다 — 捩伤(삐다)·形容词(형용사)·油腻的(기름진). 만드는 모델이
+        # 중국 모델(qwen3)이라 한국어 토큰을 확신 못 할 때 뜻이 같은 중국어 토큰으로
+        # 미끄러지는 것이고, 그래서 프롬프트로 더 세게 말해서 막을 성질이 아니다.
+        # 같은 배치에서 example_ko 만 0건인 것이 근거다 — 그 칸에만 검사가 걸려 있다.
+        try:
+            reject_foreign_script(row.usage_note, "usage_note")
+        except ValueError:
+            out.append(
+                Finding(
+                    "usage_foreign_script",
+                    "high",
+                    f"설명에 학습자가 못 읽는 글자가 섞였어요: {row.usage_note[:40]!r}",
+                )
+            )
     if has_hangul(row.example):
         out.append(Finding("example_has_hangul", "high", "예문에 한글이 섞였어요"))
 
@@ -436,6 +457,19 @@ def screen(row: WordLike) -> list[Finding]:
         if not _WORD_TOKEN.search(pattern.lower()):
             # 형태를 적는 칸에 영어가 하나도 없으면 뜻풀이를 옮겨 적은 것이다.
             out.append(Finding("pattern_without_english", "low", "문형에 영어가 없어요"))
+        # 문형도 화면에 그대로 나가는 칸이다. `itchy` 의 문형이 '形容词, + body part',
+        # `recently` 가 'recently + 동사过去形' 였다. 여기 검사가 없어서 이 넷은
+        # 검수 큐에도 안 올라오고 출제 문도 통과했다.
+        try:
+            reject_foreign_script(pattern, "pattern")
+        except ValueError:
+            out.append(
+                Finding(
+                    "pattern_foreign_script",
+                    "high",
+                    f"문형에 학습자가 못 읽는 글자가 섞였어요: {pattern[:40]!r}",
+                )
+            )
         forms = pattern_forms(pattern, word)
         unmet = [
             tuple(t for t in form if not mentions(row.example, t)) for form in forms

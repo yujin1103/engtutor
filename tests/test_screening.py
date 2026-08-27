@@ -56,6 +56,43 @@ def test_a_meaning_that_mixes_foreign_script_is_flagged_even_though_it_has_hangu
     assert "meaning_foreign_script" not in _codes(screen(_row()))
 
 
+def test_the_same_check_is_on_the_note_and_the_pattern_too():
+    """뜻 칸에만 걸어 뒀더니 설명 31행·문형 4행이 그대로 화면까지 나갔다.
+
+    새는 것이 환각이 아니라 **언어 전환**이다. 섞여 나온 값은 뜻이 맞다 —
+    `捩伤`(삐다) · `形容词`(형용사) · `病房`(병동). 만드는 모델이 중국 모델이라
+    한국어 토큰을 확신 못 할 때 뜻이 같은 중국어 토큰으로 미끄러진다. 그래서
+    프롬프트로 더 세게 말해 막을 성질이 아니고, 칸마다 같은 검사를 걸어야 한다.
+    같은 배치에서 `example_ko` 만 0건인 것이 근거다 — 그 칸에만 걸려 있었다.
+    """
+    note = _codes(screen(_row(word="ward", usage_note="병원의 '병동'을 말해요. '病房' 과 같아요.")))
+    assert "usage_foreign_script" in note
+    assert "usage_not_korean" not in note  # 한글은 있다
+
+    pattern = _codes(screen(_row(word="itchy", pattern="形容词, + body part (몸 부위)")))
+    assert "pattern_foreign_script" in pattern
+
+    clean = _codes(screen(_row()))
+    assert "usage_foreign_script" not in clean
+    assert "pattern_foreign_script" not in clean
+
+
+def test_english_inside_a_korean_note_is_not_foreign_script():
+    """설명은 영어 낱말을 인용해야 하는 칸이다 — 그것까지 막으면 검사가 못 쓴다."""
+    codes = _codes(screen(_row(usage_note="빌려주는 쪽은 lend 예요. 'Can I borrow this?' 처럼 써요.")))
+    assert "usage_foreign_script" not in codes
+
+
+def test_the_teaching_arrow_is_not_foreign_script():
+    """검사를 넓히자 `she`·`sure`·`purely` 가 화살표 때문에 걸렸다 — 오탐이다.
+
+    설명 칸은 화살표로 대응을 보여준다: "He is a doctor. → 그는 의사예요".
+    전수로 세면 이 검사에 걸리는 글자 103종 중 문자 체계가 아닌 것은 이것뿐이다.
+    """
+    codes = _codes(screen(_row(usage_note="예: He is a doctor. → 그는 의사예요.")))
+    assert "usage_foreign_script" not in codes
+
+
 # ------------------------------------------------------------------ 굴절 인식
 @pytest.mark.parametrize(
     ("word", "sentence"),
