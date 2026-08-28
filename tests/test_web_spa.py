@@ -128,3 +128,29 @@ def test_빌드_여부는_요청할_때마다_본다(
     dist.mkdir()
     (dist / "index.html").write_text("<!doctype html>나중에 빌드함", encoding="utf-8")
     assert "나중에 빌드함" in client.get("/").text
+
+
+@pytest.mark.parametrize(
+    "path",
+    [
+        "/%00",
+        "/assets/%00.js",
+        "/" + "a" * 400,
+        "/assets/" + "b" * 300 + ".js",
+        "/../.env",
+        "/%2e%2e/.env",
+    ],
+)
+def test_odd_paths_do_not_crash_the_server(client, path: str) -> None:
+    """주소가 이상해도 **500 이 나면 안 된다.**
+
+    실제로 둘이 났다. `GET /%00` 은 `Path.resolve()` 가 널바이트에 ValueError 를
+    던졌고, 400자짜리 주소는 `is_file()` 이 OSError(File name too long)를 던졌다.
+    둘 다 "그런 파일 없음" 으로 답해야 하는 자리인데 "서버가 부서졌다" 로 답했다.
+
+    `..` 로 저장소 바깥을 읽어 가는 길도 함께 확인한다 — SPA 껍데기가 나가야지
+    `.env` 가 나가면 안 된다.
+    """
+    res = client.get(path)
+    assert res.status_code < 500
+    assert "ANTHROPIC_API_KEY" not in res.text

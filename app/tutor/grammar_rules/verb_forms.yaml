@@ -37,7 +37,7 @@ verbs:
   change:    {ing: changing,      past: changed,        s: changes}
   check:     {ing: checking,      past: checked,        s: checks}
   clean:     {ing: cleaning,      noun: cleaner,        past: cleaned}
-  close:     {ing: closing,       noun: closure,        past: closed}
+  close:     {ing: closing,       past: closed,         s: closes}
   collect:   {ing: collecting,    noun: collection,     past: collected}
   complete:  {ing: completing,    noun: completion,     past: completed}
   confirm:   {ing: confirming,    noun: confirmation,   past: confirmed}
@@ -56,6 +56,7 @@ verbs:
   explain:   {ing: explaining,    noun: explanation,    past: explained}
   extend:    {ing: extending,     noun: extension,      adj: extensive}
   file:      {ing: filing,        past: filed,          s: files}
+  find:      {ing: finding,       noun: finder,         s: finds}
   finish:    {ing: finishing,     past: finished,       s: finishes}
   fix:       {ing: fixing,        past: fixed,          s: fixes}
   get:       {ing: getting,       past: got,            s: gets}
@@ -80,7 +81,7 @@ verbs:
   prepare:   {ing: preparing,     noun: preparation,    past: prepared}
   print:     {ing: printing,      noun: printer,        past: printed}
   process:   {ing: processing,    noun: processor,      past: processed}
-  provide:   {ing: providing,     noun: provision,      past: provided}
+  provide:   {ing: providing,     noun: provider,       past: provided}
   publish:   {ing: publishing,    noun: publication,    past: published}
   raise:     {ing: raising,       past: raised,         s: raises}
   receive:   {ing: receiving,     noun: receiver,       past: received}

@@ -414,9 +414,14 @@ class SpellHint:
 
 
 # 글자 수를 세는 우리말. '네 글자' 처럼 고유어로 센다.
+#
+# 열여섯까지 있는 이유: 서빙 가능한 답 중 가장 긴 것이 열여섯 글자다. 열둘에서
+# 끊어 뒀더니 `multi-language` 가 "13 글자예요" 로 나왔다 — 앞뒤가 다 우리말인데
+# 숫자만 아라비아 숫자라 눈에 걸린다.
 _COUNT_KO: tuple[str, ...] = (
     "", "한", "두", "세", "네", "다섯", "여섯", "일곱", "여덟", "아홉", "열",
-    "열한", "열두",
+    "열한", "열두", "열세", "열네", "열다섯", "열여섯", "열일곱", "열여덟",
+    "열아홉", "스무",
 )
 
 
@@ -449,8 +454,32 @@ def _with_yeyo(letters: str) -> str:
     return f"'{letters}' {'이에요' if tail in _FINAL_CONSONANT else '예요'}"
 
 
+def _upto(answer: str, revealed: int) -> str:
+    """앞에서부터 `revealed` **글자**까지의 조각. 글자가 아닌 것은 안 센다.
+
+    `answer[:revealed]` 로 자르면 안 된다. 그건 **문자**를 세는 것이라 하이픈·
+    아포스트로피가 앞쪽에 있으면 어긋난다 — `t-shirt` 를 `answer[:3]` 하면
+    `t-s` 가 나와 "앞 세 글자" 라고 말하면서 실제로는 두 글자만 준다.
+    """
+    seen = 0
+    out: list[str] = []
+    for ch in answer:
+        if ch.isalpha():
+            if seen >= revealed:
+                break
+            seen += 1
+        out.append(ch)
+    # 끝에 붙은 하이픈·아포스트로피는 떼어 낸다. `e-` 를 "앞 두 글자" 라고 부르면
+    # 하이픈을 글자로 세는 셈이고, 이 모듈은 그것을 철자가 아니라 짜임으로 본다.
+    return "".join(out).rstrip("-'’")
+
+
 def _shape(answer: str, revealed: int) -> str:
-    """앞에서부터 `revealed` 글자만 드러낸 모양. 나머지는 밑줄이다."""
+    """앞에서부터 `revealed` 글자만 드러낸 모양. 나머지는 밑줄이다.
+
+    `_upto` 와 **같은 규칙으로 센다.** 둘이 어긋나면 "앞 세 글자는 't-s' 예요"
+    라고 말해 놓고 `t - s h _ _ _` 를 보여 주는 일이 생긴다(실제로 그랬다).
+    """
     seen = 0
     out: list[str] = []
     for ch in answer:
@@ -494,7 +523,7 @@ def spell_hints(item: ClozeItem) -> tuple[SpellHint, ...]:
             SpellHint(
                 step=2,
                 label_ko="첫 글자",
-                text_ko=f"{_with_ro(answer[:1])} 시작해요.",
+                text_ko=f"{_with_ro(_upto(answer, 1))} 시작해요.",
                 shape=_shape(answer, 1),
             )
         )
@@ -504,7 +533,7 @@ def spell_hints(item: ClozeItem) -> tuple[SpellHint, ...]:
             SpellHint(
                 step=3,
                 label_ko="앞 절반",
-                text_ko=f"앞 {_count_ko(half)} 글자는 {_with_yeyo(answer[:half])}.",
+                text_ko=f"앞 {_count_ko(half)} 글자는 {_with_yeyo(_upto(answer, half))}.",
                 shape=_shape(answer, half),
             )
         )

@@ -40,7 +40,7 @@ from __future__ import annotations
 
 import hashlib
 import secrets
-from dataclasses import dataclass, replace
+from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
 
@@ -211,7 +211,7 @@ def _order(seed: str, count: int) -> list[int]:
     return out
 
 
-def make_item(rule: Rule, frame: Frame, verb: str, index: int = 0) -> GrammarItem | None:
+def make_item(rule: Rule, frame: Frame, verb: str) -> GrammarItem | None:
     """틀 하나와 동사 하나로 문제를 만든다. 보기를 넷 못 채우면 None.
 
     None 을 돌려주는 것은 결함이 아니라 정상이다 — 어떤 동사는 검수된 모양이
@@ -235,17 +235,25 @@ def make_item(rule: Rule, frame: Frame, verb: str, index: int = 0) -> GrammarIte
     if len(picked) < CHOICE_COUNT:
         return None
 
-    # **id 에 정답이 들어가면 안 된다.** 처음에는 `to_infinitive:Please
-    # remember...:send` 로 지었다가 id 만 읽으면 답이 보였고, 다음에는 그 문자열의
-    # 해시를 썼는데 그것도 새는 길이었다 — 씨앗 재료가 전부 응답에서 복원되고
-    # 후보는 넷뿐이라 넷을 해시해 맞는 것을 고르면 된다. 되읽기 어려운 것과
-    # 맞혀 보기 어려운 것은 다른 성질이다.
+    # id 를 세 번 고쳤다. 앞의 둘이 왜 틀렸는지가 지금 모양의 이유다.
     #
-    # 그래서 id 를 정답과 아무 관계 없는 **자리 번호**로 둔다. 규칙 안에서 몇
-    # 번째 문제인지만 가리키므로 해시해 볼 재료 자체가 없다.
-    seed = f"{rule.rule}:{frame.text}:{verb}"
-    item_id = f"{rule.rule}#{index:04d}"
-    order = _order(seed, CHOICE_COUNT)
+    # ① `to_infinitive:Please remember...:send` — 읽으면 답이 보인다.
+    # ② 그 문자열의 sha256 — 되읽을 수는 없지만 씨앗 재료가 전부 응답에서 복원되고
+    #    후보는 넷뿐이라, 넷을 해시해 맞는 것을 고르면 된다. **되읽기 어려운 것과
+    #    맞혀 보기 어려운 것은 다른 성질이다.**
+    # ③ 자리 번호(`to_infinitive#0007`) — 맞혀 볼 재료는 없앴는데, id 가 내용이
+    #    아니라 **자리**를 가리켜서 틀 하나를 지우면 그 뒤가 전부 한 칸씩 민다.
+    #    조용히 민다 — 404 도 안 난다. 실제로 146→141→134 로 바뀌는 동안 같은
+    #    번호가 다른 문장을 가리켰고, 오답 노트나 '틀린 것 다시 풀기' 를 붙이는
+    #    순간 저장된 id 가 전부 엉뚱한 문제로 간다.
+    #
+    # 지금은 **정답을 뺀 내용**으로 짓는다. 씨앗은 틀 문장과 보기 넷을 정렬한 것
+    # 이라 응답만 보고도 똑같이 계산할 수 있는데, 그래도 아무것도 안 새어 나온다 —
+    # 정렬해 놓으면 넷 중 어느 것이 답인지가 씨앗에 안 들어간다. 내용이 같으면
+    # 자리가 바뀌어도 id 가 그대로다.
+    words = "|".join(sorted(c.word for c in picked))
+    item_id = hashlib.sha256(f"{rule.rule}:{frame.text}:{words}".encode()).hexdigest()[:12]
+    order = _order(f"{rule.rule}:{frame.text}:{verb}", CHOICE_COUNT)
     return GrammarItem(
         id=item_id,
         rule=rule.rule,
@@ -292,9 +300,7 @@ def items_of(rule: Rule) -> list[GrammarItem]:
         )
         out.append(remaining[pick].pop(0))
         last = pick
-    # id 는 **내보내는 차례**의 자리 번호다. 틀을 돌아가며 뽑은 뒤에 찍어야
-    # `offset` 으로 받는 쪽과 번호가 맞는다.
-    return [replace(item, id=f"{rule.rule}#{n:04d}") for n, item in enumerate(out)]
+    return out
 
 
 def _copula(word: str) -> str:
@@ -313,7 +319,10 @@ def _copula(word: str) -> str:
 
 @dataclass(frozen=True)
 class Verdict:
-    """채점 결과. 왜 그런지까지 말한다 — 맞히는 것보다 아는 것이 목적이다."""
+    """채점 결과. 왜 그런지까지 말한다 — 맞히는 것보다 아는 것이 목적이다.
+
+    **보기 중에서 고르지 않았으면 `answer` 가 비어 있다.** 아래 `grade` 참고.
+    """
 
     ok: bool
     answer: str
@@ -323,9 +332,27 @@ class Verdict:
 
 
 def grade(item: GrammarItem, chosen: str, rule: Rule) -> Verdict:
-    """보기 하나를 채점한다. 고른 것이 보기에 없으면 오답으로 본다."""
+    """보기 하나를 채점한다.
+
+    **보기에 없는 값에는 정답을 알려 주지 않는다.** 처음에는 무엇을 보내든 답과
+    해설을 돌려줬는데, 그러면 아무 글자나 한 번 보내는 것만으로 문제마다 답을
+    받아 갈 수 있다 — 응답에서 정답을 빼고 id 에서 지우고 보기 순서까지 소금으로
+    가린 것이 이 한 줄에서 무너진다.
+
+    막는 이유가 보안만은 아니다. 보기 중에서 고르지 않았으면 **답한 것이 아니고**,
+    답하지 않은 사람에게 답을 펴면 연습 한 번이 통째로 사라진다. 빈칸 연습장이
+    오타(`not_a_word`)에 설명을 안 펴고 '답 보기' 를 따로 두는 것과 같은 판단이다.
+    """
     picked = chosen.strip()
     kinds = {c.word: c.kind for c in item.choices}
+    if picked not in kinds:
+        return Verdict(
+            ok=False,
+            answer="",
+            chosen=picked,
+            message_ko="보기 중에서 골라 주세요.",
+            why_ko=[],
+        )
     ok = picked == item.answer
 
     why = [
@@ -335,9 +362,7 @@ def grade(item: GrammarItem, chosen: str, rule: Rule) -> Verdict:
     ]
     if ok:
         message = "맞았어요. " + rule.explain_ko
-    elif picked in kinds:
+    else:
         name = FORM_KO.get(kinds[picked], kinds[picked])
         message = f"'{picked}' — {name}{_copula(name)}. " + rule.explain_ko
-    else:
-        message = "보기 중에서 고르세요. " + rule.explain_ko
     return Verdict(ok=ok, answer=item.answer, chosen=picked, message_ko=message, why_ko=why)

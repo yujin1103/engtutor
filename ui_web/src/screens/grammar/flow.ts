@@ -79,11 +79,17 @@ export type Mark = "answer" | "wrong" | "plain";
  *
  * 고른 값은 **서버가 돌려준 `chosen`** 으로 본다. 화면이 누른 글자를 들고 있다가
  * 쓰면, 서버가 다듬은 값과 어긋나는 날 화면과 채점이 다른 말을 한다.
+ *
+ * `answer` 는 **빈 문자열로 올 수 있다.** 보기 중에서 고르지 않은 값을 보내면
+ * 서버가 정답을 안 알려 준다(그러지 않으면 아무 글자나 한 번 보내는 것만으로
+ * 문제마다 답을 받아 갈 수 있다). 버튼만 있는 이 화면에서는 안 나는 경우지만,
+ * 빈 값을 낱말과 견주면 아무것도 안 맞아 조용히 표시가 사라지므로 먼저 막는다.
  */
 export function markOf(word: string, result: GrammarAnswerOut | null): Mark {
   if (!result) return "plain";
   const value = word.trim();
-  if (value === result.answer.trim()) return "answer";
+  const answer = result.answer.trim();
+  if (answer && value === answer) return "answer";
   if (value === result.chosen.trim()) return "wrong";
   return "plain";
 }

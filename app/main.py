@@ -79,7 +79,11 @@ async def _validation_error(_: Request, exc: RequestValidationError) -> JSONResp
     입력을 되넣기는 하되 **옮길 수 있는 글자로 바꿔서** 넣는다. 무엇이 잘못됐는지
     알려 주는 것이 검증 오류의 일이므로 값을 통째로 지우지는 않는다.
     """
-    return JSONResponse(status_code=422, content=_utf8_safe(exc.errors()))
+    # **본문 모양은 그대로 둔다.** FastAPI 기본 처리기는 `{"detail": [...]}` 를 주고
+    # 화면(`ui_web/src/api/client.ts`)이 그 `detail` 배열의 첫 항목에서 `msg` 를
+    # 꺼내 오류 문구를 만든다. 처음에 `exc.errors()` 를 그대로 실어 보냈다가
+    # 최상위가 배열이 되어, 500 을 막으면서 오류 문구 경로를 죽였다.
+    return JSONResponse(status_code=422, content={"detail": _utf8_safe(exc.errors())})
 
 
 @app.exception_handler(StarletteHTTPException)
@@ -957,8 +961,11 @@ def session_report(session_id: str) -> SessionReport:
 class GrammarChoiceOut(BaseModel):
     """보기 하나. **어느 모양인지는 보내지 않는다** — 그게 곧 정답이다.
 
-    `sending` 옆에 '동명사' 라고 적어 두면 "to 뒤에는 동사원형" 을 아는 학습자가
-    문장을 안 읽고도 고를 수 있다. 모양 이름은 채점한 뒤에야 나간다.
+    보기 옆에 모양 이름을 적어 두면 규칙을 아는 학습자가 문장을 안 읽고도 고를 수
+    있다. 이름은 채점한 뒤에야 나간다.
+
+    독스트링에 규칙을 그대로 적지 않는 이유도 같다 — 이 글은 `/openapi.json` 에
+    실려 나가고, 그 문서를 열면 규칙이 한국어로 적혀 있게 된다.
     """
 
     word: str
@@ -973,7 +980,6 @@ class GrammarOut(BaseModel):
 
     id: str
     rule: str
-    rule_title: str
     sentence: str
     sentence_ko: str
     choices: list[GrammarChoiceOut]
@@ -987,13 +993,13 @@ class GrammarAnswerRequest(BaseModel):
     옮기다 500 이 난다. 학습자가 낼 수 있는 값이 아니라 굳이 만들어 보내는
     값이지만, 500 은 "서버가 부서졌다" 는 뜻이라 그렇게 답하면 안 된다.
 
-    `id` 는 `to_infinitive#0007` 꼴이고 `chosen` 은 영어 낱말이라 둘 다 모양이
-    정해져 있다. 정해져 있는 것은 pydantic 이 문 앞에서 거르게 둔다.
+    `id` 는 16진수 열두 자이고 `chosen` 은 영어 낱말이라 둘 다 모양이 정해져
+    있다. 정해져 있는 것은 pydantic 이 문 앞에서 거르게 둔다.
     """
 
     id: str = Field(
         max_length=64,
-        pattern=r"^[a-z_]{1,32}#[0-9]{1,6}$",
+        pattern=r"^[0-9a-f]{12}$",
         description="GET /grammar 가 준 문제 id",
     )
     chosen: str = Field(
@@ -1008,6 +1014,12 @@ class GrammarAnswerOut(BaseModel):
     ok: bool
     answer: str
     chosen: str
+    # 이 문제가 묻는 규칙의 이름("to 다음에는 동사원형"). **채점 뒤에만 나간다.**
+    #
+    # 문제와 함께 보내면 그게 곧 답이다 — 규칙이 하나뿐이라 제목만 읽어도
+    # 동사원형을 고르면 된다. 정답을 응답에서 빼고 id 에서 지우고 보기 순서까지
+    # 소금으로 가려 놓고, 제목 한 칸으로 평문으로 내주고 있었다.
+    rule_title: str = ""
     message_ko: str
     # 보기 넷이 각각 어느 모양인지. 채점한 뒤에만 나간다.
     why_ko: list[str]
@@ -1045,7 +1057,6 @@ def list_grammar(rule: str = "to_infinitive", count: int = 10, offset: int = 0) 
         GrammarOut(
             id=item.id,
             rule=item.rule,
-            rule_title=known[rule].title,
             sentence=item.sentence,
             sentence_ko=item.sentence_ko,
             choices=[GrammarChoiceOut(word=c.word) for c in item.choices],
@@ -1062,10 +1073,13 @@ def answer_grammar(req: GrammarAnswerRequest) -> GrammarAnswerOut:
         raise HTTPException(status_code=404, detail=f"모르는 문제예요: {req.id}")
     rule_name, item = found
     verdict = grammar.grade(item, req.chosen, grammar.rules()[rule_name])
+    rule = grammar.rules()[rule_name]
     return GrammarAnswerOut(
         ok=verdict.ok,
         answer=verdict.answer,
         chosen=verdict.chosen,
+        # 보기 중에서 고르지 않았으면 아직 답한 것이 아니라 규칙 이름도 안 준다.
+        rule_title=rule.title if verdict.answer else "",
         message_ko=verdict.message_ko,
         why_ko=verdict.why_ko,
     )

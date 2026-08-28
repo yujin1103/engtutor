@@ -31,6 +31,11 @@ def client() -> TestClient:
     return TestClient(app)
 
 
+def _first_id(client: TestClient) -> str:
+    """첫 문제의 id. id 가 내용 해시라 시험이 값을 적어 둘 수 없다."""
+    return client.get("/grammar", params={"count": 1}).json()[0]["id"]
+
+
 @pytest.fixture()
 def rule() -> grammar.Rule:
     return grammar.rules()["to_infinitive"]
@@ -253,12 +258,31 @@ def test_grading_ignores_surrounding_space(rule: grammar.Rule) -> None:
     assert grammar.grade(item, f"  {item.answer} ", rule).ok
 
 
-def test_grading_rejects_a_word_that_is_not_a_choice(rule: grammar.Rule) -> None:
-    """보기에 없는 것을 보내도 500 이 아니라 오답이다."""
+def test_grading_hides_the_answer_when_nothing_was_chosen(rule: grammar.Rule) -> None:
+    """**보기에 없는 값에는 정답을 알려 주지 않는다.**
+
+    처음에는 무엇을 보내든 답과 해설을 돌려줬다. 그러면 아무 글자나 한 번 보내는
+    것만으로 문제마다 답을 받아 갈 수 있어서, 응답에서 정답을 빼고 id 에서 지우고
+    보기 순서까지 소금으로 가린 것이 이 한 줄에서 무너진다.
+
+    보안만의 문제도 아니다 — 보기 중에서 고르지 않았으면 답한 것이 아니고,
+    답하지 않은 사람에게 답을 펴면 연습 한 번이 통째로 사라진다.
+    """
     item = grammar.items_of(rule)[0]
     verdict = grammar.grade(item, "zzzz", rule)
     assert not verdict.ok
-    assert "보기" in verdict.message_ko
+    assert verdict.answer == ""
+    assert verdict.why_ko == []
+    assert item.answer not in verdict.message_ko
+
+
+def test_answering_with_junk_does_not_hand_out_the_answer(client: TestClient) -> None:
+    """엔드포인트까지 확인한다 — 141문제를 한 번씩 찍어 답을 모을 수 없어야 한다."""
+    rows = client.get("/grammar", params={"count": 5}).json()
+    for row in rows:
+        body = client.post("/grammar/answer", json={"id": row["id"], "chosen": "zzzz"}).json()
+        assert body["answer"] == ""
+        assert body["why_ko"] == []
 
 
 @pytest.mark.parametrize(
@@ -291,19 +315,24 @@ def test_listing_hides_which_form_each_choice_is(client: TestClient) -> None:
 
 
 def test_answering_grades_and_explains(client: TestClient) -> None:
+    """보기 넷을 다 눌러 보면 하나만 맞고, 맞은 쪽이 넷의 정체를 다 알려 준다."""
     row = client.get("/grammar", params={"count": 1}).json()[0]
-    graded = client.post("/grammar/answer", json={"id": row["id"], "chosen": "zzz"}).json()
-    right = client.post(
-        "/grammar/answer", json={"id": row["id"], "chosen": graded["answer"]}
-    ).json()
-    assert not graded["ok"]
-    assert right["ok"]
-    assert len(right["why_ko"]) == grammar.CHOICE_COUNT
+    graded = [
+        client.post("/grammar/answer", json={"id": row["id"], "chosen": c["word"]}).json()
+        for c in row["choices"]
+    ]
+    right = [g for g in graded if g["ok"]]
+    assert len(right) == 1, "정답이 하나여야 합니다"
+    assert len(right[0]["why_ko"]) == grammar.CHOICE_COUNT
+    for wrong in (g for g in graded if not g["ok"]):
+        # 오답에도 해설은 준다 — 왜 아닌지 알아야 다음에 안 틀린다.
+        assert len(wrong["why_ko"]) == grammar.CHOICE_COUNT
+        assert wrong["answer"] == right[0]["answer"]
 
 
 def test_answering_an_unknown_id_is_404(client: TestClient) -> None:
     """모양은 맞는데 그런 문제가 없을 때가 404 다."""
-    res = client.post("/grammar/answer", json={"id": "to_infinitive#9999", "chosen": "send"})
+    res = client.post("/grammar/answer", json={"id": "0" * 12, "chosen": "send"})
     assert res.status_code == 404
 
 
@@ -312,7 +341,7 @@ def test_odd_answers_are_refused_not_a_crash(client: TestClient, chosen: str) ->
     """**500 이 나오면 안 된다.** 거절할 값을 보냈는데 "서버가 부서졌다" 는 답이
     돌아오면 진짜 고장과 구별이 안 된다.
     """
-    res = client.post("/grammar/answer", json={"id": "to_infinitive#0000", "chosen": chosen})
+    res = client.post("/grammar/answer", json={"id": _first_id(client), "chosen": chosen})
     assert res.status_code < 500
 
 
@@ -327,7 +356,7 @@ def test_a_lone_surrogate_does_not_crash_the_server(client: TestClient, field: s
     `json=` 으로는 보낼 수조차 없다(테스트 클라이언트가 먼저 막는다). 실제 공격자는
     바이트로 보내므로 여기서도 본문을 직접 만든다.
     """
-    body = {"id": "to_infinitive#0000", "chosen": "send"}
+    body = {"id": _first_id(client), "chosen": "send"}
     raw = '{"id": "%s", "chosen": "%s"}' % (
         "\\ud800" if field == "id" else body["id"],
         "\\ud800" if field == "chosen" else body["chosen"],
@@ -437,3 +466,43 @@ def test_the_rule_explanation_does_not_name_forms_that_are_not_shown(rule: gramm
     named = {name for kind, name in grammar.FORM_KO.items() if kind != "base"}
     for name in named:
         assert name not in rule.explain_ko, f"해설이 '{name}' 를 못 박아 부릅니다"
+
+
+def test_frames_do_not_share_a_korean_gloss(rule: grammar.Rule) -> None:
+    """틀마다 해석이 달라야 한다 — 같으면 영어의 차이가 한국어에서 사라진다.
+
+    실제로 "Please remember to" 와 "Don't forget to" 가 둘 다 "~하는 것을 잊지
+    마세요" 였고, agreed·decided·promised 가 셋 다 "~하기로 했어요" 였다.
+    학습자는 서로 다른 영어 표현을 같은 한국어로 읽게 된다.
+    """
+    kos = [f.ko for f in rule.frames]
+    dupes = sorted({k for k in kos if kos.count(k) > 1})
+    assert dupes == [], f"해석이 겹치는 틀: {dupes}"
+
+
+def test_every_frame_gloss_marks_the_blank(rule: grammar.Rule) -> None:
+    """해석에도 낱말 자리가 비어 있어야 한다. 안 비면 답을 한국어로 알려 준다."""
+    for frame in rule.frames:
+        assert "~" in frame.ko, f"빈자리 표시가 없는 해석: {frame.ko}"
+
+
+def test_validation_errors_keep_the_body_shape_the_screen_reads(client: TestClient) -> None:
+    """422 본문은 `{"detail": [...]}` 여야 한다.
+
+    500 을 막으려고 처리기를 새로 달면서 `exc.errors()` 를 그대로 실어 보냈더니
+    최상위가 배열이 됐다. 화면(`ui_web/src/api/client.ts`)은 `detail` 배열의 첫
+    항목에서 `msg` 를 꺼내 오류 문구를 만드는데, 그 경로가 통째로 죽었다 —
+    **500 은 막고 오류 문구는 부순 셈**이라 고치기 전보다 알아채기 어렵다.
+    """
+    body = client.post("/grammar/answer", json={"id": "nope", "chosen": "send"}).json()
+    assert isinstance(body, dict), "최상위가 객체여야 합니다"
+    assert isinstance(body["detail"], list)
+    assert "msg" in body["detail"][0]
+
+
+def test_http_errors_keep_a_string_detail(client: TestClient) -> None:
+    """404·409 의 `detail` 은 글자 하나다. 화면이 그대로 띄운다."""
+    body = client.post(
+        "/grammar/answer", json={"id": "0" * 12, "chosen": "send"}
+    ).json()
+    assert isinstance(body["detail"], str)

@@ -127,17 +127,12 @@ export function GrammarRun({ title, onBack }: GrammarRunProps) {
     >
       <p className={styles.meta}>{state.seen}번째 문제</p>
 
-      {/* 무엇을 배우는 중인지. 서버가 준 이름을 그대로 쓴다 — 화면이
-          {"to_infinitive": "to 다음에는 동사원형"} 표를 들고 있으면 규칙을
-          하나 더 만들 때 한쪽을 빠뜨리게 된다. */}
-      <p className={styles.rule}>{item.rule_title}</p>
-
       <div className={styles.question}>
         <p className={styles.sentence}>
           {/* 판정 뒤에는 빈칸 자리에 **정답**이 들어간다. 고른 것이 아니라
               정답을 끼워야 문장이 온전해지고, 그 온전한 문장을 한 번 읽는 것이
               이 문제의 배울 거리다. 무엇을 골랐는지는 보기 목록이 말한다. */}
-          <Sentence sentence={item.sentence} filled={judged ? judged.answer : null} />
+          <Sentence sentence={item.sentence} filled={judged?.answer || null} />
         </p>
 
         {/* 낱말 자리를 '~' 로 비워 둔 뜻. 가리지 않는다 — 이 문제가 묻는 것은
@@ -154,15 +149,31 @@ export function GrammarRun({ title, onBack }: GrammarRunProps) {
       />
 
       {phase.at === "broken" && (
-        <div className="alert" style={{ marginTop: "var(--gap)" }} role="alert">
-          {phase.detail}
-        </div>
+        <>
+          <div className="alert" style={{ marginTop: "var(--gap)" }} role="alert">
+            {phase.detail}
+          </div>
+          {/* **막다른 길을 막는다.** 채점이 404 로 실패하면(데이터가 바뀌어
+              서버가 그 문제를 더 모를 때) 판정이 없어서 footer 의 '다음 문제'
+              가 안 나오고, 보기는 잠기지 않아 다시 눌러도 또 404 다. 뒤로 가기
+              말고는 나갈 길이 없었다. */}
+          <button type="button" className="btn btn-block" onClick={next}>
+            다음 문제
+          </button>
+        </>
       )}
 
       {judged && (
         <>
           {/* 판정과 규칙 설명이 한 문장에 담겨 온다. 다시 쓰지 않는다 —
               "맞았어요" 뒤에 붙는 규칙 설명이 이 화면이 가르치려는 것이다. */}
+          {/* 무엇을 배운 것인지. **채점 뒤에만 온다** — 문제와 함께 주면
+              "to 다음에는 동사원형" 이라는 제목이 곧 답이라, 문장을 안 읽고도
+              보기 넷 중 원형을 고르면 된다. 서버가 준 이름을 그대로 쓴다.
+              화면이 규칙 이름 표를 들고 있으면 규칙을 하나 더 만들 때 한쪽을
+              빠뜨리게 된다. */}
+          {judged.rule_title && <p className={styles.rule}>{judged.rule_title}</p>}
+
           <p
             className={`${styles.verdict} ${judged.ok ? styles.right : styles.miss}`}
             role="status"

@@ -17,36 +17,36 @@ explain_ko: "to 뒤에는 늘 동사원형이 와요. 모양이 바뀐 것은 �
 
 frames:
   - text: "Please remember to ___ the invoice."
-    ko: "송장을 ~하는 것을 잊지 마세요."
-    verbs: [send, check, pay, file, review, print, attach, cancel, confirm, process]
+    ko: "송장을 ~하는 것을 기억하세요."
+    verbs: [send, check, pay, file, review, print, attach, cancel, process]
 
   - text: "Don't forget to ___ the report."
     ko: "보고서를 ~하는 것을 잊지 마세요."
     verbs: [submit, sign, print, attach, review, send, finish, complete, publish, translate]
 
   - text: "We agreed to ___ the contract."
-    ko: "우리는 계약서를 ~하기로 했어요."
-    verbs: [sign, review, cancel, extend, renew, amend, translate, check]
+    ko: "우리는 계약서를 ~하기로 합의했어요."
+    verbs: [sign, review, cancel, extend, renew, amend, translate]
 
   - text: "The manager decided to ___ the meeting."
-    ko: "부장님이 회의를 ~하기로 했어요."
+    ko: "관리자가 회의를 ~하기로 결정했어요."
     verbs: [postpone, cancel, attend, record, schedule, arrange, join]
 
   - text: "She promised to ___ the package today."
-    ko: "그분이 오늘 소포를 ~하기로 했어요."
+    ko: "그분이 오늘 소포를 ~하겠다고 약속했어요."
     verbs: [deliver, send, ship, collect, return, check, track]
 
   - text: "We hope to ___ the project on time."
-    ko: "우리는 그 일을 제때 ~하기를 바라요."
+    ko: "우리는 프로젝트를 제때 ~하기를 바라요."
     verbs: [finish, complete, deliver, launch, start]
 
   - text: "He offered to ___ the customer."
     ko: "그분이 고객을 ~하겠다고 했어요."
-    verbs: [help, call, assist, contact, meet, serve]
+    verbs: [help, call, assist, contact, meet]
 
   - text: "They plan to ___ a new branch."
     ko: "그들은 새 지점을 ~할 계획이에요."
-    verbs: [open, build, establish, expand, design, inspect]
+    verbs: [open, build, establish]
 
   - text: "It is important to ___ the deadline."
     ko: "마감을 ~하는 것이 중요해요."
@@ -66,7 +66,7 @@ frames:
 
   - text: "I would like to ___ a reservation."
     ko: "예약을 ~하고 싶어요."
-    verbs: [make, cancel, confirm, change, request]
+    verbs: [make, cancel, confirm, change]
 
   - text: "We expect to ___ the results next week."
     ko: "우리는 다음 주에 결과를 ~할 것으로 봐요."
@@ -78,7 +78,7 @@ frames:
 
   - text: "Please be sure to ___ the door."
     ko: "문을 꼭 ~해 주세요."
-    verbs: [lock, close, open, check, sign]
+    verbs: [lock, close, check]
 
   - text: "He refused to ___ the document."
     ko: "그분은 서류를 ~하기를 거절했어요."
@@ -86,7 +86,7 @@ frames:
 
   - text: "We managed to ___ the costs."
     ko: "우리는 비용을 ~해 냈어요."
-    verbs: [reduce, minimize, control, cover, avoid]
+    verbs: [reduce, minimize, control, cover]
 
   - text: "It is easy to ___ this machine."
     ko: "이 기계는 ~하기 쉬워요."
@@ -94,19 +94,19 @@ frames:
 
   - text: "The client asked us to ___ the price."
     ko: "고객이 우리에게 가격을 ~해 달라고 했어요."
-    verbs: [reduce, confirm, explain, adjust, check, raise]
+    verbs: [reduce, confirm, explain, adjust, check]
 
   - text: "We continue to ___ our customers."
-    ko: "우리는 고객을 계속 ~하고 있어요."
+    ko: "우리는 우리 고객을 계속 ~해요."
     verbs: [serve, support, help, contact, visit]
 
   - text: "You should learn to ___ the software."
-    ko: "그 소프트웨어를 ~하는 법을 배우세요."
-    verbs: [use, operate, update, test, fix]
+    ko: "그 소프트웨어를 ~하는 법을 배우는 게 좋아요."
+    verbs: [use, update, test, fix]
 
-  - text: "I need to ___ a visa before the trip."
-    ko: "여행 전에 비자를 ~해야 해요."
-    verbs: [obtain, get, check, collect]
+  - text: "I need to ___ my passport before the trip."
+    ko: "여행 전에 여권을 ~해야 해요."
+    verbs: [renew, check, find, collect]
 
   - text: "The staff began to ___ the room."
     ko: "직원들이 방을 ~하기 시작했어요."

@@ -70,14 +70,26 @@ def _reserved_roots(app: FastAPI) -> frozenset[str]:
 
 
 def _asset_file(rel: str) -> Path | None:
-    """`dist` 안에 실제로 있는 파일이면 그 경로, 아니면 None."""
-    if not rel:
+    """`dist` 안에 실제로 있는 파일이면 그 경로, 아니면 None.
+
+    파일 이름이 될 수 없는 글자는 **경로를 만들기 전에** 걷어낸다. 널바이트가
+    든 주소(`GET /%00`)에서 `Path.resolve()` 가 `ValueError` 를 던져 500 이
+    났다 — 없는 파일을 달라고 한 것이니 404 로 답해야 하는 자리다.
+    """
+    if not rel or "\x00" in rel:
         return None
-    candidate = (DIST / rel).resolve()
-    # `..` 로 저장소 바깥(.env 같은 것)을 읽어 가는 길을 막는다.
-    if not candidate.is_relative_to(DIST):
+    try:
+        candidate = (DIST / rel).resolve()
+        # `..` 로 저장소 바깥(.env 같은 것)을 읽어 가는 길을 막는다.
+        if not candidate.is_relative_to(DIST):
+            return None
+        # `is_file()` 도 파일 시스템을 건드린다. 이름이 255자를 넘으면 여기서
+        # OSError 가 나므로 `resolve()` 와 같은 try 안에 둔다 — 밖에 뒀다가
+        # 400자짜리 주소에서 500 이 났다.
+        return candidate if candidate.is_file() else None
+    except (ValueError, OSError):
+        # 너무 긴 이름·잘못된 글자. 어느 쪽이든 "그런 파일 없음" 이다.
         return None
-    return candidate if candidate.is_file() else None
 
 
 def _cache_headers(file: Path) -> dict[str, str]:

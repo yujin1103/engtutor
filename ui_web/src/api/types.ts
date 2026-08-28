@@ -436,7 +436,6 @@ export interface GrammarOut {
   id: string;
   rule: string;
   /** 이 문제가 묻는 규칙의 이름("to 다음에는 동사원형"). 화면에 그대로 띄운다. */
-  rule_title: string;
   /** `____` 가 한 번 들어 있는 영어 문장. */
   sentence: string;
   /** 낱말 자리를 '~' 로 비워 둔 한국어 뜻. 이 문제가 묻는 것은 뜻이 아니라 **형태**다. */
@@ -467,6 +466,11 @@ export interface GrammarAnswerRequest {
 }
 
 export interface GrammarAnswerOut {
+  /**
+   * 이 문제가 묻는 규칙의 이름. **채점 뒤에만 온다** — 문제와 함께 주면 제목이
+   * 곧 답이다. 보기 중에서 고르지 않았으면 빈 문자열이다.
+   */
+  rule_title: string;
   ok: boolean;
   /** 정답 낱말. **답을 낸 뒤에만 온다.** */
   answer: string;

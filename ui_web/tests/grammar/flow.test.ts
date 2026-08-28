@@ -138,3 +138,12 @@ test("문법 문제의 문장도 빈칸을 기준으로 갈린다", () => {
     after: " the invoice.",
   });
 });
+
+test("markOf: 정답이 빈 문자열로 오면 아무 보기도 정답으로 칠하지 않는다", () => {
+  // 보기 중에서 고르지 않은 값을 보내면 서버가 answer 를 비워 보낸다.
+  // 빈 값을 낱말과 견주면 아무것도 안 맞는데, 그때 조용히 표시가 사라지면 안 된다.
+  const result = { ok: false, answer: "", chosen: "zzzz", message_ko: "보기 중에서 골라 주세요.", why_ko: [] };
+  assert.equal(markOf("send", result), "plain");
+  assert.equal(markOf("", result), "plain");
+  assert.equal(markOf("zzzz", result), "wrong");
+});
