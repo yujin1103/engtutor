@@ -5091,3 +5091,3071 @@
 - word: "trip"
   reason: "문형이 'take a trip (+ to + 장소), trip over + 물건' 인데 예문(I'm going on a trip to Japan)에 take 가 없다 — go on a trip 도 흔한 꼴이라 문형이 예문을 못 담았다."
   pattern: "a trip + to + 장소"
+
+# ── 문형 자리의 영어를 걷어낸다 — 750개 ─────────────────────────────
+#
+# 표본을 직접 열어 읽다가 나왔다. agent 묶음이 `usage_note` 위주로 고치고 문형은
+# 자주 안 건드려서, `carry + 목적어 (+ with + something)` 처럼 **영어 대명사와
+# 문법 용어가 한국어 자리에 그대로 남아** 있었다. DB 전체에서 758개다.
+#
+# 화면에 그대로 나가는 칸이라 왕초보가 읽을 수 없는 글자가 섞이면 안 된다.
+# `something` → 명사, `someone` → 사람, `somewhere` → 장소, `adjective` → 형용사.
+# `do something` 은 통째로 '동사원형' 으로 옮긴다 — 낱말별로 바꾸면 'do 명사' 가 된다.
+#
+# 한국어만 남는 126개는 표제어를 앞에 세웠다(`adjective` → `negative + 명사`).
+# 문형은 그 낱말이 어떤 자리에 놓이는지 적는 칸이라 낱말이 빠지면 칸이 비는 셈이다.
+#
+# 750개 전부 **바꾸기 전에 선별기를 돌려** 새 지적이 안 생기는 것을 확인했다.
+# 설명이 섞여 있던 열둘(`relief (구체적인 상황 설명 필요)`)은 손으로 정했다.
+
+- word: "look"
+  reason: "문형 자리에 영어가 들어가 있었다: look + at + something"
+  pattern: "look + at + 명사"
+
+- word: "see"
+  reason: "문형 자리에 영어가 들어가 있었다: see + 목적어 (사람/물건), see + someone + do something"
+  pattern: "see + 목적어 (사람/물건), see + 사람 + 동사원형"
+
+- word: "teach"
+  reason: "문형 자리에 영어가 들어가 있었다: teach + 목적어 (+ someone + something)"
+  pattern: "teach + 목적어 (+ 사람 + 명사)"
+
+- word: "put"
+  reason: "문형 자리에 영어가 들어가 있었다: put + 목적어 + somewhere"
+  pattern: "put + 목적어 + 장소"
+
+- word: "answer"
+  reason: "문형 자리에 영어가 들어가 있었다: answer + 목적어 (질문/문제), answer + someone"
+  pattern: "answer + 목적어 (질문/문제), answer + 사람"
+
+- word: "help"
+  reason: "문형 자리에 영어가 들어가 있었다: help + 목적어 (someone)"
+  pattern: "help + 목적어 (사람)"
+
+- word: "i"
+  reason: "문형 자리에 영어가 들어가 있었다: I + be + something"
+  pattern: "I + be + 명사"
+
+- word: "believe"
+  reason: "문형 자리에 영어가 들어가 있었다: believe + that + 문장 / believe + somebody"
+  pattern: "believe + that + 문장 / believe + 사람"
+
+- word: "increase"
+  reason: "문형 자리에 영어가 들어가 있었다: increase + something (by + 수치/정도)"
+  pattern: "increase + 명사 (by + 수치/정도)"
+
+- word: "close"
+  reason: "문형 자리에 영어가 들어가 있었다: close + to + 사람/물건 (가까운), close + something (닫다)"
+  pattern: "close + to + 사람/물건 (가까운), close + 명사 (닫다)"
+
+- word: "reason"
+  reason: "문형 자리에 영어가 들어가 있었다: reason + for + something"
+  pattern: "reason + for + 명사"
+
+- word: "level"
+  reason: "문형 자리에 영어가 들어가 있었다: level + of + something"
+  pattern: "level + of + 명사"
+
+- word: "sure"
+  reason: "문형 자리에 영어가 들어가 있었다: be sure + 목적어 (of + something)"
+  pattern: "be sure + 목적어 (of + 명사)"
+
+- word: "rate"
+  reason: "문형 자리에 영어가 들어가 있었다: rate + 목적어 (사람/물건), rate + something + at + 비율"
+  pattern: "rate + 목적어 (사람/물건), rate + 명사 + at + 비율"
+
+- word: "care"
+  reason: "문형 자리에 영어가 들어가 있었다: care + about + something"
+  pattern: "care + about + 명사"
+
+- word: "walk"
+  reason: "문형 자리에 영어가 들어가 있었다: walk + somewhere (장소)"
+  pattern: "walk + 장소"
+
+- word: "force"
+  reason: "문형 자리에 영어가 들어가 있었다: force + 목적어 (+ to do something)"
+  pattern: "force + 목적어 (+ to + 동사원형)"
+
+- word: "sit"
+  reason: "문형 자리에 영어가 들어가 있었다: sit + somewhere (앉는 곳)"
+  pattern: "sit + 장소 (앉는 곳)"
+
+- word: "top"
+  reason: "문형 자리에 영어가 들어가 있었다: the + top + of + something"
+  pattern: "the + top + of + 명사"
+
+- word: "win"
+  reason: "문형 자리에 영어가 들어가 있었다: win + something (경쟁, 경기 등)"
+  pattern: "win + 명사 (경쟁, 경기 등)"
+
+- word: "involve"
+  reason: "문형 자리에 영어가 들어가 있었다: involve + 목적어 (+ in + something)"
+  pattern: "involve + 목적어 (+ in + 명사)"
+
+- word: "note"
+  reason: "문형 자리에 영어가 들어가 있었다: make + a note + of + something"
+  pattern: "make + a note + of + 명사"
+
+- word: "drive"
+  reason: "문형 자리에 영어가 들어가 있었다: drive + 목적어 (차, 사람), drive + somewhere"
+  pattern: "drive + 목적어 (차, 사람), drive + 장소"
+
+- word: "sense"
+  reason: "문형 자리에 영어가 들어가 있었다: have + sense + of + something"
+  pattern: "have + sense + of + 명사"
+
+- word: "add"
+  reason: "문형 자리에 영어가 들어가 있었다: add + something + to + something"
+  pattern: "add + 명사 + to + 명사"
+
+- word: "short"
+  reason: "문형 자리에 영어가 들어가 있었다: short + 명사 (짧은 + 명사), be short + of + something"
+  pattern: "short + 명사 (짧은 + 명사), be short + of + 명사"
+
+- word: "agree"
+  reason: "문형 자리에 영어가 들어가 있었다: agree + 목적어 (to + someone), agree on + 주제"
+  pattern: "agree + 목적어 (to + 사람), agree on + 주제"
+
+- word: "carry"
+  reason: "문형 자리에 영어가 들어가 있었다: carry + 목적어 (+ with + something)"
+  pattern: "carry + 목적어 (+ with + 명사)"
+
+- word: "describe"
+  reason: "문형 자리에 영어가 들어가 있었다: describe + 목적어 (+ as + something)"
+  pattern: "describe + 목적어 (+ as + 명사)"
+
+- word: "else"
+  reason: "문형 자리에 영어가 들어가 있었다: something/anything/someone/what + else"
+  pattern: "명사/anything/사람/what + else"
+
+- word: "particular"
+  reason: "문형 자리에 영어가 들어가 있었다: be particular about + something"
+  pattern: "be particular about + 명사"
+
+- word: "true"
+  reason: "문형 자리에 영어가 들어가 있었다: true + about + something"
+  pattern: "true + about + 명사"
+
+- word: "phone"
+  reason: "문형 자리에 영어가 들어가 있었다: phone + someone"
+  pattern: "phone + 사람"
+
+- word: "model"
+  reason: "문형 자리에 영어가 들어가 있었다: model + 목적어 (사람/물건), be a model + of + something"
+  pattern: "model + 목적어 (사람/물건), be a model + of + 명사"
+
+- word: "charge"
+  reason: "문형 자리에 영어가 들어가 있었다: charge + 목적어 (+ for/from + something/someone)"
+  pattern: "charge + 목적어 (+ for/from + 명사/사람)"
+
+- word: "happy"
+  reason: "문형 자리에 영어가 들어가 있었다: happy + about/with + something"
+  pattern: "happy + about/with + 명사"
+
+- word: "measure"
+  reason: "문형 자리에 영어가 들어가 있었다: measure + 목적어 (물건), measure + something + with + 도구"
+  pattern: "measure + 목적어 (물건), measure + 명사 + with + 도구"
+
+- word: "benefit"
+  reason: "문형 자리에 영어가 들어가 있었다: benefit + from/by + something"
+  pattern: "benefit + from/by + 명사"
+
+- word: "standard"
+  reason: "문형 자리에 영어가 들어가 있었다: standard + of + something"
+  pattern: "standard + of + 명사"
+
+- word: "choice"
+  reason: "문형 자리에 영어가 들어가 있었다: a + choice (of + something)"
+  pattern: "a + choice (of + 명사)"
+
+- word: "save"
+  reason: "문형 자리에 영어가 들어가 있었다: save + 목적어 (물건), save + money, save + someone"
+  pattern: "save + 목적어 (물건), save + money, save + 사람"
+
+- word: "attention"
+  reason: "문형 자리에 영어가 들어가 있었다: pay + attention + to + something"
+  pattern: "pay + attention + to + 명사"
+
+- word: "lie"
+  reason: "문형 자리에 영어가 들어가 있었다: lie + about + something"
+  pattern: "lie + about + 명사"
+
+- word: "laugh"
+  reason: "문형 자리에 영어가 들어가 있었다: laugh + at + something/person"
+  pattern: "laugh + at + 명사/person"
+
+- word: "surprise"
+  reason: "문형 자리에 영어가 들어가 있었다: surprise + 목적어 (사람), be surprised + by + something"
+  pattern: "surprise + 목적어 (사람), be surprised + by + 명사"
+
+- word: "factor"
+  reason: "문형 자리에 영어가 들어가 있었다: a factor + in + something"
+  pattern: "a factor + in + 명사"
+
+- word: "official"
+  reason: "문형 자리에 영어가 들어가 있었다: official + 명사 (공식적인 + something), official: 형용사/명사"
+  pattern: "official + 명사 (공식적인 + 명사), official: 형용사/명사"
+
+- word: "worry"
+  reason: "문형 자리에 영어가 들어가 있었다: worry + about + something"
+  pattern: "worry + about + 명사"
+
+- word: "represent"
+  reason: "문형 자리에 영어가 들어가 있었다: represent + 목적어 (+ someone/something)"
+  pattern: "represent + 목적어 (+ 사람/명사)"
+
+- word: "key"
+  reason: "문형 자리에 영어가 들어가 있었다: key + to + something"
+  pattern: "key + to + 명사"
+
+- word: "international"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: international + 명사"
+  pattern: "international + 명사"
+
+- word: "structure"
+  reason: "문형 자리에 영어가 들어가 있었다: the structure of + something"
+  pattern: "the structure of + 명사"
+
+- word: "press"
+  reason: "문형 자리에 영어가 들어가 있었다: press + 목적어 (물건), press + someone + to do something"
+  pattern: "press + 목적어 (물건), press + 사람 + to + 동사원형"
+
+- word: "catch"
+  reason: "문형 자리에 영어가 들어가 있었다: catch + 목적어, catch + someone + doing something"
+  pattern: "catch + 목적어, catch + 사람 + -ing"
+
+- word: "stock"
+  reason: "문형 자리에 영어가 들어가 있었다: in stock / out of stock, have stock in + something"
+  pattern: "in stock / out of stock, have stock in + 명사"
+
+- word: "fail"
+  reason: "문형 자리에 영어가 들어가 있었다: fail + 목적어 (시험, 시도 등), fail at + something"
+  pattern: "fail + 목적어 (시험, 시도 등), fail at + 명사"
+
+- word: "purpose"
+  reason: "문형 자리에 영어가 들어가 있었다: the purpose of + something"
+  pattern: "the purpose of + 명사"
+
+- word: "identify"
+  reason: "문형 자리에 영어가 들어가 있었다: identify + 목적어 (+ as + something)"
+  pattern: "identify + 목적어 (+ as + 명사)"
+
+- word: "middle"
+  reason: "문형 자리에 영어가 들어가 있었다: in + the middle of + something"
+  pattern: "in + the middle of + 명사"
+
+- word: "positive"
+  reason: "문형 자리에 영어가 들어가 있었다: positive + about/with + something"
+  pattern: "positive + about/with + 명사"
+
+- word: "successful"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: successful + at/in + something"
+  pattern: "successful + at/in + 명사"
+
+- word: "profit"
+  reason: "문형 자리에 영어가 들어가 있었다: make + profit (from + something)"
+  pattern: "make + profit (from + 명사)"
+
+- word: "balance"
+  reason: "문형 자리에 영어가 들어가 있었다: balance + 목적어 (물건/금액), balance on + something"
+  pattern: "balance + 목적어 (물건/금액), balance on + 명사"
+
+- word: "basis"
+  reason: "문형 자리에 영어가 들어가 있었다: on + basis (of) + something"
+  pattern: "on + basis (of) + 명사"
+
+- word: "encourage"
+  reason: "문형 자리에 영어가 들어가 있었다: encourage + someone + to do something"
+  pattern: "encourage + 사람 + to + 동사원형"
+
+- word: "prefer"
+  reason: "문형 자리에 영어가 들어가 있었다: prefer + 목적어 (더 좋아하는 것) / prefer + something to something (A보다 B를 더 좋아하다)"
+  pattern: "prefer + 목적어 (더 좋아하는 것) / prefer + 명사 to 명사 (A보다 B를 더 좋아하다)"
+
+- word: "daily"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: + 명사 (daily routine)"
+  pattern: "+ 명사 (daily routine)"
+
+- word: "dream"
+  reason: "문형 자리에 영어가 들어가 있었다: dream + about + something"
+  pattern: "dream + about + 명사"
+
+- word: "easily"
+  reason: "문형 자리에 영어가 들어가 있었다: adverb: easily + 동사"
+  pattern: "easily + 동사"
+
+- word: "weight"
+  reason: "문형 자리에 영어가 들어가 있었다: the + weight + of + something"
+  pattern: "the + weight + of + 명사"
+
+- word: "difficulty"
+  reason: "문형 자리에 영어가 들어가 있었다: difficulty + in + doing something"
+  pattern: "difficulty + in + -ing"
+
+- word: "stick"
+  reason: "문형 자리에 영어가 들어가 있었다: stick + 목적어 (물건), stick to + something (의견/계획 등)"
+  pattern: "stick + 목적어 (물건), stick to + 명사 (의견/계획 등)"
+
+- word: "rich"
+  reason: "문형 자리에 영어가 들어가 있었다: rich + in + something"
+  pattern: "rich + in + 명사"
+
+- word: "wind"
+  reason: "문형 자리에 영어가 들어가 있었다: wind + 방향 (blow) / wind + something (twist)"
+  pattern: "wind + 방향 (blow) / wind + 명사 (twist)"
+
+- word: "exchange"
+  reason: "문형 자리에 영어가 들어가 있었다: exchange + 목적어 (물건/돈), exchange + something + for + something"
+  pattern: "exchange + 목적어 (물건/돈), exchange + 명사 + for + 명사"
+
+- word: "admit"
+  reason: "문형 자리에 영어가 들어가 있었다: admit + 목적어 (사람), admit to + something (죄, 실수 등)"
+  pattern: "admit + 목적어 (사람), admit to + 명사 (죄, 실수 등)"
+
+- word: "beat"
+  reason: "문형 자리에 영어가 들어가 있었다: beat + 목적어 (+ someone) (사람을 때릴 때)"
+  pattern: "beat + 목적어 (+ 사람) (사람을 때릴 때)"
+
+- word: "telephone"
+  reason: "문형 자리에 영어가 들어가 있었다: telephone + someone"
+  pattern: "telephone + 사람"
+
+- word: "aware"
+  reason: "문형 자리에 영어가 들어가 있었다: be aware of + something"
+  pattern: "be aware of + 명사"
+
+- word: "handle"
+  reason: "문형 자리에 영어가 들어가 있었다: handle + 목적어 (문제 등), handle + something + with + something (어떤 방법으로 처리하다)"
+  pattern: "handle + 목적어 (문제 등), handle + 명사 + with + 명사 (어떤 방법으로 처리하다)"
+
+- word: "stress"
+  reason: "문형 자리에 영어가 들어가 있었다: stress + about/over + something"
+  pattern: "stress + about/over + 명사"
+
+- word: "trust"
+  reason: "문형 자리에 영어가 들어가 있었다: trust + someone (사람), trust in + something (물건/사람)"
+  pattern: "trust + 사람, trust in + 명사 (물건/사람)"
+
+- word: "responsible"
+  reason: "문형 자리에 영어가 들어가 있었다: be responsible + for + something"
+  pattern: "be responsible + for + 명사"
+
+- word: "alternative"
+  reason: "문형 자리에 영어가 들어가 있었다: alternative + to + something"
+  pattern: "alternative + to + 명사"
+
+- word: "attitude"
+  reason: "문형 자리에 영어가 들어가 있었다: have + attitude + about/for + something"
+  pattern: "have + attitude + about/for + 명사"
+
+- word: "double"
+  reason: "문형 자리에 영어가 들어가 있었다: double + 명사 / double + something"
+  pattern: "double + 명사 / double + 명사"
+
+- word: "progress"
+  reason: "문형 자리에 영어가 들어가 있었다: make + progress (in + something)"
+  pattern: "make + progress (in + 명사)"
+
+- word: "reply"
+  reason: "문형 자리에 영어가 들어가 있었다: reply + to + something (문장)"
+  pattern: "reply + to + 명사 (문장)"
+
+- word: "transfer"
+  reason: "문형 자리에 영어가 들어가 있었다: transfer + 목적어 (사물/정보), transfer + someone + to + 장소"
+  pattern: "transfer + 목적어 (사물/정보), transfer + 사람 + to + 장소"
+
+- word: "intend"
+  reason: "문형 자리에 영어가 들어가 있었다: intend + 목적어 (to do something)"
+  pattern: "intend + 목적어 (to + 동사원형)"
+
+- word: "respond"
+  reason: "문형 자리에 영어가 들어가 있었다: respond + to + something (문제, 질문 등)"
+  pattern: "respond + to + 명사 (문제, 질문 등)"
+
+- word: "suit"
+  reason: "문형 자리에 영어가 들어가 있었다: suit + 목적어 (의상), suit + someone + for something (적합하다)"
+  pattern: "suit + 목적어 (의상), suit + 사람 + for 명사 (적합하다)"
+
+- word: "percentage"
+  reason: "문형 자리에 영어가 들어가 있었다: a + percentage + of + something"
+  pattern: "a + percentage + of + 명사"
+
+- word: "spot"
+  reason: "문형 자리에 영어가 들어가 있었다: spot + 목적어 (사물/사람), spot + somebody + doing something"
+  pattern: "spot + 목적어 (사물/사람), spot + 사람 + -ing"
+
+- word: "importance"
+  reason: "문형 자리에 영어가 들어가 있었다: the importance of + something"
+  pattern: "the importance of + 명사"
+
+- word: "guide"
+  reason: "문형 자리에 영어가 들어가 있었다: guide + 목적어 (+ someone to + 장소)"
+  pattern: "guide + 목적어 (+ 사람 to + 장소)"
+
+- word: "email"
+  reason: "문형 자리에 영어가 들어가 있었다: send + someone + an email"
+  pattern: "send + 사람 + an email"
+
+- word: "advertise"
+  reason: "문형 자리에 영어가 들어가 있었다: advertise + something (+ for + 제품/서비스)"
+  pattern: "advertise + 명사 (+ for + 제품/서비스)"
+
+- word: "extent"
+  reason: "문형 자리에 영어가 들어가 있었다: to an extent + that-clause"
+  pattern: "to an extent + 문장"
+
+- word: "contrast"
+  reason: "문형 자리에 영어가 들어가 있었다: contrast + something + with/against + something"
+  pattern: "contrast + 명사 + with/against + 명사"
+
+- word: "category"
+  reason: "문형 자리에 영어가 들어가 있었다: a category of + something"
+  pattern: "a category of + 명사"
+
+- word: "quick"
+  reason: "문형 자리에 영어가 들어가 있었다: quick + about/with + something"
+  pattern: "quick + about/with + 명사"
+
+- word: "introduction"
+  reason: "문형 자리에 영어가 들어가 있었다: the + introduction + to + something"
+  pattern: "the + introduction + to + 명사"
+
+- word: "consequence"
+  reason: "문형 자리에 영어가 들어가 있었다: the + consequence + of + something"
+  pattern: "the + consequence + of + 명사"
+
+- word: "connect"
+  reason: "문형 자리에 영어가 들어가 있었다: connect + something + to + something"
+  pattern: "connect + 명사 + to + 명사"
+
+- word: "demonstrate"
+  reason: "문형 자리에 영어가 들어가 있었다: demonstrate + 목적어 (how to do something, what something is like)"
+  pattern: "demonstrate + 목적어 (how to + 동사원형, what 명사 is like)"
+
+- word: "burn"
+  reason: "문형 자리에 영어가 들어가 있었다: burn + 목적어 (물건), burn + someone (사람을 다치게 하는 것)"
+  pattern: "burn + 목적어 (물건), burn + 사람 (사람을 다치게 하는 것)"
+
+- word: "critical"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + about/for + 주제"
+  pattern: "형용사 + about/for + 주제"
+
+- word: "essential"
+  reason: "문형 자리에 영어가 들어가 있었다: essential + noun"
+  pattern: "essential + 명사"
+
+- word: "topic"
+  reason: "문형 자리에 영어가 들어가 있었다: the topic of + something"
+  pattern: "the topic of + 명사"
+
+- word: "divide"
+  reason: "문형 자리에 영어가 들어가 있었다: divide + something + into + something"
+  pattern: "divide + 명사 + into + 명사"
+
+- word: "package"
+  reason: "문형 자리에 영어가 들어가 있었다: package + 목적어 (물건), package + something + in + something (물건을 다른 것으로 포장하다)"
+  pattern: "package + 목적어 (물건), package + 명사 + in + 명사 (물건을 다른 것으로 포장하다)"
+
+- word: "jump"
+  reason: "문형 자리에 영어가 들어가 있었다: jump + over/into/up + something"
+  pattern: "jump + over/into/up + 명사"
+
+- word: "broad"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: a/the + broad + 명사"
+  pattern: "a/the + broad + 명사"
+
+- word: "spirit"
+  reason: "문형 자리에 영어가 들어가 있었다: spirit + 없이 (정신이 없이), spirit + of + something (어떤 것의 정신)"
+  pattern: "spirit + 없이 (정신이 없이), spirit + of + 명사 (어떤 것의 정신)"
+
+- word: "experiment"
+  reason: "문형 자리에 영어가 들어가 있었다: do + experiment + on + something"
+  pattern: "do + experiment + on + 명사"
+
+- word: "tape"
+  reason: "문형 자리에 영어가 들어가 있었다: tape + 목적어 (물건), tape + something + up (감다)"
+  pattern: "tape + 목적어 (물건), tape + 명사 + up (감다)"
+
+- word: "monitor"
+  reason: "문형 자리에 영어가 들어가 있었다: monitor + 목적어 (사물), monitor + someone + for + something"
+  pattern: "monitor + 목적어 (사물), monitor + 사람 + for + 명사"
+
+- word: "comfortable"
+  reason: "문형 자리에 영어가 들어가 있었다: be comfortable + with/around + something"
+  pattern: "be comfortable + with/around + 명사"
+
+- word: "oppose"
+  reason: "문형 자리에 영어가 들어가 있었다: oppose + something (반대하는 대상)"
+  pattern: "oppose + 명사 (반대하는 대상)"
+
+- word: "bind"
+  reason: "문형 자리에 영어가 들어가 있었다: bind + 목적어 (+ to/with + something)"
+  pattern: "bind + 목적어 (+ to/with + 명사)"
+
+- word: "taste"
+  reason: "문형 자리에 영어가 들어가 있었다: taste + 목적어 (음식 등), taste like + something"
+  pattern: "taste + 목적어 (음식 등), taste like + 명사"
+
+- word: "gift"
+  reason: "문형 자리에 영어가 들어가 있었다: give + someone + a gift"
+  pattern: "give + 사람 + a gift"
+
+- word: "remind"
+  reason: "문형 자리에 영어가 들어가 있었다: remind + 목적어 + of + something"
+  pattern: "remind + 목적어 + of + 명사"
+
+- word: "corporate"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: corporate + 명사"
+  pattern: "corporate + 명사"
+
+- word: "tough"
+  reason: "문형 자리에 영어가 들어가 있었다: tough + to + do something"
+  pattern: "tough + to + 동사원형"
+
+- word: "relax"
+  reason: "문형 자리에 영어가 들어가 있었다: relax + (about/with + something)"
+  pattern: "relax + (about/with + 명사)"
+
+- word: "description"
+  reason: "문형 자리에 영어가 들어가 있었다: a/the + description + of + something"
+  pattern: "a/the + description + of + 명사"
+
+- word: "complain"
+  reason: "문형 자리에 영어가 들어가 있었다: complain + about + something"
+  pattern: "complain + about + 명사"
+
+- word: "perspective"
+  reason: "문형 자리에 영어가 들어가 있었다: from + someone's perspective"
+  pattern: "from + 사람's perspective"
+
+- word: "signal"
+  reason: "문형 자리에 영어가 들어가 있었다: signal + 목적어 (사람/물건), signal + something + to + 사람"
+  pattern: "signal + 목적어 (사람/물건), signal + 명사 + to + 사람"
+
+- word: "leadership"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: leadership + in + 분야/조직"
+  pattern: "leadership + in + 분야/조직"
+
+- word: "commitment"
+  reason: "문형 자리에 영어가 들어가 있었다: a + commitment + to + something"
+  pattern: "a + commitment + to + 명사"
+
+- word: "wake"
+  reason: "문형 자리에 영어가 들어가 있었다: wake + someone up"
+  pattern: "wake + 사람 up"
+
+- word: "tie"
+  reason: "문형 자리에 영어가 들어가 있었다: tie + 목적어 (물건), tie + someone + up (매다)"
+  pattern: "tie + 목적어 (물건), tie + 사람 + up (매다)"
+
+- word: "secure"
+  reason: "문형 자리에 영어가 들어가 있었다: secure + 목적어 (물건), be secure + about/with + something"
+  pattern: "secure + 목적어 (물건), be secure + about/with + 명사"
+
+- word: "recommendation"
+  reason: "문형 자리에 영어가 들어가 있었다: a recommendation + for + something"
+  pattern: "a recommendation + for + 명사"
+
+- word: "friendly"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective (be + friendly)"
+  pattern: "형용사 (be + friendly)"
+
+- word: "insist"
+  reason: "문형 자리에 영어가 들어가 있었다: insist on + something"
+  pattern: "insist on + 명사"
+
+- word: "reasonable"
+  reason: "문형 자리에 영어가 들어가 있었다: reasonable + about/for + something"
+  pattern: "reasonable + about/for + 명사"
+
+- word: "theme"
+  reason: "문형 자리에 영어가 들어가 있었다: theme + of + something"
+  pattern: "theme + of + 명사"
+
+- word: "definition"
+  reason: "문형 자리에 영어가 들어가 있었다: the definition of + something"
+  pattern: "the definition of + 명사"
+
+- word: "succeed"
+  reason: "문형 자리에 영어가 들어가 있었다: succeed + in + something"
+  pattern: "succeed + in + 명사"
+
+- word: "seriously"
+  reason: "문형 자리에 영어가 들어가 있었다: seriously + about + something"
+  pattern: "seriously + about + 명사"
+
+- word: "practical"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + about/for + something"
+  pattern: "형용사 + about/for + 명사"
+
+- word: "cast"
+  reason: "문형 자리에 영어가 들어가 있었다: cast + 목적어 (물건), cast + something + at + 대상"
+  pattern: "cast + 목적어 (물건), cast + 명사 + at + 대상"
+
+- word: "conservative"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: + about/with + 주제"
+  pattern: "+ about/with + 주제"
+
+- word: "outcome"
+  reason: "문형 자리에 영어가 들어가 있었다: the + outcome + of + something"
+  pattern: "the + outcome + of + 명사"
+
+- word: "careful"
+  reason: "문형 자리에 영어가 들어가 있었다: be careful + about/with + something"
+  pattern: "be careful + about/with + 명사"
+
+- word: "witness"
+  reason: "문형 자리에 영어가 들어가 있었다: witness + something (사건/사건을 목격하다), be a witness (증인이다)"
+  pattern: "witness + 명사 (사건/사건을 목격하다), be a witness (증인이다)"
+
+- word: "entry"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: a/the + entry"
+  pattern: "a/the + entry"
+
+- word: "tip"
+  reason: "문형 자리에 영어가 들어가 있었다: tip + someone + for + something"
+  pattern: "tip + 사람 + for + 명사"
+
+- word: "peak"
+  reason: "문형 자리에 영어가 들어가 있었다: peak + of + something"
+  pattern: "peak + of + 명사"
+
+- word: "proportion"
+  reason: "문형 자리에 영어가 들어가 있었다: proportion + of + something"
+  pattern: "proportion + of + 명사"
+
+- word: "constant"
+  reason: "문형 자리에 영어가 들어가 있었다: constant + noun"
+  pattern: "constant + 명사"
+
+- word: "weak"
+  reason: "문형 자리에 영어가 들어가 있었다: weak + about/with + something"
+  pattern: "weak + about/with + 명사"
+
+- word: "reduction"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: reduction in + something"
+  pattern: "reduction in + 명사"
+
+- word: "reserve"
+  reason: "문형 자리에 영어가 들어가 있었다: reserve + something + for + someone"
+  pattern: "reserve + 명사 + for + 사람"
+
+- word: "complaint"
+  reason: "문형 자리에 영어가 들어가 있었다: make a complaint + about + something"
+  pattern: "make a complaint + about + 명사"
+
+- word: "justice"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (the + justice)"
+  pattern: "명사 (the + justice)"
+
+- word: "phase"
+  reason: "문형 자리에 영어가 들어가 있었다: in + phase + of + something"
+  pattern: "in + phase + of + 명사"
+
+- word: "protest"
+  reason: "문형 자리에 영어가 들어가 있었다: protest + against + something"
+  pattern: "protest + against + 명사"
+
+- word: "sad"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + about/with + something"
+  pattern: "형용사 + about/with + 명사"
+
+- word: "electronic"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: electronic + 명사"
+  pattern: "electronic + 명사"
+
+- word: "impose"
+  reason: "문형 자리에 영어가 들어가 있었다: impose + something + on/upon + 사람"
+  pattern: "impose + 명사 + on/upon + 사람"
+
+- word: "intention"
+  reason: "문형 자리에 영어가 들어가 있었다: have + intention + of + doing something"
+  pattern: "have + intention + of + -ing"
+
+- word: "settlement"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (a settlement)"
+  pattern: "명사 (a settlement)"
+
+- word: "widely"
+  reason: "문형 자리에 영어가 들어가 있었다: adverb + 형용사 (well-known, widely used)"
+  pattern: "부사 + 형용사 (well-known, widely used)"
+
+- word: "northern"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: + 명사 (the northern part)"
+  pattern: "+ 명사 (the northern part)"
+
+- word: "shut"
+  reason: "문형 자리에 영어가 들어가 있었다: shut + 목적어 (문, 기계 등), shut + someone up (누군가를 조용히 하다)"
+  pattern: "shut + 목적어 (문, 기계 등), shut + 사람 up (누군가를 조용히 하다)"
+
+- word: "tall"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: a/the + tall + 명사"
+  pattern: "a/the + tall + 명사"
+
+- word: "priority"
+  reason: "문형 자리에 영어가 들어가 있었다: priority + 명사 (something) / have + something + as a priority"
+  pattern: "priority + 명사 / have + 명사 + as a priority"
+
+- word: "accompany"
+  reason: "문형 자리에 영어가 들어가 있었다: accompany + 목적어 (+ someone/somewhere)"
+  pattern: "accompany + 목적어 (+ 사람/장소)"
+
+- word: "liberal"
+  reason: "문형 자리에 영어가 들어가 있었다: liberal + about + something"
+  pattern: "liberal + about + 명사"
+
+- word: "existence"
+  reason: "문형 자리에 영어가 들어가 있었다: existence: 불가산명사 (the existence of + something)"
+  pattern: "existence: 불가산명사 (the existence of + 명사)"
+
+- word: "bother"
+  reason: "문형 자리에 영어가 들어가 있었다: bother + 목적어 (사람), bother about + something"
+  pattern: "bother + 목적어 (사람), bother about + 명사"
+
+- word: "motion"
+  reason: "문형 자리에 영어가 들어가 있었다: make a motion + 목적어 (to + someone)"
+  pattern: "make a motion + 목적어 (to + 사람)"
+
+- word: "assumption"
+  reason: "문형 자리에 영어가 들어가 있었다: make an assumption + about + something"
+  pattern: "make an assumption + about + 명사"
+
+- word: "mechanism"
+  reason: "문형 자리에 영어가 들어가 있었다: the mechanism + of + something"
+  pattern: "the mechanism + of + 명사"
+
+- word: "observation"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: a/the + observation"
+  pattern: "a/the + observation"
+
+- word: "implication"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: ~의 implication"
+  pattern: "~의 implication"
+
+- word: "unusual"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: unusual + 명사"
+  pattern: "unusual + 명사"
+
+- word: "valuable"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: be + valuable"
+  pattern: "be + valuable"
+
+- word: "excuse"
+  reason: "문형 자리에 영어가 들어가 있었다: excuse + someone + for + something"
+  pattern: "excuse + 사람 + for + 명사"
+
+- word: "confuse"
+  reason: "문형 자리에 영어가 들어가 있었다: confuse + 목적어 (사람), confuse + someone + about + something"
+  pattern: "confuse + 목적어 (사람), confuse + 사람 + about + 명사"
+
+- word: "southern"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: + 명사 (south + ern)"
+  pattern: "+ 명사 (south + ern)"
+
+- word: "consistent"
+  reason: "문형 자리에 영어가 들어가 있었다: be consistent + with + something"
+  pattern: "be consistent + with + 명사"
+
+- word: "prospect"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (a prospect / prospects)"
+  pattern: "명사 (a prospect / prospects)"
+
+- word: "criterion"
+  reason: "문형 자리에 영어가 들어가 있었다: a criterion + for + something"
+  pattern: "a criterion + for + 명사"
+
+- word: "criticism"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: 불가산명사 (some criticism, a lot of criticism)"
+  pattern: "불가산명사 (some criticism, a lot of criticism)"
+
+- word: "bet"
+  reason: "문형 자리에 영어가 들어가 있었다: bet + 목적어 (+ on + something)"
+  pattern: "bet + 목적어 (+ on + 명사)"
+
+- word: "calm"
+  reason: "문형 자리에 영어가 들어가 있었다: calm + about/with + something"
+  pattern: "calm + about/with + 명사"
+
+- word: "efficient"
+  reason: "문형 자리에 영어가 들어가 있었다: efficient + at + something"
+  pattern: "efficient + at + 명사"
+
+- word: "lean"
+  reason: "문형 자리에 영어가 들어가 있었다: lean + against/on + something"
+  pattern: "lean + against/on + 명사"
+
+- word: "differ"
+  reason: "문형 자리에 영어가 들어가 있었다: differ + from + something"
+  pattern: "differ + from + 명사"
+
+- word: "origin"
+  reason: "문형 자리에 영어가 들어가 있었다: the origin of + something"
+  pattern: "the origin of + 명사"
+
+- word: "fault"
+  reason: "문형 자리에 영어가 들어가 있었다: fault + in + something"
+  pattern: "fault + in + 명사"
+
+- word: "exhibit"
+  reason: "문형 자리에 영어가 들어가 있었다: exhibit + 목적어 (물건) / exhibit + something + at/in + 장소"
+  pattern: "exhibit + 목적어 (물건) / exhibit + 명사 + at/in + 장소"
+
+- word: "variation"
+  reason: "문형 자리에 영어가 들어가 있었다: a variation of + something"
+  pattern: "a variation of + 명사"
+
+- word: "upset"
+  reason: "문형 자리에 영어가 들어가 있었다: upset + 목적어 (사람), upset about + something"
+  pattern: "upset + 목적어 (사람), upset about + 명사"
+
+- word: "emphasis"
+  reason: "문형 자리에 영어가 들어가 있었다: put + emphasis + on + something"
+  pattern: "put + emphasis + on + 명사"
+
+- word: "honest"
+  reason: "문형 자리에 영어가 들어가 있었다: honest + about + something"
+  pattern: "honest + about + 명사"
+
+- word: "unlikely"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective (something is unlikely)"
+  pattern: "형용사 (명사 is unlikely)"
+
+- word: "framework"
+  reason: "문형 자리에 영어가 들어가 있었다: framework + of + something"
+  pattern: "framework + of + 명사"
+
+- word: "equivalent"
+  reason: "문형 자리에 영어가 들어가 있었다: equivalent + to + something"
+  pattern: "equivalent + to + 명사"
+
+- word: "owe"
+  reason: "문형 자리에 영어가 들어가 있었다: owe + somebody + something"
+  pattern: "owe + 사람 + 명사"
+
+- word: "sensitive"
+  reason: "문형 자리에 영어가 들어가 있었다: be sensitive + to + something"
+  pattern: "be sensitive + to + 명사"
+
+- word: "grand"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: grand + 명사"
+  pattern: "grand + 명사"
+
+- word: "convert"
+  reason: "문형 자리에 영어가 들어가 있었다: convert + 목적어 (물건/정보 등) + into + something"
+  pattern: "convert + 목적어 (물건/정보 등) + into + 명사"
+
+- word: "anger"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: anger at + 사람/일"
+  pattern: "anger at + 사람/일"
+
+- word: "height"
+  reason: "문형 자리에 영어가 들어가 있었다: the + height + of + something"
+  pattern: "the + height + of + 명사"
+
+- word: "expansion"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: expansion of + something"
+  pattern: "expansion of + 명사"
+
+- word: "scare"
+  reason: "문형 자리에 영어가 들어가 있었다: scare + 목적어 (사람), be scared of + something"
+  pattern: "scare + 목적어 (사람), be scared of + 명사"
+
+- word: "symbol"
+  reason: "문형 자리에 영어가 들어가 있었다: a symbol of + something"
+  pattern: "a symbol of + 명사"
+
+- word: "demonstration"
+  reason: "문형 자리에 영어가 들어가 있었다: demonstration + of + something"
+  pattern: "demonstration + of + 명사"
+
+- word: "restriction"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: restriction on + 대상"
+  pattern: "restriction on + 대상"
+
+- word: "trap"
+  reason: "문형 자리에 영어가 들어가 있었다: trap + 목적어 (사람/동물), trap + someone + into + something"
+  pattern: "trap + 목적어 (사람/동물), trap + 사람 + into + 명사"
+
+- word: "confident"
+  reason: "문형 자리에 영어가 들어가 있었다: be confident + about/with + something"
+  pattern: "be confident + about/with + 명사"
+
+- word: "depth"
+  reason: "문형 자리에 영어가 들어가 있었다: depth of + something"
+  pattern: "depth of + 명사"
+
+- word: "interpret"
+  reason: "문형 자리에 영어가 들어가 있었다: interpret + something (문장, 단어 등)"
+  pattern: "interpret + 명사 (문장, 단어 등)"
+
+- word: "independence"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: (a country's) independence"
+  pattern: "(a country's) independence"
+
+- word: "intervention"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: (no pattern)"
+  pattern: "(no pattern)"
+
+- word: "regularly"
+  reason: "문형 자리에 영어가 들어가 있었다: adverb: regularly"
+  pattern: "regularly"
+
+- word: "crazy"
+  reason: "문형 자리에 영어가 들어가 있었다: crazy + about + something"
+  pattern: "crazy + about + 명사"
+
+- word: "resistance"
+  reason: "문형 자리에 영어가 들어가 있었다: resistance to + something"
+  pattern: "resistance to + 명사"
+
+- word: "frequency"
+  reason: "문형 자리에 영어가 들어가 있었다: frequency of + something"
+  pattern: "frequency of + 명사"
+
+- word: "tap"
+  reason: "문형 자리에 영어가 들어가 있었다: tap + 목적어 (물건/장소), tap + something + on + 장소"
+  pattern: "tap + 목적어 (물건/장소), tap + 명사 + on + 장소"
+
+- word: "exposure"
+  reason: "문형 자리에 영어가 들어가 있었다: exposure + to + something"
+  pattern: "exposure + to + 명사"
+
+- word: "formation"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: formation of + 목적어"
+  pattern: "formation of + 목적어"
+
+- word: "rough"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: rough + noun"
+  pattern: "rough + 명사"
+
+- word: "recovery"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: recovery + from + 원인"
+  pattern: "recovery + from + 원인"
+
+- word: "anticipate"
+  reason: "문형 자리에 영어가 들어가 있었다: anticipate + something (일어날 일)"
+  pattern: "anticipate + 명사 (일어날 일)"
+
+- word: "dependent"
+  reason: "문형 자리에 영어가 들어가 있었다: dependent + on + something/someone"
+  pattern: "dependent + on + 명사/사람"
+
+- word: "offense"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: offense (불쾌감을 주는 행동)"
+  pattern: "offense (불쾌감을 주는 행동)"
+
+- word: "significance"
+  reason: "문형 자리에 영어가 들어가 있었다: the significance of + something"
+  pattern: "the significance of + 명사"
+
+- word: "keen"
+  reason: "문형 자리에 영어가 들어가 있었다: keen + on + something"
+  pattern: "keen + on + 명사"
+
+- word: "clinical"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: clinical + 명사"
+  pattern: "clinical + 명사"
+
+- word: "prompt"
+  reason: "문형 자리에 영어가 들어가 있었다: prompt + 목적어 (+ to do something)"
+  pattern: "prompt + 목적어 (+ to + 동사원형)"
+
+- word: "charm"
+  reason: "문형 자리에 영어가 들어가 있었다: charm + someone (매력을 주는 대상)"
+  pattern: "charm + 사람 (매력을 주는 대상)"
+
+- word: "react"
+  reason: "문형 자리에 영어가 들어가 있었다: react + to + something"
+  pattern: "react + to + 명사"
+
+- word: "compound"
+  reason: "문형 자리에 영어가 들어가 있었다: compound + 명사 (복합체), compound + adjective (복합적인)"
+  pattern: "compound + 명사 (복합체), compound + 형용사 (복합적인)"
+
+- word: "mess"
+  reason: "문형 자리에 영어가 들어가 있었다: make + a mess (+ of + something)"
+  pattern: "make + a mess (+ of + 명사)"
+
+- word: "preference"
+  reason: "문형 자리에 영어가 들어가 있었다: preference for + something"
+  pattern: "preference for + 명사"
+
+- word: "regret"
+  reason: "문형 자리에 영어가 들어가 있었다: regret + something (일/사건), regret to + 동사 (말/행동)"
+  pattern: "regret + 명사 (일/사건), regret to + 동사 (말/행동)"
+
+- word: "margin"
+  reason: "문형 자리에 영어가 들어가 있었다: margin + of + something"
+  pattern: "margin + of + 명사"
+
+- word: "opponent"
+  reason: "문형 자리에 영어가 들어가 있었다: the + opponent (of + someone/something)"
+  pattern: "the + opponent (of + 사람/명사)"
+
+- word: "capability"
+  reason: "문형 자리에 영어가 들어가 있었다: have + capability + to do something"
+  pattern: "have + capability + to + 동사원형"
+
+- word: "rid"
+  reason: "문형 자리에 영어가 들어가 있었다: rid + 목적어 (+ of + something)"
+  pattern: "rid + 목적어 (+ of + 명사)"
+
+- word: "divorce"
+  reason: "문형 자리에 영어가 들어가 있었다: divorce + someone (from + someone)"
+  pattern: "divorce + 사람 (from + 사람)"
+
+- word: "counsel"
+  reason: "문형 자리에 영어가 들어가 있었다: counsel + 목적어 (사람), counsel + someone + on + something"
+  pattern: "counsel + 목적어 (사람), counsel + 사람 + on + 명사"
+
+- word: "measurement"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no common verb form)"
+  pattern: "명사 (no common 동사 form)"
+
+- word: "dedicate"
+  reason: "문형 자리에 영어가 들어가 있었다: dedicate + 시간/에너지/자신 + something"
+  pattern: "dedicate + 시간/에너지/자신 + 명사"
+
+- word: "compromise"
+  reason: "문형 자리에 영어가 들어가 있었다: compromise + on + something"
+  pattern: "compromise + on + 명사"
+
+- word: "aggressive"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + about/with + something"
+  pattern: "형용사 + about/with + 명사"
+
+- word: "embrace"
+  reason: "문형 자리에 영어가 들어가 있었다: embrace + something (사람/상황 등)"
+  pattern: "embrace + 명사 (사람/상황 등)"
+
+- word: "pump"
+  reason: "문형 자리에 영어가 들어가 있었다: pump + 목적어 (물, 공기 등), pump + something + up"
+  pattern: "pump + 목적어 (물, 공기 등), pump + 명사 + up"
+
+- word: "inflation"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no pattern)"
+  pattern: "명사 (no pattern)"
+
+- word: "insight"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: insight into + something"
+  pattern: "insight into + 명사"
+
+- word: "expenditure"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (uncountable)"
+  pattern: "명사 (uncountable)"
+
+- word: "stake"
+  reason: "문형 자리에 영어가 들어가 있었다: take a stake in + something"
+  pattern: "take a stake in + 명사"
+
+- word: "clause"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (a + clause)"
+  pattern: "명사 (a + 문장)"
+
+- word: "evolve"
+  reason: "문형 자리에 영어가 들어가 있었다: evolve + into + something"
+  pattern: "evolve + into + 명사"
+
+- word: "democratic"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: 민주적인 (민주주의의), democratic country"
+  pattern: "민주적인 (민주주의의), democratic country"
+
+- word: "pride"
+  reason: "문형 자리에 영어가 들어가 있었다: take pride + in + something"
+  pattern: "take pride + in + 명사"
+
+- word: "inquiry"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: inquiry about + something"
+  pattern: "inquiry about + 명사"
+
+- word: "strict"
+  reason: "문형 자리에 영어가 들어가 있었다: strict + about + something"
+  pattern: "strict + about + 명사"
+
+- word: "concrete"
+  reason: "문형 자리에 영어가 들어가 있었다: concrete + about/for + something"
+  pattern: "concrete + about/for + 명사"
+
+- word: "shell"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (a/the + shell)"
+  pattern: "명사 (a/the + shell)"
+
+- word: "distinct"
+  reason: "문형 자리에 영어가 들어가 있었다: distinct + from + something"
+  pattern: "distinct + from + 명사"
+
+- word: "rear"
+  reason: "문형 자리에 영어가 들어가 있었다: the rear + of + something"
+  pattern: "the rear + of + 명사"
+
+- word: "bless"
+  reason: "문형 자리에 영어가 들어가 있었다: bless + 목적어 (사람/일), bless someone with something"
+  pattern: "bless + 목적어 (사람/일), bless 사람 with 명사"
+
+- word: "trick"
+  reason: "문형 자리에 영어가 들어가 있었다: trick + 사람 (into + doing something)"
+  pattern: "trick + 사람 (into + -ing)"
+
+- word: "tourism"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no pattern)"
+  pattern: "명사 (no pattern)"
+
+- word: "hesitate"
+  reason: "문형 자리에 영어가 들어가 있었다: hesitate + about/over + something"
+  pattern: "hesitate + about/over + 명사"
+
+- word: "romantic"
+  reason: "문형 자리에 영어가 들어가 있었다: romantic + about/with + something"
+  pattern: "romantic + about/with + 명사"
+
+- word: "implementation"
+  reason: "문형 자리에 영어가 들어가 있었다: the implementation of + something"
+  pattern: "the implementation of + 명사"
+
+- word: "bias"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: 불가산명사 (a bias X)"
+  pattern: "불가산명사 (a bias X)"
+
+- word: "weekly"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: + 명사 (weekly report)"
+  pattern: "+ 명사 (weekly report)"
+
+- word: "anxious"
+  reason: "문형 자리에 영어가 들어가 있었다: be + anxious + about + something"
+  pattern: "be + anxious + about + 명사"
+
+- word: "controversial"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: be + controversial"
+  pattern: "be + controversial"
+
+- word: "hint"
+  reason: "문형 자리에 영어가 들어가 있었다: give + someone + a hint"
+  pattern: "give + 사람 + a hint"
+
+- word: "verb"
+  reason: "문형 자리에 영어가 들어가 있었다: a/the + verb"
+  pattern: "a/the + 동사"
+
+- word: "silly"
+  reason: "문형 자리에 영어가 들어가 있었다: silly + about/with + something"
+  pattern: "silly + about/with + 명사"
+
+- word: "flexible"
+  reason: "문형 자리에 영어가 들어가 있었다: flexible + about + something"
+  pattern: "flexible + about + 명사"
+
+- word: "probability"
+  reason: "문형 자리에 영어가 들어가 있었다: the + probability + of + something"
+  pattern: "the + probability + of + 명사"
+
+- word: "monthly"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: + 명사 (monthly payment, monthly report)"
+  pattern: "+ 명사 (monthly payment, monthly report)"
+
+- word: "experimental"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: experimental + 명사"
+  pattern: "experimental + 명사"
+
+- word: "ownership"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: ownership of + 목적어"
+  pattern: "ownership of + 목적어"
+
+- word: "pale"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective (pale + noun)"
+  pattern: "형용사 (pale + 명사)"
+
+- word: "weird"
+  reason: "문형 자리에 영어가 들어가 있었다: weird + about/with + something"
+  pattern: "weird + about/with + 명사"
+
+- word: "cough"
+  reason: "문형 자리에 영어가 들어가 있었다: cough (동사), cough + something (명사)"
+  pattern: "cough (동사), cough + 명사"
+
+- word: "density"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: density + of + something"
+  pattern: "density + of + 명사"
+
+- word: "fortunate"
+  reason: "문형 자리에 영어가 들어가 있었다: fortunate + about/with + something"
+  pattern: "fortunate + about/with + 명사"
+
+- word: "ashamed"
+  reason: "문형 자리에 영어가 들어가 있었다: be + ashamed + of + something"
+  pattern: "be + ashamed + of + 명사"
+
+- word: "foam"
+  reason: "문형 자리에 영어가 들어가 있었다: foam + on + something"
+  pattern: "foam + on + 명사"
+
+- word: "bargain"
+  reason: "문형 자리에 영어가 들어가 있었다: bargain + over + something"
+  pattern: "bargain + over + 명사"
+
+- word: "deadline"
+  reason: "문형 자리에 영어가 들어가 있었다: the + deadline + for + something"
+  pattern: "the + deadline + for + 명사"
+
+- word: "correctly"
+  reason: "문형 자리에 영어가 들어가 있었다: do something + correctly"
+  pattern: "동사원형 + correctly"
+
+- word: "clue"
+  reason: "문형 자리에 영어가 들어가 있었다: a + clue (+ about/for + something)"
+  pattern: "a + clue (+ about/for + 명사)"
+
+- word: "postpone"
+  reason: "문형 자리에 영어가 들어가 있었다: postpone + something + until + 시간"
+  pattern: "postpone + 명사 + until + 시간"
+
+- word: "inference"
+  reason: "문형 자리에 영어가 들어가 있었다: make + inference + about + something"
+  pattern: "make + inference + about + 명사"
+
+- word: "assignment"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (a/the + assignment)"
+  pattern: "명사 (a/the + assignment)"
+
+- word: "recipient"
+  reason: "문형 자리에 영어가 들어가 있었다: the + recipient + of + something"
+  pattern: "the + recipient + of + 명사"
+
+- word: "eligible"
+  reason: "문형 자리에 영어가 들어가 있었다: be eligible + for + something"
+  pattern: "be eligible + for + 명사"
+
+- word: "inquire"
+  reason: "문형 자리에 영어가 들어가 있었다: inquire + about + something"
+  pattern: "inquire + about + 명사"
+
+- word: "subscribe"
+  reason: "문형 자리에 영어가 들어가 있었다: subscribe + to + something"
+  pattern: "subscribe + to + 명사"
+
+- word: "authorize"
+  reason: "문형 자리에 영어가 들어가 있었다: authorize + 목적어 (+ to do something)"
+  pattern: "authorize + 목적어 (+ to + 동사원형)"
+
+- word: "unhappy"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + about/with + something"
+  pattern: "형용사 + about/with + 명사"
+
+- word: "thorough"
+  reason: "문형 자리에 영어가 들어가 있었다: be thorough + about + something"
+  pattern: "be thorough + about + 명사"
+
+- word: "duration"
+  reason: "문형 자리에 영어가 들어가 있었다: duration + of + something"
+  pattern: "duration + of + 명사"
+
+- word: "completion"
+  reason: "문형 자리에 영어가 들어가 있었다: the + completion + of + something"
+  pattern: "the + completion + of + 명사"
+
+- word: "defect"
+  reason: "문형 자리에 영어가 들어가 있었다: defect + in + something"
+  pattern: "defect + in + 명사"
+
+- word: "garbage"
+  reason: "문형 자리에 영어가 들어가 있었다: garbage + (of + something)"
+  pattern: "garbage + (of + 명사)"
+
+- word: "photography"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: photography + about/for + 목적"
+  pattern: "photography + about/for + 목적"
+
+- word: "renewal"
+  reason: "문형 자리에 영어가 들어가 있었다: renewal of + something (계약/허가 등)"
+  pattern: "renewal of + 명사 (계약/허가 등)"
+
+- word: "taker"
+  reason: "문형 자리에 영어가 들어가 있었다: taker + of + something"
+  pattern: "taker + of + 명사"
+
+- word: "utility"
+  reason: "문형 자리에 영어가 들어가 있었다: the + utility + of + something"
+  pattern: "the + utility + of + 명사"
+
+- word: "overdue"
+  reason: "문형 자리에 영어가 들어가 있었다: be + overdue + for + something"
+  pattern: "be + overdue + for + 명사"
+
+- word: "prediction"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: ~의 prediction"
+  pattern: "~의 prediction"
+
+- word: "economical"
+  reason: "문형 자리에 영어가 들어가 있었다: economical + about + something"
+  pattern: "economical + about + 명사"
+
+- word: "efficiently"
+  reason: "문형 자리에 영어가 들어가 있었다: do something + efficiently"
+  pattern: "동사원형 + efficiently"
+
+- word: "generous"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + about/with + something"
+  pattern: "형용사 + about/with + 명사"
+
+- word: "interrupt"
+  reason: "문형 자리에 영어가 들어가 있었다: interrupt + someone (중단하는 사람)"
+  pattern: "interrupt + 사람 (중단하는 사람)"
+
+- word: "usage"
+  reason: "문형 자리에 영어가 들어가 있었다: usage + of + something"
+  pattern: "usage + of + 명사"
+
+- word: "accustom"
+  reason: "문형 자리에 영어가 들어가 있었다: accustom + 목적어 (+ to + something)"
+  pattern: "accustom + 목적어 (+ to + 명사)"
+
+- word: "appreciation"
+  reason: "문형 자리에 영어가 들어가 있었다: show + appreciation + for + something"
+  pattern: "show + appreciation + for + 명사"
+
+- word: "cargo"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no article)"
+  pattern: "명사 (no article)"
+
+- word: "dividend"
+  reason: "문형 자리에 영어가 들어가 있었다: dividend + (of + something)"
+  pattern: "dividend + (of + 명사)"
+
+- word: "quarterly"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun (예: report, meeting, payment)"
+  pattern: "형용사 + 명사 (예: report, meeting, payment)"
+
+- word: "seeker"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: + of + 찾는 대상"
+  pattern: "+ of + 찾는 대상"
+
+- word: "withdrawal"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: withdrawal + from + 장소/사람"
+  pattern: "withdrawal + from + 장소/사람"
+
+- word: "brake"
+  reason: "문형 자리에 영어가 들어가 있었다: brake + on + something"
+  pattern: "brake + on + 명사"
+
+- word: "disruption"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: disruption + of + something"
+  pattern: "disruption + of + 명사"
+
+- word: "enthusiastic"
+  reason: "문형 자리에 영어가 들어가 있었다: be enthusiastic about + something"
+  pattern: "be enthusiastic about + 명사"
+
+- word: "optimistic"
+  reason: "문형 자리에 영어가 들어가 있었다: optimistic + about + something"
+  pattern: "optimistic + about + 명사"
+
+- word: "unsure"
+  reason: "문형 자리에 영어가 들어가 있었다: be unsure + about + something"
+  pattern: "be unsure + about + 명사"
+
+- word: "effectiveness"
+  reason: "문형 자리에 영어가 들어가 있었다: the + effectiveness + of + something"
+  pattern: "the + effectiveness + of + 명사"
+
+- word: "safely"
+  reason: "문형 자리에 영어가 들어가 있었다: verb + safely"
+  pattern: "동사 + safely"
+
+- word: "unexpected"
+  reason: "문형 자리에 영어가 들어가 있었다: unexpected + noun"
+  pattern: "unexpected + 명사"
+
+- word: "caution"
+  reason: "문형 자리에 영어가 들어가 있었다: caution + about + something"
+  pattern: "caution + about + 명사"
+
+- word: "harmful"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + to + 사람/것"
+  pattern: "형용사 + to + 사람/것"
+
+- word: "downturn"
+  reason: "문형 자리에 영어가 들어가 있었다: a downturn in + something"
+  pattern: "a downturn in + 명사"
+
+- word: "dedication"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: dedication to + 목적어"
+  pattern: "dedication to + 목적어"
+
+- word: "economize"
+  reason: "문형 자리에 영어가 들어가 있었다: economize + on + something"
+  pattern: "economize + on + 명사"
+
+- word: "relieve"
+  reason: "문형 자리에 영어가 들어가 있었다: relieve + someone + of + something"
+  pattern: "relieve + 사람 + of + 명사"
+
+- word: "reminder"
+  reason: "문형 자리에 영어가 들어가 있었다: a reminder + of + something"
+  pattern: "a reminder + of + 명사"
+
+- word: "rumor"
+  reason: "문형 자리에 영어가 들어가 있었다: rumor + about + something"
+  pattern: "rumor + about + 명사"
+
+- word: "compartment"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (in + 물건/장소)"
+  pattern: "명사 (in + 물건/장소)"
+
+- word: "creativity"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: (a) + creativity"
+  pattern: "(a) + creativity"
+
+- word: "disappointment"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: disappointment + about/with + something"
+  pattern: "disappointment + about/with + 명사"
+
+- word: "nationwide"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사 (ex: campaign, event, service)"
+  pattern: "형용사 + 명사 (ex: campaign, event, service)"
+
+- word: "urgently"
+  reason: "문형 자리에 영어가 들어가 있었다: need + something + urgently"
+  pattern: "need + 명사 + urgently"
+
+- word: "careless"
+  reason: "문형 자리에 영어가 들어가 있었다: careless + about + something"
+  pattern: "careless + about + 명사"
+
+- word: "collector"
+  reason: "문형 자리에 영어가 들어가 있었다: a + collector (of + something)"
+  pattern: "a + collector (of + 명사)"
+
+- word: "contradiction"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no article)"
+  pattern: "명사 (no article)"
+
+- word: "contrary"
+  reason: "문형 자리에 영어가 들어가 있었다: contrary + to + something"
+  pattern: "contrary + to + 명사"
+
+- word: "generalization"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: + about + 주제"
+  pattern: "+ about + 주제"
+
+- word: "hesitant"
+  reason: "문형 자리에 영어가 들어가 있었다: hesitant + about + something"
+  pattern: "hesitant + about + 명사"
+
+- word: "indicator"
+  reason: "문형 자리에 영어가 들어가 있었다: indicator + of + something"
+  pattern: "indicator + of + 명사"
+
+- word: "outlook"
+  reason: "문형 자리에 영어가 들어가 있었다: outlook + on/for + something"
+  pattern: "outlook + on/for + 명사"
+
+- word: "rebate"
+  reason: "문형 자리에 영어가 들어가 있었다: get + rebate + for + something"
+  pattern: "get + rebate + for + 명사"
+
+- word: "tempt"
+  reason: "문형 자리에 영어가 들어가 있었다: tempt + 목적어 (+ to do something)"
+  pattern: "tempt + 목적어 (+ to + 동사원형)"
+
+- word: "cautious"
+  reason: "문형 자리에 영어가 들어가 있었다: be cautious + about + something"
+  pattern: "be cautious + about + 명사"
+
+- word: "dependence"
+  reason: "문형 자리에 영어가 들어가 있었다: dependence + on + something/someone"
+  pattern: "dependence + on + 명사/사람"
+
+- word: "enthusiasm"
+  reason: "문형 자리에 영어가 들어가 있었다: show + enthusiasm + for + something"
+  pattern: "show + enthusiasm + for + 명사"
+
+- word: "evident"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + from + 원인"
+  pattern: "형용사 + from + 원인"
+
+- word: "flexibility"
+  reason: "문형 자리에 영어가 들어가 있었다: flexibility + about + something"
+  pattern: "flexibility + about + 명사"
+
+- word: "imperative"
+  reason: "문형 자리에 영어가 들어가 있었다: imperative + to + do something"
+  pattern: "imperative + to + 동사원형"
+
+- word: "modification"
+  reason: "문형 자리에 영어가 들어가 있었다: modification + of + something"
+  pattern: "modification + of + 명사"
+
+- word: "pottery"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no article)"
+  pattern: "명사 (no article)"
+
+- word: "professionally"
+  reason: "문형 자리에 영어가 들어가 있었다: professionally + about/with + something"
+  pattern: "professionally + about/with + 명사"
+
+- word: "reluctant"
+  reason: "문형 자리에 영어가 들어가 있었다: be reluctant + to do something"
+  pattern: "be reluctant + to + 동사원형"
+
+- word: "termination"
+  reason: "문형 자리에 영어가 들어가 있었다: termination + of + something"
+  pattern: "termination + of + 명사"
+
+- word: "theft"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no article)"
+  pattern: "명사 (no article)"
+
+- word: "transmission"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: transmission + of + 내용"
+  pattern: "transmission + of + 내용"
+
+- word: "evenly"
+  reason: "문형 자리에 영어가 들어가 있었다: divide/distribute + something + evenly"
+  pattern: "divide/distribute + 명사 + evenly"
+
+- word: "fatigue"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no article)"
+  pattern: "명사 (no article)"
+
+- word: "loyalty"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: loyalty + to + 사람/조직"
+  pattern: "loyalty + to + 사람/조직"
+
+- word: "poorly"
+  reason: "문형 자리에 영어가 들어가 있었다: adverb: poorly + 동사"
+  pattern: "poorly + 동사"
+
+- word: "sue"
+  reason: "문형 자리에 영어가 들어가 있었다: sue + someone + for + something"
+  pattern: "sue + 사람 + for + 명사"
+
+- word: "unpleasant"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + about/for + something/someone"
+  pattern: "형용사 + about/for + 명사/사람"
+
+- word: "bankruptcy"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: 회사/인물 + bankruptcy"
+  pattern: "회사/인물 + bankruptcy"
+
+- word: "contraction"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no common verb form)"
+  pattern: "명사 (no common 동사 form)"
+
+- word: "integral"
+  reason: "문형 자리에 영어가 들어가 있었다: integral + to + something"
+  pattern: "integral + to + 명사"
+
+- word: "merit"
+  reason: "문형 자리에 영어가 들어가 있었다: the + merit + of + something"
+  pattern: "the + merit + of + 명사"
+
+- word: "suspicious"
+  reason: "문형 자리에 영어가 들어가 있었다: be suspicious + of + something/person"
+  pattern: "be suspicious + of + 명사/person"
+
+- word: "desperate"
+  reason: "문형 자리에 영어가 들어가 있었다: desperate + about/for + something"
+  pattern: "desperate + about/for + 명사"
+
+- word: "disgust"
+  reason: "문형 자리에 영어가 들어가 있었다: disgust + someone + with + something"
+  pattern: "disgust + 사람 + with + 명사"
+
+- word: "journalism"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no pattern)"
+  pattern: "명사 (no pattern)"
+
+- word: "obligate"
+  reason: "문형 자리에 영어가 들어가 있었다: obligate + 목적어 (+ to do something)"
+  pattern: "obligate + 목적어 (+ to + 동사원형)"
+
+- word: "oblige"
+  reason: "문형 자리에 영어가 들어가 있었다: oblige + 목적어 (+ to do something)"
+  pattern: "oblige + 목적어 (+ to + 동사원형)"
+
+- word: "occurrence"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: occurrence + of + 사건"
+  pattern: "occurrence + of + 사건"
+
+- word: "repetition"
+  reason: "문형 자리에 영어가 들어가 있었다: repetition + of + something"
+  pattern: "repetition + of + 명사"
+
+- word: "thrill"
+  reason: "문형 자리에 영어가 들어가 있었다: thrill + about/with + something"
+  pattern: "thrill + about/with + 명사"
+
+- word: "willingness"
+  reason: "문형 자리에 영어가 들어가 있었다: show + willingness + to + do something"
+  pattern: "show + willingness + to + 동사원형"
+
+- word: "apprehensive"
+  reason: "문형 자리에 영어가 들어가 있었다: be + apprehensive + about + something"
+  pattern: "be + apprehensive + about + 명사"
+
+- word: "considerate"
+  reason: "문형 자리에 영어가 들어가 있었다: be considerate + about/with + something"
+  pattern: "be considerate + about/with + 명사"
+
+- word: "inspiration"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no article)"
+  pattern: "명사 (no article)"
+
+- word: "equity"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (a/the + equity)"
+  pattern: "명사 (a/the + equity)"
+
+- word: "default"
+  reason: "문형 자리에 영어가 들어가 있었다: default + to + something"
+  pattern: "default + to + 명사"
+
+- word: "volatility"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: volatility + of + something"
+  pattern: "volatility + of + 명사"
+
+- word: "gross"
+  reason: "문형 자리에 영어가 들어가 있었다: the gross + of + something"
+  pattern: "the gross + of + 명사"
+
+- word: "liquidity"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: liquidity + of + something"
+  pattern: "liquidity + of + 명사"
+
+- word: "monopoly"
+  reason: "문형 자리에 영어가 들어가 있었다: monopoly + on + something"
+  pattern: "monopoly + on + 명사"
+
+- word: "corruption"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no article)"
+  pattern: "명사 (no article)"
+
+- word: "profitability"
+  reason: "문형 자리에 영어가 들어가 있었다: profitability + of + something"
+  pattern: "profitability + of + 명사"
+
+- word: "coefficient"
+  reason: "문형 자리에 영어가 들어가 있었다: coefficient + of + something"
+  pattern: "coefficient + of + 명사"
+
+- word: "payoff"
+  reason: "문형 자리에 영어가 들어가 있었다: the + payoff + of + something"
+  pattern: "the + payoff + of + 명사"
+
+- word: "shrink"
+  reason: "문형 자리에 영어가 들어가 있었다: shrink + 목적어 (물건), shrink from + something (무서운 일)"
+  pattern: "shrink + 목적어 (물건), shrink from + 명사 (무서운 일)"
+
+- word: "collateral"
+  reason: "문형 자리에 영어가 들어가 있었다: collateral + for + something"
+  pattern: "collateral + for + 명사"
+
+- word: "modest"
+  reason: "문형 자리에 영어가 들어가 있었다: modest + about + something"
+  pattern: "modest + about + 명사"
+
+- word: "con"
+  reason: "문형 자리에 영어가 들어가 있었다: the + con + of + something"
+  pattern: "the + con + of + 명사"
+
+- word: "surge"
+  reason: "문형 자리에 영어가 들어가 있었다: surge + in + something"
+  pattern: "surge + in + 명사"
+
+- word: "fluctuation"
+  reason: "문형 자리에 영어가 들어가 있었다: fluctuation + in + something"
+  pattern: "fluctuation + in + 명사"
+
+- word: "likelihood"
+  reason: "문형 자리에 영어가 들어가 있었다: the likelihood of + something"
+  pattern: "the likelihood of + 명사"
+
+- word: "metric"
+  reason: "문형 자리에 영어가 들어가 있었다: metric + of + something"
+  pattern: "metric + of + 명사"
+
+- word: "upward"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + toward/upward + 방향"
+  pattern: "형용사 + toward/upward + 방향"
+
+- word: "globalization"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no prepositions)"
+  pattern: "명사 (no prepositions)"
+
+- word: "elasticity"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no article, with adjective)"
+  pattern: "명사 (no article, with 형용사)"
+
+- word: "repayment"
+  reason: "문형 자리에 영어가 들어가 있었다: repayment + of + something"
+  pattern: "repayment + of + 명사"
+
+- word: "hostile"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + toward/at + 사람/상황"
+  pattern: "형용사 + toward/at + 사람/상황"
+
+- word: "gamble"
+  reason: "문형 자리에 영어가 들어가 있었다: gamble + on + something"
+  pattern: "gamble + on + 명사"
+
+- word: "axis"
+  reason: "문형 자리에 영어가 들어가 있었다: the + axis (of something)"
+  pattern: "the + axis (of 명사)"
+
+- word: "terror"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no prepositions)"
+  pattern: "명사 (no prepositions)"
+
+- word: "quota"
+  reason: "문형 자리에 영어가 들어가 있었다: quota + of + something"
+  pattern: "quota + of + 명사"
+
+- word: "frontier"
+  reason: "문형 자리에 영어가 들어가 있었다: the + frontier + of + something"
+  pattern: "the + frontier + of + 명사"
+
+- word: "beneficiary"
+  reason: "문형 자리에 영어가 들어가 있었다: beneficiary of + something"
+  pattern: "beneficiary of + 명사"
+
+- word: "fraction"
+  reason: "문형 자리에 영어가 들어가 있었다: a fraction of + something"
+  pattern: "a fraction of + 명사"
+
+- word: "capitalization"
+  reason: "문형 자리에 영어가 들어가 있었다: capitalization + of + something"
+  pattern: "capitalization + of + 명사"
+
+- word: "endorse"
+  reason: "문형 자리에 영어가 들어가 있었다: endorse + something (의견, 계획 등)"
+  pattern: "endorse + 명사 (의견, 계획 등)"
+
+- word: "slump"
+  reason: "문형 자리에 영어가 들어가 있었다: slump + in + something"
+  pattern: "slump + in + 명사"
+
+- word: "differential"
+  reason: "문형 자리에 영어가 들어가 있었다: differential + in + something"
+  pattern: "differential + in + 명사"
+
+- word: "unfair"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + to + someone"
+  pattern: "형용사 + to + 사람"
+
+- word: "credibility"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no article)"
+  pattern: "명사 (no article)"
+
+- word: "adoption"
+  reason: "문형 자리에 영어가 들어가 있었다: adoption + of + something"
+  pattern: "adoption + of + 명사"
+
+- word: "sensible"
+  reason: "문형 자리에 영어가 들어가 있었다: sensible + about/for + something"
+  pattern: "sensible + about/for + 명사"
+
+- word: "concession"
+  reason: "문형 자리에 영어가 들어가 있었다: make + concession + to + someone"
+  pattern: "make + concession + to + 사람"
+
+- word: "privately"
+  reason: "문형 자리에 영어가 들어가 있었다: talk + about + something + privately"
+  pattern: "talk + about + 명사 + privately"
+
+- word: "inequality"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: inequality + between + 대상"
+  pattern: "inequality + between + 대상"
+
+- word: "plunge"
+  reason: "문형 자리에 영어가 들어가 있었다: plunge into + something"
+  pattern: "plunge into + 명사"
+
+- word: "boast"
+  reason: "문형 자리에 영어가 들어가 있었다: boast + about + something"
+  pattern: "boast + about + 명사"
+
+- word: "discourage"
+  reason: "문형 자리에 영어가 들어가 있었다: discourage + someone from + doing something"
+  pattern: "discourage + 사람 from + -ing"
+
+- word: "transformation"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: transformation + of + 대상"
+  pattern: "transformation + of + 대상"
+
+- word: "tolerance"
+  reason: "문형 자리에 영어가 들어가 있었다: tolerance + for + something"
+  pattern: "tolerance + for + 명사"
+
+- word: "speculation"
+  reason: "문형 자리에 영어가 들어가 있었다: speculation about + something"
+  pattern: "speculation about + 명사"
+
+- word: "correlate"
+  reason: "문형 자리에 영어가 들어가 있었다: correlate + with + something"
+  pattern: "correlate + with + 명사"
+
+- word: "compel"
+  reason: "문형 자리에 영어가 들어가 있었다: compel + someone + to + 동사 원형"
+  pattern: "compel + 사람 + to + 동사 원형"
+
+- word: "suspicion"
+  reason: "문형 자리에 영어가 들어가 있었다: have + suspicion + about + something"
+  pattern: "have + suspicion + about + 명사"
+
+- word: "threshold"
+  reason: "문형 자리에 영어가 들어가 있었다: at + threshold + of + something"
+  pattern: "at + threshold + of + 명사"
+
+- word: "tangible"
+  reason: "문형 자리에 영어가 들어가 있었다: tangible + noun"
+  pattern: "tangible + 명사"
+
+- word: "outflow"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: outflow + of + something"
+  pattern: "outflow + of + 명사"
+
+- word: "litigation"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no pattern)"
+  pattern: "명사 (no pattern)"
+
+- word: "depict"
+  reason: "문형 자리에 영어가 들어가 있었다: depict + 목적어 (+ as + something)"
+  pattern: "depict + 목적어 (+ as + 명사)"
+
+- word: "odds"
+  reason: "문형 자리에 영어가 들어가 있었다: the odds + of + something"
+  pattern: "the odds + of + 명사"
+
+- word: "allegation"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: + about + something"
+  pattern: "+ about + 명사"
+
+- word: "redemption"
+  reason: "문형 자리에 영어가 들어가 있었다: redemption + of + something"
+  pattern: "redemption + of + 명사"
+
+- word: "provoke"
+  reason: "문형 자리에 영어가 들어가 있었다: provoke + 사람 (to do something)"
+  pattern: "provoke + 사람 (to + 동사원형)"
+
+- word: "invasion"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: (no pattern)"
+  pattern: "(no pattern)"
+
+- word: "computation"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: computation + of + 내용"
+  pattern: "computation + of + 내용"
+
+- word: "optimization"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: optimization of + 목적어"
+  pattern: "optimization of + 목적어"
+
+- word: "spectrum"
+  reason: "문형 자리에 영어가 들어가 있었다: the + spectrum + of + something"
+  pattern: "the + spectrum + of + 명사"
+
+- word: "validity"
+  reason: "문형 자리에 영어가 들어가 있었다: the + validity + of + something"
+  pattern: "the + validity + of + 명사"
+
+- word: "predictable"
+  reason: "문형 자리에 영어가 들어가 있었다: predictable + noun"
+  pattern: "predictable + 명사"
+
+- word: "liquidation"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (liquidation of + 자산/회사)"
+  pattern: "명사 (liquidation of + 자산/회사)"
+
+- word: "objection"
+  reason: "문형 자리에 영어가 들어가 있었다: have + objection + to + something"
+  pattern: "have + objection + to + 명사"
+
+- word: "passive"
+  reason: "문형 자리에 영어가 들어가 있었다: passive + about/with + something"
+  pattern: "passive + about/with + 명사"
+
+- word: "sacrifice"
+  reason: "문형 자리에 영어가 들어가 있었다: sacrifice + 목적어 (사물), sacrifice + someone + for + 목적어 (사람)"
+  pattern: "sacrifice + 목적어 (사물), sacrifice + 사람 + for + 목적어 (사람)"
+
+- word: "feasible"
+  reason: "문형 자리에 영어가 들어가 있었다: be feasible + for + someone"
+  pattern: "be feasible + for + 사람"
+
+- word: "conviction"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no prepositions)"
+  pattern: "명사 (no prepositions)"
+
+- word: "transparency"
+  reason: "문형 자리에 영어가 들어가 있었다: transparency + about + something"
+  pattern: "transparency + about + 명사"
+
+- word: "inadequate"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + for + 목적"
+  pattern: "형용사 + for + 목적"
+
+- word: "unity"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no article)"
+  pattern: "명사 (no article)"
+
+- word: "veto"
+  reason: "문형 자리에 영어가 들어가 있었다: veto + something (의안, 계획 등)"
+  pattern: "veto + 명사 (의안, 계획 등)"
+
+- word: "sentiment"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: sentiment + about/over + something"
+  pattern: "sentiment + about/over + 명사"
+
+- word: "estimation"
+  reason: "문형 자리에 영어가 들어가 있었다: estimation + of + something"
+  pattern: "estimation + of + 명사"
+
+- word: "strive"
+  reason: "문형 자리에 영어가 들어가 있었다: strive + to + do something"
+  pattern: "strive + to + 동사원형"
+
+- word: "bribe"
+  reason: "문형 자리에 영어가 들어가 있었다: bribe + someone + with + something"
+  pattern: "bribe + 사람 + with + 명사"
+
+- word: "controller"
+  reason: "문형 자리에 영어가 들어가 있었다: the + controller (of + something)"
+  pattern: "the + controller (of + 명사)"
+
+- word: "scarce"
+  reason: "문형 자리에 영어가 들어가 있었다: be scarce + (of + something)"
+  pattern: "be scarce + (of + 명사)"
+
+- word: "restraint"
+  reason: "문형 자리에 영어가 들어가 있었다: restraint + on + something"
+  pattern: "restraint + on + 명사"
+
+- word: "overlap"
+  reason: "문형 자리에 영어가 들어가 있었다: overlap + with + something"
+  pattern: "overlap + with + 명사"
+
+- word: "aversion"
+  reason: "문형 자리에 영어가 들어가 있었다: have an aversion to + something"
+  pattern: "have an aversion to + 명사"
+
+- word: "skeptical"
+  reason: "문형 자리에 영어가 들어가 있었다: be skeptical about + something"
+  pattern: "be skeptical about + 명사"
+
+- word: "negligence"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: negligence + of + something"
+  pattern: "negligence + of + 명사"
+
+- word: "determinant"
+  reason: "문형 자리에 영어가 들어가 있었다: determinant + of + something"
+  pattern: "determinant + of + 명사"
+
+- word: "loom"
+  reason: "문형 자리에 영어가 들어가 있었다: loom + over + something/someone"
+  pattern: "loom + over + 명사/사람"
+
+- word: "optimism"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no pattern)"
+  pattern: "명사 (no pattern)"
+
+- word: "lure"
+  reason: "문형 자리에 영어가 들어가 있었다: lure + someone + into + something"
+  pattern: "lure + 사람 + into + 명사"
+
+- word: "refusal"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: 주로 명사로 쓰여요 (refusal to + 동사)"
+  pattern: "주로 명사로 쓰여요 (refusal to + 동사)"
+
+- word: "exploration"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: exploration + of + 분야/사건"
+  pattern: "exploration + of + 분야/사건"
+
+- word: "jointly"
+  reason: "문형 자리에 영어가 들어가 있었다: do something + jointly + with + 사람/조직"
+  pattern: "동사원형 + jointly + with + 사람/조직"
+
+- word: "spur"
+  reason: "문형 자리에 영어가 들어가 있었다: spur + someone + on (to do something)"
+  pattern: "spur + 사람 + on (to + 동사원형)"
+
+- word: "conscious"
+  reason: "문형 자리에 영어가 들어가 있었다: be conscious + of + something"
+  pattern: "be conscious + of + 명사"
+
+- word: "cyclical"
+  reason: "문형 자리에 영어가 들어가 있었다: cyclical + noun"
+  pattern: "cyclical + 명사"
+
+- word: "exaggerate"
+  reason: "문형 자리에 영어가 들어가 있었다: exaggerate + about + something"
+  pattern: "exaggerate + about + 명사"
+
+- word: "rationale"
+  reason: "문형 자리에 영어가 들어가 있었다: the + rationale + for + something"
+  pattern: "the + rationale + for + 명사"
+
+- word: "liberalization"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: liberalization + of + something"
+  pattern: "liberalization + of + 명사"
+
+- word: "separation"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: separation + from + 사람/물건"
+  pattern: "separation + from + 사람/물건"
+
+- word: "dip"
+  reason: "문형 자리에 영어가 들어가 있었다: dip + into + something"
+  pattern: "dip + into + 명사"
+
+- word: "slogan"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: 회사/브랜드 +의 + slogan"
+  pattern: "회사/브랜드 +의 + slogan"
+
+- word: "competitiveness"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: competitiveness + in + 분야/사람"
+  pattern: "competitiveness + in + 분야/사람"
+
+- word: "enlargement"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: enlargement of + something"
+  pattern: "enlargement of + 명사"
+
+- word: "trim"
+  reason: "문형 자리에 영어가 들어가 있었다: trim + 목적어 (예쁘게, 정리해서), trim + somewhere (가다)"
+  pattern: "trim + 목적어 (예쁘게, 정리해서), trim + 장소 (가다)"
+
+- word: "trait"
+  reason: "문형 자리에 영어가 들어가 있었다: a + trait + of + something/someone"
+  pattern: "a + trait + of + 명사/사람"
+
+- word: "dissolution"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no common verb form)"
+  pattern: "명사 (no common 동사 form)"
+
+- word: "indifference"
+  reason: "문형 자리에 영어가 들어가 있었다: show + indifference (to + something)"
+  pattern: "show + indifference (to + 명사)"
+
+- word: "proportional"
+  reason: "문형 자리에 영어가 들어가 있었다: proportional + to + something"
+  pattern: "proportional + to + 명사"
+
+- word: "petty"
+  reason: "문형 자리에 영어가 들어가 있었다: petty + about + something"
+  pattern: "petty + about + 명사"
+
+- word: "convergence"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: convergence + of + 명사"
+  pattern: "convergence + of + 명사"
+
+- word: "rejection"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: be faced with + rejection"
+  pattern: "be faced with + rejection"
+
+- word: "cheat"
+  reason: "문형 자리에 영어가 들어가 있었다: cheat + someone + out of + something"
+  pattern: "cheat + 사람 + out of + 명사"
+
+- word: "baseline"
+  reason: "문형 자리에 영어가 들어가 있었다: the baseline + of + something"
+  pattern: "the baseline + of + 명사"
+
+- word: "shortfall"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no preposition)"
+  pattern: "명사 (no preposition)"
+
+- word: "redundancy"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: redundancy + in + something"
+  pattern: "redundancy + in + 명사"
+
+- word: "transparent"
+  reason: "문형 자리에 영어가 들어가 있었다: transparent + about + something"
+  pattern: "transparent + about + 명사"
+
+- word: "predictor"
+  reason: "문형 자리에 영어가 들어가 있었다: a predictor (of + something)"
+  pattern: "a predictor (of + 명사)"
+
+- word: "dominance"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: + in + 분야/영역"
+  pattern: "+ in + 분야/영역"
+
+- word: "routinely"
+  reason: "문형 자리에 영어가 들어가 있었다: adverb: routinely + 동사"
+  pattern: "routinely + 동사"
+
+- word: "precedent"
+  reason: "문형 자리에 영어가 들어가 있었다: set a precedent (+ for + something)"
+  pattern: "set a precedent (+ for + 명사)"
+
+- word: "extremist"
+  reason: "문형 자리에 영어가 들어가 있었다: extremist + (of + something) (정치, 종교 등)"
+  pattern: "extremist + (of + 명사) (정치, 종교 등)"
+
+- word: "reinforcement"
+  reason: "문형 자리에 영어가 들어가 있었다: reinforcement + of + something"
+  pattern: "reinforcement + of + 명사"
+
+- word: "wary"
+  reason: "문형 자리에 영어가 들어가 있었다: be wary of + something"
+  pattern: "be wary of + 명사"
+
+- word: "woe"
+  reason: "문형 자리에 영어가 들어가 있었다: woe + about/over + something"
+  pattern: "woe + about/over + 명사"
+
+- word: "downside"
+  reason: "문형 자리에 영어가 들어가 있었다: the downside + of + something"
+  pattern: "the downside + of + 명사"
+
+- word: "breakthrough"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (명사) — a breakthrough"
+  pattern: "명사 — a breakthrough"
+
+- word: "doubtful"
+  reason: "문형 자리에 영어가 들어가 있었다: doubtful about + something"
+  pattern: "doubtful about + 명사"
+
+- word: "grasp"
+  reason: "문형 자리에 영어가 들어가 있었다: grasp + something (이해할 내용)"
+  pattern: "grasp + 명사 (이해할 내용)"
+
+- word: "bracket"
+  reason: "문형 자리에 영어가 들어가 있었다: put + something + in brackets"
+  pattern: "put + 명사 + in brackets"
+
+- word: "coincide"
+  reason: "문형 자리에 영어가 들어가 있었다: coincide + with + something"
+  pattern: "coincide + with + 명사"
+
+- word: "insurgency"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no pattern)"
+  pattern: "명사 (no pattern)"
+
+- word: "incline"
+  reason: "문형 자리에 영어가 들어가 있었다: incline + to + something"
+  pattern: "incline + to + 명사"
+
+- word: "averse"
+  reason: "문형 자리에 영어가 들어가 있었다: averse to + something"
+  pattern: "averse to + 명사"
+
+- word: "dependency"
+  reason: "문형 자리에 영어가 들어가 있었다: dependency + on + something/someone"
+  pattern: "dependency + on + 명사/사람"
+
+- word: "prone"
+  reason: "문형 자리에 영어가 들어가 있었다: be prone to + something"
+  pattern: "be prone to + 명사"
+
+- word: "plead"
+  reason: "문형 자리에 영어가 들어가 있었다: plead + with + 사람 + for + something"
+  pattern: "plead + with + 사람 + for + 명사"
+
+- word: "devaluation"
+  reason: "문형 자리에 영어가 들어가 있었다: devaluation of + something"
+  pattern: "devaluation of + 명사"
+
+- word: "gloomy"
+  reason: "문형 자리에 영어가 들어가 있었다: gloomy + about + something"
+  pattern: "gloomy + about + 명사"
+
+- word: "prototype"
+  reason: "문형 자리에 영어가 들어가 있었다: prototype + of + something"
+  pattern: "prototype + of + 명사"
+
+- word: "defensive"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + about/over + something"
+  pattern: "형용사 + about/over + 명사"
+
+- word: "frustration"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: frustration + about/with + something"
+  pattern: "frustration + about/with + 명사"
+
+- word: "ratify"
+  reason: "문형 자리에 영어가 들어가 있었다: ratify + something (법, 계약 등)"
+  pattern: "ratify + 명사 (법, 계약 등)"
+
+- word: "imbalance"
+  reason: "문형 자리에 영어가 들어가 있었다: imbalance + in + something"
+  pattern: "imbalance + in + 명사"
+
+- word: "unwilling"
+  reason: "문형 자리에 영어가 들어가 있었다: unwilling + to + do something"
+  pattern: "unwilling + to + 동사원형"
+
+- word: "dioxide"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (no article)"
+  pattern: "명사 (no article)"
+
+- word: "prudent"
+  reason: "문형 자리에 영어가 들어가 있었다: be prudent + about + something"
+  pattern: "be prudent + about + 명사"
+
+- word: "formulation"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: (a) formulation + of + 내용"
+  pattern: "(a) formulation + of + 내용"
+
+- word: "expectancy"
+  reason: "문형 자리에 영어가 들어가 있었다: expectancy + of + something"
+  pattern: "expectancy + of + 명사"
+
+- word: "unfavorable"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + for + 목적어"
+  pattern: "형용사 + for + 목적어"
+
+- word: "proprietorship"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: proprietorship + of + something"
+  pattern: "proprietorship + of + 명사"
+
+- word: "sustainability"
+  reason: "문형 자리에 영어가 들어가 있었다: sustainability + of + something"
+  pattern: "sustainability + of + 명사"
+
+- word: "scratch"
+  reason: "문형 자리에 영어가 들어가 있었다: scratch + 목적어 (표면에서), scratch + something + off (제거하다)"
+  pattern: "scratch + 목적어 (표면에서), scratch + 명사 + off (제거하다)"
+
+- word: "brave"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + enough + to + 동사"
+  pattern: "형용사 + enough + to + 동사"
+
+- word: "restrain"
+  reason: "문형 자리에 영어가 들어가 있었다: restrain + from + doing something"
+  pattern: "restrain + from + -ing"
+
+- word: "intelligent"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + enough + to + 동사"
+  pattern: "형용사 + enough + to + 동사"
+
+- word: "selective"
+  reason: "문형 자리에 영어가 들어가 있었다: selective + about + something"
+  pattern: "selective + about + 명사"
+
+- word: "speculate"
+  reason: "문형 자리에 영어가 들어가 있었다: speculate + about/on + something"
+  pattern: "speculate + about/on + 명사"
+
+- word: "reformist"
+  reason: "문형 자리에 영어가 들어가 있었다: reformist + (of + something)"
+  pattern: "reformist + (of + 명사)"
+
+- word: "pronounce"
+  reason: "문형 자리에 영어가 들어가 있었다: pronounce + something (단어, 이름 등)"
+  pattern: "pronounce + 명사 (단어, 이름 등)"
+
+- word: "dismissal"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: of + 사람"
+  pattern: "of + 사람"
+
+- word: "deliberate"
+  reason: "문형 자리에 영어가 들어가 있었다: deliberate + about + something"
+  pattern: "deliberate + about + 명사"
+
+- word: "approximation"
+  reason: "문형 자리에 영어가 들어가 있었다: approximation + of + something"
+  pattern: "approximation + of + 명사"
+
+- word: "outgoing"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + about/with + 사람"
+  pattern: "형용사 + about/with + 사람"
+
+- word: "continuity"
+  reason: "문형 자리에 영어가 들어가 있었다: continuity + of + something"
+  pattern: "continuity + of + 명사"
+
+- word: "reluctance"
+  reason: "문형 자리에 영어가 들어가 있었다: show reluctance + about/for + something"
+  pattern: "show reluctance + about/for + 명사"
+
+- word: "cover"
+  reason: "문형 자리에 영어가 들어가 있었다: cover + 목적어 (물건), cover + something + with + something (언제), cover + someone + in + something (옷, 보호)"
+  pattern: "cover + 목적어 (물건)"
+
+- word: "wonderful"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective (형용사)"
+  pattern: "wonderful + 명사"
+
+- word: "negative"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective"
+  pattern: "negative + 명사"
+
+- word: "global"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "global + 명사"
+
+- word: "powerful"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective (명사 앞에 쓰기)"
+  pattern: "powerful + 명사"
+
+- word: "active"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective"
+  pattern: "active + 명사"
+
+- word: "historical"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
+  pattern: "historical + 명사"
+
+- word: "dangerous"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: + 명사"
+  pattern: "dangerous + 명사"
+
+- word: "industrial"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective"
+  pattern: "industrial + 명사"
+
+- word: "necessarily"
+  reason: "문형 자리에 영어가 들어가 있었다: adverb (문장 중간에 쓰임)"
+  pattern: "not necessarily + 형용사"
+
+- word: "employment"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (불가산명사)"
+  pattern: "the + employment"
+
+- word: "relief"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (구체적인 상황 설명 필요)"
+  pattern: "a/the + relief"
+
+- word: "tiny"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "tiny + 명사"
+
+- word: "significantly"
+  reason: "문형 자리에 영어가 들어가 있었다: adverb + 문장 (수동태 문장에 자주 씀)"
+  pattern: "significantly + 문장 (수동태 문장에 자주 씀)"
+
+- word: "frequently"
+  reason: "문형 자리에 영어가 들어가 있었다: adverb (문장 중간에 위치)"
+  pattern: "주어 + frequently + 동사"
+
+- word: "variable"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: + noun"
+  pattern: "variable + 명사"
+
+- word: "presidential"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
+  pattern: "presidential + 명사"
+
+- word: "massive"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective"
+  pattern: "massive + 명사"
+
+- word: "severe"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
+  pattern: "severe + 명사"
+
+- word: "acquisition"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (이/가 + ...)"
+  pattern: "acquisition (이/가 + ...)"
+
+- word: "crack"
+  reason: "문형 자리에 영어가 들어가 있었다: crack + 목적어 (물건), crack + something + open (열다), crack + about/into + something (의심하다, 들여다보다)"
+  pattern: "crack + 목적어 (물건)"
+
+- word: "coverage"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: 보도/서비스 범위"
+  pattern: "coverage + 보도/서비스 범위"
+
+- word: "rarely"
+  reason: "문형 자리에 영어가 들어가 있었다: adverb (문장 중간에 쓰기)"
+  pattern: "주어 + rarely + 동사"
+
+- word: "constantly"
+  reason: "문형 자리에 영어가 들어가 있었다: adverb (동사 앞에 붙음)"
+  pattern: "constantly (동사 앞에 붙음)"
+
+- word: "evil"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
+  pattern: "evil + 명사"
+
+- word: "extraordinary"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "extraordinary + 명사"
+
+- word: "agricultural"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 농업, 농사"
+  pattern: "agricultural + 농업, 농사"
+
+- word: "shadow"
+  reason: "문형 자리에 영어가 들어가 있었다: shadow + 사람/물건 (그림자처럼 따라다니다), in the shadow of + something (어떤 것의 그림자에 가려지다)"
+  pattern: "shadow + 사람/물건 (그림자처럼 따라다니다)"
+
+- word: "bend"
+  reason: "문형 자리에 영어가 들어가 있었다: bend + 목적어 (물건), bend down (다운), bend over (넘어), bend + something + over (넘어)"
+  pattern: "bend + 목적어 (물건)"
+
+- word: "conventional"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective"
+  pattern: "conventional + 명사"
+
+- word: "eastern"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
+  pattern: "eastern + 명사"
+
+- word: "stroke"
+  reason: "문형 자리에 영어가 들어가 있었다: stroke + 목적어 (건강에 좋다), stroke + someone (건강에 좋다), stroke + someone (다른 의미)"
+  pattern: "stroke + 목적어 (건강에 좋다)"
+
+- word: "greatly"
+  reason: "문형 자리에 영어가 들어가 있었다: adverb + 부사어 (형용사/동사 앞에 쓰기)"
+  pattern: "greatly + 동사/형용사"
+
+- word: "impressive"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective (형용사)"
+  pattern: "impressive + 명사"
+
+- word: "literary"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective (문학과 관련된 것)"
+  pattern: "literary (문학과 관련된 것)"
+
+- word: "classical"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective (기타 형용사와 혼동할 수 있음)"
+  pattern: "classical (기타 형용사와 혼동할 수 있음)"
+
+- word: "psychological"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
+  pattern: "psychological + 명사"
+
+- word: "dramatically"
+  reason: "문형 자리에 영어가 들어가 있었다: adverb (동사 앞에 붙음)"
+  pattern: "dramatically (동사 앞에 붙음)"
+
+- word: "golden"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
+  pattern: "golden + 명사"
+
+- word: "horrible"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective (형용사)"
+  pattern: "horrible + 명사"
+
+- word: "abstract"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
+  pattern: "abstract + 명사"
+
+- word: "uncertainty"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (불확실함을 나타내는 명사)"
+  pattern: "uncertainty (불확실함을 나타내는 명사)"
+
+- word: "bitter"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective (형용사)"
+  pattern: "bitter + 명사"
+
+- word: "crispy"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective"
+  pattern: "crispy + 명사"
+
+- word: "bland"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective"
+  pattern: "bland + 명사"
+
+- word: "greasy"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "greasy + 명사"
+
+- word: "striped"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "striped + 명사"
+
+- word: "explanatory"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "explanatory + 명사"
+
+- word: "distractor"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (명사) + 이/가"
+  pattern: "distractor + 이/가"
+
+- word: "internship"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (인턴십은 명사예요)"
+  pattern: "internship (인턴십은 명사예요)"
+
+- word: "accomplishment"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (성과를 나타내는 명사)"
+  pattern: "accomplishment (성과를 나타내는 명사)"
+
+- word: "outdated"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "outdated + 명사"
+
+- word: "calculation"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: 계산 (수학/금전 등)"
+  pattern: "calculation + 계산 (수학/금전 등)"
+
+- word: "icy"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "icy + 명사"
+
+- word: "certification"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (자격, 자격증을 받다)"
+  pattern: "certification (자격, 자격증을 받다)"
+
+- word: "locally"
+  reason: "문형 자리에 영어가 들어가 있었다: adverb + 문장 (지역에 관련된 내용 설명)"
+  pattern: "동사 + locally"
+
+- word: "satisfactory"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: + 이/가"
+  pattern: "satisfactory + 이/가"
+
+- word: "antique"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "antique + 명사"
+
+- word: "internationally"
+  reason: "문형 자리에 영어가 들어가 있었다: adverb (동사 앞에 붙음)"
+  pattern: "internationally (동사 앞에 붙음)"
+
+- word: "architectural"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
+  pattern: "architectural + 명사"
+
+- word: "ray"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (단수), ray + of + something"
+  pattern: "ray (단수), ray + of + 명사"
+
+- word: "dull"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective (형용사, -이/가)"
+  pattern: "dull (형용사, -이/가)"
+
+- word: "fog"
+  reason: "문형 자리에 영어가 들어가 있었다: noun"
+  pattern: "a/the + fog"
+
+- word: "superb"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective"
+  pattern: "superb + 명사"
+
+- word: "copyright"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: + 권리 (법적 권리)"
+  pattern: "copyright + 권리 (법적 권리)"
+
+- word: "fixture"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (고정된 물건을 나타내는 명사)"
+  pattern: "fixture (고정된 물건을 나타내는 명사)"
+
+- word: "unreliable"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "unreliable + 명사"
+
+- word: "chronic"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "chronic + 명사"
+
+- word: "maturity"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (성숙함, 성인의 성격)"
+  pattern: "maturity (성숙함, 성인의 성격)"
+
+- word: "marginal"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "marginal + 명사"
+
+- word: "entity"
+  reason: "문형 자리에 영어가 들어가 있었다: noun"
+  pattern: "a/the + entity"
+
+- word: "equilibrium"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: 주로 명사로 쓰임"
+  pattern: "equilibrium + 주로 명사로 쓰임"
+
+- word: "risky"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "risky + 명사"
+
+- word: "coalition"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: 없음"
+  pattern: "coalition + 없음"
+
+- word: "fraud"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (사기 행위를 나타내는 명사)"
+  pattern: "fraud (사기 행위를 나타내는 명사)"
+
+- word: "terrorism"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (불가산명사)"
+  pattern: "the + terrorism"
+
+- word: "alliance"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (관계, 단체)"
+  pattern: "alliance (관계, 단체)"
+
+- word: "scandal"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (사건/사례로 쓰임)"
+  pattern: "scandal (사건/사례로 쓰임)"
+
+- word: "statistical"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "statistical + 명사"
+
+- word: "constitutional"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
+  pattern: "constitutional + 명사"
+
+- word: "missile"
+  reason: "문형 자리에 영어가 들어가 있었다: noun"
+  pattern: "a/the + missile"
+
+- word: "dominant"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
+  pattern: "dominant + 명사"
+
+- word: "intangible"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "intangible + 명사"
+
+- word: "suicide"
+  reason: "문형 자리에 영어가 들어가 있었다: noun"
+  pattern: "a/the + suicide"
+
+- word: "volatile"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "volatile + 명사"
+
+- word: "coup"
+  reason: "문형 자리에 영어가 들어가 있었다: noun"
+  pattern: "a/the + coup"
+
+- word: "militant"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "militant + 명사"
+
+- word: "judicial"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사 (법적 절차, 법원 등)"
+  pattern: "judicial + 명사 (법적 절차, 법원 등)"
+
+- word: "certainty"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: 주격(의) + 목적어"
+  pattern: "certainty + 주격(의) + 목적어"
+
+- word: "corrupt"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective"
+  pattern: "corrupt + 명사"
+
+- word: "integrity"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (명사)"
+  pattern: "a/the + integrity"
+
+- word: "crude"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "crude + 명사"
+
+- word: "chaos"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (혼란의 상태)"
+  pattern: "chaos (혼란의 상태)"
+
+- word: "covenant"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (계약, 약속)"
+  pattern: "covenant (계약, 약속)"
+
+- word: "nasty"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective"
+  pattern: "nasty + 명사"
+
+- word: "doctrine"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (이론/교리로 쓰임)"
+  pattern: "doctrine (이론/교리로 쓰임)"
+
+- word: "provincial"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "provincial + 명사"
+
+- word: "endowment"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (기부금, 기금)"
+  pattern: "endowment (기부금, 기금)"
+
+- word: "unpopular"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
+  pattern: "unpopular + 명사"
+
+- word: "faction"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (명사, 불가산명사)"
+  pattern: "a/the + faction"
+
+- word: "congressional"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
+  pattern: "congressional + 명사"
+
+- word: "revolutionary"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
+  pattern: "revolutionary + 명사"
+
+- word: "cartel"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: + 의"
+  pattern: "cartel + 의"
+
+- word: "constituency"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (지역구/선거구)"
+  pattern: "constituency (지역구/선거구)"
+
+- word: "explosion"
+  reason: "문형 자리에 영어가 들어가 있었다: noun"
+  pattern: "a/the + explosion"
+
+- word: "static"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "static + 명사"
+
+- word: "spectacular"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective (형용사)"
+  pattern: "spectacular + 명사"
+
+- word: "notable"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "notable + 명사"
+
+- word: "instability"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (명사)"
+  pattern: "a/the + instability"
+
+- word: "bureaucratic"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
+  pattern: "bureaucratic + 명사"
+
+- word: "tribal"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
+  pattern: "tribal + 명사"
+
+- word: "oversight"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: 없음"
+  pattern: "oversight + 없음"
+
+- word: "turmoil"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: 주로 명사로 쓰여요 (혼란의 상태를 나타내요)"
+  pattern: "turmoil + 주로 명사로 쓰여요 (혼란의 상태를 나타내요)"
+
+- word: "externality"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: 외부 영향 (제3자의 영향을 받는 경우)"
+  pattern: "an/the + externality"
+
+- word: "ideology"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (이념은 명사로 쓰여요)"
+  pattern: "ideology (이념은 명사로 쓰여요)"
+
+- word: "entrepreneurial"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사 (사람/성향/능력)"
+  pattern: "entrepreneurial + 명사 (사람/성향/능력)"
+
+- word: "horror"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (명사)"
+  pattern: "a/the + horror"
+
+- word: "disastrous"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "disastrous + 명사"
+
+- word: "communism"
+  reason: "문형 자리에 영어가 들어가 있었다: noun"
+  pattern: "a/the + communism"
+
+- word: "deficiency"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (명사)"
+  pattern: "a/the + deficiency"
+
+- word: "offensive"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "offensive + 명사"
+
+- word: "dictatorship"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (정치적 개념)"
+  pattern: "dictatorship (정치적 개념)"
+
+- word: "globally"
+  reason: "문형 자리에 영어가 들어가 있었다: adverb (형용사/동사 앞에 쓰기)"
+  pattern: "동사 + globally"
+
+- word: "colonial"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
+  pattern: "colonial + 명사"
+
+- word: "brutal"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  pattern: "brutal + 명사"
+
+- word: "dismal"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective (형용사)"
+  pattern: "dismal + 명사"
+
+# ── 문형만 바꿔도 남던 지적 마흔셋 — 예문이 보여주는 꼴로 맞춘다 ────
+#
+# 문형이 예문에 없는 전치사를 요구하고 있었다(`deep + in + 명사` 인데 예문은
+# The pool is deep). 예문 쪽이 자연스러우므로 문형을 예문에 맞춘다.
+
+- word: "deep"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "be + deep"
+
+- word: "match"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "match + 명사"
+
+- word: "cross"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "cross + 명사"
+
+- word: "gas"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "gas + 명사"
+
+- word: "equal"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "equal + 명사"
+
+- word: "recognition"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "recognition + 명사"
+
+- word: "angle"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "angle + 명사"
+
+- word: "cancellation"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "cancellation + 명사"
+
+- word: "turnover"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "turnover + 명사"
+
+- word: "advancement"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "advancement + 명사"
+
+- word: "recreation"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "recreation + 명사"
+
+- word: "consumption"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "consumption + 명사"
+
+- word: "relaxation"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "relaxation + 명사"
+
+- word: "complication"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "complication + 명사"
+
+- word: "sponsorship"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "sponsorship + 명사"
+
+- word: "stakeholder"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "stakeholder + 명사"
+
+- word: "impairment"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "impairment + 명사"
+
+- word: "subjective"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "subjective + 명사"
+
+- word: "retention"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "retention + 명사"
+
+- word: "distortion"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "distortion + 명사"
+
+- word: "conservation"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "conservation + 명사"
+
+- word: "negotiable"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "negotiable + 명사"
+
+- word: "imminent"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "be + imminent"
+
+- word: "rigorous"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "rigorous + 명사"
+
+- word: "effective"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "effective + 명사"
+
+- word: "fair"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "fair + 명사"
+
+- word: "funny"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "be + funny"
+
+- word: "glad"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "be glad"
+
+- word: "moral"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "moral + 명사"
+
+- word: "helpful"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "be + helpful"
+
+- word: "competitive"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "competitive + 명사"
+
+- word: "emotional"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "be + emotional"
+
+- word: "apparent"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "be + apparent"
+
+- word: "accurate"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "be accurate"
+
+- word: "fantastic"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "fantastic + 명사"
+
+- word: "reliable"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "reliable + 명사"
+
+- word: "panic"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "panic + 명사"
+
+- word: "precise"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "be + precise"
+
+- word: "energetic"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "energetic + 명사"
+
+- word: "uncomfortable"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "be + uncomfortable"
+
+- word: "sleepy"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "sleepy + 명사"
+
+- word: "conversion"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "conversion + 명사"
+
+- word: "rigid"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  pattern: "be + rigid"
+
+# ── 문형을 고치다 드러난 열일곱 ─────────────────────────────────────
+#
+# 문형만 바꾸려 했는데 선별기가 계속 잡아서 열어 보니, 문형 말고도 틀린 것이
+# 함께 있었다. 두 부류다 — 사전이 반박하는 '명사로만 쓰인다' 단정 여섯과,
+# 예문이 문형을 못 보여주는 열하나.
+
+- word: "gay"
+  reason: "**이 항목은 통째로 틀렸다.** 예문 'He is gay about new things.' 는 영어가 아니고, 'gay about something' 이라는 꼴도 없다. 게다가 실제로 쓰이는 뜻(동성애자인)을 '혼동될 수 있어요' 라고 밀어 두고, 지금은 거의 쓰지 않는 옛 뜻(쾌활한)을 주된 쓰임인 것처럼 적었다. 학습자가 그대로 외우면 사람 앞에서 쓸 수 없는 말을 배운다."
+  meaning_ko: "동성애자인"
+  pattern: "be + gay"
+  example: "My brother is gay."
+  usage_note: "동성애자라는 뜻이에요 — My brother is gay. 사람을 가리키는 말이라 조심해서 써요. 옛날에는 '쾌활한' 이라는 뜻으로도 썼지만 요즘은 그렇게 쓰지 않아요."
+  confused_with: [straight, proud]
+
+- word: "reference"
+  reason: "''reference' 는 명사로만 쓰이고' 가 사전보다 세다 — reference 에는 '언급하다' 라는 동사 뜻이 있다. 문형도 'reference + to + 명사' 인데 예문(a reference to this book)이 그것을 보여주지 못한다."
+  pattern: "a reference + to + 명사"
+  usage_note: "무엇을 가리켜 말한 것이에요 — a reference to this book. 책 뒤의 참고 문헌 목록도 references 라고 해요. 가리켜 말한다는 동사는 refer to 예요."
+
+- word: "secret"
+  reason: "''secret' 은 명사로만 쓰이고, 'secrete' 는 비밀을 숨기는 동사예요' 가 둘 다 틀렸다 — secret 은 형용사로도 쓰고(a secret plan), secrete 는 '분비하다' 라는 아주 다른 낱말이다."
+  pattern: "a/the + secret"
+  usage_note: "남에게 말하지 않는 일이에요 — This is a secret. 형용사로도 써요: a secret plan(비밀 계획). 비밀을 지킨다고 할 때는 keep a secret 이라고 해요."
+  confused_with: [private, hidden]
+
+- word: "tone"
+  reason: "''Tone' 은 명사로만 쓰이고' 가 사전보다 세고, 문형 자리에 '명사 (a + tone)' 처럼 문법 용어가 들어가 있었다."
+  pattern: "a/the + tone"
+  usage_note: "목소리나 글에서 느껴지는 결이에요 — a calm tone. 색의 느낌을 말할 때도 써요: warm tones. 귀에 들리는 소리 자체는 sound 예요."
+
+- word: "proof"
+  reason: "'‘Proof’ 는 명사로만 쓰이고, ‘proving’ 과는 다르게 쓰입니다' 는 낱말과 동사의 -ing 형을 견주는 것이라 자리가 맞지 않고, 사전에는 proof 의 동사 뜻도 있다. 문형도 'proof (e.g.' 로 잘려 있었다."
+  pattern: "proof + of + 명사"
+  usage_note: "사실임을 보여 주는 것이에요 — proof of your identity. 무엇의 증거인지는 of 로 붙여요. 증명한다는 동사는 prove 예요."
+
+- word: "closure"
+  reason: "''closure' 는 명사로만 쓰이고' 가 사전보다 세다. 그리고 '한국어 마무리보다 더 공식적인 표현' 은 한국어끼리만 견준다."
+  pattern: "closure + on + 명사"
+  usage_note: "일을 매듭짓는 것이에요 — closure on this project. 가게나 길이 닫히는 것도 closure 라고 해요: road closure. 닫는다는 동사는 close 예요."
+
+- word: "outrage"
+  reason: "''outrage' 는 명사로만 쓰이고' 가 사전보다 세다 — 동사 뜻도 있다."
+  pattern: "outrage + at + 명사"
+  usage_note: "몹시 화가 난 마음이에요 — express outrage at the delay. 무엇에 화가 났는지는 at 으로 붙여요. angry 보다 훨씬 센 말이라 아무 데나 쓰지 않아요."
+
+- word: "indication"
+  reason: "문형이 'a sign of + 명사' 라 표제어가 아예 빠져 있었다 — indication 을 배우는 칸에 sign 이 적혀 있다."
+  pattern: "an indication + of + 명사"
+  usage_note: "무엇을 알려 주는 표시예요 — an indication of danger. 무엇의 표시인지는 of 로 붙여요. 가리켜 알려 준다는 동사는 indicate 예요."
+
+- word: "differently"
+  reason: "문형이 'do + 명사 + differently' 인데 예문(Can you speak English differently?)에 do 가 없다. 설명도 한국어 '다르게' 와만 견주고 differently 에 대해서는 말하지 않는다."
+  pattern: "동사 + differently"
+  usage_note: "'다르게' 라는 뜻으로 동사 뒤에 붙여요 — speak differently, think differently. 형용사는 different 예요: a different way."
+
+- word: "probable"
+  reason: "문형 'probable + to be + 명사' 는 없는 꼴이다 — probable 은 to be 를 받지 않는다. 예문(The probable cause)도 명사 앞에 붙는 꼴이다."
+  pattern: "probable + 명사"
+  usage_note: "그럴 것 같다는 뜻이에요 — the probable cause. 문장으로 말할 때는 It's probable that ~ 을 써요. 더 쉬운 말은 likely 예요."
+
+- word: "outage"
+  reason: "문형이 '+ of + 서비스' 로 표제어 없이 더하기 기호부터 시작한다."
+  pattern: "an/the + outage"
+  usage_note: "전기나 인터넷이 끊긴 일이에요 — an internet outage, a power outage. 얼마나 끊겼는지 말할 때가 많아요: a two-hour outage."
+
+- word: "emission"
+  reason: "문형이 'emission + of + 물질' 인데 예문(reduce carbon emission)에 of 가 없다. 설명의 ''음식의 배출' 은 emission X' 도 학습자가 물어볼 일이 없는 예다."
+  pattern: "carbon + emission"
+  usage_note: "공기 중으로 내보내는 것이에요 — carbon emission, reduce emissions. 주로 매연이나 온실가스를 두고 써요."
+
+- word: "ambition"
+  reason: "문형이 'have + ambition + to + 동사원형' 인데 예문(My ambition is to become a manager)에 have 가 없다."
+  pattern: "an/the + ambition"
+  usage_note: "이루고 싶은 큰 목표예요 — My ambition is to become a manager. 무엇이 되고 싶다고 할 때 to 와 동사원형을 붙여요. dream 보다 더 이루려고 애쓰는 느낌이에요."
+
+- word: "motive"
+  reason: "문형이 'have + motive' 인데 예문(What is your motive for this decision?)에 have 가 없다."
+  pattern: "a/the + motive (+ for + 명사)"
+  usage_note: "그렇게 한 속뜻이에요 — your motive for this decision. 무엇에 대한 동기인지는 for 로 붙여요. 겉으로 대는 까닭은 reason 이에요."
+
+- word: "directive"
+  reason: "문형이 'give + 사람 + a directive' 인데 예문(Please follow the directive from the manager)에 give 가 없다."
+  pattern: "a/the + directive"
+  usage_note: "윗사람이 내리는 지시예요 — follow the directive. 누구에게서 온 지시인지는 from 으로 붙여요. 더 센 말은 an order 예요."
+
+- word: "segmentation"
+  reason: "문형이 'segmentation + of + 대상' 인데 예문(customer segmentation)에 of 가 없다 — 앞에 붙여 쓰는 것이 더 흔한 꼴이다."
+  pattern: "명사 + segmentation"
+  usage_note: "여럿을 무리로 나누는 일이에요 — customer segmentation, market segmentation. 나눈다는 동사는 segment 예요."
+
+- word: "instinct"
+  reason: "문형이 'have + instinct' 인데 예문(I trust my instinct in business)에 have 가 없다."
+  pattern: "my/the + instinct"
+  usage_note: "배우지 않고도 아는 느낌이에요 — trust my instinct. 무엇에 대한 감인지는 for 로 붙여요: an instinct for business."
+
+# ── 재귀대명사 셋 — yourself·themselves 와 같은 자리 ──────────────
+#
+# 문형 자리에 'reflexive pronoun' 이라는 영어 문법 용어가 그대로 있었다.
+# 표제어가 대명사라 자동 치환에서 빠졌는데, 왕초보가 읽을 칸이 아닌 것은 같다.
+
+- word: "myself"
+  reason: "문형 자리에 'reflexive pronoun' 이라는 영어 문법 용어가 들어가 있었다."
+  pattern: "동사 + myself"
+  usage_note: "'나 자신' 이에요. 하는 사람과 받는 사람이 같을 때 써요 — I hurt myself. 혼자 힘으로 했다고 할 때도 써요: I made it myself."
+
+- word: "herself"
+  reason: "문형 자리에 'reflexive pronoun' 이라는 영어 문법 용어가 들어가 있었다."
+  pattern: "동사 + herself"
+  usage_note: "'그 여자 자신' 이에요. 하는 사람과 받는 사람이 같을 때 써요 — She hurt herself. 남자는 himself, 나는 myself 예요."
+
+- word: "ourselves"
+  reason: "문형 자리에 'reflexive pronoun' 이라는 영어 문법 용어가 들어가 있었다."
+  pattern: "동사 + ourselves"
+  usage_note: "'우리 자신' 이에요. 하는 사람과 받는 사람이 같을 때 써요 — We hurt ourselves. 한 사람이면 myself, 그들이면 themselves 예요."
