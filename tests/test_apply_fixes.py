@@ -215,3 +215,19 @@ def test_the_real_fix_files_have_no_unquoted_booleans():
     for path in (apply_fixes.FIXES, apply_fixes.GLOSS_FIXES):
         fixes = yaml.safe_load(path.read_text(encoding="utf-8")) or []
         assert apply_fixes.yaml_booleans(fixes) == [], f"{path.name} 에 따옴표 없는 낱말이 있습니다"
+
+
+def test_no_word_appears_twice_in_the_fix_file():
+    """한 낱말이 두 번 나오면 **앞 항목이 중간 상태로 검사받는다.**
+
+    `apply_fixes` 는 항목마다 고친 값을 DB 값과 합쳐 선별기에 건다. 같은 낱말이
+    두 번 있으면 앞 항목은 "새 설명 + 옛 문형" 이라는, 실제로는 존재하지 않는
+    상태로 검사받아 경고를 낸다. 실제로 101개가 그렇게 쌓여 있었다.
+
+    `gloss_fixes.yaml` 은 이미 같은 시험이 있다(`test_every_recorded_gloss_fix_is_shaped_right`).
+    두 파일의 규칙이 서로 다를 이유가 없다.
+    """
+    fixes = yaml.safe_load(apply_fixes.FIXES.read_text(encoding="utf-8"))
+    words = [str(f["word"]) for f in fixes]
+    dupes = sorted({w for w in words if words.count(w) > 1})
+    assert dupes == [], f"두 번 이상 나오는 낱말: {dupes[:10]}"
