@@ -512,7 +512,36 @@ def screen(row: WordLike) -> list[Finding]:
     if len(row.usage_note) > MAX_USAGE_NOTE_CHARS:
         out.append(Finding("usage_note_too_long", "low", f"설명이 {len(row.usage_note)}자예요"))
 
+    if _korean_only_note(row.usage_note):
+        out.append(
+            Finding(
+                "note_compares_korean_only",
+                "low",
+                "설명이 한국어 낱말끼리만 견주고 영어를 말하지 않아요 — 사람이 봐 주세요",
+            )
+        )
+
     return out
+
+
+# "한국어 X 는 …" 으로 시작하면서 영어가 거의 없는 설명. **판정이 아니라 물음이다.**
+#
+# 왜 이 모양을 잡는가: 생성 프롬프트가 "한국어와 다른 점을 알려 주라" 고 시켰더니
+# 모델이 **한국어 낱말 둘을 견주고 끝내는** 글을 대량으로 썼다. `banquet` 의
+# "한국어 '연회' 는 주로 공식적인 자리에서 쓰지만, '대접' 은 더 일반적인 의미예요",
+# `batch` 의 "한국어 '묶음' 이나 '셋' 과 혼동하지만". 영어를 배우러 온 사람에게
+# 한국어 낱말 강의를 하는 셈이라 정보가 0이다.
+#
+# 정확하지는 않다 — 표본 12개에서 일곱이 실제 결함이었다(58%). 그래서 막지 않고
+# 검수 큐에만 올린다(`cloze._ASKS_A_HUMAN`). 480개가 걸린다.
+_KOREAN_ONLY = re.compile(r"^한국어\s")
+
+
+def _korean_only_note(note: str) -> bool:
+    """설명이 한국어끼리만 견주는가. 영어 낱말이 한 개 이하면 그렇게 본다."""
+    if not _KOREAN_ONLY.match(note or ""):
+        return False
+    return len(re.findall(r"[A-Za-z]{2,}", note)) <= 1
 
 
 _MEANING_SPLIT = re.compile(r"[,;·/]")

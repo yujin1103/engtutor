@@ -339,7 +339,12 @@ def is_safe_to_serve(row) -> bool:
 #
 # 검수 큐에서는 그대로 보인다(`screen` 은 이 지적을 계속 낸다). 막는 것과 묻는
 # 것을 가르는 자리는 여기 하나다.
-_ASKS_A_HUMAN = frozenset({"countability_claim_unchecked"})
+_ASKS_A_HUMAN = frozenset({
+    "countability_claim_unchecked",
+    # 설명이 한국어끼리만 견주는 것. 표본에서 58%만 실제 결함이라 막을 근거가 없다 —
+    # 480개를 한꺼번에 연습장에서 지우면 고치기 전에 기능이 먼저 빈다.
+    "note_compares_korean_only",
+})
 
 
 def pos_of(word: str) -> frozenset[str] | None:

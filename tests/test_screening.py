@@ -644,3 +644,29 @@ def test_a_shared_usage_note_stays_high():
         _row(word="lend", example="Can you lend me a pen?", usage_note=shared),
     ]
     assert worst_severity(screen_all(rows)["lend"]) == "high"
+
+
+def test_a_note_that_only_compares_korean_words_is_flagged():
+    """**한국어 낱말끼리만 견주는 설명**을 검수 큐에 올린다.
+
+    생성 프롬프트가 "한국어와 다른 점을 알려 주라" 고 시켰더니 모델이 한국어 낱말
+    둘을 견주고 끝내는 글을 대량으로 썼다 — `banquet` 의 "한국어 '연회' 는 주로
+    공식적인 자리에서 쓰지만, '대접' 은 더 일반적인 의미예요". 영어를 배우러 온
+    사람에게 한국어 낱말 강의를 하는 셈이라 정보가 0이다. DB 에 480개다.
+
+    **판정이 아니라 물음이다** — 표본 12개에서 일곱만 실제 결함이었다(58%).
+    그래서 심각도가 low 이고 출제 문을 막지 않는다(`cloze._ASKS_A_HUMAN`).
+    """
+    row = _row(usage_note="한국어 '연회' 는 공식적인 자리에서 쓰지만, '대접' 은 더 일반적이에요.")
+    assert "note_compares_korean_only" in {f.code for f in screen(row)}
+
+
+def test_a_note_that_actually_teaches_english_is_not_flagged():
+    """영어를 말하는 설명은 '한국어' 로 시작해도 걸리지 않는다."""
+    row = _row(
+        usage_note=(
+            "한국어와 순서가 뒤집혀요. '제 가족의 사진' 은 a photo of my family 처럼 "
+            "사진이 먼저 나와요."
+        )
+    )
+    assert "note_compares_korean_only" not in {f.code for f in screen(row)}

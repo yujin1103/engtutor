@@ -6863,10 +6863,6 @@
   reason: "문형 자리에 영어가 들어가 있었다: set a precedent (+ for + something)"
   pattern: "set a precedent (+ for + 명사)"
 
-- word: "extremist"
-  reason: "문형 자리에 영어가 들어가 있었다: extremist + (of + something) (정치, 종교 등)"
-  pattern: "extremist + (of + 명사) (정치, 종교 등)"
-
 - word: "reinforcement"
   reason: "문형 자리에 영어가 들어가 있었다: reinforcement + of + something"
   pattern: "reinforcement + of + 명사"
@@ -8505,3 +8501,36 @@
   reason: "설명이 '한국어 표시하다와 혼동할 수 있어요 ... 표시하다는 더 일반적인 표현이에요' 로 한국어끼리만 견주고 끝난다. 문형의 'tag + 목적어 (+ on/with + 대상)' 도 예문(tag your luggage with your name)이 with 만 보여준다."
   pattern: "tag + 목적어 + with + 명사"
   usage_note: "이름표나 꼬리표를 붙인다는 뜻이에요 — tag your luggage with your name. 무엇을 적어 붙이는지는 with 로 말해요. 붙이는 그 표 자체도 a tag 예요."
+
+# ── 새 검사(한국어끼리만 견주는 설명)의 표본 열둘 중 일곱 ──────────────
+#
+# 480개가 걸리는데 자동으로 고칠 수는 없어서(표본 정확도 58%) 사람이 읽어야 한다.
+# 여기 일곱은 그 표본에서 실제로 나빴던 것들이다.
+
+- word: "arbitrage"
+  reason: "'한국어 차익과 혼동하지만, arbitrage 은 특정 시장 간 차이를 이용하는 전략을 말해요' 는 앞뒤가 같은 말이라 무엇을 혼동하지 말라는 것인지 알 수 없다."
+  usage_note: "같은 물건이 두 시장에서 값이 다를 때, 싼 쪽에서 사서 비싼 쪽에 팔아 차익을 얻는 일이에요. 값이 오르기를 기다리는 것이 아니라 값 차이로 버는 것이라 위험이 거의 없다고 봐요."
+
+- word: "banquet"
+  reason: "'한국어 연회는 주로 공식적인 자리에서 쓰지만, 대접은 더 일반적인 의미예요' 는 한국어 두 낱말만 견주고 banquet 에 대해서는 마지막 한 마디뿐이다."
+  usage_note: "여러 사람을 불러 크게 차린 식사 자리예요 — a wedding banquet, a company banquet. 회사나 단체가 여는 공식 행사에 써요. 그냥 저녁 모임은 a dinner 라고 해요."
+
+- word: "batch"
+  reason: "'한국어 묶음이나 셋과 혼동하지만' 에서 '셋' 은 batch 와 아무 상관이 없고, 뒤 문장의 '한 배치의 제품' 도 영어를 그대로 옮긴 말이다."
+  usage_note: "한 번에 함께 만들거나 다루는 한 무더기예요 — a batch of cookies, the first batch. 한 번에 몰아서 처리한다고 할 때도 써요: process them in batches."
+
+- word: "extremist"
+  reason: "'회사 문화나 의견 차이를 설명할 때 유용해요' 는 잘못된 안내다 — extremist 는 사람을 강하게 규정하는 말이라 회사 얘기에 얹을 낱말이 아니다. / 문형 자리에 영어가 들어가 있었다: extremist + (of + something) (정치, 종교 등)"
+  usage_note: "생각이나 행동이 아주 치우친 사람이에요. 주로 정치나 종교를 두고 쓰고, 남을 가리켜 말하면 아주 센 비난이 되므로 조심해서 써요."
+
+- word: "underpin"
+  reason: "'underpin 은 결과가 있는 상황에서 쓰입니다. 기반은 단순히 존재만을 나타내요' 는 뜻을 알 수 없는 말이다."
+  usage_note: "밑에서 받쳐 준다는 뜻이에요 — Trust underpins every good team(믿음이 좋은 팀을 떠받쳐요). 눈에 보이지 않게 바탕이 되는 것에 써요. 건물을 실제로 받치는 공사에도 씁니다."
+
+- word: "viable"
+  reason: "''가능한' 은 더 넓은 의미를 가진다기 때문에 혼동하기 쉬워요' 는 비문이다('가지기 때문에')."
+  usage_note: "해 볼 만하다, 되겠다는 뜻이에요 — a viable plan(해 볼 만한 계획). 그냥 일어날 수 있다는 possible 과 달리, 실제로 해서 굴러갈 수 있다는 쪽을 가리켜요."
+
+- word: "alternatively"
+  reason: "'한국어 또는보다 공식적인 상황에서 써요' 는 한국어와 영어를 격식으로 견주는 말이라 성립하지 않는다."
+  usage_note: "다른 길을 내놓을 때 문장 앞에 놓는 말이에요 — Alternatively, we can meet on Friday(아니면 금요일에 만나도 돼요). 둘 중 하나를 고르라는 or 보다 정중해요."
