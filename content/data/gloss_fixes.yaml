@@ -2887,3 +2887,269 @@
 - word: "warm"
   example_ko: "이 수프는 따뜻해요."
   reason: "'수프'는 받침이 없어 '는'이 맞다."
+
+# ── 빈도 1131~1560위 ──────────────────────────────────────────
+
+- word: "aid"
+  example_ko: "의사가 저에게 응급처치를 해 주었어요."
+  reason: "'제가 받은 응급처치를 해 주었어요'는 주어가 엉킨 비문이라 화면에 그대로 나가면 안 된다."
+
+- word: "annual"
+  example_ko: "우리는 12월에 연례 회의를 해요."
+  reason: "'연간 회의'는 한국어에 없는 말이고 '회의를 가지고 있다'는 have 번역투가 맞다 — '연례 회의'가 표준어이고 낱말 뜻 흔적도 남는다."
+
+- word: "arrange"
+  example_ko: "저는 월요일로 회의를 잡았어요."
+  reason: "바뀐 예문의 자연스러운 해석이고 고친 뜻('잡다')이 해석에 그대로 남는다."
+
+- word: "award"
+  example_ko: "그들은 그에게 상을 주었어요."
+  reason: "주어 They 가 빠져 있던 것을 채운 것뿐이라 새 거짓이 들어갈 자리가 없다."
+
+- word: "battle"
+  example_ko: "그들은 오랜 전투를 치렀어요."
+  reason: "옛 해석 '적과 싸웠어요' 는 battle 이 아니라 fought 를 떠올리게 해 빈칸 지시문 구실을 못 했다."
+
+- word: "camp"
+  example_ko: "우리는 숲에서 캠핑할 거예요."
+  reason: "'캠핑을 가요' 는 조사가 어긋나고 going to 의 미래도 살지 않았다."
+
+- word: "category"
+  example_ko: "코미디는 인기 있는 영화 분류예요."
+  reason: "바뀐 예문의 해석으로 맞고 '분류'가 남아 빈칸 단서도 살아 있다."
+
+- word: "cheap"
+  example_ko: "이 셔츠는 싸요."
+  reason: "새 usage_note 가 cheap 에 '싸구려' 느낌이 있다고 가르치는데 해석만 중립적인 '저렴'을 쓰면 같은 항목 안에서 어긋난다."
+
+- word: "circumstance"
+  example_ko: "이런 상황이라면 저는 안 된다고 하겠어요."
+  reason: "I would say 를 '말할게요' 로 옮기면 가정이 약속이 되는 게 맞고, FIX 는 23자로 검증기를 통과했다."
+
+- word: "coach"
+  example_ko: "제 축구 코치님은 아주 친절해요."
+  reason: "바뀐 예문을 그대로 옮겼고 한국어도 자연스럽다."
+
+- word: "code"
+  example_ko: "웹사이트에 들어갈 코드를 좀 작성해야 해요."
+  reason: "바뀐 예문의 some 까지 옮겼고 한국어가 자연스럽다."
+
+- word: "consideration"
+  example_ko: "우리는 가격도 고려해야 해요."
+  reason: "옛 해석 '고려사항을 생각하다' 는 겹말이었고 새 해석은 영어와 맞는 자연스러운 한국어다."
+
+- word: "contrast"
+  example_ko: "이 셔츠는 바지와 확 대비돼요."
+  reason: "'대비가 나다'가 없는 말이라는 지적은 옳지만, FIX 는 영어 원문에 없는 '색'을 지어 넣고 빈칸 단서를 '달라요'로 바꿔 학습자가 different 를 답하게 만든다."
+
+- word: "corner"
+  example_ko: "책은 방 구석에 있어요."
+  reason: "in the corner of the room 은 방 안쪽 구석이지 물건의 각진 가장자리(모서리)가 아니다."
+
+- word: "cry"
+  example_ko: "장난감이 부서졌다고 울지 마세요."
+  reason: "spilled 는 '엎지른'이고 over 도 '~를 위해'가 아니라 원래 해석이 두 군데 틀린 것이 맞다."
+
+- word: "defense"
+  example_ko: "그 나라는 국방력이 아주 강해요."
+  reason: "나라를 지키는 힘은 한국어로 '국방력'이고, 바뀐 meaning_ko 의 '국방'과도 이어져 빈칸 단서가 남는다."
+
+- word: "desire"
+  example_ko: "많은 사람이 더 나은 삶을 바라요."
+  reason: "바뀐 예문에 맞는 자연스러운 해석이다."
+
+- word: "distance"
+  example_ko: "서울에서 부산까지 거리가 얼마나 되나요?"
+  reason: "예문을 바꿨으니 해석도 함께 바뀌어야 한다."
+
+- word: "double"
+  example_ko: "이건 값이 두 배예요."
+  reason: "'배' 뒤에는 '예요'가 맞고, 원문은 This 를 '이 가격'으로 옮겨 주어까지 틀어져 있었다."
+
+- word: "duty"
+  example_ko: "당신을 돕는 것이 제 의무예요."
+  reason: "'도우는' 은 없는 활용형이 맞고, 해요체로도 맞춰진다."
+
+- word: "edge"
+  example_ko: "컵을 탁자 가장자리 가까이에 두지 마세요."
+  reason: "'걷고세요' 는 없는 말이고 예문도 바뀌었다."
+
+- word: "email"
+  example_ko: "나중에 이메일 보내 드릴게요."
+  reason: "'이메일로 보내겠습니다' 는 무언가를 이메일이라는 수단으로 보낸다는 뜻이 되어 원문과 다르고, later 도 '나중에' 가 맞다."
+
+- word: "entire"
+  example_ko: "식사 전체가 정말 맛있었어요."
+  reason: "'전체 식사'가 어색하다는 지적은 맞고 해법도 지적 본인이 적은 '명사 뒤에 붙이기'가 맞는데, 제출된 '처음부터 끝까지'는 뜻 흔적을 지워 프로젝트의 reject_unrelated_gloss 검사에 실제로 걸린다(빈칸 단서 소실)."
+
+- word: "expert"
+  example_ko: "그녀는 요리 전문가예요."
+  reason: "'요리에 잘 알아요' 는 조사가 틀린 비문이고(요리를 잘 알다), an expert 라는 이름씨 뜻도 살아난다."
+
+- word: "expression"
+  example_ko: "그녀의 표정을 보니 화가 난 게 분명했어요."
+  reason: "showed 를 '듯 했습니다' 로 옮기면 드러난 사실이 짐작이 되고 띄어쓰기도 틀린 게 맞다."
+
+- word: "failure"
+  example_ko: "그 계획은 실패였어요."
+  reason: "바뀐 예문의 정확한 해석이고, 검증기(길이·뜻 흔적)를 통과했다."
+
+- word: "feed"
+  example_ko: "제가 개한테 밥 줘도 될까요?"
+  reason: "feed 는 '기르다' 가 아니라서 원래 해석이 다른 낱말(keep/raise)의 뜻이었다."
+
+- word: "flight"
+  example_ko: "저는 지난주에 파리행 비행기를 탔어요."
+  reason: "'비행을 타다'는 없는 말이고 '지난주'는 한 낱말이라 붙여 쓰는 것이 맞다."
+
+- word: "football"
+  example_ko: "축구 하세요?"
+  reason: "한국어 '풋볼'은 오히려 미식축구를 떠올리게 해서 원래 해석이 뜻을 반대로 끌고 갔다."
+
+- word: "gas"
+  example_ko: "차에 기름을 넣어야 해요."
+  reason: "'차가 연료가'는 주격 조사가 겹쳐 비문이 맞고, 자동차 연료를 '기름'이라 부르는 것도 사실이다."
+
+- word: "importance"
+  example_ko: "운동이 얼마나 중요한지는 누구나 알아요."
+  reason: "예문을 바꿨으니 해석도 따라가야 하고, 새 해석이 새 예문과 맞는다."
+
+- word: "labor"
+  example_ko: "집을 짓는 데는 힘든 노동이 많이 들어요."
+  reason: "예문을 바꿨으니 해석도 함께 바뀌어야 한다."
+
+- word: "lady"
+  example_ko: "저기 저 여자분이 제 선생님이세요."
+  reason: "'여사님' 은 That lady 가 아니라 다른 호칭이 맞고, FIX 는 검증기를 통과했다."
+
+- word: "launch"
+  example_ko: "그들은 지난주에 새 앱을 내놓았어요."
+  reason: "'지난주'는 붙여 쓰는 한 낱말이 맞다."
+
+- word: "leg"
+  example_ko: "다리가 아파요."
+  reason: "바뀐 예문에 맞고 A1 수준 한국어다."
+
+- word: "marriage"
+  example_ko: "저희 부모님은 결혼 생활이 행복하세요."
+  reason: "바뀐 예문의 자연스러운 해석이고 검증기를 통과했다."
+
+- word: "meal"
+  example_ko: "저는 아주 든든한 식사를 했어요."
+  reason: "'식사가 있었어요' 가 번역투 비문인 지적은 옳지만, '밥을 든든하게 먹었어요' 는 표제어의 뜻을 지워 confused_with 에 이미 있는 food·dinner 쪽으로 답을 끌고 간다."
+
+- word: "neighbor"
+  example_ko: "제 이웃은 아주 친절해요."
+  reason: "예문이 My neighbor 인데 NOW 에 소유가 없는 것이 맞고, FIX 는 검증기(clean_gloss·reject_unrelated_gloss)를 통과했다."
+
+- word: "package"
+  example_ko: "그들은 쿠키를 작은 상자에 담아 포장해요."
+  reason: "바뀐 예문의 뜻을 그대로 옮겼고 한국어도 자연스럽다."
+
+- word: "peace"
+  example_ko: "우리는 세계 평화를 바라요."
+  reason: "'세상에서 평화를 원해요'는 조사가 어긋나 한국어로 어색하다."
+
+- word: "possibly"
+  example_ko: "내일 비가 올 수도 있어요."
+  reason: "바뀐 예문을 그대로 옮긴 자연스러운 한국어다."
+
+- word: "print"
+  example_ko: "이 문서 좀 출력해 주시겠어요?"
+  reason: "Can you ~? 를 '~할 수 있나요'로 옮기면 부탁이 능력 질문으로 바뀐다."
+
+- word: "reader"
+  example_ko: "그녀는 책을 잘 읽어요."
+  reason: "a good reader 는 읽는 실력을 말하는 관용이라 '좋은 독자' 와 다르다."
+
+- word: "regular"
+  example_ko: "꾸준한 운동은 몸에 좋아요."
+  reason: "위에서 바꾼 예문에 맞춘 해석이다."
+
+- word: "reply"
+  example_ko: "나중에 이메일에 답장할게요."
+  reason: "reply to your email 은 이메일이 답장의 대상이지 수단이 아니라, '이메일로'는 뜻이 다른 문장이 된다."
+
+- word: "revenue"
+  example_ko: "그 회사의 매출이 지난달에 늘었어요."
+  reason: "'지난달' 붙여쓰기는 맞는 지적이나 \"다른 항목은 모두 해요체\" 는 사실이 아니며(같은 묶음의 nurse·investigation·weapon 이 습니다체다), 고친 문장 자체는 영어와 맞고 자연스럽다."
+
+- word: "river"
+  example_ko: "우리 집 근처에 강이 있어요."
+  reason: "my house 는 '우리 집' 이고 '저 집' 은 남의 집을 가리켜 뜻이 달라진다. ```"
+
+- word: "roll"
+  example_ko: "공을 저한테 굴려 주시겠어요?"
+  reason: "바뀐 예문과 맞고, 원래 해석 '반죽을 굴려도'가 동작을 잘못 옮긴 것도 맞다."
+
+- word: "satisfy"
+  example_ko: "그녀의 대답에 선생님이 만족하셨어요."
+  reason: "예문을 바꿨으니 해석도 함께 바뀌어야 한다."
+
+- word: "scale"
+  example_ko: "그 도시는 집을 대규모로 짓고 있어요."
+  reason: "바뀐 예문의 해석으로 맞고 '대규모'가 남아 단서도 살아 있다."
+
+- word: "scheme"
+  example_ko: "도둑은 지갑을 훔칠 꿍꿍이가 있었어요."
+  reason: "'계획' 으로는 나쁜 뜻이 사라진다는 지적과 '꿍꿍이' 는 옳지만 '꿍꿍이를 품다' 는 어색한 짝이라(꿍꿍이는 '있다' 와 붙는다) 조사를 고쳤고, had 와도 더 맞는다."
+
+- word: "secretary"
+  example_ko: "그녀는 그 회사의 비서예요."
+  reason: "'에서'는 행위의 장소를 표시하는 조사라 '이다' 서술어와 붙으면 어색한 것이 맞다."
+
+- word: "shift"
+  example_ko: "그녀는 의자를 왼쪽으로 옮겼어요."
+  reason: "'기울다'는 tilt/lean 이라 shift 의 뜻이 아닌 것이 맞다."
+
+- word: "ship"
+  example_ko: "그들은 어제 그 소포를 보냈어요."
+  reason: "package 의 표준 대응어는 '소포'이고 '박스'로 두면 box 와 구별이 사라진다."
+
+- word: "speaker"
+  example_ko: "이 스피커는 소리가 아주 커요."
+  reason: "loud 를 '시끄럽다' 로 옮기면 없던 부정적 어감이 붙는 게 맞고, 덤으로 합니다체가 해요체로 맞춰진다."
+
+- word: "spirit"
+  example_ko: "그는 의욕이 넘쳐요."
+  reason: "have a lot of spirit 은 기운·의욕이 넘친다는 뜻이고 '정신이 강하죠' 는 한국어로도 잘 쓰지 않는다."
+
+- word: "spot"
+  example_ko: "지붕 위에 있는 고양이를 발견했어요."
+  reason: "'집 루프' 는 한국어가 아니고 roof 는 지붕이 맞다."
+
+- word: "struggle"
+  example_ko: "저는 수학 시험 때문에 애를 먹었어요."
+  reason: "'시험에 힘들어했어요' 는 조사가 어긋난다."
+
+- word: "suit"
+  example_ko: "이 정장은 저한테 너무 커요."
+  reason: "'정장은 제가 크다'는 주어가 어긋난 비문이다."
+
+- word: "threat"
+  example_ko: "그 불은 마을에 위협이 돼요."
+  reason: "'비가 오는 위험' 은 한국어로 성립하지 않는 말이었고 새 해석은 바뀐 예문과 맞는다."
+
+- word: "traffic"
+  example_ko: "여기는 교통량이 정말 많아요."
+  reason: "'교통이 많다' 가 비문인 지적은 옳지만, 해석은 빈칸 문제의 지시문이라 '차가 많아요' 로 바꾸면 표제어의 뜻이 통째로 사라져 학습자가 car 를 답하게 된다(검증기는 usage_note 의 '많' 에 우연히 걸려 통과시킨다)."
+
+- word: "trend"
+  example_ko: "패션에 새로운 유행이 있어요."
+  reason: "바뀐 예문을 그대로 옮긴 자연스러운 해석이다."
+
+- word: "truth"
+  example_ko: "이 일의 진실이 뭔가요?"
+  reason: "'이건 무슨 진실인가요'는 한국어로 성립하지 않고 원문 뜻도 담지 못한다."
+
+- word: "user"
+  example_ko: "이 앱은 사용자가 많아요."
+  reason: "바뀐 예문과 맞고 문장도 짧다."
+
+- word: "wave"
+  example_ko: "그는 손을 흔들며 잘 가라고 인사했어요."
+  reason: "'손을 휘두르다' 는 세게 내젓는 뜻이고 영어에 없는 '떠났어요' 가 덧붙어 있었다."
+
+- word: "winter"
+  example_ko: "저는 겨울을 안 좋아해요."
+  reason: "DB 예문이 I don't like winter. 라 해석이 정반대였다."

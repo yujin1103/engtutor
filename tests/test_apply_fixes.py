@@ -231,3 +231,29 @@ def test_no_word_appears_twice_in_the_fix_file():
     words = [str(f["word"]) for f in fixes]
     dupes = sorted({w for w in words if words.count(w) > 1})
     assert dupes == [], f"두 번 이상 나오는 낱말: {dupes[:10]}"
+
+
+def test_merge_fixes_folds_a_repeated_word_and_keeps_both_reasons():
+    """겹치는 항목을 접을 때 **뒤엣값이 이기고 근거는 둘 다 남는다.**
+
+    뒤엣값이 이기는 이유: 그것이 마지막 판단이다. 근거를 이어 붙이는 이유:
+    왜 고쳤는지가 이 파일의 값어치라, 앞의 근거를 덮으면 나중에 "이건 왜
+    이렇게 됐지" 를 답할 수 없다.
+
+    묶음으로 검수를 돌리면 앞 묶음에서 고친 낱말이 다음 묶음에 다시 올라온다 —
+    한 번은 101개가 겹쳐 있었다.
+    """
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "content"))
+    import merge_fixes  # noqa: E402
+
+    merged, folded = merge_fixes._merge(
+        [
+            {"word": "send", "reason": "앞 근거", "usage_note": "옛 설명", "pattern": "옛 문형"},
+            {"word": "send", "reason": "뒤 근거", "usage_note": "새 설명"},
+        ]
+    )
+    assert folded == 1
+    entry = merged["send"]
+    assert entry["usage_note"] == "새 설명", "뒤엣값이 이겨야 합니다"
+    assert entry["pattern"] == "옛 문형", "뒤 항목에 없는 칸은 그대로 남아야 합니다"
+    assert "앞 근거" in entry["reason"] and "뒤 근거" in entry["reason"]

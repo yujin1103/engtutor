@@ -5173,128 +5173,162 @@
   pattern: "be responsible + for + 명사"
 
 - word: "alternative"
-  reason: "문형 자리에 영어가 들어가 있었다: alternative + to + something"
+  reason: "문형 자리에 영어가 들어가 있었다: alternative + to + something / usage_note: 지적은 맞고 an alternative plan 도 실재하는 형용사 용법이지만, 이 앱에는 '길 묻기' 시나리오가 있어 '다른 길'이 도로로 읽힐 수 있으므로 같은 항목 example_ko 가 이미 쓰는 '다른 방법'으로 맞춘다."
   pattern: "alternative + to + 명사"
+  usage_note: "이미 있는 것 말고 다른 방법을 말할 때 써요. 여러 개를 물을 때는 What are the alternatives? 라고 해요. 명사 앞에 붙여 an alternative plan (다른 계획)처럼 쓰기도 해요."
 
 - word: "attitude"
-  reason: "문형 자리에 영어가 들어가 있었다: have + attitude + about/for + something"
-  pattern: "have + attitude + about/for + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: have + attitude + about/for + something / meaning_ko: 괄호가 '태도'를 '태도'로 풀던 자리를 실제 정보로 채웠고, 몸의 자세로 읽히던 첫 뜻을 없애 usage_note 와의 어긋남도 함께 지운다. / pattern: attitude for 는 이 뜻으로 쓰지 않는 말이 맞고, 새 문형은 예문 a bad attitude about work 를 그대로 설명한다. / usage_note: 나머지는 옳지만 bad attitude 는 '시큰둥함'보다 하기 싫어하거나 삐딱한 태도를 가리키는 말이라 그 한 곳만 좁힌다."
+  meaning_ko: "태도, 마음가짐 (어떤 일이나 사람을 대하는 마음)"
+  pattern: "have + a good/bad attitude + toward/about + 명사"
+  usage_note: "몸의 자세가 아니라 마음가짐을 뜻해요. a good attitude 는 열심히 하려는 마음, a bad attitude 는 하기 싫어하거나 삐딱한 마음이에요. 생각을 물을 때는 attitude 를 쓰기보다 How do you feel about this? 라고 하는 게 자연스러워요."
 
 - word: "double"
-  reason: "문형 자리에 영어가 들어가 있었다: double + 명사 / double + something"
-  pattern: "double + 명사 / double + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: double + 명사 / double + something / pattern: 같은 모양을 두 번 적어 두 갈래가 없던 자리를 채우고, 예문 double the price 의 the 를 문형이 설명하게 된다. / usage_note: \"two times 보다 강하게 느껴진다\"는 근거 없는 어감 주장이고 double check 는 그 자체가 한 동사라, 두 거짓을 빼고 the 라는 실제 규칙을 넣은 것이 맞다."
+  pattern: "double + the + 명사 / double + 명사"
+  usage_note: "값이나 크기가 두 배라고 말할 때 double the price, double the size 처럼 the 를 넣어요. twice the price 도 같은 뜻이에요. 한 번 더 확인한다고 할 때는 double-check 라고 붙여 말해요 — Let me double-check."
 
 - word: "progress"
   reason: "문형 자리에 영어가 들어가 있었다: make + progress (in + something)"
   pattern: "make + progress (in + 명사)"
 
 - word: "reply"
-  reason: "문형 자리에 영어가 들어가 있었다: reply + to + something (문장)"
+  reason: "문형 자리에 영어가 들어가 있었다: reply + to + something (문장) / usage_note: I didn't hear you. 도 엄연히 reply 라서 원문의 구분은 거짓이고, 새 안은 학습자가 실제로 틀리는 reply me / answer me 를 갈라 준다."
   pattern: "reply + to + 명사 (문장)"
+  usage_note: "뒤에 답하는 상대나 대상을 쓸 때는 꼭 to 를 넣어요 — reply to me, reply to your email. to 없이 reply me 라고 하면 틀려요. answer 는 to 없이 바로 붙여 answer me 라고 해요."
 
 - word: "intend"
-  reason: "문형 자리에 영어가 들어가 있었다: intend + 목적어 (to do something)"
-  pattern: "intend + 목적어 (to + 동사원형)"
+  reason: "문형 자리에 영어가 들어가 있었다: intend + 목적어 (to do something) / pattern: \"예문에 목적어가 없다\"는 근거는 to 부정사를 목적어로 보는 견해에서는 다툼의 여지가 있지만, 원문 표기는 intend somebody to ~ 로도 읽혀 예문과 어긋나므로 단순한 새 문형이 낫다."
+  pattern: "intend + to + 동사원형"
 
 - word: "suit"
-  reason: "문형 자리에 영어가 들어가 있었다: suit + 목적어 (의상), suit + someone + for something (적합하다)"
-  pattern: "suit + 목적어 (의상), suit + 사람 + for 명사 (적합하다)"
+  reason: "문형 자리에 영어가 들어가 있었다: suit + 목적어 (의상), suit + someone + for something (적합하다) / meaning_ko: '세트'가 아주 없는 뜻은 아니나(a suit of armour) 첫 뜻으로 두면 정장이 가려지고, 동사 suit 의 실제 쓰임은 '적합하다'보다 '어울리다'가 맞다. / pattern: suit somebody for something 은 쓰지 않는 모양이고(That color suits you. 처럼 사람만 바로 온다), 옷을 뜻할 때가 명사라는 것도 이제 문형에 드러난다. / usage_note: That color suits you. 와 Does Monday suit you? 는 일상에서 흔한 말이라 \"suitable 보다 덜 쓴다\"는 원문이 학습자에게 좋은 표현을 버리게 만들고 있었다."
+  meaning_ko: "정장, 양복; (옷·색이 사람에게) 어울리다"
+  pattern: "a/the + suit (옷) / suit + 사람 (어울리다)"
+  usage_note: "옷을 뜻하는 suit 와 '어울리다'라는 뜻의 suit 는 같은 낱말이에요. 남의 옷이나 머리 모양을 칭찬할 때 That color suits you. (그 색 잘 어울려요.) 라고 하면 아주 자연스러워요. 조건이 맞는다고 할 때도 써요 — Does Monday suit you?"
 
 - word: "percentage"
   reason: "문형 자리에 영어가 들어가 있었다: a + percentage + of + something"
   pattern: "a + percentage + of + 명사"
 
 - word: "spot"
-  reason: "문형 자리에 영어가 들어가 있었다: spot + 목적어 (사물/사람), spot + somebody + doing something"
+  reason: "문형 자리에 영어가 들어가 있었다: spot + 목적어 (사물/사람), spot + somebody + doing something / meaning_ko: '눈에 띠다' 는 오타이면서 주어 방향까지 반대라 예문(I spotted a cat.)과 어긋나고, FIX 는 방향을 바로잡는다."
+  meaning_ko: "찾아내다, 발견하다 (여럿 가운데서 알아보다)"
   pattern: "spot + 목적어 (사물/사람), spot + 사람 + -ing"
 
 - word: "importance"
-  reason: "문형 자리에 영어가 들어가 있었다: the importance of + something"
+  reason: "문형 자리에 영어가 들어가 있었다: the importance of + something / example: is big 은 importance 와 붙지 않는 연어이고, FIX 는 문형 'the importance of + 명사' 를 그대로 보여준다. / usage_note: 한국어 '중요하다' 가 형용사인 것도, This is importance. 가 안 되는 것도 맞다."
   pattern: "the importance of + 명사"
+  example: "Everyone knows the importance of exercise."
+  usage_note: "important 는 '중요한' 이라고 꾸며 주는 말이고, importance 는 그 중요함 자체를 가리키는 이름씨예요. This is important. 는 되지만 This is importance. 는 안 돼요."
 
 - word: "guide"
-  reason: "문형 자리에 영어가 들어가 있었다: guide + 목적어 (+ someone to + 장소)"
-  pattern: "guide + 목적어 (+ 사람 to + 장소)"
+  reason: "문형 자리에 영어가 들어가 있었다: guide + 목적어 (+ someone to + 장소) / pattern: 목적어와 사람을 겹쳐 적어 두 번 쓰라는 것처럼 읽히던 꼴이 정리되고, 예문 Can you guide me to the station? 과 정확히 맞는다. / usage_note: 'show 는 보여주다' 는 동어반복이 맞고, show me the way 가 더 흔하다는 것도 사실이다."
+  pattern: "guide + 사람 + to + 장소"
+  usage_note: "guide 는 앞장서서 데려다준다는 느낌이에요. 길만 물어볼 때는 Can you show me the way to the station? 이 훨씬 흔하게 쓰여요. guide 는 이름씨로 안내인, 안내 책자라는 뜻도 있어요."
 
 - word: "email"
-  reason: "문형 자리에 영어가 들어가 있었다: send + someone + an email"
-  pattern: "send + 사람 + an email"
+  reason: "문형 자리에 영어가 들어가 있었다: send + someone + an email / meaning_ko: 동사 email 에 '받다' 라는 뜻은 없다(받는 건 get an email). / pattern: 뜻은 동사인데 문형은 send 의 목적어인 명사만 보여주던 어긋남이 풀리고, 예문이 뒤쪽 형태를 그대로 보여준다."
+  meaning_ko: "이메일; 이메일을 보내다"
+  pattern: "email + 사람 / send + 사람 + an email"
 
 - word: "advertise"
-  reason: "문형 자리에 영어가 들어가 있었다: advertise + something (+ for + 제품/서비스)"
-  pattern: "advertise + 명사 (+ for + 제품/서비스)"
+  reason: "문형 자리에 영어가 들어가 있었다: advertise + something (+ for + 제품/서비스) / pattern: advertise for 는 구인 광고 쪽이라 NOW 가 틀렸고, 예문 They advertise their new product on TV. 가 product·on·TV 를 다 보여줘 57자로도 새 지적이 없다(돌려서 확인했다). / usage_note: '무슨 것을' 은 없는 말이 맞고, FIX 는 \"목적어가 꼭 있어야 한다\" 로 단정하지 않아 새 거짓을 만들지 않는다."
+  pattern: "advertise + 광고할 것 (+ on + 매체) — advertise a product on TV"
+  usage_note: "무엇을 광고하는지 함께 말해 주면 자연스러워요 — We advertise our restaurant online. 광고물 자체는 advertisement 이고, 줄여서 ad 라고 많이 씁니다."
 
 - word: "extent"
-  reason: "문형 자리에 영어가 들어가 있었다: to an extent + that-clause"
-  pattern: "to an extent + 문장"
+  reason: "문형 자리에 영어가 들어가 있었다: to an extent + that-clause / pattern: 자리를 문장 뒤로 옮긴 건 맞지만 원안대로면 예문이 쓰는 'to an extent' 가 문형에서 사라져 선별기가 \"some 가 예문에 없어요\"(example_ignores_pattern)를 새로 띄운다 — 실제로 돌려서 확인했다. / usage_note: NOW 의 뒷부분은 한국어 '정도' 의 쓰임만 말해 영어를 못 알려 주는 게 맞고, FIX 의 두 덩어리는 실제 표현이다."
+  pattern: "문장 + to an extent / to some extent"
+  usage_note: "extent 는 혼자 쓰기보다 to some extent, to a certain extent 처럼 덩어리째 외우는 게 편해요. I agree to some extent. 는 '전부는 아니지만 어느 정도는 동의해요' 라는 뜻이라, 반대하지 않으면서 여지를 남길 때 씁니다."
 
 - word: "contrast"
-  reason: "문형 자리에 영어가 들어가 있었다: contrast + something + with/against + something"
-  pattern: "contrast + 명사 + with/against + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: contrast + something + with/against + something / meaning_ko: 저장된 예문이 목적어 없는 자동사(contrasts with)라 '비교하다'는 결이 어긋나고, FIX 는 예문·문형·설명과 한 방향으로 맞는다. / pattern: 예문에 목적어가 없다는 지적이 원문과 맞고, FIX 는 선별기의 문형↔예문 대조를 실제로 통과한다. / usage_note: 동사 contrast 의 표준 전치사는 with 뿐이라 against 를 가르치던 NOW 는 실제로 거짓이고, FIX 에는 새 거짓이 없다. / confused_with: 'contrast with'는 같은 낱말에 전치사를 붙인 구가 맞고, differ 는 사전에 실재하는 동사다."
+  meaning_ko: "대비되다, 차이가 뚜렷하다"
+  pattern: "A + contrast with + B"
+  usage_note: "contrast 는 두 가지를 나란히 놓았을 때 차이가 확 드러난다는 말이에요. 뒤에는 with 를 붙입니다 — This shirt contrasts with the pants. compare 는 닮은 점과 다른 점을 함께 살펴본다는 뜻이라 결이 달라요."
+  confused_with: ["compare", "differ"]
 
 - word: "category"
-  reason: "문형 자리에 영어가 들어가 있었다: a category of + something"
+  reason: "문형 자리에 영어가 들어가 있었다: a category of + something / example: This is a category of books. 는 This 가 무엇인지 없어 문장이 서지 않고, 대체 예문은 7단어에 저장된 문형(a category of + 명사)을 그대로 보여준다. / usage_note: '종류보다 넓다'고 한 뒤 '한 종류'를 a category 로 옮긴 자기반박이 실제로 있었고, FIX 의 kind/type 대비는 사실이다."
   pattern: "a category of + 명사"
+  example: "Comedy is a popular category of movies."
+  usage_note: "category 는 물건이나 정보를 성격에 따라 미리 나눠 놓은 칸이에요. 가게의 상품 분류나 서류의 항목처럼 정해진 칸을 말할 때 씁니다. 그냥 '어떤 종류' 인지 물을 때는 kind 나 type 이 자연스러워요 — What kind of music do you like?"
 
 - word: "quick"
-  reason: "문형 자리에 영어가 들어가 있었다: quick + about/with + something"
+  reason: "문형 자리에 영어가 들어가 있었다: quick + about/with + something / usage_note: 오타·영어 품사명 지적은 옳으나 제출안의 \"'빠른' 이라고 꾸밀 때\"는 한국어로 문장이 서지 않아 그 구절만 바로잡았다."
   pattern: "quick + about/with + 명사"
+  usage_note: "quick 은 '빠른' 이라는 뜻의 꾸밈말이에요 — a quick lunch (간단히 빨리 먹는 점심). 동작을 '빨리 한다'고 말할 때는 quickly 를 씁니다 — She finished quickly. (그녀는 빨리 끝냈어요.)"
 
 - word: "introduction"
-  reason: "문형 자리에 영어가 들어가 있었다: the + introduction + to + something"
+  reason: "문형 자리에 영어가 들어가 있었다: the + introduction + to + something / usage_note: 'introduce 와는 다르게 쓰입니다'가 어떻게 다른지 말하지 않아 정보가 0인 것이 맞고, 지적이 사전에 명사뿐인 'introduction'까지 거짓이라 우기지 않은 것도 옳다."
   pattern: "the + introduction + to + 명사"
+  usage_note: "introduction 은 introduce(소개하다)의 명사예요. 책 앞부분의 서문도 introduction 이고, 사람을 처음 소개해 주는 일도 introduction 이라고 해요 — Thank you for the introduction. (소개해 주셔서 고맙습니다.)"
 
 - word: "consequence"
-  reason: "문형 자리에 영어가 들어가 있었다: the + consequence + of + something"
+  reason: "문형 자리에 영어가 들어가 있었다: the + consequence + of + something / meaning_ko: '후과' 는 왕초보가 못 읽는 말이 맞고, 괄호로 갈래를 좁히는 것은 이 저장소의 표기 방식이며 result('결과')와의 단서 충돌도 생기지 않는다. / usage_note: What is the result of… 는 아무 문제 없는 영어라 \"주의하세요\" 가 근거 없는 게 맞고, FIX 는 confused_with 의 result 를 실제로 갈라 준다."
+  meaning_ko: "결과 (어떤 일 때문에 뒤따라오는 일)"
   pattern: "the + consequence + of + 명사"
+  usage_note: "어떤 행동 때문에 뒤따라오는 좋지 않은 일에 주로 써요. 시험 점수처럼 그냥 나온 결과는 result라고 해요."
 
 - word: "connect"
   reason: "문형 자리에 영어가 들어가 있었다: connect + something + to + something"
   pattern: "connect + 명사 + to + 명사"
 
 - word: "demonstrate"
-  reason: "문형 자리에 영어가 들어가 있었다: demonstrate + 목적어 (how to do something, what something is like)"
-  pattern: "demonstrate + 목적어 (how to + 동사원형, what 명사 is like)"
+  reason: "문형 자리에 영어가 들어가 있었다: demonstrate + 목적어 (how to do something, what something is like) / pattern: 'what 명사 is like' 가 영어에 아예 없는 건 아니어서 지적 이유는 좀 세지만, 문형 칸은 예문(how to)의 짜임을 보여야 하고 FIX 가 그렇다. / usage_note: 원문의 \"'Show me'는 더 간단한 설명을 뜻해요\"는 show 의 뜻을 잘못 적은 것이고, FIX 의 두 영어 예는 모두 자연스럽다."
+  pattern: "demonstrate + 명사, demonstrate how to + 동사원형"
+  usage_note: "그냥 눈에 보이게 해 주는 건 show 예요. demonstrate 는 쓰는 방법이나 순서를 직접 해 보이며 알려줄 때 써요 — Can you show me the photo? / Can you demonstrate how it works?"
 
 - word: "burn"
-  reason: "문형 자리에 영어가 들어가 있었다: burn + 목적어 (물건), burn + someone (사람을 다치게 하는 것)"
+  reason: "문형 자리에 영어가 들어가 있었다: burn + 목적어 (물건), burn + someone (사람을 다치게 하는 것) / usage_note: 원문의 '상황이예요·것이예요'는 맞춤법 오류이고 인용문 뒤 조사도 '은'이 아니라 '는'이라, 화면에 나가던 틀린 한국어가 FIX 에서 다 바로잡혔다."
   pattern: "burn + 목적어 (물건), burn + 사람 (사람을 다치게 하는 것)"
+  usage_note: "물건이 타거나 태우는 것도 burn 이고, 뜨거운 것에 데는 것도 burn 이에요. I burned my hand. 는 손을 덴 것이고, He burned the letter. 는 편지를 태운 거예요."
 
 - word: "critical"
-  reason: "문형 자리에 영어가 들어가 있었다: adjective + about/for + 주제"
-  pattern: "형용사 + about/for + 주제"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + about/for + 주제 / pattern: 원문은 표제어가 아예 없는 '형용사 + …' 꼴이고, 예문 This is critical for your health. 를 FIX 가 설명한다."
+  pattern: "critical + 명사, be critical for/to + 명사"
 
 - word: "essential"
-  reason: "문형 자리에 영어가 들어가 있었다: essential + noun"
+  reason: "문형 자리에 영어가 들어가 있었다: essential + noun / usage_note: 원문은 '필수적인'과 '필요한'만 늘어놓았고, FIX 는 confused_with 의 necessary 와 세기 차이로 갈라 준다."
   pattern: "essential + 명사"
+  usage_note: "necessary 는 '있어야 한다', essential 은 '그게 없으면 안 된다'로 더 강해요 — Water is essential for life. (물은 사는 데 꼭 있어야 해요)"
 
 - word: "topic"
   reason: "문형 자리에 영어가 들어가 있었다: the topic of + something"
   pattern: "the topic of + 명사"
 
 - word: "divide"
-  reason: "문형 자리에 영어가 들어가 있었다: divide + something + into + something"
+  reason: "문형 자리에 영어가 들어가 있었다: divide + something + into + something / usage_note: 원문은 뜻(나누다)을 두고 \"'나누다'와 혼동하지 말라\"고 해 말이 되지 않았고, share 대비는 사실이며 영어 예문과 해석이 짝을 이룬다."
   pattern: "divide + 명사 + into + 명사"
+  usage_note: "divide 는 하나를 여러 조각으로 쪼갤 때 써요. 나눈 것을 서로 갖는다는 뜻이면 share 를 써요 — We shared the cake. (우리는 케이크를 나눠 먹었어요.)"
 
 - word: "package"
-  reason: "문형 자리에 영어가 들어가 있었다: package + 목적어 (물건), package + something + in + something (물건을 다른 것으로 포장하다)"
+  reason: "문형 자리에 영어가 들어가 있었다: package + 목적어 (물건), package + something + in + something (물건을 다른 것으로 포장하다) / example: 새 usage_note 가 '선물은 wrap' 이라고 하는데 예문이 package the gift 로 남으면 한 항목 안에서 어긋나고, 새 예문은 저장된 문형 package + 명사 + in + 명사 를 그대로 보여 준다. / usage_note: 품사가 달라진다고 발음이 달라지지 않으므로 NOW 는 성립하지 않는 말이고, 새 글은 선별기의 note_compares_korean_only 지적까지 없앤다."
   pattern: "package + 목적어 (물건), package + 명사 + in + 명사 (물건을 다른 것으로 포장하다)"
+  example: "They package the cookies in small boxes."
+  usage_note: "package 는 명사로 '소포, 꾸러미' 를 뜻해요 — The package arrived today. (소포가 오늘 왔어요.) 선물을 예쁘게 싸는 것은 wrap 을 써요."
 
 - word: "jump"
-  reason: "문형 자리에 영어가 들어가 있었다: jump + over/into/up + something"
+  reason: "문형 자리에 영어가 들어가 있었다: jump + over/into/up + something / usage_note: 원문의 \"더 구체적인 움직임\" 은 무엇이 다른지 말하지 않았고, jump/run 의 갈림은 사실이며 confused_with 의 run 과도 이어진다."
   pattern: "jump + over/into/up + 명사"
+  usage_note: "점프하는 방향을 말할 때 over, into, up 같은 말을 함께 써요. 한국어 '뛰다' 는 달리는 것과 뛰어오르는 것을 다 뜻하지만 영어는 나눠 써요. 발이 땅에서 떨어지면 jump, 빠르게 달리면 run 이에요."
 
 - word: "broad"
-  reason: "문형 자리에 영어가 들어가 있었다: adjective: a/the + broad + 명사"
-  pattern: "a/the + broad + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: a/the + broad + 명사 / meaning_ko: 사전 품사가 형용사(와 속어 명사)뿐이고 부사가 없어 '넓게' 는 broadly 의 몫이다. / pattern: 예문 The river is very broad. 가 be 꼴이라 NOW 와 어긋났고, '또는' 으로 형태를 나열하는 꼴은 이 자료에 이미 쓰이며(behavior 등 7건) 선별기 검사도 통과한다. / usage_note: 연어 설명은 옳지만 미소는 몸이 아니라 \"사람의 몸\" 이 맞지 않고, 같은 글의 다른 영어에는 다 붙은 해석이 a wide road 에만 빠져 있었다."
+  meaning_ko: "넓은 (폭이 넓은)"
+  pattern: "be + broad, 또는 broad + 명사"
+  usage_note: "broad 와 wide 는 뜻이 거의 같지만, 어깨나 미소처럼 사람을 두고 말할 때는 broad 를 자주 써요 — He has broad shoulders. (그는 어깨가 넓어요.) 길이나 문의 폭을 말할 때는 wide 가 더 흔해요 — a wide road. (넓은 길)"
 
 - word: "spirit"
-  reason: "문형 자리에 영어가 들어가 있었다: spirit + 없이 (정신이 없이), spirit + of + something (어떤 것의 정신)"
-  pattern: "spirit + 없이 (정신이 없이), spirit + of + 명사 (어떤 것의 정신)"
+  reason: "문형 자리에 영어가 들어가 있었다: spirit + 없이 (정신이 없이), spirit + of + something (어떤 것의 정신) / pattern: 문형 자리에 한국어 '없이' 가 들어간 NOW 는 형태 표기가 아니었고, 새 문형은 예문 He has a lot of spirit. 과 맞아 선별기 검사를 통과한다. / usage_note: 두 낱말을 가른 방향은 옳으나 '이름씨' 는 이 자료의 용어가 아니고(명사 488건, 이름씨 5건 — 같은 이유로 이미 손본 항목이 있다), spiritual music 을 '정신적인 음악' 으로 옮기면 말이 되지 않는다."
+  pattern: "have + spirit; the spirit + of + 명사"
+  usage_note: "spirit 은 '마음, 기운' 을 가리키는 명사이고, spiritual 은 '정신적인' 이라는 뜻으로 뒤의 말을 꾸며요 — a spiritual leader (정신적 지도자). 모양이 비슷해도 쓰는 자리가 달라요."
 
 - word: "experiment"
-  reason: "문형 자리에 영어가 들어가 있었다: do + experiment + on + something"
-  pattern: "do + experiment + on + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: do + experiment + on + something / meaning_ko: 예문 did an experiment 가 명사인데 뜻이 동사로만 적혀 어긋났고, 새 뜻은 예문·문형과 한 방향이다. / pattern: 예문에는 an 이 있는데 문형에 빠져 있어 do experiment 라는 틀린 말을 만들 수 있었다."
+  meaning_ko: "실험 (무엇이 맞는지 알아보려고 해 보는 일)"
+  pattern: "do + an experiment + on + 명사"
 
 - word: "tape"
   reason: "문형 자리에 영어가 들어가 있었다: tape + 목적어 (물건), tape + something + up (감다)"
@@ -7044,8 +7078,9 @@
   confused_with: ["bad", "positive"]
 
 - word: "global"
-  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun / usage_note: 'global 이 world 보다 넓다' 는 근거 없는 주장이 맞고, 사전에서도 global 은 형용사뿐이라 자리로 가른 FIX 가 사실에 맞는다."
   pattern: "global + 명사"
+  usage_note: "global 은 '세계 전체에 걸친' 이라고 꾸며 주는 말이라 a global company(여러 나라에서 사업하는 회사)처럼 명사 앞에 붙여요. world 는 '세계' 라는 이름씨라서 the world 처럼 씁니다."
 
 - word: "powerful"
   reason: "문형 자리에 영어가 들어가 있었다: adjective (명사 앞에 쓰기)"
@@ -7525,12 +7560,14 @@
   usage_note: "cross 는 길이나 강처럼 가로놓인 것을 지나 반대편으로 가는 걸 말해요. 뒤에 바로 목적어를 붙여요 — Cross the street here. across 는 뜻이 비슷하지만 동사가 아니라서 walk across the street 처럼 다른 동사와 함께 씁니다."
 
 - word: "gas"
-  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
-  pattern: "gas + 명사"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다. / pattern: 예문 The car needs gas. 뒤에 명사가 없다는 지적이 맞고, need 가 예문에서 실제로 잡히는 것을 선별기로 확인했다. / usage_note: 도시가스·가스레인지가 있으니 NOW 의 '한국어에서 자주 쓰지 않는다'는 거짓이 맞고, petrol 은 사전에 있는 명사이며 미·영 차이도 사실이다."
+  pattern: "need/get + gas, a gas station"
+  usage_note: "미국에서는 자동차에 넣는 기름을 gas 라고 하고 주유소는 a gas station 이라고 해요. 영국에서는 같은 기름을 petrol 이라고 합니다. gas 에는 공기 같은 기체라는 뜻도 있어요."
 
 - word: "equal"
-  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
-  pattern: "equal + 명사"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다. / pattern: 예문 These two numbers are equal 은 be동사 뒤 자리이고 equal to 는 실재하는 형태다. / usage_note: NOW 는 한국어 '같다' 만 이야기해 영어 정보가 없는 게 맞고, FIX 는 confused_with 의 same 을 실제로 갈라 준다."
+  pattern: "be동사 + equal (+ to + 명사)"
+  usage_note: "수나 양, 권리가 똑같을 때 equal을 써요. 무엇과 같은지는 to로 붙여요: Two plus two is equal to four. 물건이 똑같을 때는 the same을 써요: We have the same bag."
 
 - word: "recognition"
   reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
@@ -7618,8 +7655,10 @@
   usage_note: "누구에게나 똑같은 잣대를 댈 때 fair 를 써요 — That's not fair!(그건 불공평해요!) 는 아이들도 자주 쓰는 말이에요. 반대말은 unfair 예요. 값이나 점수가 '나쁘지 않은 정도'라는 뜻으로도 써요 — a fair price(적당한 값)."
 
 - word: "funny"
-  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다. / meaning_ko: 문형이 be + funny 인 꾸밈말인데 뜻에 '웃기다' 라는 움직임말을 적은 것이 어긋난 게 맞다. / usage_note: funny about 은 '웃기다' 가 아니라 '(무엇에) 유별나다' 라서 NOW 의 뜻풀이는 지어낸 것이 맞고, funny/interesting 은 한국어 '재미있다' 때문에 실제로 겹치는 자리다."
+  meaning_ko: "웃기는, 재미있는"
   pattern: "be + funny"
+  usage_note: "웃음이 나는 것이 funny예요. 웃기지는 않지만 흥미로워서 재미있는 건 interesting이라고 해요: The movie was interesting."
 
 - word: "glad"
   reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
@@ -8617,3 +8656,830 @@
   reason: "''vinegar' 는 'vinegar bottle' 과 혼동하지 마세요' 는 성립하지 않는다 — 뒤엣것은 앞엣것이 든 병이다. '식초는 보통 식당에 있지만' 도 앞뒤가 이어지지 않는다."
   usage_note: "새콤한 맛을 내는 액체예요 — put vinegar on the salad. 샐러드에는 기름과 함께 뿌려요. 하나둘 세지 않아서 some vinegar 처럼 말해요."
   confused_with: ["oil", "sauce", "lemon"]
+
+- word: "actual"
+  reason: "usage_note: 원문은 '더 구체적'·'더 정확한' 을 돌려 쓰며 같은 말로 예를 들었고, 새 글은 예상 대비 / 가짜 대비라는 실제 차이를 보여 준다."
+  usage_note: "actual 은 짐작이나 예상과 견주어 '정말로 그런' 것을 가리켜요 — The actual price was higher. (실제 가격은 더 비쌌어요.) real 은 가짜가 아니라는 뜻이에요 — real gold (진짜 금)."
+
+- word: "afraid"
+  reason: "usage_note: 방향은 옳으나 '이름씨' 는 이 자료의 용어가 아니고(명사 488건 대 이름씨 5건), afraid 는 seem·look 뒤에도 오므로 '언제나 be 동사' 라는 단정은 tire·code 에서 잡아낸 '~로만' 과 같은 종류의 과장이 된다. ```"
+  usage_note: "afraid 는 be afraid 처럼 be 동사 뒤에 써요. an afraid boy 처럼 명사 앞에 붙여 쓰지는 않아요. 또 I'm afraid ~ 는 '미안하지만 ~ 인 것 같아요' 처럼 안 좋은 소식을 부드럽게 전할 때도 써요 — I'm afraid I can't come. (미안하지만 저는 못 갈 것 같아요.)"
+
+- word: "aid"
+  reason: "pattern: 이 항목의 뜻은 명사 '도움, 보조, 지원'이고 예문도 gave me first aid 인데 원문 문형은 동사 꼴만 보여 주며, 'aid + -ing' 는 실제로 없는 짜임이다(영어는 aid in + -ing). / usage_note: 원문은 없는 짜임(aid + -ing)을 가르치면서 예는 aid in cooking 을 들어 스스로 어긋났고, FIX 의 두 표현은 실재한다."
+  pattern: "first aid (응급처치), send/give aid to + 대상"
+  usage_note: "help 보다 딱딱한 말이라 뉴스나 안내문에 자주 나와요. first aid (응급처치), send aid to the country (그 나라에 지원을 보내다) 처럼 써요."
+
+- word: "annual"
+  reason: "usage_note: '매년'과 '연간'은 같은 말이라 NOW 는 정보가 0이 맞고, FIX 의 annual salary=연봉·every year 부사 대체는 모두 사실이다."
+  usage_note: "annual 은 '한 해에 한 번 하는' 또는 '한 해 동안의' 라는 뜻이에요. annual meeting 은 연례 회의, annual salary 는 연봉이에요. 보통 명사 앞에 붙여 쓰고, '해마다' 처럼 문장 뒤에 붙일 때는 every year 를 씁니다 — We meet every year."
+
+- word: "apparently"
+  reason: "meaning_ko: '보기에 따르면'은 한국어에 없는 꼴이고, DB 의 example_ko '그는 오늘 안 온다고 하네요'와도 FIX 쪽이 맞는다. / usage_note: 부사에 '더 강한 어미'라는 원문 표현은 뜻이 통하지 않고, FIX 는 confused_with 의 actually 대비를 그대로 살렸다."
+  meaning_ko: "듣자 하니, 보아하니 (~라고 하더라고요)"
+  usage_note: "직접 본 게 아니라 남에게 들은 이야기를 전할 때 써요 — Apparently, he is not coming. (안 온대요) 상대의 말을 바로잡을 때 쓰는 actually 와는 달라요."
+
+- word: "arrange"
+  reason: "meaning_ko: 자리·표를 잡는 것은 book/reserve 이고(DB 의 reserve 뜻이 '예약하다') 첫 갈래를 '예약하다' 로 둔 것이 confused_with 와 정면으로 어긋난다. / example: arrange a table 이 아주 없는 말은 아니지만 이 항목이 가르치려는 갈래가 아니고, arrange a meeting 은 이 낱말의 대표 연어다. / usage_note: The table is arranged for two 는 쓰지 않는 문장이 맞고, FIX 는 confused_with 의 book·reserve 를 정확히 갈라 준다."
+  meaning_ko: "준비하다, (약속이나 일정을) 잡다"
+  example: "I arranged a meeting for Monday."
+  usage_note: "만남이나 일정을 미리 마련해 둘 때 써요: I arranged a meeting. 식당 자리나 표를 잡을 때는 book이나 reserve를 써요: I booked a table for two."
+
+- word: "artist"
+  reason: "usage_note: '아티스트가 한국어에서 예쁜 사람을 뜻한다'는 명백한 거짓이었고, painter·musician 은 사전에 있는 명사다. / confused_with: artiest 는 사전에 형용사(arty 의 최상급)로 실재하는 것까지 확인했고, 바로 그래서 왕초보가 artist 와 헷갈릴 낱말이 아니다."
+  usage_note: "artist 는 그림, 음악, 연기처럼 예술을 하는 사람을 두루 가리켜요. 그림 그리는 사람만 콕 집어 말할 때는 painter, 음악 하는 사람은 musician 이라고 합니다."
+  confused_with: ["painter", "musician"]
+
+- word: "attract"
+  reason: "usage_note: 원안의 '마음이 끌린다고 말할 때는 be interested in 을 써요'는 끌리다에 맞는 be attracted to 를 가려 학습자가 틀린 문장을 만들게 하므로, 왕초보가 실제로 틀리는 주어 자리로 바꿨다."
+  usage_note: "끌어당기는 쪽이 주어예요 — This restaurant attracts many customers. 내가 끌린다고 말할 때는 뒤집어서 I'm attracted to it. 처럼 써요."
+
+- word: "audience"
+  reason: "usage_note: the people in the audience 는 장소가 아니라 사람을 가리키므로 NOW 가 거짓이 맞고, FIX 의 someone in the audience 는 실제 표현이다."
+  usage_note: "audience 는 공연이나 강연을 보러 온 사람들을 통째로 묶어 부르는 말이에요. 그래서 한 사람을 가리킬 때는 an audience 가 아니라 someone in the audience 라고 해요. 텔레비전을 보는 사람들도 audience 라고 부릅니다."
+
+- word: "award"
+  reason: "pattern: 예문 They awarded him a prize. 가 사람을 먼저 받는 꼴이라 NOW 와 어긋났고, 두 어순 모두 실제로 쓰는 말이다. / usage_note: to 뒤는 받는 쪽이라 NOW 가 거꾸로였고, 새 예문 They awarded a prize to him. 은 옳다."
+  pattern: "award + 사람 + 상, 또는 award + 상 + to + 사람"
+  usage_note: "상을 받는 사람을 뒤에 쓸 때 to 를 써요 — They awarded a prize to him. award 는 상을 주는 행동이고, prize 는 상 그 자체예요."
+
+- word: "background"
+  reason: "pattern: 예문이 in the background 이고 in background 는 성립하지 않아, the 를 넣는 것이 맞다. / usage_note: foreground 는 사전에 실재하는 낱말이고(WordNet n·v) What's your background? 도 굳어진 표현이라 새 거짓이 없다."
+  pattern: "in the + background"
+  usage_note: "사진이나 그림에서 뒤쪽에 있는 부분이 the background예요. 앞쪽은 the foreground라고 해요. 사람에게 쓰면 자라 온 환경이나 경력을 뜻해요: What's your background?"
+
+- word: "ball"
+  reason: "usage_note: 사전에서 ball 의 품사가 명사·동사로 확인돼 '명사로만 쓰인다'는 거짓이 맞고, 한국어 '공'과 범위가 다르다는 것도 뒤집힌 말이었다."
+  usage_note: "축구공, 야구공, 테니스공이 모두 ball 이에요. 어떤 공인지 밝힐 때는 앞에 종목을 붙여 a soccer ball, a tennis ball 처럼 말합니다. ball 에는 사람들이 모여 춤추는 무도회라는 뜻도 있어요."
+
+- word: "battle"
+  reason: "pattern: have a battle with 가 아주 없는 말은 아니지만 전투에는 fight a battle 이 표준이고, 새 문형은 새 예문의 fought 와 맞아 선별기 검사를 통과한다. / example: 옛 예문의 had a battle with 를 왕초보가 그대로 따라 쓰면 어색해지고, 새 예문은 12단어 상한 안에서 표제어를 그대로 보여 준다."
+  pattern: "fight + a battle (+ against + 상대)"
+  example: "They fought a long battle."
+
+- word: "beach"
+  reason: "usage_note: 원문은 앞뒤 절이 같은 말로 시작해 a 와 the 를 갈라 주지 못하고, go to the beach 는 실재하는 굳은 표현이다."
+  usage_note: "놀러 간다고 할 때는 어느 해변인지 정하지 않아도 늘 go to the beach 라고 해요. 여러 해변 중 하나를 셀 때만 a beach 를 써요."
+
+- word: "bird"
+  reason: "usage_note: 원문의 한국어 '새' 대 bird 대조는 성립하지 않고, FIX 의 a/the 설명은 관사 규칙 그대로다."
+  usage_note: "처음 말할 때는 a bird (새 한 마리), 앞에서 말한 그 새를 다시 가리킬 때는 the bird 라고 해요. 여러 마리면 birds 예요."
+
+- word: "boat"
+  reason: "usage_note: '큰 배를 보았다를 의미해요'는 한국어로 성립하지 않는 문장이고, FIX 는 같은 내용을 바른 문장으로 옮겼다."
+  usage_note: "boat 는 작은 배예요. 큰 배는 ship 이라고 해요 — I saw a ship. (큰 배를 봤어요)"
+
+- word: "bottom"
+  reason: "usage_note: the bottom of the leg 가 무릎 아래라는 뜻은 영어에 없어 NOW 가 지어낸 것이 맞고, at the bottom of 는 실재하는 형태다."
+  usage_note: "무엇의 맨 아랫부분이 bottom이에요. 반대말은 top이에요. 자리를 말할 때는 at the bottom of the page처럼 at과 of를 함께 써요."
+
+- word: "brain"
+  reason: "meaning_ko: '두뇌, 뇌' 는 갈래가 하나인데 둘인 척하는 이 저장소의 알려진 결함이고, 괄호 부연이 confused_with 의 head 와 갈라 준다."
+  meaning_ko: "뇌 (머릿속에서 생각을 맡는 곳)"
+
+- word: "brief"
+  reason: "pattern: 예문이 Can you make it brief? 인데 원문 문형은 명사 앞자리만 보여 주었고, make it brief 는 실재하는 연어라 새 거짓이 없다."
+  pattern: "brief + 명사, make it brief (짧게 하다)"
+
+- word: "busy"
+  reason: "usage_note: to be busy 는 실제로 쓰이므로 NOW 가 거짓인 게 맞고, busy + -ing 와 a busy store 는 둘 다 실재하는 용법이다."
+  usage_note: "busy는 be동사와 함께 써요. 무엇 때문에 바쁜지는 뒤에 ing를 붙여 말해요: I'm busy cooking. 사람 말고 길이나 가게가 붐빌 때도 써요: The store is busy today."
+
+- word: "camp"
+  reason: "meaning_ko: camp 에 '오래' 라는 뜻은 없어서 '장기 캠핑하다' 가 거짓이 맞다. / usage_note: 첫 문장이 뜻 칸을 되풀이하던 게 맞고, go camping·summer camp 는 실제 연어다. / confused_with: `lexicon.same_lemma(\"camp\", \"camping\")` 가 True 라 camping 은 같은 낱말의 굴절형이 맞다 — 직접 돌려 확인했고, tent·picnic 은 실재어다."
+  meaning_ko: "캠핑하다, 야영하다; 야영지"
+  usage_note: "캠핑하러 간다는 말은 go camping 을 가장 많이 써요 — We're going camping this weekend. camp 는 이름씨로 여름 캠프나 야영지도 뜻해서 summer camp, a camp by the river 처럼 씁니다."
+  confused_with: ["tent", "picnic"]
+
+- word: "cash"
+  reason: "meaning_ko: 동사 cash 는 수표를 현금으로 바꾸는 것이지 '현금으로 지불하다' 가 아니고, 같은 항목 설명의 은행 예와도 이제 맞는다. / pattern: 예문 I want to pay with cash. 가 NOW 의 두 문형 어느 쪽에도 맞지 않았고, pay with/in cash 는 둘 다 쓰는 말이다. / usage_note: check 를 '체크' 로 옮긴 것과 '인출' 은 둘 다 틀린 해석이었고, 새 해석이 영어와 정확히 맞는다. / confused_with: credit card 는 헷갈리는 낱말이 아니라 대비되는 결제 수단이고, 잔돈 change 가 cash 와 실제로 헷갈린다."
+  meaning_ko: "현금; (수표를) 현금으로 바꾸다"
+  pattern: "pay + with/in + cash"
+  usage_note: "cash 는 동사로 '수표를 현금으로 바꾸다' 라는 뜻이에요 — I'll cash the check at the bank. (은행에서 이 수표를 현금으로 바꿀게요.)"
+  confused_with: ["check", "change"]
+
+- word: "cheap"
+  reason: "pattern: 예문 This shirt is cheap. 이 be 뒤에 오는 모양이라 문형이 예문을 덮어야 한다. / usage_note: 원문이 대안으로 내민 low price 는 형용사 자리에 못 들어가는 구인데(This shirt is low price. 는 비문), 바꿔 넣을 수 있는 inexpensive·not expensive 로 갈아 끼웠다. / confused_with: low price 는 낱말이 아니고, expensive 는 사전에 있는 A1 낱말이며 이 DB 는 peace/peaceful·physical/mental 처럼 짝말을 이 칸에 넣어 왔다."
+  pattern: "cheap + 명사 / be + cheap"
+  usage_note: "값이 싸다는 뜻이지만 '싸구려'라는 느낌이 함께 묻어날 때가 많아요. 나쁜 뜻 없이 값이 안 비싸다고 말하려면 inexpensive 나 not expensive 를 쓰세요 — This shirt is not expensive."
+  confused_with: ["inexpensive", "expensive"]
+
+- word: "chief"
+  reason: "meaning_ko: '장로·장군' 을 걷어낸 건 옳지만, WordNet 에 chief 는 명사와 **형용사**(chief.s.01 \"most important element\")로 다 있고 같은 항목의 문형이 'chief + 명사' 라서, 명사 뜻만 남기면 이 묶음이 dry·email 에서 지적한 바로 그 품사어긋남이 새로 생긴다. / pattern: 예문이 of 를 쓰는데 문형에 그 자리가 없던 게 맞고, 47자로 한도 안이다. / example: the police 의 the 를 빼는 것까지는 맞지만 원안의 'The police chief' 로 가면 문형 두 형태(chief + 명사, the chief of + 조직) 중 어느 쪽도 안 보여준다 — the 만 빼면 문형·해석이 다 그대로 맞는다. / usage_note: chief engineer 를 '공학부장' 이라 한 NOW 가 거짓이 맞고, FIX 의 세 연어는 모두 실재한다."
+  meaning_ko: "우두머리, 최고 책임자; 수석의, 주요한"
+  pattern: "chief + 명사 (chief engineer) / the chief of + 조직"
+  example: "The chief of police is very strict."
+  usage_note: "chief 는 어떤 무리의 맨 윗사람이에요. 명사 앞에 붙으면 '수석~' 이 돼서 chief engineer 는 수석 기술자, chief cook 은 주방 책임자예요. 회사의 최고 책임자는 chief executive 라고 합니다."
+
+- word: "circumstance"
+  reason: "pattern: under the/these circumstances 는 굳어진 짝이고, 바뀐 예문으로 문형 검사(pattern_forms)를 다시 돌려도 지적이 나오지 않는다. / example: 이 낱말은 복수로 굳어져 쓰이고 FIX 는 7단어짜리 정상 영어라, in this circumstance 보다 학습자에게 줄 값이 크다. / usage_note: DB 에 situation('상황')이 실재해 대비가 성립하고, '뒤에 s를 붙여' 라고 적어 금지어(불가산·셀 수 있는)를 피했다."
+  pattern: "under the + circumstances"
+  example: "Under these circumstances, I would say no."
+  usage_note: "일상 대화에서는 situation을 쓰고, circumstance는 서류나 격식 있는 자리에서 써요. 보통 circumstances처럼 뒤에 s를 붙여 여러 사정을 한꺼번에 가리켜요."
+
+- word: "coach"
+  reason: "pattern: 이름씨로 고친 방향은 옳지만 'a/the + coach' 는 새 예문 My soccer coach 와 맞지 않아, insurance 에 들이댄 잣대(\"예문에 a 도 the 도 없다\")에 스스로 걸린다(behavior 의 '소유격 + …' 이 이 자료의 선례다). / example: piano coach 는 보통 piano teacher 라고 하는 자리라 왕초보에게 잘못된 연어를 가르치고, 새 예문이 coach 의 대표 쓰임을 보여 준다. / usage_note: coach 에 지하철역 안내원이라는 뜻은 없어 NOW 의 station attendant 는 근거가 없고, 영국의 장거리 버스 coach 는 실제로 쓰는 말이다."
+  pattern: "소유격 + coach (my coach), a/the + coach"
+  example: "My soccer coach is very kind."
+  usage_note: "coach 는 운동이나 노래처럼 무언가를 잘하도록 옆에서 이끌어 주는 사람이에요. 영국에서는 도시 사이를 오가는 큰 버스도 coach 라고 불러요."
+
+- word: "code"
+  reason: "pattern: 프로그램을 뜻할 때 a code 라고 하지 않는데 NOW 가 그걸 권해 예문의 잘못을 낳았고, 새 문형은 두 뜻을 갈라 예문과 맞는다. / example: write a code 는 틀린 말이고 write some code 가 맞는 말이다. / usage_note: 사전에 code 의 동사 뜻이 있어 NOW 의 '명사로만' 은 거짓이고, 고치면 선별기의 pos_claim_overreach 지적이 사라진다. / confused_with: codify 는 왕초보가 만날 일이 없는 말이고 password 는 code 의 다른 뜻과 실제로 겹친다."
+  pattern: "write + code (컴퓨터 명령어); a/the + code (비밀번호)"
+  example: "I need to write some code for the website."
+  usage_note: "code 는 동사로도 써서 '프로그램을 짜다' 라는 뜻이에요 — I code every day. (저는 매일 코딩해요.) 문을 열 때 누르는 비밀번호도 code 라고 해요."
+  confused_with: ["password"]
+
+- word: "colleague"
+  reason: "usage_note: NOW 는 낱말을 한국어로 바꿔 적은 되풀이가 맞고, coworker 는 DB 에도 있는 실재 낱말이며 confused_with 의 boss 를 짚는다."
+  usage_note: "같은 곳에서 함께 일하는 사람이 colleague예요. 편하게 말할 때는 coworker도 많이 써요. 윗사람은 my boss라고 해요."
+
+- word: "combine"
+  reason: "usage_note: \"조합이 아닌 섞는 것\" 은 낱말을 한국어로 바꿔 부른 것뿐이 맞고, combine A with B 는 실재하는 형태다."
+  usage_note: "둘을 하나로 합치는 것이 combine이에요. 합치는 상대는 with로 붙여요: Combine the eggs with the flour. 재료를 휘저어 섞는 건 mix라고 해요."
+
+- word: "commercial"
+  reason: "meaning_ko: '상업의' 와 '상업적인' 은 같은 갈래를 두 번 적은 것이고, 괄호 안의 빈도 이야기는 뜻풀이 자리에 올 말이 아니다. / usage_note: a commercial 은 그 자체로 광고 한 편을 가리키므로 \"commercial break 처럼 특정한 문맥에서만\" 은 거짓이 맞다."
+  meaning_ko: "상업의, 장사와 관련된"
+  usage_note: "장사나 사업과 관련될 때 써요: a commercial building. 텔레비전 광고 한 편을 commercial이라고 부르기도 해요: I saw a funny commercial last night."
+
+- word: "commit"
+  reason: "meaning_ko: 사전에 commit 은 동사 뜻뿐이고 '실행하다' 로 쓰지 않으며, 같은 항목 설명도 일반적인 행동에는 안 쓴다고 밝히고 있다. / pattern: commit 뒤에 바로 -ing 를 붙이지 않고, 새 문형은 예문 committed a crime 와 맞아 선별기 문형 검사를 통과한다."
+  meaning_ko: "저지르다 (잘못이나 범죄를)"
+  pattern: "commit + a crime/a mistake (잘못을 저지르다)"
+
+- word: "concept"
+  reason: "meaning_ko: '아이디어'는 idea 를 소리대로 옮긴 말이라 바로 뒤에서 idea 와 구별하라는 설명과 부딪치고, FIX 는 새 거짓 없이 그 어긋남을 없앤다. / usage_note: idea 는 추상적인 생각을 가리키는 말이라 '구체적인 사물이나 사람에 쓴다'가 거짓이고, NOW 는 같은 항목의 예문까지 무너뜨리고 있었다."
+  meaning_ko: "개념, 바탕이 되는 생각"
+  usage_note: "concept 는 어떤 일의 바탕이 되는 큰 생각이에요. idea 는 머릿속에 문득 떠오른 생각 하나를 가리켜서 더 가볍고 자주 씁니다 — I have an idea! (좋은 생각이 났어요!)"
+
+- word: "conflict"
+  reason: "usage_note: 뒷문장이 한국어 낱말끼리만 견주던 것이 맞고, FIX 는 저장된 예문을 그대로 근거로 삼아 상태/사건 대비를 정확히 세운다."
+  usage_note: "conflict 는 사람이나 나라 사이에 의견과 이익이 부딪치는 상태를 뜻해요. fight 는 몸으로 싸우거나 말다툼하는 한 번의 사건이고요. 그래서 conflict 는 오래 이어지는 상황에도 씁니다 — a conflict between the two teams."
+
+- word: "consideration"
+  reason: "pattern: 문법 용어만 적혀 형태 구실을 못 하던 칸을 실제 연어로 바꿨고, '무엇' 자리표시는 이 자료에 이미 5건 있으며 새 예문과 맞는다. / example: think about the consideration of ~ 는 뜻이 통하지 않는 문장이었고, 새 예문은 실제 연어이며 표제어를 그대로 담는다. / usage_note: 사전에 명사 뜻만 있어 NOW 의 '명사로만' 자체는 참이지만 그 뒤가 뜻을 되풀이할 뿐이었고, 새 글은 왕초보가 쓸 말(consider)을 알려 준다."
+  pattern: "take + 무엇 + into consideration"
+  example: "We need to take the price into consideration."
+  usage_note: "말할 때는 consideration 보다 동사 consider 를 훨씬 자주 써요 — We should consider the price. (가격을 생각해 봐야 해요.) consideration 은 글이나 회의처럼 딱딱한 자리에서 주로 보여요."
+
+- word: "consumer"
+  reason: "usage_note: '사람'과 '사용자'를 나누지 못하던 자리를 지우고 confused_with 에 있으면서도 설명이 없던 customer 와의 차이를 넣었다."
+  usage_note: "물건을 사서 쓰는 쪽을 가리켜요. 만드는 쪽인 producer 와 짝을 이루는 말이라 뉴스나 회사 글에 많이 나와요. 가게에 온 손님 한 사람을 말할 때는 consumer 보다 customer 가 자연스러워요."
+
+- word: "contribute"
+  reason: "usage_note: 같은 항목 예문이 돈을 내는 상황인데 설명이 \"돈이면 donate\" 라고 해 예문을 반박하는 게 맞고, contribute A to B 는 실재하는 형태다."
+  usage_note: "돈이든 시간이든 생각이든 힘을 보태는 것이 contribute예요. 어디에 보태는지는 to로 붙여요: I contributed 10 dollars to the fund."
+
+- word: "contribution"
+  reason: "usage_note: DB 의 뜻이 '기여, 기부'이고 예문이 I made a contribution to the charity. 라서 원문 설명(기여는 돈이 아니다)이 같은 항목과 어긋나는 게 맞다."
+  usage_note: "contribution 은 돈을 내는 것도, 시간이나 힘을 보태는 것도 다 포함해요. 돈이나 물건을 주는 것만 딱 집어 말할 때는 donation 이 더 정확해요."
+
+- word: "cool"
+  reason: "usage_note: '냉장고는 cool 하지 않아요' 는 뜻이 통하지 않는 비문이 맞고, cool/chill/freeze 의 온도 층위는 사실이다."
+  usage_note: "cool 은 뜨거운 것의 온도를 내려 미지근하게 만드는 거예요. 차갑게 만드는 건 chill, 얼리는 건 freeze 라고 해요. cool 은 '시원한' 과 '멋진' 이라는 뜻으로도 아주 많이 씁니다 — That's cool!"
+
+- word: "corner"
+  reason: "meaning_ko: '코너'는 corner 를 소리대로 옮긴 것이라 뜻풀이가 아니고, 모퉁이가 정확한 대응어다. / usage_note: NOW 는 '구석=corner, corner=코너'로 제자리를 돌았고, FIX 의 Turn the corner 는 실제로 쓰는 영어다."
+  meaning_ko: "구석, 모퉁이"
+  usage_note: "방 안쪽 구석도 corner, 길이 꺾이는 모퉁이도 corner 예요. 길모퉁이는 the corner of the street 라고 하고, 모퉁이를 돌라고 할 때는 Turn the corner. 라고 합니다."
+
+- word: "crime"
+  reason: "usage_note: crime 은 동사가 아니므로 \"동사로는 commit a crime\"이라는 원문은 성립하지 않고, 새 안은 그 자리를 실제 연어(commit)로 채웠다."
+  usage_note: "죄를 저지른다고 할 때는 do 가 아니라 commit 을 써요 — commit a crime. 죄를 저지른 사람은 criminal 이에요. 가벼운 잘못에는 쓰지 않고, 경찰이 잡아갈 만한 일에 써요."
+
+- word: "crisis"
+  reason: "usage_note: 원문 첫 구절이 뜻풀이 '위기'를 되풀이한 게 맞고, 복수형 crises 는 사전에 있는 사실이다."
+  usage_note: "problem 보다 훨씬 심각해서 빨리 손쓰지 않으면 큰일 나는 상황에 써요 — a financial crisis (금융 위기). 둘 이상일 때는 모양이 바뀌어 crises 가 돼요."
+
+- word: "crowd"
+  reason: "meaning_ko: '모여드는 사람'은 한 명으로 읽혀 무리 전체를 가리키는 crowd 를 잘못 잡은 것이 맞다. / pattern: 예문의 crowd 가 명사라는 지적은 맞지만 제출안은 'big'을 필수 요소로 박아 넣는다 — 이 스키마의 괄호(선택 요소) 표기로 바꾸면 선별기가 big 을 요구 토큰에서 실제로 빼는 것을 확인했다. / usage_note: 'crowd을'은 조사 오류가 맞고('크라우드'는 모음 끝), FIX 는 조사가 바르며 group 대비도 사실이다."
+  meaning_ko: "인파, 군중 (한곳에 모인 많은 사람)"
+  pattern: "a (big) crowd + at/in + 장소"
+  usage_note: "crowd 는 한곳에 모인 많은 사람을 한 덩어리로 부르는 말이에요. group 은 몇 명이 모인 작은 무리를 뜻하고, crowd 는 훨씬 많고 서로 모르는 사람들이 몰린 느낌이에요. 사람이 많다고 말할 때 a big crowd 처럼 씁니다."
+
+- word: "cry"
+  reason: "example: 글자대로 읽으면 뜻이 서지 않는 속담을 A1 예문으로 둔 결과가 바로 아래의 엉터리 해석이고, 대체 예문은 6단어에 저장된 문형(cry + about)을 보여준다. / usage_note: NOW 첫 문장은 뜻을 알 수 없는 비문이 맞고, FIX 의 about/over·cried·shout/scream 은 모두 사실이다."
+  example: "Don't cry about the broken toy."
+  usage_note: "cry 는 눈물을 흘리며 우는 거예요. 우는 이유는 뒤에 about 이나 over 를 붙여 말해요 — She cried about the sad news. 큰 소리로 외치는 것은 shout, 무서워서 지르는 비명은 scream 입니다. 과거형은 cried 예요."
+
+- word: "currently"
+  reason: "pattern: 예문 I'm currently studying English. 에서 currently 는 be 뒤에 오므로 원문 순서가 거꾸로다. / usage_note: 원문의 'now'과는'은 조사가 틀렸고(→ 와는), FIX 의 격식 차이 설명은 사실이다."
+  pattern: "be + currently + 동사-ing"
+  usage_note: "지금 하고 있는 일에 써요. now 와 뜻은 같지만 currently 가 조금 더 격식 있는 말이라 회사나 서류에서 자주 써요."
+
+- word: "decade"
+  reason: "usage_note: 지적이 인용한 NOW 는 DB 원문의 마지막 문장(\"'A decade ago'는 '10년 전'을 의미해요.\")을 빠뜨린 것이라, 지적의 나머지는 옳지만 버려질 뻔한 그 정보를 새 안에 되살린다. / confused_with: ten years 는 구라서 못 들어가고, 그 자리를 메운 year 는 사전에 있는 A1 낱말이면서 'decade 냐 ten years 냐'라는 실제 헷갈림과 이어진다."
+  usage_note: "십 년을 한 덩어리로 묶어 부르는 말이에요. 기간을 세는 자리에는 ten years 를 그대로 써요 — I lived there for ten years. 지난 일을 가리킬 때는 a decade ago (십 년 전), the last decade (지난 십 년)처럼 써요."
+  confused_with: ["century", "year"]
+
+- word: "decline"
+  reason: "meaning_ko: 원문이 거짓이라기보다 흔한 뜻 하나가 통째로 빠져 있던 것이고(decline an invitation), 채운 뜻은 사전과 맞는다. / pattern: 예문 The number of visitors has declined. 에 목적어가 없고 이 뜻일 때 decline 은 자동사라 원문 문형이 예문과 어긋났다. / usage_note: \"감소하는 것에만 쓴다\"는 거짓을 걷어내면서 reduce 와의 구분은 그대로 살렸다."
+  meaning_ko: "줄어들다, 감소하다; (정중히) 거절하다"
+  pattern: "주어 + decline (줄어들다) / decline + 목적어 (거절하다)"
+  usage_note: "무엇이 저절로 줄어드는 것에 써요 — Sales declined. 사람이 무언가를 줄이는 것은 reduce 예요 — We reduced the price. 남의 제안을 정중히 거절할 때도 같은 낱말을 써요 — I declined the offer."
+
+- word: "defense"
+  reason: "meaning_ko: '방어, 방어 행동'은 같은 말의 되풀이가 맞고, 국방·수비는 defense 의 실제 뜻이며 저장된 예문이 바로 국방이다. / pattern: 예문이 the country's defense 라는 소유격 형태가 맞고, 둘째 갈래가 그것을 그대로 보여준다. / usage_note: 명사를 동사와 나란히 놓은 품사 어긋남이 맞고, defence 가 영국 철자라는 것도 사전으로 확인했다."
+  meaning_ko: "방어, 국방; (경기에서) 수비"
+  pattern: "the defense of + 대상 / 소유격 + defense"
+  usage_note: "defense 는 지키는 일을 가리키는 명사예요. 지킨다는 동작은 동사 defend 로 말하고, protect 는 다치지 않게 감싸 준다는 쪽에 가까워요. 나라를 지키는 일과 운동 경기의 수비도 모두 defense 라고 하고, 영국에서는 defence 로 적습니다."
+
+- word: "delay"
+  reason: "pattern: 예문 The flight was delayed for two hours. 가 목적어 없는 수동태라 원문 문형이 예문을 설명하지 못한다. / usage_note: 원문은 영어 delay 와 한국어 '지연'을 견주다 정작 delay 가 명사도 된다는 말을 못 했고, FIX 의 세 문장은 다 자연스러운 영어다. / confused_with: delayed 는 표제어에 -ed 를 붙인 제 꼴이라 gloss_fixes 가 non-smoking 을, manual_fixes 가 narrow down 을 뺀 것과 같은 경우이고, postpone 은 screening.py 자신이 어려운 혼동 쌍으로 이름을 든 낱말이다."
+  pattern: "delay + 목적어 (늦추다), be delayed (늦어지다)"
+  usage_note: "동사로도 명사로도 써요. 늦춘다고 할 때는 They delayed the meeting. 늦어진 일 자체를 말할 때는 There was a delay. 비행기가 늦었을 때는 The flight is delayed. 라고 해요."
+  confused_with: ["late", "postpone"]
+
+- word: "desire"
+  reason: "example: I desire a new phone. 은 문법은 맞아도 실제로 쓰지 않는 말투이고, FIX 는 6낱말짜리 자연스러운 문장이다."
+  example: "Many people desire a better life."
+
+- word: "dinner"
+  reason: "pattern: 예문 I have dinner at 7 PM. 에 관사가 없고 실제로도 have dinner 로 말한다. / usage_note: 조사 오류('dinner은')를 고치면서 원문에 없던 짝(evening)을 넣어 대조가 완성된다."
+  pattern: "have + dinner"
+  usage_note: "한국어 '저녁'은 시간을 뜻하기도 하지만 dinner 는 저녁밥 그 자체만 가리켜요. 저녁 시간을 말하려면 evening 을 써요 — in the evening. 저녁 메뉴를 물을 때는 What's for dinner? 라고 해요."
+
+- word: "distance"
+  reason: "pattern: 51자로 한도 안이고, 새 예문이 between·and 를 보여줘 선별기 지적이 없다. / example: far away 와 at a distance 가 겹치는 원문은 실제로 쓰지 않는 문장이다. / usage_note: 선별기도 NOW 를 pos_claim_overreach 로 잡고 있었고, FIX 를 넣으면 그 지적이 사라진다."
+  pattern: "the distance between A and B / in the distance (멀리)"
+  example: "What is the distance between Seoul and Busan?"
+  usage_note: "얼마나 먼지 묻는 가장 쉬운 말은 How far is it? 이고, distance 는 What is the distance between the two cities? 처럼 조금 더 딱딱한 자리에 써요. in the distance 는 '저 멀리' 라는 뜻이에요."
+
+- word: "district"
+  reason: "usage_note: 'Seoul District' 가 서울특별시를 뜻한다는 말은 근거가 없고, Gangnam District 는 실제로 쓰는 표기이며 area·region 구분은 confused_with 와 맞다."
+  usage_note: "district 는 도시 안을 나눠 놓은 구역이에요. 서울의 강남구는 영어로 Gangnam District 라고 해요. 경계가 뚜렷하지 않은 지역은 area, 더 큰 지방은 region 이라고 해요."
+
+- word: "driver"
+  reason: "usage_note: '운전자를 운전자라 한다'는 제자리 설명이 맞고, FIX 는 -er 파생이라는 실제로 쓸모 있는 사실을 준다."
+  usage_note: "drive(운전하다) 뒤에 -er 이 붙어 '운전하는 사람'이 된 말이에요. 택시 기사도 버스 기사도 모두 driver 라고 해요. 차에 타고 가는 손님은 passenger 입니다."
+
+- word: "dry"
+  reason: "meaning_ko: 지적은 맞다(문형·예문 다 동사인데 뜻만 형용사) — 다만 원안의 \"건조한 이라는\" 은 따옴표가 빠져 조사가 붙지 못한 띄어쓰기 오류라 따옴표만 넣었다. / pattern: NOW 의 'dry + up (물건) (모든 것을 말리다)' 는 거짓 설명에서 흘러나온 꼴이고, FIX 는 선별기에 새 지적을 하나도 만들지 않는다(45자, 예문이 문형을 보여준다). / usage_note: NOW 는 wash·clean 이 '말리다' 라는 명백한 거짓이고, FIX 의 영어(dry up, hang the clothes to dry)는 전부 실재하는 표현이다. / confused_with: wash·clean 은 거짓 설명을 그대로 베낀 값이고, wet·wipe 는 둘 다 사전에 있는 실재어다."
+  meaning_ko: "말리다, 물기를 없애다 ('마른, 건조한' 이라는 뜻도 있어요)"
+  pattern: "dry + 목적어 (dry your hands) / be + dry (마른 상태)"
+  usage_note: "dry 하나로 '말리다' 가 다 돼요 — Dry your hair. 처럼요. dry up 은 강이나 우물이 바싹 말라 없어질 때 써요. 옷을 널어 저절로 마르게 두는 건 hang the clothes to dry 라고 해요."
+  confused_with: ["wet", "wipe"]
+
+- word: "duty"
+  reason: "usage_note: WHY 는 조금 세게 말했지만(구어로 at duty free 라고 장소처럼 쓰기도 한다) duty free 가 본래 '세금이 없는' 이라는 것과 have a duty to 가 예문 형태라는 것은 사실이라 새 거짓이 없다."
+  usage_note: "해야 할 일이 있을 때 have a duty to로 말해요: I have a duty to help. duty free는 세금이 붙지 않는다는 뜻이고, 공항 면세점은 a duty-free shop이라고 해요."
+
+- word: "edge"
+  reason: "example: 새 예문이 문형 'the edge of + 장소' 를 그대로 보여주고 선별기 지적이 없다. / confused_with: 'edge of' 는 표제어에 전치사를 붙인 값이라 자기 자신과 헷갈린다는 말이 되고, corner 는 실재어이며 실제로 갈라 써야 하는 낱말이다."
+  example: "Don't put the cup near the edge of the table."
+  confused_with: ["border", "corner"]
+
+- word: "enable"
+  reason: "meaning_ko: 같은 항목 설명이 enable 은 help 와 다르다고 하는데 뜻에 '도움을 주다' 가 있어 어긋났고, 새 뜻은 새 설명과 한 방향이다. / usage_note: 'help'이나·'help'은 같은 조사 오류와 '능력을 부여하는' 이라는 어려운 말을 걷어내고, 세 낱말의 차이를 왕초보 말로 정확히 갈랐다."
+  meaning_ko: "할 수 있게 해 주다"
+  usage_note: "enable 은 무언가를 할 수 있게 만들어 준다는 뜻이에요. help 는 옆에서 거들어 주는 것이고, allow 는 해도 된다고 허락하는 거예요."
+
+- word: "engineer"
+  reason: "usage_note: 언론사에 다니는 사람은 '기자'라 원문이 사실과 다르고, FIX 는 confused_with 의 technician 과 갈라 준다."
+  usage_note: "기계, 건물, 프로그램 같은 것을 설계하고 만드는 사람이에요. 고장 난 것을 고치거나 기계를 다루는 사람은 technician 이라고 해요."
+
+- word: "ensure"
+  reason: "confused_with: assure 를 더한 건 옳지만 'make sure' 를 뺄 근거가 없다 — 선별기는 세 낱말짜리 구까지 허용하고 같은 항목의 설명이 바로 ensure/make sure 를 견주고 있으며, 한도는 4개라 셋 다 들어간다."
+  confused_with: ["make sure", "guarantee", "assure"]
+
+- word: "entire"
+  reason: "meaning_ko: '모든'을 뺀 판단은 옳지만 '통째의'는 한국어에서 쓰지 않는 꼴이라(쓰는 것은 '통째로'), 이 저장소가 이미 쓰는 괄호 보충 형식으로 바꾼다. / usage_note: the entire menu 는 완전히 옳은 영어라 NOW 의 'X' 표시가 거짓이었고, FIX 의 whole 대체는 사실이다."
+  meaning_ko: "전체의 (하나를 통째로)"
+  usage_note: "entire 는 the 와 명사 사이에 넣어 the entire meal 처럼 써요. '하나를 통째로 다'라는 뜻이라 whole 과 거의 같아서 the whole meal 로 바꿔 말해도 됩니다."
+
+- word: "eventually"
+  reason: "pattern: 동사 앞 자리가 실제로 흔하고, FIX 를 넣어도 예문이 문형을 보여주는 형태가 남아 새 지적이 없다. / usage_note: 선별기가 NOW 를 note_compares_korean_only 로 잡고 있었고, eventually/finally 대비는 사실이다."
+  pattern: "Eventually, + 문장 / 주어 + eventually + 동사"
+  usage_note: "오래 걸리고 이런저런 일이 있은 끝에 그렇게 됐다는 느낌이에요. finally 는 기다리던 일이 드디어 일어나 반갑다는 느낌이 강해서 Finally, the bus came! 처럼 써요. eventually 는 We eventually found the hotel. 처럼 동사 앞에도 자주 옵니다."
+
+- word: "examine"
+  reason: "usage_note: '일예요' 오타를 고치면서, 쓰지 않는 경우만 알려 주던 설명에 언제 쓰는지를 넣었다."
+  usage_note: "의사가 몸을 살필 때, 경찰이 증거를 살필 때처럼 전문가가 꼼꼼히 들여다보는 일에 써요. 그냥 확인해 본다고 할 때는 check 를 쓰세요 — Let me check. 시험을 본다는 말은 take a test 예요."
+
+- word: "excellent"
+  reason: "pattern: 예문 This hotel is excellent. 가 be 뒤 자리인데 문형에 그 자리가 없었다. / usage_note: 뜻을 고치면 '완벽한보다 덜 강하게' 라는 첫 문장이 성립하지 않으므로 함께 고치는 게 맞다."
+  pattern: "주어 + be + excellent / excellent + 명사"
+  usage_note: "excellent 는 '아주 좋다' 는 칭찬이라 음식이나 호텔, 성적에 두루 써요. perfect 는 흠이 하나도 없다는 더 센 말이라 아무 데나 쓰면 과장으로 들려서, 칭찬할 때는 excellent 나 great 가 자연스럽습니다."
+
+- word: "expand"
+  reason: "usage_note: \"추상 쪽에 더 자주\" 를 거짓이라 단정할 근거는 없지만 뒤 문장(\"'확대하다'와는 다르게\")이 견줄 수 없는 것을 견주어 내용이 없고, 새 글의 두 쓰임은 모두 사실이다. / 설명은 '물건이 실제로 부푸는 데에도 써요 — Metal expands when it gets hot' 이라고 하는데 문형은 '(일반적으로 추상적인 개념)' 이라 서로 어긋난다. 설명을 고치면서 문형을 안 맞췄다."
+  pattern: "expand + 목적어"
+  usage_note: "expand 는 크기나 범위가 커진다는 뜻이에요. 사업이 커지는 것처럼 눈에 안 보이는 일에도 쓰고, 물건이 실제로 부푸는 데에도 써요 — Metal expands when it gets hot. (금속은 뜨거워지면 늘어나요.)"
+
+- word: "expression"
+  reason: "pattern: 실제로 선별기가 NOW 에 example_ignores_pattern('of 가 예문에 없어요')을 걸어 두고 있었고, 바꾼 문형으로 다시 돌리면 그 지적이 사라진다. / usage_note: expression 을 설명하며 든 예가 gesture 였던 것이 맞고, FIX 의 두 갈래는 둘 다 실재한다."
+  pattern: "a/the + expression"
+  usage_note: "얼굴에 드러난 감정이 expression이에요. 자주 쓰는 말이나 표현도 expression이라고 해요: That's a useful expression."
+
+- word: "failure"
+  reason: "example: WHY 의 \"a big failure 는 굳어진 짝이 아니다\" 는 사실이 아니지만(실재하는 연어), 같은 항목의 고친 usage_note 가 \"사람에게 쓰면 아주 심한 말\" 이라고 경고하는데 예문이 바로 사람을 그렇게 부르면 자기반박이라 바꾸는 쪽이 맞다. / usage_note: NOW 가 '생각해요' 라는 짐작으로 끝나 정보가 없는 게 맞고, confused_with 의 fail 을 실제로 갈라 준다."
+  example: "The plan was a failure."
+  usage_note: "일이 잘 안 된 것을 failure라고 해요. 동작으로 말할 때는 fail을 써요: The plan failed. 사람에게 쓰면 아주 심한 말이 되니 조심하세요."
+
+- word: "favor"
+  reason: "meaning_ko: 예문 Can you do me a favor? 와 해석 '부탁'이 뜻 칸에 없어 어긋나 있었고, 괄호가 favor 가 '해 주는 일'이라는 것까지 짚는다. / pattern: 예문이 do me a favor 모양이라 선별기도 원문 문형에 \"for 가 예문에 없어요\"를 띄우고 있었고, 이 교정으로 그 지적이 사라진다. / usage_note: 철자 지적은 옳지만 Thanks for the favor. 는 원어민이 잘 안 쓰는 말이라(고맙다고 할 때는 Thanks for doing me a favor / Thanks for the help 쪽이다) 실제로 흔한 do me a big favor 로 바꾼다. / confused_with: favour 는 다른 낱말이 아니라 같은 낱말의 영국식 철자이고, help 는 favor 와 실제로 헷갈리는 A1 낱말이다. ```"
+  meaning_ko: "부탁, 도움 (남을 위해 해 주는 일)"
+  pattern: "do + 사람 + a favor"
+  usage_note: "남에게 부탁할 때 Can you do me a favor? 라고 먼저 물으면 부드럽게 들려요. 큰 부탁이면 Can you do me a big favor? 라고 해요. favour 는 영국식 철자일 뿐 뜻은 같아요."
+  confused_with: ["gift", "help"]
+
+- word: "federal"
+  reason: "usage_note: 끊긴 문장을 고치면서, national 과 갈라 쓸 실제 기준(연방제 나라인가)을 처음으로 준다."
+  usage_note: "미국처럼 여러 주가 모여 이룬 나라에서, 주 위에 있는 중앙 정부를 가리켜요 — the federal government. 한국처럼 주가 없는 나라 이야기에는 쓰지 않고 national 이나 the government 라고 해요."
+
+- word: "feed"
+  reason: "meaning_ko: '먹이주다' 는 붙여 쓸 수 없는 말이 맞다. / pattern: with 를 걷어낸 건 옳지만 원안의 '— feed the baby some rice' 는 괄호 밖이라 선별기가 baby·some·rice 를 예문에서 찾고 example_ignores_pattern(medium)을 새로 띄운다 — 실제로 돌려서 확인했다. / usage_note: NOW 가 feed the baby 를 멀쩡하다고 해 놓고 with 가 있어야 한다고 뒤집은 게 맞고, FIX 의 두 꼴은 둘 다 실제 영어다."
+  meaning_ko: "먹이를 주다, 밥을 먹이다 (동물이나 아기에게)"
+  pattern: "feed + 먹는 쪽 (+ 음식)"
+  usage_note: "feed 는 스스로 못 먹는 쪽에게 먹여 준다는 뜻이라 동물이나 아기에게 써요. 음식까지 말할 때는 with 없이 feed the baby some milk 라고 하거나, feed milk to the baby 처럼 to 를 씁니다."
+
+- word: "flight"
+  reason: "meaning_ko: 비행기라는 기계는 airplane 이라 '비행기 한 대'는 거짓이 맞다. / usage_note: NOW 는 틀린 전제('비행기 한 대')에서 to/from 을 끌어내 이유가 성립하지 않았고, FIX 의 airplane·plane 구별은 사실이다."
+  meaning_ko: "항공편, 비행기를 타고 가는 한 번의 여정"
+  usage_note: "flight 는 비행기를 타고 가는 한 번의 여정, 곧 항공편이에요 — My flight is at seven. (제 비행기는 7시예요.) 비행기라는 기계 자체는 airplane 이나 plane 이라고 합니다. 어디로 가는지는 to, 어디서 오는지는 from 을 붙여요."
+
+- word: "flower"
+  reason: "usage_note: 원문은 a flower 를 '특정한 한 송이'라 해서 a 와 the 를 뒤바꾼 거짓이고, FIX 가 DB 예문 I like the flower in the garden. 과도 맞는다."
+  usage_note: "한 송이는 a flower, 여러 송이는 flowers 예요. 어떤 꽃인지 정해서 가리킬 때는 the flower 라고 해요 — the flower in the garden (정원에 있는 그 꽃)"
+
+- word: "football"
+  reason: "meaning_ko: '공기구하는'은 없는 말이 맞고, 미국의 football 이 미식축구라는 것은 이 낱말에서 가장 중요한 사실이다. / pattern: 운동 이름 앞에 관사를 붙이지 않는 것이 맞고 예문도 play football 이다. / usage_note: '볼'만 떼어 본다는 NOW 는 영어에 대해 아무 말도 하지 않았고, 미·영 차이라는 핵심이 실제로 빠져 있었다."
+  meaning_ko: "축구; (미국에서는) 미식축구"
+  pattern: "play football"
+  usage_note: "영국을 비롯한 대부분의 나라에서 football 은 축구예요. 그런데 미국에서는 축구를 soccer 라고 하고, football 이라고 하면 미식축구를 뜻합니다. 운동 이름 앞에는 a 나 the 를 붙이지 않아요 — Do you play football?"
+
+- word: "fresh"
+  reason: "usage_note: 원문은 '음식에 자주 쓴다'를 두 번 말할 뿐이고, FIX 는 confused_with 의 new 와의 차이를 채운다."
+  usage_note: "만들거나 딴 지 얼마 안 돼 상태가 좋다는 뜻이에요. new 는 그냥 새것이라는 뜻이라 음식에는 fresh 를 써요 — fresh bread (갓 구운 빵)"
+
+- word: "grant"
+  reason: "pattern: 예문이 사람과 물건을 나란히 받는 4형식인데 문형이 목적어 하나뿐이었던 게 맞다. / usage_note: 친구에게 I grant you permission. 을 권하던 NOW 는 실제로 학습자를 이상한 말로 이끌고, FIX 의 지원금 뜻은 사전에 있다."
+  pattern: "grant + 사람 + 주는 것 (granted me extra time)"
+  usage_note: "grant 는 권한을 가진 쪽이 공식적으로 내준다는 딱딱한 말이라, 친구가 Can I go out? 하고 물으면 Sure, go ahead. 나 Yes, you can. 이라고 해요. grant 는 이름씨로 정부나 학교가 주는 지원금을 뜻하기도 합니다."
+
+- word: "hardly"
+  reason: "pattern: 원형 표기를 뺀 것은 옳지만 선별기는 형태를 쉼표·빗금으로만 쪼개고 세미콜론은 쪼개지 않아, 올라온 안 그대로 넣으면 예문에 없는 can 을 요구하는 example_ignores_pattern 지적이 새로 생긴다(실제로 돌려 확인했고, 쉼표로 바꾸면 사라진다). / usage_note: NOW 는 I almost never eat meat. 를 정반대로 옮긴 명백한 거짓이고, 새 글의 이중부정 금지와 almost 설명은 모두 사실이다."
+  pattern: "hardly + 동사, can/could + hardly + 동사원형"
+  usage_note: "hardly 는 그 자체에 '거의 안' 이라는 부정의 뜻이 들어 있어서 not 을 또 쓰지 않아요. I don't hardly eat meat. 라고 하면 안 돼요. almost 는 그냥 '거의' 라는 뜻이라 뒤에 오는 말에 따라 달라져요 — almost never (거의 안), almost every day (거의 매일)."
+
+- word: "horse"
+  reason: "usage_note: **원안이 새 거짓을 넣었다** — WordNet 에서 pony 는 \"small gentle horses\"(작은 품종)이고 새끼 말은 foal 이라 '새끼 말은 pony' 는 사실이 아니다. / confused_with: cow·sheep·pig 는 동어반복 설명에서 베껴 온 값이고, pony·donkey 는 둘 다 실재어이며 생김새로 실제 헷갈리는 짝이다."
+  usage_note: "말을 탄다고 할 때는 ride a horse 라고 해요. 자동차처럼 drive 를 쓰지는 않아요. 작은 말은 pony, 새끼 말은 foal 이라고 합니다."
+  confused_with: ["pony", "donkey"]
+
+- word: "host"
+  reason: "meaning_ko: 같은 항목 설명이 \"호스트는 보통 사람\" 이라고 하는데 뜻에 사람이 없어 어긋났고, '호스트하다' 는 왕초보에게 뜻풀이가 되지 않는다. / 뜻은 '주최하다, 손님을 맞다; 주최자' 로 고쳐졌는데 설명은 '호스트는 보통 사람을 말하지만' 으로 옛것 그대로다 — 한국어 외래어로 시작해 영어를 말하지 않는다."
+  meaning_ko: "주최하다, 손님을 맞다; 주최자, 손님을 맞는 사람"
+  usage_note: "행사를 여는 쪽이에요 — host a party, host the meeting. 그 자리에서 손님을 맞는 사람도 the host 라고 해요. 맞이받는 쪽은 a guest 예요."
+
+- word: "impossible"
+  reason: "usage_note: 원문 뒷문장이 예문 해석을 한 번 더 적은 것에 지나지 않았고, 새 글의 세 문장은 모두 사실이며 쓸 자리를 알려 준다."
+  usage_note: "impossible 은 can't 보다 훨씬 센 말이에요. 그냥 못 한다고 할 때는 I can't do it. 이라고 하고, 아무리 해도 안 되는 일에만 It's impossible. 이라고 해요. 반대말은 possible 이에요."
+
+- word: "institution"
+  reason: "usage_note: '기타 명사로 오해할 수 있어요' 는 실제로 뜻이 통하지 않는 비문이 맞고, FIX 의 두 문장은 둘 다 사실이다."
+  usage_note: "institution 은 학교·병원·은행처럼 오래되고 공적인 기관에 써요. organization 은 크기나 성격을 가리지 않는 넓은 말이라 작은 모임에도 쓸 수 있어요."
+
+- word: "insurance"
+  reason: "pattern: 사전에 insurance 는 명사 뜻만 있고 an insurance 라고 하지 않는데 NOW 는 a 를 권했고, 새 문형은 예문 health insurance 를 그대로 보여 주며 선별기 문형 검사도 통과한다."
+  pattern: "종류 + insurance (health insurance, car insurance)"
+
+- word: "investigation"
+  reason: "usage_note: 원문은 한국어 '수사'·'조사'만 견주고 영어를 말하지 않았고, 새 글의 survey·research 구분은 같은 항목 confused_with 와도 맞다."
+  usage_note: "investigation 은 경찰이 사건의 진상을 파고들 때 자주 써요. 사람들에게 물어서 알아보는 조사는 survey, 학문적으로 파고드는 연구는 research 라고 해요."
+
+- word: "island"
+  reason: "pattern: a island 는 틀린 영어가 맞고 예문도 an island 다. / usage_note: NOW 는 한국어 '도'만 이야기했고, FIX 의 묵음 s 와 Jeju Island 표기는 모두 사실이다."
+  pattern: "an island"
+  usage_note: "island 는 물로 둘러싸인 땅이에요. 첫소리가 모음이라 a 가 아니라 an island 라고 하고, s 는 소리 내지 않아 '아일랜드'처럼 읽어요. 제주도는 Jeju Island 라고 합니다."
+
+- word: "labor"
+  reason: "pattern: 'labor in construction' 은 쓰지 않는 꼴이 맞고, 새 예문이 hard 를 보여줘 선별기 지적이 없다(44자). / example: He works in labor. 는 영어로 뜻이 서지 않는 문장이다. / usage_note: '일 자체를 의미한다' 는 되돌려 말하기가 맞고, labour 철자와 work 대비는 사실이다."
+  pattern: "hard/cheap/manual + labor (꾸미는 말과 함께 쓰는 이름씨)"
+  example: "Building a house takes a lot of hard labor."
+  usage_note: "labor 는 몸을 써서 하는 힘든 일을 가리키는 딱딱한 말이라 신문이나 계약서에 자주 나와요. 평소에 '일한다' 고 할 때는 work 를 씁니다 — I work at a bank. 영국에서는 labour 라고 적어요."
+
+- word: "lady"
+  reason: "usage_note: \"lady 는 일반적인 여성, woman 은 더 일반적\" 은 차이를 지우는 말이 맞고, ma'am 은 실재하는 호칭이다."
+  usage_note: "보통은 woman이라고 하고, lady는 조금 더 정중하게 부를 때 써요. 모르는 분을 부를 때는 Excuse me, ma'am처럼 말하기도 해요."
+
+- word: "launch"
+  reason: "usage_note: 이 항목만 '~한다' 문어체라 학습자에게 튀었고, start 와의 경계도 \"공식적인 행사\"보다 이쪽이 판단하기 쉽다."
+  usage_note: "새 물건을 세상에 처음 내놓거나 큰일을 크게 시작할 때 써요 — launch a product (제품을 내놓다), launch a campaign (캠페인을 시작하다). 밥 먹기 시작한다는 식의 작은 일에는 안 쓰고, 그럴 때는 start 를 써요."
+
+- word: "lay"
+  reason: "usage_note: 문법 사실(lay 타동사, lie 자동사, lie 의 과거형 lay, lied=거짓말했다)은 모두 맞지만 \"뒤에 아무것도 안 붙여요\" 바로 옆에 down 이 붙은 예문이 와 스스로 어긋나므로 '목적어를'로 바꾼다. / confused_with: lay down 은 이 낱말이 든 구라 목록에 못 들어가고, place 는 사전에 있는 A1 동사이며 실제로 lay 와 바꿔 쓰는 말이다."
+  usage_note: "lay 는 무언가를 내려놓는 것이라 뒤에 놓는 물건을 꼭 써요 — lay the book on the table. 사람이 눕는 것은 lie 라서 뒤에 목적어를 안 붙여요 — I lie down. 어제 누웠다고 할 때는 I lay down. 이라고 해요. lie 의 과거형이 마침 lay 라서 헷갈리는 거예요. I lied down. 은 틀려요. lied 는 '거짓말했다'거든요."
+  confused_with: ["lie", "place"]
+
+- word: "left"
+  reason: "pattern: 품사 나열만으로는 학습자가 말할 수 없는 것이 맞고, 저장된 예문 on the left 를 첫 갈래가 그대로 보여준다. / usage_note: \"'left'는 'left'가 아니라 'left'로만 쓰입니다\"는 말이 되지 않는 문장이 맞고, leave 의 과거형이 이 낱말에서 진짜 헷갈리는 지점이다. / confused_with: 'left hand'는 구가 맞고, 사전에서 leave 가 동사로 확인되며 그 과거형이 left 라 실제 혼동 대상이다."
+  pattern: "on the left / turn left"
+  usage_note: "왼쪽에 있다고 할 때는 on the left, 왼쪽으로 돌라고 할 때는 Turn left. 라고 해요. leave(떠나다)의 과거형도 모양이 똑같은 left 라서 He left. 는 '그는 떠났어요' 라는 뜻입니다."
+  confused_with: ["right", "leave"]
+
+- word: "leg"
+  reason: "example: This leg is hurting. 은 A1 예문으로 부자연스럽고 My leg hurts. 가 이 상황의 표준 표현이다. / usage_note: \"다리의 일부분인 leg\" 라는 말이 안 되는 문장을 지우고, 한국어 '다리'와 영어 leg 의 경계가 다르다는 실제 이유를 넣었다."
+  example: "My leg hurts."
+  usage_note: "영어 leg 는 발목 위쪽만 가리키고, 발은 foot 라고 따로 불러요. 한국어 '다리'는 발까지 뭉뚱그려 말할 때가 있어서 헷갈리기 쉬워요. 다리 두 개는 legs, 발 두 개는 feet 예요."
+
+- word: "lift"
+  reason: "usage_note: Raise your hand. 가 몸으로 하는 동작이라 'raise 는 추상적' 이 거짓인 게 맞고, 영국의 lift 도 사실이다."
+  usage_note: "lift 는 무거운 것을 힘써 들어 올릴 때 써요. raise 는 손을 들거나 값을 올릴 때처럼 위로 올린다는 뜻이 더 넓어요 — Raise your hand. 영국에서는 lift 가 엘리베이터를 뜻하기도 합니다."
+
+- word: "lunch"
+  reason: "pattern: 예문의 at 은 시간 앞에 붙어 있어 NOW 와 어긋났고, 새 문형은 I have lunch 와 맞는다. / usage_note: 원문은 뜻을 되풀이하고 'lunch이' 라는 조사 오류까지 있었으며, 새 글의 두 사실은 모두 맞고 '보통' 으로 적절히 눅였다."
+  pattern: "have + lunch"
+  usage_note: "밥을 먹는다고 할 때는 eat 보다 have 를 자주 써요 — have breakfast, have lunch, have dinner. lunch 앞에는 보통 a 나 the 를 붙이지 않아요."
+
+- word: "map"
+  reason: "usage_note: '쓰예요'는 오타가 맞고, 사전에서 map 의 품사가 명사·동사로 확인돼 '명사로만 쓰인다'도 거짓이 맞다."
+  usage_note: "처음 꺼내는 말이면 a map, 서로 아는 그 지도를 가리킬 때는 the map 이라고 해요. 종이 지도든 휴대폰 지도든 다 map 입니다. 계획을 차근차근 짠다고 할 때 map out 이라는 표현도 써요 — We mapped out the trip."
+
+- word: "marriage"
+  reason: "meaning_ko: 같은 항목 usage_note 가 예식은 wedding 이라고 말하는데 뜻에 '결혼식' 이 든 것이 자기반박이 맞다. / example: marriage ceremony 가 아주 없는 말은 아니지만 같은 항목 설명과 어긋나는 것이 사실이고, a happy marriage 는 고친 뜻('결혼 생활')을 그대로 보여 준다."
+  meaning_ko: "결혼, 결혼 생활"
+  example: "My parents have a happy marriage."
+
+- word: "mass"
+  reason: "pattern: 예문 a big mass of people 은 이름씨 용법인데 문형만 꾸밈말 자리라 어긋난 게 맞고, 바꾼 문형으로 검사를 돌려도 지적이 없다."
+  pattern: "a mass of + 명사"
+
+- word: "mostly"
+  reason: "pattern: 예문 I mostly eat vegetables. 에서 mostly 뒤는 목적어가 아니라 동사 eat 이다. / usage_note: 원문은 한국어 '보통'과 '대부분'만 견주었고, FIX 는 confused_with 의 usually 와의 실제 차이를 짚는다."
+  pattern: "주어 + mostly + 동사"
+  usage_note: "usually 는 '늘 그렇게 한다'는 횟수 이야기이고, mostly 는 '거의 다 그렇다'는 양 이야기예요 — I mostly eat vegetables. (먹는 것의 대부분이 채소예요)"
+
+- word: "mountain"
+  reason: "usage_note: \"mountains라고 써야 해요\" 뒤에 a mountain 을 인정한 것이 자기반박이 맞고, FIX 는 금지어 없이 같은 사실을 말해 낱말이 연습장에 남는다."
+  usage_note: "산이 하나면 a mountain, 여럿이면 mountains예요. 산에 간다고 할 때는 보통 여럿으로 말해요: We went to the mountains."
+
+- word: "neighbor"
+  reason: "usage_note: NOW 는 소유격을 규칙처럼 못 박고 바로 a/the 를 인정해 스스로 뒤집는 게 맞고, FIX 의 We are neighbors 는 실재하는 문장이며 거짓이 없다. / confused_with: neighbour·next door 를 빼는 것은 옳지만 roommate 는 DB 에 아예 없어 짝이 될 수 없고 friend 는 헷갈릴 이유가 없는 반면, neighborhood 는 DB 에 '주변, 근처 (특히 거주하는 곳 주변)' 로 실재하고 이웃/동네가 실제 혼동 자리다(충돌 검사 재실행: 새 충돌 0건)."
+  usage_note: "옆집이나 근처에 사는 사람이 neighbor예요. 우리 옆집 사람은 my neighbor, 서로 이웃으로 지내는 사이는 We are neighbors라고 해요."
+  confused_with: ["neighborhood"]
+
+- word: "neither"
+  reason: "usage_note: Neither of them is coming·Me neither 가 있으니 'nor 구조로만'은 거짓이 맞고, 동사가 가까운 주어를 따른다는 설명이 NOW 의 '주어가 복수라서'보다 정확하다."
+  usage_note: "neither A nor B 는 'A 도 B 도 아니다' 라는 뜻이에요. 동사는 바로 앞에 오는 쪽에 맞춥니다 — Neither my brother nor my sisters are coming. 상대 말에 '나도 아니야' 라고 맞장구칠 때는 Me neither. 라고 해요."
+
+- word: "net"
+  reason: "meaning_ko: 그물을 '물건을 걸 수 있는 구조'라 한 것은 뜻이 통하지 않고, 저장된 예문도 물고기를 잡는 그물이다. / pattern: 'net: 명사 (the net)'은 학습자 화면에 나갈 표기가 아닌 것이 맞고, FIX 는 caught↔catch 굴절까지 포함해 예문 대조를 통과한다. / usage_note: net 은 고대영어에서 온 독립 낱말이고 network 가 거기서 파생된 쪽이라 '줄임말'은 방향이 거꾸로인 거짓이 맞다."
+  meaning_ko: "그물 (실이나 줄을 엮어 만든 것); 골대나 테니스의 네트"
+  pattern: "catch + 목적어 + with a net / a fishing net"
+  usage_note: "물고기를 잡는 그물, 축구 골대의 그물, 테니스 네트가 모두 net 이에요. 인터넷은 the internet 이라고 하고, 컴퓨터끼리 이어진 망은 a network 라고 합니다."
+
+- word: "nobody"
+  reason: "meaning_ko: '아무도 없음'은 문장 전체의 뜻이라 nobody 를 '없다'로 외우게 하고, 괄호가 한국어 '아무도'에 부정 서술이 따라온다는 것까지 보여 준다. / pattern: 문형 칸에 들어가 있던 설명을 걷어내고 예문 Nobody is here. 를 그대로 설명한다. / usage_note: COCA·BNC 대조 연구가 글에서는 no one, 말에서는 nobody 가 우세하다고 보고하므로 뒷문장도 사실이고, 앞문장은 통하지 않던 원문을 실제 규칙으로 바꿨다."
+  meaning_ko: "아무도 (~않다)"
+  pattern: "nobody + 단수 동사"
+  usage_note: "뜻은 여럿을 가리켜도 뒤에 오는 동사는 하나짜리 모양으로 써요 — Nobody is here. (O) / Nobody are here. (X) 뜻이 같은 no one 은 글에서 더 자주 보이고, nobody 는 말할 때 편하게 써요."
+
+- word: "north"
+  reason: "pattern: in north 는 the 가 빠진 틀린 영어가 맞고 예문도 in the north of the city 다. / usage_note: go north·face north 가 흔한 이상 '지역에 더 자주 쓴다'는 근거 없는 빈도 주장이었고, FIX 는 그 자리에 실제로 쓸 수 있는 관사 규칙을 넣는다."
+  pattern: "in the north of + 장소"
+  usage_note: "방향을 말할 때는 the 없이 go north (북쪽으로 가다) 처럼 쓰고, 지역을 말할 때는 the north of the city 처럼 the 를 붙여요. 나라 이름에서는 North Korea (북한) 처럼 첫 글자를 크게 씁니다."
+
+- word: "novel"
+  reason: "usage_note: 원문은 뜻풀이 '소설'을 되풀이할 뿐이고, FIX 는 '지어낸 이야기'라는 새 정보를 준다."
+  usage_note: "novel 은 지어낸 이야기를 담은 책이에요. book 은 어떤 책이든 다 가리키니까, 소설이라는 걸 밝히고 싶을 때 novel 을 써요 — I'm reading a novel."
+
+- word: "nuclear"
+  reason: "meaning_ko: 원자로는 reactor 라 nuclear 에 '원자로의'라는 뜻은 없고, 핵무기·핵가족의 '핵의'가 빠져 있던 뜻이다."
+  meaning_ko: "원자력의, 핵의"
+
+- word: "nurse"
+  reason: "usage_note: 동사 뜻(사전에 명사·동사 둘 다 있다)과 예문은 옳으나 She 를 '그는' 으로 옮겨, 이 자료의 She 예문 97개 중 91개가 쓰는 '그녀는' 과 어긋나고 her sick mother 와도 어긋난다."
+  usage_note: "nurse 는 '간호사' 말고 '간호하다, 돌보다' 라는 동사 뜻으로도 써요. 예: She nursed her sick mother. (그녀는 아픈 어머니를 돌봤어요.)"
+
+- word: "observe"
+  reason: "usage_note: 지적은 옳지만 observe the speed limit 처럼 표지판·안내문에도 쓰는 말이라 \"법률 문서 같은 데\"는 새로 좁힌 거짓이 되므로 '격식 있는 말'로 바꾼다."
+  usage_note: "가장 흔한 뜻은 '자세히 지켜보다'예요. watch 보다 딱딱하고, 무언가를 알아내려고 볼 때 써요. 규칙을 지킨다는 뜻도 있지만 격식 있는 말이라, 일상에서는 follow the rules 라고 하세요."
+
+- word: "obvious"
+  reason: "usage_note: 원문은 \"더 강하다\" 를 두 번 말할 뿐이고, 새 글은 왜 강한지와 대안(clear)을 주며 같은 항목 confused_with 와도 맞다."
+  usage_note: "obvious 는 누가 봐도 알 수 있어서 굳이 말할 필요가 없다는 느낌이에요. 그래서 It's obvious. 라고 하면 상대에게 '그건 뻔하잖아' 처럼 들릴 수 있어요. 부드럽게 말하려면 clear 를 써요 — It's clear that he's lying."
+
+- word: "overall"
+  reason: "usage_note: 문장 끝 overall 은 실제로 흔하므로 \"맨 앞에 써야 해요\"는 거짓이고, 새 안이 '가장 흔하지만'으로 정도를 지켜 pattern 칸(문장 맨 앞)과도 충돌하지 않는다."
+  usage_note: "이것저것 따져 본 뒤 결론을 말할 때 써요. 문장 맨 앞에 두고 쉼표를 찍는 게 가장 흔하지만, 맨 뒤에 붙여도 돼요 — The trip was great overall. 뜻이 비슷한 in general 은 늘 그렇다는 이야기를 할 때 써요."
+
+- word: "owner"
+  reason: "usage_note: owner 를 물건에 쓸 수 있다는 NOW 는 거짓이 맞고, the owner of 는 같은 항목 예문 그대로다."
+  usage_note: "무엇을 가지고 있는 사람이 owner예요. 무엇의 주인인지는 of로 붙여요: the owner of this car. 가게 주인은 the shop owner라고도 해요."
+
+- word: "pain"
+  reason: "usage_note: 선별기가 NOW 를 countability_claim_unchecked 로 잡고 있었고, FIX 는 '불가산'·'셀 수 있는' 을 한 번도 쓰지 않아 그 지적을 되살리지 않는다."
+  usage_note: "아픈 데를 말할 때는 in 을 써요 — I have a pain in my back. 그냥 I have some pain in my back. 처럼 a 없이 말해도 자연스럽습니다. 이·머리·배가 아플 때는 toothache, headache, stomachache 처럼 -ache 가 붙은 말을 더 자주 써요."
+
+- word: "pair"
+  reason: "pattern: \"of 뒤는 목적어가 아니다\"라는 근거 자체는 엉성하지만(전치사의 목적어라 부른다), 이 DB 에서 '목적어'는 동사의 목적어 자리에만 쓰이므로 표기를 '명사'로 맞추는 것은 옳다. / usage_note: a pair of pants·glasses·scissors 는 모두 실제 표현이고, 원문이 나열만 하던 규칙을 한 문장으로 세웠다."
+  pattern: "a pair of + 명사"
+  usage_note: "두 짝이 붙어 하나가 되는 물건에 써요. 신발·양말은 물론이고 바지, 안경, 가위처럼 한국어로는 한 개인 물건도 영어에서는 a pair of pants, a pair of glasses 라고 해요."
+
+- word: "partner"
+  reason: "usage_note: 선별기가 NOW 를 note_compares_korean_only 로 이미 잡고 있었고, FIX 는 그 지적을 없애면서 새 지적을 만들지 않는다."
+  usage_note: "partner 는 같이 일하는 사람만이 아니라 결혼했거나 사귀는 사람을 가리킬 때도 아주 많이 써요. 그래서 My partner works here. 만 들으면 회사 동료인지 애인인지 알 수 없어요. 직장 동료만 뜻하려면 colleague 라고 하면 분명해요."
+
+- word: "payment"
+  reason: "usage_note: NOW 의 뒤 두 문장이 한국어 '지불/결제' 만 견주는 게 맞고, make/receive a payment·payment for·monthly payments 는 전부 실재한다. ```"
+  usage_note: "돈을 내는 쪽은 make a payment, 받는 쪽은 receive a payment예요. 무엇에 대한 돈인지는 for로 붙여요: payment for the hotel. 다달이 나눠 내는 돈은 monthly payments라고 해요."
+
+- word: "peace"
+  reason: "usage_note: peace and quiet 이라는 실제 관용 표현을 새로 알려 주면서 confused_with 의 peaceful 도 마지막 문장에 남겼다."
+  usage_note: "나라 사이의 평화만 뜻하는 게 아니에요. 시끄럽지 않고 마음이 편한 상태에도 써요 — I want some peace and quiet. (좀 조용히 쉬고 싶어요.) 조용하고 편안한 곳을 말할 때는 a peaceful place 라고 해요."
+
+- word: "perfect"
+  reason: "pattern: 예문 This cake is perfect. 이 be 뒤 모양이라 문형이 예문을 덮어야 한다. / usage_note: 'perfect + 부사어'라는 모양은 영어에 없고, 부사는 perfectly 라는 것이 사전과도 맞는다."
+  pattern: "perfect + 명사 / be + perfect"
+  usage_note: "흠잡을 데 없다는 뜻인데, 실제로는 '딱 좋다' 정도로 가볍게 쓸 때가 많아요. 약속 시간을 정하고 Perfect! 하면 '좋아요!'라는 뜻이에요. '완벽하게'라고 말하려면 perfectly 로 바꿔 써요 — It fits perfectly."
+
+- word: "photograph"
+  reason: "confused_with: 'take a picture'는 구가 맞고, picture 는 실재하는 낱말이며 실제 혼동 대상이다."
+  confused_with: ["photo", "picture"]
+
+- word: "physical"
+  reason: "usage_note: \"~이지, ~이에요\"로 앞말을 부정하던 비문을 없애고 mental 과의 짝, 그리고 a physical book 이라는 실제 쓰임을 더했다. / confused_with: physical exercise 를 빼는 것은 맞지만 그 자리를 메우려 넣은 bodily 는 CEFR-J 등급표에도 없는 드문 낱말이라, 이 DB 에 이미 흔한 한 낱말짜리 목록(federal:['national'], peace:['peaceful'])으로 두는 편이 낫다."
+  usage_note: "마음이 아니라 몸에 관한 것을 가리켜요. mental 과 짝을 이뤄 써요 — mental health (마음 건강), physical health (몸 건강). 물건이 손에 잡힌다는 뜻으로도 써요 — a physical book (종이책)."
+  confused_with: ["mental"]
+
+- word: "plane"
+  reason: "example: flew 와 by plane 이 겹치는 데다 저장된 해석이 이미 '갔어요' 라 해석을 건드리지 않고 짝이 맞는다. / usage_note: airplane 이 특정 종류를 가리킨다는 NOW 는 거짓이 맞고, aeroplane 은 사전에 실재하는 영국식 철자다(WordNet: n)."
+  example: "I went to Seoul by plane."
+  usage_note: "plane과 airplane은 같은 뜻이고, 말할 때는 보통 짧게 plane이라고 해요. 미국에서는 airplane, 영국에서는 aeroplane이라고 길게 써요. 비행기를 탄다는 말은 take a plane이라고 해요."
+
+- word: "pleasure"
+  reason: "usage_note: 원문의 '기쁨을 표현할 때 / 감정을 말할 때'는 갈라지지 않는 구분이고, 실제 차이가 품사라는 FIX 의 지적이 맞다."
+  usage_note: "pleasure 는 명사라서 a pleasure 처럼 쓰고, happy 는 형용사라서 I'm happy. 처럼 써요. 인사로 It's a pleasure. (만나서 반가워요) 를 자주 써요."
+
+- word: "plus"
+  reason: "usage_note: I like apples plus oranges 는 영어로 쓰지 않는 문장이 맞고, 문장 앞의 Plus 는 실재하는 구어 용법이다."
+  usage_note: "숫자를 더할 때 써요: Two plus three is five. 말할 때 '게다가'라는 뜻으로 문장 앞에 붙이기도 해요: It's cheap. Plus, it's close to my house."
+
+- word: "politics"
+  reason: "pattern: 문형 칸에 표제어가 아닌 political 이 들어가 있었고, 새 문형은 예문 I'm not interested in politics. 를 그대로 설명한다."
+  pattern: "be interested in + politics / talk about + politics"
+
+- word: "pool"
+  reason: "usage_note: DB 원문에 '자원 모으다'·'수영장 뿐' 이 그대로 있고 영어 예문에 해석이 없었는데, 새 글이 셋을 다 고치면서 뜻은 그대로다. / confused_with: 같은 항목이 swimming pool 을 pool 과 같은 말이라고 밝혀 짝이 될 수 없고, pond·puddle 은 실재하며 물웅덩이끼리 실제로 헷갈린다."
+  usage_note: "swimming pool 이라고 해도 되고 pool 만 써도 수영장이에요. pool 에는 '돈이나 힘을 모으다' 라는 뜻도 있어요 — They pooled their money to buy a gift. (그들은 선물을 사려고 돈을 모았어요.)"
+  confused_with: ["pond", "puddle"]
+
+- word: "pop"
+  reason: "pattern: 예문 The balloon popped. 에 목적어가 없고, pop 은 자동사·타동사 둘 다 쓰이므로 FIX 가 사실이다. / usage_note: pop music 은 포크·록이 아니라 popular music 의 준말이라 원문이 거짓이고 FIX 가 맞다."
+  pattern: "주어 + pop (펑 하고 터지다), pop + 목적어 (터뜨리다)"
+  usage_note: "펑 하고 터지는 소리에서 온 말이라, 풍선이 터지거나 뚜껑이 튀어 오를 때 써요. pop music 의 pop 은 popular(인기 있는)에서 온 다른 뜻이에요."
+
+- word: "possibly"
+  reason: "meaning_ko: 사전 품사가 부사뿐이라 '가능성이 있는' 은 possible 의 몫이다. / pattern: 조동사와 동사 사이가 possibly 의 제자리이고, 새 문형은 새 예문의 could 와 맞아 선별기 검사를 통과한다. / example: 문두 Possibly, 는 회화에서 거의 쓰지 않는 말투이고 새 예문은 자연스러우며 12단어 안이다. / usage_note: NOW 는 영어 낱말과 한국어 '아마' 의 정중함을 견주어 견줄 수 없는 것을 견줬고, 새 글은 영어끼리(possibly/maybe) 견주며 confused_with 와도 맞다."
+  meaning_ko: "어쩌면, 아마"
+  pattern: "could/may + possibly + 동사원형"
+  example: "It could possibly rain tomorrow."
+  usage_note: "possibly 는 maybe 보다 조금 딱딱한 말이라 글이나 격식 있는 자리에서 더 자주 보여요. 친구와 말할 때는 maybe 를 쓰면 돼요 — Maybe he will come tomorrow. (그는 아마 내일 올 거예요.)"
+
+- word: "presence"
+  reason: "pattern: in presence of 는 the 가 빠진 틀린 영어가 맞고, 예문 her presence 를 첫 갈래가 그대로 보여준다."
+  pattern: "소유격 + presence / in the presence of + 사람"
+
+- word: "print"
+  reason: "usage_note: Please print your name 이 실제로 쓰이므로 \"반드시 기계로\"는 거짓이고, 프린터가 없으면 write 를 쓰라던 엉뚱한 안내도 사라진다."
+  usage_note: "종이에 뽑는다는 뜻이에요. 손으로 또박또박 정자로 쓰라고 할 때도 print 를 써요 — Please print your name here. (여기에 이름을 정자로 써 주세요.)"
+
+- word: "quiet"
+  reason: "meaning_ko: 지적의 '형용사라 부사 뜻이 없다'는 단정은 사전상 과하지만(WordNet 은 quiet 에 부사·동사 항도 준다), 부사는 quietly 로 가르치는 게 맞고 '조용하게'를 남기면 Speak quiet. 같은 문장을 부추기므로 지우는 쪽이 옳다. / pattern: be quiet 의 동사는 be 이고 quiet 은 그대로 형용사라 원문의 'be quiet (동사)' 표기가 틀렸다. / usage_note: 지적의 근거('quiet 은 동사로 쓰이지 않는다')는 사전으로 반증되지만(WordNet: n·v·a·r) FIX 자체는 '형용사예요'라고만 하고 배타 주장을 하지 않아 새 거짓이 없고, 원문의 뒤엉킨 동사 설명은 실제로 비문이라 고치는 게 맞다. ```"
+  meaning_ko: "조용한"
+  pattern: "be + quiet, quiet + 명사"
+  usage_note: "quiet 은 '조용한'이라는 뜻의 형용사예요. 그래서 Be quiet. (조용히 하세요) 처럼 be 와 함께 쓰고, a quiet room (조용한 방) 처럼 명사 앞에도 붙여요."
+
+- word: "rain"
+  reason: "pattern: rain 뒤에 ing형이나 명사를 붙이는 문형은 없고, FIX 는 예문 It is raining now 를 그대로 가리킨다. / usage_note: NOW 의 \"rain은 동사로 쓰이고, rain은 명사로 쓸 수 있어요\" 는 같은 말을 두 번 한 것이 맞고, in the rain 은 실재하는 표현이다."
+  pattern: "It + be동사 + raining"
+  usage_note: "날씨를 말할 때는 주어 자리에 It을 넣어 It's raining이라고 해요. '비' 자체를 가리킬 때도 같은 낱말을 써요: I walked in the rain."
+
+- word: "reaction"
+  reason: "usage_note: react 가 동사라는 지적은 사전으로 확인했고(WordNet: v) NOW 는 거짓이 맞지만, \"'반응'이라는 이름이고\" 는 한국어로 어색해 '가리키는 명사' 로 고쳤다(선별기 재실행 결과 지적 0건)."
+  usage_note: "reaction은 '반응'을 가리키는 명사이고, 반응하는 동작은 react예요. 무엇에 대한 반응인지는 to로 붙여요: my reaction to the news."
+
+- word: "reader"
+  reason: "usage_note: NOW 는 'reader 와 reader 를 혼동' 이라는 정보량 0의 비문이 맞고, FIX 의 a slow reader 해석은 사실이다. / confused_with: 'book reader' 는 표제어를 품은 값이라 \"reader 와 reader 가 헷갈린다\" 가 되고, writer·author 는 실재어다."
+  usage_note: "read(읽다)에 -er 이 붙어 '읽는 사람' 이 된 말이에요. He is a slow reader. 는 '그는 읽는 게 느려요' 라는 뜻이라, 사람을 소개하는 게 아니라 읽는 실력을 말할 때 자주 씁니다."
+  confused_with: ["writer", "author"]
+
+- word: "reality"
+  reason: "usage_note: NOW 는 규칙을 하나도 주지 않았고, FIX 의 in reality 무관사 용법은 사실이며 품사 단정('명사로만')을 하지 않아 선별기에도 걸리지 않는다."
+  usage_note: "reality 는 명사라서 The reality is ... 처럼 the 를 붙여 쓰고, real 은 명사 앞에 붙는 꾸밈말이에요 — real life (실제 생활). '실제로는' 이라고 말할 때는 the 없이 in reality 라고 합니다."
+
+- word: "regular"
+  reason: "example: 예문에 표제어가 안 나온다는 지적은 옳지만 FIX 의 on a regular basis 는 basis 가 B1(CEFR-J)이라 A2 항목의 예문으로는 무겁고, exercise 는 A1 이면서 문형 regular + 명사 를 그대로 보여 준다. / usage_note: regular meetings 가 곧 정기 회의이므로 \"'정기적인'은 periodic\"이라는 원문은 학습자에게 맞는 낱말을 버리게 만드는 거짓이었다."
+  example: "Regular exercise is good for you."
+  usage_note: "두 가지로 써요. 하나는 '늘 하던 대로'라는 뜻이에요 — my regular coffee shop (늘 가는 카페). 다른 하나는 '거르지 않고 꾸준한'이라는 뜻이에요 — regular exercise (꾸준한 운동). 커피를 시킬 때 regular 는 '보통 크기'를 뜻하기도 해요."
+
+- word: "relatively"
+  reason: "meaning_ko: '대체로' 를 뺀 것은 옳지만, 뜻 칸은 쉼표로 갈래를 나누는 자리(screening.repeated_meaning 이 쉼표로 쪼갠다)라 '다른 것에 견주어 보면' 이라는 절이 두 번째 뜻으로 읽힌다. / usage_note: 틀린 뜻 '대체로' 를 이어받던 설명을 걷어내고 같은 항목 예문을 그대로 풀어 주며, 주장하는 내용이 사실이다. / confused_with: \"구라서 못 쓴다\" 는 이유는 약하지만(선별기는 세 낱말까지의 구를 허용한다) fairly 가 relatively 와 실제로 헷갈리는 낱말이라 짝으로 더 낫다."
+  meaning_ko: "비교적, 상대적으로 (다른 것과 견주어서)"
+  usage_note: "relatively 는 다른 것과 견주어 보면 그렇다는 뜻이에요. It's relatively cheap. 은 '다른 것에 비하면 싼 편' 이라는 말이지 아주 싸다는 말은 아니에요."
+  confused_with: ["comparatively", "fairly"]
+
+- word: "requirement"
+  reason: "pattern: 예문이 the requirements for this job 이라 'a + requirement'와 수·관사가 모두 어긋난 것이 맞다. / usage_note: '조건'을 '요구되는 조건'으로 바꿔 말한 것이 전부였던 NOW 와 달리 FIX 는 파생 관계와 복수형이라는 실제 사실을 준다."
+  pattern: "the requirements for + 명사"
+  usage_note: "requirement 는 require(요구하다)의 명사로, 꼭 갖춰야 하는 조건을 말해요. 지원 자격이나 내야 하는 서류처럼 정해진 조건을 가리킬 때 쓰고, 보통 여러 개라서 requirements 처럼 복수로 씁니다."
+
+- word: "reveal"
+  reason: "meaning_ko: '발견하다'는 find·discover 의 뜻이라 reveal 을 반대 방향으로 외우게 하는 거짓이었다. / usage_note: '~고 하며', '보여주다고 해요' 같은 어긋난 이음말과 조사 오류를 없애고 show 와의 경계를 한 줄로 세웠다."
+  meaning_ko: "밝히다, 드러내다 (숨어 있던 것을 보여 주다)"
+  usage_note: "감춰져 있던 것을 드러낼 때 써요 — reveal a secret (비밀을 밝히다). 그냥 눈앞에 보여 주는 것은 show 예요 — show a picture (사진을 보여 주다). 숨겨진 것이 없으면 reveal 을 쓰지 않아요."
+
+- word: "revenue"
+  reason: "pattern: 문법 용어만 있던 칸을 예문 The company's revenue 와 맞는 형태 표기로 바꿨고 60자 상한 안이다. / usage_note: 지적한 비문 꼴(\"…개인의 수입을 더 자주 써요\")이 FIX 에 거의 그대로 남아 있어, 주어와 서술어가 맞도록 끝을 다듬어야 지적이 실제로 해결된다."
+  pattern: "회사 + 's + revenue (the company's revenue)"
+  usage_note: "income 과 헷갈리기 쉬워요. revenue 는 회사나 나라가 벌어들이는 돈이고, income 은 개인이 버는 돈이에요."
+
+- word: "roll"
+  reason: "meaning_ko: '면, 빵 등에 얇게 펴서 말아서 만든 것'은 문장이 끊겨 뜻이 서지 않고, roll 이 작고 둥근 빵이라는 것은 사실이다. / example: roll the dough 는 옳은 영어지만 그 동작은 '밀다'라서 뜻에 적힌 '굴리다'를 보여주지 못하고, 대체 예문은 7단어로 상한 안에 든다. / usage_note: '다르예요'는 오타가 맞고 wrap 을 '말다'로 세운 대비도 뒤집혀 있었다 — FIX 의 세 진술은 모두 사실이다. / confused_with: 'roll up'은 같은 낱말+부사이고, bun 은 사전에 있는 명사이며 빵 뜻에서 실제로 헷갈리는 낱말이다."
+  meaning_ko: "굴리다, 돌돌 말다; 롤빵 (동그랗고 작은 빵)"
+  example: "Can you roll the ball to me?"
+  usage_note: "roll 은 둥근 것을 굴리거나 종이·매트를 돌돌 마는 거예요. wrap 은 선물이나 음식을 감싸서 포장하는 거고요. 아침에 먹는 작고 둥근 빵도 roll 이라고 해요 — I want a roll for breakfast."
+  confused_with: ["wrap", "bun"]
+
+- word: "satisfy"
+  reason: "example: satisfy a request 는 잘 쓰지 않는 연어(그 자리는 grant/meet)이고, 새 예문은 문형 'satisfy + 목적어' 를 그대로 보여준다. / usage_note: NOW 는 \"satisfy with 를 안 쓴다\" 와 \"둘은 뜻이 다르다\" 를 나란히 적은 자기반박이 맞고, be satisfied with 는 사실이다. / confused_with: 'satisfy with' 는 표제어에 전치사를 붙인 값이라 \"satisfy 와 satisfy 가 헷갈린다\" 가 되고, fulfill·please 는 둘 다 실재하는 동사다."
+  example: "Her answer satisfied the teacher."
+  usage_note: "satisfy 는 '남을 만족시키다' 라서 만족하는 사람이 아니라 만족시키는 쪽이 주어예요. 내가 만족했다고 할 때는 I am satisfied with the result. 처럼 be satisfied with 를 씁니다."
+  confused_with: ["fulfill", "please"]
+
+- word: "scale"
+  reason: "pattern: on a scale of 1 to 10 도 옳은 영어지만 저장된 예문이 보여주는 것은 on a large scale 이라 문형이 예문을 설명하지 못했다. / example: 건물 하나를 두고 is on a large scale 이라 하지 않는 것이 맞고, 9단어라 이 저장소의 예문 상한(12단어) 안에 든다. / usage_note: NOW 는 영어 용법을 한 줄도 말하지 않았고, FIX 의 size 대비와 '저울' 뜻은 모두 사실이다."
+  pattern: "on a large/small scale"
+  example: "The city is building houses on a large scale."
+  usage_note: "on a large scale 은 '대규모로', on a small scale 은 '소규모로' 라는 뜻이에요. size 는 물건 하나의 크기를 말하고, scale 은 일이 벌어지는 판이 얼마나 큰지를 말해요. 몸무게를 재는 저울도 scale 이라고 합니다."
+
+- word: "scheme"
+  reason: "pattern: 예문이 a scheme to steal 이라 to 부정사가 따라오는 형태가 맞다. / usage_note: NOW 는 한국어 문장 가운데 영어를 끼운 비문에 '이예요' 오타까지 있는 게 맞고, 영국식 scheme(제도)은 실재하는 용법이다."
+  pattern: "a scheme + to + 동사"
+  usage_note: "보통 계획은 plan이라고 하고, scheme은 남을 속이려는 꿍꿍이에 가까워요: a scheme to steal money. 영국에서는 나쁜 뜻 없이 나라나 회사가 만든 제도를 가리키기도 해요."
+
+- word: "secretary"
+  reason: "usage_note: 경리는 돈을 다루는 다른 직무가 맞고 'I need a secretary'를 그대로 되뇐 문장도 정보가 0이었으며, assistant 는 사전에 있는 명사다. / confused_with: 'secretary of state'는 구이고 왕초보 어휘도 아니다."
+  usage_note: "secretary 는 전화, 일정, 서류를 맡아 처리해 주는 사람이에요. 철자가 secret 과 닮았지만 뜻은 상관없어요. 요즘 회사에서는 같은 일을 하는 사람을 assistant 라고 부르기도 합니다."
+  confused_with: ["secret", "assistant"]
+
+- word: "senior"
+  reason: "usage_note: 나이에 쓰는 senior 는 '고위의'가 아니라 '나이가 많은'이라 NOW 가 뜻을 뒤바꿔 적은 것이 맞다."
+  usage_note: "직장에서 senior 는 직급이 높다는 뜻이고, 나이를 말할 때는 나이가 많다는 뜻이에요. senior citizen 은 나이 지긋한 어르신을 가리켜요. 반대말은 junior 로, 직급이 낮거나 나이가 어리다는 뜻입니다."
+
+- word: "sentence"
+  reason: "usage_note: I go school 은 문장이 아닌 게 아니라 틀린 문장이므로 원문은 거짓이고, 새 안은 confused_with 의 word·phrase 와도 맞물린다."
+  usage_note: "낱말 하나는 word, 낱말이 몇 개 모인 덩어리는 phrase, 마침표로 끝나는 완전한 말이 sentence 예요. 예를 들어 to school 은 phrase 이고, I go to school. 은 sentence 예요."
+
+- word: "settle"
+  reason: "usage_note: 원문이 한 설명 안에서 문제에 settle 을 쓰라 했다가 solve 를 쓰라 해서 어긋나는 게 맞고, settle the bill 은 DB 예문 I need to settle my bill. 그대로다."
+  usage_note: "돈을 내거나 다툼을 마무리 지을 때 써요 — settle the bill (계산을 끝내다). 수학 문제처럼 답을 찾아내는 것은 solve 예요. 한곳에 자리 잡고 산다는 뜻으로는 settle down 을 자주 써요."
+
+- word: "shift"
+  reason: "example: 버스가 옆으로 가는 것을 shift 로 말하지 않고 저장된 문형(shift + 목적어)과도 어긋났는데, 대체 예문은 둘 다 해결하며 7단어다. / usage_note: NOW 는 change 와 어떻게 다른지 끝내 말하지 않았고, FIX 의 the night shift=야간 근무는 사실이다."
+  example: "She shifted the chair to the left."
+  usage_note: "shift 는 있던 자리에서 조금 옮기는 느낌이에요. move 는 옮기는 것을 두루 말하고, change 는 아예 다른 것으로 바꾸는 거예요. 회사에서 교대로 일하는 시간도 shift 라고 합니다 — the night shift (야간 근무)."
+
+- word: "ship"
+  reason: "meaning_ko: 사전에도 ship 은 명사·동사 둘 다이고 이 항목의 문형·예문이 전부 동사라, 뜻 칸에 동사를 넣어야 예문과 아귀가 맞는다. / usage_note: \"배로 보낼 때\"라는 원문의 제한은 실제 영어(ship it by air)와 어긋나고, 새 안은 그 거짓만 걷어내고 send 와의 구분은 그대로 남겼다."
+  meaning_ko: "배; (물건을) 보내다, 부치다"
+  usage_note: "명사로는 '배'지만, 동사로는 가게나 회사가 물건을 부친다는 뜻이에요. 배로 보낼 때만 쓰는 말이 아니라 택배·비행기로 보낼 때도 ship 이라고 해요. 편지나 메시지를 보낼 때는 send 를 써요."
+
+- word: "slightly"
+  reason: "usage_note: 지적은 옳으나 FIX 가 든 '물 조금'은 '조금'이 명사 **뒤**에 온 예라 \"명사 앞에도 붙지만\"이라는 앞말을 스스로 뒤집으므로, 원문과 같은 자기반박을 되풀이하지 않게 어순 설명을 고쳤다."
+  usage_note: "형용사나 부사 앞에 붙어 정도를 조금 낮춰요 — slightly cold, slightly better. 한국어 '조금'은 '물 조금 주세요'처럼 명사에 바로 붙지만 slightly 는 명사에 못 붙여요. 그럴 때는 a little water 라고 해요. FIX 사유가 아니라 판정 이유:"
+
+- word: "software"
+  reason: "pattern: 원문의 'a software X' 는 학습자가 'a software' 를 문형으로 읽을 위험이 있고, 새 문형은 예문 good software 와 그대로 이어진다. / usage_note: 문법 용어를 쓰지 않고 'a software 라고 하지 않는다'를 실제로 가르치므로 pattern 에서 뺀 정보가 여기서 살아난다."
+  pattern: "형용사 + software"
+  usage_note: "프로그램 전체를 뭉뚱그려 부르는 말이에요. 하나하나를 가리킬 때는 software 대신 app 이나 program 을 써요 — I need a new app. (새 앱이 필요해요.)"
+
+- word: "solve"
+  reason: "usage_note: \"문제를 solve 하면 해결이 된다\"는 뜻풀이를 그대로 되돌린 말이 맞고, FIX 의 solve/fix 갈라놓기는 사실이다. ```"
+  usage_note: "solve 는 문제나 수수께끼처럼 답을 찾아 푸는 거예요. 수학 문제를 풀 때도 solve 를 씁니다. 고장 난 물건을 고칠 때는 fix 를 써요 — Can you fix my phone? (제 휴대폰 고쳐 주실 수 있어요?)"
+
+- word: "somewhere"
+  reason: "meaning_ko: 사전 품사가 명사·부사뿐이라 뒤의 명사를 꾸미는 '어딘가의' 는 성립하지 않는다. / usage_note: 원문은 뜻을 되풀이하고 예문 해석을 한 번 더 적었을 뿐이고, some/any 갈림은 A1~A2 가 실제로 틀리는 자리이며 두 예문 모두 옳다."
+  meaning_ko: "어딘가에, 어딘가로 (정확히 어디인지 모르는 곳)"
+  usage_note: "somewhere 는 그렇다고 말하는 문장에 써요. 물어보거나 아니라고 말할 때는 anywhere 로 바꿔요 — Did you go anywhere yesterday? (어제 어디 갔어요?) I didn't go anywhere. (아무 데도 안 갔어요.)"
+
+- word: "south"
+  reason: "usage_note: the 유무로 안팎이 갈리는 건 실제 규칙이고, NOW 는 문형 칸을 되풀이하며 southern 이 어떻게 다른지는 말하지 않았다."
+  usage_note: "south of Korea 는 한국 바깥의 남쪽이고, the south of Korea 는 한국 안의 남부 지역이라 the 하나로 뜻이 크게 달라져요. southern 은 southern Italy 처럼 명사 앞에 붙여 그 지역을 가리킬 때 씁니다."
+
+- word: "speaker"
+  reason: "meaning_ko: 같은 항목이 He is a good speaker 를 들면서 뜻에는 사람이 없던 것이 자기반박이 맞고, 두 갈래가 실제로 갈린다. / usage_note: \"사람을 의미하지 않아요\" 뒤에 사람을 가리키는 예를 든 것이 명백한 자기반박이고, '뜻이예요' 오타 지적도 옳다."
+  meaning_ko: "스피커 (소리 나오는 기계), 말하는 사람"
+  usage_note: "소리가 나오는 기계도 speaker이고, 사람들 앞에서 말하는 사람도 speaker예요. 어느 쪽인지는 문장을 보면 알 수 있어요: He is a good speaker. 그는 말을 잘해요."
+
+- word: "speed"
+  reason: "meaning_ko: 사전에도 명사·동사 둘 다이고 예문 The car is speeding up. 이 동사라 뜻 칸이 예문을 못 받치고 있었다. / pattern: speed down 은 영어에 없는 말이라 문형에서 빼는 것이 맞다. / usage_note: 없는 표현을 가르치던 자리를 slow down 으로 바로잡고 '이예요' 오타도 함께 없앴다."
+  meaning_ko: "속도; 속도를 내다"
+  pattern: "speed up (빨라지다, 속도를 올리다)"
+  usage_note: "빨라진다는 말은 speed up 이에요. 반대로 느려진다고 할 때는 speed down 이 아니라 slow down 이라고 해요 — Slow down, please. 명사로 쓸 때는 the speed of the car 처럼 써요."
+
+- word: "spread"
+  reason: "meaning_ko: '나타나다'는 appear 의 뜻이라 spread 와 무관한 것이 맞다. / pattern: 예문 The disease spread quickly. 에 목적어가 없는 것이 맞고, 두 갈래가 자동사·타동사를 모두 담는다. / usage_note: '산개되다'는 왕초보가 모르는 군사 용어가 맞고, spread 의 무변화 과거형·잼 바르기는 모두 사실이다. / confused_with: 'spread out'은 같은 낱말+부사이고 grow 는 사전에 있는 동사다."
+  meaning_ko: "퍼지다, 퍼뜨리다 (예: 병이 퍼지다)"
+  pattern: "주어 + spread (병이나 소문이 퍼지다) / spread + 목적어 (소문을 퍼뜨리다)"
+  usage_note: "spread 는 병이나 소문, 불이 넓게 퍼질 때 써요. 과거형도 모양이 그대로 spread 예요 — The disease spread quickly. 빵에 잼을 바를 때도 spread 를 씁니다. spread out 은 사람들이 사이를 벌려 흩어지는 거예요."
+  confused_with: ["expand", "grow"]
+
+- word: "spring"
+  reason: "meaning_ko: spring 자체에 '봄에' 라는 뜻은 없고(그건 in 이 만든다), 세미콜론으로 뜻을 가르는 꼴은 이 자료에 49건 있다. / usage_note: '봄' 과 '봄에' 를 갈라 쓴다는 원문의 구별은 영어에 없고, in spring / in the spring 둘 다 된다는 새 설명은 사실이다. / confused_with: 'spring (verb)' 는 선별기가 confused_with_malformed 로 잡던 값이고, spray·string 은 둘 다 실재하며 철자가 실제로 헷갈린다."
+  meaning_ko: "봄 (계절); 용수철 (늘었다 줄었다 하는 쇠줄)"
+  usage_note: "봄에 무엇을 한다고 할 때는 in spring 이라고 해요. in the spring 이라고 해도 돼요. spring 에는 '용수철' 이라는 다른 뜻도 있어서, 눌렀다 놓으면 튀어 오르는 부품을 가리켜요."
+  confused_with: ["spray", "string"]
+
+- word: "status"
+  reason: "usage_note: \"구분해서 써야 해요\"라고만 하던 자리에 두 뜻이 각각 어떤 모양으로 나오는지를 넣었고 예문 the status of my order 와도 이어진다."
+  usage_note: "주문이나 서류가 지금 어떻게 되고 있는지 물을 때 the status of my order 처럼 써요. 사람의 사회적 자리를 말할 때도 같은 낱말을 쓰는데, 그때는 high status, social status 처럼 앞에 말을 붙여요."
+
+- word: "strange"
+  reason: "usage_note: 앞 문장이 한국어 두 낱말을 견주다 \"거의 같다\" 로 끝나 정보가 없었고, 새 글은 weird 가 세다는 원문의 참인 부분을 살리면서 쓸 자리를 알려 준다."
+  usage_note: "strange 는 평소와 달라서 낯설다는 느낌이에요. weird 는 훨씬 세게 '괴상하다' 는 느낌이라 사람에게 쓰면 기분 나빠할 수 있어요. 잘 모르겠으면 strange 를 쓰는 게 안전해요."
+
+- word: "struggle"
+  reason: "meaning_ko: '힘들게 하다' 는 남을 괴롭힌다는 뜻이라 방향이 반대다. / pattern: struggle 은 목적어를 바로 받지 않고 같은 항목 예문도 with 를 쓰고 있으며, 새 문형에 선별기 지적이 없다. / usage_note: 보기로 들었던 '제 과제를 힘겹게 했어요' 가 한국어로 서지 않는 문장이 맞다."
+  meaning_ko: "힘들어하다, 애를 먹다"
+  pattern: "struggle with + 어려운 것 / struggle to + 동사"
+  usage_note: "struggle 은 애는 쓰는데 잘 안 돼서 끙끙댄다는 뜻이에요. I'm struggling with English. 는 '영어가 잘 안 돼서 고생 중이에요' 라는 말이지, 하기 싫어서 안 한다는 뜻이 아닙니다."
+
+- word: "suggestion"
+  reason: "usage_note: DB 예문이 I have a suggestion about the meeting time. 이라 '제안을 할 때는 suggestion 을 안 쓴다'는 원문이 자기 예문을 반박하는 게 맞다."
+  usage_note: "suggestion 은 명사, suggest 는 동사예요. I have a suggestion. 처럼 명사로 쓰거나, I suggest we meet at six. 처럼 동사로 써요."
+
+- word: "surface"
+  reason: "usage_note: 앞 두 문장은 맞지만 마지막이 틀렸다 — on the surface 는 '겉보기에는' 이지 '겉만 보고 판단하지 말라' 는 말이 아니라서(WordNet surface.n.04 \"a superficial aspect as opposed to the real nature\") 원안대로 두면 학습자가 쓸 자리를 잘못 배운다."
+  usage_note: "surface 는 물건의 겉면이에요. 물이나 땅의 겉면에도 써서 The fish came to the surface. 는 '물고기가 물 위로 올라왔다' 는 뜻이에요. 속은 다르고 겉보기에만 그렇다고 할 때는 on the surface 를 씁니다."
+
+- word: "taxi"
+  reason: "usage_note: 'taxi를 타다' 로 답하던 정보량 0의 문장이 실제 연어 셋(take/catch/call)으로 바뀌었고 전부 실재한다."
+  usage_note: "택시를 탄다고 할 때는 take a taxi 를 써요 — Let's take a taxi. 택시를 잡는 건 catch a taxi, 불러 달라고 할 때는 Can you call me a taxi? 라고 해요. 미국에서는 cab 이라고도 자주 합니다."
+
+- word: "technique"
+  reason: "usage_note: NOW 는 한국어 '기술/방법' 만 견주어 영어 정보가 0인 게 맞고, FIX 는 confused_with 의 method 를 실제로 갈라 준다."
+  usage_note: "technique은 연습해서 익힌 구체적인 방법을 말해요. 그냥 '방법'은 method나 way를 써요: a good way to learn English."
+
+- word: "threat"
+  reason: "example: \"a threat of rain 을 거의 안 쓴다\" 는 지나친 말이지만, 새 예문이 더 흔한 a threat to ~ 를 보여 주고 빈칸 지시문이 threat 를 정확히 가리키게 만든다."
+  example: "The fire is a threat to the town."
+
+- word: "ticket"
+  reason: "usage_note: \"항상 movie ticket 처럼 밝혀야 한다\" 는 규칙은 영어에 없고, a ticket to 와 parking ticket 은 둘 다 실재한다."
+  usage_note: "표를 살 때는 어디로 가는지 to로 붙여요: Can I get a ticket to Busan? 주차 위반이나 속도 위반 딱지도 ticket이라고 해요."
+
+- word: "tire"
+  reason: "usage_note: 사전에 tire 의 동사 뜻이 있어 NOW 의 '명사로만' 은 거짓이고, 고치면 선별기의 pos_claim_overreach 지적이 사라진다."
+  usage_note: "tire 에는 '지치게 하다' 라는 동사 뜻도 있어요 — Long walks tire me. (오래 걸으면 저는 지쳐요.) 하지만 말할 때는 보통 be tired 나 get tired 를 써요 — I get tired easily. (저는 쉽게 피곤해져요.)"
+
+- word: "tool"
+  reason: "meaning_ko: 같은 항목 usage_note 가 equipment(장비)를 tool 과 다르다고 하는데 뜻에 '장비' 를 넣은 것은 실제 자기반박이고, '연장' 은 실재하는 한국어다."
+  meaning_ko: "도구, 연장"
+
+- word: "transport"
+  reason: "usage_note: Can you transport this? 는 학습자가 그대로 따라 하면 어색해지는 문장이 맞고, public transport 가 영국 쪽 말이라는 것도 사실이다."
+  usage_note: "transport 는 회사나 배, 트럭이 짐을 실어 나를 때 쓰는 조금 딱딱한 말이에요. 일상에서 물건을 옮겨 달라고 할 때는 Can you carry this? 나 Can you move this? 라고 합니다. 영국에서는 버스나 지하철 같은 교통수단을 public transport 라고 해요."
+
+- word: "trend"
+  reason: "example: Fashion is a big trend. 는 뜻이 서지 않는 문장이고, FIX 는 7낱말에 같은 항목의 문형 a trend in + 분야 와 맞아떨어진다. / usage_note: 원문 첫 문장이 뜻풀이 괄호를 그대로 되풀이한 게 맞고, a trend in music 은 실재하는 연어다."
+  example: "There is a new trend in fashion."
+  usage_note: "요즘 많은 사람이 하거나 좋아하는 흐름을 말해요. fashion 은 옷차림이나 스타일 쪽에 쓰고, trend 는 옷 말고 음식이나 기술에도 두루 써요 — a trend in music"
+
+- word: "truth"
+  reason: "usage_note: '거의 늘'은 단정이 아니라 하는 말이고(in truth 같은 예외를 막지 않는다), fact 와의 구분도 \"더 중요한 상황\"보다 훨씬 판단 가능한 기준이다. / confused_with: real 은 형용사라 truth 자리에 못 들어가고, 같은 검수에서 고친 fact 항목도 이미 ['truth', 'reality'] 로 짝지어져 있다."
+  usage_note: "숨겨진 일의 진짜 사정을 말할 때 써요. 거의 늘 the 를 붙여 the truth 라고 해요 — Tell me the truth. (사실대로 말해요.) 확인된 정보 하나하나를 가리킬 때는 fact 를 써요."
+  confused_with: ["fact", "reality"]
+
+- word: "twice"
+  reason: "pattern: 예문 I've been there twice. 에서 twice 는 뒤에 오고, twice a week 는 굳은 표현이다. / usage_note: twice 가 과거 전용이라는 원문은 거짓이고(I'll call you twice.), FIX 는 그걸 바로잡으면서 two times 와의 자연스러움 차이도 맞게 적었다."
+  pattern: "동사 + twice, twice a + 기간 (twice a week)"
+  usage_note: "지난 일이든 앞으로 할 일이든 다 twice 를 써요 — I go to the gym twice a week. (일주일에 두 번 가요) two times 라고 해도 되지만 twice 가 훨씬 자연스러워요."
+
+- word: "unfortunately"
+  reason: "usage_note: DB 원문이 \"문장 맨 앞에 써야 자연스러워요\"라고 단정한 게 맞고 문미 unfortunately 는 실재하는 흔한 쓰임이라, 지적도 FIX 도 사실이다."
+  usage_note: "안 좋은 소식을 전할 때 앞에 붙여 미안한 마음을 나타내요. 문장 맨 앞이 가장 흔하지만 끝에 붙여도 자연스러워요 — I can't go, unfortunately."
+
+- word: "user"
+  reason: "example: English teacher 가 '영어 선생님'도 '영국인 선생님'도 되듯 English users 도 두 갈래로 읽히므로 왕초보 예문으로는 피하는 게 맞다. / usage_note: user 자체가 사람을 가리키는 말이라 원문은 항목을 뒤집는 소리였고, 새 안은 confused_with 의 customer 와도 이어진다."
+  example: "This app has many users."
+  usage_note: "앱이나 서비스를 쓰는 사람을 가리켜요. 물건을 사는 사람은 customer, 앱을 쓰는 사람은 user 라고 나눠 써요."
+
+- word: "warn"
+  reason: "usage_note: warn somebody of something 은 사전에 실린 정상적인 표현이라 원문이 맞는 표현을 틀렸다고 가르치고 있었고, '표현이예요' 오타도 함께 사라진다."
+  usage_note: "알려 주는 내용은 about 이나 of 로 붙여요 — He warned me about the danger. / He warned us of the risk. 말할 때는 about 이 편하고, of 는 글에서 더 자주 보여요. 하지 말라고 할 때는 warn someone not to ~ 라고 해요."
+
+- word: "waste"
+  reason: "usage_note: waste 는 안 쓰는 것이 아니라 잘못 쓰는 것이라 use 의 반대라는 NOW 가 틀린 게 맞고, a waste of time 은 실재하는 표현이다."
+  usage_note: "시간이나 돈을 쓸데없는 데 써 버리는 것이 waste예요. 아껴 두는 건 save라고 해요: Save your money. 헛수고였다는 말은 It was a waste of time이라고 자주 써요."
+
+- word: "wave"
+  reason: "meaning_ko: '웨이브하다' 는 머리·춤에 쓰는 외래어라 wave 의 뜻이 아니다. / pattern: 두 가지가 틀렸다 — wave your hand 는 멀쩡한 타동사 꼴이라 목적어 자리를 통째로 지우면 안 되고, 원안의 '— I waved to my friend.' 는 괄호 밖이라 선별기가 to·my·friend 를 예문에서 찾아 example_ignores_pattern 을 새로 띄운다(실제로 돌려서 확인했다)."
+  meaning_ko: "(손을) 흔들다, 손 흔들어 인사하다"
+  pattern: "wave + 목적어 (wave your hand) / wave + to/at + 사람"
+
+- word: "weapon"
+  reason: "usage_note: DB 원문에 '이예요' 오타와 한국어뿐인 예가 그대로 있고, axe 는 실재하는 낱말이며 새 예문은 문법도 자연스럽다."
+  usage_note: "사람을 해치는 데 쓰는 물건은 weapon, 일할 때 쓰는 물건은 tool 이에요. 도끼는 둘 다 될 수 있어요 — An axe can be a tool or a weapon. (도끼는 도구일 수도 무기일 수도 있어요.)"
