@@ -323,7 +323,23 @@ def is_safe_to_serve(row) -> bool:
         return False
     if bool(getattr(row, "reviewed", False)):
         return True
-    return not screen(row)
+    return not [f for f in screen(row) if f.code not in _ASKS_A_HUMAN]
+
+
+# 선별기 지적 중 **판정이 아니라 물음**인 것. 이것만으로는 문을 막지 않는다.
+#
+# `countability_claim_unchecked` 는 screening.py 가 스스로 "판정이 아니라 호출이다"
+# 라고 적어 둔 것이다 — WordNet 에 가산성 정보가 없어서 참·거짓을 못 가리니 사람이
+# 봐 달라는 뜻이다. 그걸로 출제를 막으면 **검수를 잘할수록 출제 풀이 준다.**
+#
+# 실제로 그랬다. 손으로 고친 낱말 815개 중 25개가 이 지적 하나로 밖에 나가 있었고,
+# 빈도 상위 300개에서만 `fact`·`information`·`government`·`hold`·`result`·`idea`
+# 열한 개다. 사람이 `fact` 의 설명을 다시 써서 "'a fact', 'the facts' 처럼 셀 수
+# 있어요" 라고 적은 것이 그 낱말을 연습장에서 지운 셈이다.
+#
+# 검수 큐에서는 그대로 보인다(`screen` 은 이 지적을 계속 낸다). 막는 것과 묻는
+# 것을 가르는 자리는 여기 하나다.
+_ASKS_A_HUMAN = frozenset({"countability_claim_unchecked"})
 
 
 def pos_of(word: str) -> frozenset[str] | None:
@@ -415,7 +431,7 @@ class SpellHint:
 
 # 글자 수를 세는 우리말. '네 글자' 처럼 고유어로 센다.
 #
-# 열여섯까지 있는 이유: 서빙 가능한 답 중 가장 긴 것이 열여섯 글자다. 열둘에서
+# 스물까지 있는 이유: 서빙 가능한 답 중 가장 긴 것이 열여섯 글자다. 열둘에서
 # 끊어 뒀더니 `multi-language` 가 "13 글자예요" 로 나왔다 — 앞뒤가 다 우리말인데
 # 숫자만 아라비아 숫자라 눈에 걸린다.
 _COUNT_KO: tuple[str, ...] = (
@@ -431,6 +447,9 @@ def _count_ko(n: int) -> str:
 
 # 알파벳을 우리말로 읽었을 때 **받침으로 끝나는** 것. 엘·엠·엔·알 넷뿐이다.
 # 나머지는 에이·비·에프(프)·에이치(치)·에스(스)처럼 모음이나 받침 없는 글자로 끝난다.
+#
+# **한 글자짜리에만 쓴다.** 여러 글자 조각은 학습자가 덩어리로 읽어서 알파벳
+# 이름으로 조사를 고르면 틀린다 — `_fragment` 에 적어 두었다.
 _FINAL_CONSONANT = frozenset("lmnr")
 
 # 그중 받침이 ㄹ 인 것. '으로' 는 ㄹ 뒤에 붙지 않는다 — '엘로'·'알로' 이지
@@ -458,10 +477,21 @@ def _with_ro(letters: str) -> str:
     return f"{_quoted(letters)} {ro}"
 
 
-def _with_yeyo(letters: str) -> str:
-    """'a 예요' / 'n 이에요'. 받침이 ㄹ 이어도 이쪽은 '이에요' 다(엘이에요)."""
-    tail = letters[-1:].lower()
-    return f"{_quoted(letters)} {'이에요' if tail in _FINAL_CONSONANT else '예요'}"
+def _fragment(letters: str) -> str:
+    """여러 글자짜리 조각을 보여 줄 때 쓰는 꼴. **조사를 안 붙인다.**
+
+    한 글자짜리는 알파벳 이름이 정해져 있어 조사를 고를 수 있다("엔" → `'n' 으로`).
+    그런데 `bor` 처럼 여러 글자가 붙은 조각은 **학습자가 덩어리로 읽는다** — "보"
+    로 읽으면 `예요` 가 맞고 `이에요` 는 "비오알" 이라고 한 글자씩 읽을 때만 맞다.
+    영어 철자 조각을 한국어로 어떻게 읽을지는 정할 수가 없다.
+
+    실제로 마지막 글자의 알파벳 이름으로 정하다가 473개가 어긋났다(`borrow` →
+    `'bor' 이에요`, `order` → `'or' 이에요`). 반대 방향도 있었다(`upper` →
+    `'up' 예요`, "업이에요" 가 자연스럽다).
+
+    정할 수 없는 것은 정하지 않는다. 줄표로 끊으면 조사가 아예 필요 없어진다.
+    """
+    return f"— {_quoted(letters)}"
 
 
 def _upto(answer: str, revealed: int) -> str:
@@ -543,7 +573,7 @@ def spell_hints(item: ClozeItem) -> tuple[SpellHint, ...]:
             SpellHint(
                 step=3,
                 label_ko="앞 절반",
-                text_ko=f"앞 {_count_ko(half)} 글자는 {_with_yeyo(_upto(answer, half))}.",
+                text_ko=f"앞 {_count_ko(half)} 글자 {_fragment(_upto(answer, half))}",
                 shape=_shape(answer, half),
             )
         )

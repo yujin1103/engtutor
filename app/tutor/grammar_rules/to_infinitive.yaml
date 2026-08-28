@@ -29,7 +29,7 @@ frames:
     verbs: [sign, review, cancel, extend, renew, amend, translate]
 
   - text: "The manager decided to ___ the meeting."
-    ko: "관리자가 회의를 ~하기로 결정했어요."
+    ko: "관리자가 그 회의를 ~하기로 결정했어요."
     verbs: [postpone, cancel, attend, record, schedule, arrange, join]
 
   - text: "She promised to ___ the package today."
@@ -41,7 +41,7 @@ frames:
     verbs: [finish, complete, deliver, launch, start]
 
   - text: "He offered to ___ the customer."
-    ko: "그분이 고객을 ~하겠다고 했어요."
+    ko: "그분이 고객을 ~하겠다고 나섰어요."
     verbs: [help, call, assist, contact, meet]
 
   - text: "They plan to ___ a new branch."
@@ -97,7 +97,7 @@ frames:
     verbs: [reduce, confirm, explain, adjust, check]
 
   - text: "We continue to ___ our customers."
-    ko: "우리는 우리 고객을 계속 ~해요."
+    ko: "우리 고객을 계속 ~해요."
     verbs: [serve, support, help, contact, visit]
 
   - text: "You should learn to ___ the software."

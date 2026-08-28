@@ -2196,3 +2196,32 @@
 - word: "as"
   example_ko: "그녀는 교사로 일해요."
   reason: "예문을 바꿨다(He is as tall as his father → She works as a teacher). 표제어가 두 번 나와 빈칸 문제가 성립하지 않았다. 앞선 교정('키가 크죠' → '키가 커요')은 그 예문과 함께 사라져 이 한 줄로 합쳤다."
+
+# ── 빈도 180~207위 ──────────────────────────────────────────────
+#
+# `state` 가 이 묶음에서 제일 나빴다 — "What state are you from?" 의 해석이
+# "어디 계신가요?" 였다. 어느 **주** 출신인지 묻는 말인데 지금 어디 있느냐로 옮겼다.
+
+- word: "state"
+  example_ko: "어느 주에서 오셨어요?"
+  reason: "'어디 계신가요?' 였다. What state are you from? 은 미국의 어느 주 출신인지 묻는 말이지 지금 어디 있느냐를 묻는 말이 아니다."
+
+- word: "early"
+  example_ko: "회의는 아침 일찍이에요."
+  reason: "'회의는 아침에 일찍예요' 는 비문이다."
+
+- word: "during"
+  example_ko: "저는 20세기에 태어났어요."
+  reason: "'20세기 동안 태어났어요' 는 한국어가 되지 않는다 — 태어나는 것은 한 시점이다."
+
+- word: "small"
+  example_ko: "이 방은 작아요."
+  reason: "'이 방은 작은 방이에요' 는 같은 말을 두 번 한다."
+
+- word: "begin"
+  example_ko: "회의를 시작합시다."
+  reason: "'미팅을 시작해요' 의 '미팅' 을 '회의' 로 적고, Let's 를 청유형으로 옮긴다."
+
+- word: "provide"
+  example_ko: "선생님이 우리에게 책을 주세요."
+  reason: "'제공해 주세요' 는 요청하는 말로 읽힌다. 원문(The teacher provides us with books)은 늘 그렇다는 서술이다."

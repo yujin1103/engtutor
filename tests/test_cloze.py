@@ -21,7 +21,7 @@ from app.tutor.cloze import (
     normalize,
     spell_hints,
 )
-from app.tutor.cloze import _with_ro, _with_yeyo  # noqa: E402  조사 규칙을 따로 시험한다
+from app.tutor.cloze import _fragment, _with_ro  # noqa: E402  조사 규칙을 따로 시험한다
 
 
 needs_lexicon = pytest.mark.skipif(not lexicon.available(), reason="WordNet 코퍼스가 없습니다")
@@ -351,9 +351,22 @@ def test_letter_particles_follow_the_korean_reading():
     assert _with_ro("r") == "'r' 로"
     assert _with_ro("a") == "'a' 로"
     assert _with_ro("s") == "'s' 로"
-    assert _with_yeyo("n") == "'n' 이에요"
-    assert _with_yeyo("l") == "'l' 이에요"
-    assert _with_yeyo("a") == "'a' 예요"
+
+
+def test_multi_letter_fragments_take_no_particle():
+    """**여러 글자 조각에는 조사를 안 붙인다.**
+
+    한 글자짜리는 알파벳 이름이 정해져 있어 조사를 고를 수 있다. 그런데 `bor`
+    처럼 붙은 조각은 학습자가 덩어리로 읽어서, 마지막 글자의 알파벳 이름으로
+    고르면 틀린다 — 실제로 473개가 `'bor' 이에요`(비오알이에요) 로 나갔다.
+    반대 방향도 있었다: `'up' 예요` 는 "업이에요" 가 자연스럽다.
+
+    정할 수 없는 것은 정하지 않는다. 줄표로 끊으면 조사가 필요 없어진다.
+    """
+    assert _fragment("bor") == "— 'bor'"
+    assert _fragment("up") == "— 'up'"
+    assert "예요" not in _fragment("bor")
+    assert "이에요" not in _fragment("or")
 
 
 def test_spell_hints_reach_the_learner():
@@ -368,3 +381,29 @@ def test_spell_hints_reach_the_learner():
     for row in body:
         for hint in row["spell_hints"]:
             assert set(hint) == {"step", "label_ko", "text_ko", "shape"}
+
+
+def test_a_human_question_does_not_close_the_serving_gate():
+    """**'사람이 봐 주세요' 는 판정이 아니다.** 그것만으로 출제를 막으면 안 된다.
+
+    `countability_claim_unchecked` 는 선별기가 스스로 "판정이 아니라 호출" 이라고
+    적어 둔 것이다 — WordNet 에 가산성 정보가 없어 참·거짓을 못 가리니 사람이
+    봐 달라는 뜻이다. 그걸로 문을 막으면 **검수를 잘할수록 출제 풀이 준다.**
+
+    실제로 그랬다. 사람이 손으로 다시 쓴 낱말 815개 중 25개가 이 지적 하나로
+    밖에 나가 있었고, 빈도 상위 300개에서만 열한 개였다 — `fact` 의 설명을
+    "'a fact', 'the facts' 처럼 셀 수 있어요" 라고 고친 것이 그 낱말을 연습장에서
+    지운 셈이다.
+    """
+    from app.content.screening import screen
+
+    row = _row(usage_note="빌려 오는 쪽이 borrow 예요. 'a book' 처럼 셀 수 있어요.")
+    codes = {f.code for f in screen(row)}
+    assert codes == {"countability_claim_unchecked"}, f"다른 지적이 섞였습니다: {codes}"
+    assert is_safe_to_serve(row), "이 지적 하나로 막히면 안 됩니다"
+
+
+def test_a_real_finding_still_closes_the_gate():
+    """묻는 것만 통과시킨다 — **판정은 그대로 막는다.**"""
+    row = _row(meaning_ko="빌리다 叹气하다")
+    assert not is_safe_to_serve(row)

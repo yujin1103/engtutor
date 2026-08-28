@@ -1612,3 +1612,31 @@ passes:
   - seem
   - system
   - woman
+- id: top300-a
+  date: '2026-08-28'
+  what: 빈도 180~207위 24개 — 20개가 고칠 것이었다
+  words:
+  - area
+  - begin
+  - big
+  - bring
+  - during
+  - early
+  - few
+  - follow
+  - friend
+  - however
+  - money
+  - move
+  - name
+  - provide
+  - question
+  - read
+  - run
+  - set
+  - since
+  - small
+  - state
+  - study
+  - turn
+  - under

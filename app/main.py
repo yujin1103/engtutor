@@ -14,7 +14,7 @@ from typing import Literal
 from fastapi import FastAPI, File, HTTPException, Request, UploadFile
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse, StreamingResponse
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from .config import get_settings
@@ -165,7 +165,9 @@ class ChatRequest(BaseModel):
     transcript: str | None = Field(default=None, max_length=2000)
     # 낱말별 확률. 자신 없는 단어를 화면에 표시하고, **확신했는데 학습자가 고친
     # 자리**를 세는 데 쓴다. 후자가 STT 가 틀린 영어를 매끄럽게 고친 흔적이다.
-    transcript_words: list[dict] | None = None
+    # 상한을 둔다. 이 칸만 열려 있어서 5만 항목이 200 으로 통과해 DB 에 들어갔다.
+    # 한 발화의 낱말 수라 200 이면 넉넉하다.
+    transcript_words: list[dict] | None = Field(default=None, max_length=200)
 
 
 class ChatResponse(BaseModel):
@@ -584,20 +586,16 @@ class ClozeAnswerRequest(BaseModel):
     """두 칸 다 **응답으로 되돌아 나가는** 값이라 들어올 때 다듬는다.
 
     `said` 는 학습자가 자유롭게 적는 칸이라 문법 문제처럼 모양을 못 박을 수 없다.
-    그런데 채점 결과가 그 값을 그대로 되돌려 보내므로, JSON 으로 옮길 수 없는
-    글자(짝 없는 서로게이트)가 들어오면 **응답을 만들다** 500 이 난다. 오류 처리
-    문에서는 못 잡는다 — 성공 응답이기 때문이다. 그래서 들어오는 자리에서 다듬는다.
+    그래도 길이는 막는다 — 5MB 를 보내면 5MB 가 그대로 돌아 나오던 자리다.
 
-    길이도 막는다. 5MB 를 보내면 5MB 가 그대로 돌아 나온다.
+    짝 없는 서로게이트는 여기서 안 다듬는다. 한때 `field_validator` 로 걷어냈는데
+    **그 코드에 닿는 길이 없었다** — pydantic-core 가 그보다 먼저 `string_unicode`
+    로 거절해서 검증자가 돌지 않는다. 그 뒤는 오류 처리기(`_validation_error`)가
+    맡는다.
     """
 
     word: str = Field(min_length=1, max_length=64)
     said: str = Field(max_length=200, description="학습자가 말했거나 적은 답")
-
-    @field_validator("word", "said")
-    @classmethod
-    def _drop_unencodable(cls, value: str) -> str:
-        return value.encode("utf-8", "replace").decode("utf-8")
     explain: bool = Field(
         default=True,
         description="설명 카드를 함께 받을지. 채점만 필요하면 false 로 두면 DB 조회가 준다",
@@ -1048,7 +1046,7 @@ def _grammar_index() -> dict[str, tuple[str, grammar.GrammarItem]]:
     """문제 id → (규칙 이름, 문제). 채점이 id 하나로 문제를 되찾게 한다.
 
     문제는 데이터 파일에서 결정론적으로 만들어지므로 미리 다 펼쳐 둬도 된다
-    (지금 151개다). 화면이 문제를 통째로 돌려보내게 하면 학습자가 보기를 바꿔
+    (지금 134개다). 화면이 문제를 통째로 돌려보내게 하면 학습자가 보기를 바꿔
     보낼 수 있어서, **서버가 갖고 있는 것으로만 채점한다.**
     """
     out: dict[str, tuple[str, grammar.GrammarItem]] = {}
