@@ -2395,3 +2395,189 @@
 - word: "young"
   example_ko: "그는 아주 어려요."
   reason: "'어리어요' 는 쓰지 않는 활용이다."
+
+# ── 빈도 476~760위 ─────────────────────────────────────────────
+
+- word: "act"
+  example_ko: "그는 관심 없는 척 행동했어요."
+  reason: "act like 는 그렇게 보였다가 아니라 그렇게 행동했다는 뜻이다."
+
+- word: "affect"
+  example_ko: "흡연은 건강에 영향을 줄 수 있어요."
+  reason: "affect 는 좋고 나쁨을 가리지 않는 말이라 '악'은 원문에 없는 뜻을 더한 것이다."
+
+- word: "amount"
+  example_ko: "이 케이크에 든 설탕의 양은 얼마나 되나요?"
+  reason: "'이 케이크에'가 걸릴 서술어가 없어 원문은 한국어로 성립하지 않는다."
+
+- word: "apply"
+  example_ko: "저는 지난주에 일자리에 지원했어요."
+  reason: "'직업을 지원하다'는 성립하지 않는 말이고 '지난주'가 바른 표기다."
+
+- word: "boy"
+  example_ko: "저 남자아이는 제 동생이에요."
+  reason: "사람을 '이건'으로 받는 원문은 한국어가 아니고, little brother 는 '작은 남동생'이 아니다."
+
+- word: "catch"
+  example_ko: "저는 지난주에 감기에 걸렸어요."
+  reason: "catch a cold 는 옮은 순간을 말하므로 '앓았어요'가 뜻을 어긋나게 하고, '지난주'는 붙여 쓰는 것이 맞다."
+
+- word: "charge"
+  example_ko: "택시 요금은 얼마 받으세요?"
+  reason: "a taxi ride 는 택시를 한 번 타는 일이라 '택시 한 대 타면'은 원문과도 한국어와도 어긋난다."
+
+- word: "choice"
+  example_ko: "선택의 여지가 없어요."
+  reason: "'여유'가 틀렸다는 지적은 옳지만 '다른 방법이 없어요'는 빈칸의 답 choice 를 가리키는 낱말이 사라져 해석이 출제 지시문 노릇을 못 한다 — 관용 표현이면서 단서를 남기는 '선택의 여지가 없어요'로 고친다."
+
+- word: "comment"
+  example_ko: "저는 그 영화에 대해 한마디 했어요."
+  reason: "make a comment 는 말로 의견을 내는 것이라 '댓글' 은 틀린 해석이다."
+
+- word: "court"
+  example_ko: "어제 우리는 재판 때문에 법원에 갔어요."
+  reason: "고친 예문이 관사를 뺀 go to court 이므로 재판이라는 뜻이 해석에 드러나야 한다."
+
+- word: "drug"
+  example_ko: "의사 선생님이 새 약을 주셨어요."
+  reason: "고친 예문과 맞고 자연스럽다."
+
+- word: "due"
+  example_ko: "회의는 오전 10시에 시작할 예정이에요."
+  reason: "is due to start 는 예정이지 의무가 아니라 NOW 의 '시작해야 해요'는 틀린 해석이다."
+
+- word: "exist"
+  example_ko: "이 박물관이 서울에 정말 있나요?"
+  reason: "'있는 곳인가요'는 소재를 묻는 다른 뜻이라 존재를 묻는 원문과 어긋난다."
+
+- word: "factor"
+  example_ko: "차를 살 때 가격은 큰 요인이에요."
+  reason: "factor 는 명사인데 해석이 '영향을 미치다'라는 동사로 바뀌어 표제어가 사라져 있었다."
+
+- word: "fast"
+  example_ko: "이 차는 빨라요."
+  reason: "'-죠'는 동의를 구하는 말투라 사실을 말하는 This car is fast 와 맞지 않는다."
+
+- word: "firm"
+  example_ko: "이 침대는 아주 단단해요."
+  reason: "예문을 bed 로 바꾸었으니 해석도 따라가야 한다."
+
+- word: "guy"
+  example_ko: "그는 정말 좋은 사람이에요."
+  reason: "고친 예문과 맞고 한국어가 자연스럽다."
+
+- word: "happy"
+  example_ko: "저는 새 직장이 마음에 들어요."
+  reason: "happy with 는 '~에 대해'가 아니라 '~이 마음에 들다' 쪽이고 원문은 영어 어순을 그대로 옮겼다."
+
+- word: "indeed"
+  example_ko: "어제는 정말 추웠어요."
+  reason: "고친 예문과 정확히 맞고 한국어도 자연스럽다."
+
+- word: "instead"
+  example_ko: "걸어가는 대신에 버스를 탈게요."
+  reason: "'~보다는'은 rather than 쪽 번역이라 instead of 의 뜻을 흐리고, FIX 가 자연스러운 해요체다."
+
+- word: "itself"
+  example_ko: "고양이가 다쳤어요."
+  reason: "한국어 '다치다'는 목적어를 받지 않아 '자신을 다쳤어요'는 비문이다."
+
+- word: "kid"
+  example_ko: "얘가 제 아이예요."
+  reason: "사람을 '이것은'으로 받은 원문은 한국어로 성립하지 않고, FIX 는 자연스러운 해요체다."
+
+- word: "kill"
+  example_ko: "추위 때문에 화분이 다 죽었어요."
+  reason: "바뀐 예문에 맞고 '때문에'로 타동의 인과가 살아 있어 한국어로 자연스럽다."
+
+- word: "measure"
+  example_ko: "이 탁자 길이 좀 재 주시겠어요?"
+  reason: "바뀐 예문과 맞고 '줄로 측정하다'보다 일상 한국어에 가깝다."
+
+- word: "myself"
+  example_ko: "저 다쳤어요."
+  reason: "한국어는 '저 자신을 다쳤다'고 하지 않아 원문이 번역투이고, I hurt myself. 의 뜻은 '다쳤어요'로 정확히 옮겨진다."
+
+- word: "occur"
+  example_ko: "그 사고는 어젯밤에 일어났어요."
+  reason: "고친 예문과 맞고 자연스럽다."
+
+- word: "official"
+  example_ko: "그 담당 공무원이 비자가 필요하다고 했어요."
+  reason: "예문의 The official 은 사람을 가리키는 명사(WordNet official.n.01 '직무를 맡은 사람')인데 원안 해석에서 사람이 사라졌다."
+
+- word: "poor"
+  example_ko: "그는 가난한 학생이에요."
+  reason: "이 항목의 뜻이 '가난한, 빈곤한'이라 해석이 뜻과 같은 갈래를 가리켜야 빈칸 문제의 답이 선다."
+
+- word: "pretty"
+  example_ko: "이 원피스 꽤 괜찮네요."
+  reason: "예문의 nice 는 '괜찮다'이고, '예쁘네요'로 옮기면 pretty 의 다른 뜻과 섞인다."
+
+- word: "production"
+  example_ko: "이 공장은 작년에 생산을 시작했어요."
+  reason: "고친 예문과 맞고 한국어가 자연스럽다."
+
+- word: "race"
+  example_ko: "그들은 서로 달리기 시합을 했어요."
+  reason: "WHY 가 든 근거(compete 와 똑같아진다)는 실제로는 두 해석이 갈리므로 과장이지만, race 항목 자신의 설명이 '주로 신체적인 경주' 라 '경쟁했어요' 는 뜻을 잃은 해석이 맞다."
+
+- word: "range"
+  example_ko: "가격은 10달러에서 20달러까지예요."
+  reason: "고친 예문에 맞고 원문에 없던 '나옵니다'가 빠진다."
+
+- word: "recognize"
+  example_ko: "저 노래, 들어 본 적 있어요."
+  reason: "'그 노래를 알아요' 는 I know that song. 의 해석이라 전에 접해서 알아챈다는 recognize 의 핵심이 사라진다."
+
+- word: "regard"
+  example_ko: "저는 그를 친구로 여겨요."
+  reason: "'여기다'의 활용은 '여겨요'라서 '여기요'는 없는 형태다."
+
+- word: "risk"
+  example_ko: "목숨을 걸지 마세요."
+  reason: "바뀐 예문의 뜻을 자연스러운 한국어로 옮겼다."
+
+- word: "section"
+  example_ko: "이건 그 책의 역사 부분이에요."
+  reason: "바뀐 예문의 This is 와 of the book 을 모두 담아 한국어로도 자연스럽다."
+
+- word: "single"
+  example_ko: "저는 지금 애인이 없어요."
+  reason: "I'm single. 은 사귀는 사람이 없다는 뜻이지 혼자 산다(I live alone.)는 뜻이 아니다."
+
+- word: "skill"
+  example_ko: "저는 요리 실력이 좋아요."
+  reason: "바뀐 예문의 뜻을 그대로 옮기면서 한국어로도 자연스럽다."
+
+- word: "son"
+  example_ko: "이쪽은 제 아들이에요."
+  reason: "사람을 소개하며 '이것은'이라고 하면 사람을 사물처럼 가리키게 되어 한국어로 말이 되지 않는다."
+
+- word: "sport"
+  example_ko: "운동하는 거 좋아하세요?"
+  reason: "원문의 playing 이 해석에서 통째로 빠져 '보는 것'과 구별되지 않았다."
+
+- word: "standard"
+  example_ko: "여기는 서비스 수준이 아주 높아요."
+  reason: "수정한 예문에 맞춘 해석이다."
+
+- word: "surprise"
+  example_ko: "생일 파티로 친구를 놀라게 해 줬어요."
+  reason: "'놀라주었어요'는 한국어에 없는 말이다."
+
+- word: "themselves"
+  example_ko: "그들은 다쳤어요."
+  reason: "지적이 든 근거는 틀렸지만(\"다리를 다치다\"처럼 다치다는 목적어를 받는다) '자신을 다쳤어요'가 성립하지 않는다는 결론은 맞고, 뜻(그들 자신들)이 단서를 따로 주므로 빈칸 문제도 성립한다."
+
+- word: "therefore"
+  example_ko: "그는 늦었어요. 따라서 회의에 참석하지 못했어요."
+  reason: "원안의 '그래서'는 confused_with 에 든 so 의 번역이라 meaning_ko('그러므로, 따라서')와 어긋나므로 '따라서'로 바꾸고, 프로젝트 규칙대로 해요체로 맞췄다."
+
+- word: "true"
+  example_ko: "그에 대한 그 이야기가 사실인가요?"
+  reason: "true about him 은 그 사람에 관한 진위이지 그 사람에게만 적용되는 사실이 아니라 원문 해석이 실제로 틀렸다."
+
+- word: "upon"
+  example_ko: "그는 제 어깨에 손을 얹었어요."
+  reason: "예문을 바꾼 데 따른 정확한 해석이고, 한국어 칸에 남은 로마자도 없다."
