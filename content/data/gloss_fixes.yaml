@@ -2581,3 +2581,73 @@
 - word: "upon"
   example_ko: "그는 제 어깨에 손을 얹었어요."
   reason: "예문을 바꾼 데 따른 정확한 해석이고, 한국어 칸에 남은 로마자도 없다."
+
+# ── 빈도 740~762위 ─────────────────────────────────────────────
+
+- word: "doctor"
+  example_ko: "저는 의사를 만나야 해요."
+  reason: "'의사랑 봐야 해요' 는 비문이다. see a doctor 는 진료를 받으러 간다는 뜻이다."
+
+- word: "mark"
+  example_ko: "이 종이에 이름을 써 주세요."
+  reason: "'지금 이 종이에' 의 '지금' 은 원문(Please mark your name on the paper)에 없다."
+
+- word: "hotel"
+  example_ko: "우리는 어젯밤에 호텔에서 묵었어요."
+  reason: "'저는 어제 밤에' 였는데 원문의 주어는 We 다. '어제 밤' 도 '어젯밤' 으로 붙여 쓴다."
+
+- word: "election"
+  example_ko: "선거는 다음 주예요."
+  reason: "'투표는 다음 주에 있어요' 였다. election 은 선거이고 투표(표를 던지는 행위)는 vote 다."
+
+- word: "stuff"
+  example_ko: "짐은 탁자 위에 두세요."
+  reason: "예문을 바꿨다(Do you have any paper stuff? → Put your stuff on the table). 앞의 것은 영어로 어색하다."
+
+# ── 빈도 763~784위 ─────────────────────────────────────────────
+
+- word: "despite"
+  example_ko: "비가 오는데도 나갔어요."
+  reason: "'비가 오는 동안에도 나갔어요' 였다. despite 는 '~에도 불구하고' 이지 '~하는 동안' 이 아니다 — during 과 섞였다."
+
+- word: "challenge"
+  example_ko: "저는 그 사람에게 경주를 하자고 했어요."
+  reason: "'경주를 도전했어요' 는 한국어가 되지 않는다. challenge A to B 는 A 에게 B 를 겨루자고 하는 것이다."
+
+- word: "sorry"
+  example_ko: "시끄럽게 해서 죄송합니다."
+  reason: "'소음으로 방해드려 죄송합니다' 의 '방해드려' 는 원문(I'm sorry about the noise)에 없다."
+
+- word: "card"
+  example_ko: "신용카드 있으세요?"
+  reason: "'크레딧 카드' 는 외래어를 그대로 옮긴 것이다. 한국어로는 신용카드다."
+
+- word: "seek"
+  example_ko: "저는 친구에게 도움을 구해요."
+  reason: "'친구한테 도움을 요청해요' 는 request 에 가깝다. seek 은 '구하다' 다."
+
+# ── 빈도 785~806위 ─────────────────────────────────────────────
+
+- word: "husband"
+  example_ko: "이쪽이 제 남편이에요."
+  reason: "'이것은 제 남편입니다' 는 사람을 '이것' 으로 가리킨다."
+
+- word: "loss"
+  example_ko: "돈을 잃었어요."
+  reason: "'돈이 손실났어요' 는 비문이다. '손실나다' 라는 말은 쓰지 않는다."
+
+- word: "aim"
+  example_ko: "그는 표적을 겨눴어요."
+  reason: "'타겟을 향해 조준했습니다' 의 '타겟' 은 외래어를 그대로 옮긴 것이다. 한국어로는 '표적' 이다."
+
+- word: "television"
+  example_ko: "저는 저녁마다 텔레비전을 봐요."
+  reason: "'저녁에 항상' 은 every evening 을 옮긴 말로 어색하다. '저녁마다' 가 자연스럽다."
+
+- word: "treat"
+  example_ko: "그는 직원들을 잘 대해 줘요."
+  reason: "'잘 대접해요' 는 음식을 낸다는 뜻으로 읽힌다. treat well 은 사람을 어떻게 대하는지를 말한다."
+
+- word: "red"
+  example_ko: "저는 빨간 셔츠가 좋아요."
+  reason: "'빨간 셔츠가 좋아요' 에 주어가 없어 누가 좋아하는지 흐리다."

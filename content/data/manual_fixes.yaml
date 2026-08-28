@@ -4783,3 +4783,231 @@
   pattern: "be wrong (about + 무엇)"
   usage_note: "wrong 은 답이나 생각이 맞지 않다는 뜻이에요. 사람이 잘못 알고 있다고 할 때는 be wrong about 을 써요. 예: You are wrong about him. (그 사람에 대해 잘못 알고 있어요.) 잘못한 일 자체는 mistake 라고 해요."
 
+
+# ── 빈도 740~762위 — 20개 중 17개 (한도로 agent 가 멈춰 직접 읽었다) ──────
+
+- word: "board"
+  reason: "문형이 'board + 목적어 (보드에 무엇을 넣는지 설명할 때)' 인데 예문은 명사 board 다 — 문형과 예문이 서로 다른 낱말을 보여준다. 설명도 '보드는 보드를 의미한다' 로 같은 말을 되풀이한다. 혼동 목록의 governance 는 왕초보가 볼 낱말이 아니다."
+  meaning_ko: "판, 게시판"
+  pattern: "a/the + board"
+  usage_note: "글씨를 쓰거나 붙이는 넓적한 판이에요 — the white board, a notice board. 회사의 '이사회' 도 board 라고 해요. 배나 비행기에 타는 것은 board 를 동사로 써요: board the plane."
+  confused_with: [sign, panel, desk]
+
+- word: "holiday"
+  reason: "'한국어 휴일은 주로 일요일이나 공휴일을 말하지만, 영어 holiday 는 공휴일에 더 가까워요' 는 한국어끼리만 견주고 정작 혼동 목록의 vacation 과의 차이를 말하지 않는다."
+  usage_note: "나라에서 정한 쉬는 날이에요 — a national holiday. 영국에서는 긴 여행도 holiday 라고 하지만, 미국에서는 그걸 vacation 이라고 해요 — a summer vacation."
+
+- word: "mark"
+  reason: "문형에 영어 something 이 한국어 자리에 두 번 들어가 있었다. 설명의 ''sign' 은 물건에 글씨나 도장을 찍는 데 쓰이고' 도 틀렸다 — sign 은 이름을 적는 것이다."
+  pattern: "mark + 목적어"
+  usage_note: "표시를 남긴다는 뜻이에요 — Please mark your name. 시험지에 점수를 매길 때도 써요. 이름을 적어 서명하는 것은 sign 이에요: sign the contract."
+
+- word: "church"
+  reason: "''가장 큰 교회' 라면 cathedral 을 쓰세요' 가 거짓이다 — cathedral 은 크기가 아니라 주교가 있는 성당을 가리킨다."
+  usage_note: "기독교 신자들이 모이는 곳이에요 — go to church. 예배를 보러 간다고 할 때는 the 를 빼고 go to church 라고 해요. 큰 성당은 cathedral 이라고 하는데, 크기가 아니라 주교가 있는 곳이라는 뜻이에요."
+
+- word: "machine"
+  reason: "''mechanism' 은 기구, 장치를 말해요' 는 machine 과 무엇이 다른지를 말하지 않는다. 왕초보가 mechanism 을 만날 일도 거의 없다."
+  usage_note: "전기나 힘으로 움직이는 기계예요 — a washing machine, a coffee machine. 손으로 쓰는 연장은 tool 이라고 해요: a hammer is a tool."
+  confused_with: [tool, device, engine]
+
+- word: "item"
+  reason: "'한국어 물건보다 더 구체적인 것을 가리킬 때 써요' 는 무엇이 더 구체적인지 말하지 않는다. 뒤 문장은 오히려 물건에는 thing 을 쓰라고 해서 앞말을 뒤집는다."
+  usage_note: "목록이나 표에 하나씩 오른 것을 item 이라고 해요 — the first item on the list. 가게에서 파는 물건 하나하나에도 써요. 그냥 '것' 이라고 할 때는 thing 이 자연스러워요."
+
+- word: "cent"
+  reason: "'한국의 원과는 달라요' 는 아무것도 알려주지 않는다. 혼동 목록의 century·sent 는 소리만 비슷할 뿐 뜻이 헷갈리는 낱말이 아니다."
+  usage_note: "미국 돈의 가장 작은 단위예요. 100센트가 1달러예요 — 50 cents 는 반 달러예요. 값을 적을 때는 $1.50 처럼 점 뒤에 센트를 써요."
+  confused_with: [dollar, coin, penny]
+
+- word: "season"
+  reason: "문형 'season + 목적어 (시즌에 해당하는 것)' 는 season 이 동사로 쓰이는 것처럼 읽히는데 예문은 명사다. 설명도 한국어 '시즌' 과 '계절' 만 가르고 영어에 대해서는 말하지 않는다."
+  pattern: "a/the + season"
+  usage_note: "봄·여름·가을·겨울 네 계절이에요 — What is your favorite season? 어느 계절에 그런다고 할 때는 in 을 붙여요: in the summer. 운동 경기나 드라마가 이어지는 기간에도 써요."
+
+- word: "stuff"
+  reason: "''stuff' 는 'things' 보다 더 구체적이지 않아요' 라고 해 놓고 바로 다음 문장에서 '비슷하지만' 이라며 같은 말을 되풀이한다. 예문 'Do you have any paper stuff?' 도 영어로 어색하다."
+  example: "Put your stuff on the table."
+  usage_note: "여러 가지 물건을 뭉뚱그려 부르는 말이에요 — Put your stuff here. 편한 자리에서 쓰는 말이라 글에는 things 나 items 를 써요. 하나둘 세지 않아서 stuffs 라고 하지 않아요."
+
+- word: "wide"
+  reason: "''wide smile' 은 말이 안 되는 표현이에요' 가 거짓이다 — 활짝 웃는 얼굴을 a wide smile 이라고 흔히 쓴다."
+  usage_note: "이쪽 끝에서 저쪽 끝까지가 먼 것에 써요 — a wide road, a wide river. 반대는 narrow 예요. 활짝 웃는 얼굴도 a wide smile 이라고 해요."
+  confused_with: [narrow, broad, large]
+
+- word: "method"
+  reason: "'한국어 방법과 절차를 구분할 때 유용해요' 는 한국어끼리만 견주고, 뒤 문장은 'method 는 보통 목적을 가지고 있는 방법' 이라며 같은 말을 되풀이한다."
+  usage_note: "무엇을 하는 정해진 방식이에요 — the best method for learning English. way 는 더 편한 말이라 일상에서 자주 쓰고, method 는 조금 딱딱해요."
+
+- word: "election"
+  reason: "설명이 '투표는 vote 예요' 로 시작해 election 이 아니라 vote 를 먼저 말한다. 예문 해석도 '투표는 다음 주에 있어요' 여서 election(선거)이 vote(표를 던지는 일)로 바뀌었다."
+  usage_note: "사람을 뽑는 선거예요 — The election is next week. 표를 던지는 행위 하나하나는 vote 라고 해요: I will vote tomorrow. 선거에서 이기는 것은 win the election 이에요."
+
+- word: "club"
+  reason: "문형 'club + (에서) + 목적어' 에 한글 조사가 영어 문형 자리에 들어가 있었다."
+  pattern: "a/the + club"
+
+- word: "below"
+  reason: "''under' 는 물체가 완전히 덮혀 있을 때' 의 '덮혀' 는 '덮여' 의 잘못이다. 그리고 'below 는 물리적인 위치만 나타내요' 는 below 가 수에도 쓰인다는 것을 놓친다."
+  usage_note: "무엇보다 아래쪽에 있다는 뜻이에요 — The chair is below the table. 수가 어떤 값보다 적을 때도 써요: below zero(영하). 바로 위에 덮여 있으면 under 를 써요."
+
+- word: "movie"
+  reason: "'영화 제목은 movie 가 아니라 영화 제목으로 말해요' 는 뜻을 알 수 없는 말이고, ''라이언 킹' 이예요' 는 '이에요' 의 잘못이다. 혼동 목록도 비어 있었다."
+  usage_note: "영화예요 — watch a movie, go to the movies. 영국에서는 film 이라고 더 많이 해요. 영화관은 a movie theater(영국은 a cinema)예요."
+  confused_with: [film, theater, show]
+
+- word: "doctor"
+  reason: "설명 세 문장이 다 아무것도 알려주지 않는다 — '의사와 환자 사이에 쓰는 말이에요. 의사는 직업이에요. doctor 는 사람을 가리키는 명사예요.'"
+  usage_note: "의사예요 — I need to see a doctor. 병원에 간다고 할 때는 go to the doctor 라고 해요. 이름 앞에 붙이면 Dr. 로 줄여 써요: Dr. Kim."
+
+- word: "hotel"
+  reason: "설명이 ''I need a place to stay.' 라고 할 때는 'hotel' 보다 'place to stay' 가 자연스러워요' 로 끝나는데, 두 말은 서로 바꿔 쓰는 자리가 아니라 견줄 것이 아니다."
+  usage_note: "돈을 내고 묵는 곳이에요 — We stayed at a hotel. 묵는다고 할 때는 stay at 을 써요. 더 싼 곳은 motel, 쉬러 가는 큰 곳은 resort 라고 해요."
+
+# ── 빈도 763~784위 — 20개 중 16개 ────────────────────────────────
+
+- word: "sorry"
+  reason: "문형에 영어 something 이 한국어 자리에 들어가 있었다. 설명의 ''I'm sorry' 만 쓰면 '죄송합니다' 처럼 느껴져요' 도 앞 문장(친구에게는 부드럽게)과 어긋난다 — 같은 말이 자리에 따라 달라진다는 것이 요점인데 그걸 뒤집는다."
+  pattern: "sorry + about/for + 명사"
+  usage_note: "미안하다고 할 때 써요 — I'm sorry. 무엇이 미안한지 붙일 때는 about 이나 for 를 써요: sorry about the noise, sorry for being late. 남의 일을 안타까워할 때도 써요: I'm sorry to hear that."
+
+- word: "challenge"
+  reason: "''문제' 를 의미하는 challenge 는 별개의 단어예요' 가 거짓이다 — 같은 낱말의 다른 뜻이지 다른 낱말이 아니다."
+  meaning_ko: "도전하다; 어려운 일"
+  usage_note: "해 보자고 겨루자는 뜻이에요 — I challenged him to a race. 명사로는 '해내기 어려운 일' 이에요: Learning English is a challenge. 그냥 골칫거리는 problem 이라고 해요."
+
+- word: "nation"
+  reason: "''민족' 은 더 자주 'ethnic group' 으로 번역돼요' 는 한국어를 영어로 옮기는 얘기라 nation 을 배우는 데 도움이 안 되고, 혼동 목록의 country 와 무엇이 다른지도 말하지 않는다."
+  usage_note: "나라예요. country 와 뜻이 거의 같은데 nation 은 그 안에 사는 사람들까지 아울러 가리켜요 — a nation with rich culture. 땅이나 위치를 말할 때는 country 가 더 흔해요."
+
+- word: "link"
+  reason: "'링크는 인터넷에서 자주 쓰이는 단어예요' 는 한국어 외래어에 대한 말이지 link 에 대한 말이 아니다."
+  usage_note: "둘을 잇는다는 뜻이에요 — link the two computers. 인터넷 주소를 가리키는 명사로도 써요: Send me the link. connect 도 잇는다는 뜻인데 더 넓게 써요."
+
+- word: "despite"
+  reason: "뜻이 '불구하고,에도 불구하고' 로 같은 말을 두 번 적었고 쉼표 뒤 띄어쓰기도 빠졌다."
+  meaning_ko: "~에도 불구하고"
+  usage_note: "그런데도 그렇게 했다고 할 때 써요 — I went out despite the rain. 뒤에는 명사가 와요. 'despite of' 라고 하지 않아요. 뒤에 문장을 붙이려면 even though 를 써요: even though it was raining."
+
+- word: "introduce"
+  reason: "문형에 영어 someone 이 한국어 자리에 두 번 들어가 있었다. ''introduce to' 를 빼면 문장이 자연스럽지 않아요' 도 무엇을 빼라는 것인지 알기 어렵다."
+  pattern: "introduce + 사람 + to + 사람"
+  usage_note: "사람을 서로 알게 해 준다는 뜻이에요 — I will introduce my friend to you. 누구에게 소개하는지는 to 로 붙여요. 자기를 소개할 때는 introduce myself 라고 해요."
+
+- word: "advantage"
+  reason: "''advantage' 는 'an advantage' 처럼 불가산명사로 쓰입니다' 가 자기모순이다 — an 이 붙었다는 것 자체가 하나둘 세는 낱말이라는 뜻이다. 앞 문장('한국어 이점은 명사로만 쓰이지만')도 한국어 얘기뿐이다."
+  usage_note: "남보다 나은 점이에요 — This is an advantage for us. 반대는 disadvantage 예요. 무엇에 대한 이점인지는 over 로 붙여요: an advantage over other shops."
+
+- word: "ready"
+  reason: "뜻의 '다 됐다' 는 낱말 뜻이 아니라 문장이다."
+  meaning_ko: "준비된"
+  usage_note: "채비가 끝났다는 뜻이에요 — I'm ready. 무엇을 할 준비인지는 for 나 to 로 붙여요: ready for dinner, ready to go. 준비하는 행동은 prepare 예요."
+
+- word: "marry"
+  reason: "''I married my wife.' 처럼요' 는 예로 쓸 수 없는 문장이다 — 결혼한 뒤에야 wife 가 되므로 앞뒤가 돌고 돈다."
+  usage_note: "누구와 결혼한다고 할 때 to 를 붙이지 않아요 — I married her. 'married to her' 는 결혼한 상태를 말할 때 써요: She is married to a doctor. 결혼식은 a wedding 이에요."
+
+- word: "mile"
+  reason: "''mile' 은 단수로만 써요. 'miles' 는 복수형이에요' 가 자기모순이다 — 바로 뒤에서 복수형을 인정한다. 게다가 같은 항목 예문이 miles 를 쓴다."
+  usage_note: "미국과 영국에서 거리를 재는 단위예요. 1마일은 약 1.6킬로미터예요 — two miles, ten miles. 얼마나 먼지 물을 때는 How far is it? 이라고 해요."
+
+- word: "ability"
+  reason: "뜻의 '능력이 있다' 는 낱말 뜻이 아니라 문장이고, 문형에 영어 something 이 한국어 자리에 들어가 있었다."
+  meaning_ko: "능력"
+  pattern: "the ability + to + 동사원형"
+  usage_note: "무엇을 할 수 있는 힘이에요 — the ability to speak English. 뒤에 to 와 동사원형이 와요. 말할 때는 대개 can 을 쓰고(I can speak English), ability 는 글에서 더 많이 써요."
+
+- word: "unit"
+  reason: "설명이 한국어 외래어 '유닛' 으로 흘러 '한 채의 집은 세 개의 유닛으로 구성되어 있어요' 를 자연스러운 표현이라고 하는데, 한국어로도 영어로도 왕초보가 쓸 말이 아니다."
+  usage_note: "무엇을 재는 기준이에요 — the unit of temperature. 무엇의 단위인지는 of 로 붙여요. 큰 것을 나눈 한 덩어리를 뜻하기도 해요: unit 3 of the textbook."
+
+- word: "card"
+  reason: "혼동 목록의 'credit card'·'business card' 는 낱말이 아니라 구이고, card 와 헷갈리는 다른 낱말도 아니다 — 그 자체가 card 다."
+  usage_note: "카드예요 — a credit card(신용카드), a business card(명함), a birthday card(생일 카드). 무슨 카드인지는 앞에 붙여 말해요."
+  confused_with: [ticket, note, paper]
+
+- word: "hospital"
+  reason: "'한국어 병원은 병원 전체를 가리키지만, hospital 은 병원을 의미해요' 는 같은 말을 두 번 하고 끝난다. 뜻 칸 앞에 공백도 하나 붙어 있었다."
+  meaning_ko: "병원"
+  usage_note: "입원할 수 있는 큰 병원이에요 — go to the hospital. 동네의 작은 의원은 a clinic 이라고 해요. 약을 사는 곳은 a pharmacy 예요."
+
+- word: "quickly"
+  reason: "''quickly' 는 동사 바로 뒤에 오는 부사어예요' 가 거짓이고, 같은 항목의 예문(He finished the work quickly)이 그것을 반박한다 — 문장 끝에 있다."
+  usage_note: "빨리 한다는 뜻이에요 — He finished the work quickly. 자리가 꽤 자유로워서 문장 끝에도 동사 앞에도 와요: She quickly left. 형용사는 quick 이에요: a quick answer."
+
+- word: "agreement"
+  reason: "문형 자리에 영어 noun 이 들어가 있었다. ''agreement' 은 명사로만 쓰이고' 도 조사가 틀렸다(agreement 는)."
+  pattern: "an/the + agreement"
+  usage_note: "서로 뜻이 맞은 것이에요 — We reached an agreement. 뜻이 맞다는 동사는 agree 예요: I agree with you. 문서로 남긴 것은 a contract 라고 해요."
+
+# ── 빈도 785~806위 — 20개 중 16개 ────────────────────────────────
+#
+# `husband` 가 이 묶음에서 제일 나빴다 — "영어 husband 는 여성의 남편이나 **남자의
+# 아내**를 가리킬 수 있어요" 는 거짓이고, "'my husband and wife' 처럼 써요" 는
+# 한 사람이 남편이면서 아내라는 말이 된다.
+
+- word: "release"
+  reason: "''free the prisoner' 는 'release the prisoner' 보다 덜 자주 쓰이죠' 는 근거가 없다. 둘 다 흔히 쓰는 말이다."
+  usage_note: "잡고 있던 것을 놓아준다는 뜻이에요 — release the students, release the bird. 영화나 음악을 세상에 내놓는다는 뜻으로도 써요: The movie was released last week."
+
+- word: "tax"
+  reason: "''tax for education' 은 자연스럽지 않아요' 는 지나치다 — taxes for education 처럼 무엇에 쓰려고 걷는지 말할 때는 for 를 쓴다. on 과 for 가 가리키는 것이 서로 다르다는 것이 요점이다."
+  usage_note: "나라에 내는 돈이에요. 무엇에 붙는 세금인지는 on 으로 말해요 — a tax on cigarettes. 식당에서 더 내는 봉사료는 a tip, 이용료는 a fee 라고 해요."
+
+- word: "solution"
+  reason: "'해결책을 찾다(find a solution)는 문제를 해결하다와 같아요' 는 같은 말을 한국어로 두 번 적었을 뿐이다."
+  usage_note: "문제를 푸는 길이에요 — a solution for this problem. 무엇의 해결책인지는 for 나 to 로 붙여요. 문제를 푼다는 동사는 solve 예요: solve the problem."
+
+- word: "capital"
+  reason: "설명이 두 뜻을 나열만 하고 무엇으로 가르는지 말하지 않는다. 혼동 목록의 capitals 는 다른 낱말이 아니라 같은 낱말의 복수형이다."
+  usage_note: "나라의 수도예요 — the capital of South Korea. 사업에 넣는 돈(자본)이라는 뜻도 있어요. 알파벳 대문자도 a capital letter 라고 해요."
+  confused_with: [city, money, country]
+
+- word: "popular"
+  reason: "''인기' 와는 다르게, '인기 있는' 은 사람이나 것에 대한 감정을 나타내요' 는 뜻을 알 수 없는 말이다. 혼동 목록의 like 는 동사라 형용사인 popular 와 견줄 자리가 아니다."
+  usage_note: "많은 사람이 좋아한다는 뜻이에요 — This song is very popular. 널리 알려졌다는 것은 famous 예요 — 나쁜 일로 알려져도 famous 지만 popular 는 아니에요."
+  confused_with: [famous, common, favorite]
+
+- word: "specific"
+  reason: "'말이예요' 는 '말이에요' 의 잘못이다. 문형에 영어 about/for 만 있고 무엇이 오는지가 '대상' 이라 흐리다."
+  pattern: "specific + about + 명사"
+  usage_note: "콕 집어 말한다는 뜻이에요 — Can you be more specific? 무엇에 대해 구체적인지는 about 으로 붙여요. 반대는 general(두루뭉술한)이에요."
+
+- word: "beautiful"
+  reason: "'예쁘다는 말은 보통 사람이나 동물에게 쓰고, 아름다운은 자연이나 물건에도 쓸 수 있어요' 는 한국어끼리만 견주고 beautiful 에 대해서는 마지막 한 마디뿐이다."
+  usage_note: "보기에 아름답다는 뜻이에요 — a beautiful flower, a beautiful voice. pretty 는 더 가벼운 말이고, 남자에게는 보통 handsome 을 써요."
+
+- word: "red"
+  reason: "뜻은 명사('빨강')이고 문형도 'a/the + red' 인데 예문은 형용사다(the red shirt) — 셋이 서로 다른 낱말을 보여준다. 혼동 목록의 read 도 소리만 비슷할 뿐 뜻이 헷갈리지 않는다."
+  meaning_ko: "빨간, 빨강"
+  pattern: "red + 명사"
+  usage_note: "빨간색이에요 — a red shirt, red wine. 색 이름은 꾸며 주는 명사 앞에 붙여요. 얼굴이 빨개졌다고 할 때도 써요: My face turned red."
+  confused_with: [pink, orange, color]
+
+- word: "husband"
+  reason: "'영어 husband 는 여성의 남편이나 남자의 아내를 가리킬 수 있어요' 가 거짓이다 — husband 는 남편뿐이다. ''my husband and wife' 처럼 써요' 도 한 사람이 남편이면서 아내라는 말이 되어 성립하지 않는다."
+  usage_note: "결혼한 남자 쪽을 husband 라고 해요 — This is my husband. 여자 쪽은 wife 예요. 둘을 함께 부를 때는 a husband and wife 라고 해요."
+
+- word: "treat"
+  reason: "뜻의 '특히 잘 대해주다' 에서 '특히' 는 treat 의 뜻이 아니다 — treat 자체는 좋게도 나쁘게도 쓴다."
+  meaning_ko: "대하다, 대우하다"
+  usage_note: "사람을 어떻게 대하는지 말할 때 써요 — He treats his employees well. 나쁘게 대한다고 할 때도 같은 낱말이에요: treat someone badly. 병을 고친다는 뜻도 있어요: treat a patient."
+
+- word: "identify"
+  reason: "''identify as' 는 '...로 식별하다' 는 뜻이에요' 는 영어를 영어로 되풀이해 아무것도 알려주지 않는다."
+  usage_note: "무엇인지 알아본다는 뜻이에요 — Can you identify the capital of France? 무엇으로 본다고 할 때는 as 를 붙여요: identify it as a mistake. 얼굴이나 목소리를 알아보는 것은 recognize 예요."
+
+- word: "loss"
+  reason: "'loss 는 명사로만 쓰이고, 동사가 아니에요' 뒤에 붙은 설명이 lost 와 loss 를 견주는데, 정작 학습자가 헷갈리는 lose 와의 관계는 말하지 않는다. 혼동 목록의 losses 도 같은 낱말의 복수형이다."
+  usage_note: "잃은 것이에요 — a loss of money. 잃는다는 동사는 lose 이고 과거형은 lost 예요: I lost my phone. 소리가 비슷해 헷갈리기 쉬워요."
+  confused_with: [lose, damage, waste]
+
+- word: "shall"
+  reason: "문형이 'shall + 목적어' 인데 shall 뒤에는 동사원형이 온다 — 목적어가 아니다."
+  pattern: "shall + 동사원형"
+  usage_note: "'~할게요, ~할까요' 라는 뜻이에요. 요즘은 Shall we ~? 로 권할 때 가장 많이 써요 — Shall we go? 그 밖에는 will 을 쓰는 것이 자연스러워요."
+
+- word: "serious"
+  reason: "문형에 영어 something 이 한국어 자리에 들어가 있었다. 고치면서 넣은 'serious + about + 명사' 는 예문(This is serious business)과 어긋났다 — 고치면서 다른 쪽을 어긋나게 한 것이라 예문이 보여주는 꼴로 되돌린다. about 쓰임은 설명에 넣는다."
+  pattern: "serious + 명사"
+  usage_note: "가볍지 않다는 뜻이에요 — serious business, a serious problem. 사람이 진심이라고 할 때는 about 을 붙여요: I'm serious about it. 중요하다는 뜻은 important 예요."

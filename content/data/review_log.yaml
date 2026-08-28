@@ -2128,3 +2128,75 @@ passes:
   - worker
   - worry
   - wrong
+- id: top800-b
+  date: '2026-08-28'
+  what: 빈도 740~762위 20개 — 17개가 고칠 것이었다(한도로 agent 가 멈춰 직접 읽었다)
+  words:
+  - achieve
+  - below
+  - board
+  - cent
+  - church
+  - club
+  - doctor
+  - election
+  - holiday
+  - hotel
+  - item
+  - machine
+  - mark
+  - method
+  - military
+  - movie
+  - prove
+  - season
+  - stuff
+  - wide
+- id: top800-c
+  date: '2026-08-28'
+  what: 빈도 763~784위 20개 — 16개가 고칠 것이었다
+  words:
+  - ability
+  - advantage
+  - agreement
+  - card
+  - challenge
+  - despite
+  - discussion
+  - hospital
+  - interview
+  - introduce
+  - link
+  - marry
+  - mile
+  - nation
+  - quickly
+  - ready
+  - seek
+  - sorry
+  - statement
+  - unit
+- id: top800-d
+  date: '2026-08-28'
+  what: 빈도 785~806위 20개 — 16개가 고칠 것이었다
+  words:
+  - access
+  - aim
+  - beautiful
+  - capital
+  - degree
+  - fear
+  - husband
+  - identify
+  - loss
+  - movement
+  - popular
+  - red
+  - release
+  - serious
+  - shall
+  - solution
+  - specific
+  - tax
+  - television
+  - treat
