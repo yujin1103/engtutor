@@ -4176,8 +4176,9 @@
   usage_note: "한 번 세게 부딪치거나 때리는 것을 말해요 — He hit the ball. A car hit the wall. 여러 번 계속 때리는 것은 beat 라고 해요."
 
 - word: "image"
-  reason: "pattern: image 는 모음 소리로 시작해 a image 는 비문이다."
+  reason: "pattern: image 는 모음 소리로 시작해 a image 는 비문이다. / 설명이 ''인상' 을 뜻할 때는 'impression' 과 혼동할 수 있어요' 로 끝나는데, 둘이 어떻게 갈리는지는 말하지 않는다."
   pattern: "an + image"
+  usage_note: "눈에 보이는 그림이나 사진이에요 — a clear image. 사진 하나를 가리킬 때는 a photo 가 더 흔해요. 사람이 남에게 주는 인상을 뜻하기도 해요: a good public image."
 
 - word: "improve"
   reason: "usage_note: 판정은 옳지만 원안의 '누구의 것인지 밝히면'은 함께 든 improve the service 가 누구의 것도 밝히지 않아 예와 어긋나서 그 구절만 바꿨다."
@@ -5984,8 +5985,10 @@
   pattern: "cough (동사), cough + 명사"
 
 - word: "density"
-  reason: "문형 자리에 영어가 들어가 있었다: noun: density + of + something"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: density + of + something / ''density' 는 'determine' 이나 'difference' 와 혼동하지 마세요' 는 d 로 시작한다는 것 말고 아무 관계가 없는 낱말을 나열한 것이다."
   pattern: "density + of + 명사"
+  usage_note: "같은 부피에 얼마나 빽빽이 들어 있는지예요 — the density of water. 사람이 많이 모여 사는 정도를 말할 때도 써요: population density."
+  confused_with: ["weight", "volume", "mass"]
 
 - word: "fortunate"
   reason: "문형 자리에 영어가 들어가 있었다: fortunate + about/with + something"
@@ -6132,8 +6135,9 @@
   pattern: "+ of + 찾는 대상"
 
 - word: "withdrawal"
-  reason: "문형 자리에 영어가 들어가 있었다: noun: withdrawal + from + 장소/사람"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: withdrawal + from + 장소/사람 / '인출은 money 관련일 때 주로 쓰고' 에서 한국어 문장에 영어 money 가 그대로 끼어 있다."
   pattern: "withdrawal + from + 장소/사람"
+  usage_note: "넣어 둔 것을 도로 빼는 것이에요 — a withdrawal from my account. 군대가 물러나는 것도 withdrawal 이라고 해요. 빼는 동사는 withdraw 예요."
 
 - word: "brake"
   reason: "문형 자리에 영어가 들어가 있었다: brake + on + something"
@@ -6192,8 +6196,10 @@
   pattern: "a reminder + of + 명사"
 
 - word: "rumor"
-  reason: "문형 자리에 영어가 들어가 있었다: rumor + about + something"
+  reason: "문형 자리에 영어가 들어가 있었다: rumor + about + something / ''I heard that...' 보다 더 부정확한 말로 쓰세요' 는 무엇을 하라는 것인지 알 수 없다."
   pattern: "rumor + about + 명사"
+  usage_note: "사실인지 모르는 채 사람들 사이에 도는 이야기예요 — I heard a rumor. 그런 말이 돈다고 할 때는 There's a rumor that ~ 이라고 해요. 확인된 소식은 news 예요."
+  confused_with: ["news", "gossip", "story"]
 
 - word: "compartment"
   reason: "문형 자리에 영어가 들어가 있었다: noun (in + 물건/장소)"
@@ -7261,8 +7267,9 @@
   pattern: "superb + 명사"
 
 - word: "copyright"
-  reason: "문형 자리에 영어가 들어가 있었다: noun: + 권리 (법적 권리)"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: + 권리 (법적 권리) / ''copy' 는 복사하다는 뜻이니 혼동하지 마세요' 는 헷갈릴 일이 없는 둘을 견준 것이다 — 정작 이 낱말을 쓰는 자리를 말하지 않는다."
   pattern: "copyright + 권리 (법적 권리)"
+  usage_note: "만든 사람이 그 창작물에 대해 갖는 권리예요 — This book is under copyright. 남의 것을 함부로 쓰면 copyright infringement(저작권 침해)라고 해요."
 
 - word: "fixture"
   reason: "문형 자리에 영어가 들어가 있었다: noun (고정된 물건을 나타내는 명사)"
@@ -8502,11 +8509,6 @@
   pattern: "tag + 목적어 + with + 명사"
   usage_note: "이름표나 꼬리표를 붙인다는 뜻이에요 — tag your luggage with your name. 무엇을 적어 붙이는지는 with 로 말해요. 붙이는 그 표 자체도 a tag 예요."
 
-# ── 새 검사(한국어끼리만 견주는 설명)의 표본 열둘 중 일곱 ──────────────
-#
-# 480개가 걸리는데 자동으로 고칠 수는 없어서(표본 정확도 58%) 사람이 읽어야 한다.
-# 여기 일곱은 그 표본에서 실제로 나빴던 것들이다.
-
 - word: "arbitrage"
   reason: "'한국어 차익과 혼동하지만, arbitrage 은 특정 시장 간 차이를 이용하는 전략을 말해요' 는 앞뒤가 같은 말이라 무엇을 혼동하지 말라는 것인지 알 수 없다."
   usage_note: "같은 물건이 두 시장에서 값이 다를 때, 싼 쪽에서 사서 비싼 쪽에 팔아 차익을 얻는 일이에요. 값이 오르기를 기다리는 것이 아니라 값 차이로 버는 것이라 위험이 거의 없다고 봐요."
@@ -8534,3 +8536,84 @@
 - word: "alternatively"
   reason: "'한국어 또는보다 공식적인 상황에서 써요' 는 한국어와 영어를 격식으로 견주는 말이라 성립하지 않는다."
   usage_note: "다른 길을 내놓을 때 문장 앞에 놓는 말이에요 — Alternatively, we can meet on Friday(아니면 금요일에 만나도 돼요). 둘 중 하나를 고르라는 or 보다 정중해요."
+
+- word: "cucumber"
+  reason: "설명이 통째로 무너졌다 — '오이' 가 여섯 번 나오고 마지막에 '오이 와 오이 를 혼동하지 마세요' 로 끝난다. 한 낱말을 자기 자신과 혼동하지 말라는 말이다."
+  usage_note: "오이예요 — a cucumber, two cucumbers. 샐러드나 샌드위치에 자주 들어가요. 오이를 절인 것은 a pickle 이라고 해요."
+  confused_with: ["pickle", "tomato", "lettuce"]
+
+- word: "institute"
+  reason: "''이stitute' 는 '학원' 과 혼동하지 마세요' 에서 한글과 영어가 한 낱말 안에 섞였다. 앞 문장도 '학원이나 병원과는 달라요' 라고만 하고 무엇이 다른지 말하지 않는다."
+  usage_note: "연구나 교육을 하는 기관이에요 — a research institute. 이름에 붙어 쓰이는 일이 많아요. 어린 학생이 다니는 학원은 an academy, 병을 보는 곳은 a hospital 이에요."
+  confused_with: ["academy", "institution", "center"]
+
+- word: "depreciation"
+  reason: "''감가' 는 '감소' 를, '상각' 은 '계산' 을 의미해요' 는 한자어를 쪼개 풀이한 것이라 영어를 배우는 데 쓸모가 없고, 뒤 문장도 'decrease in value 와 혼동하지 마세요' 라는데 그것이 바로 depreciation 의 뜻이다."
+  usage_note: "쓰면서 값이 줄어드는 것이에요 — the depreciation of a car. 회계에서 해마다 얼마씩 값을 깎아 적을 때 써요. 값이 오르는 것은 appreciation 이에요."
+
+- word: "outsource"
+  reason: "'외주를 받는 쪽은 subcontract 예요' 가 틀렸다 — subcontract 도 일을 넘기는 쪽이 하는 말이다. 받는 쪽은 a contractor 나 a vendor 다."
+  usage_note: "회사 밖에 일을 맡긴다는 뜻이에요 — We outsource our design work. 어디에 맡기는지는 to 로 붙여요. 일을 받는 쪽은 a contractor 라고 해요."
+
+- word: "policymaker"
+  reason: "''정책을 만드는 사람' 과 '정책' 은 혼동하지 마세요' 는 같은 말을 두 번 하며 아무것도 알려주지 않는다."
+  usage_note: "정책을 정하는 자리에 있는 사람이에요 — government policymakers. 정책 자체는 a policy 라고 해요. 뉴스나 보고서에 자주 나오는 말이에요."
+
+- word: "sixteen"
+  reason: "'한국어에서 열여섯은 숫자 16을 의미하지만, sixteen 은 영어에서 16을 표현하는 방법이에요' 는 같은 사실을 두 언어로 되풀이할 뿐이다."
+  usage_note: "16이에요. 순서로 '열여섯째' 를 말할 때는 sixteenth 로 바뀌어요 — the sixteenth floor. 13부터 19까지는 끝에 -teen 이 붙어요."
+  confused_with: ["sixty", "sixteenth", "six"]
+
+- word: "nevertheless"
+  reason: "'문장 앞에 놓을 때만 사용하고, 중간에 쓰면 안 돼요' 가 거짓이다 — 쉼표 사이에 넣어 문장 가운데에도 온다. ''비록 비쌌지만' 과 혼동하지 마세요' 도 한국어 구와 영어 낱말을 견주는 말이다."
+  usage_note: "'그런데도' 라는 뜻이에요 — It was expensive. Nevertheless, I bought it. 앞 문장을 뒤집을 때 써요. 글에서 쓰는 딱딱한 말이라 말할 때는 but 이나 still 을 더 써요."
+
+- word: "cheesecake"
+  reason: "''cheesecake' 만 말하면 무슨 음료인지 혼동할 수 있어요' 는 성립하지 않는다 — 치즈케이크는 음료가 아니다."
+  usage_note: "치즈로 만든 케이크예요 — a slice of cheesecake. 카페에서 한 조각을 시킬 때는 a piece of cheesecake 라고 해요."
+  confused_with: ["cake", "dessert", "pie"]
+
+- word: "dock"
+  reason: "''도크에 도착하다' 는 'arrive at/in' 과 혼동하지 마세요' 는 한국어 구와 영어 전치사를 견주는 말이라 성립하지 않는다."
+  usage_note: "배가 닿는 자리예요 — The ship is at the dock. 짐을 싣고 내리는 곳도 a loading dock 이라고 해요. 배를 대는 동사로도 써요: dock the boat."
+
+- word: "annum"
+  reason: "''per year' 와도 혼동할 수 있어요' 가 성립하지 않는다 — per annum 이 곧 per year 다. 혼동할 것이 아니라 같은 말이라고 알려 줘야 한다."
+  usage_note: "'해마다' 라는 뜻인데 혼자서는 안 쓰고 per annum 으로만 써요 — 5% per annum. 뜻은 per year 와 같고, 계약서나 보고서 같은 딱딱한 글에 나와요."
+
+- word: "voicemail"
+  reason: "''I called her but she didn't answer.' 와 혼동하지 마세요' 는 낱말과 문장을 견주는 것이라 자리가 맞지 않는다."
+  usage_note: "전화를 안 받았을 때 남기는 녹음 메시지예요 — leave a voicemail. 남긴다고 할 때 leave 를 써요. 확인한다고 할 때는 check my voicemail 이라고 해요."
+
+- word: "arguably"
+  reason: "뜻이 '논쟁의 여지가 있는, 의견이 갈리는' 인데 이것은 형용사 풀이다 — arguably 는 부사다. 설명도 ''아마도' 나 '가능성이 있다' 와 혼동하지 마세요' 로 무엇이 다른지 말하지 않는다."
+  meaning_ko: "아마 틀림없이"
+  usage_note: "'따져 보면 아마 그렇다' 는 뜻으로 문장 앞이나 be 동사 뒤에 놓아요 — He is arguably the best player. 딱 잘라 말하지 않으면서도 그렇게 본다는 느낌이라 글에서 자주 써요."
+
+- word: "electronically"
+  reason: "'전자 서명을 할 때 쓰는 말이에요' 는 이 낱말을 서명 하나로 좁힌다 — 전자적으로 하는 모든 일에 쓴다."
+  usage_note: "기계나 인터넷으로 한다는 뜻이에요 — sign electronically, pay electronically. 종이나 손으로 하는 것과 갈라 말할 때 써요."
+
+- word: "ceiling"
+  reason: "'한국어 천장은 건물의 상부를 가리키지만, ceiling 은 주로 실내 천장을 의미해요' 는 한국어 '천장' 도 실내를 가리키므로 갈림이 없고, 정작 혼동 목록의 roof 와 무엇이 다른지는 말하지 않는다."
+  usage_note: "방 안에서 올려다보는 면이에요 — a high ceiling. 밖에서 보이는 지붕은 roof 예요. 값이나 수의 '상한' 이라는 뜻으로도 써요: a price ceiling."
+
+- word: "mayor"
+  reason: "''mayor' 는 사람을 가리키지만, 'city' 는 장소를 가리키는 것과 혼동하지 마세요' 는 성립하지 않는다 — 사람과 도시를 헷갈리는 학습자는 없다."
+  usage_note: "시를 이끄는 사람이에요 — the mayor of Seoul. 어느 도시의 시장인지는 of 로 붙여요. 나라를 이끄는 사람은 a president 예요."
+  confused_with: ["president", "governor", "leader"]
+
+- word: "membership"
+  reason: "'동사 to member 와는 다르게 쓰여요' 에서 to member 는 없는 말이다. ''I am a member' 와 혼동하지 마세요' 도 낱말과 문장을 견주는 말이다."
+  usage_note: "어떤 모임에 든 자격이에요 — a gym membership. 그 자격을 가진 사람 하나는 a member 라고 해요: I am a member. 회비를 낸다고 할 때는 pay for my membership 이라고 해요."
+
+- word: "sheer"
+  reason: "'의도가 명확한 sheer' 는 sheer 의 뜻이 아니다 — sheer 는 '순전한, 그야말로' 다."
+  meaning_ko: "순전한, 그야말로"
+  usage_note: "다른 것이 섞이지 않았다는 뜻으로 명사 앞에 붙여요 — sheer luck(순전히 운), sheer joy. 천이 아주 얇아 비친다는 다른 뜻도 있어요: sheer curtains."
+  confused_with: ["pure", "complete", "thin"]
+
+- word: "vinegar"
+  reason: "''vinegar' 는 'vinegar bottle' 과 혼동하지 마세요' 는 성립하지 않는다 — 뒤엣것은 앞엣것이 든 병이다. '식초는 보통 식당에 있지만' 도 앞뒤가 이어지지 않는다."
+  usage_note: "새콤한 맛을 내는 액체예요 — put vinegar on the salad. 샐러드에는 기름과 함께 뿌려요. 하나둘 세지 않아서 some vinegar 처럼 말해요."
+  confused_with: ["oil", "sauce", "lemon"]
