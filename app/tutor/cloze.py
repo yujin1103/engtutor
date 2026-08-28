@@ -438,6 +438,16 @@ _FINAL_CONSONANT = frozenset("lmnr")
 _FINAL_RIEUL = frozenset("lr")
 
 
+def _quoted(letters: str) -> str:
+    """글자 조각을 따옴표로 감싼다. **조각 안에 아포스트로피가 있으면 홑낫표로.**
+
+    `o'clock` 의 앞 세 글자는 `o'cl` 인데, 그냥 감싸면 `'o'cl'` 이 되어 따옴표가
+    겹쳐 읽힌다. 서빙 가능한 5,089개 중 한 낱말에서만 나지만 그 한 낱말은
+    생활 회화 트랙이라 연습 화면에 그대로 나간다.
+    """
+    return f"「{letters}」" if "'" in letters or "’" in letters else f"'{letters}'"
+
+
 def _with_ro(letters: str) -> str:
     """'a 로' / 'n 으로' / 'l 로'. 여러 글자면 마지막 글자가 정한다.
 
@@ -445,13 +455,13 @@ def _with_ro(letters: str) -> str:
     """
     tail = letters[-1:].lower()
     ro = "으로" if tail in _FINAL_CONSONANT and tail not in _FINAL_RIEUL else "로"
-    return f"'{letters}' {ro}"
+    return f"{_quoted(letters)} {ro}"
 
 
 def _with_yeyo(letters: str) -> str:
     """'a 예요' / 'n 이에요'. 받침이 ㄹ 이어도 이쪽은 '이에요' 다(엘이에요)."""
     tail = letters[-1:].lower()
-    return f"'{letters}' {'이에요' if tail in _FINAL_CONSONANT else '예요'}"
+    return f"{_quoted(letters)} {'이에요' if tail in _FINAL_CONSONANT else '예요'}"
 
 
 def _upto(answer: str, revealed: int) -> str:

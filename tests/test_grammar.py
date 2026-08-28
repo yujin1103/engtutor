@@ -506,3 +506,45 @@ def test_http_errors_keep_a_string_detail(client: TestClient) -> None:
         "/grammar/answer", json={"id": "0" * 12, "chosen": "send"}
     ).json()
     assert isinstance(body["detail"], str)
+
+
+@pytest.mark.parametrize(
+    ("path", "body"),
+    [
+        ("/grammar/answer", {"id": "a" * 100_000, "chosen": "send"}),
+        ("/cloze/answer", {"word": "borrow", "said": "a" * 100_000}),
+        ("/cloze/answer", {"word": "a" * 100_000, "said": "x"}),
+        ("/chat", {"scenario_id": "a" * 100_000, "message": "hi"}),
+        ("/chat", {"scenario_id": "cafe_order", "message": "a" * 100_000}),
+    ],
+)
+def test_errors_do_not_echo_the_whole_request_back(
+    client: TestClient, path: str, body: dict
+) -> None:
+    """**거절한 값을 통째로 되돌려 보내지 않는다.**
+
+    `max_length` 를 걸어도 5MB 가 그대로 돌아왔다 — pydantic 이 거절한 값을
+    `errors()[0]["input"]` 에 담고 처리기가 그걸 실어 보내기 때문이다. 필드마다
+    제한을 붙이는 것으로는 못 막고, 되싣는 자리에서 잘라야 한다.
+
+    시범으로 바깥에 열어 두는 앱이라(README 의 '외부에 잠깐 열기') 무제한 응답을
+    남겨 둘 자리가 아니다.
+    """
+    res = client.post(path, json=body)
+    assert res.status_code < 500
+    assert len(res.content) < 4096, f"응답이 {len(res.content):,}B 입니다"
+
+
+def test_the_form_table_does_not_collect_dead_rows() -> None:
+    """형태 표에 **아무 틀도 안 부르는 줄**이 쌓이면 안 된다.
+
+    한쪽 방향만 막아 두면 반대쪽이 조용히 는다. `rules()` 는 "틀이 부르는데 표에
+    없는 동사" 를 시작할 때 잡지만 그 반대는 아무 데도 안 걸려서, 틀에서 동사를
+    빼는 동안 표에 여덟 줄이 남았다. 남은 줄은 검수한 것처럼 보이는데 실제로는
+    화면에 나가지도 않고 다시 읽히지도 않는다.
+
+    개수를 세어 두는 이유: 규칙을 하나 더 만들 때 쓸 재료일 수 있어 시작을
+    막지는 않되, 늘어나면 알아채야 한다.
+    """
+    dead = grammar.unused_forms()
+    assert len(dead) <= 8, f"안 쓰이는 형태 표 줄이 늘었습니다: {dead}"

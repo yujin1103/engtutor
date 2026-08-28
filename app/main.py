@@ -101,10 +101,26 @@ async def _http_error(_: Request, exc: StarletteHTTPException) -> JSONResponse:
     )
 
 
+# 오류 본문에 되싣는 글자의 상한. 무엇이 잘못됐는지 보여 주기에는 넉넉하고,
+# 되비추기로 쓰기에는 쓸모없는 길이다.
+MAX_ECHO_CHARS = 200
+
+
 def _utf8_safe(value: object) -> object:
-    """JSON 으로 옮길 수 없는 글자를 바꿔 둔다. 구조는 그대로 둔다."""
+    """JSON 으로 옮길 수 없는 글자를 바꾸고, **되싣는 값의 길이를 자른다.**
+
+    자르는 이유: `max_length` 를 걸어도 5MB 가 그대로 돌아온다. pydantic 이
+    거절한 값을 `errors()[0]["input"]` 에 통째로 담고 처리기가 그걸 실어 보내기
+    때문이다. 필드마다 제한을 붙이는 것으로는 못 막고, 되싣는 자리에서 잘라야 한다.
+
+    실측(자르기 전): chat message 5MB → 422 인데 본문 5,000,152B. 시범으로 바깥에
+    열어 두는 앱이라 무제한 응답을 남겨 둘 자리가 아니다.
+    """
     if isinstance(value, str):
-        return value.encode("utf-8", "replace").decode("utf-8")
+        out = value.encode("utf-8", "replace").decode("utf-8")
+        if len(out) > MAX_ECHO_CHARS:
+            return out[:MAX_ECHO_CHARS] + f"… ({len(out)}자)"
+        return out
     if isinstance(value, dict):
         return {str(k): _utf8_safe(v) for k, v in value.items()}
     if isinstance(value, (list, tuple)):
@@ -134,7 +150,9 @@ class ScenarioOut(BaseModel):
 
 
 class ChatRequest(BaseModel):
-    scenario_id: str
+    # 길이를 막는다. 이 값은 404 의 detail 에 그대로 들어가는데, 제한이 없어서
+    # 5MB 를 보내면 5MB 가 돌아왔다.
+    scenario_id: str = Field(min_length=1, max_length=64)
     # 음성 입력이면 학습자가 **확정한** 문장이다. 전사 그대로가 아니라 고친 뒤의 것.
     message: str = Field(min_length=1, max_length=1000)
     session_id: str | None = None
