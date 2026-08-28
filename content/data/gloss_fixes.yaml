@@ -2651,3 +2651,29 @@
 - word: "red"
   example_ko: "저는 빨간 셔츠가 좋아요."
   reason: "'빨간 셔츠가 좋아요' 에 주어가 없어 누가 좋아하는지 흐리다."
+
+# ── 빈도 807~826위 ─────────────────────────────────────────────
+
+- word: "yourself"
+  example_ko: "몸조심하세요."
+  reason: "'자신 잘 부탁드려요' 는 한국어가 되지 않는다. Take care of yourself 는 헤어질 때 하는 인사말이다."
+
+- word: "brother"
+  example_ko: "이쪽이 제 형제예요."
+  reason: "'이건 제 형이에요' 는 사람을 '이건' 으로 가리키고, brother 는 손위·손아래를 가르지 않는데 '형' 으로 못 박았다."
+
+- word: "modern"
+  example_ko: "이건 현대식 집이에요."
+  reason: "'이 건물은 현대적인 집입니다' 는 건물과 집을 두 번 말한다."
+
+- word: "sleep"
+  example_ko: "저는 밤마다 여덟 시간 자요."
+  reason: "'밤에 매일' 은 every night 을 옮긴 말로 어색하다."
+
+- word: "trip"
+  example_ko: "저는 다음 주에 일본으로 여행을 가요."
+  reason: "'내주' 는 요즘 잘 쓰지 않는 말이다."
+
+- word: "treatment"
+  example_ko: "의사가 저를 특별히 대해 줬어요."
+  reason: "'특별한 대우를 해주었어요' 는 번역투다."

@@ -5011,3 +5011,83 @@
   reason: "문형에 영어 something 이 한국어 자리에 들어가 있었다. 고치면서 넣은 'serious + about + 명사' 는 예문(This is serious business)과 어긋났다 — 고치면서 다른 쪽을 어긋나게 한 것이라 예문이 보여주는 꼴로 되돌린다. about 쓰임은 설명에 넣는다."
   pattern: "serious + 명사"
   usage_note: "가볍지 않다는 뜻이에요 — serious business, a serious problem. 사람이 진심이라고 할 때는 about 을 붙여요: I'm serious about it. 중요하다는 뜻은 important 예요."
+
+# ── 빈도 807~826위 — 20개 중 15개 ────────────────────────────────
+#
+# 문형 자리에 영어 문법 용어가 그대로 들어간 것이 이 묶음에만 셋이다
+# (`treatment`: "noun (명사, 불가산명사)", `yourself`: "reflexive pronoun",
+# `investment`: "noun (a/the + investment)"). 왕초보가 읽을 칸이 아니다.
+
+- word: "treatment"
+  reason: "문형 자리에 'noun (명사, 불가산명사)' 이라는 영어 문법 용어가 들어가 있었다. 설명의 ''treatment' 보다 'how you treat someone' 이 더 자연스러워요' 도 낱말과 문장을 견주는 것이라 자리가 맞지 않는다."
+  pattern: "the + treatment"
+  usage_note: "병을 고치는 일이에요 — get treatment for a cold. 사람을 어떻게 대하는지를 뜻하기도 해요: special treatment. 치료하는 동사는 treat 예요."
+
+- word: "yourself"
+  reason: "문형 자리에 'reflexive pronoun' 이라는 영어 문법 용어가 들어가 있었다. 설명의 예 '(나는 내가 다쳤어요.)' 도 한국어가 되지 않는다."
+  pattern: "동사 + yourself"
+  usage_note: "'너 자신' 이에요. 하는 사람과 받는 사람이 같을 때 써요 — Take care of yourself(몸조심하세요). 혼자 힘으로 했다고 할 때도 써요: Did you make it yourself?"
+  confused_with: [myself, your, yours]
+
+- word: "investment"
+  reason: "문형 자리에 영어 noun 이 들어가 있었다. 설명도 '한국어에서 투자는 명사로만 쓰이는 경우가 많아요' 로 한국어 얘기만 하고 끝난다."
+  pattern: "an/the + investment"
+  usage_note: "돈을 넣어 불리려고 하는 일이에요 — a good investment. 돈을 넣는다는 동사는 invest 예요: invest in a company."
+  confused_with: [invest, saving, profit]
+
+- word: "modern"
+  reason: "설명이 contemporary 와의 차이를 '건물이나 기술 / 예술이나 사람' 으로 갈랐는데 근거가 없다. 왕초보가 contemporary 를 만날 일도 거의 없다."
+  usage_note: "요즘 것이라는 뜻이에요 — a modern house, modern technology. 반대는 old 나 traditional 이에요. 가장 최근 것은 the latest 라고 해요."
+
+- word: "bus"
+  reason: "설명이 ''bus' 는 'car' 와 혼동하지 마세요. 버스는 여러 사람을 태우고 다니는 거예요' 로 끝나는데, 버스와 승용차를 헷갈리는 학습자는 없다."
+  usage_note: "버스예요. 탄다고 할 때는 take the bus 라고 해요 — I take the bus to work. 버스 정류장은 a bus stop 이에요. 버스에 오르내릴 때는 get on / get off 를 써요."
+
+- word: "supply"
+  reason: "'supply 는 제공하는 쪽이고, receive 는 받는 쪽이에요' 는 낱말 뜻을 그대로 되풀이할 뿐이고, 정작 혼동 목록의 provide 와 무엇이 다른지는 말하지 않는다."
+  usage_note: "물건을 대 준다는 뜻이에요 — The shop supplies food to the restaurant. 누구에게 대 주는지는 to 로 붙여요. provide 와 뜻이 거의 같은데 supply 는 물건에, provide 는 서비스나 정보에도 써요."
+
+- word: "village"
+  reason: "'한국어 마을은 도시와 구분되지만, village 는 일반적으로 작은 마을을 말해요' 는 앞뒤가 같은 말이라 정보가 없고, 혼동 목록의 town 은 끝내 설명되지 않는다."
+  usage_note: "시골의 작은 마을이에요 — a village near the lake. 그보다 크면 a town, 더 크면 a city 예요."
+
+- word: "worth"
+  reason: "''worth' 는 가치나 가격을 말하는 데 쓰이고, 'cost' 는 직접적인 비용을 말해요' 는 둘을 가르지 못한다 — '가격' 과 '비용' 이 무엇이 다른지 말하지 않는다."
+  usage_note: "그만한 값어치가 있다는 뜻이에요 — This book is worth 10 dollars. 뒤에 -ing 를 붙이면 '~할 만하다' 가 돼요: It's worth trying. 값이 얼마다라고 할 때는 cost 를 써요: It costs 10 dollars."
+
+- word: "natural"
+  reason: "'자연스러운 것과 자연의 것의 차이를 주의하세요' 라고 해 놓고 그 차이를 말하지 않는다."
+  usage_note: "사람이 만들지 않은 것에 써요 — natural beauty, natural food. 어색하지 않다는 뜻으로도 써요: It's natural to feel nervous. 명사는 nature(자연)예요."
+
+- word: "express"
+  reason: "'표현하다와는 다르게, express 는 ... 표현하는 데 쓰이고요' 가 자기모순이다 — 표현하다와 다르다면서 표현한다고 한다. 문형에도 영어 something(feeling, idea)이 한국어 자리에 들어가 있었다."
+  pattern: "express + 명사"
+  usage_note: "마음이나 생각을 말로 나타낸다는 뜻이에요 — express your feelings. 빠른 기차나 배달을 가리키기도 해요: an express train, express delivery."
+
+- word: "indicate"
+  reason: "''표시하다' 는 물리적으로 보이는 것을 말하지만, '시사하다' 는 암시적인 의미를 담고 있어요' 는 한국어 두 낱말만 견주고 indicate 와 show 를 가르지 못한다. 문형에도 영어 that-clause 가 한국어 자리에 있었다."
+  pattern: "indicate (that) + 문장"
+  usage_note: "무엇을 가리켜 알려 준다는 뜻이에요 — The sign indicates that the road is closed. 눈에 보이게 보여 주는 것은 show 예요: Show me the way."
+
+- word: "brother"
+  reason: "'오빠는 형, 남동생은 brother 예요' 는 문장이 무너져 있다 — 한국어 '형' 을 영어 낱말 자리에 놓았다. 정작 요점(영어는 손위·손아래를 안 가른다)이 그 문장에 묻혔다."
+  meaning_ko: "남자 형제"
+  usage_note: "형·오빠·남동생을 다 brother 라고 해요 — 영어는 나이 위아래를 가르지 않아요. 굳이 밝히려면 an older brother, a younger brother 라고 해요. 여자 형제는 sister 예요."
+
+- word: "score"
+  reason: "''score of' 는 'test score' 처럼 쓰는 게 자연스러워요' 가 어긋난다 — test score 에는 of 가 없다. 문형의 'score + (of + something)' 에도 영어 something 이 한국어 자리에 있었다."
+  pattern: "a/the + score"
+  usage_note: "시험이나 경기에서 딴 점수예요 — What was your score? 몇 점인지 말할 때는 a score of 90 처럼 of 를 붙여요. 하나하나의 점은 a point 라고 해요."
+
+- word: "trip"
+  reason: "''trip' 만 쓰면 문맥에 따라 둘 다 해석될 수 있어요' 는 학습자에게 아무 도움이 안 된다 — 어느 쪽인지 가리는 방법을 말하지 않는다."
+  usage_note: "짧게 다녀오는 여행이에요 — a trip to Japan. 오래 다니는 여행은 travel 이나 a journey 라고 해요. 발이 걸려 넘어진다는 다른 뜻도 있어요: trip over a rock."
+
+- word: "fish"
+  reason: "'한국어 어와 혼동하지 마세요. 어는 물고기를 잡다' 는 성립하지 않는 말이다 — 한국어 '어' 는 그런 뜻이 아니고, 혼동 목록의 fishing·fisher 도 같은 낱말의 다른 모양이다."
+  usage_note: "물고기예요. 여러 마리여도 대개 fish 그대로 써요 — I saw three fish. 낚시하는 것은 동사 fish 나 go fishing 이라고 해요."
+  confused_with: [meat, chicken, seafood]
+
+- word: "trip"
+  reason: "문형이 'take a trip (+ to + 장소), trip over + 물건' 인데 예문(I'm going on a trip to Japan)에 take 가 없다 — go on a trip 도 흔한 꼴이라 문형이 예문을 못 담았다."
+  pattern: "a trip + to + 장소"
