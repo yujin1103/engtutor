@@ -2225,3 +2225,173 @@
 - word: "provide"
   example_ko: "선생님이 우리에게 책을 주세요."
   reason: "'제공해 주세요' 는 요청하는 말로 읽힌다. 원문(The teacher provides us with books)은 늘 그렇다는 서술이다."
+
+# ── 빈도 209~475위 ─────────────────────────────────────────────
+
+- word: "across"
+  example_ko: "그 가게는 길 건너편에 있어요."
+  reason: "street 는 길이지 골목이 아니다."
+
+- word: "ago"
+  example_ko: "저는 사흘 전에 도착했어요."
+  reason: "'세 일' 은 한국어에 없는 말이고 three days 는 사흘이 맞다."
+
+- word: "allow"
+  example_ko: "선생님은 우리가 사전을 쓰도록 허락하세요."
+  reason: "'허용해 주세요'가 부탁하는 말투라는 지적은 옳은데 올라온 FIX 칸은 해설이 통째로 들어갔고 거기 적힌 한 줄(\"…허락해 주세요\")마저 여전히 부탁으로 읽혀서, 부탁 뜻을 만드는 '주다'를 덜어낸 한 문장으로 넣었다."
+
+- word: "away"
+  example_ko: "우리 집은 여기서 10분쯤 떨어져 있어요."
+  reason: "원안 '10분 거리예요' 에는 away 의 뜻(멀리·떨어져)이 한 조각도 남지 않아 reject_unrelated_gloss 에 걸리고(직접 돌려 확인) 다음 백필이 이 해석을 비워 버린다."
+
+- word: "care"
+  example_ko: "동물에 관심 있으세요?"
+  reason: "care about 은 '좋아하다'가 아니고 같은 항목의 뜻('관심을 갖다, 신경 쓰다')과도 어긋나던 것이 맞다."
+
+- word: "class"
+  example_ko: "저는 오늘 영어 수업이 있어요."
+  reason: "바뀐 예문의 today 를 해석에 반영한 것뿐이라 새 주장이 없다."
+
+- word: "clear"
+  example_ko: "물이 아주 맑아요."
+  reason: "원래 해석이 비어 있어 연습장에서 지시문이 없는 항목이었고, 새 예문과 정확히 맞는다."
+
+- word: "color"
+  example_ko: "차가 무슨 색이에요?"
+  reason: "'어떤 거예요' 를 고치는 것은 맞지만 올라온 '당신 차는' 은 번역투라(같은 DB 5,487개 중 당신을 쓰는 항목은 75개뿐이고 그것들도 어색하다) 주어를 자연스럽게 비웠다."
+
+- word: "concern"
+  example_ko: "가장 걱정되는 게 뭐예요?"
+  reason: "your 를 살리고 번역투를 없앤 자연스러운 해석이며, worry(\"회의는 걱정하지 마세요\")·interest 해석과도 갈린다."
+
+- word: "control"
+  example_ko: "그는 그 회사를 손에 쥐고 있어요."
+  reason: "'운영해요'는 같은 DB 의 manage 해석(\"저는 작은 레스토랑을 운영해요\")과 그대로 겹쳐 답이 manage 로 새고 이 항목 자신의 usage_note 와도 어긋난다."
+
+- word: "else"
+  example_ko: "더 필요한 거 있으세요?"
+  reason: "바뀐 예문에 맞는 자연스러운 한국어다."
+
+- word: "expect"
+  example_ko: "이따 엄마한테서 전화가 올 것 같아요."
+  reason: "'기대하고 있어요'가 바람으로 읽힌다는 지적은 옳지만 올라온 '전화 올 거예요'는 expect 가 통째로 사라진 단순 미래라, 내다보는 뜻이 남는 '올 것 같아요'로 고쳤다(think·hope 해석과 갈림 확인)."
+
+- word: "face"
+  example_ko: "저는 아침마다 얼굴을 씻어요."
+  reason: "위 example 을 소유격 문장으로 고쳤으므로 해석도 맞추었고, 이 해석은 세 배치 검사를 모두 통과한다(확인)."
+
+- word: "force"
+  example_ko: "그들은 저에게 떠나라고 강요했어요."
+  reason: "'그들은 제가 떠나라고' 는 강요한 쪽과 받은 쪽이 엉킨 비문이 맞다."
+
+- word: "future"
+  example_ko: "앞으로 무슨 계획이 있어요?"
+  reason: "바뀐 예문에 맞춘 해석이고 한국말도 자연스럽다."
+
+- word: "girl"
+  example_ko: "저 여자아이는 제 여동생이에요."
+  reason: "little sister 는 여동생인데 '작은 누나'로 옮기면 손위가 되고 사람을 '이건'이라 가리키는 것도 한국어가 아니다."
+
+- word: "happen"
+  example_ko: "무슨 일 있었어요?"
+  reason: "'어떻게 됐어요?' 는 결말을 묻는 말이라 What happened to you? 와 뜻이 다르고, 새 해석은 세 배치 검사를 통과한다(확인)."
+
+- word: "himself"
+  example_ko: "그는 다쳤어요. (남이 아니라 자기가 자기를 다치게 한 거예요)"
+  reason: "한국어 '다치다'는 '자신을 다치다'로 쓰지 않아 NOW 가 비문이고, FIX 는 자연스러운 문장에 재귀의 뜻을 괄호로 살렸다."
+
+- word: "local"
+  example_ko: "여기는 동네 식당이에요."
+  reason: "'로컬 레스토랑'은 소리만 옮긴 말이라 빈칸의 단서가 되지 못하고, 고친 해석은 nearby(\"가까이에 은행이 있어요?\")·regional 과도 갈린다."
+
+- word: "main"
+  example_ko: "주요리는 닭고기예요."
+  reason: "main dish 는 상의 중심이 되는 요리라 곁들이는 '반찬'으로 옮기면 뜻이 뒤집힌다."
+
+- word: "matter"
+  example_ko: "우리가 늦게 도착하면 문제가 되나요?"
+  reason: "원문은 묻는 문장에 '상관없겠죠'라고 답을 미리 정해 뜻이 뒤집혀 있었고, 고친 해석은 problem(\"제 폰에 문제가 있어요\")과도 갈린다."
+
+- word: "maybe"
+  example_ko: "아마 내일 공원에 갈 수 있을 거예요."
+  reason: "원문은 가능성을 말하는데 NOW 는 허락 여부를 모르겠다는 다른 뜻이 되었다."
+
+- word: "parent"
+  example_ko: "저희 부모님은 선생님이세요."
+  reason: "고친 예문의 복수·회화체에 맞고, mother(\"이분이 저희 어머니예요\")·father 해석과도 갈린다."
+
+- word: "particular"
+  example_ko: "저는 음식을 가리지 않아요."
+  reason: "be particular about 은 까다롭게 따진다는 뜻이라 부정하면 '가리지 않는다'가 맞고 '음식을 가리다'는 자연스러운 한국어다."
+
+- word: "past"
+  example_ko: "저는 예전에 한국에 살았어요."
+  reason: "in the past 는 '지난번에'가 아니라 '예전에'가 맞고, last(\"지난 주말에 뭐 했어요?\")와도 갈린다."
+
+- word: "pay"
+  example_ko: "그 커피 값으로 10달러를 냈어요."
+  reason: "자연스럽고 세 배치 검사를 다 통과하지만 meaning_ko 의 '내다' 에 기대어 통과하므로 meaning_ko 교정을 먼저 넣어야 한다 — 현행 '줘다' 상태에서는 reject_unrelated_gloss 에 걸린다(직접 돌려 확인)."
+
+- word: "present"
+  example_ko: "이것이 현재 상황입니다."
+  reason: "예문 This is the present situation. 의 This 를 '이제'로 옮긴 것이 맞아 해석이 틀렸고, 바꾼 해석이 예문과 일치한다."
+
+- word: "price"
+  example_ko: "이 셔츠는 얼마예요?"
+  reason: "DB 원문이 실제로 \"이 저의 가격은…\"이라 shirt 가 '저'로 깨져 있었고, 고친 해석은 자연스러우면서 cost 의 해석(\"이 셔츠 가격이 어떻게 되나요?\")과도 겹치지 않는다(다만 \"What is the cost of this shirt?\" 도 성립해 price/cost 두 답 문제는 남으니 cost 쪽 해석을 손볼 때 함께 봐야 한다)."
+
+- word: "probably"
+  example_ko: "내일 아마 비가 올 거예요."
+  reason: "고친 예문의 어순에 맞고 maybe·perhaps 해석과도 갈린다."
+
+- word: "rate"
+  example_ko: "그들은 그 영화를 별 다섯 개로 평가했어요."
+  reason: "'5스타'를 걷어내야 한다는 지적은 옳지만 올라온 '별 다섯 개를 줬어요'는 gave 를 부르는 해석이라 표제어 rate 의 단서가 사라져서, 뜻 칸의 '평가하다'를 살려 답을 하나로 묶었다."
+
+- word: "reach"
+  example_ko: "맨 위 선반에 손이 안 닿아요."
+  reason: "shelf 는 선반이지 서랍이 아니라 원래 해석이 낱말을 바꿔 놓았다."
+
+- word: "service"
+  example_ko: "그 식당은 서비스가 좋아요."
+  reason: "'서비스가 잘 되다' 는 응대가 아니라 시설·통신을 두고 하는 말이라 has good service 의 해석으로 맞지 않는다."
+
+- word: "social"
+  example_ko: "저는 사람들 만나는 모임에 가는 걸 좋아해요."
+  reason: "'사회적인 모임' 은 한국말로 뜻이 서지 않고 social event 는 사람들이 어울리는 자리를 말한다."
+
+- word: "soon"
+  example_ko: "우리는 곧 떠날 거예요."
+  reason: "고친 예문의 주어와 will 을 살린 해석이고 early(\"회의는 아침 일찍이에요\")와도 갈린다."
+
+- word: "story"
+  example_ko: "호랑이에 대한 이야기를 읽었어요."
+  reason: "'~에 대해 이야기'는 비문이고 '대한'이 맞는 자리다."
+
+- word: "subject"
+  example_ko: "수학은 제가 제일 좋아하는 과목이에요."
+  reason: "'전공' 은 major 라 원래 해석이 틀렸고, 바뀐 예문과 정확히 맞는다."
+
+- word: "term"
+  example_ko: "다음 주에 학기가 시작됩니다."
+  reason: "조사가 빠진 '학기 다음 주에'는 '학기 다음 주'로 읽혀 예문과 뜻이 달라진다."
+
+- word: "though"
+  example_ko: "히터가 있는데도 추워요."
+  reason: "주절이 It's cold 인데 '괜찮아요' 로 옮기면 하고 싶은 말이 뒤집힌다."
+
+- word: "together"
+  example_ko: "같이 점심 먹어요."
+  reason: "예문을 바꾸므로 해석도 함께 바꾸는 것이 맞고, 두 값이 서로 맞물린다."
+
+- word: "within"
+  example_ko: "그 가게는 걸어갈 수 있는 거리에 있어요."
+  reason: "해석은 빈칸 문제의 지시문이라 '걸어서 가도 되는'이 허락으로 읽힐 여지를 남기지 않는 편이 낫고, 바꾼 문장이 within walking distance 에 더 가깝다."
+
+- word: "yet"
+  example_ko: "밥은 먹었어요?"
+  reason: "'아직 먹었어요?'는 한국어로 성립하지 않고, 고친 해석은 already(\"이미 먹었어요\")·still(\"저는 아직 배고파요\")과도 갈린다."
+
+- word: "young"
+  example_ko: "그는 아주 어려요."
+  reason: "'어리어요' 는 쓰지 않는 활용이다."
