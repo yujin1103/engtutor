@@ -5390,40 +5390,55 @@
   usage_note: "몸과 마음을 편하게 쉰다는 뜻이에요 — I relaxed at home all day. 걱정하는 사람에게 Relax! 한 마디만 하면 '진정해!' 가 됩니다. 잠깐 쉬는 것은 take a break 라고 해요."
 
 - word: "description"
-  reason: "문형 자리에 영어가 들어가 있었다: a/the + description + of + something"
+  reason: "문형 자리에 영어가 들어가 있었다: a/the + description + of + something / usage_note: \"'description' 은 명사로만 쓰이고 'describe' 와는 다르게 쓰입니다\" 는 두 낱말이 다르다는 말만 되풀이할 뿐 describe 를 어떻게 쓰는지 보여 주지 않는다."
   pattern: "a/the + description + of + 명사"
+  usage_note: "무엇이 어떤지 말로 그려 주는 것이 description 이에요 — a description of the hotel. 그렇게 말해 주는 동작은 describe 라서 Describe your room. 이라고 합니다. 물건 설명은 a product description 이에요."
 
 - word: "complain"
   reason: "문형 자리에 영어가 들어가 있었다: complain + about + something"
   pattern: "complain + about + 명사"
 
 - word: "perspective"
-  reason: "문형 자리에 영어가 들어가 있었다: from + someone's perspective"
+  reason: "문형 자리에 영어가 들어가 있었다: from + someone's perspective / usage_note: '관점이 다른 사람의 생각을 말할 때 쓰고' 는 문장이 엉켜 뜻이 통하지 않고, 마지막 문장은 영어 문장의 해석을 적어 둔 것이라 쓰임 설명이 아니다."
   pattern: "from + 사람's perspective"
+  usage_note: "어떤 자리에서 보느냐를 말할 때 써요 — From my perspective(제가 보기에는). 뒤에 on 을 붙여 a different perspective on the problem 이라고도 합니다. 말할 때는 In my opinion 이 훨씬 흔해요."
 
 - word: "signal"
-  reason: "문형 자리에 영어가 들어가 있었다: signal + 목적어 (사람/물건), signal + something + to + 사람"
-  pattern: "signal + 목적어 (사람/물건), signal + 명사 + to + 사람"
+  reason: "문형 자리에 영어가 들어가 있었다: signal + 목적어 (사람/물건), signal + something + to + 사람 / usage_note: \"'signal something to someone' 은 특정한 신호를 보내는 것을 의미해요\" 는 같은 말을 돌려준 것이고, 휴대폰이 안 터질 때 쓰는 흔한 이름씨 쓰임이 빠졌다. / confused_with: symbol 은 signal 과 헷갈릴 짝이 아니다. / 되읽기: 설명과 예문이 둘 다 signal to + 사람 꼴인데 문형에는 그 꼴이 없다 — 'signal + 명사 + to + 사람' 은 다른 형태다."
+  pattern: "signal to + 사람 / signal + 목적어"
+  usage_note: "손이나 불빛으로 뜻을 알리는 것이 signal 이에요 — signal to the driver. 이름씨로도 써서 휴대폰이 안 터질 때 There's no signal. 이라고 합니다. 길에 서 있는 표지판은 a sign 이에요."
+  confused_with: ["sign"]
 
 - word: "leadership"
-  reason: "문형 자리에 영어가 들어가 있었다: noun: leadership + in + 분야/조직"
-  pattern: "leadership + in + 분야/조직"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: leadership + in + 분야/조직 / example: 'She has strong leadership in the company.' 는 영어로 어색하다 — 이 자리에는 show 를 쓴다. / usage_note: '지도력' 과 '리더십' 이라는 한국어 낱말끼리 견주고, 뒤이어 '명사로만 쓰이고' 라는 되풀이로 끝난다. / meaning_ko: 괄호 설명이 길어 뜻 칸이 해설이 됐다."
+  meaning_ko: "지도력, 이끄는 힘"
+  pattern: "show/have + leadership"
+  example: "She showed strong leadership."
+  usage_note: "무리를 이끄는 힘을 leadership 이라고 해요 — show leadership(지도력을 보이다). 이끄는 동작은 lead 라는 움직씨이고, 이끄는 사람은 a leader 예요. 조직의 지도부를 가리키기도 합니다."
+  confused_with: ["lead", "leader"]
 
 - word: "commitment"
-  reason: "문형 자리에 영어가 들어가 있었다: a + commitment + to + something"
+  reason: "문형 자리에 영어가 들어가 있었다: a + commitment + to + something / usage_note: 한국어 '약속' 과 견주며 시작하는데, 정작 왕초보가 헷갈리는 짝인 appointment(만나기로 한 약속)가 빠져 있었다. 해석도 '제가 ~ 약속이 있어요' 로 주어와 서술어가 어긋나 있다."
   pattern: "a + commitment + to + 명사"
+  usage_note: "commitment 는 꼭 지키겠다고 한 약속이나 맡은 책임이에요 — 뒤에 to 를 붙여 a commitment to my job 이라고 씁니다. 가볍게 하는 약속은 a promise, 만나기로 한 약속은 an appointment 예요."
+  confused_with: ["promise", "appointment"]
 
 - word: "wake"
-  reason: "문형 자리에 영어가 들어가 있었다: wake + someone up"
+  reason: "문형 자리에 영어가 들어가 있었다: wake + someone up / usage_note: \"'wake up' 은 '자다에서 깨다' 는 의미\" 는 한국어가 어색하고, 불규칙 변화 woke 가 예문에만 있고 설명에는 없었다. / confused_with: arise 는 왕초보 어휘가 아니다."
   pattern: "wake + 사람 up"
+  usage_note: "내가 잠에서 깨는 것은 wake up 이에요 — I wake up at six. 남을 깨울 때는 사이에 사람을 넣어 wake me up 이라고 합니다. 지난 일은 woke 예요 — I woke up late."
+  confused_with: ["awake", "sleep"]
 
 - word: "tie"
-  reason: "문형 자리에 영어가 들어가 있었다: tie + 목적어 (물건), tie + someone + up (매다)"
-  pattern: "tie + 목적어 (물건), tie + 사람 + up (매다)"
+  reason: "문형 자리에 영어가 들어가 있었다: tie + 목적어 (물건), tie + someone + up (매다) / pattern: 'tie + 사람 + up' 은 사람을 묶어 두는 뜻이라 왕초보 예문과 멀고, 정작 예문이 보여 주는 wear a tie 가 문형에 없다. / usage_note: 경기에서 비겼다는 흔한 뜻이 빠져 있었다."
+  pattern: "wear a + tie / tie + 목적어"
+  usage_note: "목에 매는 넥타이가 tie 예요 — wear a tie(넥타이를 매다). 움직씨로 쓰면 끈을 묶는다는 뜻이라 tie your shoes 라고 합니다. 경기에서 비겼을 때도 It was a tie. 라고 해요."
 
 - word: "secure"
-  reason: "문형 자리에 영어가 들어가 있었다: secure + 목적어 (물건), be secure + about/with + something"
-  pattern: "secure + 목적어 (물건), be secure + about/with + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: secure + 목적어 (물건), be secure + about/with + something / usage_note: '잠그야 해' 는 비문이다. / pattern: 'be secure + about/with + 명사' 는 영어에서 쓰지 않는 꼴이라 지어낸 형태를 가르치고 있었다. / 되읽기: 설명의 움직씨 뜻을 '단단히 붙들어 매다' 로 고쳤는데 뜻 칸은 '잠그다' 그대로라 secure the door 가 문을 잠그는 것으로만 좁혀진다."
+  meaning_ko: "안전한, 확실한; 단단히 붙들어 매다"
+  pattern: "be + secure / secure + 목적어"
+  usage_note: "안전하게 지켜져 있다는 뜻이에요 — a secure place. 인터넷에서는 '보안이 된' 이라는 뜻으로 자주 써서 a secure website 라고 합니다. 움직씨로 쓰면 단단히 붙들어 맨다는 뜻이에요 — secure the door."
 
 - word: "recommendation"
   reason: "문형 자리에 영어가 들어가 있었다: a recommendation + for + something"
@@ -7113,12 +7128,17 @@
   usage_note: "dangerous 는 '위험한' 이라는 그림씨라 명사 앞이나 be 동사 뒤에 놓아요 — a dangerous road / This road is dangerous. 위험 자체를 가리키는 이름씨는 danger 라서 in danger(위험에 빠진)처럼 씁니다."
 
 - word: "industrial"
-  reason: "문형 자리에 영어가 들어가 있었다: adjective"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective / usage_note: '산업에 관련된 것만 뜻해요' 는 뜻 칸을 되풀이한 것이고, 'industrial 과 industry 는 다르고' 라고만 해 무엇이 다른지를 말하지 않는다. / confused_with: industrialized 는 왕초보 어휘가 아니다."
   pattern: "industrial + 명사"
+  usage_note: "공장이나 산업이 있는 곳을 말할 때 명사 앞에 붙여요 — an industrial area(공업 지역), industrial waste(산업 폐기물). 산업 그 자체는 industry 라는 이름씨예요 — the car industry."
+  confused_with: ["industry"]
 
 - word: "necessarily"
-  reason: "문형 자리에 영어가 들어가 있었다: adverb (문장 중간에 쓰임)"
+  reason: "문형 자리에 영어가 들어가 있었다: adverb (문장 중간에 쓰임) / meaning_ko: '필요하게' 는 한국어에서 쓰지 않는 말이다. / usage_note: '부사어' 는 '부사' 를 잘못 적은 것이고, 이 낱말이 거의 늘 not 과 붙어 다닌다는 가장 중요한 사실이 빠져 있었다."
+  meaning_ko: "반드시, 꼭"
   pattern: "not necessarily + 형용사"
+  usage_note: "necessarily 는 거의 늘 not 과 함께 써요 — not necessarily 는 '꼭 그런 건 아니다' 라는 뜻입니다. Is it expensive? — Not necessarily. 처럼 한마디로 대답할 수도 있어요."
+  confused_with: ["necessary"]
 
 - word: "employment"
   reason: "문형 자리에 영어가 들어가 있었다: noun (불가산명사)"
@@ -10057,3 +10077,141 @@
 - word: "tourist"
   reason: "usage_note: '관광객' 과 '여행자' 라는 한국어 낱말끼리 견주고 끝나 영어 정보가 없다. 명사 앞에 붙는 흔한 짝(a tourist attraction)도 빠졌다."
   usage_note: "구경하러 온 사람을 tourist 라고 해요. 명사 앞에 붙여 a tourist area(관광지), a tourist attraction(관광 명소)처럼 씁니다. 여행 자체는 travel, 여행하는 사람을 두루 부르는 말은 traveler 예요."
+
+- word: "afford"
+  reason: "meaning_ko·usage_note: '할 수 있다' 로 시작해 can 과 뒤섞였고, \"'I can afford it' 은 '그걸 할 수 있어요' 보다 더 구체적인 상황\" 은 영어를 제 해석과 견주는 말이다. 정작 이 낱말이 거의 늘 can·can't 와 붙어 다닌다는 사실이 빠졌다."
+  meaning_ko: "~ 할 형편이 되다, ~ 할 돈이 있다"
+  usage_note: "afford 는 거의 늘 can 이나 can't 와 함께 써요 — I can't afford it. 은 '그럴 돈이 없어요' 입니다. 뒤에 동사를 붙일 때는 to 를 넣어 can't afford to buy a car 라고 해요."
+
+- word: "lawyer"
+  reason: "usage_note: '법률 관련 일을 하는 사람' 은 뜻 칸을 늘려 쓴 것이고, '혼동하지 마세요' 로 law 를 짚은 뒤에도 판사(judge)처럼 옆에 놓이는 사람이 빠져 있었다."
+  usage_note: "재판이나 법 문제를 맡아 주는 사람이 lawyer 예요. 법 자체는 law, 재판에서 판결하는 사람은 a judge 라고 합니다. 변호사를 부른다고 할 때는 call a lawyer 라고 해요."
+  confused_with: ["law", "judge"]
+
+- word: "suspect"
+  reason: "usage_note: \"'I suspect him' 은 '나는 그를 의심해' 가 아니라\" 가 틀렸다 — 그 문장은 바로 '그를 의심한다' 는 뜻이다. 이름씨 suspect(용의자)를 설명하려다 움직씨 문장의 뜻을 부정해 버렸다. / 되읽기: 설명의 첫 예가 예문과 글자까지 똑같아 같은 문장을 두 번 읽힌다."
+  usage_note: "무언가 그렇다고 어렴풋이 여길 때 써요 — I suspect something is wrong. 이름씨로 쓰면 '용의자' 라서 The police arrested a suspect. 라고 합니다. 이름씨일 때는 앞쪽에, 움직씨일 때는 뒤쪽에 힘을 주어 읽어요."
+
+- word: "cup"
+  reason: "usage_note: cup 과 glass 를 갈라 준 것은 맞지만 confused_with 에 둔 mug 가 설명에 없고, 양을 셀 때 쓰는 a cup of ~ 도 빠져 있었다."
+  usage_note: "손잡이가 달린 잔이 cup 이고, 유리로 된 잔은 glass 예요 — a glass of water. 커피를 담는 크고 두꺼운 잔은 a mug 라고 합니다. 양을 셀 때는 a cup of coffee 처럼 of 를 넣어요."
+
+- word: "confidence"
+  reason: "pattern: 'a/the + confidence' 는 쓰지 않는 꼴이고 예문도 confidence in 이다. / usage_note: \"'I have confidence' 만으로는 의미가 모호할 수 있어요\" 는 근거가 없고, 그림씨 confident 가 빠져 있었다."
+  pattern: "confidence in + 대상"
+  usage_note: "무엇을 믿는다고 할 때는 뒤에 in 을 붙여요 — confidence in my ability. 그림씨는 confident 라서 I feel confident. 라고 합니다. 자신감을 잃었다고 할 때는 lose confidence 라고 해요."
+  confused_with: ["confident", "trust"]
+
+- word: "error"
+  reason: "usage_note: 첫 문장 '오류가 발생한 상황을 설명할 때 쓰는 단어예요' 는 뜻 칸을 되풀이할 뿐이고, 학습자가 화면에서 매일 보는 error message 가 빠져 있었다."
+  usage_note: "error 는 기계나 서류에서 잘못된 곳을 가리켜요 — an error message(오류 메시지). 사람이 저지른 실수는 mistake 를 훨씬 많이 씁니다 — I made a mistake. 사람의 잘못을 딱딱하게 말할 때만 human error 라고 해요."
+
+- word: "arrest"
+  reason: "usage_note: 첫 문장이 뜻 칸의 되풀이이고 capture 와의 갈림도 '더 일반적인 의미' 라는 잴 수 없는 말이다. 정작 더 흔한 꼴인 be arrested for 가 빠졌다. / confused_with: detain 은 왕초보 어휘가 아니다."
+  usage_note: "경찰이 붙잡아 데려가는 것이 arrest 예요. 잡힌 쪽을 주어로 삼는 꼴이 더 흔해서 He was arrested for stealing. 처럼 씁니다. 이름씨로도 써서 make an arrest 라고 해요."
+  confused_with: ["capture"]
+
+- word: "register"
+  reason: "usage_note: book 과의 갈림만 있고, 학습자가 실제로 쓰는 자리(수업 신청)와 가게의 계산대라는 흔한 뜻이 빠져 있었다."
+  usage_note: "이름을 올려 두는 것이 register 예요 — register for a class(수업을 신청하다). 자리를 미리 잡아 두는 것은 book 이나 reserve 입니다. 가게 계산대도 a cash register 라고 불러요."
+
+- word: "asset"
+  reason: "usage_note: '이예요' 오타가 있고 \"'Asset' 은 명사로만 쓰이고 동사로는 쓰지 않아요\" 는 배울 것이 없는 되풀이다. 사람에게 쓰는 흔한 칭찬(an asset to our team)이 빠져 있었다."
+  usage_note: "돈이 되거나 도움이 되는 것을 asset 이라고 해요. 회사가 가진 재산에도 쓰고, 사람에게 쓰면 '큰 힘이 되는 사람' 이 됩니다 — She is an asset to our team. 반대로 짐이 되는 것은 a liability 예요."
+
+- word: "finger"
+  reason: "example: 'Point to your finger.' 는 손가락을 가리키라는 말이라 실제로 쓰지 않는다 — 손가락은 가리키는 도구라 with 를 쓴다. / usage_note: '손가락은 손에 있는 부분이에요' 는 뜻 칸의 되풀이이고 '혼동하지 마세요' 로 끝난다."
+  example: "Point with your finger."
+  usage_note: "손가락 하나는 a finger, 여럿은 fingers 예요. 엄지는 따로 a thumb 이라고 불러서 finger 에 넣지 않기도 합니다. 발가락은 a toe 예요."
+
+- word: "relevant"
+  reason: "usage_note: \"'This is important' 보다 'This is relevant to the topic' 가 더 자연스러워요\" 가 틀렸다 — 둘은 뜻이 다른 문장이라 자연스러움을 견줄 대상이 아니다. 반대말 irrelevant 도 빠졌다. / 되읽기: 설명을 '중요하다는 뜻의 important 와는 다른 말입니다' 로 고쳤는데 뜻 칸에는 '중요한' 이 그대로 남아, 설명과 뜻이 서로를 부정한다."
+  meaning_ko: "관련 있는, 상관 있는"
+  usage_note: "지금 이야기하는 것과 상관이 있다는 뜻이에요 — 뒤에 to 를 붙여 relevant to the project 라고 씁니다. 상관없다고 할 때는 not relevant 나 irrelevant 라고 해요. 중요하다는 뜻의 important 와는 다른 말입니다."
+
+- word: "explore"
+  reason: "usage_note: '더 구체적인 장소나 주제를 함께 쓰는 경우가 많아요' 는 무엇을 하라는 말인지 알 수 없고, 마지막 문장은 영어 문장의 해석을 적어 둔 것이다."
+  usage_note: "낯선 곳을 돌아다니며 살펴보는 것이 explore 예요 — explore the city. 생각이나 주제를 이리저리 살펴본다는 뜻으로도 씁니다 — explore new ideas. 찬찬히 공부하는 것은 study 예요."
+
+- word: "bright"
+  reason: "meaning_ko·pattern: '빠른' 은 bright 의 뜻이 아니고, 'bright + 목적어 (빛나게 하다)' 는 그림씨에 목적어를 붙인 꼴이라 성립하지 않는다. / usage_note: 'The room is light.' 는 영어로 어색해 지어낸 예로 갈림을 가르치고 있었다."
+  meaning_ko: "밝은; (머리가) 좋은"
+  pattern: "be + bright / bright + 명사"
+  usage_note: "빛이 세다는 뜻이에요 — a bright light, The sun is bright. 빛깔이 진하고 선명할 때도 써서 bright red(새빨간)라고 합니다. 사람에게 쓰면 '머리가 좋다' 는 뜻이 돼요 — a bright student."
+
+- word: "frame"
+  reason: "pattern: 'frame + 목적어' 인데 예문은 이름씨 frame 이라 어긋난다. / usage_note: 누명을 씌운다는 뜻은 왕초보 단계에서 필요 없고, 정작 안경테 같은 흔한 쓰임이 빠졌다. / confused_with: fame·flame 은 철자만 비슷할 뿐 뜻이 헷갈리는 짝이 아니다."
+  meaning_ko: "액자, 틀"
+  pattern: "a/the + frame / frame + 목적어"
+  usage_note: "사진이나 그림을 끼우는 테두리가 frame 이에요 — a picture frame(액자). 안경테도 frames 라고 합니다. 움직씨로 쓰면 액자에 넣는다는 뜻이에요 — I framed the photo."
+  confused_with: ["picture", "border"]
+
+- word: "slowly"
+  reason: "usage_note: \"'slowly' 는 동사 앞에 오고\" 가 틀렸다 — 같은 항목의 예문이 'Walk slowly, please.' 로 동사 뒤에 놓여 설명이 제 예문을 부정한다."
+  usage_note: "slowly 는 보통 동사 뒤에 놓아요 — Drive slowly. / Speak slowly, please. 그림씨는 slow 라서 a slow car 처럼 명사 앞에 붙입니다. 반대말은 quickly 예요."
+
+- word: "bond"
+  reason: "pattern: 'bond: 명사 (채권)' 은 형태 표기가 아니라 사전 항목을 옮긴 것이다. / usage_note: '둘 다 bond 로 번역돼요' 는 방향이 거꾸로이고(영어가 하나이고 한국어가 둘이다), 'friendship bond' 는 영어에서 쓰지 않는 짝이다."
+  pattern: "a strong + bond / a + bond + between + 사람"
+  usage_note: "사람 사이의 끈끈한 정을 bond 라고 해요 — a strong bond between friends. 돈을 빌려주고 받는 증서인 채권도 bond 라서 government bonds(국채)라고 합니다. 뜻이 아주 다르니 앞뒤를 보고 가려야 해요."
+  confused_with: ["connection", "link"]
+
+- word: "hire"
+  reason: "usage_note: employer·employee 를 설명한 것은 맞지만 confused_with 에 둔 rent 를 갈라 주지 않아, 미국식에서 물건을 빌리는 것은 rent 라는 것이 빠졌다. / 되읽기: 설명의 첫 예가 예문과 글자까지 똑같다 — suspect 와 같은 자리다."
+  usage_note: "사람을 일하도록 뽑는 것이 hire 예요 — hire a designer. 뽑는 쪽은 an employer, 뽑힌 쪽은 an employee 입니다. 물건을 돈 내고 빌리는 것은 미국에서 rent 라고 해요 — rent a car."
+
+- word: "hole"
+  reason: "usage_note: '예positions' 는 한국어와 영어가 한 낱말 안에 섞여 버린 자리다. 게다가 'a hole on the ground' 가 틀렸다 — 땅에 난 구멍도 in the ground 라고 한다."
+  usage_note: "구멍이 어디에 났는지는 in 으로 말해요 — a hole in my shoe, a hole in the wall. 땅에 난 구멍도 a hole in the ground 라고 합니다. 벌어진 틈은 a gap 이에요."
+
+- word: "internal"
+  reason: "usage_note: '내부의를 설명할 때 internal 을 쓰고' 는 같은 말을 돌려준 것이다. 몸 안쪽을 가리키는 흔한 짝(internal organs)도 빠졌다."
+  usage_note: "조직 안에서만 일어나는 일에 써요 — an internal meeting(내부 회의), an internal email. 반대는 external 이에요. 몸 안쪽을 말할 때도 써서 internal organs(장기)라고 합니다."
+
+- word: "chain"
+  reason: "usage_note: 체인점 이야기로 시작해 사슬이라는 본뜻이 뒤로 밀렸고, '사슬은 물리적인 것, 연쇄는 사건' 이라는 한국어 낱말 가르기로 끝난다."
+  usage_note: "쇠고리를 이어 만든 사슬이 chain 이에요 — a bike chain. 같은 이름으로 여러 곳에 낸 가게도 chain 이라서 a chain of restaurants 라고 합니다. 줄줄이 이어진 사건은 a chain of events 예요."
+
+- word: "literature"
+  reason: "pattern: 'a/the + literature' 는 쓰지 않는 꼴이다(a literature 라고 하지 않는다). / usage_note: \"'literature' 은 특정 문학 장르를 말할 때도 쓰입니다\" 는 무엇을 말하는지 알 수 없다."
+  pattern: "나라·시대 + literature"
+  usage_note: "소설·시·희곡처럼 읽을거리로서의 글을 통틀어 literature 라고 해요 — Korean literature. 한 권의 책은 a book, 이야기책은 a novel 이라고 합니다. a literature 라고는 하지 않아요."
+
+- word: "victim"
+  reason: "usage_note: '피해자와 가해자는 반대 개념이에요' 는 한국어 낱말끼리 견준 말이고, perpetrator 는 왕초보가 만날 낱말이 아니다."
+  usage_note: "사고나 범죄로 해를 입은 사람이 victim 이에요 — 뒤에 of 를 붙여 the victim of a robbery 라고 씁니다. 그 일을 저지른 사람은 the criminal, 옆에서 본 사람은 a witness 예요."
+  confused_with: ["criminal", "witness"]
+
+- word: "threaten"
+  reason: "usage_note: \"'He threatened me' 만 말하면 모호해요\" 는 멀쩡한 문장을 흠으로 만든 말이고, 정작 흔한 꼴인 threaten to ~ 와 이름씨 threat 이 빠져 있었다."
+  usage_note: "무섭게 해서 겁을 주는 것이 threaten 이에요. 무엇으로 위협했는지는 with 로 붙여요 — threaten me with a knife. 하겠다고 위협할 때는 to 를 넣어 He threatened to leave. 라고 합니다. 이름씨는 a threat 이에요."
+
+- word: "division"
+  reason: "pattern: 'division of + 대상' 이 예문 'The company has many divisions.' 에 없는 of 를 요구한다. / usage_note: '상황에 따라 달라져요' 는 판단을 학습자에게 떠넘기는 말이고, 움직씨 divide 가 빠졌다."
+  pattern: "a + division / division of + 대상"
+  usage_note: "회사 안의 큰 부서를 a division 이라고 해요 — the sales division. 수학에서는 나눗셈이고, 무엇을 나누는 일 자체를 가리키기도 합니다 — the division of labor(분업). 나누는 동작은 divide 예요."
+
+- word: "amaze"
+  reason: "usage_note: \"'I am amazed' 는 ... amaze 와는 다르게 쓰입니다\" 는 같은 말을 돌려준 것이고, 왕초보가 가장 많이 쓰는 그림씨 amazing 이 빠져 있었다."
+  usage_note: "amaze 는 놀라게 하는 쪽이 주어예요 — The view amazed me. 놀란 사람을 주어로 삼을 때는 be amazed 라고 합니다 — I was amazed. 그림씨 amazing 은 '놀라운' 이라서 an amazing view 라고 해요."
+  confused_with: ["amazed", "amazing"]
+
+- word: "device"
+  reason: "usage_note: '다르예요' 오타가 있고, machine 과의 갈림을 '더 큰 기계를 생각하면 되고' 라는 어림으로만 말해 예가 하나도 없었다."
+  usage_note: "손에 들 만한 작은 기계를 device 라고 해요 — a mobile device(휴대 기기). 크고 무거운 기계는 machine 이라고 합니다 — a washing machine. 손으로 쓰는 연장은 a tool 이에요."
+
+- word: "birth"
+  reason: "example: 'The birth of my son was very happy.' 는 태어남 자체가 행복했다는 말이 되어 영어로 어색하다. / usage_note: '출산은 delivery 예요' 는 병원 용어 쪽으로 밀어 놓은 말이라, 왕초보가 실제로 쓰는 give birth 가 통째로 빠졌다. '아이템' 이라는 외래어도 섞여 있었다."
+  pattern: "give birth to + 아기 / the birth of + 대상"
+  example: "She gave birth to a boy."
+  usage_note: "아기를 낳는다고 할 때는 give birth 라고 해요 — She gave birth last night. 태어난 날은 a birthday, 태어난 곳은 a birthplace 입니다. 생일 축하는 Happy birthday! 예요."
+  confused_with: ["birthday", "born"]
+
+- word: "forest"
+  reason: "usage_note: 한국어 '숲' 과 '산' 을 견주는 데 대부분을 쓰고 영어로는 forest 한 낱말만 나온다. confused_with 에 둔 wood 를 갈라 주지 않았다."
+  usage_note: "나무가 빽빽하게 들어선 넓은 곳이 forest 예요. 그보다 작은 숲은 woods 라고 합니다 — a walk in the woods. 나무 한 그루는 a tree, 산은 a mountain 이라 서로 다른 말이에요."
+
+- word: "factory"
+  reason: "usage_note: '공장과 회사(factory vs. company)를 헷갈릴 수 있어요' 는 실제로 잘 헷갈리지 않는 짝을 들었고, 한국어 문장 안에 영어 대비를 괄호로 끼워 넣어 읽기도 나쁘다."
+  usage_note: "물건을 만드는 곳이 factory 예요 — a car factory(자동차 공장). 공장에서 일한다고 할 때는 work in a factory 라고 합니다. 공장이 모여 있는 곳은 an industrial area 예요."
+  confused_with: ["company", "plant"]

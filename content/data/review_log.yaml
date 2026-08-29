@@ -2844,3 +2844,47 @@ passes:
   - tourist
   - troop
   - wood
+- id: top1600-e
+  date: '2026-08-29'
+  what: 빈도 1484~1527위 40개 — 39개가 고칠 것이었다(직접 읽음)
+  words:
+  - afford
+  - amaze
+  - arrest
+  - asset
+  - birth
+  - bond
+  - bright
+  - chain
+  - commitment
+  - component
+  - confidence
+  - cup
+  - description
+  - device
+  - division
+  - error
+  - explore
+  - factory
+  - finger
+  - forest
+  - frame
+  - hire
+  - hole
+  - industrial
+  - internal
+  - lawyer
+  - leadership
+  - literature
+  - necessarily
+  - perspective
+  - register
+  - relevant
+  - secure
+  - signal
+  - slowly
+  - suspect
+  - threaten
+  - tie
+  - victim
+  - wake

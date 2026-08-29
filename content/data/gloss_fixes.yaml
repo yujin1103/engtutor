@@ -3289,3 +3289,55 @@
 - word: "regulation"
   example_ko: "새 규정은 다음 달부터 시작돼요."
   reason: "바뀐 예문에 맞췄다."
+
+- word: "afford"
+  example_ko: "차를 살 형편이 되나요?"
+  reason: "'차를 살 수 있나요' 는 파는 사람이 있느냐로도 읽혀 afford 의 '돈이 되느냐' 를 담지 못한다."
+
+- word: "asset"
+  example_ko: "자동차는 사업에 큰 자산이 돼요."
+  reason: "'유리한 자산' 은 겹말이다."
+
+- word: "finger"
+  example_ko: "손가락으로 가리키세요."
+  reason: "바뀐 예문에 맞췄다 — 손가락은 가리키는 도구다."
+
+- word: "leadership"
+  example_ko: "그 사람은 뛰어난 지도력을 보여 줬어요."
+  reason: "바뀐 예문에 맞췄다."
+
+- word: "commitment"
+  example_ko: "저는 제 일에 책임을 지고 있어요."
+  reason: "'제가 직장에 대한 약속이 있어요' 는 주어와 서술어가 어긋난 비문이다."
+
+- word: "wake"
+  example_ko: "아침 7시에 저를 깨워 주세요."
+  reason: "'7 AM' 의 아침이 빠져 있었고 '깨워주세요' 는 띄어쓰기가 틀렸다."
+
+- word: "frame"
+  example_ko: "이 사진은 액자가 예뻐요."
+  reason: "'프레임이 있어요' 는 외래어를 그대로 옮긴 말이고, 사진에 쓰는 frame 은 액자다."
+
+- word: "hole"
+  example_ko: "제 신발에 구멍이 났어요."
+  reason: "'저의 신발' 은 한국어에서 '제 신발' 로 줄여 쓰고, 구멍은 '있다' 보다 '나다' 가 자연스럽다."
+
+- word: "tie"
+  example_ko: "그는 파란 넥타이를 매고 있어요."
+  reason: "넥타이는 '입는' 것이 아니라 '매는' 것이다."
+
+- word: "chain"
+  example_ko: "여기는 체인 식당이에요."
+  reason: "가게를 '이건' 으로 가리키지 않는다."
+
+- word: "threaten"
+  example_ko: "그는 칼로 저를 위협했어요."
+  reason: "'나이프' 는 요리용 칼을 가리키는 외래어라 knife 의 이 자리에는 '칼' 이 맞다."
+
+- word: "birth"
+  example_ko: "그분은 남자아이를 낳았어요."
+  reason: "바뀐 예문에 맞췄다."
+
+- word: "slowly"
+  example_ko: "천천히 걸어 주세요."
+  reason: "'걸어주세요' 는 띄어쓰기가 틀렸다."
