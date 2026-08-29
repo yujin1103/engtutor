@@ -751,3 +751,15 @@ def test_the_echo_rule_does_not_match_across_word_boundaries():
     assert echoed_example_fragment(
         "I have an ear infection.", "귀가 아프면 I have an earache. 라고 합니다."
     ) is None
+
+
+@pytest.mark.parametrize("opener", ["한국어", "우리말", "국어"])
+def test_the_korean_only_check_is_not_tied_to_one_word(opener):
+    """**'한국어' 라는 낱말 하나에만 걸어 두면 같은 결함이 '우리말' 로 새어 나간다.**
+
+    이 결함을 고치던 중 교정본 여섯이 '한국어' 를 '우리말' 로 바꿨다 — UI 문구로는
+    더 나은 말이라 되돌릴 이유가 없지만, 검사가 surface 낱말 하나에만 걸려 있으면
+    나중에 그 설명이 줄어들 때 아무 소리 없이 비껴간다.
+    """
+    row = _row(usage_note=f"{opener} '연회' 는 공식적인 자리에서 쓰지만, '대접' 은 더 일반적이에요.")
+    assert "note_compares_korean_only" in _codes(screen(row))

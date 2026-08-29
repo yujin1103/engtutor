@@ -3493,3 +3493,11 @@
 - word: "specifically"
   example_ko: "이것만 딱 집어서 이야기하고 싶어요."
   reason: "'특히' 는 especially 쪽 말이라, 뜻 칸을 '딱 집어서' 로 고친 것과 맞춘다."
+
+- word: "gay"
+  example_ko: "제 형은 동성애자예요."
+  reason: "해석 칸이 아예 다른 항목 것이었다 — '그는 새로운 것에 대해 매우 흥미를 느껴요.' 로, 예문 'My brother is gay.' 와 아무 상관이 없었다."
+
+- word: "below"
+  example_ko: "선 아래에 이름을 쓰세요."
+  reason: "바뀐 예문에 맞췄다."
