@@ -3433,3 +3433,63 @@
 - word: "practical"
   example_ko: "이건 그 사람에게 실용적인 선물이에요."
   reason: "'그녀에게' 는 번역투라 실제로는 잘 쓰지 않는다."
+
+- word: "notion"
+  example_ko: "그는 돈에 대해 이상한 생각을 갖고 있어요."
+  reason: "바뀐 예문에 맞췄다. 옛 해석 '어떤 느낌이 들어요' 는 notion(생각)을 느낌으로 옮겼다."
+
+- word: "relief"
+  example_ko: "통증에서 벗어나니 정말 좋았어요."
+  reason: "'벗어나는 느낌이 정말 놀랐어요' 는 주어와 서술어가 어긋난 비문이다."
+
+- word: "honor"
+  example_ko: "우리는 선생님을 존경해야 해요."
+  reason: "'선생님께 존중을 해야 해요' 는 한국어로 성립하지 않는다."
+
+- word: "blame"
+  example_ko: "그 사고를 제 탓으로 돌리지 마세요."
+  reason: "'제가 잘못했다고 생각하지 마세요' 는 blame(탓으로 돌리다)을 생각으로 바꿔 놓았다."
+
+- word: "stretch"
+  example_ko: "다리 좀 쭉 펴세요."
+  reason: "'다리 좀 늘여 주세요' 는 다리를 길게 만들라는 말이 된다 — stretch your legs 는 쭉 펴는 것이다."
+
+- word: "retire"
+  example_ko: "그는 교직에서 은퇴했어요."
+  reason: "'교사에서 은퇴했습니다' 는 사람에서 물러났다는 말이 되어 어색하다."
+
+- word: "tiny"
+  example_ko: "이건 아주 작은 집이에요."
+  reason: "'작은 집' 은 small 이고, tiny 의 '아주' 가 빠져 있었다."
+
+- word: "native"
+  example_ko: "제 모국어는 한국어예요."
+  reason: "바뀐 예문에 맞췄다."
+
+- word: "fruit"
+  example_ko: "저는 아침마다 과일을 먹어요."
+  reason: "바뀐 예문에 맞췄다."
+
+- word: "researcher"
+  example_ko: "그 사람은 대학에서 연구원으로 일해요."
+  reason: "'대학에서 연구원입니다' 는 조사가 어긋나 있다."
+
+- word: "selection"
+  example_ko: "여기는 책이 다양하게 갖춰져 있어요."
+  reason: "'책이 잘 골라져 있어요' 는 누가 골라 놓았다는 말이 된다 — a good selection 은 고를 거리가 많다는 뜻이다."
+
+- word: "participant"
+  example_ko: "그 사람은 그 대회에 참가해요."
+  reason: "'경연대회에 참가자예요' 는 조사가 어긋난 비문이다."
+
+- word: "fat"
+  example_ko: "그는 아주 뚱뚱해요."
+  reason: "'비만' 은 의학 용어라 fat 의 일상 말투와 어긋난다."
+
+- word: "ear"
+  example_ko: "귀에 염증이 생겼어요."
+  reason: "'감염이 생겼어요' 보다 '염증' 이 한국어에서 훨씬 자주 쓰인다."
+
+- word: "specifically"
+  example_ko: "이것만 딱 집어서 이야기하고 싶어요."
+  reason: "'특히' 는 especially 쪽 말이라, 뜻 칸을 '딱 집어서' 로 고친 것과 맞춘다."

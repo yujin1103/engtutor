@@ -596,11 +596,14 @@ def echoed_example_fragment(example: str, usage_note: str) -> str | None:
     words = _echo_words(example)
     if len(words) < _MIN_ECHO_WORDS:
         return None
-    note = " ".join(_echo_words(usage_note))
+    # 양끝에 빈칸을 대고 찾는다. 그냥 `in` 으로 보면 조각이 **낱말 가운데를 가로질러**
+    # 맞는다 — `ear` 의 예문 'I have an ear infection.' 이 설명의 'I have an earache.'
+    # 안에서 'i have an ear' 로 걸렸다. 겹친 것은 낱말 넷이 아니라 셋이다.
+    note = f" {' '.join(_echo_words(usage_note))} "
     for size in range(len(words), _MIN_ECHO_WORDS - 1, -1):
         for start in range(len(words) - size + 1):
             fragment = " ".join(words[start : start + size])
-            if fragment not in note:
+            if f" {fragment} " not in note:
                 continue
             if size >= _LONG_ECHO_WORDS or size / len(words) >= _ECHO_COVERAGE:
                 return fragment

@@ -2976,3 +2976,47 @@ passes:
   - unique
   - wild
   - youth
+- id: top1700-a
+  date: '2026-08-29'
+  what: 빈도 1614~1661위 40개 — 40개 모두가 고칠 것이었다(직접 읽음)
+  words:
+  - analyze
+  - anywhere
+  - arise
+  - blame
+  - careful
+  - cast
+  - chairman
+  - chemical
+  - conservative
+  - dad
+  - debt
+  - ear
+  - engine
+  - entry
+  - explanation
+  - fat
+  - fellow
+  - fruit
+  - honor
+  - journey
+  - mail
+  - mental
+  - musical
+  - native
+  - notion
+  - opposition
+  - ordinary
+  - outcome
+  - participant
+  - recover
+  - relief
+  - researcher
+  - retire
+  - selection
+  - specifically
+  - stretch
+  - tiny
+  - tip
+  - vision
+  - witness

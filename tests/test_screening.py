@@ -737,3 +737,17 @@ def test_the_echo_rule_uses_two_length_measures(example, note, echoed):
     from app.content.screening import echoed_example_fragment
 
     assert (echoed_example_fragment(example, note) is not None) is echoed
+
+
+def test_the_echo_rule_does_not_match_across_word_boundaries():
+    """조각이 **낱말 가운데를 가로질러** 맞으면 안 된다.
+
+    `ear` 의 예문 'I have an ear infection.' 이 설명의 'I have an earache.' 안에서
+    'i have an ear' 로 걸렸다 — `an ear` 가 `an earache` 의 앞부분과 글자만 같아서다.
+    실제로 겹친 것은 낱말 셋이라 잣대에 못 미친다. 조각 양끝에 빈칸을 대고 찾는다.
+    """
+    from app.content.screening import echoed_example_fragment
+
+    assert echoed_example_fragment(
+        "I have an ear infection.", "귀가 아프면 I have an earache. 라고 합니다."
+    ) is None
