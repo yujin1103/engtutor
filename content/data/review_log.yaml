@@ -2756,3 +2756,47 @@ passes:
   - wash
   - whereas
   - wine
+- id: top1600-c
+  date: '2026-08-29'
+  what: 빈도 1392~1438위 40개 — 38개가 고칠 것이었다(직접 읽음)
+  words:
+  - army
+  - basically
+  - bedroom
+  - belong
+  - bind
+  - bomb
+  - branch
+  - climb
+  - coffee
+  - construction
+  - council
+  - danger
+  - dangerous
+  - dear
+  - decrease
+  - delivery
+  - deny
+  - editor
+  - fashion
+  - freedom
+  - generate
+  - gift
+  - guest
+  - hurt
+  - mainly
+  - manner
+  - minister
+  - moreover
+  - mouth
+  - museum
+  - noise
+  - onto
+  - oppose
+  - scientist
+  - sight
+  - taste
+  - totally
+  - vehicle
+  - violence
+  - visitor

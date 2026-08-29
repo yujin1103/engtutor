@@ -3189,3 +3189,55 @@
 - word: "camera"
   example_ko: "카메라 좀 써도 될까요?"
   reason: "예문이 Can I ~ 로 묻는 말인데 해석은 '쓰고 싶어요' 라는 평서문이었다."
+
+- word: "coffee"
+  example_ko: "커피 좀 마시고 싶어요."
+  reason: "'커피 좀 원해요' 는 한국어로 쓰지 않는 말이다."
+
+- word: "totally"
+  example_ko: "저는 완전히 동감이에요."
+  reason: "바뀐 예문을 그대로 옮긴 해석이다."
+
+- word: "visitor"
+  example_ko: "일본에서 온 손님이 와 계세요."
+  reason: "바뀐 예문에 맞췄다."
+
+- word: "vehicle"
+  example_ko: "차량을 여기에 대 주세요."
+  reason: "바뀐 예문을 그대로 옮긴 해석이다."
+
+- word: "hurt"
+  example_ko: "다리가 많이 아파요."
+  reason: "바뀐 예문에 맞췄다."
+
+- word: "danger"
+  example_ko: "그 동물들은 위험에 빠져 있어요."
+  reason: "바뀐 예문에 맞췄다. 옛 해석은 영어에 없는 '앞으로 가면' 을 보태고 있었다."
+
+- word: "taste"
+  example_ko: "이 수프는 맛있어요."
+  reason: "'수프은' 은 조사가 틀렸다."
+
+- word: "generate"
+  example_ko: "이 기계는 전기를 만들어요."
+  reason: "'생성해요' 는 왕초보에게 낯선 한자어다."
+
+- word: "guest"
+  example_ko: "오늘 밤 손님이 세 분 와요."
+  reason: "바뀐 예문에 맞췄다."
+
+- word: "bedroom"
+  example_ko: "여기가 제 침실이에요."
+  reason: "방을 '이건' 으로 가리키지 않는다."
+
+- word: "mainly"
+  example_ko: "저는 주로 채소를 먹어요."
+  reason: "'채식을 먹어요' 는 겹말이고, vegetables 는 채식이 아니라 채소다."
+
+- word: "mouth"
+  example_ko: "입을 다무세요."
+  reason: "'입을 닫아 주세요' 는 문을 닫듯 말한 것이라 어색하다."
+
+- word: "noise"
+  example_ko: "여기는 소음이 너무 심해요."
+  reason: "'너무 소음이 많아요' 는 한국어 어순이 어색하다."

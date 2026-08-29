@@ -5350,20 +5350,24 @@
   confused_with: ["convenient"]
 
 - word: "oppose"
-  reason: "문형 자리에 영어가 들어가 있었다: oppose + something (반대하는 대상)"
+  reason: "문형 자리에 영어가 들어가 있었다: oppose + something (반대하는 대상) / usage_note: \"'against' 와 혼동하지 않도록 주의하세요\" 라고 해 놓고 바로 다음 문장에서 '거의 같은 뜻' 이라 해 앞말을 지운다. 정작 갈리는 곳은 뜻이 아니라 뒤에 붙는 말인데 그 이야기가 없다."
   pattern: "oppose + 명사 (반대하는 대상)"
+  usage_note: "oppose 뒤에는 반대하는 대상을 바로 붙여요 — oppose the plan. to 를 넣지 않습니다. 같은 말을 be against 로 하면 I'm against the plan. 이라고 해요. 이름씨는 opposition 입니다."
 
 - word: "bind"
-  reason: "문형 자리에 영어가 들어가 있었다: bind + 목적어 (+ to/with + something)"
+  reason: "문형 자리에 영어가 들어가 있었다: bind + 목적어 (+ to/with + something) / usage_note: \"'bind' 는 물리적인 묶음보다는 법적/정치적 의미도 있을 수 있어요\" 는 '보다는' 과 '도 있을 수 있어요' 가 서로 어긋나 무엇이 흔한지를 말해 주지 못한다. 일상에서 tie 를 쓴다는 것과 지난 꼴 bound 도 없었다."
   pattern: "bind + 목적어 (+ to/with + 명사)"
+  usage_note: "끈으로 단단히 묶는다는 뜻이에요. 일상에서는 tie 를 훨씬 많이 씁니다 — Tie your shoes. bind 는 약속이나 계약이 사람을 묶는다는 뜻으로 더 자주 나와요 — He is bound by the contract. 지난 일은 bound 예요."
 
 - word: "taste"
-  reason: "문형 자리에 영어가 들어가 있었다: taste + 목적어 (음식 등), taste like + something"
-  pattern: "taste + 목적어 (음식 등), taste like + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: taste + 목적어 (음식 등), taste like + something / usage_note: '맛을 느끼는 주체는 taste 지만, 맛이 있는 주어는 taste 가 아니라 taste good 을 써요' 는 주어와 서술어가 뒤엉켜 뜻이 통하지 않는다. taste like 와 이름씨 쓰임도 빠져 있었다. / 되읽기: 설명을 'taste 뒤에 형용사를 붙여요' 로 고쳤는데 문형은 'taste + 목적어' 그대로였다. 예문 'This soup tastes good.' 의 good 은 목적어가 아니라 형용사다."
+  pattern: "taste + 형용사 / taste like + 명사"
+  usage_note: "음식이 어떤 맛인지 말할 때는 taste 뒤에 형용사를 붙여요 — This soup tastes good. 무엇과 비슷한 맛이라고 할 때는 taste like 를 씁니다 — It tastes like chicken. 맛 자체를 가리키는 이름씨로도 써요 — a sweet taste."
 
 - word: "gift"
-  reason: "문형 자리에 영어가 들어가 있었다: give + someone + a gift"
+  reason: "문형 자리에 영어가 들어가 있었다: give + someone + a gift / usage_note: '선물은 일반적으로 받는 사람이 결정하지만' 은 사실도 아니고 낱말 설명도 아니다. present 와의 관계도 '더 일상적' 이라고만 해 어느 쪽이 흔한지를 뒤집어 말한다(선물 자리에서는 둘 다 흔하다)."
   pattern: "give + 사람 + a gift"
+  usage_note: "gift 와 present 는 거의 같은 뜻이라 바꿔 써도 돼요 — a birthday present. 상으로 받는 것은 a prize 라고 합니다. 선물을 주는 것은 give a gift, 포장하는 것은 wrap a gift 예요."
 
 - word: "remind"
   reason: "문형 자리에 영어가 들어가 있었다: remind + 목적어 + of + something"
@@ -7100,8 +7104,9 @@
   confused_with: ["passive", "busy"]
 
 - word: "dangerous"
-  reason: "문형 자리에 영어가 들어가 있었다: adjective: + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: + 명사 / usage_note: \"'위험하다' 는 동사예요\" 가 틀렸다(한국어에서 형용사다). 뒤 문장도 'This is dangerous' 의 해석으로 '이 길은 위험해요' 를 대 놓아 영어와 한국어가 어긋난다."
   pattern: "dangerous + 명사"
+  usage_note: "dangerous 는 '위험한' 이라는 그림씨라 명사 앞이나 be 동사 뒤에 놓아요 — a dangerous road / This road is dangerous. 위험 자체를 가리키는 이름씨는 danger 라서 in danger(위험에 빠진)처럼 씁니다."
 
 - word: "industrial"
   reason: "문형 자리에 영어가 들어가 있었다: adjective"
@@ -9688,3 +9693,171 @@
   pattern: "cycle + to + 장소"
   usage_note: "자전거를 탄다는 뜻의 cycle 은 영국에서 쓰는 말이에요. 미국에서는 ride a bike 라고 합니다 — I ride my bike to school. 이름씨 cycle 은 돌고 도는 한 바퀴를 뜻해서 the water cycle(물의 순환)처럼 써요."
   confused_with: ["bicycle", "circle"]
+
+- word: "coffee"
+  reason: "usage_note: '커피를 마시다와 혼동하지 마세요' 는 무엇과 무엇을 가르라는 말인지 알 수 없고, 뒤 문장은 영어가 아니라 해석을 고쳐 주고 있다. '표현이예요' 오타도 그대로였다. / 되읽기: 설명을 'a coffee / a cup of coffee' 로 고쳤는데 예문은 'I want some coffee.' 라 some 이고, 문형은 'a/the + coffee' 라 셋이 서로 다른 것을 보여 주고 있었다."
+  pattern: "some + coffee / a cup of + coffee"
+  usage_note: "커피 한 잔을 시킬 때는 a coffee 라고 해도 되고 a cup of coffee 라고 해도 돼요. 카페에서는 Can I get a coffee, please? 라고 합니다. 그냥 커피를 마신다고 말할 때는 I drink coffee. 처럼 앞에 a 를 붙이지 않아요."
+
+- word: "totally"
+  reason: "usage_note: \"'I totally agree' 는 'I completely agree' 보다 덜 강하게\" 가 거꾸로다 — totally agree 는 오히려 힘주어 맞장구치는 말이다. / example: 'I'm totally tired.' 보다 totally 가 실제로 가장 많이 붙는 자리는 동사(agree)다. / pattern: '부사어' 는 '부사' 를 잘못 적은 것이다."
+  pattern: "totally + 동사/형용사"
+  example: "I totally agree with you."
+  usage_note: "totally 는 '완전히' 라는 뜻으로 말할 때 자주 쓰는 가벼운 말이에요 — I totally agree. 는 '완전 동감이에요' 입니다. 글에서는 completely 를 더 많이 써요. 대답으로 Totally! 한 마디만 하면 '완전 그래!' 가 돼요."
+
+- word: "museum"
+  reason: "usage_note: \"'museum' 은 'gallery' 보다 더 큰 곳\" 이 틀렸다 — 둘을 가르는 것은 크기가 아니라 무엇을 두느냐다(그림이면 gallery)."
+  usage_note: "museum 은 옛 물건이나 자료를 모아 보여 주는 곳이에요. 그림을 보여 주는 곳은 an art gallery, 책을 빌리는 곳은 a library 라고 합니다. 갈 때는 go to a museum 처럼 to 를 써요."
+
+- word: "visitor"
+  reason: "usage_note: \"'visitor' 는 특정한 사람을 지칭하는 명사예요\" 는 아무 정보도 주지 않는다(모든 이름씨가 그렇다). / example: 'This is a visitor from Japan.' 은 사람을 This is 로 가리켜 어색하다. / 되읽기: 설명과 해석을 '찾아온 손님' 으로 고쳤는데 뜻 칸은 '방문자' 뿐이라, 학습자가 뜻 칸만 보면 guest·tourist 와의 갈림을 못 잡는다."
+  meaning_ko: "찾아온 손님, 방문객"
+  example: "We have a visitor from Japan."
+  usage_note: "집이나 회사에 찾아온 손님을 visitor 라고 해요. 구경하러 온 여행객은 tourist, 초대받거나 묵으러 온 손님은 guest 라고 합니다 — a hotel guest. 찾아가는 동작은 visit 이에요."
+  confused_with: ["tourist", "guest"]
+
+- word: "freedom"
+  reason: "meaning_ko: '권리' 는 freedom 이 아니라 right 의 뜻이라 뜻 칸이 두 낱말을 섞어 놓았다. / pattern: 'ex:' 는 영어 약어이고, of 쪽 꼴이 빠져 있었다. / usage_note: of 와 from 이 어떻게 갈리는지가 없다."
+  meaning_ko: "자유"
+  pattern: "freedom + of/from + 명사"
+  usage_note: "무엇을 할 자유는 of 를 써서 freedom of speech(표현의 자유)라고 하고, 무엇에서 벗어나는 자유는 from 을 써서 freedom from fear(두려움에서 벗어난 자유)라고 해요. liberty 는 법이나 글에 나오는 딱딱한 말입니다."
+
+- word: "construction"
+  reason: "usage_note: 틀린 말은 없었지만 이 낱말을 실제로 만나는 자리(공사 중 표지판)가 빠져 있었다."
+  usage_note: "construction 은 짓는 일 자체나 그 과정을 가리켜요. 공사 중이라는 말은 under construction 이라고 합니다 — The road is under construction. 다 지어진 건물은 a building 이에요."
+
+- word: "dear"
+  reason: "pattern: 'dear + 목적어' 는 틀렸다 — dear 는 그림씨라 목적어를 받지 못하고, 예문도 'is dear to me' 꼴이다. / usage_note: 왕초보가 dear 를 가장 자주 만나는 자리인 편지 첫머리(Dear ~,)가 통째로 빠졌고, expensive 와 헷갈리는 진짜 이유(영국에서 dear 가 '비싸다')도 없었다. / 되읽기: 설명 첫머리를 편지의 Dear ~, 로 고쳤는데 뜻 칸에는 그 쓰임이 없다 — 왕초보가 가장 먼저 만나는 자리가 뜻 칸에서 빠진 채다."
+  meaning_ko: "소중한, 귀한; (편지 첫머리에) ~께"
+  pattern: "be dear to + 사람 / Dear + 이름 (편지)"
+  usage_note: "편지나 메일을 시작할 때 Dear Mr. Kim, 처럼 이름 앞에 붙여요 — 왕초보가 가장 자주 만나는 자리입니다. 사람이나 물건이 소중하다고 할 때는 be dear to me 라고 해요. 영국에서는 '값이 비싸다' 는 뜻으로도 씁니다."
+
+- word: "moreover"
+  reason: "usage_note: 한국어 '또' 와 견주고 'Also 는 더 간단한 말투' 로 끝나 영어가 한 낱말뿐이다 — 선별기의 note_compares_korean_only 에 걸리는 모양 그대로다. 쉼표를 찍는다는 실제 쓰임도 없었다."
+  usage_note: "moreover 는 글에서 쓰는 딱딱한 말이에요. 앞말에 근거를 하나 더 얹을 때 문장 맨 앞에 놓고 뒤에 쉼표를 찍습니다. 말할 때는 Also 나 And 를 훨씬 많이 써요. 뜻이 거의 같은 딱딱한 말로 furthermore 가 있어요."
+
+- word: "onto"
+  reason: "usage_note: 'onto 는 방향을 나타내는 접속사예요' 가 틀렸다 — onto 는 전치사다. 학습자가 그대로 외우면 문법 설명이 통째로 어긋난다."
+  usage_note: "onto 는 '~ 위로' 라는 뜻의 전치사예요. 이미 위에 있는 상태는 on 이고, 움직여서 위로 올라가는 것은 onto 예요 — The cat jumped onto the table. 자리를 말할 때는 The cat is on the table. 이라고 합니다."
+  confused_with: ["on"]
+
+- word: "branch"
+  reason: "meaning_ko: '분기점' 은 갈림길이라는 뜻이라 은행 지점에도 나뭇가지에도 맞지 않는다. / pattern·usage_note: \"분기점일 때는 'river branch' 처럼\" 이 틀렸다(a branch of the river 가 맞다). / confused_with: 'tree branch'·'branch office' 는 낱말이 아니라 구다."
+  meaning_ko: "(은행·회사의) 지점; 나뭇가지"
+  pattern: "a branch of + 회사/은행"
+  usage_note: "은행이나 회사가 여러 곳에 낸 가게를 branch 라고 해요 — a branch of this bank. 본사는 the head office 라고 합니다. 나무에서 뻗어 나온 가지도 branch 예요 — a tree branch."
+  confused_with: ["office"]
+
+- word: "vehicle"
+  reason: "example: 'This is a vehicle.' 은 낱말을 되풀이할 뿐 쓰임을 하나도 보여 주지 않는다. / usage_note: 'vehicle 은 일반적인 말로 쓰지 않아요' 는 뜻이 통하지 않는 문장이다 — 실제로는 표지판·안내문에 쓰는 딱딱한 말이다."
+  example: "Please park your vehicle here."
+  usage_note: "vehicle 은 자동차·버스·트럭을 통틀어 부르는 딱딱한 말이라 표지판이나 안내문에 자주 나와요. 말할 때는 car 나 bus 처럼 구체적으로 부르는 것이 훨씬 자연스럽습니다."
+
+- word: "scientist"
+  reason: "usage_note: \"'researcher' 가 더 정확할 수 있어요\" 는 scientist 를 쓰지 말라는 소리로 읽혀 표제어 자체를 지운다. 과학을 연구하는 사람이라는 알맹이가 빠져 있었다."
+  usage_note: "과학을 연구하는 사람이 scientist 예요. 분야를 앞에 붙여 a computer scientist 처럼 쓰기도 합니다. 연구하는 일 자체는 science, 연구하는 사람을 두루 부르는 말은 researcher 예요."
+
+- word: "belong"
+  reason: "usage_note: \"'belong' 은 혼자서 쓰지 않아요\" 가 틀렸다 — I belong here. 는 멀쩡한 문장이다. 게다가 '혼동하지 마세요' 로 끝나며 무엇이 다른지는 말하지 않는다. / confused_with: 'belong to' 는 표제어를 그대로 담은 구라 헷갈리는 낱말 자리에 맞지 않는다."
+  usage_note: "누구 것인지 말할 때는 늘 to 를 붙여요 — This bag belongs to me. 어느 모임에 들어 있다고 할 때도 씁니다 — I belong to a book club. 내가 가지고 있다고 말하려면 have 나 own 을 써서 I own this bag. 이라고 해요."
+  confused_with: ["own", "have"]
+
+- word: "fashion"
+  reason: "usage_note: \"'in fashion' 은 유행에 있는 상태를 말하는 데 쓰입니다\" 는 같은 말을 되돌려 준 것이라 배울 것이 없다. 짝이 되는 out of fashion 도 없었다."
+  usage_note: "유행하고 있다는 말은 be in fashion, 유행이 지났다는 말은 be out of fashion 이에요. 옷을 만들고 파는 일 전체를 가리키기도 해서 the fashion industry 라고 합니다. 사람마다 옷 입는 취향은 style 이에요."
+
+- word: "danger"
+  reason: "example·pattern: 문형은 'in + danger' 인데 예문 'Be careful, there is danger ahead.' 에 in 이 없어 선별기가 example_ignores_pattern 을 띄운다. 해석도 영어에 없는 '앞으로 가면' 을 보태고 있었다. / usage_note: dangerous 와의 갈림은 맞지만 표지판의 Danger! 가 빠졌다."
+  pattern: "be in + danger"
+  example: "The animals are in danger."
+  usage_note: "danger 는 이름씨라 be in danger(위험에 빠져 있다)처럼 써요. '위험한' 이라는 그림씨는 dangerous 라서 This road is dangerous. 라고 합니다. 조심하라는 표지판에는 Danger! 한 낱말만 쓰기도 해요."
+  confused_with: ["dangerous", "risk"]
+
+- word: "bomb"
+  reason: "usage_note: \"폭탄을 '던지다' 는 bomb 을 쓰고\" 가 틀렸다 — 움직씨 bomb 은 던지는 것이 아니라 폭격하는 것이다(던지는 것은 throw a bomb). / meaning_ko·pattern: 이름씨 뜻이 예문과 맞는데 문형은 움직씨 쪽만 적혀 있었다."
+  meaning_ko: "폭탄; 폭격하다"
+  pattern: "a/the + bomb / bomb + 장소"
+  usage_note: "이름씨 bomb 은 폭탄이에요 — throw a bomb(폭탄을 던지다), plant a bomb(폭탄을 설치하다). 움직씨로 쓰면 비행기로 폭격한다는 뜻이라 They bombed the city. 처럼 씁니다. b 는 소리 내지 않아 '밤' 처럼 읽어요."
+  confused_with: ["explode", "weapon"]
+
+- word: "army"
+  reason: "usage_note: '다르예요' 오타가 그대로이고, army 옆에 놓이는 navy·air force 가 빠져 confused_with 의 navy 와도 이어지지 않았다."
+  usage_note: "army 는 육군이나 군대 조직 전체를 가리켜요. 군인 한 사람은 a soldier, 바다 쪽은 the navy, 하늘 쪽은 the air force 라고 합니다. 군대에 들어가는 것은 join the army 예요."
+
+- word: "hurt"
+  reason: "pattern: 'hurt + 부사어 (how)' 는 형태 표기가 아니다. 정작 왕초보에게 가장 필요한 꼴 — 아픈 데를 주어로 삼는 My leg hurts — 가 빠져 있다. / example: 'The medicine hurt my mouth.' 는 만날 일이 드문 문장이다."
+  pattern: "hurt + 목적어 (몸·마음) / 몸 + hurt"
+  example: "My leg hurts a lot."
+  usage_note: "몸이 아프다고 할 때는 아픈 데를 주어로 삼아 My head hurts. 라고 해요. 남을 다치게 하거나 마음을 아프게 할 때는 뒤에 대상을 붙여요 — You hurt my feelings. 지난 일도 모양이 그대로 hurt 예요."
+
+- word: "council"
+  reason: "usage_note: 한국어 '의회' 와 견주기만 하고 영어는 council 한 낱말뿐이라 선별기의 note_compares_korean_only 모양 그대로다. parliament·committee 를 confused_with 에 두고도 설명에서 갈라 주지 않았다. / meaning_ko: 괄호 안 설명이 길어 뜻 칸이 아니라 해설이 됐다."
+  meaning_ko: "(시·지역의) 의회, 위원회"
+  usage_note: "council 은 시나 지역의 일을 정하는 모임이에요 — the city council(시의회). 나라 전체의 국회는 parliament 나 congress 라고 합니다. 회사나 학교 안의 작은 모임은 committee 예요."
+
+- word: "sight"
+  reason: "meaning_ko: '시야, 보이는 범위' 인데 예문 'The sight of the mountain was amazing.' 의 sight 는 눈에 들어온 광경이라 뜻 칸이 예문을 못 덮는다. / usage_note: view 와의 갈림을 '더 넓은 의미' 라고만 해 기준이 되지 못한다."
+  meaning_ko: "눈에 들어온 광경; 보는 것, 시력"
+  usage_note: "the sight of ~ 는 '~ 을 본 것' 이라는 뜻이에요 — The sight of the sea made me happy. 눈이 얼마나 잘 보이는지도 sight 라서 good sight 는 '시력이 좋다' 입니다. 창밖으로 보이는 경치는 view 예요."
+
+- word: "generate"
+  reason: "usage_note: \"'I generate an idea' 는 자연스럽지 않아요\" 가 틀렸다 — generate ideas·generate interest 는 아주 흔한 짝이다. 학습자가 이 말을 믿으면 맞는 표현을 피하게 된다."
+  usage_note: "generate 는 전기나 열처럼 무언가를 만들어 낸다고 할 때 써요 — generate electricity. 관심이나 생각을 불러일으킨다는 뜻으로도 자주 씁니다 — The ad generated a lot of interest. 물건을 만드는 것은 make 예요."
+
+- word: "delivery"
+  reason: "usage_note: 'delivery 는 명사로만 쓰이고 동사 deliver 와는 다르게 쓰입니다' 는 두 낱말이 다르다는 말만 되풀이할 뿐 어떻게 다른지를 말하지 않는다. / confused_with: 'delivery service' 는 표제어를 그대로 담은 구다. / 선별기가 짚었다 — 문형 'delivery + of + 내용' 이 예문 'The pizza delivery was late.' 에 없는 of 를 요구한다. 실제로 흔한 꼴은 앞에 명사를 붙이는 pizza delivery 쪽이다."
+  pattern: "명사 + delivery / delivery of + 명사"
+  usage_note: "물건을 가져다주는 일이 delivery 예요. 가져다주는 동작은 deliver 라서 They deliver food. 라고 합니다. 배달 시켜 먹는다고 할 때는 order delivery 나 get food delivered 라고 해요."
+  confused_with: ["deliver", "shipping"]
+
+- word: "deny"
+  reason: "usage_note: 예문이 'He denied stealing the money.' 로 -ing 를 쓰고 있는데 설명은 그 꼴을 한 마디도 하지 않는다. refuse 와의 갈림도 confused_with 에만 있고 설명에는 없었다."
+  usage_note: "deny 뒤에 동사가 오면 -ing 를 붙여요 — He denied stealing the money. 사실이 아니라고 잡아떼는 것이라, 하기 싫다고 거절하는 refuse 와는 다릅니다 — He refused to pay. 이름씨는 denial 이에요."
+
+- word: "guest"
+  reason: "example: 'This is my friend, not a guest.' 는 친구와 손님을 갈라놓는 이상한 문장이라 왕초보가 따라 쓸 자리가 없다. / usage_note: '손님' 과 '게스트' 라는 한국어 낱말끼리 견주고 끝난다 — 게스트는 영어가 아니라 외래어다."
+  example: "We have three guests tonight."
+  usage_note: "집이나 잔치에 초대받아 온 사람, 호텔에 묵는 사람을 guest 라고 해요 — a hotel guest. 가게에서 물건을 사는 사람은 customer, 그냥 찾아온 사람은 visitor 예요."
+
+- word: "bedroom"
+  reason: "usage_note: \"'bedroom' 은 잔다, 'bathroom' 은 목욕하거나 양치한다 예요\" 는 한국어 문장이 성립하지 않는다. 방 개수를 말하는 흔한 꼴(two-bedroom)도 없었다."
+  usage_note: "잠을 자는 방이 bedroom 이에요. 씻고 볼일을 보는 곳은 bathroom, 함께 쉬는 거실은 the living room 이라고 합니다. 방이 둘인 집은 a two-bedroom apartment 라고 해요."
+
+- word: "climb"
+  reason: "meaning_ko·usage_note: '물건이나 사람을 올리는 동작' 과 '물건을 올릴 때는 climb 를' 이 둘 다 틀렸다 — climb 은 오르는 사람 쪽이 하는 일이고, 물건을 들어 올리는 것은 lift 다. 학습자가 그대로 쓰면 비문이 된다. / 되읽기: 뜻 칸에서 '물건을 올리는 동작' 을 걷어냈는데 문형 괄호에는 '물건/장소' 가 남아 방금 지운 거짓을 되살리고 있었다."
+  meaning_ko: "오르다, 기어오르다"
+  pattern: "climb + 목적어 (산·계단 등)"
+  usage_note: "손발을 써서 위로 올라가는 것을 climb 이라고 해요 — climb a mountain, climb the stairs. 뒤에 up 을 붙여 climb up the tree 라고 해도 뜻은 같아요. 물건을 들어 올리는 것은 lift 예요."
+  confused_with: ["rise", "lift"]
+
+- word: "basically"
+  reason: "usage_note: '한국어 대체로보다 조금 더 강하게' 는 잴 수 없는 견줌이고 영어는 Actually 한 낱말뿐이다. 이 말이 실제로 하는 일 — 앞말을 한마디로 줄여 시작하기 — 가 빠져 있었다."
+  usage_note: "말을 한마디로 줄여 시작할 때 자주 써요 — Basically, it's too expensive. 는 '한마디로 너무 비싸요' 입니다. 사실은 이렇다고 바로잡을 때는 actually 를 써요 — Actually, it's free."
+
+- word: "violence"
+  reason: "pattern: 'a/the + violence' 가 틀렸다 — a violence 라고 쓰지 않는다. 예문도 a lot of violence 꼴이라 문형과 어긋난다. / usage_note: 'violence 는 명사로만 쓰이고' 는 배울 것이 없는 되풀이다."
+  pattern: "a lot of + violence"
+  usage_note: "violence 는 하나 둘로 세지 않아서 a violence 라고 하지 않고 a lot of violence 라고 해요. 그림씨는 violent 라서 a violent movie(폭력적인 영화)처럼 씁니다. 집 안에서 벌어지는 것은 domestic violence 라고 해요."
+
+- word: "minister"
+  reason: "meaning_ko·usage_note: '장로' 가 틀렸다 — 교회의 minister 는 목사이고 장로는 elder 다. 같은 항목의 해석이 이미 '목사' 라 뜻 칸과 해석이 서로 어긋나 있었다. / pattern: 'minister + 목적어' 는 이름씨에 목적어를 붙인 꼴이라 성립하지 않는다."
+  meaning_ko: "(교회의) 목사; (정부의) 장관"
+  pattern: "a/the + minister (+ of + 부처)"
+  usage_note: "교회에서 예배를 이끄는 사람을 minister 라고 해요 — pastor 라고도 합니다. 정부에서 한 부처를 맡은 사람도 minister 라서 the Minister of Education(교육부 장관)처럼 써요. 영국의 총리는 the Prime Minister 예요."
+
+- word: "mainly"
+  reason: "usage_note: \"'mainly' 는 문장에서 더 자연스럽게 쓰입니다\" 는 무엇보다 자연스럽다는 것인지 알 수 없다. 자리(동사 앞)와 mostly·usually 의 갈림이 빠져 있었다."
+  usage_note: "여러 가지 가운데 그것이 가장 많다고 할 때 써요 — I mainly work from home. 자리는 보통 동사 앞이에요. 뜻이 거의 같은 mostly 와 바꿔 써도 되고, '보통·평소에' 는 usually 라고 합니다."
+
+- word: "mouth"
+  reason: "usage_note: \"'I bit my lip' 처럼 혀를 의미할 때는 lip 을 써요\" 가 틀렸다 — 혀는 tongue 이고 lip 은 입술이다. confused_with 에 tongue 을 두고도 설명이 그것을 입술이라 부르고 있었다."
+  usage_note: "입 전체가 mouth 예요. 입술은 lips, 혀는 tongue 이라고 따로 부릅니다 — I bit my tongue. 입을 벌리라고 할 때는 Open your mouth. 라고 해요."
+
+- word: "noise"
+  reason: "pattern: 'noise: 불가산명사 (a noise X)' 는 형태 표기가 아니라 문법 딱지이고, 게다가 a noise 는 멀쩡한 영어다(I heard a noise). / usage_note: \"'many noises' 처럼 쓰지 않아요\" 도 같은 이유로 틀렸다 — strange noises 는 흔하다."
+  pattern: "too much + noise / a + noise"
+  usage_note: "시끄러운 소리를 통틀어 말할 때는 too much noise 처럼 써요. 하나하나의 소리를 가리킬 때는 a noise, 여럿이면 noises 라고 합니다 — I heard a strange noise. 그냥 '소리' 는 sound 예요."
+
+- word: "manner"
+  reason: "usage_note: method 와 갈라 준 것은 맞지만, -s 가 붙으면 '예의' 라는 다른 뜻이 되는 것이 빠졌다. 왕초보가 manners 를 먼저 만날 가능성이 높다."
+  usage_note: "in a ~ manner 는 '~ 한 태도로' 라는 딱딱한 말이라 글에 자주 나와요. 말할 때는 He spoke politely. 가 훨씬 자연스럽습니다. -s 를 붙인 manners 는 '예의' 라는 다른 뜻이에요 — Mind your manners!"
