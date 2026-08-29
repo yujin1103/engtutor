@@ -670,3 +670,70 @@ def test_a_note_that_actually_teaches_english_is_not_flagged():
         )
     )
     assert "note_compares_korean_only" not in {f.code for f in screen(row)}
+
+
+def test_a_note_that_repeats_the_example_sentence_is_flagged():
+    """**설명이 예문을 그대로 옮겨 적은 것**을 검수 큐에 올린다.
+
+    설명은 예문을 읽은 직후에 쓴다 — 그러면 예문 문장이 설명 안으로 통째로 옮겨
+    붙는다. `master` 의 설명이 "I want to master English." 로 예문과 글자까지
+    같았고, `taste` 는 "This soup tastes good." 였다. 화면에서는 같은 문장이 두 줄
+    연속으로 뜨므로 설명 칸이 한 줄 비는 셈이다.
+
+    **눈으로는 안 잡힌다.** 읽는 사람이 예문을 방금 봤기 때문에 설명에서 또 봐도
+    새 문장처럼 읽힌다 — 40개씩 다섯 묶음을 한 항목씩 읽고도 못 봤다.
+    """
+    row = _row(
+        word="taste",
+        pattern="taste + 형용사",
+        example="This soup tastes good.",
+        usage_note="음식이 어떤 맛인지 말할 때는 This soup tastes good. 처럼 뒤에 형용사를 붙여요.",
+    )
+    assert "note_echoes_example" in _codes(screen(row))
+
+
+def test_a_short_collocation_shared_with_the_example_is_not_flagged():
+    """**겹침이 곧 가르치려는 짝인 자리**는 걸지 않는다.
+
+    `cup` 의 "양을 셀 때는 a cup of coffee 처럼 of 를 넣어요" 는 예문과 겹치지만
+    그 겹침이 설명하려는 짝 자체다. 네 낱말만 보고 걸면 이런 자리가 무더기로
+    딸려 오므로(453개 대 315개), 넷일 때는 그것이 예문의 7할 이상일 때만 건다.
+    """
+    row = _row(
+        word="cup",
+        pattern="a cup of + 마실 것",
+        example="I need a cup of coffee for breakfast.",
+        usage_note="양을 셀 때는 a cup of coffee 처럼 of 를 넣어요. 손잡이 없는 유리잔은 a glass 예요.",
+    )
+    assert "note_echoes_example" not in _codes(screen(row))
+
+
+def test_repeating_the_example_does_not_block_serving():
+    """**판정이 아니라 물음이라 출제 문을 막지 않는다.**
+
+    막으면 315개가 한꺼번에 연습장에서 빠진다. 빈칸 문제가 쓰는 것은 예문과
+    표제어뿐이라, 설명이 겹친다고 문제 자체가 나빠지지는 않는다.
+    """
+    from app.tutor.cloze import _ASKS_A_HUMAN
+
+    assert "note_echoes_example" in _ASKS_A_HUMAN
+
+
+@pytest.mark.parametrize(
+    "example, note, echoed",
+    [
+        # 다섯 낱말이 이어지면 예문이 길어도 건다.
+        ("He denied stealing the money last week.", "He denied stealing the money 처럼 -ing 를 붙여요.", True),
+        # 넷이지만 예문 전체라 건다.
+        ("Look at that dog.", "Look at that dog 처럼 at 을 붙여요.", True),
+        # 넷이지만 긴 예문의 일부라 걸지 않는다.
+        ("The hotel is to the west of the station.", "무엇의 서쪽이라고 할 때는 to the west of ~ 라고 해요.", False),
+        # 겹치는 낱말이 흩어져 있으면 이어진 조각이 아니라 걸지 않는다.
+        ("She gave me a book.", "누구에게 무엇을 준다고 할 때 she 나 me 를 넣어 gave 를 써요.", False),
+    ],
+)
+def test_the_echo_rule_uses_two_length_measures(example, note, echoed):
+    """다섯 낱말 이상이면 그것만으로, 넷이면 예문의 7할 이상일 때만 건다."""
+    from app.content.screening import echoed_example_fragment
+
+    assert (echoed_example_fragment(example, note) is not None) is echoed

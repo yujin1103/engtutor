@@ -344,6 +344,9 @@ _ASKS_A_HUMAN = frozenset({
     # 설명이 한국어끼리만 견주는 것. 표본에서 58%만 실제 결함이라 막을 근거가 없다 —
     # 480개를 한꺼번에 연습장에서 지우면 고치기 전에 기능이 먼저 빈다.
     "note_compares_korean_only",
+    # 설명이 예문을 그대로 옮겨 적은 것. 겹침이 곧 가르치려는 짝인 자리가 있어
+    # (`cup` 의 a cup of coffee) 표본에서 절반쯤만 실제 결함이었다. 315개다.
+    "note_echoes_example",
 })
 
 

@@ -521,6 +521,16 @@ def screen(row: WordLike) -> list[Finding]:
             )
         )
 
+    echo = echoed_example_fragment(row.example, row.usage_note)
+    if echo:
+        out.append(
+            Finding(
+                "note_echoes_example",
+                "low",
+                f"설명이 예문을 그대로 옮겨 적었어요 — '{echo}' — 사람이 봐 주세요",
+            )
+        )
+
     return out
 
 
@@ -542,6 +552,61 @@ def _korean_only_note(note: str) -> bool:
     if not _KOREAN_ONLY.match(note or ""):
         return False
     return len(re.findall(r"[A-Za-z]{2,}", note)) <= 1
+
+
+# 설명이 예문을 그대로 옮겨 적었는가. **판정이 아니라 물음이다.**
+#
+# 왜 이 모양을 잡는가: 설명은 예문을 읽은 직후에 쓴다 — 모델도 그렇고 사람도
+# 그렇다. 그러면 예문 문장이 설명 안으로 통째로 옮겨 붙는다. `master` 의 설명이
+# "I want to master English." 로 예문과 글자까지 같았고, `taste` 는
+# "This soup tastes good.", `deny` 는 "He denied stealing the money." 였다.
+# **화면에서는 같은 문장이 두 줄 연속으로 뜬다** — 설명 칸이 한 줄 비는 셈이다.
+#
+# 눈으로는 안 잡힌다. 읽는 사람이 예문을 방금 봤기 때문에 설명에서 또 봐도 새
+# 문장처럼 읽힌다. 실제로 40개씩 다섯 묶음을 한 항목씩 읽고도 못 봤고, 이 규칙을
+# 돌려서야 그 200개 중 26개가 드러났다.
+#
+# 정확하지는 않다 — **겹침이 곧 설명인 자리가 있다.** `cup` 의 "양을 셀 때는
+# a cup of coffee 처럼 of 를 넣어요" 는 예문과 겹치지만 그 겹침이 가르치려는
+# 짝이고, `ring` 은 예문을 다시 적어 ring the doorbell 과 견준다. 표본 12개에서
+# 절반쯤이 실제 결함이었다. 그래서 막지 않고 검수 큐에만 올린다
+# (`cloze._ASKS_A_HUMAN`). DB 전체에서 315개가 걸린다.
+#
+# 잣대를 둘로 나눈 이유: 네 낱말만 보고 걸면 `to the west of`·`go to a concert`
+# 처럼 짝을 가르치는 자리가 무더기로 딸려 온다(453개). 다섯 낱말 이상 이어지면
+# 그것만으로 걸고, 넷이면 그 넷이 **예문의 7할 이상**일 때만 건다 — 짧은 예문은
+# 네 낱말이 곧 문장 전체이기 때문이다.
+_MIN_ECHO_WORDS = 4
+_LONG_ECHO_WORDS = 5
+_ECHO_COVERAGE = 0.7
+_ECHO_STRIP = re.compile(r"[^a-z0-9 ]+")
+
+
+def _echo_words(text: str) -> list[str]:
+    """겹침을 재려고 깎은 낱말들. 대소문자와 문장부호는 같은 문장인지와 무관하다."""
+    return _ECHO_STRIP.sub(" ", (text or "").lower()).split()
+
+
+def echoed_example_fragment(example: str, usage_note: str) -> str | None:
+    """설명이 예문에서 통째로 옮겨 온 조각. 없으면 None.
+
+    가장 긴 것 하나만 돌려준다. 고치는 사람에게 필요한 것은 "어디가 겹쳤나"
+    한 군데이고, 겹친 조각을 다 세어 봐야 고칠 자리가 늘지는 않는다.
+    """
+    words = _echo_words(example)
+    if len(words) < _MIN_ECHO_WORDS:
+        return None
+    note = " ".join(_echo_words(usage_note))
+    for size in range(len(words), _MIN_ECHO_WORDS - 1, -1):
+        for start in range(len(words) - size + 1):
+            fragment = " ".join(words[start : start + size])
+            if fragment not in note:
+                continue
+            if size >= _LONG_ECHO_WORDS or size / len(words) >= _ECHO_COVERAGE:
+                return fragment
+            # 가장 긴 겹침이 잣대에 못 미치면 더 짧은 겹침도 못 미친다.
+            return None
+    return None
 
 
 _MEANING_SPLIT = re.compile(r"[,;·/]")
