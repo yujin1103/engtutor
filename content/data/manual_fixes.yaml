@@ -5374,16 +5374,20 @@
   pattern: "remind + 목적어 + of + 명사"
 
 - word: "corporate"
-  reason: "문형 자리에 영어가 들어가 있었다: adjective: corporate + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: corporate + 명사 / usage_note: \"'corporate culture' 는 기업 문화를 말하나요,\" 는 문장이 물음꼴로 끊겨 뜻이 통하지 않는다. 앞부분도 뜻 칸의 괄호를 그대로 옮겨 적은 되풀이다. / meaning_ko: 괄호 설명이 길어 뜻 칸이 해설이 됐다."
+  meaning_ko: "기업의, 회사의"
   pattern: "corporate + 명사"
+  usage_note: "corporate 는 회사 조직 쪽을 가리키는 딱딱한 말이라 corporate culture(기업 문화), corporate tax(법인세)처럼 짝이 정해진 자리에 나와요. 그냥 '우리 회사의' 라고 할 때는 company 를 써서 our company car 라고 합니다."
 
 - word: "tough"
-  reason: "문형 자리에 영어가 들어가 있었다: tough + to + do something"
+  reason: "문형 자리에 영어가 들어가 있었다: tough + to + do something / usage_note: '어려운' 과 '힘든' 이라는 한국어 낱말끼리 견주고 'tough 은 두 가지 모두를 포함해요' 로 끝난다. 고기가 질기다는 뜻처럼 왕초보가 실제로 만나는 자리가 빠졌다."
   pattern: "tough + to + 동사원형"
+  usage_note: "tough 는 hard 나 difficult 와 거의 같은 뜻인데 말할 때 더 자주 써요 — It was a tough day. 고기가 질기다고 할 때도 tough 를 씁니다 — This meat is tough. 사람에게 쓰면 '강단 있다' 는 뜻이 돼요."
 
 - word: "relax"
-  reason: "문형 자리에 영어가 들어가 있었다: relax + (about/with + something)"
-  pattern: "relax + (about/with + 명사)"
+  reason: "문형 자리에 영어가 들어가 있었다: relax + (about/with + something) / usage_note: 'I relax about the exam.' 은 영어로 쓰지 않는 문장이라 지어낸 예로 문형을 가르치고 있었다. / pattern: 그 지어낸 about 꼴이 문형 자리에도 그대로 올라와 있다."
+  pattern: "relax (+ for + 시간)"
+  usage_note: "몸과 마음을 편하게 쉰다는 뜻이에요 — I relaxed at home all day. 걱정하는 사람에게 Relax! 한 마디만 하면 '진정해!' 가 됩니다. 잠깐 쉬는 것은 take a break 라고 해요."
 
 - word: "description"
   reason: "문형 자리에 영어가 들어가 있었다: a/the + description + of + something"
@@ -9861,3 +9865,195 @@
 - word: "manner"
   reason: "usage_note: method 와 갈라 준 것은 맞지만, -s 가 붙으면 '예의' 라는 다른 뜻이 되는 것이 빠졌다. 왕초보가 manners 를 먼저 만날 가능성이 높다."
   usage_note: "in a ~ manner 는 '~ 한 태도로' 라는 딱딱한 말이라 글에 자주 나와요. 말할 때는 He spoke politely. 가 훨씬 자연스럽습니다. -s 를 붙인 manners 는 '예의' 라는 다른 뜻이에요 — Mind your manners!"
+
+- word: "gun"
+  reason: "usage_note: '총을 쏘다에는 shoot 예요. 총을 쏘다는 shoot a gun 이에요' 로 같은 말을 두 번 했고, 마지막 문장 '총은 무기로 쓰이기도 해요' 는 뜻 칸을 되풀이할 뿐이다."
+  usage_note: "총을 쏜다고 할 때는 shoot a gun 이라고 해요 — He shot the gun. 권총은 a handgun, 사냥에 쓰는 긴 총은 a rifle 이라고 부릅니다. 총을 겨눈다고 할 때는 point a gun at ~ 이에요."
+
+- word: "square"
+  reason: "example: 'This is a square.' 는 낱말을 되풀이할 뿐 쓸 자리를 보여 주지 않는다. / usage_note: 도형의 정의만 늘어놓고 rectangle 과 '혼동하지 않도록 주의하세요' 로 끝나 무엇이 다른지를 말하지 않는다. '도형이예요' 오타도 있었다. / meaning_ko: 도시의 광장이라는 흔한 뜻이 통째로 빠졌다."
+  meaning_ko: "정사각형; (도시의) 광장"
+  example: "Draw a square on the paper."
+  usage_note: "네 변이 모두 같은 네모가 square 예요. 두 쌍만 같은 네모는 rectangle(직사각형)입니다. 도시 한가운데 넓은 마당도 square 라고 해서 the town square 라고 해요."
+
+- word: "familiar"
+  reason: "usage_note: \"'I'm familiar with' 대신 'I know' 로 대체하면 의미가 달라질 수 있어요\" 는 어떻게 달라지는지를 말하지 않아 배울 것이 없다. 정작 갈라 줘야 할 with 와 to 의 차이가 빠졌다. / confused_with: familiarity 는 같은 낱말의 이름씨꼴이라 헷갈리는 낱말이 아니다. / 되읽기: 설명에 with 와 to 를 갈라 넣었는데 문형에는 with 쪽만 있어, 방금 가르친 두 번째 꼴이 문형 자리에서 빠진다."
+  pattern: "be familiar with + 주제 / be familiar to + 사람"
+  usage_note: "내가 무엇을 잘 안다고 할 때는 뒤에 with 를 붙여요 — I'm familiar with this area. 그것이 나에게 낯익다고 할 때는 to 를 써서 That name is familiar to me. 라고 합니다. 처음 보는 것은 unfamiliar 예요."
+  confused_with: ["unfamiliar"]
+
+- word: "ignore"
+  reason: "usage_note: \"'Don't ignore me!' 는 '나를 무시하지 마세요!' 보다 더 강하게 느껴져요\" 는 영어 문장을 제 해석과 견주는 말이라 뜻이 성립하지 않는다. / confused_with: disregard·overlook 은 왕초보 어휘가 아니다."
+  usage_note: "일부러 못 본 척, 못 들은 척하는 것이 ignore 예요 — She ignored my call. 사람에게도 쓰고 규칙이나 경고에도 씁니다 — Don't ignore the warning. 몰라서 못 알아본 것은 ignore 가 아니라 miss 예요."
+  confused_with: ["miss", "overlook"]
+
+- word: "destroy"
+  reason: "usage_note: 'destroy 는 누군가가 의도적으로 파괴하는 경우예요' 가 틀렸다 — 같은 항목의 예문이 'The fire destroyed the house.' 로 사람이 아닌 불을 주어로 쓰고 있어 설명이 제 예문을 부정한다."
+  usage_note: "완전히 부수어 못 쓰게 만드는 것이 destroy 예요 — 불이나 지진처럼 사람이 아닌 것도 주어가 됩니다. 조금 상한 정도는 damage, 부러뜨리거나 깨뜨리는 것은 break 라고 해요."
+
+- word: "civil"
+  reason: "meaning_ko·usage_note: '평화로운' 이 틀렸다 — a civil war 는 내전이라 평화와 정반대다. 뜻과 설명이 둘 다 그 거짓을 담고 있었고 해석의 '민간 전쟁' 도 내전을 잘못 옮긴 말이다. / pattern: 'civil + 형용사 (예: civil war)' 에서 war 는 형용사가 아니라 명사다."
+  meaning_ko: "시민의, 민간의 (군대·정부가 아닌)"
+  pattern: "civil + 명사 (예: civil war, civil rights)"
+  example: "The country had a civil war."
+  usage_note: "civil 은 군대나 정부가 아닌 보통 사람들 쪽을 가리켜요 — civil rights(시민의 권리). a civil war 는 한 나라 안에서 사람들끼리 싸우는 내전이라 '평화로운' 과는 정반대입니다. 군대 쪽은 military 예요."
+  confused_with: ["military", "civilian"]
+
+- word: "locate"
+  reason: "usage_note: find 와의 갈림을 '정확하게 찾는 경우' 라고만 해 잣대가 되지 못하고, 학습자가 실제로 훨씬 자주 만나는 꼴인 be located in 이 빠져 있었다. / 되읽기: 설명을 be located in 중심으로 고쳤는데 뜻 칸은 '위치시키다' 라는 한국어로 잘 쓰지 않는 말 그대로였다."
+  meaning_ko: "찾아내다, 위치를 알아내다"
+  usage_note: "말할 때는 find 를 훨씬 많이 쓰고, locate 는 안내문이나 뉴스에 나오는 딱딱한 말이에요. 오히려 자주 만나는 꼴은 be located in(~ 에 있다)입니다 — The hotel is located near the station."
+
+- word: "citizen"
+  reason: "usage_note: '국민' 과 '시민' 이라는 한국어 낱말끼리 견주고 '국민은 더 넓은 개념' 으로 끝나 영어에 대해 아무 말도 하지 않는다. confused_with 의 resident 도 설명에서 갈라 주지 않았다."
+  usage_note: "어느 나라의 국적을 가진 사람이 citizen 이에요 — a Korean citizen. 국적과 상관없이 그곳에 사는 사람은 a resident 라고 합니다. 시민권은 citizenship 이에요."
+
+- word: "temperature"
+  reason: "usage_note: \"'What's the temperature?' 라고만 말하면 물체가 무엇인지 모를 수 있어요\" 가 틀렸다 — 그것이 날씨를 묻는 가장 흔한 말이다. 학습자가 이 말을 믿으면 제일 쓸모 있는 문장을 피하게 된다."
+  usage_note: "날씨를 물을 때는 그냥 What's the temperature? 라고 해요 — 무엇의 온도인지 말하지 않아도 됩니다. 몸에 열이 있다고 할 때는 have a temperature 라고 해요. 도수는 degrees 로 세서 twenty degrees 처럼 말합니다."
+
+- word: "gold"
+  reason: "pattern: 'a/the + gold' 는 쓰지 않는 꼴이고 예문도 made of gold 다. / usage_note: '색을 뜻할 때는 golden' 이 반만 맞다 — gold medal·gold ring 처럼 물건에는 gold 를 붙인다. 게다가 '혼동하기 쉬워요' 로 끝나며 무엇이 다른지는 말하지 않는다. / meaning_ko: '금속 (황금색)' 은 쇠붙이와 빛깔을 한 칸에 섞어 놓았다."
+  meaning_ko: "금 (쇠붙이)"
+  pattern: "made of + gold / gold + 명사"
+  usage_note: "금이라는 쇠붙이를 gold 라고 해요 — made of gold. 금으로 만든 물건에는 gold ring, gold medal 처럼 앞에 붙입니다. golden 은 '금빛의' 라는 뜻이라 golden hair(금발)처럼 빛깔을 말할 때 써요."
+
+- word: "domestic"
+  reason: "meaning_ko: '가정의' 만 적혀 있어 학습자가 공항에서 가장 먼저 만나는 뜻 — 국내선의 '국내의' — 가 통째로 빠졌다. / example: 'She works as a domestic helper.' 는 그 빠진 뜻을 더 굳힌다. / pattern: 'ex:' 는 영어 약어다."
+  meaning_ko: "국내의; 가정의, 집안의"
+  pattern: "domestic + 명사 (예: domestic flight)"
+  example: "We took a domestic flight."
+  usage_note: "나라 안의 일을 말할 때 자주 써요 — a domestic flight(국내선), domestic news(국내 뉴스). 집안일이라는 뜻도 있어서 domestic work 는 가사 일입니다. 사람이 기르는 짐승은 a domestic animal(가축)이에요."
+  confused_with: ["international", "household"]
+
+- word: "load"
+  reason: "usage_note: \"'Load the book into the bag' 는 '책을 가방에 넣다'\" 가 영어로 어색하다 — 책 한 권에는 load 를 쓰지 않는다. 지어낸 예로 put 과의 갈림을 가르치고 있었다. / meaning_ko: '물건이 들어가는 곳' 이라는 괄호가 뜻을 흐린다."
+  meaning_ko: "(짐을) 싣다"
+  usage_note: "짐이나 물건을 차·배에 싣는 것을 load 라고 해요 — load the boxes into the truck. 도로 내리는 것은 unload 입니다. 책 한 권을 가방에 넣는 것은 load 가 아니라 put 이에요."
+  confused_with: ["put", "unload"]
+
+- word: "belief"
+  reason: "usage_note: 'belief 은 명사로 쓰고 believe 는 동사예요' 만으로는 어느 자리에 무엇을 쓰는지 알 수 없고, 예문이 쓰는 belief in 의 in 이 빠져 있었다. 조사도 'belief은' 으로 틀렸다."
+  usage_note: "믿는 마음이나 믿는 내용이 belief 예요 — 뒤에 in 을 붙여 belief in God 처럼 씁니다. 믿는 동작은 believe 라서 I believe you. 라고 해요. 철자가 비슷하니 이름씨 belief, 움직씨 believe 로 나눠 외우면 좋아요."
+
+- word: "troop"
+  reason: "meaning_ko·example: 뜻은 '군대, 대대' 인데 예문은 원숭이 무리라 서로 어긋난다. 학습자가 뉴스에서 만나는 꼴은 여럿을 뜻하는 troops 다. / usage_note: \"'troop' 은 주로 동물이나 군대를 나타내는 데\" 는 둘을 뭉뚱그려 어느 쪽이 흔한지를 말하지 않는다."
+  meaning_ko: "(군인들) 병력; 무리, 떼"
+  pattern: "troops / a troop of + 사람·동물"
+  example: "The troops arrived in the city."
+  usage_note: "여럿을 뜻하는 troops 는 '병력·군인들' 이라는 말이라 뉴스에 자주 나와요 — The troops came home. 하나만 쓰는 a troop of ~ 는 무리를 세는 말이라 a troop of monkeys(원숭이 떼)처럼 씁니다. 군대 조직 전체는 the army 예요."
+  confused_with: ["army", "soldier"]
+
+- word: "technical"
+  reason: "usage_note: '혼동하지 마세요' 로 짚고 technique 만 풀어 줄 뿐, 정작 가장 가까운 낱말인 technology 가 빠져 셋이 어떻게 갈리는지 알 수 없다."
+  usage_note: "기계나 전문 지식이 있어야 알 수 있다는 뜻이에요 — a technical problem(기술적인 문제). 기술 그 자체는 technology, 무언가를 잘하는 솜씨나 방법은 technique 이라고 해요 — a good technique."
+  confused_with: ["technique", "technology"]
+
+- word: "arrangement"
+  reason: "meaning_ko·usage_note: '배치' 만 있고 make arrangements(미리 준비해 두다)라는 아주 흔한 뜻이 빠졌다. layout 과의 갈림도 '더 시각적' 이라는 잴 수 없는 말로 되어 있다."
+  meaning_ko: "배치, 배열; (미리 해 두는) 준비"
+  usage_note: "물건을 어떻게 놓았는지를 말할 때 써요 — the arrangement of the chairs. 여럿이 미리 정해 두는 준비도 arrangement 라서 make arrangements 라고 합니다. 움직씨는 arrange 예요 — I arranged the meeting."
+  confused_with: ["layout", "plan"]
+
+- word: "skin"
+  reason: "usage_note: 마지막 문장 \"'skin' 은 사람이나 동물의 피부를 의미해요\" 가 뜻 칸을 그대로 되풀이해 자리만 차지한다. 과일 껍질이라는 흔한 쓰임도 빠졌다."
+  usage_note: "사람이나 동물의 살갗이 skin 이에요 — dry skin(건조한 피부). 동물 몸에 난 털은 fur, 사람 머리카락은 hair 라고 합니다. 과일 껍질도 skin 이라고 해서 banana skin 이라고 해요."
+
+- word: "prison"
+  reason: "usage_note: 'prison 은 명사로만 쓰이고' 는 배울 것이 없는 되풀이이고, 정작 왕초보가 틀리는 자리 — in prison 에는 the 를 넣지 않는다 — 가 설명되어 있지 않다. / confused_with: 'detention center' 는 왕초보 어휘가 아니다. / 되읽기: 설명을 'the 를 빼고 in prison' 으로 고쳤는데 문형은 'a/the + prison' 하나뿐이라, 방금 가르친 꼴이 문형에 없다."
+  pattern: "in + prison / a/the + prison"
+  usage_note: "감옥에 갇혀 있다고 할 때는 the 를 빼고 in prison 이라고 해요 — He is in prison. 건물 자체를 가리킬 때만 the prison 이라고 합니다. 갇힌 사람은 a prisoner, 미국에서는 감옥을 jail 이라고도 해요."
+  confused_with: ["jail", "prisoner"]
+
+- word: "switch"
+  reason: "usage_note: change 와의 갈림만 있고, 이 낱말이 실제로 가장 자주 쓰이는 두 자리 — 전기를 켜고 끄는 switch on/off 와 벽에 달린 스위치 — 가 빠져 있었다."
+  usage_note: "다른 것으로 갈아탄다는 뜻이에요 — switch seats, switch to another job. 전기를 켜고 끌 때도 써서 switch on the light 라고 합니다. 벽에 달린 스위치도 a switch 예요."
+
+- word: "acquire"
+  reason: "meaning_ko·usage_note: \"'acquire' 는 더 일반적인 상황에서 쓰이며\" 가 거꾸로다 — acquire 는 글에 쓰는 딱딱한 말이고 일상에서는 get 을 쓴다. '얻어가다' 도 한국어로 어색하다. / example: 'I acquired a new phone last week.' 는 그 거짓을 그대로 보여 준다."
+  meaning_ko: "얻다, 손에 넣다 (딱딱한 말)"
+  example: "The company acquired a small factory."
+  usage_note: "acquire 는 글이나 뉴스에 나오는 딱딱한 말이라 회사가 다른 회사를 사들일 때 자주 써요. 말할 때는 get 이나 buy 가 훨씬 자연스럽습니다 — I got a new phone. 언어를 익힌다고 할 때도 acquire a language 라고 해요."
+
+- word: "fairly"
+  reason: "usage_note: \"'fairly good' 은 '꽤 좋다' 보다 덜 강조해요\" 는 영어를 제 해석과 견주는 말이다. 같은 철자의 다른 뜻('공정하게')도 빠져 있었다."
+  usage_note: "fairly 는 '아주' 까지는 아니고 '어느 정도' 라는 뜻이에요 — fairly good 은 아주 좋지는 않다는 느낌을 줍니다. quite 나 rather 와 비슷해요. 같은 낱말이 '공정하게' 라는 뜻으로도 쓰여서 treat people fairly 라고 합니다."
+
+- word: "wood"
+  reason: "meaning_ko: '나무 (자연에서 자라난 것)' 이 틀렸다 — 서 있는 나무는 tree 이고 wood 는 재료다. 같은 항목의 설명이 이미 그렇게 말하고 있어 뜻 칸과 설명이 서로를 부정한다. / usage_note: '숲' 이라는 뜻(woods)도 빠져 있었다. / 되읽기: 뜻을 '재료' 로 고치고 설명도 made of wood 로 맞췄는데 문형만 'a/the + wood' 로 남았다 — a wood 는 이 뜻으로 쓰지 않는 꼴이다."
+  meaning_ko: "나무, 목재 (재료)"
+  pattern: "made of + wood"
+  usage_note: "가구나 물건을 만드는 재료가 wood 예요 — made of wood. 땅에 서 있는 나무 한 그루는 a tree 입니다. -s 를 붙인 woods 는 '숲' 이라는 뜻이라 walk in the woods 라고 해요."
+  confused_with: ["tree", "forest"]
+
+- word: "tear"
+  reason: "meaning_ko: 앞뒤에 빈칸이 붙어 있고 괄호의 '물건이 갈라지는 것' 은 뜻을 흐린다. / usage_note: \"'tear' 는 'rip' 보다 부드럽게 찢는 걸 나타내죠\" 는 근거가 없다. 정작 갈라 줘야 할 것은 같은 철자의 딴 낱말 '눈물' 인데 그 이야기가 없다. / 되읽기: 문형의 '모든 부분을 찢다' 는 한국어가 어색하고, 설명에서 tear up 을 '조각조각 찢다' 로 고친 것과도 말이 갈린다."
+  meaning_ko: "찢다, 찢어지다"
+  pattern: "tear + 목적어 / tear up + 목적어 (조각조각)"
+  usage_note: "종이나 천이 찢어지는 것을 tear 라고 해요 — 지난 일은 tore, 다 된 꼴은 torn 이에요. 조각조각 찢을 때는 tear up 이라고 합니다. 같은 철자로 '눈물' 이라는 딴 낱말도 있는데 그때는 소리가 '티어' 로 달라져요."
+
+- word: "representative"
+  reason: "usage_note: '혼동하지 마세요' 로 시작해 represent 를 풀어 준 뒤 마지막 문장이 뜻 칸을 되풀이한다. 말할 때 줄여 부르는 a rep 과 가장 흔한 짝인 sales representative 가 빠졌다."
+  usage_note: "회사나 단체를 대신해 나오는 사람이 representative 예요 — a sales representative(영업 담당자). 길어서 말할 때는 a rep 이라고 줄여 부릅니다. 대신한다는 동작은 represent 예요 — He represents our team."
+
+- word: "capacity"
+  reason: "pattern: 'capacity + of + 주어' 에서 '주어' 는 문장 성분 이름이라 자리 표시로 맞지 않는다(담기는 그릇이다). / usage_note: capacity for 를 '경우가 있어요' 로만 말해 언제 쓰는지 알 수 없고, 사람 수를 말하는 흔한 쓰임이 빠졌다. / 되읽기: 뜻 칸의 '용기' 는 그릇을 가리키는 말인데 capacity 는 그릇이 아니라 담기는 양이다 — 설명을 '얼마나 담을 수 있는지' 로 고치고 나니 뜻 칸만 다른 것을 가리키고 있었다."
+  meaning_ko: "용량, 담을 수 있는 양; 능력"
+  pattern: "the capacity of + 그릇/장소"
+  usage_note: "얼마나 담을 수 있는지를 말할 때 써요 — the capacity of this bottle. 사람이 몇 명 들어가는지에도 씁니다 — The hall has a large capacity. 무엇을 할 수 있는 힘을 말할 때는 ability 가 훨씬 흔해요."
+
+- word: "border"
+  reason: "usage_note: '국경은 국가 간 경계를 말하지만 border 는 물리적인 경계선을 더 강조해요' 는 한국어 낱말과 영어 낱말을 견주는 척하며 같은 말을 두 번 한다. 가장 흔한 짝인 cross the border 가 빠졌다. / confused_with: frontier 는 왕초보 어휘가 아니다."
+  usage_note: "두 나라나 두 지역이 맞닿는 선이 border 예요 — cross the border(국경을 넘다). 물건의 가장자리는 edge 라고 합니다 — the edge of the table. 국경 근처 지역은 the border area 예요."
+  confused_with: ["edge"]
+
+- word: "shake"
+  reason: "usage_note: \"'I shook hands with him' 은 손을 잡다를 의미해요\" 는 악수를 '손을 잡다' 로 옮겨 뜻이 흐려졌다. 불규칙 변화(shook·shaken)도 빠져 있었다. / confused_with: jolt 는 왕초보 어휘가 아니다. / 되읽기: 설명의 첫 예가 예문과 글자까지 똑같아 같은 문장을 두 번 읽히고 있었다."
+  usage_note: "흔든다는 뜻이에요 — shake the bottle(병을 흔들다). 지난 일은 shook, 다 된 꼴은 shaken 이에요. 만나서 악수한다고 할 때 shake hands 라고 하고, 고개를 가로저어 아니라고 할 때는 shake your head 라고 해요."
+  confused_with: ["move", "wave"]
+
+- word: "assessment"
+  reason: "usage_note: '평가할 대상을 명확히 해야 해요' 는 학습자가 아니라 글 쓰는 사람에게 하는 말이고, evaluation 과의 갈림도 '공식적인 느낌이 더 강해요' 라는 잴 수 없는 말이다."
+  usage_note: "무엇이 어떤지 살펴보고 내리는 판단이 assessment 예요 — an assessment of the damage(피해 조사). 학교에서 보는 시험이나 평가에도 씁니다. 살펴보는 동작은 assess 예요."
+
+- word: "shoe"
+  reason: "example: 'I need a new shoe.' 는 신발을 한 짝만 산다는 말이라 실제로 쓰지 않는다 — 해석 '새 신발이 필요해요' 와도 어긋난다. / usage_note: \"'shoe' 만으로는 구체적인 종류를 모르는 거예요\" 는 낱말 설명이 아니다."
+  example: "I need new shoes."
+  usage_note: "신발은 두 짝이라 보통 -s 를 붙여 shoes 라고 해요 — a pair of shoes(신발 한 켤레). 한 짝만 가리킬 때만 a shoe 라고 합니다. 신는 것은 put on, 벗는 것은 take off 예요."
+
+- word: "ought"
+  reason: "usage_note: \"'should' 보다 더 강한 의무를 나타내지만\" 은 근거가 없다 — 둘은 거의 같은 뜻이고 갈리는 것은 세기가 아니라 빈도다. 부정꼴 이야기도 빠져 있었다. / 되읽기: 뜻 칸 '해야 할 의무가 있는' 은 그림씨처럼 적혀 있는데 ought 는 조동사라 그 자리에 넣을 수 없다. 해석도 이미 '~ 하는 게 좋겠네요' 다."
+  meaning_ko: "~ 하는 게 좋다, ~ 해야 한다"
+  usage_note: "ought 뒤에는 늘 to 가 붙어요 — You ought to rest. 뜻은 should 와 거의 같은데 요즘은 should 를 훨씬 많이 씁니다. 아니라고 할 때 ought not to 라고 쓰기는 하지만 드물어서 shouldn't 를 써요."
+
+- word: "ad"
+  reason: "usage_note: \"'ad' 는 명사로만 쓰이고 불가산명사가 아니에요\" 는 부정을 겹쳐 뜻이 흐린 데다, '불가산' 이라는 낱말 때문에 선별기의 가산성 단정 검사에 걸려 이 항목이 연습장에서 빠지고 있었다. 정작 ad 가 advertisement 의 줄임말이라는 사실이 없다."
+  usage_note: "ad 는 advertisement 를 줄인 말이라 말할 때 훨씬 자주 써요 — I saw an ad online. 여러 개면 ads 라고 합니다. TV 에 나오는 광고는 a commercial 이라고 따로 부르기도 해요."
+  confused_with: ["advertisement", "commercial"]
+
+- word: "fee"
+  reason: "usage_note: \"'fee' 는 가격이 비쌀 때 쓰는 말이에요\" 가 틀렸다 — fee 는 값의 크기와 상관없다. cost·price 와의 갈림도 confused_with 에만 있고 설명에는 없었다."
+  usage_note: "무엇을 해 주는 값으로 내는 돈이 fee 예요 — a service fee, an entrance fee(입장료). 물건 값 자체는 price, 무언가에 드는 비용은 cost 라고 합니다. 학비는 tuition fees 라고 해요."
+
+- word: "regulation"
+  reason: "example: 'There are many regulations in this restaurant.' 는 식당에 어울리지 않는다 — regulation 은 기관이 문서로 정한 규칙이라 식당에는 rules 를 쓴다. / usage_note: 'school rules 은' 조사가 틀렸고 rule 과의 갈림이 두 번 되풀이된다."
+  example: "The new regulations start next month."
+  usage_note: "regulation 은 나라나 기관이 문서로 정해 둔 규칙이에요 — safety regulations(안전 규정). 학교나 놀이의 규칙처럼 가벼운 것은 rules 라고 합니다 — school rules. 법 자체는 law 예요."
+
+- word: "escape"
+  reason: "usage_note: '도망치다' 와 escape 를 견주는 척하지만 실제로는 한국어 '도망치다' 의 쓰임만 설명하고 끝난다. 뒤에 from 을 붙인다는 것도 문형에만 있고 설명에는 없었다."
+  usage_note: "갇힌 곳이나 힘든 상황에서 빠져나오는 것이 escape 예요 — 뒤에 from 을 붙여 escape from prison 이라고 씁니다. 그냥 달아나는 것은 run away 예요. 비상구는 an emergency exit 라고 해요."
+
+- word: "studio"
+  reason: "usage_note: '스튜디오' 와 '작업실' 이라는 한국어 낱말끼리 견주고 있고, 한국 학습자가 실제로 가장 자주 만나는 뜻 — 방 하나짜리 집(원룸) — 이 빠져 있었다. / 되읽기: 설명에 원룸을 넣었는데 뜻 칸 괄호는 '음악, 영화, 예술 등 만들 때 쓰는 곳' 이라 그 뜻을 막고 있었다."
+  meaning_ko: "작업실, 스튜디오; 원룸"
+  usage_note: "그림·사진·음악을 만드는 방을 studio 라고 해요 — a recording studio. 방 하나짜리 작은 집도 a studio(원룸)라고 부릅니다. 물건을 고치거나 만드는 작업장은 a workshop 이에요."
+  confused_with: ["workshop", "apartment"]
+
+- word: "proper"
+  reason: "usage_note: \"'proper name' 은 '정식 이름'\" 이 틀렸다 — proper name 은 문법 용어로 고유명사다. correct·right 와의 갈림도 confused_with 에만 있고 설명에는 없었다."
+  usage_note: "그 자리에 맞는 제대로 된 것을 말할 때 써요 — the proper way(제대로 된 방법), proper shoes(그 자리에 맞는 신발). 답이 맞다고 할 때는 proper 가 아니라 correct 나 right 를 씁니다 — the right answer."
+
+- word: "tourist"
+  reason: "usage_note: '관광객' 과 '여행자' 라는 한국어 낱말끼리 견주고 끝나 영어 정보가 없다. 명사 앞에 붙는 흔한 짝(a tourist attraction)도 빠졌다."
+  usage_note: "구경하러 온 사람을 tourist 라고 해요. 명사 앞에 붙여 a tourist area(관광지), a tourist attraction(관광 명소)처럼 씁니다. 여행 자체는 travel, 여행하는 사람을 두루 부르는 말은 traveler 예요."

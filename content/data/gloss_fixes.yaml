@@ -3241,3 +3241,51 @@
 - word: "noise"
   example_ko: "여기는 소음이 너무 심해요."
   reason: "'너무 소음이 많아요' 는 한국어 어순이 어색하다."
+
+- word: "square"
+  example_ko: "종이에 정사각형을 그리세요."
+  reason: "바뀐 예문을 그대로 옮긴 해석이다."
+
+- word: "civil"
+  example_ko: "그 나라에서는 내전이 있었어요."
+  reason: "바뀐 예문에 맞췄다. 옛 해석 '민간 전쟁' 은 civil war 를 잘못 옮긴 말이다 — 내전이다."
+
+- word: "destroy"
+  example_ko: "불이 집을 다 부숴 버렸어요."
+  reason: "'불로 인해 집이 파괴됐어요' 는 번역투이고, 영어는 불을 주어로 세운 능동문이다."
+
+- word: "citizen"
+  example_ko: "그는 일본 시민이에요."
+  reason: "'일본의 시민' 은 한국어에서 어색하다."
+
+- word: "gold"
+  example_ko: "이 반지는 금으로 만들었어요."
+  reason: "'반지에 금이 들어갔어요' 는 금을 일부만 섞었다는 말로도 읽혀 made of gold 와 다르다."
+
+- word: "domestic"
+  example_ko: "우리는 국내선을 탔어요."
+  reason: "바뀐 예문을 그대로 옮긴 해석이다."
+
+- word: "belief"
+  example_ko: "저는 신을 굳게 믿고 있어요."
+  reason: "'하나님에 대해 강한 신념을 가지고 있어요' 는 번역투다."
+
+- word: "troop"
+  example_ko: "군인들이 그 도시에 도착했어요."
+  reason: "바뀐 예문에 맞췄다."
+
+- word: "acquire"
+  example_ko: "그 회사가 작은 공장을 손에 넣었어요."
+  reason: "바뀐 예문에 맞췄다."
+
+- word: "corporate"
+  example_ko: "여기는 회사 사무실이에요."
+  reason: "건물을 '이건' 으로 가리키지 않는다."
+
+- word: "representative"
+  example_ko: "그는 그 회사의 대리인이에요."
+  reason: "'회사의 대표' 는 사장으로 읽히는데, a representative of the company 는 회사를 대신해 나온 사람이다."
+
+- word: "regulation"
+  example_ko: "새 규정은 다음 달부터 시작돼요."
+  reason: "바뀐 예문에 맞췄다."
