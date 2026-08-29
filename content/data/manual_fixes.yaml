@@ -3246,9 +3246,9 @@
   usage_note: "effect 는 '효과'라는 명사예요 — a good effect. 소리가 비슷한 affect 는 '영향을 주다'라는 동사라 자리가 달라요 — The weather affects my mood."
 
 - word: "either"
-  reason: "pattern: either 는 목적어를 받는 움직씨가 아니고, 새 표기가 예문 either coffee or tea 를 덮는다. / usage_note: neither 는 '둘 다 아니다' 라서 NOW 는 뜻을 거꾸로 알려 주고, FIX 는 242자로 설명 상한(300자) 안에 든다."
+  reason: "pattern: either 는 목적어를 받는 움직씨가 아니고, 새 표기가 예문 either coffee or tea 를 덮는다. / usage_note: neither 는 '둘 다 아니다' 라서 NOW 는 뜻을 거꾸로 알려 주고, FIX 는 242자로 설명 상한(300자) 안에 든다. / 설명이 예문 'I don't like either coffee or tea.' 를 그대로 다시 적어, 부정문 쓰임을 보여 주는 자리에서 학습자가 방금 읽은 문장을 또 읽는다. 다른 문장으로 바꾸면 예가 하나 늘어난다."
   pattern: "either + 명사 / either A or B"
-  usage_note: "either A or B 는 '둘 중 하나' 예요 — You can take either the bus or the subway.(버스나 지하철 둘 중 하나를 타면 돼요) 아니라는 말과 함께 쓰면 둘 다 아니라는 뜻이 돼요 — I don't like either coffee or tea. 이걸 한 낱말로 하면 neither 예요 — Neither my brother nor my sister can come.(형도 누나도 못 와요)"
+  usage_note: "either A or B 는 '둘 중 하나' 예요 — You can take either the bus or the subway. 아니라는 말과 함께 쓰면 둘 다 아니라는 뜻이 돼요 — She doesn't speak either English or French. 이걸 한 낱말로 하면 neither 예요."
 
 - word: "else"
   reason: "example: 배우는 낱말 else 가 예문에 아예 없었고 FIX 는 else 를 쓰면서 A1 길이를 지킨다. / usage_note: '다른 사람·다른 것에는 other 를 써야 한다'는 NOW 는 someone else·something else 가 반증하고, FIX 의 뒤에 붙는 else / 앞에 붙는 other 대비는 정확하다. / pattern: 문형이 비어 있던 자리를 실제 결합 꼴로 채웠다. / 문형 자리에 영어가 들어가 있었다: something/anything/someone/what + else"
@@ -5083,9 +5083,9 @@
   pattern: "encourage + 사람 + to + 동사원형"
 
 - word: "prefer"
-  reason: "문형 자리에 영어가 들어가 있었다: prefer + 목적어 (더 좋아하는 것) / prefer + something to something (A보다 B를 더 좋아하다) / usage_note: 원문 첫 문장이 읽히지 않는 비문인 것은 맞고 순서 대비도 사실이지만, 올라온 FIX 의 \"차보다 커피 처럼\" 은 한국어 낱말 뒤를 띄워 예시가 문장에 녹아 버려 인용부호로 묶었다."
+  reason: "문형 자리에 영어가 들어가 있었다: prefer + 목적어 (더 좋아하는 것) / prefer + something to something (A보다 B를 더 좋아하다) / usage_note: 원문 첫 문장이 읽히지 않는 비문인 것은 맞고 순서 대비도 사실이지만, 올라온 FIX 의 \"차보다 커피 처럼\" 은 한국어 낱말 뒤를 띄워 예시가 문장에 녹아 버려 인용부호로 묶었다. / 설명이 예문 'I prefer coffee to tea.' 를 그대로 다시 적었다. 순서가 뒤집히는 규칙을 가르치는 자리라, 뒤집은 문장을 보여 주는 편이 규칙을 눈으로 잡게 한다."
   pattern: "prefer + 목적어 (더 좋아하는 것) / prefer + 명사 to 명사 (A보다 B를 더 좋아하다)"
-  usage_note: "한국어는 '차보다 커피' 처럼 덜 좋아하는 것을 먼저 말하지만, 영어는 순서가 반대예요. 더 좋아하는 것을 먼저 쓰고 to 뒤에 덜 좋아하는 것을 써요 — I prefer coffee to tea."
+  usage_note: "한국어는 '차보다 커피' 처럼 덜 좋아하는 것을 먼저 말하지만, 영어는 순서가 반대예요. 더 좋아하는 것을 먼저 쓰고 to 뒤에 덜 좋아하는 것을 써요 — I prefer tea to coffee. 라고 하면 차를 더 좋아한다는 뜻이 됩니다."
 
 - word: "daily"
   reason: "문형 자리에 영어가 들어가 있었다: adjective: + 명사 (daily routine) / pattern: DB 원문은 지적이 인용한 `adjective: + 명사` 가 아니라 `+ 명사 (daily routine)` 이라 인용은 틀렸지만 낱말 자리가 비어 있다는 실질은 사실이고, FIX 가 그 자리를 채운다. / usage_note: daily 가 명사 앞에만 온다는 원문이 거짓인 것은 맞으나, 올라온 FIX 의 \"every day 는 문장 끝에만 붙여요\" 는 Every day I check my email. 을 부정하는 새 거짓이라 실제로 갈리는 자리(명사 앞)로 바꿨다."
@@ -5467,20 +5467,24 @@
   usage_note: "이야기나 노래에 흐르는 큰 줄기가 theme 이에요 — a common theme in his books. 이야깃거리 하나하나는 a topic, 학교에서 배우는 과목은 a subject 라고 합니다. 놀이공원은 a theme park 예요."
 
 - word: "definition"
-  reason: "문형 자리에 영어가 들어가 있었다: the definition of + something"
+  reason: "문형 자리에 영어가 들어가 있었다: the definition of + something / usage_note: 한국어 '의미' 와 견주며 시작해 영어로는 definition 한 낱말만 나온다. confused_with 에 둔 meaning 을 영어 쪽에서 갈라 주지 않았다."
   pattern: "the definition of + 명사"
+  usage_note: "definition 은 사전에 실린 것처럼 낱말의 뜻을 딱 잘라 풀이한 것이에요. 그 말이 담고 있는 뜻 자체는 meaning 이라고 하고, 물어볼 때는 What does 'happy' mean? 이라고 해요."
 
 - word: "succeed"
-  reason: "문형 자리에 영어가 들어가 있었다: succeed + in + something"
-  pattern: "succeed + in + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: succeed + in + something / usage_note: \"'succeed in' 뒤에는 목적어가 필요해요\" 만으로는 그 자리에 -ing 를 넣어야 한다는 것이 전해지지 않는다. 해석도 '합격해서 성공했어요' 로 두 일을 나란히 놓아 뜻이 어긋난다."
+  pattern: "succeed + in + 동사-ing"
+  usage_note: "succeed 뒤에는 in 을 붙이고 그다음 동사에는 -ing 를 붙여요 — succeed in finding a job. 이름씨는 success, 그림씨는 successful 이에요 — He is a successful writer."
 
 - word: "seriously"
-  reason: "문형 자리에 영어가 들어가 있었다: seriously + about + something"
-  pattern: "seriously + about + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: seriously + about + something / pattern: 'seriously + about + 명사' 가 틀렸다 — 예문의 about 은 seriously 가 아니라 thinking 에 붙은 것이다. / usage_note: 한국어 '진심으로' 와 '진지하게' 를 견주고 끝나 영어 정보가 없고, 가장 흔한 쓰임인 Seriously? 가 빠졌다."
+  pattern: "동사 + seriously / seriously + 동사-ing"
+  usage_note: "seriously 는 '농담이 아니라 진짜로' 라는 뜻으로 많이 써요 — Seriously? 는 '진짜?', Are you serious? 는 '진심이야?' 예요. really 는 그냥 '정말' 이라는 뜻으로 더 가볍게 쓰입니다."
 
 - word: "practical"
-  reason: "문형 자리에 영어가 들어가 있었다: adjective + about/for + something"
-  pattern: "형용사 + about/for + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + about/for + something / pattern: '형용사 + about/for + 명사' 는 품사 이름을 형태 자리에 적은 것이고 예문과도 맞지 않는다. / usage_note: '다르예요' 오타가 있고, 한국어 '실용적인' 과 '실제적인' 만 견주다 끝난다."
+  pattern: "practical + 명사 (예: a practical gift)"
+  usage_note: "practical 은 실제로 쓸모가 있다는 뜻이에요 — 두고두고 쓸 수 있는 선물을 그렇게 부릅니다. actual 과 real 은 '진짜의, 실제의' 라는 아주 다른 뜻이라 the actual price 는 '실제 가격' 이 돼요."
 
 - word: "cast"
   reason: "문형 자리에 영어가 들어가 있었다: cast + 목적어 (물건), cast + something + at + 대상"
@@ -7147,8 +7151,11 @@
   confused_with: ["necessary"]
 
 - word: "employment"
-  reason: "문형 자리에 영어가 들어가 있었다: noun (불가산명사)"
-  pattern: "the + employment"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (불가산명사) / example: 'What is your employment?' 는 영어에서 쓰지 않는 물음이다 — 직업을 물을 때는 What do you do? 라고 한다. / usage_note: 그 어색한 문장을 '좀 더 공식적인 표현' 이라며 오히려 권하고 있었다."
+  meaning_ko: "고용, 일자리를 얻어 일하는 것"
+  pattern: "look for / find + employment"
+  example: "She is looking for employment."
+  usage_note: "employment 는 서류나 뉴스에 나오는 딱딱한 말이라 find employment(일자리를 얻다)처럼 씁니다. 사람에게 직업을 물을 때는 What do you do? 라고 해요. 하나하나의 일자리는 job, 하는 일 자체는 work 라고 합니다."
 
 - word: "relief"
   reason: "문형 자리에 영어가 들어가 있었다: noun (구체적인 상황 설명 필요)"
@@ -7870,9 +7877,10 @@
   usage_note: "주어가 한 일이 그 사람 자신에게 돌아올 때 herself 를 써요. She hurt herself. 는 그녀가 다친 것이고 She hurt her. 는 다른 여자를 다치게 했다는 뜻이라 완전히 달라집니다. 혼자 힘으로 했다고 힘줄 때도 써요 — She made it herself."
 
 - word: "ourselves"
-  reason: "문형 자리에 'reflexive pronoun' 이라는 영어 문법 용어가 들어가 있었다."
+  reason: "문형 자리에 'reflexive pronoun' 이라는 영어 문법 용어가 들어가 있었다. / meaning_ko: '우리 자신들' 은 겹말이다. / usage_note: 설명 안의 예 'We hurt ourselves.' 가 예문과 글자까지 같아 같은 문장을 두 번 읽힌다. by ourselves 도 빠졌다."
+  meaning_ko: "우리 자신, 우리 스스로"
   pattern: "동사 + ourselves"
-  usage_note: "'우리 자신' 이에요. 하는 사람과 받는 사람이 같을 때 써요 — We hurt ourselves. 한 사람이면 myself, 그들이면 themselves 예요."
+  usage_note: "하는 사람과 받는 사람이 같을 때 써요 — We enjoyed ourselves(우리는 즐겁게 보냈어요). 한 사람이면 myself, 그들이면 themselves 예요. by ourselves 는 '우리끼리, 우리 힘으로' 라는 뜻이에요."
 
 - word: "administration"
   reason: "pattern: 지적은 옳고 선별기도 지금 이 행에 \"of 가 예문에 없어요\"를 띄우고 있지만, 원안은 81자라 pattern_too_long 에 걸리고 세미콜론이라 of 요구가 그대로 남는다 — 슬래시로 줄인 이 안은 지적이 없다(실측)."
@@ -10376,3 +10384,179 @@
 - word: "guarantee"
   reason: "usage_note: '보장하는 내용이 명확하게 있어야 해요' 는 학습자가 아니라 글 쓰는 사람에게 하는 말이고, 물건에 딸린 품질 보증서라는 흔한 이름씨 쓰임이 빠졌다. / 되읽기: 설명의 예 'We guarantee free repairs.' 가 예문과 주어만 다르다."
   usage_note: "꼭 그렇게 해 주겠다고 약속하는 것이 guarantee 예요 — I guarantee you'll like it. 물건에 딸린 품질 보증서도 a guarantee 라고 합니다 — a two-year guarantee. 뜻이 비슷한 promise 보다 무거운 말이에요."
+
+- word: "judgment"
+  reason: "example: 'I have my own judgment.' 는 영어로 어색하다 — 이 자리에는 trust 를 쓴다. 해석 '제가 가지고 있는 판단이 있어요' 도 같은 말을 두 번 한다. / usage_note: 영국식 철자(judgement)가 빠져 있었다. / 되읽기: 설명을 '스스로 헤아려 내리는 판단' 과 opinion 중심으로 고쳤는데 뜻 칸의 '(법원의 판결도 가능)' 만 남아 어디에도 이어지지 않는다. 곁가지가 아니라 둘째 뜻으로 세운다."
+  meaning_ko: "판단; (법원의) 판결"
+  pattern: "trust + 소유격 + judgment"
+  example: "I trust my own judgment."
+  usage_note: "무엇이 옳은지 스스로 헤아려 내리는 판단이 judgment 예요 — trust your judgment(네 판단을 믿어라). 그냥 생각이나 의견은 opinion 이라고 합니다. 영국식 철자는 judgement 로 e 가 하나 더 들어가요."
+
+- word: "odd"
+  reason: "usage_note: \"한국어 '기이한'보다 더 강하게 이상함을 표현해요\" 가 거꾸로다 — odd 는 strange·weird 보다 오히려 가벼운 말이다. confused_with 에 둘을 두고도 세기를 뒤집어 놓았다."
+  usage_note: "odd 는 '좀 이상한' 정도로 가볍게 쓰는 말이에요. strange 는 그보다 세고, weird 는 가장 세서 '희한하다' 에 가까워요. an odd question 은 '좀 뜬금없는 질문' 같은 느낌이에요."
+
+- word: "approve"
+  reason: "usage_note: \"승인을 요청할 때는 'approve' 가 아니라 'get approval' 을 써요\" 가 틀렸다 — Can you approve this plan? 은 멀쩡한 부탁이다. 정작 뜻이 달라지는 approve of 가 빠져 있었다."
+  usage_note: "approve 는 허락해 주는 쪽이 하는 일이에요. 부탁할 때도 그대로 써서 Can you approve this plan? 이라고 하면 돼요. 뒤에 of 를 붙인 approve of 는 뜻이 달라져서 '마음에 들어 하다, 찬성하다' 가 됩니다 — My parents approve of my plan."
+
+- word: "loan"
+  reason: "meaning_ko: '대출하다' 라고 움직씨로 적어 놓고 예문은 이름씨 a loan 이다. / usage_note: \"'I borrowed a book from him.' 는 '그가 책을 빌려 주었어요.' 가 자연스러워요\" 는 주어를 뒤바꾼 오역이다 — 빌린 쪽은 나다."
+  meaning_ko: "대출, 빌린 돈"
+  pattern: "take/get a loan + from + 은행"
+  usage_note: "loan 은 은행에서 빌리는 돈을 가리키는 말이라 take a loan, pay back a loan 처럼 써요. 물건을 빌려 오는 쪽은 borrow, 빌려주는 쪽은 lend 예요 — I borrowed a book from him. 은 '나는 그에게서 책을 빌렸어요' 입니다."
+
+- word: "elect"
+  reason: "usage_note: 첫 문장이 뜻 칸의 되풀이이고, 이 낱말에서 갈라 나오는 election·elected 가 빠져 있었다."
+  usage_note: "투표로 뽑는 것이 elect 예요 — 뒤에 사람과 자리를 나란히 놓아 elect him president 라고 씁니다. 뽑는 일 자체는 an election, 뽑힌 사람에게는 elected 를 붙여 the elected leader 라고 해요. 그냥 고르는 것은 choose 예요."
+
+- word: "farmer"
+  reason: "usage_note: 첫 문장 '농부를 뜻하는 단어예요' 가 뜻 칸의 되풀이이고, 뒤이어 영어 문장과 그 해석을 나란히 적어 두었을 뿐이다."
+  usage_note: "농사를 짓는 사람이 farmer 예요. 농장은 a farm, 농사짓는 일은 farming 이라고 합니다 — I like farming. 요즘은 남녀를 가리지 않고 farmer 라고 불러요."
+
+- word: "comparison"
+  reason: "usage_note: between 과 among 을 가른 것은 맞지만 confused_with 의 difference 를 갈라 주지 않았다. 해석도 '차이점을 비교해 보세요' 로 겹말이 되어 있다."
+  usage_note: "두 가지를 견줄 때는 a comparison between A and B 라고 해요. 셋 이상을 한꺼번에 견줄 때는 among 을 씁니다. 두 가지가 어떻게 다른지를 짚는 말은 difference 예요 — the difference between them."
+
+- word: "characteristic"
+  reason: "usage_note: \"'He is honest and kind.' 는 'trait' 이 더 적합해요\" 는 문장과 낱말을 견주는 말이라 뜻이 통하지 않는다. confused_with 의 feature 도 갈라 주지 않았다."
+  usage_note: "characteristic 은 사람이든 물건이든 남과 구별되는 점을 두루 가리켜요. 사람의 성격 하나하나를 짚을 때는 trait 을 자주 써요 — Honesty is his best trait. 물건이나 기계에 딸린 기능은 feature 라고 합니다."
+
+- word: "license"
+  reason: "usage_note: '라이선스는 문서를 의미하지만' 은 외래어로 시작해 같은 말을 되풀이하고, confused_with 의 permit 을 갈라 주지 않았다."
+  pattern: "a license + to + 동사원형 / a license + for + 활동"
+  usage_note: "license 는 자격을 갖췄다고 나라나 기관이 내주는 증서예요 — 운전면허는 a driver's license 라고 합니다. permit 은 어떤 일을 한동안 해도 된다고 내주는 허가증이에요 — a parking permit 처럼요."
+
+- word: "rely"
+  reason: "usage_note: \"rely 는 '의지하다' 가 아니라 '신뢰하다' 의 의미를 더 강하게\" 라고 해 놓고 바로 다음 문장에서 \"'당신에 의존해요' 에 더 가까워요\" 라며 앞말을 뒤집는다."
+  usage_note: "rely 뒤에는 반드시 on 이 붙어요 — You can rely on me. 뜻은 depend on 과 거의 같아서 '믿고 기댄다' 는 말이에요. trust 는 기대지 않아도 마음으로 믿는다는 뜻이라 뒤에 on 없이 I trust you. 라고 씁니다."
+
+- word: "desk"
+  reason: "usage_note: '테이블은 식탁이나 큰 테이블을 말해요' 는 같은 낱말로 자기를 풀이하고, 'desk 는 주로 책상에 쓰여요' 도 뜻 칸의 되풀이다."
+  usage_note: "desk 는 공부하거나 일할 때 앉는, 보통 서랍이 달린 책상이에요. 밥을 먹거나 물건을 올려 두는 상은 table 이라고 해요 — We eat at the table."
+
+- word: "permit"
+  reason: "usage_note: 마지막 문장이 한국어 '허락하다' 와 '허가하다' 를 견주는 말이라 영어를 배우는 데 쓸모가 없고, 안내문에서 만나는 흔한 꼴(Smoking is not permitted)이 빠졌다."
+  pattern: "permit + 사람 + to + 동사원형 / be permitted to + 동사원형"
+  usage_note: "permit 은 허락해 주는 쪽에서 쓰고, 허락을 받는 쪽은 be permitted to 로 말해요. 일상 대화에서는 allow 가 훨씬 흔하고, permit 은 규정이나 안내문처럼 딱딱한 자리에 나와요 — Smoking is not permitted here."
+
+- word: "wild"
+  reason: "meaning_ko: '와일드한' 은 뜻풀이가 아니라 외래어를 그대로 옮긴 것이다. / pattern: 'wild + about/with + 목적어' 는 예문과도 설명과도 이어지지 않는다."
+  meaning_ko: "야생의, 사람 손을 타지 않은; 몹시 신나고 요란한"
+  pattern: "wild + 명사 (동물, 꽃 등) / be + wild"
+  usage_note: "사람이 기르지 않는 동물이나 식물에 wild animal, wild flower 처럼 써요. 사람이나 자리에 쓰면 '정신없이 신나고 요란하다' 는 뜻이 돼요 — It was a wild party. savage 는 '사납고 거칠다' 는 뜻이라 훨씬 센 말입니다."
+
+- word: "empty"
+  reason: "usage_note: '비우다와 혼동하지 마세요' 로 시작해 놓고 뒤에서 그 둘을 다 쓴다고 말해 앞말을 지운다. 반대말 full·fill 도 빠져 있었다."
+  usage_note: "empty 는 '비어 있는' 이라는 상태로도, '비우다' 라는 동작으로도 써요 — I emptied my bag. 반대말은 full(가득 찬)과 fill(채우다)이에요 — Please fill the glass."
+
+- word: "commission"
+  reason: "pattern: 'commission: 명사' 는 형태 표기가 아니라 사전 항목을 옮긴 것이다. / meaning_ko: '수수료를 받는 사람' 은 commission 의 뜻이 아니다. / usage_note: 'commissioner 은 수수료를 받는 사람을 의미하지 않아요' 는 아니라는 말만 하고 무엇인지는 말하지 않는다."
+  meaning_ko: "수수료, 물건을 팔아 주고 받는 몫"
+  pattern: "get/earn a commission + on/from + 판매"
+  usage_note: "commission 은 물건을 팔아 주고 그 값의 일부를 받는 돈이에요 — work on commission 은 '수수료를 받고 일하다' 입니다. 미리 정해진 요금은 fee 라고 해요 — a delivery fee."
+  confused_with: ["fee"]
+
+- word: "unique"
+  reason: "usage_note: '혼동하지 마세요' 로 special 을 짚고 무엇이 다른지는 말하지 않는다. / confused_with: 'one of a kind' 는 낱말이 아니라 구다. / 되읽기: 설명이 '그냥 남다르고 좋다는 말은 special 이 알맞아요' 라고 special 을 갈라 놓았는데 뜻 칸에는 '특별한' 이 그대로 남아 설명과 부딪친다."
+  meaning_ko: "세상에 하나뿐인, 유일한"
+  usage_note: "unique 는 '이런 건 세상에 하나뿐' 이라는 뜻이에요 — a unique opportunity 는 다시 오기 힘든 기회를 말해요. 그냥 남다르고 좋다는 말은 special 이 알맞아요 — a special gift."
+  confused_with: ["special", "rare"]
+
+- word: "association"
+  reason: "usage_note: 'association 은 일반적으로 명사로 쓰이고, associate 는 동사' 는 배울 것이 없는 되풀이이고, 사람들이 모여 만든 단체라는 흔한 뜻이 빠졌다. / 되읽기: 설명에 '사람들이 모여 만든 단체' 를 넣었는데 뜻 칸은 '연관, 관련' 뿐이라, 학부모회 같은 뜻이 뜻 칸에서 빠진 채다."
+  meaning_ko: "연관, 관련; (사람들이 모인) 단체"
+  usage_note: "association 은 두 가지가 서로 이어져 있다는 뜻이라 뒤에 with 를 붙여 써요. 사람들이 모여 만든 단체를 가리키기도 해서 a parents' association 은 학부모회예요."
+
+- word: "instrument"
+  reason: "usage_note: \"'tool' 보다 'instrument' 가 더 정확해요\" 는 잣대가 없는 말이다 — 둘은 정확도가 아니라 쓰는 자리가 다르다. / 되읽기: 설명을 '손으로 쓰는 연장은 tool, instrument 는 정밀한 기구' 로 갈라 놓았는데 뜻 칸에는 '도구' 가 남아 방금 tool 쪽으로 넘긴 말을 도로 끌어온다."
+  meaning_ko: "(정밀한) 기구; 악기"
+  usage_note: "망치나 드라이버처럼 손으로 쓰는 연장은 tool 이라고 해요. instrument 는 의사나 과학자가 쓰는 정밀한 기구를 가리킵니다. 악기라는 뜻으로도 흔히 써서 I play an instrument. 라고 하면 '악기를 다뤄요' 가 돼요."
+
+- word: "investor"
+  reason: "usage_note: '투자자와 investor 는 같은 뜻이지만' 은 같은 말을 두 번 한 것이고, 'investee' 는 왕초보가 만날 낱말이 아니다. 정작 invest·investment 로 이어지는 가족이 빠졌다."
+  usage_note: "investor 는 돈을 대는 사람이에요. 움직씨는 invest 로 뒤에 in 을 붙여요 — He invested in the company. 그렇게 넣은 돈은 investment 라고 합니다."
+  confused_with: ["investment", "banker"]
+
+- word: "tea"
+  reason: "usage_note: \"영어 'tea' 는 일반적으로 녹차를 가리키고\" 가 틀렸다 — 영어에서 tea 라고만 하면 보통 홍차다. 학습자가 이 말을 믿으면 주문한 것과 다른 차가 나온다. / 되읽기: 설명이 '영어에서 tea 라고만 하면 보통 홍차' 인데 뜻 칸은 '(녹차, 홍차 등)' 으로 녹차를 앞에 놓아 반대 인상을 준다."
+  meaning_ko: "차 (보통 홍차)"
+  pattern: "some tea / a cup of tea"
+  usage_note: "영어에서 tea 라고만 하면 보통 홍차를 뜻해요. 녹차는 green tea 라고 따로 말합니다. 한 잔을 시킬 때는 a cup of tea, please. 라고 해요."
+  confused_with: ["coffee", "water"]
+
+- word: "lovely"
+  reason: "usage_note: 'lovely 는 감정을 더 강하게 표현해요' 는 잴 수 없는 말이고, 뒤 문장은 영어 문장과 그 해석을 나란히 적어 둔 것이다. beautiful·pretty 와의 갈림이 confused_with 에만 있었다."
+  pattern: "lovely + 명사 / be + lovely"
+  usage_note: "lovely 는 보기 좋고 마음에 든다고 칭찬할 때 두루 써요 — 옷, 집, 날씨, 저녁 식사에도 씁니다. beautiful 은 크게 감탄할 때, pretty 는 주로 겉모습이 곱고 귀여울 때 써요."
+
+- word: "soft"
+  reason: "usage_note: mild 와 견주는 데 대부분을 쓰는데 mild 는 왕초보가 soft 와 헷갈릴 짝이 아니다. 정작 흔한 짝인 a soft voice·a soft drink 와 반대말 hard 가 빠졌다."
+  pattern: "soft + 명사 / be + soft"
+  usage_note: "만졌을 때 부드럽다는 뜻이에요 — soft skin, a soft pillow. 소리가 작고 조용할 때도 써서 in a soft voice 라고 합니다. 술이 안 든 음료는 a soft drink 예요. 반대말은 hard 입니다."
+  confused_with: ["hard", "mild"]
+
+- word: "row"
+  reason: "meaning_ko·pattern: '일렬로 나열하다' 는 row 의 움직씨 뜻이 아니다 — 움직씨 row 는 노를 젓는 것이다. / usage_note: '갈등' 쪽 row 를 말하면서 소리가 다르다는 것을 빠뜨려, 학습자가 같은 낱말로 외우게 된다."
+  meaning_ko: "줄, 나란히 늘어선 줄 (동사로는 노를 젓다)"
+  pattern: "in a row / a row of + 명사"
+  usage_note: "in a row 는 '나란히' 라는 뜻도 되고 '연달아' 라는 뜻도 돼요 — three days in a row 는 '사흘 연속' 입니다. 극장이나 교실에서 앉는 줄도 row 라고 해요 — the front row. 같은 철자로 '말다툼' 이라는 뜻도 있는데 그때는 소리가 '라우' 로 달라집니다."
+
+- word: "youth"
+  reason: "example: 'He is a young man full of youth.' 는 같은 뜻을 두 번 얹어 영어로 어색하다. / usage_note: '청년(들)은 주로 어린 나이에 일하는 사람을 말해요' 는 근거가 없다."
+  pattern: "in + 소유격 + youth"
+  example: "I played soccer in my youth."
+  usage_note: "youth 는 보통 '젊은 시절' 을 뜻해요 — in my youth 는 '내가 젊었을 때' 입니다. 젊은 사람들을 통틀어 가리킬 때도 the youth 라고 해요. young 은 '젊은' 이라는 뜻의 그림씨라서 a young man 처럼 명사 앞에 붙입니다."
+
+- word: "lock"
+  reason: "meaning_ko: '잠금하다' 는 한국어에 없는 말이다. / usage_note: key 와 견주는 데 그쳐 짝이 되는 unlock 과 이름씨 쓰임이 빠졌다."
+  meaning_ko: "잠그다 (이름씨로는 자물쇠)"
+  pattern: "lock + 목적어 (문, 서랍 등)"
+  usage_note: "잠근 것을 다시 여는 것은 unlock 이에요 — Please unlock the door. 문에 달린 자물쇠 자체도 lock 이라고 부릅니다 — The lock is broken."
+
+- word: "fuel"
+  reason: "pattern: 'fuel + 에 + 연료 종류' 에 한국어 조사 '에' 가 들어가 형태 표기가 아니다. / usage_note: '유류와 혼동하지 마세요' 로 시작해 한국어 낱말 이야기로 끝나고, 미국·영국이 갈리는 gas·petrol 이 빠졌다."
+  pattern: "명사 + fuel (예: diesel fuel)"
+  usage_note: "fuel 은 기름, 가스, 석탄처럼 태워서 힘을 내는 것을 통틀어 부르는 말이에요. 차에 넣는 휘발유는 미국에서 gas 나 gasoline, 영국에서 petrol 이라고 해요 — I need to get gas."
+
+- word: "expectation"
+  reason: "pattern: 'a + expectation' 은 관사가 틀렸고(an), 예문은 -s 를 붙인 꼴이다. / usage_note: \"'I have a hope' 은 자연스럽지 않아요\" 는 표제어가 아닌 낱말을 두고 하는 곁가지이고, 움직씨 expect 가 빠졌다."
+  pattern: "have high + expectations"
+  usage_note: "expectation 은 '그렇게 되겠지' 하고 여기는 마음이고, hope 는 '그랬으면 좋겠다' 하고 바라는 마음이에요. 움직씨는 expect 예요 — I expect good news. 기대가 크다고 할 때는 -s 를 붙여 씁니다."
+
+- word: "celebrate"
+  reason: "usage_note: confused_with 에 remember 를 두고 '기억한다는 의미예요' 라고만 해 정작 학습자가 저지르는 실수 — 사람에게 대고 celebrate 라고 하는 것 — 을 짚지 못한다. 해석도 We 를 '저는' 으로 옮겼다."
+  usage_note: "celebrate 뒤에는 축하하는 일을 꼭 써요 — celebrate the New Year 처럼요. 사람에게 대고 '축하해!' 라고 말할 때는 celebrate 를 쓰지 않고 Congratulations! 라고 합니다."
+  confused_with: ["congratulate", "commemorate"]
+
+- word: "sexual"
+  reason: "example: 'a sexual education class' 는 영어로 쓰지 않는 짝이다 — 성교육은 sex education 이다. / usage_note: 한국어 '성적' 과 '성적인' 을 견주다 끝나 영어 쓰임을 말하지 않는다."
+  example: "Sexual harassment is not allowed at work."
+  usage_note: "sexual 은 짝이 정해진 표현에서 주로 써요 — sexual health(성 건강)처럼요. 학교에서 배우는 성교육은 sexual 이 아니라 sex education 이라고 합니다."
+
+- word: "shoulder"
+  reason: "usage_note: 대부분을 '책임' 이라는 드문 뜻에 쓰고 스스로 '흔하지 않아요' 라고 적어 두었다. A1 학습자에게 필요한 것은 -s 를 붙이는 자리다."
+  usage_note: "양쪽 어깨를 함께 말할 때는 -s 를 붙여 shoulders 라고 해요 — My shoulders hurt. 는 '어깨가 아파요' 입니다. 나란히 붙어 선 모습은 shoulder to shoulder 라고 해요."
+  confused_with: ["arm", "neck"]
+
+- word: "breath"
+  reason: "meaning_ko: '숨 (일시적으로 멈추는 것)' 은 숨을 참는 것과 숨 자체를 뒤섞었다. / usage_note: breath 와 breathe 의 갈림이 confused_with 에만 있고 설명에는 없다. / confused_with: respiration 은 왕초보 어휘가 아니다."
+  meaning_ko: "숨, 한 번 들이쉬고 내쉬는 숨"
+  usage_note: "breath 는 이름씨 '숨' 이고, breathe 는 움직씨 '숨 쉬다' 예요 — Breathe slowly. 처럼 씁니다. 숨을 참을 때는 hold your breath 라고 해요."
+  confused_with: ["breathe"]
+
+- word: "import"
+  reason: "usage_note: 'export 와 혼동하지 않도록 주의하세요' 로 끝나며 export 가 무엇인지는 말하지 않는다. 한국어 '수입' 의 두 뜻(들여오기·버는 돈)이 갈리는 자리도 빠졌다."
+  usage_note: "import 는 물건을 나라 안으로 들여오는 것, export 는 나라 밖으로 내보내는 것이에요 — Korea exports cars. 한국어 '수입' 에는 '버는 돈' 이라는 뜻도 있는데 그것은 income 이라고 합니다."
+
+- word: "bottle"
+  reason: "usage_note: \"'flask' 는 작은 병\" 은 왕초보가 만날 낱말이 아니고, 첫 문장도 '다른 단어를 쓰는 게 자연스러워요' 라고만 해 무엇을 쓰라는지 말하지 않는다."
+  usage_note: "물이나 음료를 담는, 목이 좁은 병이 bottle 이에요. 잼이나 김치처럼 입이 넓은 병은 jar 라고 해요. 양을 말할 때는 of 를 넣어 두 병이면 two bottles of water 라고 합니다."
+  confused_with: ["jar", "can"]
+
+- word: "sheet"
+  reason: "meaning_ko·usage_note: '문서 시트'·'엑셀 시트' 는 프로그램 화면 이야기라 왕초보 어휘가 아니다. 정작 침대보라는 흔한 뜻이 곁가지로 밀려 있었다. / confused_with: map 은 sheet 와 헷갈릴 짝이 아니다."
+  meaning_ko: "종이 한 장; 침대에 까는 천"
+  pattern: "a sheet of + 명사 (예: a sheet of paper)"
+  usage_note: "종이 한 장은 a sheet of paper 라고 해요. 침대에 까는 천도 sheet 라서 clean sheets 는 '깨끗한 침대보' 입니다. 악보는 sheet music 이라고 해요."
+  confused_with: ["paper", "page"]
