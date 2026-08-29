@@ -3104,3 +3104,47 @@ passes:
   - via
   - weak
   - yard
+- id: top1800-a
+  date: '2026-08-29'
+  what: 빈도 1743~1782위 40개 — 40개 모두가 고칠 것이었다(직접 읽음)
+  words:
+  - absence
+  - academic
+  - accuse
+  - acknowledge
+  - alive
+  - construct
+  - critic
+  - dozen
+  - east
+  - emotion
+  - enormous
+  - equally
+  - estate
+  - expose
+  - furthermore
+  - gap
+  - hat
+  - household
+  - intention
+  - meanwhile
+  - medicine
+  - minimum
+  - northern
+  - permanent
+  - professor
+  - pursue
+  - rare
+  - remark
+  - resolve
+  - reward
+  - scientific
+  - settlement
+  - shut
+  - sweet
+  - tall
+  - variable
+  - victory
+  - voter
+  - wage
+  - widely

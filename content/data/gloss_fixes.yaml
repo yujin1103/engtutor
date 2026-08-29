@@ -3589,3 +3589,55 @@
 - word: "sad"
   example_ko: "그 소식 때문에 슬퍼요."
   reason: "'그 소식을 들었을 때' 는 영어에 없는 '들었을 때' 를 보탠 것이다."
+
+- word: "reward"
+  example_ko: "그 회사는 그가 열심히 일한 것에 상을 줬어요."
+  reason: "'그의 열심히 일한 것에 대해 그를 보상했습니다' 는 한국어로 성립하지 않는다."
+
+- word: "hat"
+  example_ko: "새 모자가 필요해요."
+  reason: "'새로운 모자를 필요로 해요' 는 번역투다."
+
+- word: "accuse"
+  example_ko: "그는 그녀가 돈을 훔쳤다고 비난했어요."
+  reason: "'혐의를 들였습니다' 는 한국어에 없는 말이다."
+
+- word: "wage"
+  example_ko: "시급이 10달러예요."
+  reason: "바뀐 예문에 맞췄다."
+
+- word: "absence"
+  example_ko: "그가 없어서 우리는 걱정했어요."
+  reason: "'우리 모두' 는 영어에 없는 '모두' 를 보탠 것이다."
+
+- word: "remark"
+  example_ko: "그는 날씨 이야기를 한마디 던졌어요."
+  reason: "'날씨에 대해 한 말을 했어요' 는 겹말이라 성립하지 않는다."
+
+- word: "dozen"
+  example_ko: "저는 계란 열두 개를 샀어요."
+  reason: "'난' 은 다른 항목과 말투가 갈린다."
+
+- word: "gap"
+  example_ko: "두 책 사이에 틈이 있어요."
+  reason: "'갭' 은 영어를 소리 나는 대로 옮긴 것이라 뜻풀이가 되지 못한다."
+
+- word: "expose"
+  example_ko: "피부를 햇볕에 그대로 두지 마세요."
+  reason: "바뀐 예문에 맞췄다. 옛 예문 'The camera can expose your skin to sunlight.' 은 성립하지 않는 문장이었다."
+
+- word: "victory"
+  example_ko: "우리는 승리를 축하했어요."
+  reason: "'승리로 축하했습니다' 는 조사가 틀려 성립하지 않는다."
+
+- word: "enormous"
+  example_ko: "그 코끼리는 엄청나게 커요."
+  reason: "**해석이 예문과 다른 동물을 가리켰다** — 예문은 elephant(코끼리)인데 해석은 '사자' 였다."
+
+- word: "settlement"
+  example_ko: "그 마을은 강 근처에 세워졌어요."
+  reason: "'정착지는 강 근처에 지어졌어요' 는 '정착지' 라는 딱딱한 말과 '지어지다' 가 겹쳐 어색하다."
+
+- word: "household"
+  example_ko: "저희 집은 네 식구예요."
+  reason: "뜻을 '한집에 사는 사람들' 로 넓혔는데 해석이 '가족' 이라 도로 좁혔다."

@@ -5607,28 +5607,36 @@
   usage_note: "위에서 정해 아래로 지우는 것이 impose 예요 — impose a tax, impose a fine. 무엇을 누구에게 지우는지는 on 으로 붙여요. 해 보라고 권하는 suggest 와는 아주 다른 말이에요."
 
 - word: "intention"
-  reason: "문형 자리에 영어가 들어가 있었다: have + intention + of + doing something"
+  reason: "문형 자리에 영어가 들어가 있었다: have + intention + of + doing something / \"'I have an intention to go' 는 자연스럽지 않아요\" 는 지나친 말이다 — of -ing 쪽이 훨씬 흔할 뿐 to 부정사 꼴도 쓴다. / plan 과의 갈림도 '더 강한 느낌' 이라는 잴 수 없는 말이다."
   pattern: "have + intention + of + -ing"
+  usage_note: "무엇을 하려는 마음이 intention 이에요 — have no intention of leaving 처럼 of 뒤에 -ing 를 붙이는 꼴이 가장 흔해요. plan 은 언제 어떻게 할지까지 짜 둔 것이고, purpose 는 그 일을 하는 까닭이에요 — the purpose of this meeting."
 
 - word: "settlement"
-  reason: "문형 자리에 영어가 들어가 있었다: noun (a settlement)"
-  pattern: "명사 (a settlement)"
+  reason: "문형 자리에 영어가 들어가 있었다: noun (a settlement) / 문형 '명사 (a settlement)' 는 품사 이름을 형태 자리에 적은 것이다. / confused_with 의 'settlements' 는 같은 낱말의 복수형이라 헷갈리는 낱말이 아니다. / 설명은 settle down 을 끌어와 정작 settle(자리를 잡다)과의 관계를 흐린다. / 되읽기: 설명과 해석을 '마을' 로 고쳤는데 뜻 칸 괄호는 '특히 이민자들이 정착한 곳' 이라 좁게 못 박고 있었다."
+  meaning_ko: "(새로 이룬) 마을, 정착지"
+  pattern: "a/the + settlement"
+  usage_note: "사람들이 새로 자리를 잡아 이룬 마을이 settlement 예요 — an old settlement by the river. 자리를 잡는 동작은 settle 이라서 They settled in Canada. 라고 합니다. 다툼을 끝내고 합의한 것도 settlement 라고 해요."
+  confused_with: ["settle", "village"]
 
 - word: "widely"
-  reason: "문형 자리에 영어가 들어가 있었다: adverb + 형용사 (well-known, widely used)"
-  pattern: "부사 + 형용사 (well-known, widely used)"
+  reason: "문형 자리에 영어가 들어가 있었다: adverb + 형용사 (well-known, widely used) / 문형 '부사 + 형용사 (well-known, widely used)' 는 품사 이름을 형태 자리에 적은 것이다. / 설명은 한국어 '널리' 와 '넓게' 를 견주다 끝난다."
+  pattern: "widely + 과거분사 (used, known 등)"
+  usage_note: "많은 사람이나 넓은 곳에 퍼져 있다는 뜻이라 widely used, widely known 처럼 뒤에 -ed 꼴이 자주 와요. broadly 는 '크게 보아' 라는 뜻이라 broadly speaking 처럼 씁니다. 흔하다고 할 때는 commonly 를 써요."
 
 - word: "northern"
-  reason: "문형 자리에 영어가 들어가 있었다: adjective: + 명사 (the northern part)"
-  pattern: "+ 명사 (the northern part)"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: + 명사 (the northern part) / 문형 '+ 명사 (the northern part)' 는 표제어가 빠져 형태가 되지 않는다. / 설명의 \"'The north' 는 명사로 쓸 때는 'the northern part' 처럼 명사가 필요해요\" 는 문장이 엉켜 뜻이 통하지 않는다."
+  pattern: "northern + 명사"
+  usage_note: "northern 은 명사 앞에 붙는 그림씨예요 — the northern part, northern Europe. 방위 자체를 가리키는 이름씨는 north 라서 the north of the country 라고 합니다. 북쪽으로 간다고 할 때는 go north 예요."
 
 - word: "shut"
-  reason: "문형 자리에 영어가 들어가 있었다: shut + 목적어 (문, 기계 등), shut + someone up (누군가를 조용히 하다)"
-  pattern: "shut + 목적어 (문, 기계 등), shut + 사람 up (누군가를 조용히 하다)"
+  reason: "문형 자리에 영어가 들어가 있었다: shut + 목적어 (문, 기계 등), shut + someone up (누군가를 조용히 하다) / 설명에 '이예요' 오타가 두 번 있고, close 와 무엇이 다른지는 confused_with 에만 있고 설명에는 없다. / 되읽기: 문형의 'shut + 사람 up (누군가를 조용히 하다)' 는 한국어가 어색하고, 설명이 Shut up! 을 거친 말이라고 짚은 것과도 어긋나 학습자에게 권하는 꼴이 된다."
+  pattern: "shut + 목적어 (문·뚜껑)"
+  usage_note: "문이나 뚜껑을 닫는 것이 shut 이에요 — 지난 일도 모양이 그대로 shut 입니다. close 와 뜻이 거의 같은데 shut 이 조금 더 세게 들려요. Shut up! 은 '조용히 해!' 라는 거친 말이라 조심해서 써야 해요."
 
 - word: "tall"
-  reason: "문형 자리에 영어가 들어가 있었다: adjective: a/the + tall + 명사"
-  pattern: "a/the + tall + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: a/the + tall + 명사 / 설명이 'The house is tall.' 을 예로 들었는데 집에는 보통 tall 을 쓰지 않는다 — 사람이나 나무, 높이 솟은 건물에 쓴다. high 와 갈리는 기준(바닥에서 이어져 솟았는가)도 없다. / 되읽기: 문형 'a/the + tall + 명사' 는 명사 앞 자리만 담는데, 예문 'He is a tall man.' 말고도 How tall are you? 처럼 be 동사 뒤에 오는 자리가 흔하다."
+  pattern: "be + tall / tall + 명사"
+  usage_note: "사람이나 나무처럼 바닥에서 위로 길게 솟은 것에 써요 — a tall tree, a tall building. 산이나 담처럼 높이만 말할 때는 high 를 씁니다 — a high mountain. 키를 물을 때는 How tall are you? 라고 해요."
 
 - word: "priority"
   reason: "문형 자리에 영어가 들어가 있었다: priority + 명사 (something) / have + something + as a priority"
@@ -7235,8 +7243,10 @@
   usage_note: "여러 번 되풀이된다는 뜻이라 글에서 자주 써요 — 자리는 보통 동사 앞이에요. 말할 때는 often 을 훨씬 많이 씁니다. usually 는 '보통·평소에' 라는 뜻이라 얼마나 잦은지가 아니라 늘 그렇다는 쪽이에요."
 
 - word: "variable"
-  reason: "문형 자리에 영어가 들어가 있었다: adjective: + noun"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: + noun / 'changeable 은 더 일상적인 표현이에요' 는 잴 수 없는 말이고, confused_with 의 constant 를 다루지 않았다. 뜻 칸의 괄호도 수학 쪽으로 좁혀 예문(날씨)과 어긋난다."
+  meaning_ko: "잘 변하는, 들쭉날쭉한"
   pattern: "variable + 명사"
+  usage_note: "일정하지 않고 자꾸 바뀐다는 뜻이에요 — variable weather. 늘 그대로인 것은 constant 라고 해서 반대쪽이에요. 수학이나 과학에서 이름씨로 쓰면 값이 바뀌는 '변수' 를 가리킵니다."
 
 - word: "presidential"
   reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
@@ -11268,3 +11278,160 @@
   pattern: "go to + hell / in + hell"
   usage_note: "종교에서 말하는 지옥이에요. 힘들었다는 뜻으로 비유해 쓰기도 하지만 거친 말이라 조심해서 써야 해요 — 화가 났을 때 튀어나오는 말로도 자주 쓰입니다. 반대쪽은 heaven 이에요."
   confused_with: ["heaven", "devil"]
+
+- word: "household"
+  reason: "\"'family' 보다 더 넓은 의미를 가질 수 있어요\" 는 '수 있어요' 로 흐려 두 낱말을 가르지 못한다 — 갈리는 곳은 핏줄이 아니라 한집에 사느냐다. confused_with 의 home 도 다루지 않았다. / 되읽기: 설명을 '핏줄이 아니어도 같이 살면 household' 로 고쳤는데 뜻 칸은 '한 가족' 이라 방금 넓힌 것을 도로 좁힌다."
+  meaning_ko: "한집에 사는 사람들, 한 가구"
+  usage_note: "한집에 사는 사람들 전체를 가리켜요 — 핏줄이 아니어도 같이 살면 household 예요. 집이라는 건물이나 '우리 집' 이라는 느낌은 home 이라고 합니다. 집안일은 household chores 라고 해요."
+
+- word: "acknowledge"
+  reason: "\"'I acknowledge your effort' 는 '당신의 노력은 인정해요' 보다 더 공식적인 표현이에요\" 는 영어 문장을 제 해석과 견주는 말이라 뜻이 성립하지 않는다. confused_with 의 admit·realize 도 갈라 주지 않았다."
+  usage_note: "무엇이 사실임을 받아들여 말하는 것이 acknowledge 예요 — She acknowledged the problem. 잘못을 털어놓는 admit 과 가깝지만 말할 때는 admit 이 훨씬 흔해요. 받았다고 알린다는 뜻도 있어서 acknowledge an email 이라고 합니다."
+
+- word: "reward"
+  reason: "해석 '그의 열심히 일한 것에 대해 그를 보상했습니다' 는 한국어로 성립하지 않는다. / confused_with 의 award 를 설명이 다루지 않는다."
+  usage_note: "잘한 일에 상이나 돈을 주는 것이 reward 예요 — 무엇 때문인지는 for 로 붙여요. 대회에서 심사해 주는 상은 an award 라고 하고, 이겨서 받는 상품이나 상금은 a prize 예요."
+
+- word: "east"
+  reason: "\"한국어 '동쪽' 은 방향을 말할 때 자주 쓰이나, 'east' 는 지리적인 위치를 나타내는 데 더 자주 쓰입니다\" 는 무엇이 다른지 말하지 않는 견줌이고, 마지막 문장은 문형 칸의 해석을 옮겨 적은 것이다."
+  usage_note: "해가 뜨는 쪽이 east 예요. 방위 자체를 말할 때는 the east 라고 하고, 무엇의 동쪽이라고 할 때는 to the east of ~ 라고 합니다. 동쪽으로 간다고 할 때는 go east 라고 해요."
+
+- word: "hat"
+  reason: "\"한국어 '모자' 는 여러 가지 종류가 있어요\" 는 영어에 대해 아무 말도 하지 않고, cap 과 무엇이 다른지도 말하지 않는다. / confused_with 의 beret 은 왕초보가 만날 낱말이 아니다."
+  usage_note: "챙이 빙 둘러 있는 모자가 hat 이고, 앞에만 챙이 달린 야구모자는 a cap 이에요. 쓰고 있다고 할 때는 wear a hat, 머리에 얹는 동작은 put on a hat 이라고 해요."
+  confused_with: ["cap", "helmet"]
+
+- word: "voter"
+  reason: "\"'voter' 는 'voting' 과 혼동하지만\" 에서 voting 은 같은 낱말의 -ing 꼴이라 헷갈리는 낱말이 아니다. 움직씨 vote 와 election 이 빠졌다."
+  usage_note: "투표하는 사람이 voter 예요. 투표하는 동작은 vote 라서 I voted yesterday. 라고 합니다. 투표로 뽑는 일 전체는 an election 이라 in the election 처럼 써요."
+  confused_with: ["vote", "election"]
+
+- word: "furthermore"
+  reason: "'한국어 또보다 더 강하게' 는 잴 수 없는 견줌이고, confused_with 의 moreover 를 다루지 않는다. 말할 때 무엇을 쓰는지도 없다."
+  usage_note: "앞말에 근거를 하나 더 얹을 때 문장 맨 앞에 놓고 뒤에 쉼표를 찍어요. 글에서 쓰는 딱딱한 말이라 moreover 와 뜻도 자리도 같습니다. 말할 때는 Also 나 And 를 훨씬 많이 써요."
+
+- word: "accuse"
+  reason: "해석 '혐의를 들였습니다' 는 한국어에 없는 말이다. / 설명이 charge 를 끌어와 '그를 살인 혐의로 체포했다' 라는 딴 문장을 예로 드는 바람에 accuse 의 꼴은 보여 주지 못한다."
+  usage_note: "누가 나쁜 일을 했다고 몰아붙이는 것이 accuse 예요 — 무엇 때문인지는 of 로 붙여 accuse him of lying 처럼 씁니다. 그냥 탓으로 돌리는 것은 blame 이라 blame him for the mistake 라고 해요. 경찰이나 검찰이 정식으로 하는 것은 charge 예요."
+
+- word: "scientific"
+  reason: "\"'scientific' 과 'scientifically' 는 둘 다 쓸 수 있지만, 'scientifically' 는 부사적으로 쓰입니다\" 는 배울 것이 없는 되풀이다. confused_with 의 technical 도 다루지 않았다."
+  usage_note: "과학으로 밝히거나 다루는 것에 붙여요 — a scientific study, scientific proof. 이름씨는 science, 사람은 a scientist 예요. technical 은 기계나 전문 지식 쪽이라 a technical problem 처럼 씁니다."
+
+- word: "wage"
+  reason: "\"'salary' 는 더 고급스러운 표현\" 이 틀렸다 — 갈리는 것은 격이 아니라 셈하는 방식이다(시간·주 단위가 wage, 해마다 정해 달마다 나누는 것이 salary). 예문의 'monthly wage' 도 그래서 어색하다. / 되읽기: 설명이 '해마다 정해 달마다 받는 것은 salary' 라고 갈라 놓았는데 뜻 칸에 '월급' 이 남아 방금 넘긴 말을 도로 끌어온다."
+  meaning_ko: "임금 (시간·주 단위로 받는 돈)"
+  example: "The hourly wage is ten dollars."
+  usage_note: "시간이나 주 단위로 셈해 받는 돈이 wage 예요 — an hourly wage. 해마다 얼마로 정해 놓고 달마다 받는 것은 a salary 라고 합니다. 받는 돈을 통틀어 말할 때는 pay 를 써서 How much is the pay? 라고 해요."
+
+- word: "absence"
+  reason: "'absence 는 명사로만 쓰이고' 는 배울 것이 없는 되풀이이고, 학교에서 만나는 흔한 꼴(be absent, take a day off)이 빠졌다. 해석의 '우리 모두' 도 영어에 없는 '모두' 를 보탰다. / 선별기가 짚었다 — 문형 'absence of + 명사' 가 예문 'His absence made us worried.' 에 없는 of 를 요구한다. 소유격을 앞에 붙이는 꼴도 함께 적는다."
+  pattern: "소유격 + absence / the absence of + 명사"
+  usage_note: "있어야 할 자리에 없는 것이 absence 예요 — 뒤에 of 를 붙여 the absence of light 처럼 씁니다. 사람이 빠졌다고 할 때는 그림씨 absent 를 써서 He was absent yesterday. 라고 해요. 있는 쪽은 presence 예요."
+
+- word: "remark"
+  reason: "해석 '그는 날씨에 대해 한 말을 했어요' 는 겹말이라 한국어로 성립하지 않는다. / 설명의 \"'comment' 는 더 구체적인 의견\" 도 잴 수 없는 말이다."
+  usage_note: "지나가듯 한마디 던지는 말이 remark 예요 — make a remark. 인터넷 글 밑에 남기는 의견은 a comment 라고 합니다. 움직씨로도 써서 He remarked that it was cold. 처럼 쓰지만 글에서나 보는 딱딱한 꼴이에요."
+
+- word: "medicine"
+  reason: "설명의 '불가산명사' 가 가산성 단정 검사에 걸려 이 낱말이 연습장에서 빠지고 있었다. / confused_with 의 drug·pill 도 갈라 주지 않았다. / 되읽기: 설명을 '하나 둘로 세지 않아서 take some medicine' 으로 고쳤는데 문형은 'a/the + medicine' 이라 방금 안 쓴다고 한 꼴을 보여 준다."
+  pattern: "some/the + medicine"
+  usage_note: "병을 고치려고 먹는 것이 medicine 이에요 — 하나 둘로 세지 않아서 take some medicine 처럼 씁니다. 알약 한 알은 a pill 이라고 하고, drug 은 약이라는 뜻도 있지만 마약을 가리키는 일이 많아 조심해서 써요. 의학이라는 뜻도 있어서 study medicine 은 의대에 다닌다는 말이에요."
+
+- word: "rare"
+  reason: "\"'rare' 는 명사 앞에 써요\" 가 예문 'This animal is very rare.' 와 어긋난다 — be 동사 뒤에도 온다. / '드물다는 동사로 쓰여요' 는 한국어 품사 이야기라 영어를 가르쳐 주지 않는다."
+  pattern: "be + rare / rare + 명사"
+  usage_note: "좀처럼 없다는 뜻이라 명사 앞에도, be 동사 뒤에도 놓아요 — a rare bird / Snow is rare here. 어찌씨는 rarely 라서 '좀처럼 ~ 않는다' 가 돼요 — I rarely eat out. 고기를 살짝만 익힌 것도 rare 라고 합니다."
+  confused_with: ["rarely", "common"]
+
+- word: "dozen"
+  reason: "뜻 칸의 '십이개' 는 한국어에서 쓰지 않는 말이다. / 설명이 한국어 수 세는 법만 이야기하고 영어 쓰임(a dozen 뒤에 of 를 안 붙인다, dozens of)을 말하지 않는다."
+  meaning_ko: "열두 개 (한 다스)"
+  usage_note: "열두 개를 한 묶음으로 셀 때 써요 — a dozen eggs 처럼 뒤에 of 를 붙이지 않아요. 수를 딱 짚지 않고 '수십 개' 라고 할 때는 -s 를 붙여 dozens of people 이라고 합니다. 열두 개를 그냥 세면 twelve 예요."
+
+- word: "professor"
+  reason: "'teacher 와는 다르게 대학에서만 사용돼요' 는 맞지만, 부를 때 쓰는 꼴(Professor Kim)과 confused_with 의 lecturer 가 빠졌다."
+  usage_note: "대학에서 가르치고 연구하는 사람이 professor 예요. 이름 앞에 붙여 Professor Kim 이라고 부르기도 해요. 학교에서 가르치는 사람을 두루 부르는 말은 a teacher 이고, 대학에서 강의만 맡은 사람은 a lecturer 라고 합니다."
+
+- word: "construct"
+  reason: "build 와 가른 것은 맞지만 '더 일반적인 짓다' 라는 잴 수 없는 말에 기대고 있고, 이름씨 construction 이 빠졌다."
+  usage_note: "다리나 건물처럼 큰 것을 짜 맞춰 세우는 것이 construct 예요. 딱딱한 말이라 말할 때는 build 를 훨씬 많이 씁니다 — They built a house. 짓는 일 자체는 construction 이라 under construction(공사 중)처럼 써요."
+
+- word: "meanwhile"
+  reason: "'주로 다른 사람이 하는 일을 설명할 때 써요' 는 근거가 없고, in the meantime 과의 갈림도 '더 자주 써요' 라는 잴 수 없는 말이다. / 선별기가 짚었다 — confused_with 의 'at the same time' 은 네 낱말이라 헷갈리는 낱말 자리에 들어갈 값이 아니다."
+  usage_note: "한쪽에서 무슨 일이 벌어지는 사이 다른 쪽에서 일어나는 일을 말할 때 써요 — 문장 맨 앞에 놓고 쉼표를 찍습니다. in the meantime 도 뜻이 같아 바꿔 쓸 수 있어요. 두 일이 딱 같은 때 일어났다고 짚을 때는 at the same time 을 씁니다."
+  confused_with: ["meantime", "afterwards"]
+
+- word: "academic"
+  reason: "\"'academic' 은 'school' 이나 'education' 보다 더 전문적인 분야를 말해요\" 는 잴 수 없는 말이고, 학습자가 실제로 만나는 짝(academic year)이 문형 칸에만 있다."
+  usage_note: "대학이나 연구 쪽 일에 붙여요 — academic research, an academic career. 학교 한 해를 가리키는 the academic year(학년도)도 흔한 짝이에요. 가르치고 배우는 일 전체는 education 이라고 합니다."
+
+- word: "gap"
+  reason: "해석의 '갭' 은 영어를 소리 나는 대로 옮긴 것이라 뜻풀이가 되지 못한다. / 설명도 한국어 '공간·차이' 와 견주다 끝나 difference 를 영어 쪽에서 갈라 주지 않는다."
+  usage_note: "두 가지 사이에 벌어진 틈이 gap 이에요 — 뒤에 between 을 붙여 무엇들 사이인지 밝혀요. 나이나 소득처럼 눈에 안 보이는 차이에도 써서 the gap between rich and poor 라고 합니다. 그냥 '다른 점' 은 a difference 예요."
+
+- word: "minimum"
+  reason: "confused_with 의 'minimum wage' 는 표제어를 품은 구라 헷갈리는 낱말 자리에 맞지 않는다. / 설명이 maximum 을 짚으면서도 '가장 많은 인원수' 라는 어색한 풀이를 달았다."
+  usage_note: "그보다 적으면 안 되는 가장 낮은 값이 minimum 이에요 — the minimum age, a minimum charge. 반대쪽인 가장 높은 값은 maximum 이라 the maximum speed 라고 합니다. 줄여서 min. 과 max. 로 적기도 해요."
+  confused_with: ["maximum", "least"]
+
+- word: "estate"
+  reason: "문형 'a + estate' 는 관사가 틀렸다(an estate). / confused_with 의 'real estate' 는 표제어를 품은 구다. / 설명도 '일반적인 재산을 의미할 수 있어요' 로 흐려 property 와 갈라 주지 못한다."
+  pattern: "an/the + estate"
+  usage_note: "사람이 죽고 남긴 재산 전체를 estate 라고 해요 — leave an estate to someone. 사고파는 집과 땅은 real estate 라고 하고, 내가 가진 것 하나하나는 property 라고 합니다."
+  confused_with: ["property", "inheritance"]
+
+- word: "equally"
+  reason: "문형 'equally + 부사어' 가 예문 'We are equally responsible.' 과 어긋난다 — 뒤에 온 것은 그림씨다. / 설명도 한국어 '같이' 와 견주다 끝난다."
+  pattern: "equally + 형용사"
+  usage_note: "둘 이상이 똑같은 정도라는 뜻이에요 — equally important, equally good. 나누는 몫이 같다고 할 때도 써서 Share it equally. 라고 합니다. 같은 것이라고 할 때는 the same 을 써요 — We have the same bag."
+  confused_with: ["same", "evenly"]
+
+- word: "expose"
+  reason: "예문 'The camera can expose your skin to sunlight.' 이 성립하지 않는다 — 카메라가 피부를 햇빛에 드러내지는 않는다. 어느 뜻(사진의 노출)에서 끌어온 낱말을 엉뚱한 문장에 넣은 자리다."
+  example: "Don't expose your skin to the sun."
+  usage_note: "무엇을 어떤 것에 그대로 맞닥뜨리게 두는 것이 expose 예요 — 뒤에 to 를 붙여 무엇에 드러내는지 밝혀요. 숨겨진 사실을 드러내는 뜻으로도 써서 The report exposed the truth. 라고 합니다. 그냥 보여 주는 것은 show 예요."
+
+- word: "alive"
+  reason: "\"'living' 과는 다르게, alive 는 살아 있는 상태를 강조해요\" 는 무엇이 다른지 말하지 않는다 — 갈리는 곳은 자리다(alive 는 명사 앞에 못 붙는다)."
+  usage_note: "alive 는 be 동사 뒤에만 놓아요 — He is still alive. 명사 앞에는 못 붙어서 'an alive fish' 대신 a living fish 라고 합니다. 반대말은 dead 예요 — The plant is dead."
+
+- word: "victory"
+  reason: "해석 '우리는 승리로 축하했습니다' 는 조사가 틀려 성립하지 않는다. / 설명의 \"'win' 은 승리 자체를 말할 때\" 도 거꾸로다 — win 이 움직씨이고 victory 가 이름씨다."
+  usage_note: "이겨서 얻은 결과가 victory 예요 — win a victory, celebrate a victory. 이기는 동작은 win 이라 We won the game. 이라고 합니다. 딱딱한 말이라 말할 때는 a win 이라고 하기도 해요."
+  confused_with: ["win", "defeat"]
+
+- word: "resolve"
+  reason: "문형 'resolve + 문제/문제를' 에 한국어 조사가 들어가 형태 표기가 아니다. / 설명도 solve 를 confused_with 에 두고 갈라 주지 않았다."
+  pattern: "resolve + 목적어 (문제·갈등)"
+  usage_note: "다툼이나 얽힌 일을 풀어 끝내는 것이 resolve 예요 — resolve a dispute. 문제의 답을 찾아내는 것은 solve 라서 solve a math problem 처럼 씁니다. 마음을 굳게 먹는다는 뜻도 있어서 She resolved to quit smoking. 이라고 해요."
+
+- word: "critic"
+  reason: "설명의 \"'criticize' 은 행동이에요\" 는 조사가 틀렸고, 이 낱말 가족에서 왕초보가 가장 자주 만나는 critical(비판적인)과 criticism 이 빠졌다."
+  usage_note: "책이나 영화를 두고 좋다 나쁘다 말하는 사람이 critic 이에요 — a film critic. 그 일을 하는 동작은 criticize, 그렇게 한 말은 criticism 이라고 합니다. 그림씨 critical 은 '비판적인' 이라는 뜻이에요."
+  confused_with: ["criticize", "criticism"]
+
+- word: "enormous"
+  reason: "**해석이 예문과 다른 동물을 가리킨다** — 예문은 'The elephant is enormous.'(코끼리)인데 해석은 '사자도 매우 커요' 다. / 설명도 한국어 '거대한' 과 견주다 끝나 huge 를 다루지 않는다."
+  usage_note: "몹시 커서 놀랄 만하다는 뜻이라 big 보다 훨씬 세요 — an enormous building. huge 와 뜻이 거의 같아 바꿔 쓸 수 있어요. 아주 작다고 할 때는 tiny 를 씁니다."
+
+- word: "sweet"
+  reason: "문형 'sweet + 은/는 + 주어' 에 한국어 조사가 들어가 형태 표기가 아니다. / confused_with 의 'sweet tooth' 는 표제어를 품은 구이고, sweat 는 소리만 비슷할 뿐 뜻이 헷갈리는 짝이 아니다."
+  pattern: "be + sweet / sweet + 명사"
+  usage_note: "설탕처럼 단맛이 난다는 뜻이에요 — a sweet apple. 사람에게 쓰면 '다정하다' 는 뜻이 돼서 That's so sweet of you. 라고 해요. 단것을 좋아하는 사람은 have a sweet tooth 라고 합니다."
+  confused_with: ["sour", "salty"]
+
+- word: "permanent"
+  reason: "'영구한 것과 영원한 것은 약간 다르지만' 은 한국어 낱말끼리 견주는 말이고, 'ever-lasting' 은 붙여 쓰는 낱말(everlasting)이라 철자도 틀렸다. 정작 왕초보가 만나는 짝(a permanent job, temporary)이 빠졌다. / 되읽기: 설명이 '영원하다고 할 때는 forever' 로 넘겼는데 뜻 칸에 '영원한' 이 그대로 남았다. 해석이 '정규직' 인 것과도 이어지지 않았다."
+  meaning_ko: "계속되는, 오래가는; (일자리가) 정규직의"
+  usage_note: "바뀌거나 끝나지 않고 그대로 간다는 뜻이에요 — a permanent job(정규직), permanent damage. 반대는 temporary 라서 a temporary job 은 잠깐 하는 일이에요. 영원하다고 할 때는 forever 를 씁니다."
+  confused_with: ["temporary", "eternal"]
+
+- word: "emotion"
+  reason: "\"'What's your emotion?' 는 자연스럽지 않아요\" 는 맞지만, feeling 과의 갈림을 '더 강한 감정' 이라는 잴 수 없는 말로만 두었고 mood 는 다루지 않았다."
+  usage_note: "기쁨이나 슬픔처럼 마음에서 일어나는 것이 emotion 이라, 글이나 공부에서 쓰는 딱딱한 말이에요. 말할 때는 feeling 을 훨씬 많이 씁니다 — I have a good feeling. mood 는 한동안 이어지는 기분이라 in a bad mood 처럼 써요."
+
+- word: "pursue"
+  reason: "뜻 칸의 '계속하다' 는 pursue 의 뜻이 아니다 — 이어서 한다는 쪽은 continue 다. / 설명도 그 거짓 위에서 continue 와 견주고 있다."
+  meaning_ko: "좇다, 밀고 나가다"
+  usage_note: "목표를 향해 오래 밀고 나가는 것이 pursue 예요 — pursue a career in music. 글에서 쓰는 딱딱한 말이라 말할 때는 go after 나 work toward 를 씁니다. 도망가는 것을 뒤쫓는다는 뜻도 있어서 The police pursued the car. 라고 해요."
