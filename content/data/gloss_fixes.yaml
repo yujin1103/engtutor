@@ -3525,3 +3525,67 @@
 - word: "generous"
   example_ko: "그는 시간을 아끼지 않고 내주었어요."
   reason: "'시간을 대단히 아끼지 않았습니다' 는 부정이 겹쳐 뜻이 뒤집혀 읽힌다."
+
+- word: "everywhere"
+  example_ko: "열쇠를 찾으려고 온 데를 다 봤어요."
+  reason: "바뀐 예문에 맞췄다. 옛 예문 'I can't find my keys everywhere.' 는 비문이라 해석도 그 비문을 옮기고 있었다."
+
+- word: "passenger"
+  example_ko: "승객은 모두 안전벨트를 매야 해요."
+  reason: "바뀐 예문에 맞췄다."
+
+- word: "ill"
+  example_ko: "그는 오늘 아파요."
+  reason: "'오늘은 아프세요.' 는 주어가 사라지고 높임말이 붙은 비문이다."
+
+- word: "bore"
+  example_ko: "그 영화는 저를 지루하게 만들어요."
+  reason: "'이 영화는 제가 지루하게 만드네요.' 는 지루하게 만드는 쪽과 지루해지는 쪽이 뒤바뀐 비문이다."
+
+- word: "employer"
+  example_ko: "저를 고용한 곳은 큰 회사예요."
+  reason: "'직장주' 는 한국어에 없는 말이다."
+
+- word: "index"
+  example_ko: "이 책의 색인은 어디에 있어요?"
+  reason: "index 는 책 뒤에 붙는 색인이고 앞에 있는 목차는 table of contents 다 — 해석이 둘을 뒤바꿔 놓았다."
+
+- word: "instruction"
+  example_ko: "상자에 적힌 설명대로 하세요."
+  reason: "바뀐 예문에 맞췄다."
+
+- word: "weak"
+  example_ko: "그는 독감을 앓고 나서 몸이 약해졌어요."
+  reason: "바뀐 예문에 맞췄다. 옛 예문 'I'm weak with math.' 는 영어로 어색한 꼴이었다."
+
+- word: "joint"
+  example_ko: "무릎 관절이 아파요."
+  reason: "바뀐 예문에 맞췄다."
+
+- word: "thin"
+  example_ko: "그 사람은 아주 말랐어요."
+  reason: "'그녀는 매우 마르다.' 는 다른 항목과 말투가 갈린다."
+
+- word: "rush"
+  example_ko: "역으로 서둘러 가야 해요."
+  reason: "해석은 '버스 정류장' 인데 예문은 the station(역)이라 서로 다른 곳을 가리켰다."
+
+- word: "mobile"
+  example_ko: "저는 휴대폰을 써요."
+  reason: "예문은 a mobile phone 인데 해석이 '스마트폰' 이라 다른 물건을 가리켰다."
+
+- word: "yard"
+  example_ko: "이건 큰 마당이에요."
+  reason: "설명이 yard(마당)와 garden(정원)을 갈라 놓았는데 해석이 '정원' 이라 둘을 도로 붙였다."
+
+- word: "coast"
+  example_ko: "지난 주말에 해안에 다녀왔어요."
+  reason: "설명이 coast 를 해안 전체, beach 를 모래밭으로 갈랐는데 해석이 '해변' 이었다."
+
+- word: "neighborhood"
+  example_ko: "동네 이름이 뭐예요?"
+  reason: "'귀하' 는 서류에나 쓰는 말이라 화면 말투와 갈린다."
+
+- word: "sad"
+  example_ko: "그 소식 때문에 슬퍼요."
+  reason: "'그 소식을 들었을 때' 는 영어에 없는 '들었을 때' 를 보탠 것이다."
