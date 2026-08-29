@@ -5360,9 +5360,9 @@
   usage_note: "끈으로 단단히 묶는다는 뜻이에요. 일상에서는 tie 를 훨씬 많이 씁니다 — Tie your shoes. bind 는 약속이나 계약이 사람을 묶는다는 뜻으로 더 자주 나와요 — He is bound by the contract. 지난 일은 bound 예요."
 
 - word: "taste"
-  reason: "문형 자리에 영어가 들어가 있었다: taste + 목적어 (음식 등), taste like + something / usage_note: '맛을 느끼는 주체는 taste 지만, 맛이 있는 주어는 taste 가 아니라 taste good 을 써요' 는 주어와 서술어가 뒤엉켜 뜻이 통하지 않는다. taste like 와 이름씨 쓰임도 빠져 있었다. / 되읽기: 설명을 'taste 뒤에 형용사를 붙여요' 로 고쳤는데 문형은 'taste + 목적어' 그대로였다. 예문 'This soup tastes good.' 의 good 은 목적어가 아니라 형용사다."
+  reason: "문형 자리에 영어가 들어가 있었다: taste + 목적어 (음식 등), taste like + something / usage_note: '맛을 느끼는 주체는 taste 지만, 맛이 있는 주어는 taste 가 아니라 taste good 을 써요' 는 주어와 서술어가 뒤엉켜 뜻이 통하지 않는다. taste like 와 이름씨 쓰임도 빠져 있었다. / 되읽기: 설명을 'taste 뒤에 형용사를 붙여요' 로 고쳤는데 문형은 'taste + 목적어' 그대로였다. 예문 'This soup tastes good.' 의 good 은 목적어가 아니라 형용사다. / 설명의 예 'This soup tastes good.' 이 예문과 글자까지 같다."
   pattern: "taste + 형용사 / taste like + 명사"
-  usage_note: "음식이 어떤 맛인지 말할 때는 taste 뒤에 형용사를 붙여요 — This soup tastes good. 무엇과 비슷한 맛이라고 할 때는 taste like 를 씁니다 — It tastes like chicken. 맛 자체를 가리키는 이름씨로도 써요 — a sweet taste."
+  usage_note: "음식이 어떤 맛인지 말할 때는 taste 뒤에 형용사를 붙여요 — It tastes sweet. 무엇과 비슷한 맛이라고 할 때는 taste like 를 씁니다 — It tastes like chicken. 맛 자체를 가리키는 이름씨로도 써요 — a sweet taste."
 
 - word: "gift"
   reason: "문형 자리에 영어가 들어가 있었다: give + someone + a gift / usage_note: '선물은 일반적으로 받는 사람이 결정하지만' 은 사실도 아니고 낱말 설명도 아니다. present 와의 관계도 '더 일상적' 이라고만 해 어느 쪽이 흔한지를 뒤집어 말한다(선물 자리에서는 둘 다 흔하다)."
@@ -5390,9 +5390,9 @@
   usage_note: "몸과 마음을 편하게 쉰다는 뜻이에요 — I relaxed at home all day. 걱정하는 사람에게 Relax! 한 마디만 하면 '진정해!' 가 됩니다. 잠깐 쉬는 것은 take a break 라고 해요."
 
 - word: "description"
-  reason: "문형 자리에 영어가 들어가 있었다: a/the + description + of + something / usage_note: \"'description' 은 명사로만 쓰이고 'describe' 와는 다르게 쓰입니다\" 는 두 낱말이 다르다는 말만 되풀이할 뿐 describe 를 어떻게 쓰는지 보여 주지 않는다."
+  reason: "문형 자리에 영어가 들어가 있었다: a/the + description + of + something / usage_note: \"'description' 은 명사로만 쓰이고 'describe' 와는 다르게 쓰입니다\" 는 두 낱말이 다르다는 말만 되풀이할 뿐 describe 를 어떻게 쓰는지 보여 주지 않는다. / 설명의 예 'a description of the hotel' 이 예문과 같은 말이다."
   pattern: "a/the + description + of + 명사"
-  usage_note: "무엇이 어떤지 말로 그려 주는 것이 description 이에요 — a description of the hotel. 그렇게 말해 주는 동작은 describe 라서 Describe your room. 이라고 합니다. 물건 설명은 a product description 이에요."
+  usage_note: "무엇이 어떤지 말로 그려 주는 것이 description 이에요 — a detailed description(자세한 설명). 그렇게 말해 주는 동작은 describe 라서 Describe your room. 이라고 합니다. 물건 설명은 a product description 이에요."
 
 - word: "complain"
   reason: "문형 자리에 영어가 들어가 있었다: complain + about + something"
@@ -5418,9 +5418,9 @@
   confused_with: ["lead", "leader"]
 
 - word: "commitment"
-  reason: "문형 자리에 영어가 들어가 있었다: a + commitment + to + something / usage_note: 한국어 '약속' 과 견주며 시작하는데, 정작 왕초보가 헷갈리는 짝인 appointment(만나기로 한 약속)가 빠져 있었다. 해석도 '제가 ~ 약속이 있어요' 로 주어와 서술어가 어긋나 있다."
+  reason: "문형 자리에 영어가 들어가 있었다: a + commitment + to + something / usage_note: 한국어 '약속' 과 견주며 시작하는데, 정작 왕초보가 헷갈리는 짝인 appointment(만나기로 한 약속)가 빠져 있었다. 해석도 '제가 ~ 약속이 있어요' 로 주어와 서술어가 어긋나 있다. / 설명의 예 'a commitment to my job' 이 예문과 같은 말이다."
   pattern: "a + commitment + to + 명사"
-  usage_note: "commitment 는 꼭 지키겠다고 한 약속이나 맡은 책임이에요 — 뒤에 to 를 붙여 a commitment to my job 이라고 씁니다. 가볍게 하는 약속은 a promise, 만나기로 한 약속은 an appointment 예요."
+  usage_note: "commitment 는 꼭 지키겠다고 한 약속이나 맡은 책임이에요 — 뒤에 to 를 붙여 a commitment to the team 이라고 씁니다. 가볍게 하는 약속은 a promise, 만나기로 한 약속은 an appointment 예요."
   confused_with: ["promise", "appointment"]
 
 - word: "wake"
@@ -5441,24 +5441,30 @@
   usage_note: "안전하게 지켜져 있다는 뜻이에요 — a secure place. 인터넷에서는 '보안이 된' 이라는 뜻으로 자주 써서 a secure website 라고 합니다. 움직씨로 쓰면 단단히 붙들어 맨다는 뜻이에요 — secure the door."
 
 - word: "recommendation"
-  reason: "문형 자리에 영어가 들어가 있었다: a recommendation + for + something"
+  reason: "문형 자리에 영어가 들어가 있었다: a recommendation + for + something / example: 의사가 식당을 추천하는 문장이라 학습자가 쓸 자리를 못 잡는다. / usage_note: \"'recommendation' 은 명사로만 쓰이고 'recommend' 와 혼동하지 않도록\" 은 배울 것이 없는 되풀이이고 '이라는' 조사도 틀렸다. / 되읽기: 설명의 예 'a recommendation for a hotel' 이 예문과 같은 말이다."
   pattern: "a recommendation + for + 명사"
+  example: "She gave me a recommendation for a hotel."
+  usage_note: "누구에게 무엇이 좋다고 알려 주는 것이 recommendation 이에요 — 뒤에 for 를 붙여 a recommendation for a good doctor 처럼 씁니다. 알려 주는 동작은 recommend 라서 I recommend this book. 이라고 해요. 사람을 밀어 주는 추천서도 a recommendation 이에요."
 
 - word: "friendly"
-  reason: "문형 자리에 영어가 들어가 있었다: adjective (be + friendly)"
-  pattern: "형용사 (be + friendly)"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective (be + friendly) / pattern: '형용사 (be + friendly)' 는 품사 이름을 형태 자리에 적은 것이다. / usage_note: \"'I'm friendly with my friend.' 는 '내 친구와 친근해요.' 가 자연스러워요\" 는 영어를 제 해석과 견주는 말이고, -ly 로 끝나지만 어찌씨가 아니라는 왕초보의 큰 함정이 빠져 있었다."
+  pattern: "be + friendly / friendly + 명사"
+  usage_note: "사람을 대하는 태도가 살갑다는 뜻이에요 — The staff were very friendly. 사이가 가깝다고 할 때는 close 를 써서 We are close friends. 라고 합니다. -ly 로 끝나지만 어찌씨가 아니라 그림씨예요."
 
 - word: "insist"
   reason: "문형 자리에 영어가 들어가 있었다: insist on + something"
   pattern: "insist on + 명사"
 
 - word: "reasonable"
-  reason: "문형 자리에 영어가 들어가 있었다: reasonable + about/for + something"
-  pattern: "reasonable + about/for + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: reasonable + about/for + something / pattern: 'reasonable + about/for + 명사' 는 예문의 꼴(be reasonable)과 다르고 about 쪽은 드물다. / usage_note: 한국어 '합리적인' 과 '타당한' 을 견주며 시작해 영어 쓰임이 뒤로 밀렸다. / confused_with: rational·logical 은 왕초보 어휘가 아니고, 실제로 헷갈리는 짝은 값이 알맞다는 뜻의 fair 쪽이다. / 되읽기: 설명의 예 'The price is reasonable.' 이 예문과 뒷말만 빼고 같다."
+  pattern: "be + reasonable / a reasonable + 명사"
+  usage_note: "값이 너무 비싸지 않고 알맞다고 할 때 자주 써요 — a reasonable price. 생각이나 요구가 지나치지 않다는 뜻으로도 씁니다 — a reasonable request. 사람에게 쓰면 말이 통한다는 뜻이에요."
+  confused_with: ["fair", "rational"]
 
 - word: "theme"
-  reason: "문형 자리에 영어가 들어가 있었다: theme + of + something"
+  reason: "문형 자리에 영어가 들어가 있었다: theme + of + something / usage_note: 한국어 '주제' 와 견주며 시작하고 subject 는 confused_with 에만 있다. 한국 학습자가 가장 자주 만나는 theme park 도 빠졌다. / 되읽기: 설명의 예 'the theme of this movie' 가 예문과 같은 말이다."
   pattern: "theme + of + 명사"
+  usage_note: "이야기나 노래에 흐르는 큰 줄기가 theme 이에요 — a common theme in his books. 이야깃거리 하나하나는 a topic, 학교에서 배우는 과목은 a subject 라고 합니다. 놀이공원은 a theme park 예요."
 
 - word: "definition"
   reason: "문형 자리에 영어가 들어가 있었다: the definition of + something"
@@ -7123,9 +7129,9 @@
   confused_with: ["passive", "busy"]
 
 - word: "dangerous"
-  reason: "문형 자리에 영어가 들어가 있었다: adjective: + 명사 / usage_note: \"'위험하다' 는 동사예요\" 가 틀렸다(한국어에서 형용사다). 뒤 문장도 'This is dangerous' 의 해석으로 '이 길은 위험해요' 를 대 놓아 영어와 한국어가 어긋난다."
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: + 명사 / usage_note: \"'위험하다' 는 동사예요\" 가 틀렸다(한국어에서 형용사다). 뒤 문장도 'This is dangerous' 의 해석으로 '이 길은 위험해요' 를 대 놓아 영어와 한국어가 어긋난다. / 설명의 예 'This road is dangerous.' 가 예문과 글자까지 같다."
   pattern: "dangerous + 명사"
-  usage_note: "dangerous 는 '위험한' 이라는 그림씨라 명사 앞이나 be 동사 뒤에 놓아요 — a dangerous road / This road is dangerous. 위험 자체를 가리키는 이름씨는 danger 라서 in danger(위험에 빠진)처럼 씁니다."
+  usage_note: "dangerous 는 '위험한' 이라는 그림씨라 명사 앞이나 be 동사 뒤에 놓아요 — a dangerous animal / Swimming here is dangerous. 위험 자체를 가리키는 이름씨는 danger 라서 in danger(위험에 빠진)처럼 씁니다."
 
 - word: "industrial"
   reason: "문형 자리에 영어가 들어가 있었다: adjective / usage_note: '산업에 관련된 것만 뜻해요' 는 뜻 칸을 되풀이한 것이고, 'industrial 과 industry 는 다르고' 라고만 해 무엇이 다른지를 말하지 않는다. / confused_with: industrialized 는 왕초보 어휘가 아니다."
@@ -7704,8 +7710,9 @@
   usage_note: "glad 는 be 동사 뒤에 붙여 I'm glad. 처럼 써요. 명사 앞에는 잘 쓰지 않아서 'a glad man' 은 어색하고, 그 자리에는 happy 를 씁니다. 만나서 반갑다고 할 때 Glad to meet you. 라고 짧게 말할 수 있어요."
 
 - word: "moral"
-  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다. / usage_note: \"'도덕' 은 명사지만 'moral' 은 형용사예요\" 는 반만 맞다 — the moral of the story 처럼 이름씨로도 쓴다. 한국어 품사와 영어 품사를 견주는 틀 자체도 학습자에게 도움이 안 된다."
   pattern: "moral + 명사"
+  usage_note: "옳고 그름을 따질 때 쓰는 말이에요 — a moral question. 이야기가 주는 교훈을 가리키는 이름씨로도 써서 the moral of the story 라고 합니다. 뜻이 거의 같은 ethical 은 더 딱딱한 말이에요."
 
 - word: "helpful"
   reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
@@ -8643,8 +8650,9 @@
   confused_with: ["sixty", "sixteenth", "six"]
 
 - word: "nevertheless"
-  reason: "'문장 앞에 놓을 때만 사용하고, 중간에 쓰면 안 돼요' 가 거짓이다 — 쉼표 사이에 넣어 문장 가운데에도 온다. ''비록 비쌌지만' 과 혼동하지 마세요' 도 한국어 구와 영어 낱말을 견주는 말이다."
-  usage_note: "'그런데도' 라는 뜻이에요 — It was expensive. Nevertheless, I bought it. 앞 문장을 뒤집을 때 써요. 글에서 쓰는 딱딱한 말이라 말할 때는 but 이나 still 을 더 써요."
+  reason: "'문장 앞에 놓을 때만 사용하고, 중간에 쓰면 안 돼요' 가 거짓이다 — 쉼표 사이에 넣어 문장 가운데에도 온다. ''비록 비쌌지만' 과 혼동하지 마세요' 도 한국어 구와 영어 낱말을 견주는 말이다. / example: 'It was expensive, nevertheless I bought it.' 는 쉼표로 두 문장을 이어 붙인 비문이다 — 같은 항목의 설명이 이미 마침표를 찍은 올바른 꼴을 보여 주고 있어 서로 어긋난다. / 되읽기: 설명의 예가 예문과 글자까지 같다 — 예문을 고치면서 설명 쪽을 안 봤다."
+  example: "It was expensive. Nevertheless, I bought it."
+  usage_note: "'그런데도' 라는 뜻이에요 — 앞 문장을 뒤집을 때 문장 맨 앞에 놓고 쉼표를 찍습니다 — Nevertheless, we tried again. 글에서 쓰는 딱딱한 말이라 말할 때는 but 이나 still 을 더 써요."
 
 - word: "cheesecake"
   reason: "''cheesecake' 만 말하면 무슨 음료인지 혼동할 수 있어요' 는 성립하지 않는다 — 치즈케이크는 음료가 아니다."
@@ -9766,10 +9774,10 @@
   confused_with: ["on"]
 
 - word: "branch"
-  reason: "meaning_ko: '분기점' 은 갈림길이라는 뜻이라 은행 지점에도 나뭇가지에도 맞지 않는다. / pattern·usage_note: \"분기점일 때는 'river branch' 처럼\" 이 틀렸다(a branch of the river 가 맞다). / confused_with: 'tree branch'·'branch office' 는 낱말이 아니라 구다."
+  reason: "meaning_ko: '분기점' 은 갈림길이라는 뜻이라 은행 지점에도 나뭇가지에도 맞지 않는다. / pattern·usage_note: \"분기점일 때는 'river branch' 처럼\" 이 틀렸다(a branch of the river 가 맞다). / confused_with: 'tree branch'·'branch office' 는 낱말이 아니라 구다. / 설명의 예 'a branch of this bank' 가 예문과 같은 말이다."
   meaning_ko: "(은행·회사의) 지점; 나뭇가지"
   pattern: "a branch of + 회사/은행"
-  usage_note: "은행이나 회사가 여러 곳에 낸 가게를 branch 라고 해요 — a branch of this bank. 본사는 the head office 라고 합니다. 나무에서 뻗어 나온 가지도 branch 예요 — a tree branch."
+  usage_note: "은행이나 회사가 여러 곳에 낸 가게를 branch 라고 해요 — open a new branch(지점을 내다). 본사는 the head office 라고 합니다. 나무에서 뻗어 나온 가지도 branch 예요 — a tree branch."
   confused_with: ["office"]
 
 - word: "vehicle"
@@ -9835,8 +9843,8 @@
   confused_with: ["deliver", "shipping"]
 
 - word: "deny"
-  reason: "usage_note: 예문이 'He denied stealing the money.' 로 -ing 를 쓰고 있는데 설명은 그 꼴을 한 마디도 하지 않는다. refuse 와의 갈림도 confused_with 에만 있고 설명에는 없었다."
-  usage_note: "deny 뒤에 동사가 오면 -ing 를 붙여요 — He denied stealing the money. 사실이 아니라고 잡아떼는 것이라, 하기 싫다고 거절하는 refuse 와는 다릅니다 — He refused to pay. 이름씨는 denial 이에요."
+  reason: "usage_note: 예문이 'He denied stealing the money.' 로 -ing 를 쓰고 있는데 설명은 그 꼴을 한 마디도 하지 않는다. refuse 와의 갈림도 confused_with 에만 있고 설명에는 없었다. / 설명의 예 'He denied stealing the money.' 가 예문과 글자까지 같다."
+  usage_note: "deny 뒤에 동사가 오면 -ing 를 붙여요 — She denied taking the money. 사실이 아니라고 잡아떼는 것이라, 하기 싫다고 거절하는 refuse 와는 다릅니다 — He refused to pay. 이름씨는 denial 이에요."
 
 - word: "guest"
   reason: "example: 'This is my friend, not a guest.' 는 친구와 손님을 갈라놓는 이상한 문장이라 왕초보가 따라 쓸 자리가 없다. / usage_note: '손님' 과 '게스트' 라는 한국어 낱말끼리 견주고 끝난다 — 게스트는 영어가 아니라 외래어다."
@@ -9970,9 +9978,9 @@
   confused_with: ["technique", "technology"]
 
 - word: "arrangement"
-  reason: "meaning_ko·usage_note: '배치' 만 있고 make arrangements(미리 준비해 두다)라는 아주 흔한 뜻이 빠졌다. layout 과의 갈림도 '더 시각적' 이라는 잴 수 없는 말로 되어 있다."
+  reason: "meaning_ko·usage_note: '배치' 만 있고 make arrangements(미리 준비해 두다)라는 아주 흔한 뜻이 빠졌다. layout 과의 갈림도 '더 시각적' 이라는 잴 수 없는 말로 되어 있다. / 설명의 예 'the arrangement of the chairs' 가 예문과 같은 말이다."
   meaning_ko: "배치, 배열; (미리 해 두는) 준비"
-  usage_note: "물건을 어떻게 놓았는지를 말할 때 써요 — the arrangement of the chairs. 여럿이 미리 정해 두는 준비도 arrangement 라서 make arrangements 라고 합니다. 움직씨는 arrange 예요 — I arranged the meeting."
+  usage_note: "물건을 어떻게 놓았는지를 말할 때 써요 — a flower arrangement(꽃꽂이). 여럿이 미리 정해 두는 준비도 arrangement 라서 make arrangements 라고 합니다. 움직씨는 arrange 예요 — I arranged the meeting."
   confused_with: ["layout", "plan"]
 
 - word: "skin"
@@ -10017,10 +10025,10 @@
   usage_note: "회사나 단체를 대신해 나오는 사람이 representative 예요 — a sales representative(영업 담당자). 길어서 말할 때는 a rep 이라고 줄여 부릅니다. 대신한다는 동작은 represent 예요 — He represents our team."
 
 - word: "capacity"
-  reason: "pattern: 'capacity + of + 주어' 에서 '주어' 는 문장 성분 이름이라 자리 표시로 맞지 않는다(담기는 그릇이다). / usage_note: capacity for 를 '경우가 있어요' 로만 말해 언제 쓰는지 알 수 없고, 사람 수를 말하는 흔한 쓰임이 빠졌다. / 되읽기: 뜻 칸의 '용기' 는 그릇을 가리키는 말인데 capacity 는 그릇이 아니라 담기는 양이다 — 설명을 '얼마나 담을 수 있는지' 로 고치고 나니 뜻 칸만 다른 것을 가리키고 있었다."
+  reason: "pattern: 'capacity + of + 주어' 에서 '주어' 는 문장 성분 이름이라 자리 표시로 맞지 않는다(담기는 그릇이다). / usage_note: capacity for 를 '경우가 있어요' 로만 말해 언제 쓰는지 알 수 없고, 사람 수를 말하는 흔한 쓰임이 빠졌다. / 되읽기: 뜻 칸의 '용기' 는 그릇을 가리키는 말인데 capacity 는 그릇이 아니라 담기는 양이다 — 설명을 '얼마나 담을 수 있는지' 로 고치고 나니 뜻 칸만 다른 것을 가리키고 있었다. / 설명의 예 'the capacity of this bottle' 이 예문과 같은 말이다."
   meaning_ko: "용량, 담을 수 있는 양; 능력"
   pattern: "the capacity of + 그릇/장소"
-  usage_note: "얼마나 담을 수 있는지를 말할 때 써요 — the capacity of this bottle. 사람이 몇 명 들어가는지에도 씁니다 — The hall has a large capacity. 무엇을 할 수 있는 힘을 말할 때는 ability 가 훨씬 흔해요."
+  usage_note: "얼마나 담을 수 있는지를 말할 때 써요 — 뒤에 of 를 붙여 the capacity of the tank 라고 합니다. 사람이 몇 명 들어가는지에도 써서 The hall has a large capacity. 라고 해요. 무엇을 할 수 있는 힘을 말할 때는 ability 가 훨씬 흔합니다."
 
 - word: "border"
   reason: "usage_note: '국경은 국가 간 경계를 말하지만 border 는 물리적인 경계선을 더 강조해요' 는 한국어 낱말과 영어 낱말을 견주는 척하며 같은 말을 두 번 한다. 가장 흔한 짝인 cross the border 가 빠졌다. / confused_with: frontier 는 왕초보 어휘가 아니다."
@@ -10047,8 +10055,8 @@
   usage_note: "ought 뒤에는 늘 to 가 붙어요 — You ought to rest. 뜻은 should 와 거의 같은데 요즘은 should 를 훨씬 많이 씁니다. 아니라고 할 때 ought not to 라고 쓰기는 하지만 드물어서 shouldn't 를 써요."
 
 - word: "ad"
-  reason: "usage_note: \"'ad' 는 명사로만 쓰이고 불가산명사가 아니에요\" 는 부정을 겹쳐 뜻이 흐린 데다, '불가산' 이라는 낱말 때문에 선별기의 가산성 단정 검사에 걸려 이 항목이 연습장에서 빠지고 있었다. 정작 ad 가 advertisement 의 줄임말이라는 사실이 없다."
-  usage_note: "ad 는 advertisement 를 줄인 말이라 말할 때 훨씬 자주 써요 — I saw an ad online. 여러 개면 ads 라고 합니다. TV 에 나오는 광고는 a commercial 이라고 따로 부르기도 해요."
+  reason: "usage_note: \"'ad' 는 명사로만 쓰이고 불가산명사가 아니에요\" 는 부정을 겹쳐 뜻이 흐린 데다, '불가산' 이라는 낱말 때문에 선별기의 가산성 단정 검사에 걸려 이 항목이 연습장에서 빠지고 있었다. 정작 ad 가 advertisement 의 줄임말이라는 사실이 없다. / 설명의 예 'I saw an ad online.' 이 예문 'I saw an ad on the bus.' 와 사실상 같다."
+  usage_note: "ad 는 advertisement 를 줄인 말이라 말할 때 훨씬 자주 써요 — an ad for a new phone. 여러 개면 ads 라고 합니다. TV 에 나오는 광고는 a commercial 이라고 따로 부르기도 해요."
   confused_with: ["advertisement", "commercial"]
 
 - word: "fee"
@@ -10097,9 +10105,9 @@
   usage_note: "손잡이가 달린 잔이 cup 이고, 유리로 된 잔은 glass 예요 — a glass of water. 커피를 담는 크고 두꺼운 잔은 a mug 라고 합니다. 양을 셀 때는 a cup of coffee 처럼 of 를 넣어요."
 
 - word: "confidence"
-  reason: "pattern: 'a/the + confidence' 는 쓰지 않는 꼴이고 예문도 confidence in 이다. / usage_note: \"'I have confidence' 만으로는 의미가 모호할 수 있어요\" 는 근거가 없고, 그림씨 confident 가 빠져 있었다."
+  reason: "pattern: 'a/the + confidence' 는 쓰지 않는 꼴이고 예문도 confidence in 이다. / usage_note: \"'I have confidence' 만으로는 의미가 모호할 수 있어요\" 는 근거가 없고, 그림씨 confident 가 빠져 있었다. / 설명의 예 'confidence in my ability' 가 예문과 같은 말이다."
   pattern: "confidence in + 대상"
-  usage_note: "무엇을 믿는다고 할 때는 뒤에 in 을 붙여요 — confidence in my ability. 그림씨는 confident 라서 I feel confident. 라고 합니다. 자신감을 잃었다고 할 때는 lose confidence 라고 해요."
+  usage_note: "무엇을 믿는다고 할 때는 뒤에 in 을 붙여요 — confidence in the team. 그림씨는 confident 라서 I feel confident. 라고 합니다. 자신감을 잃었다고 할 때는 lose confidence 라고 해요."
   confused_with: ["confident", "trust"]
 
 - word: "error"
@@ -10125,9 +10133,9 @@
   usage_note: "손가락 하나는 a finger, 여럿은 fingers 예요. 엄지는 따로 a thumb 이라고 불러서 finger 에 넣지 않기도 합니다. 발가락은 a toe 예요."
 
 - word: "relevant"
-  reason: "usage_note: \"'This is important' 보다 'This is relevant to the topic' 가 더 자연스러워요\" 가 틀렸다 — 둘은 뜻이 다른 문장이라 자연스러움을 견줄 대상이 아니다. 반대말 irrelevant 도 빠졌다. / 되읽기: 설명을 '중요하다는 뜻의 important 와는 다른 말입니다' 로 고쳤는데 뜻 칸에는 '중요한' 이 그대로 남아, 설명과 뜻이 서로를 부정한다."
+  reason: "usage_note: \"'This is important' 보다 'This is relevant to the topic' 가 더 자연스러워요\" 가 틀렸다 — 둘은 뜻이 다른 문장이라 자연스러움을 견줄 대상이 아니다. 반대말 irrelevant 도 빠졌다. / 되읽기: 설명을 '중요하다는 뜻의 important 와는 다른 말입니다' 로 고쳤는데 뜻 칸에는 '중요한' 이 그대로 남아, 설명과 뜻이 서로를 부정한다. / 설명의 예 'relevant to the project' 가 예문과 같은 말이다."
   meaning_ko: "관련 있는, 상관 있는"
-  usage_note: "지금 이야기하는 것과 상관이 있다는 뜻이에요 — 뒤에 to 를 붙여 relevant to the project 라고 씁니다. 상관없다고 할 때는 not relevant 나 irrelevant 라고 해요. 중요하다는 뜻의 important 와는 다른 말입니다."
+  usage_note: "지금 이야기하는 것과 상관이 있다는 뜻이에요 — 뒤에 to 를 붙여 relevant to my job 처럼 씁니다. 상관없다고 할 때는 not relevant 나 irrelevant 라고 해요. 중요하다는 뜻의 important 와는 다른 말입니다."
 
 - word: "explore"
   reason: "usage_note: '더 구체적인 장소나 주제를 함께 쓰는 경우가 많아요' 는 무엇을 하라는 말인지 알 수 없고, 마지막 문장은 영어 문장의 해석을 적어 둔 것이다."
@@ -10161,16 +10169,16 @@
   usage_note: "사람을 일하도록 뽑는 것이 hire 예요 — hire a designer. 뽑는 쪽은 an employer, 뽑힌 쪽은 an employee 입니다. 물건을 돈 내고 빌리는 것은 미국에서 rent 라고 해요 — rent a car."
 
 - word: "hole"
-  reason: "usage_note: '예positions' 는 한국어와 영어가 한 낱말 안에 섞여 버린 자리다. 게다가 'a hole on the ground' 가 틀렸다 — 땅에 난 구멍도 in the ground 라고 한다."
-  usage_note: "구멍이 어디에 났는지는 in 으로 말해요 — a hole in my shoe, a hole in the wall. 땅에 난 구멍도 a hole in the ground 라고 합니다. 벌어진 틈은 a gap 이에요."
+  reason: "usage_note: '예positions' 는 한국어와 영어가 한 낱말 안에 섞여 버린 자리다. 게다가 'a hole on the ground' 가 틀렸다 — 땅에 난 구멍도 in the ground 라고 한다. / 설명의 첫 예 'a hole in my shoe' 가 예문과 같은 말이다 — 뒤이어 든 a hole in the wall 만으로 충분하다."
+  usage_note: "구멍이 어디에 났는지는 in 으로 말해요 — a hole in the wall. 땅에 난 구멍도 a hole in the ground 라고 합니다. 벌어진 틈은 a gap 이에요."
 
 - word: "internal"
   reason: "usage_note: '내부의를 설명할 때 internal 을 쓰고' 는 같은 말을 돌려준 것이다. 몸 안쪽을 가리키는 흔한 짝(internal organs)도 빠졌다."
   usage_note: "조직 안에서만 일어나는 일에 써요 — an internal meeting(내부 회의), an internal email. 반대는 external 이에요. 몸 안쪽을 말할 때도 써서 internal organs(장기)라고 합니다."
 
 - word: "chain"
-  reason: "usage_note: 체인점 이야기로 시작해 사슬이라는 본뜻이 뒤로 밀렸고, '사슬은 물리적인 것, 연쇄는 사건' 이라는 한국어 낱말 가르기로 끝난다."
-  usage_note: "쇠고리를 이어 만든 사슬이 chain 이에요 — a bike chain. 같은 이름으로 여러 곳에 낸 가게도 chain 이라서 a chain of restaurants 라고 합니다. 줄줄이 이어진 사건은 a chain of events 예요."
+  reason: "usage_note: 체인점 이야기로 시작해 사슬이라는 본뜻이 뒤로 밀렸고, '사슬은 물리적인 것, 연쇄는 사건' 이라는 한국어 낱말 가르기로 끝난다. / 설명의 예 'a chain of restaurants' 가 예문과 같은 말이다."
+  usage_note: "쇠고리를 이어 만든 사슬이 chain 이에요 — a bike chain. 같은 이름으로 여러 곳에 낸 가게도 chain 이라서 a coffee chain 이라고 합니다. 줄줄이 이어진 사건은 a chain of events 예요."
 
 - word: "literature"
   reason: "pattern: 'a/the + literature' 는 쓰지 않는 꼴이다(a literature 라고 하지 않는다). / usage_note: \"'literature' 은 특정 문학 장르를 말할 때도 쓰입니다\" 는 무엇을 말하는지 알 수 없다."
@@ -10178,13 +10186,13 @@
   usage_note: "소설·시·희곡처럼 읽을거리로서의 글을 통틀어 literature 라고 해요 — Korean literature. 한 권의 책은 a book, 이야기책은 a novel 이라고 합니다. a literature 라고는 하지 않아요."
 
 - word: "victim"
-  reason: "usage_note: '피해자와 가해자는 반대 개념이에요' 는 한국어 낱말끼리 견준 말이고, perpetrator 는 왕초보가 만날 낱말이 아니다."
-  usage_note: "사고나 범죄로 해를 입은 사람이 victim 이에요 — 뒤에 of 를 붙여 the victim of a robbery 라고 씁니다. 그 일을 저지른 사람은 the criminal, 옆에서 본 사람은 a witness 예요."
+  reason: "usage_note: '피해자와 가해자는 반대 개념이에요' 는 한국어 낱말끼리 견준 말이고, perpetrator 는 왕초보가 만날 낱말이 아니다. / 설명의 예 'the victim of a robbery' 가 예문과 같은 말이다."
+  usage_note: "사고나 범죄로 해를 입은 사람이 victim 이에요 — 뒤에 of 를 붙여 the victims of the fire 라고 씁니다. 그 일을 저지른 사람은 the criminal, 옆에서 본 사람은 a witness 예요."
   confused_with: ["criminal", "witness"]
 
 - word: "threaten"
-  reason: "usage_note: \"'He threatened me' 만 말하면 모호해요\" 는 멀쩡한 문장을 흠으로 만든 말이고, 정작 흔한 꼴인 threaten to ~ 와 이름씨 threat 이 빠져 있었다."
-  usage_note: "무섭게 해서 겁을 주는 것이 threaten 이에요. 무엇으로 위협했는지는 with 로 붙여요 — threaten me with a knife. 하겠다고 위협할 때는 to 를 넣어 He threatened to leave. 라고 합니다. 이름씨는 a threat 이에요."
+  reason: "usage_note: \"'He threatened me' 만 말하면 모호해요\" 는 멀쩡한 문장을 흠으로 만든 말이고, 정작 흔한 꼴인 threaten to ~ 와 이름씨 threat 이 빠져 있었다. / 설명의 예 'threaten me with a knife' 가 예문과 같은 말이다."
+  usage_note: "무섭게 해서 겁을 주는 것이 threaten 이에요. 무엇으로 위협했는지는 with 로 붙여요 — threaten someone with a gun. 하겠다고 위협할 때는 to 를 넣어 He threatened to leave. 라고 합니다. 이름씨는 a threat 이에요."
 
 - word: "division"
   reason: "pattern: 'division of + 대상' 이 예문 'The company has many divisions.' 에 없는 of 를 요구한다. / usage_note: '상황에 따라 달라져요' 는 판단을 학습자에게 떠넘기는 말이고, 움직씨 divide 가 빠졌다."
@@ -10215,3 +10223,156 @@
   reason: "usage_note: '공장과 회사(factory vs. company)를 헷갈릴 수 있어요' 는 실제로 잘 헷갈리지 않는 짝을 들었고, 한국어 문장 안에 영어 대비를 괄호로 끼워 넣어 읽기도 나쁘다."
   usage_note: "물건을 만드는 곳이 factory 예요 — a car factory(자동차 공장). 공장에서 일한다고 할 때는 work in a factory 라고 합니다. 공장이 모여 있는 곳은 an industrial area 예요."
   confused_with: ["company", "plant"]
+
+- word: "expense"
+  reason: "pattern: 'an expense (불가산명사)' 는 스스로를 뒤집는다 — an 을 붙여 놓고 셀 수 없다고 적었다. 예문도 'a big expense' 로 세는 꼴이다. / usage_note: cost 와의 갈림만 있고 가장 흔한 꼴인 travel expenses 가 빠졌다."
+  pattern: "a/the + expense / expenses"
+  usage_note: "회사나 서류에서 쓰는 딱딱한 말이라 travel expenses(출장비)처럼 -s 를 붙여 자주 써요. 무엇에 드는 값은 cost, 물건에 붙은 값은 price 라고 합니다 — What's the price?"
+
+- word: "channel"
+  reason: "usage_note: \"'channel' 은 번호를 같이 써야 해요\" 가 틀렸다 — a TV channel, a YouTube channel 처럼 번호 없이 쓰는 자리가 더 많다. / 선별기가 짚었다 — 문형 'on + channel + 번호' 가 예문 'I want to watch channel 5.' 에 없는 on 을 요구한다. 번호 없이 쓰는 꼴을 함께 적어야 예문과 맞는다."
+  pattern: "a/the + channel / on channel + 번호"
+  usage_note: "TV 에서 방송이 나오는 자리를 channel 이라고 해요. 번호를 붙일 때는 앞에 on 을 써서 It's on channel 5. 라고 합니다. 유튜브에서 사람마다 가진 방도 a channel 이라고 해요."
+
+- word: "rank"
+  reason: "example: 'What rank are you in the class?' 는 영어로 어색하다 — 반 등수는 What's your rank? 나 아예 다른 말로 묻는다. / usage_note: 'What rank are you in...' 이라는 그 어색한 꼴을 구조로 못 박아 두었고, 군대 계급이라는 흔한 뜻이 빠졌다."
+  meaning_ko: "순위, 등수; 계급"
+  example: "He has a high rank in the army."
+  usage_note: "몇 번째인지를 나타내는 자리가 rank 예요 — 군대나 경찰의 계급에도 씁니다. 움직씨로 쓰면 순위를 매긴다는 뜻이라 She is ranked first. 라고 해요. 어려움의 정도나 실력의 층은 level 이라고 합니다."
+
+- word: "typical"
+  reason: "usage_note: \"보통 'of' 를 빼고 'typical person' 처럼 쓰는 경우가 많아요\" 는 예문이 보여 주는 typical of 를 곁가지로 밀어냈다. / meaning_ko: '보통의' 만으로는 typical of him 이 '그 사람답다' 라는 것을 알 수 없고, 해석이 '이건 그의 타입이에요' 로 잘못 나간 까닭도 여기 있다. / 되읽기: 설명의 예 'That's typical of him.' 이 예문 'This is typical of him.' 과 한 낱말 빼고 같다."
+  meaning_ko: "~ 다운, 늘 그런; 흔히 있는"
+  usage_note: "typical of ~ 는 '~ 답다' 는 뜻이에요 — Typical! 한 마디만 던지면 '늘 저런다니까' 가 됩니다. 명사 앞에 붙이면 '흔히 있는' 이라는 뜻이라 a typical day(평범한 하루)처럼 써요. 그냥 '보통의' 는 normal 이라고 합니다."
+
+- word: "west"
+  reason: "usage_note: \"'west' 는 방향을, 'west of' 는 위치를 말하는 거예요\" 는 같은 말을 나눠 놓은 것이라 배울 것이 없다. the 를 붙이는 자리도 빠졌다."
+  usage_note: "해가 지는 쪽이 west 예요. 방위 자체를 말할 때는 the west 라고 하고, 무엇의 서쪽이라고 할 때는 to the west of ~ 라고 합니다. 서쪽으로 간다고 할 때는 go west 라고 해요."
+
+- word: "resident"
+  reason: "usage_note: 한국어 '주민' 과 견주며 시작해 뜻 칸을 되풀이하고, confused_with 에 둔 citizen 을 갈라 주지 않았다. / confused_with: inhabitant 는 왕초보 어휘가 아니다. / 되읽기: 설명의 예 'a resident of this city' 가 예문과 같은 말이다."
+  usage_note: "어느 곳에 사는 사람을 resident 라고 해요 — local residents(그 동네 주민들). 그 나라 국적을 가진 사람은 a citizen 이고, 오래 살 수 있는 자격은 permanent residence(영주권)라고 합니다. 사는 동작은 live 예요."
+  confused_with: ["citizen"]
+
+- word: "provision"
+  reason: "usage_note: \"'provisioning' 은 동사 형태예요\" 가 틀렸다 — provision 의 움직씨는 provide 다. confused_with 에도 그 지어낸 낱말이 올라가 있었다. / example: 'made new provisions of food' 는 영어로 어색하다."
+  meaning_ko: "제공, 공급; (계약의) 조항"
+  example: "The provision of clean water is important."
+  usage_note: "무엇을 대 주는 일을 provision 이라고 해요 — the provision of food. 대 주는 동작은 provide 라서 They provide food. 라고 합니다. 계약서에 적힌 조항도 a provision 이에요."
+  confused_with: ["supply", "provide"]
+
+- word: "plenty"
+  reason: "usage_note: \"'a lot of' 보다 더 강하게 많음을 표현해요\" 는 근거가 없다 — 갈리는 것은 양이 아니라 '모자라지 않다' 는 느낌이다. 명사 없이 쓰는 That's plenty. 도 빠졌다. / 선별기가 짚었다 — 내가 쓴 '셀 수 있는 것에도' 가 가산성 단정 검사에 걸린다. 걸린 채로 두면 이 낱말이 연습장에서 빠지므로 같은 뜻을 다른 말로 쓴다. / 되읽기: 설명의 예 \"There's plenty of time.\" 이 예문과 같은 문장이다."
+  usage_note: "plenty of 는 '넉넉히 있다' 는 뜻이라 모자라지 않다는 느낌을 줘요 — We have plenty of food. 하나 둘로 세는 것에도, 세지 않는 것에도 다 씁니다. 뒤에 명사를 안 붙이고 That's plenty. 한 마디로 '충분해요' 라고도 해요."
+
+- word: "export"
+  reason: "meaning_ko·usage_note: '내수하지 않고 해외로 보내다' 는 한국어로 어색하고, 설명이 그 표현을 그대로 되풀이한다. 이름씨 쓰임(exports)도 빠졌다."
+  meaning_ko: "수출하다, 나라 밖으로 내보내다"
+  usage_note: "물건을 나라 밖으로 파는 것이 export 예요 — export cars to Europe. 반대로 밖에서 들여오는 것은 import 입니다. 이름씨로도 써서 Korea's exports(한국의 수출품)라고 해요."
+
+- word: "entirely"
+  reason: "usage_note: 'I don't know entirely. (전혀 몰라요)' 가 틀렸다 — 그 문장은 '전부 알지는 못한다' 는 뜻이지 '전혀 모른다' 가 아니다. / meaning_ko: '전혀' 도 같은 까닭으로 틀렸다. / example: 'I am entirely sure' 보다 entirely 가 실제로 붙는 자리는 agree 쪽이다. / 되읽기: 설명의 예 'I entirely agree.' 가 예문 'I entirely agree with you.' 와 사실상 같다."
+  meaning_ko: "완전히, 전부"
+  example: "I entirely agree with you."
+  usage_note: "entirely 는 '남김없이 다' 라는 뜻이에요 — It's entirely up to you. 자리는 보통 동사 앞이나 be 동사 뒤입니다. 뜻이 거의 같은 completely 를 훨씬 많이 쓰고, '전혀 아니다' 는 not at all 이라고 해요."
+
+- word: "strongly"
+  reason: "pattern: '(구문상 뒤에 따라감)' 은 형태 표기가 아니라 메모다. / usage_note: '혼동하지 마세요' 로 strong 을 짚고 끝나, strongly 가 붙는 자리(동사 앞)와 물건에는 쓰지 않는다는 것이 빠졌다."
+  pattern: "strongly + 동사"
+  usage_note: "생각이나 느낌이 세다고 할 때 동사 앞에 붙여요 — I strongly agree. / I strongly recommend it. 그림씨는 strong 이라서 a strong man 처럼 명사 앞에 붙입니다. 물건이 튼튼하다는 말에는 strongly 를 쓰지 않아요."
+
+- word: "bridge"
+  reason: "usage_note: 문장이 통째로 무너져 있다 — \"'bridge' 가 아니라 'bridge' 의 동사형인 'bridge' 를 쓰는 경우가 있어요\" 는 같은 낱말을 셋으로 나눠 자기를 가리킨다. / confused_with: \"bridge (as a verb)\" 처럼 괄호 해설이 들어가 낱말이 아니다. / 되읽기: 설명의 예 'a bridge over the river' 가 예문의 알맹이 그대로다."
+  usage_note: "강이나 길 위에 놓아 건너다니는 다리가 bridge 예요. 건넌다고 할 때는 cross the bridge 라고 합니다. 사람 몸의 다리는 a leg 라서 아주 다른 낱말이에요."
+  confused_with: ["leg", "tunnel"]
+
+- word: "consist"
+  reason: "usage_note: of 를 빼면 안 된다는 것은 맞지만 confused_with 에 둔 include·contain 을 갈라 주지 않아, 언제 어느 쪽을 쓰는지가 없다. / 되읽기: 설명의 예 'consist of rice and vegetables' 가 예문의 알맹이 그대로다."
+  usage_note: "consist 뒤에는 늘 of 가 붙어요 — The team consists of five people. 무엇으로 이루어졌는지 통째로 말할 때 씁니다. 여럿 가운데 하나가 들어 있다고 할 때는 include 를 써요 — The price includes tax."
+
+- word: "graduate"
+  reason: "usage_note: \"'graduate' 는 학위를 받는 것을 강조해요\" 라고 해 놓고 바로 다음 문장이 고등학교 졸업을 예로 든다 — 고등학교는 학위를 주지 않으므로 앞말이 지워진다. from 을 빠뜨리는 흔한 실수도 짚지 않았다."
+  meaning_ko: "졸업하다"
+  usage_note: "졸업했다고 할 때는 뒤에 from 을 붙여요 — I graduated from high school. 학교 이름을 바로 붙이지 않습니다. 이름씨로 쓰면 '졸업생' 이라서 a university graduate 라고 해요. 졸업식은 graduation 이에요."
+
+- word: "brand"
+  reason: "pattern: 'brand + 명사' 인데 예문 'This is a famous brand.' 는 이름씨 하나로 끝난다. / usage_note: 첫 문장이 뜻 칸의 되풀이이고, confused_with 의 model 을 갈라 주지 않았다. / 되읽기: 설명의 예 'a famous brand' 가 예문과 같은 말이다."
+  pattern: "a/the + brand / brand + 명사"
+  usage_note: "회사나 물건에 붙은 이름이 brand 예요 — What brand is it? 같은 회사에서 나온 여러 종류를 가르는 것은 a model 이라고 합니다. brand new 는 '완전 새것' 이라는 뜻으로 굳어진 짝이에요."
+
+- word: "combination"
+  reason: "usage_note: 첫 문장이 뜻 칸의 되풀이이고 mix 와의 갈림도 '더 자연스럽게 섞는 느낌' 이라는 잴 수 없는 말이다. 자물쇠 비밀번호라는 흔한 뜻과 움직씨 combine 이 빠졌다. / 되읽기: 설명의 예 'a combination of fruit and yogurt' 가 예문의 알맹이 그대로다."
+  usage_note: "둘 이상을 하나로 묶은 것이 combination 이에요 — a combination of colors. 자물쇠 비밀번호도 the combination 이라고 합니다. 섞는 동작은 mix, 합치는 동작은 combine 이에요."
+  confused_with: ["mix", "combine"]
+
+- word: "abuse"
+  reason: "usage_note: misuse 보다 '더 강한 의미' 라고만 해 언제 어느 쪽을 쓰는지 알 수 없고, 뉴스에서 자주 보는 짝(child abuse·drug abuse)이 빠져 있었다. / confused_with: exploit 은 왕초보 어휘가 아니다. / 되읽기: 설명의 예 'abuse his power' 가 예문과 같은 말이다."
+  usage_note: "권한이나 물건을 나쁘게 쓰는 것도, 사람을 함부로 다루는 것도 abuse 라고 해요 — abuse the system / child abuse(아동 학대). 이름씨로도 써서 drug abuse(약물 남용)라고 합니다. 잘못 쓰는 정도는 misuse 예요."
+  confused_with: ["misuse"]
+
+- word: "ice"
+  reason: "usage_note: \"한국어 '얼음' 은 물질이지만 'ice' 는 명사로 쓰일 뿐 동사가 아니에요\" 는 한국어와 영어의 품사를 견주는 틀이라 배울 것이 없다. 정작 왕초보에게 필요한 것 — 얼음은 세지 않는다, 한 조각은 an ice cube — 가 빠졌다."
+  usage_note: "얼음은 하나 둘로 세지 않아서 some ice, a lot of ice 라고 해요. 얼음 한 조각은 an ice cube 라고 합니다. 얼음을 넣은 음료에는 iced 를 붙여 iced coffee 라고 해요."
+
+- word: "principal"
+  reason: "usage_note: \"principal 은 '원칙' 이나 '학교장' 이라는 뜻도 있지만\" 에서 '원칙' 이 틀렸다 — 그것은 소리만 같은 다른 낱말 principle 이다. **헷갈리는 짝을 설명하면서 그 헷갈림을 그대로 저질렀다.** / 되읽기: 설명의 예 'the principal reason' 이 예문과 같은 말이다."
+  usage_note: "principal 은 '가장 중요한' 이라는 뜻이에요 — our principal goal(우리의 가장 큰 목표). 미국에서 학교 교장 선생님도 the principal 이라고 부릅니다. 소리가 같은 principle 은 '원칙' 이라는 아주 다른 낱말이에요."
+
+- word: "master"
+  reason: "usage_note: \"'I mastered the piano' 는 '피아노를 잘 다루는 사람' 을 의미해요\" 가 틀렸다 — 그 문장은 사람이 아니라 '다룰 수 있게 되었다' 는 뜻이다. / meaning_ko: '전문가, 달성하다' 는 이름씨와 움직씨를 뒤섞어 놓았다. / 되읽기: 설명의 예 'I want to master English.' 가 예문과 글자까지 같다."
+  meaning_ko: "완전히 익히다; 달인, 주인"
+  usage_note: "무언가를 완전히 익혀 잘하게 되는 것이 master 예요 — It takes years to master the piano. 이름씨로 쓰면 그 일을 아주 잘하는 사람이라 a master of cooking 이라고 합니다. 석사 학위도 a master's degree 예요."
+  confused_with: ["expert"]
+
+- word: "definitely"
+  reason: "pattern: '문장 맨 앞 or 문장 중간' 에 영어 or 가 섞여 있다. / usage_note: \"'I think' 과 함께 쓸 때는 'I think I definitely...' 처럼 써요\" 는 쓰지 않는 꼴을 지어낸 것이고, 대답으로 쓰는 Definitely! 가 빠졌다."
+  pattern: "definitely + 동사"
+  usage_note: "틀림없다고 힘주어 말할 때 써요 — 자리는 보통 동사 앞이에요. 대답으로 Definitely! 한 마디만 하면 '당연하지!' 가 됩니다. 아니라고 할 때는 Definitely not. 이라고 해요."
+
+- word: "session"
+  reason: "pattern: 'a + session + about/on + 주제' 인데 예문의 on 은 주제가 아니라 요일(on Mondays)이라 문형과 예문이 다른 것을 가리킨다. / usage_note: 한국어 외래어 '세션' 과 견주고 있어 영어를 배우는 데 쓸모가 없다."
+  pattern: "a + 명사 + session / a session on + 주제"
+  usage_note: "무엇을 하려고 정해 둔 한 차례의 시간이 session 이에요 — a training session(연수 시간). 학교 수업은 a class, 여럿이 모이는 자리는 a meeting 이라고 합니다. 운동이나 상담을 한 번 하는 것도 a session 이에요."
+
+- word: "predict"
+  reason: "usage_note: \"'I think' 이나 'I guess' 와는 다르게 정확한 예측을 말할 때 써요\" 가 틀렸다 — predict 는 맞는다는 뜻을 담지 않는다(틀린 예측도 prediction 이다). 이름씨 prediction 도 빠졌다. / 되읽기: 설명의 예 'predict rain' 이 예문의 알맹이 그대로다."
+  usage_note: "앞으로 어떻게 될지 미리 말하는 것이 predict 예요 — predict the weather. 이름씨는 a prediction 입니다. 그냥 어림잡아 말하는 것은 guess 라서 Guess my age! 처럼 써요."
+
+- word: "previously"
+  reason: "usage_note: before 와 견준 것은 맞지만 자리를 말하지 않아, 학습자가 before 처럼 문장 끝에 붙일 위험이 남는다."
+  usage_note: "전에 있었던 일을 말할 때 쓰는 딱딱한 말이에요 — 자리는 보통 동사 앞입니다. 말할 때는 before 를 문장 끝에 붙여 I worked there before. 라고 하는 것이 훨씬 자연스러워요."
+
+- word: "protection"
+  reason: "pattern·example: 'a/the + protection' 과 'This is a protection for the child.' 가 둘 다 어색하다 — protection 은 a 를 붙여 쓰지 않고 뒤에 from 을 붙인다. / usage_note: '보호를 주는 행위는 protect 예요' 는 한국어가 어색하고 from 이 빠져 있었다. / 되읽기: 설명의 예 'protection from the sun' 이 예문의 알맹이 그대로다."
+  pattern: "protection + from/against + 위험"
+  example: "Sunscreen gives protection from the sun."
+  usage_note: "무엇으로부터 지켜 주는 것이 protection 이에요 — 뒤에 from 을 붙여 protection from the cold 처럼 씁니다. 지켜 주는 동작은 protect 라서 protect your skin 이라고 해요. 안전한 상태 자체는 safety 예요."
+
+- word: "largely"
+  reason: "pattern: 'largely + 명사' 가 틀렸다 — 예문도 'largely due to' 로 명사가 아니다. / meaning_ko: '대부분으로' 는 한국어에서 쓰지 않는 말이다. / usage_note: mainly 와의 갈림이 '더 일반적인 상황' 이라는 잴 수 없는 말이다. / 되읽기: 설명의 예 'largely due to bad weather' 가 예문의 알맹이 그대로다."
+  meaning_ko: "주로, 거의 대부분"
+  pattern: "largely + due to / largely + 동사"
+  usage_note: "largely 는 '거의 대부분' 이라는 뜻이라 까닭을 말할 때 자주 붙어요 — largely because of the price. 자리는 보통 동사나 due to 앞입니다. 말할 때는 뜻이 거의 같은 mainly 나 mostly 를 더 많이 써요."
+
+- word: "wed"
+  reason: "usage_note: 'I wed my wife in 2010.' 은 영어로 어색하다 — wed 는 신문 제목에나 남은 옛말이라 이런 1인칭 문장으로 쓰지 않는다. 지어낸 예로 쓰임을 가르치고 있었다."
+  usage_note: "wed 는 신문 기사 제목 같은 데에서나 보이는 옛말이에요. 말할 때는 get married 를 씁니다 — They got married last year. 결혼식은 a wedding, 결혼한 상태는 married 예요."
+
+- word: "rent"
+  reason: "usage_note: \"임대인은 'rent' 를 쓰고, 임차인은 'rent' 를 쓰는 경우가 있어요\" 는 같은 낱말을 양쪽에 놓아 아무것도 가르지 못한다. 게다가 'I rent a car from the company.' 를 '회사에서 차를 빌려주는 상황' 이라 해 방향을 거꾸로 읽었다. / meaning_ko: '(임대인 쪽)' 이 예문과 어긋난다 — I rent a house. 는 빌리는 쪽이다."
+  meaning_ko: "(돈을 내고) 빌리다; 집세"
+  usage_note: "돈을 내고 빌리는 쪽에서 rent 를 써요 — I rent a car from the company. 빌려주는 쪽은 rent out 이라고 합니다 — She rents out her room. 다달이 내는 집세도 rent 예요 — pay the rent."
+
+- word: "shot"
+  reason: "usage_note: \"사진 촬영을 의미할 때는 'take a shot' 을 쓰고\" 라고 했는데 같은 항목의 예문이 'He took a shot at the target.' 으로 총을 쏘는 자리다 — 설명이 제 예문을 다른 뜻으로 만든다."
+  usage_note: "총을 한 번 쏜 것이 a shot 이에요 — fire a shot. 사진 한 장도 a shot 이라고 해서 a nice shot 이라고 합니다. take a shot at ~ 는 '한번 해 보다' 라는 뜻으로도 자주 써요."
+
+- word: "appearance"
+  reason: "usage_note: \"'What's your appearance?' 는 ... '당신의 외모는 어때?' 처럼 말해요\" 에서 그 영어 물음은 실제로 쓰지 않는다. / example: 'She has a nice appearance.' 도 영어로 딱딱하다 — 이 자리에는 look 을 쓴다. / meaning_ko: '모양' 은 겉모습이라는 알맹이를 흐린다. / 되읽기: 설명의 예 'judge by appearance' 가 예문과 같은 말이다."
+  meaning_ko: "겉모습, 외모"
+  example: "Don't judge by appearance."
+  usage_note: "사람이나 물건이 어떻게 보이는지를 말할 때 써요 — She changed her appearance. 말할 때는 She looks nice. 처럼 look 을 훨씬 많이 씁니다. 어디에 모습을 나타내는 것도 appearance 예요 — his first appearance on TV."
+
+- word: "guarantee"
+  reason: "usage_note: '보장하는 내용이 명확하게 있어야 해요' 는 학습자가 아니라 글 쓰는 사람에게 하는 말이고, 물건에 딸린 품질 보증서라는 흔한 이름씨 쓰임이 빠졌다. / 되읽기: 설명의 예 'We guarantee free repairs.' 가 예문과 주어만 다르다."
+  usage_note: "꼭 그렇게 해 주겠다고 약속하는 것이 guarantee 예요 — I guarantee you'll like it. 물건에 딸린 품질 보증서도 a guarantee 라고 합니다 — a two-year guarantee. 뜻이 비슷한 promise 보다 무거운 말이에요."

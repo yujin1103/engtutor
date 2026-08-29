@@ -2888,3 +2888,47 @@ passes:
   - tie
   - victim
   - wake
+- id: top1600-f
+  date: '2026-08-29'
+  what: 빈도 1528~1569위 40개 — 37개가 고칠 것이었다(직접 읽음)
+  words:
+  - abuse
+  - appearance
+  - brand
+  - bridge
+  - channel
+  - combination
+  - consist
+  - definitely
+  - entirely
+  - expense
+  - export
+  - friendly
+  - grade
+  - graduate
+  - guarantee
+  - ice
+  - insist
+  - investigate
+  - largely
+  - master
+  - moral
+  - nevertheless
+  - plenty
+  - predict
+  - previously
+  - principal
+  - protection
+  - provision
+  - rank
+  - reasonable
+  - recommendation
+  - rent
+  - resident
+  - session
+  - shot
+  - strongly
+  - theme
+  - typical
+  - wed
+  - west

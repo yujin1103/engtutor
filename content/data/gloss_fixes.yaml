@@ -3341,3 +3341,47 @@
 - word: "slowly"
   example_ko: "천천히 걸어 주세요."
   reason: "'걸어주세요' 는 띄어쓰기가 틀렸다."
+
+- word: "recommendation"
+  example_ko: "그 사람이 호텔을 하나 추천해 줬어요."
+  reason: "바뀐 예문에 맞췄다."
+
+- word: "rank"
+  example_ko: "그는 군에서 계급이 높아요."
+  reason: "바뀐 예문에 맞췄다."
+
+- word: "typical"
+  example_ko: "그건 그 사람다운 행동이에요."
+  reason: "'이건 그의 타입이에요' 는 typical of him 을 통째로 잘못 옮긴 말이다 — 취향이 아니라 '그 사람답다' 는 뜻이다."
+
+- word: "provision"
+  example_ko: "깨끗한 물을 공급하는 일이 중요해요."
+  reason: "바뀐 예문에 맞췄다."
+
+- word: "entirely"
+  example_ko: "저는 전적으로 동의해요."
+  reason: "바뀐 예문에 맞췄다."
+
+- word: "strongly"
+  example_ko: "저는 당신 의견에 강하게 반대해요."
+  reason: "'당신과 강하게 의견이 다릅니다' 는 disagree with you 를 어색하게 옮긴 말이다."
+
+- word: "master"
+  example_ko: "영어를 완전히 익히고 싶어요."
+  reason: "'잘 하기를 원해요' 는 번역투이고 master 의 '완전히 익히다' 도 담지 못한다."
+
+- word: "definitely"
+  example_ko: "저는 확실히 피자가 먹고 싶어요."
+  reason: "'피자 먹고 싶어요. 확실히요.' 는 한 문장을 둘로 쪼개 어색하다."
+
+- word: "protection"
+  example_ko: "선크림이 햇빛으로부터 피부를 보호해 줘요."
+  reason: "바뀐 예문에 맞췄다."
+
+- word: "rent"
+  example_ko: "저는 집을 빌려 살아요."
+  reason: "'집을 빌려요' 만으로는 잠깐 빌린다는 말로도 읽힌다 — rent a house 는 세 들어 사는 것이다."
+
+- word: "appearance"
+  example_ko: "겉모습으로 판단하지 마세요."
+  reason: "바뀐 예문에 맞췄다."
