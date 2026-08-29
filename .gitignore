@@ -50,3 +50,5 @@ ui_web/dist/
 # 검수 agent 가 남기는 일회용 스크립트. 저장소에 들어오면 안 된다.
 _*.py
 scratch_*.py
+# 같은 것이 점 붙은 이름으로도 남는다(.review_check.py 가 그랬다).
+.review_*.py

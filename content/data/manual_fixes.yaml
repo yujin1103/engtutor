@@ -5331,16 +5331,23 @@
   pattern: "do + an experiment + on + 명사"
 
 - word: "tape"
-  reason: "문형 자리에 영어가 들어가 있었다: tape + 목적어 (물건), tape + something + up (감다)"
+  reason: "문형 자리에 영어가 들어가 있었다: tape + 목적어 (물건), tape + something + up (감다) / usage_note: 'tape 는 감다, 테이프로 감다' 로 같은 말을 두 번 했고 이름씨 쓰임(테이프 자체)이 빠졌다. 상자를 봉하는 tape up 의 뜻도 '감다' 로는 전해지지 않는다."
   pattern: "tape + 목적어 (물건), tape + 명사 + up (감다)"
+  usage_note: "tape 는 이름씨로 '테이프', 움직씨로 '테이프로 붙이다·봉하다' 예요 — tape the box up 은 상자를 테이프로 봉하는 것입니다. 풀로 붙이는 것은 glue, 가볍게 붙이는 것은 stick 이라고 해요."
 
 - word: "monitor"
-  reason: "문형 자리에 영어가 들어가 있었다: monitor + 목적어 (사물), monitor + someone + for + something"
+  reason: "문형 자리에 영어가 들어가 있었다: monitor + 목적어 (사물), monitor + someone + for + something / usage_note: '모니터하다' 와 '감시하다' 라는 한국어끼리 견주고 '문맥에 따라 다르게 쓰입니다' 로 끝나 어느 자리에 어느 뜻인지를 말하지 않는다. 화면을 뜻하는 이름씨 쓰임도 예가 없었다."
   pattern: "monitor + 목적어 (사물), monitor + 사람 + for + 명사"
+  usage_note: "화면을 뜻하는 이름씨로도 쓰고 — a computer monitor — '계속 지켜보다' 라는 움직씨로도 써요. 움직씨 monitor 는 상태가 어떻게 바뀌는지 살핀다는 뜻이라 병원이나 회사에서 자주 쓰고, 그냥 본다고 할 때는 watch 를 씁니다."
+  confused_with: ["watch", "screen"]
 
 - word: "comfortable"
-  reason: "문형 자리에 영어가 들어가 있었다: be comfortable + with/around + something"
-  pattern: "be comfortable + with/around + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: be comfortable + with/around + something / example·pattern: 'I'm comfortable with this chair.' 는 영어로 어색하다 — 의자는 사람을 편하게 해 주는 쪽이라 The chair is comfortable. 이라고 한다. 해석 '이 의자에 앉아서 편안해요' 도 그 어색함을 덮고 있었다. / usage_note: '사람과의 관계에서 편할 때는 get along with' 는 comfortable 의 쓰임이 아니라 다른 표현을 가르치는 말이다."
+  meaning_ko: "편안한, 몸이 편한"
+  pattern: "be + comfortable / comfortable + 명사"
+  example: "This chair is very comfortable."
+  usage_note: "물건이 몸을 편하게 해 줄 때 써요 — a comfortable bed. 사람이 마음이 편하다고 할 때도 쓰는데 그때는 뒤에 with 를 붙여요 — I feel comfortable with him. 시간이나 자리가 알맞다는 뜻의 convenient 와는 다른 말이에요."
+  confused_with: ["convenient"]
 
 - word: "oppose"
   reason: "문형 자리에 영어가 들어가 있었다: oppose + something (반대하는 대상)"
@@ -7087,8 +7094,10 @@
   pattern: "powerful + 명사"
 
 - word: "active"
-  reason: "문형 자리에 영어가 들어가 있었다: adjective"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective / usage_note: 원문이 한국어 '활발한' 과 '적극적인' 만 견주고 영어를 한 마디도 하지 않아 정보가 0이었다. / confused_with: reactive·positive 는 왕초보가 active 와 헷갈릴 짝이 아니다 — 실제로 갈라 줘야 할 짝은 passive 다."
   pattern: "active + 명사"
+  usage_note: "무언가를 열심히 하고 있다는 뜻이에요. 어디에서 활동한다고 할 때는 뒤에 in 을 붙여요 — She is active in politics. 시키는 대로만 따르는 쪽은 passive, 지금은 쓰이지 않는 상태는 inactive 라고 해요."
+  confused_with: ["passive", "busy"]
 
 - word: "dangerous"
   reason: "문형 자리에 영어가 들어가 있었다: adjective: + 명사"
@@ -7661,8 +7670,9 @@
   usage_note: "웃음이 나는 것이 funny예요. 웃기지는 않지만 흥미로워서 재미있는 건 interesting이라고 해요: The movie was interesting."
 
 - word: "glad"
-  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다. / usage_note: '기쁘다와 달리' 로 시작해 한국어와 영어를 견주는 시늉만 하고, 정작 glad 가 명사 앞에 잘 안 붙는다는 쓸모 있는 사실은 빠져 있었다."
   pattern: "be glad"
+  usage_note: "glad 는 be 동사 뒤에 붙여 I'm glad. 처럼 써요. 명사 앞에는 잘 쓰지 않아서 'a glad man' 은 어색하고, 그 자리에는 happy 를 씁니다. 만나서 반갑다고 할 때 Glad to meet you. 라고 짧게 말할 수 있어요."
 
 - word: "moral"
   reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
@@ -9483,3 +9493,198 @@
 - word: "weapon"
   reason: "usage_note: DB 원문에 '이예요' 오타와 한국어뿐인 예가 그대로 있고, axe 는 실재하는 낱말이며 새 예문은 문법도 자연스럽다."
   usage_note: "사람을 해치는 데 쓰는 물건은 weapon, 일할 때 쓰는 물건은 tool 이에요. 도끼는 둘 다 될 수 있어요 — An axe can be a tool or a weapon. (도끼는 도구일 수도 무기일 수도 있어요.)"
+
+- word: "conclude"
+  reason: "example: 'I conclude that he is honest.' 는 1인칭 현재형이라 실제로 쓰지 않는 문장이다 — 결론은 내린 뒤에 말하므로 과거형이 자연스럽다. / usage_note: '결론이나 끝내다와는 다르게' 라며 제 뜻과 저를 견주는 소리였고, 어느 자리에서 쓰는 말인지를 말해 주지 않았다."
+  example: "We concluded that he was right."
+  usage_note: "근거를 보고 판단을 내렸다고 말할 때 쓰는 딱딱한 말이에요. 말할 때는 So I think ~ 를 훨씬 많이 씁니다. 회의나 이야기를 끝맺는다는 뜻도 있어서 The meeting concluded at five. 처럼 써요. 이름씨는 conclusion 이에요."
+
+- word: "religious"
+  reason: "pattern·example: 'religious about' 은 '무엇이든 철저히 지킨다' 는 관용 표현이라 종교와 상관이 없고 'religious with' 는 아예 없는 꼴이었다. 예문 'He is very religious about his prayers.' 와 그 해석이 뜻 칸의 '종교적인' 과 어긋나 있었다. / usage_note: religion 과 religious 를 가르는 말이 없었다."
+  meaning_ko: "종교를 믿는, 신앙이 깊은"
+  pattern: "religious + 명사 / be + religious"
+  example: "She is a very religious person."
+  usage_note: "종교를 믿고 열심히 지키는 사람에게 써요. 종교 자체를 가리키는 이름씨는 religion 이라서 '무슨 종교세요?' 는 What religion are you? 라고 물어요. 종교와 상관없이 마음이 깊은 것을 말할 때는 spiritual 을 씁니다."
+  confused_with: ["religion", "spiritual"]
+
+- word: "cancer"
+  reason: "meaning_ko: '암병' 은 한국어에 없는 말이다. / pattern: 'a/the + cancer' 가 예문 'My uncle has cancer.' 와 어긋난다 — 그 자리에 관사를 넣으면 비문이다. / usage_note: '암은 병명으로, cancer 는 병의 이름이예요' 는 같은 말을 두 번 한 것이고 오타도 있었다."
+  meaning_ko: "암 (몸에 생기는 병)"
+  pattern: "have + cancer"
+  usage_note: "병에 걸렸다고 말할 때는 앞에 a 를 붙이지 않고 have cancer 라고 해요. 어디에 생긴 암인지는 앞에 붙여서 lung cancer(폐암), stomach cancer(위암)처럼 말합니다. 병을 두루 가리키는 말은 disease 예요."
+  confused_with: ["disease"]
+
+- word: "convince"
+  reason: "usage_note: convince 와 persuade 를 거꾸로 갈라 놓았다 — persuade 를 '동의하게 만드는 데 중점' 이라 했는데 그게 convince 쪽이고 persuade 는 움직여 하게 만드는 쪽이다. 한국어 '설득하다' 만 견주는 앞 문장도 정보가 없다. / 되읽기: 설명을 '상대가 그렇게 믿게 만드는 것' 으로 고쳤는데 뜻 칸은 '누군가를 자신의 생각이나 행동으로 만들다' 라는, 한국어로 뜻이 통하지 않는 문장 그대로였다."
+  meaning_ko: "설득하다 (믿게 만들다)"
+  usage_note: "convince 는 상대가 그렇게 믿게 만드는 것이고, persuade 는 상대를 움직여 무언가를 하게 만드는 것이에요 — I persuaded him to come. 뒤에는 사람을 먼저 쓰고, 믿게 할 내용은 that 이나 of 로 붙여요 — convince me of the truth."
+  confused_with: ["persuade"]
+
+- word: "vary"
+  reason: "usage_note: 혼자만 '가진다·쓴다' 체로 쓰여 있어 화면에서 다른 항목과 말투가 갈렸고, vary 가 '하나가 변한다' 가 아니라 '여럿이 저마다 다르다' 라는 핵심을 말하지 않았다."
+  usage_note: "vary 는 '저마다 다르다' 는 뜻이에요 — 하나가 변한다기보다 여럿이 서로 다를 때 씁니다. Prices vary. 는 '가격이 가지각색이에요' 예요. 그림씨는 various(여러 가지의), 이름씨는 variety 예요."
+
+- word: "environmental"
+  reason: "usage_note: 'environmental protection 은 명사로 쓰일 수 있어요' 가 틀렸다 — environmental 은 명사 앞에 붙는 그림씨이고 명사인 것은 protection 쪽이다. environment 와 갈라 주는 말도 없었다. / pattern: 'ex:' 는 영어 약어라 학습자 화면에 나갈 표기가 아니다."
+  pattern: "environmental + 명사 (예: problem, protection)"
+  usage_note: "environmental 은 명사 앞에 붙는 그림씨예요 — environmental problem(환경 문제). 환경 자체를 가리키는 이름씨는 environment 라서 '환경을 보호하다' 는 protect the environment 라고 합니다."
+  confused_with: ["environment"]
+
+- word: "sun"
+  reason: "usage_note: '동사로는 sun 이 아니예요' 는 무슨 말인지 알 수 없는 문장인 데다 오타가 있고, 'sun 만 쓰면 햇빛을 의미할 수 있어요' 도 sunlight 를 두고 하는 말이라 헷갈린다. 정작 왕초보에게 필요한 the 이야기가 곁가지로 밀려 있었다."
+  usage_note: "해를 가리킬 때는 늘 the 를 붙여 the sun 이라고 해요 — 하늘에 하나뿐이라서예요. 내리쬐는 햇빛은 sunlight, 볕이 좋은 날씨는 sunny 라고 합니다 — It's sunny today."
+
+- word: "healthy"
+  reason: "pattern: 'healthy + 주격조사 (이/가)' 는 영어 문형 자리에 한국어 조사를 적어 넣은 것이라 형태 표기가 아니다. / usage_note: '건강한 사람은 healthy person 을 쓰고, healthy 는 음식에 쓰는 게 더 자연스러워요' 는 앞뒤가 서로를 지운다."
+  pattern: "be + healthy / healthy + 명사"
+  usage_note: "사람에게 쓰면 몸이 튼튼하고 아픈 데가 없다는 뜻이고, 음식에 쓰면 몸에 좋다는 뜻이에요 — a healthy breakfast. 아프다가 나았을 때는 healthy 대신 better 를 써서 I feel better now. 라고 합니다."
+  confused_with: ["well", "fit"]
+
+- word: "blow"
+  reason: "meaning_ko: '부는다' 는 한국어에 없는 활용이다(불다). / pattern: 'blow + 목적어' 인데 예문 'The wind is blowing hard.' 에는 목적어가 없다 — 바람이 부는 쪽은 자동사다. / usage_note: 'Blow는 부는다지만 부르다와는 다르예요' 는 뜻도 오타도 그대로다. / confused_with: blurt 는 A1 학습자가 blow 와 견줄 낱말이 아니다."
+  meaning_ko: "불다 (바람이); 입으로 불다"
+  pattern: "바람 + blow / blow out + 명사"
+  usage_note: "바람이 부는 것에도 쓰고 입으로 부는 것에도 써요 — blow out the candles 는 촛불을 불어서 끄는 것이에요. 지난 일은 blew, 다 끝난 꼴은 blown 이에요 — The wind blew all night."
+  confused_with: ["wind", "breathe"]
+
+- word: "volume"
+  reason: "usage_note: '책의 부피는 volume 이 아니라 책의 편이라고 해요' 는 통째로 거짓이다 — volume 은 부피에도 쓰고 여러 권으로 나뉜 책의 한 권에도 쓴다. / pattern: 'volume + 명사' 가 예문 'Please turn down the volume.' 과 어긋난다 — 실제 꼴은 turn up/down the volume 이다. / 되읽기: 설명에 '책이 여러 권으로 나뉜 것' 을 넣어 놓고 뜻 칸은 소리 크기만 남아 있었다 — 설명이 뜻 칸에 없는 것을 가르치는 꼴이다."
+  meaning_ko: "볼륨, 소리 크기; (책의) 권"
+  pattern: "turn up/down + the volume"
+  usage_note: "소리를 키우는 것은 turn up the volume, 줄이는 것은 turn down the volume 이에요. 책이 여러 권으로 나뉜 것을 셀 때도 volume 을 써서 volume 1 이라고 합니다."
+  confused_with: ["sound", "noise"]
+
+- word: "location"
+  reason: "usage_note: \"'restaurant의 location은 어디예요?' 보다 자연스러워요\" 는 영어도 한국어도 아닌 문장을 예로 들었다. 어디에 있다고 답하는 꼴(be located in)도 빠져 있었다."
+  usage_note: "location 은 어떤 것이 있는 자리를 가리키는 딱딱한 말이라 안내문이나 지도에서 자주 보여요. 말로 물을 때는 Where is the hotel? 이 훨씬 자연스럽습니다. 어디에 있다고 답할 때는 The hotel is located in Seoul. 처럼 써요."
+
+- word: "invest"
+  reason: "usage_note: put 을 '일반적인 소비' 로 묶은 것이 틀렸고(put money in 은 오히려 invest 와 가까운 꼴이다), invest 에서 갈라 줘야 할 짝은 spend 다. investor·investment 로 이어지는 낱말 가족도 빠져 있었다."
+  usage_note: "돈을 넣는 대상 앞에는 늘 in 을 써요 — invest in stocks. 넣은 돈은 investment, 넣는 사람은 investor 라고 합니다. 그냥 돈을 써 버리는 것은 spend 예요 — I spent fifty dollars on books."
+  confused_with: ["spend", "save"]
+
+- word: "proceed"
+  reason: "usage_note: \"'proceed to the work' 는 '작업으로 이동하다' 는 의미\" 는 영어로 성립하지 않는 예를 지어냈고, 문장 전체가 '가진다·된다' 체라 다른 항목과 말투가 갈렸다. 정작 이 낱말이 안내 방송에서 주로 쓰인다는 사실이 빠져 있었다."
+  usage_note: "proceed 는 안내 방송이나 안내문에 나오는 딱딱한 말이에요 — Please proceed to gate five. 는 '5번 게이트로 가 주세요' 입니다. 하던 일을 이어서 한다고 할 때는 go on 이나 continue 를 훨씬 많이 써요."
+  confused_with: ["continue", "go"]
+
+- word: "wash"
+  reason: "usage_note: 'clean 과 다르게 물을 사용하는 행위' 만으로는 왕초보가 쓸 자리를 못 잡는다. 손 씻기·설거지·빨래가 다 같은 낱말이라는 것을 예로 보여 주는 편이 낫다. / confused_with: rinse 는 A1 학습자가 wash 와 견줄 낱말이 아니다."
+  usage_note: "물로 씻어 내는 것을 두루 wash 라고 해요 — wash my hands(손을 씻다), wash the dishes(설거지하다). 옷을 빠는 것은 wash my clothes 라고 하고, do the laundry 라고도 합니다."
+  confused_with: ["clean"]
+
+- word: "actor"
+  reason: "usage_note: '배우' 와 '연기자' 라는 한국어 낱말끼리만 견주고 끝나 영어 정보가 없고, 요즘 영어가 남녀를 가리지 않고 actor 를 쓴다는 사실과도 어긋난다."
+  usage_note: "요즘 영어에서는 남녀를 가리지 않고 actor 를 써요 — She is a great actor. actress 는 여자 배우만 가리키는 옛 말투라 상 이름 같은 데에만 남아 있어요. 영화에 나온다고 할 때는 be in a movie 라고 합니다."
+  confused_with: ["actress"]
+
+- word: "whereas"
+  reason: "usage_note: '무엇이 다른지' 를 말하지 않고 '혼동하지 마세요' 로 끝난다. but 과 whereas 를 '단순히 대비' 대 '명확히 비교' 로 가른 것도 근거가 없다 — 실제 차이는 격식이다."
+  usage_note: "whereas 는 글에서 쓰는 딱딱한 말이에요. 말할 때는 but 이나 while 을 훨씬 많이 씁니다 — He is rich, but she is poor. 문장 맨 앞에 놓아 Whereas he likes tea, she likes coffee. 처럼 쓸 수도 있어요."
+  confused_with: ["while", "but"]
+
+- word: "opposite"
+  reason: "pattern: 'opposite + of + 명사' 가 예문 'The hotel is opposite the station.' 과 어긋난다 — 자리를 말할 때는 of 를 넣지 않는다. / meaning_ko: '반대편' 만으로는 건너편이라는 자리 뜻이 흐려 해석과 이어지지 않는다."
+  meaning_ko: "맞은편에, 건너편에; 반대의"
+  pattern: "opposite + 명사 / the opposite of + 명사"
+  usage_note: "자리를 말할 때는 of 없이 바로 붙여 opposite the station(역 건너편에)이라고 해요. 반대되는 것을 가리킬 때만 of 를 넣어서 The opposite of hot is cold. 처럼 씁니다."
+  confused_with: ["across", "contrary"]
+
+- word: "stone"
+  reason: "usage_note: \"'a stone' 은 특정한 돌을 말할 때 써요\" 가 틀렸다 — 특정한 것을 가리키는 것은 the 이고 a 는 그 반대다. rock 과 갈라 주는 말도 없었다."
+  usage_note: "손에 잡히는 돌 하나는 a stone, 여러 개는 stones 라고 해요. 크고 단단한 바위는 보통 rock 이라고 부릅니다 — a big rock. 재료로서의 돌을 말할 때는 a 를 붙이지 않아요 — a house made of stone."
+
+- word: "sum"
+  reason: "usage_note: '한국어 합' 과 'sum' 을 견주는 앞 문장이 무슨 차이를 말하는지 알 수 없고, 돈의 액수를 가리키는 흔한 쓰임(a large sum of money)이 빠져 있었다."
+  usage_note: "sum 은 더해서 나온 값이에요 — The sum of two and three is five. 더하는 동작은 add, 다 합친 값은 total 이라고도 해요. 돈의 액수를 가리키기도 해서 a large sum of money 는 '큰돈' 입니다."
+
+- word: "murder"
+  reason: "meaning_ko·pattern: 뜻은 '살인하다' 인데 예문 'He was arrested for murder.' 는 이름씨 murder 라 서로 어긋나고, 'murder + 목적어' 도 그 예문이 보여 주지 못한다. / usage_note: \"'I killed him' 은 더 단순한 행동처럼 들려요\" 는 kill 과 murder 의 차이를 말한 것이 아니다."
+  meaning_ko: "살인 (일부러 사람을 죽이는 것); 죽이다"
+  pattern: "for + murder / murder + 사람"
+  usage_note: "murder 는 사람을 일부러 죽이는 것을 가리켜요. kill 은 사고나 병으로 죽게 하는 것까지 두루 쓰는 넓은 말이에요 — The storm killed ten people. 죽인 사람은 a murderer 라고 합니다."
+  confused_with: ["kill", "murderer"]
+
+- word: "soldier"
+  reason: "usage_note: 'military person' 은 영어에서 잘 쓰지 않는 꼴이라 학습자가 그대로 외우면 어색해진다. army 와 the military 로 갈라 주는 편이 맞다."
+  usage_note: "soldier 는 군대에서 일하는 사람 한 사람을 가리켜요. 군대 조직은 the army, 나라의 군사 조직을 통틀어 말할 때는 the military 라고 합니다 — He joined the army."
+  confused_with: ["army", "officer"]
+
+- word: "finance"
+  reason: "pattern: 'finance: 명사 (자금, 재정)' 은 형태 표기가 아니라 사전 항목을 옮긴 것이고, '자금을 지원받는 것' 은 방향이 거꾸로다 — finance 는 대 주는 쪽이다. / example: 'The company needs more finance.' 는 영어로 어색하다. / usage_note: '재정' 과 '금융' 이라는 한국어 낱말끼리 견주고 끝난다."
+  meaning_ko: "금융; 자금, 재정"
+  pattern: "work in + finance / finance + 목적어"
+  example: "She works in finance."
+  usage_note: "finance 는 돈을 다루는 일 전체를 가리켜요 — work in finance 는 금융 쪽에서 일한다는 뜻입니다. 움직씨로 쓰면 '돈을 대다' 라서 The city financed the bridge. 처럼 써요. 그림씨는 financial 이에요 — financial problems."
+  confused_with: ["financial", "fund"]
+
+- word: "hate"
+  reason: "usage_note: 'love 의 반대예요' 를 두 문장에 걸쳐 되풀이했을 뿐 hate 를 어떻게 쓰는지는 말하지 않는다. 뒤에 동사가 올 때의 꼴(hate to / hate -ing)이 빠져 있었다. / 되읽기: 설명에 '영어에서는 가볍게도 자주 써요 — I hate Mondays.' 를 넣었는데 뜻 칸 첫머리는 '증오하다' 라 서로 반대쪽을 가리킨다."
+  meaning_ko: "몹시 싫어하다"
+  usage_note: "hate 는 아주 세게 싫어한다는 뜻이지만 영어에서는 가볍게도 자주 써요 — I hate Mondays. 뒤에 동사를 붙일 때는 hate to wait 와 hate waiting 둘 다 됩니다. 조금 싫은 정도는 don't like 라고 해요."
+
+- word: "egg"
+  reason: "usage_note: 'egg 는 가격이 비쌀 수 있어요' 는 낱말 설명이 아니라 아무 문장이나 이어 붙인 것이다. / confused_with: albumen 은 학술어라 A1 학습자가 egg 와 견줄 낱말이 아니다 — 흰자는 egg white 라고 한다."
+  usage_note: "달걀 하나는 an egg, 여러 개는 eggs 라고 해요. 삶은 것은 a boiled egg, 프라이는 a fried egg 입니다. 노른자는 the yolk, 흰자는 the egg white 라고 해요."
+  confused_with: ["yolk"]
+
+- word: "concert"
+  reason: "usage_note: '영화나 연극은 concert 가 아니에요' 라고만 하고 그럼 무엇이라 하는지를 말하지 않는다. 보러 간다고 할 때의 꼴(go to a concert)도 빠져 있었다. / 되읽기: 설명이 '연극은 a play, 영화는 a movie' 로 좁혀 주는데 뜻 칸은 '공연' 이라 그 셋을 다 덮는 넓은 말이었다."
+  meaning_ko: "콘서트, 음악 공연"
+  usage_note: "concert 는 음악을 들려주는 공연이에요. 연극은 a play, 영화는 a movie 라고 따로 말해요. 보러 간다고 할 때는 go to a concert 처럼 to 를 씁니다."
+  confused_with: ["show", "play"]
+
+- word: "shock"
+  reason: "usage_note: 원문이 한 문장 안에서 스스로를 뒤집는다 — shock 이 명사로만 쓰인다고 해 놓고 바로 동사 형태도 있다고 덧붙였다. 놀란 사람 쪽을 말하는 be shocked 도 빠져 있었다. / 되읽기: 설명을 be in shock / be shocked 로 고쳤는데 문형은 'a + shock' 이라 예문 'I was in shock ~' 과도 설명과도 어긋난 채였다."
+  pattern: "be in + shock / be + shocked"
+  usage_note: "놀라고 충격을 받았다고 할 때는 I was shocked. 나 I was in shock. 이라고 해요. 놀라게 한 쪽을 말할 때 움직씨로 써서 The news shocked everyone. 처럼 씁니다."
+  confused_with: ["surprise"]
+
+- word: "usual"
+  reason: "usage_note: \"'usual' 만 쓰는 문장은 거의 없어요\" 는 근거가 없고, 정작 왕초보가 자주 쓰는 than usual 이 빠져 있다. '부사어' 도 '부사' 를 잘못 적은 것이다."
+  usage_note: "usual 은 보통 the 와 함께 the usual place(늘 가던 곳)처럼 명사 앞에 붙여요. '평소보다' 는 than usual 이라고 합니다 — I woke up earlier than usual. 얼마나 자주인지를 말하는 usually 는 I usually walk. 처럼 동사 앞에 놓아요."
+  confused_with: ["usually", "normal"]
+
+- word: "carefully"
+  reason: "pattern·usage_note: 문형은 'carefully + 동사' 인데 예문은 'Please walk carefully.' 로 정반대이고, 설명은 '동사 앞에 직접 붙여 쓴다' 고 해 놓고 바로 다음 문장에서 'Carefully walk 는 자연스럽지 않아요' 라며 스스로를 뒤집는다. / confused_with: 비어 있어 careful 과 갈라 줄 기회를 놓쳤다."
+  pattern: "동사 + carefully"
+  usage_note: "carefully 는 보통 동사 뒤에 놓아요 — Listen carefully. / Drive carefully. 그림씨는 careful 이라서 '조심해!' 라고 할 때는 Be careful! 이라고 합니다."
+  confused_with: ["careful"]
+
+- word: "pack"
+  reason: "usage_note: '짐을 채우는 것에만 쓰고' 가 틀렸다 — a pack of gum 처럼 이름씨로도 흔히 쓴다. 짐을 도로 꺼내는 unpack 도 짝으로 알려 주는 편이 낫다. / 되읽기: 설명에 이름씨 쓰임(a pack of gum)을 넣었는데 뜻 칸은 '넣다, 채우다' 뿐이었다. '짐을 만드는 것' 도 한국어로 어색해 문형·뜻 두 자리에서 같이 걷어낸다."
+  meaning_ko: "(짐을) 싸다; 묶음, 팩"
+  pattern: "pack + 목적어 (가방, 짐)"
+  usage_note: "여행 갈 때 가방에 짐을 넣는 것을 pack 이라고 해요 — I packed my bag. 짐을 도로 꺼내는 것은 unpack 입니다. 묶음으로 파는 것을 셀 때 이름씨로도 써서 a pack of gum 이라고 해요."
+
+- word: "recall"
+  reason: "meaning_ko: '되돌리다' 는 recall 의 뜻이 아니다 — 물건을 거둬들이는 쪽은 '회수하다' 이고 사건에는 쓰지 않는다. / usage_note: remember 와의 차이를 '더 공식적' 이라고만 하고, 회사가 물건을 거둬들이는 흔한 뜻은 빠져 있었다."
+  meaning_ko: "떠올리다, 기억해 내다; (물건을) 회수하다"
+  usage_note: "recall 은 remember 보다 딱딱한 말이라 서류나 뉴스에 자주 나와요. 말할 때는 I can't remember his name. 이 훨씬 자연스럽습니다. 회사가 판 물건을 도로 거둬들이는 것도 recall 이라고 해요 — The company recalled the cars."
+
+- word: "wine"
+  reason: "usage_note: \"'drunk' 이나 'drink' 과는 달리 동사로 쓰지 않아요\" 는 무엇을 말하려는지 알 수 없는 문장이고, 바로 다음에 'I drink wine 은 자연스러운 표현이에요' 가 붙어 앞말을 지운다. / confused_with: 'wine glass' 는 낱말이 아니라 구라서 헷갈리는 낱말 자리에 맞지 않는다. / 되읽기: 설명이 '하나 둘로 세지 않아서 a glass of wine 이라고 해요' 인데 문형은 'a/the + wine' 이라 설명이 막 아니라고 한 꼴을 문형이 그대로 보여 주고 있었다."
+  pattern: "a glass of + wine"
+  usage_note: "wine 은 하나 둘로 세지 않아서 한 잔을 시킬 때 a glass of wine 이라고 해요. 병으로 시키면 a bottle of wine 입니다. 붉은 것은 red wine, 흰 것은 white wine 이라고 불러요."
+  confused_with: ["beer", "alcohol"]
+
+- word: "camera"
+  reason: "usage_note: camera 와 photo 를 갈라 준 것은 맞지만 요즘 학습자가 실제로 쓸 자리(휴대폰으로 찍기)가 빠져 있었다."
+  usage_note: "사진을 찍는 것은 take a photo 라고 해요 — 기계 이름인 camera 를 그대로 움직씨처럼 쓰지는 않습니다. 요즘은 휴대폰으로 찍으니 I took it on my phone. 이라고도 말해요."
+
+- word: "swim"
+  reason: "usage_note: \"'I can swim' 은 수영을 잘 한다는 의미\" 가 틀렸다 — can 은 할 줄 안다는 말이지 잘한다는 말이 아니다. '이예요' 오타와 '혼동하지 마세요' 로 끝나는 꼴도 함께 사라진다."
+  usage_note: "수영할 줄 안다고 말할 때는 I can swim. 이라고 해요. 지난 일은 swam 이고, 운동 이름은 swimming 이에요 — I like swimming. 수영장은 a swimming pool 이라고 합니다."
+  confused_with: ["swimming"]
+
+- word: "theater"
+  reason: "usage_note: '영화관은 cinema 예요' 라고 해 놓고 바로 'theater 는 영화 보는 곳도 말할 수 있어요' 라고 해 앞말을 지운다. 갈리는 기준은 뜻이 아니라 미국식·영국식이라는 것을 말해야 한다."
+  usage_note: "미국에서는 영화관도 theater 라고 해서 a movie theater 라고 씁니다. 영국에서는 영화관은 a cinema, theatre 는 연극을 보는 곳이에요. 철자도 미국은 theater, 영국은 theatre 로 다릅니다."
+  confused_with: ["cinema"]
+
+- word: "cycle"
+  reason: "meaning_ko: '자전거를 타다' 만 적혀 있어 더 흔한 뜻인 '주기' 가 통째로 빠졌고, 자전거 쪽 cycle 이 영국식이라는 것도 없었다. / usage_note: 'cycle 과 circle 을 헷갈릴 수 있어요' 는 철자만 비슷할 뿐 학습자가 실제로 겪는 혼동이 아니다. / 되읽기: 예문이 'I will cycle to the park.' 인데 문형은 'cycle + 목적지' 라 to 가 빠져 있었다 — 왕초보가 빠뜨리는 것이 바로 그 to 다."
+  meaning_ko: "자전거를 타다; 돌고 도는 한 바퀴, 주기"
+  pattern: "cycle + to + 장소"
+  usage_note: "자전거를 탄다는 뜻의 cycle 은 영국에서 쓰는 말이에요. 미국에서는 ride a bike 라고 합니다 — I ride my bike to school. 이름씨 cycle 은 돌고 도는 한 바퀴를 뜻해서 the water cycle(물의 순환)처럼 써요."
+  confused_with: ["bicycle", "circle"]

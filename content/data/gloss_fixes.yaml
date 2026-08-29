@@ -3153,3 +3153,39 @@
 - word: "winter"
   example_ko: "저는 겨울을 안 좋아해요."
   reason: "DB 예문이 I don't like winter. 라 해석이 정반대였다."
+
+- word: "conclude"
+  example_ko: "우리는 그가 옳다고 결론 내렸어요."
+  reason: "바뀐 예문을 그대로 옮긴 해석이다."
+
+- word: "religious"
+  example_ko: "그분은 신앙이 아주 깊은 사람이에요."
+  reason: "바뀐 예문에 맞췄다. 옛 해석 '기도에 대해 매우 신경 쓰는 편이에요' 는 뜻 칸의 '종교적인' 과 이어지지 않았다."
+
+- word: "location"
+  example_ko: "호텔 위치가 어디예요?"
+  reason: "'어디에요' 는 '어디예요' 의 오타다."
+
+- word: "wash"
+  example_ko: "저는 옷을 빨아야 해요."
+  reason: "'옷을 세수해야 해요' 는 비문이다 — 세수는 얼굴을 씻는 것이라 옷에는 쓸 수 없다."
+
+- word: "opposite"
+  example_ko: "호텔은 역 건너편에 있어요."
+  reason: "'역과 반대편에' 는 '역이 아닌 다른 쪽' 으로도 읽혀 자리를 못 짚는다. opposite the station 은 마주 보는 건너편이다."
+
+- word: "sum"
+  example_ko: "2와 3의 합은 얼마예요?"
+  reason: "합을 묻는 말은 '뭐예요' 가 아니라 '얼마예요' 다."
+
+- word: "finance"
+  example_ko: "그 사람은 금융 쪽에서 일해요."
+  reason: "바뀐 예문을 그대로 옮긴 해석이다."
+
+- word: "comfortable"
+  example_ko: "이 의자는 아주 편안해요."
+  reason: "바뀐 예문에 맞췄다. 옛 해석 '이 의자에 앉아서 편안해요' 는 예문에 없는 '앉아서' 를 넣어 어색한 영어를 덮고 있었다."
+
+- word: "camera"
+  example_ko: "카메라 좀 써도 될까요?"
+  reason: "예문이 Can I ~ 로 묻는 말인데 해석은 '쓰고 싶어요' 라는 평서문이었다."
