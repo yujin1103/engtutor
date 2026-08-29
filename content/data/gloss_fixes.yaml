@@ -3501,3 +3501,27 @@
 - word: "below"
   example_ko: "선 아래에 이름을 쓰세요."
   reason: "바뀐 예문에 맞췄다."
+
+- word: illness
+  example_ko: 그 병은 몇 주 동안 이어졌어요.
+  reason: 바뀐 예문에 맞췄다.
+
+- word: successor
+  example_ko: 그는 CEO의 후계자예요.
+  reason: 바뀐 예문에 맞췄다.
+
+- word: "stance"
+  example_ko: "이 사업에 대해 어떤 입장이신가요?"
+  reason: "설명이 '가벼운 생각은 opinion' 이라 갈라 놓았는데 해석은 '어떻게 생각하세요?' 로 바로 그 opinion 말투를 쓰고 있었다."
+
+- word: "strain"
+  example_ko: "눈을 혹사하지 마세요."
+  reason: "'눈을 너무 많이 뜨지 마세요' 는 Don't strain your eyes 의 오역이다 — 눈을 크게 뜨라는 말이 아니라 무리하게 쓰지 말라는 말이다."
+
+- word: "inner"
+  example_ko: "안쪽 주머니에는 지퍼가 달려 있어요."
+  reason: "바뀐 예문에 맞췄다."
+
+- word: "generous"
+  example_ko: "그는 시간을 아끼지 않고 내주었어요."
+  reason: "'시간을 대단히 아끼지 않았습니다' 는 부정이 겹쳐 뜻이 뒤집혀 읽힌다."
