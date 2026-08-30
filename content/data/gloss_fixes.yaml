@@ -4073,3 +4073,131 @@
 - word: "preserve"
   example_ko: "우리는 환경을 지켜 남겨야 해요."
   reason: "'환경을 보호해야 해요' 는 preserve 를 '보호' 로 옮겨, 설명이 protect 쪽으로 넘긴 말을 그대로 썼다."
+
+- word: "criterion"
+  example_ko: "차를 살 때 가격이 가장 큰 기준이에요."
+  reason: "'차를 사는 데서' 는 조사가 어색하고 '주요 기준' 도 딱딱하다."
+
+- word: "primarily"
+  example_ko: "저는 휴대폰을 주로 전화하는 데 써요."
+  reason: "'전화하기 위해 주로 폰을 사용해요' 는 '~하기 위해' 번역투이고 '폰' 도 소리 옮김이다."
+
+- word: "integrate"
+  example_ko: "우리는 새로운 생각을 그 일에 합쳐 넣어야 해요."
+  reason: "'아이디어를 프로젝트에 포함시켜야' 는 소리 옮김이 둘이고 '포함시키다' 도 integrate 의 뜻을 좁힌다."
+
+- word: "criticism"
+  example_ko: "저는 제 일로 비판을 좀 받았어요."
+  reason: "'제 작품에 대해' 는 '~에 대해' 번역투이고, 예문의 some 도 해석에 드러나지 않았다."
+
+- word: "convention"
+  example_ko: "다음 주에 큰 모임이 있어요."
+  reason: "'내주' 는 딱딱한 한자어이고 '컨벤션' 은 영어를 소리대로 옮긴 말이다."
+
+- word: "retain"
+  example_ko: "그 회사는 좋은 직원을 붙잡아 두고 싶어 해요."
+  reason: "바뀐 예문에 맞췄다. 옛 예문 'I need to retain my old habits.' 는 원어민이 잘 쓰지 않는 짝이었다."
+
+- word: "sequence"
+  example_ko: "이 단계들은 어떤 차례로 하나요?"
+  reason: "'순서는 무엇인가요' 는 번역투이고, 뜻 칸을 '차례' 로 고친 것에 맞췄다."
+
+- word: "plain"
+  example_ko: "저는 그냥 흰밥이 좋아요."
+  reason: "'그냥 밥' 보다 plain rice(아무것도 안 넣은 밥)가 드러난다."
+
+- word: "volunteer"
+  example_ko: "저는 그 자선 단체에서 자원봉사하고 싶어요."
+  reason: "'이 자선 단체' 는 예문의 the charity 와 어긋난다."
+
+- word: "calm"
+  example_ko: "시험을 앞두고도 저는 차분해요."
+  reason: "'시험에 대해 저는 차분해요' 는 '~에 대해' 번역투다."
+
+- word: "abandon"
+  example_ko: "그는 자기 개를 버렸어요."
+  reason: "**'그는 자신의 강을 버렸어요' 는 오타다** — 예문의 dog 는 개다."
+
+- word: "silence"
+  example_ko: "우리는 조용히 밥만 먹었어요."
+  reason: "바뀐 예문에 맞췄다. 옛 예문 'Please be in silence during the movie.' 는 원어민이 쓰지 않는 말이었다."
+
+- word: "revolution"
+  example_ko: "프랑스 혁명은 중요했어요."
+  reason: "'중요했습니다' 는 다른 해석들과 문체가 어긋난다."
+
+- word: "delight"
+  example_ko: "저는 그 선물을 받고 정말 기뻤어요."
+  reason: "'이 선물로 인해' 는 '~로 인해' 번역투다."
+
+- word: "spell"
+  example_ko: "이름 철자가 어떻게 되세요?"
+  reason: "**'이름을 어떻게 씁니까?' 는 뜻 칸의 거짓('발음하다')을 그대로 받아 흐릿하다.** spell 은 철자를 대는 것이다."
+
+- word: "premise"
+  example_ko: "그 이야기의 전제가 재미있어요."
+  reason: "'흥미롭습니다' 는 다른 해석들과 문체가 어긋난다."
+
+- word: "lean"
+  example_ko: "사다리가 벽에 기대어 있어요."
+  reason: "**'유리창이 벽에 기대어 있습니다' 는 예문과 다른 것을 가리킨다** — 예문의 ladder 는 사다리다."
+
+- word: "dramatic"
+  example_ko: "그 영화는 아주 극적이었어요."
+  reason: "'매우 감동적이었어요' 는 dramatic 의 뜻이 아니다."
+
+- word: "differ"
+  example_ko: "이 두 책은 서로 달라요."
+  reason: "'두 권의 책은 서로 다릅니다' 는 다른 해석들과 문체가 어긋난다."
+
+- word: "bike"
+  example_ko: "저는 매일 자전거를 타고 출근해요."
+  reason: "'자전거로 출근해요' 보다 bike 가 움직씨로 쓰인 것이 드러난다."
+
+- word: "distribute"
+  example_ko: "선생님이 학생들에게 종이를 나눠 주셨어요."
+  reason: "'종이를 학생들에게 나누어 주셨어요' 는 차례가 뒤엉켜 읽힌다."
+
+- word: "intellectual"
+  example_ko: "책 읽기는 머리를 쓰는 일이에요."
+  reason: "바뀐 예문에 맞췄다. 옛 예문 'He is very intellectual about philosophy.' 는 원어민이 쓰지 않는 꼴이었다."
+
+- word: "derive"
+  example_ko: "우리는 남을 도우면서 행복을 얻어요."
+  reason: "'도와주는 일에서 행복을 얻습니다' 는 문체가 어긋나고 늘어진다."
+
+- word: "unemployment"
+  example_ko: "그 나라는 실업이 심해요."
+  reason: "바뀐 예문에 맞췄다."
+
+- word: "wheel"
+  example_ko: "그 차는 바퀴가 네 개예요."
+  reason: "'네 개의 바퀴가 있어요' 는 번역투다."
+
+- word: "crop"
+  example_ko: "우리는 밀과 다른 작물을 길러요."
+  reason: "'작물들을 재배해요' 는 겹수 표시와 한자어가 겹쳐 딱딱하다."
+
+- word: "minority"
+  example_ko: "매운 음식을 좋아하는 사람은 얼마 안 돼요."
+  reason: "'스파이시한' 은 영어를 소리대로 옮긴 말이고, '다수가 아니에요' 는 minority 를 뒤집어 옮긴 것이다."
+
+- word: "origin"
+  example_ko: "이 낱말의 유래가 뭐예요?"
+  reason: "'단어' 보다 '낱말' 이 이 앱의 다른 해석들과 맞고, '무엇인가요' 도 문체가 다르다."
+
+- word: "interpretation"
+  example_ko: "이 노래를 어떻게 해석하세요?"
+  reason: "'당신의 해석은 무엇인가요' 는 '당신' 번역투다."
+
+- word: "gentleman"
+  example_ko: "그는 참 점잖은 사람이에요."
+  reason: "'진짜 예의 바른 남자입니다' 는 문체가 어긋난다."
+
+- word: "educate"
+  example_ko: "부모님이 저를 집에서 가르치셨어요."
+  reason: "'제 부모님은' 은 번역투라 '제' 를 덜었다."
+
+- word: "landscape"
+  example_ko: "여기는 풍경이 아주 아름다워요."
+  reason: "되읽기: '여기 풍경이 매우 아름다워요' 는 조사가 빠지고 '매우' 도 다른 해석들과 문체가 어긋난다."

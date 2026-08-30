@@ -3324,3 +3324,47 @@ passes:
   - upper
   - urban
   - winner
+- id: top2000-b
+  date: '2026-08-30'
+  what: 빈도 1950~1991위 40개 — 마흔 전부가 고칠 것이었다(직접 읽음, 반박 워크플로는 세션 한도로 못 씀)
+  words:
+  - abandon
+  - bet
+  - bike
+  - calm
+  - convention
+  - criterion
+  - criticism
+  - crop
+  - delight
+  - derive
+  - differ
+  - distribute
+  - drama
+  - dramatic
+  - educate
+  - efficient
+  - examination
+  - gentleman
+  - integrate
+  - intellectual
+  - interpretation
+  - landscape
+  - lean
+  - minority
+  - origin
+  - plain
+  - premise
+  - primarily
+  - protein
+  - rapidly
+  - retain
+  - revolution
+  - rural
+  - sequence
+  - silence
+  - spell
+  - toy
+  - unemployment
+  - volunteer
+  - wheel
