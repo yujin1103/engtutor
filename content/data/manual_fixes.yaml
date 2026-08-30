@@ -5707,16 +5707,25 @@
   confused_with: ["notice", "comment"]
 
 - word: "implication"
-  reason: "문형 자리에 영어가 들어가 있었다: noun: ~의 implication"
-  pattern: "~의 implication"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: ~의 implication / **문형 '~의 implication' 에 한국어 조사가 들어가 형태 표기가 아니다.** / 해석은 '이 결정의 의미는' 이라 뜻 칸의 '결과, 영향' 과 어긋난다. / 설명의 \"'이 결정의 implication은 무엇인가요?'는 자연스러운 표현이에요\" 는 한국어와 영어를 섞어 놓은 데다 아무것도 갈라 주지 않는다. / 반박: '결과·파장' 뜻의 implication 은 거의 언제나 겹수로 쓰는데 예문만 홑수로 남았다(설명조차 the implications of the new law 로 겹수를 쓴다). / 뜻 칸의 '따라 나오는 결과' 는 confused_with 에 올린 consequence 의 저장된 뜻과 사실상 같은 한국어라 갈라 줄 것이 없다. / 'imply' 는 동사꼴이라 같은 자리에서 겨룰 짝이 아니다. / 해석도 이름씨 물음을 움직씨 물음으로 바꿔 놓았다."
+  meaning_ko: "앞으로 미칠 영향; 말 속에 담긴 뜻"
+  pattern: "the implications of + 명사"
+  example: "What are the implications of this decision?"
+  usage_note: "어떤 일이 앞으로 미칠 영향을 가리켜 보통 겹수로 the implications of the new law 처럼 씁니다. 대놓고 말하지 않고 담아 둔 뜻도 implication 이라, 그렇게 담아 두는 동작은 imply 예요. 이미 벌어진 일 때문에 치르게 되는 좋지 않은 결과는 consequence 라서 face the consequences 라고 합니다."
+  confused_with: ["consequence", "effect"]
 
 - word: "unusual"
-  reason: "문형 자리에 영어가 들어가 있었다: adjective: unusual + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: unusual + 명사 / 설명의 \"'unusual'은 약간 부정적인 뉘앙스가 덜 해요\" 는 잴 수 없는 말이고 confused_with 의 rare 도 갈라 주지 않는다. / 뜻 칸과 해석의 '특별한' 도 special 쪽 말이라 이 낱말과 어긋난다. / 반박: 뜻 칸의 '보통이 아닌' 은 한국어에서 '대단한' 으로 읽혀, 이번에 special 쪽이라며 덜어낸 '특별한' 과 같은 방향으로 되돌아간다. / 설명이 든 유일한 보기 'It's unusual for him to be late.' 는 문형(unusual + 명사)과 다른 자리이고, 'a rare bird' 도 관용구로 먼저 읽힌다."
+  meaning_ko: "여느 때와 다른, 흔치 않은"
   pattern: "unusual + 명사"
+  usage_note: "늘 보던 것과 달라 눈에 띈다는 뜻이라 an unusual name 처럼 이름씨 앞에 붙여요. strange 는 이상해서 꺼림칙하다는 쪽이라 결이 다르고, rare 는 좀처럼 없다는 뜻이라 a rare disease 처럼 씁니다. 반대는 usual 이에요."
+  confused_with: ["strange", "rare"]
 
 - word: "valuable"
-  reason: "문형 자리에 영어가 들어가 있었다: adjective: be + valuable"
-  pattern: "be + valuable"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective: be + valuable / 설명의 \"'This is valuable'는 '이건 가치가 있어요'가 자연스러워요\" 는 뜻 칸을 되풀이할 뿐이고 confused_with 의 priceless 를 다루지 않는다. / 자리 검사: 문형이 'be + valuable' 하나뿐인데 설명은 a valuable painting 처럼 이름씨 앞자리를 가르친다. / 반박: **새 해석 '값이 나가요' 가 설명과 정면으로 부딪힌다** — 설명은 '값이 비싸다는 쪽만 말하면 expensive' 라고 못박는데 한국어에서 '값이 나가다' 는 '값이 비싸다' 와 사실상 같은 말이라, 해석이 valuable 을 expensive 쪽으로 옮겨 놓았다(climate 를 '날씨' 로 옮긴 것과 같은 잘못이다). / 설명의 두 마디도 한국어로는 갈리지 않는다."
+  pattern: "be + valuable / valuable + 명사"
+  usage_note: "잃으면 아까울 만큼 값어치가 있다는 뜻이라 a valuable painting, valuable advice 처럼 돈이 아닌 것에도 씁니다. 사는 데 돈이 많이 든다는 말은 expensive 예요. 값을 매길 수 없을 만큼 귀하다는 것은 priceless 라고 합니다."
+  confused_with: ["expensive", "priceless"]
 
 - word: "excuse"
   reason: "문형 자리에 영어가 들어가 있었다: excuse + someone + for + something"
@@ -7281,8 +7290,11 @@
   usage_note: "일정하지 않고 자꾸 바뀐다는 뜻이에요 — variable weather. 늘 그대로인 것은 constant 라고 해서 반대쪽이에요. 수학이나 과학에서 이름씨로 쓰면 값이 바뀌는 '변수' 를 가리킵니다."
 
 - word: "presidential"
-  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사 / 설명의 \"'presidential'은 '대통령의'로만 쓰고, 'president'는 '대통령'으로 쓰세요\" 는 한국어 옮김만 늘어놓아 아무것도 갈라 주지 않는다. / 해석의 '매우' 도 다른 항목들과 문체가 어긋난다. / 반박: 뜻 칸의 '대통령 관련된' 은 조사가 빠져 성립하지 않고 앞의 '대통령의' 와 겹말이며, 설명 첫머리와도 거의 그대로 겹친다. / 해석을 '집무실' 로 좁힌 것도 예문에서 멀어졌다 — the presidential office 는 방 하나가 아니라 기관·건물 쪽이다."
+  meaning_ko: "대통령의"
   pattern: "presidential + 명사"
+  usage_note: "이름씨 앞에 놓아 대통령과 관련된 것에 붙입니다 — a presidential election(대통령 선거), the presidential palace. 사람인 '대통령' 자체는 president 라서 the President of Korea 라고 해요."
+  confused_with: ["president"]
 
 - word: "massive"
   reason: "문형 자리에 영어가 들어가 있었다: adjective"
@@ -7353,8 +7365,11 @@
   pattern: "literary (문학과 관련된 것)"
 
 - word: "classical"
-  reason: "문형 자리에 영어가 들어가 있었다: adjective (기타 형용사와 혼동할 수 있음)"
-  pattern: "classical (기타 형용사와 혼동할 수 있음)"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective (기타 형용사와 혼동할 수 있음) / **짝 항목 맞춤** — 이 항목이 \"'classic'은 '매우 좋은'을 의미하는 경우도 있어요. 예: This is a classic car. (이 차는 매우 고급스러운 차예요.)\" 라고 해, 같은 묶음에서 고친 classic(오래됐지만 훌륭해서 손꼽히는)과 어긋난다 — a classic car 는 고급차가 아니라 옛 명차다. / 문형 'classical (기타 형용사와 혼동할 수 있음)' 도 형태 표기가 아니다. **칸 몇 개만 맞춘 것이라 이 낱말은 대장에 올리지 않는다.**"
+  meaning_ko: "고전 음악의; 옛 그리스·로마의"
+  pattern: "classical + 명사"
+  usage_note: "고전 음악을 가리켜 classical music 이라고 하는 자리에서 가장 자주 만나요. 옛 그리스나 로마와 관련된 것에도 써서 classical Greek 이라고 합니다. 오래됐지만 훌륭해서 손꼽히는 것은 classic 이라 a classic movie, a classic car(옛 명차) 처럼 쓰니 자리가 달라요."
+  confused_with: ["classic"]
 
 - word: "psychological"
   reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
@@ -11972,6 +11987,245 @@
   confused_with: ["lucky"]
 
 - word: "highlight"
-  reason: "**짝 항목 맞춤** — 설명이 \"강조할 때는 highlight, 설명할 때는 explain을 써요\" 라고 해, emphasize 항목이 세운 갈림(highlight 는 눈에 띄게 짚어 주는 쪽)과 부딪힌다. explain 도 헷갈리는 짝이 아니다. **설명 칸만 맞춘 것이라 이 낱말은 대장에 올리지 않는다.**"
-  usage_note: "글에서 중요한 데를 눈에 띄게 짚어 주는 것이 highlight 예요 — highlight a sentence. 형광펜으로 칠하는 것도 highlight 라고 합니다. 말이나 글에서 힘주어 말하는 쪽은 emphasize 예요."
+  reason: "**짝 항목 맞춤** — 설명이 \"강조할 때는 highlight, 설명할 때는 explain을 써요\" 라고 해, emphasize 항목이 세운 갈림(highlight 는 눈에 띄게 짚어 주는 쪽)과 부딪힌다. explain 도 헷갈리는 짝이 아니다. **설명 칸만 맞춘 것이라 이 낱말은 대장에 올리지 않는다.** / 짝 항목 맞춤으로 설명만 고쳤던 자리를 이번에 낱말째 읽었다. 뜻 칸의 '강조하다' 는 설명이 emphasize 쪽으로 넘긴 말이라 두 칸이 부딪힌다. / 반박: 뜻을 '눈에 띄게 짚어 주다' 로만 좁히고 힘주는 쪽을 통째로 emphasize 에 넘겼는데, **영어에서 highlight 의 가장 흔한 쓰임이 바로 그 '중요한 점을 부각시키다' 다** — The report highlights the need for change. 지금 카드대로면 학습자가 뉴스·보고서의 highlight 를 못 알아본다. / 설명 첫 문장이 새 뜻 칸을 그대로 되풀이하기도 한다."
+  meaning_ko: "(중요한 데를) 부각시키다, 표시하다"
+  usage_note: "중요한 줄에 형광펜을 긋듯 눈에 띄게 만드는 것이 highlight 예요. 보고서나 기사에서 중요한 점을 드러내 보일 때도 써서 The report highlights the problem. 처럼 씁니다. 말로 힘주어 말하는 쪽은 emphasize 예요."
   confused_with: ["emphasize"]
+
+- word: "concentration"
+  reason: "**설명이 스스로 뒤집힌다** — 뜻 칸에 '중점' 을 올려 놓고 설명은 \"'중점'은 concentration 이라고 하지 않아요\" 라고 한다. / '집중력: concentration level' 도 억지로 만든 짝이고, 해석은 이름씨 예문을 움직씨로 옮겨('집중해야 해요') 이 낱말을 걸어 둘 자리가 사라졌다. / 반박: **\"남이 기울여 주는 관심은 attention 이라 pay attention 이라고 해요\" 는 스스로 뒤집힌다** — pay attention 은 내가 쏟는 쪽이지 남에게서 받는 쪽이 아니다(받는 쪽은 get attention). / confused_with 의 focus 를 '같은 자리에 쓰고' 한 마디로 지나쳤다. / 예문 'I need more concentration on my work.' 도 원어민이 잘 쓰지 않는 짝이고, 설명이 든 concentrate on your work 와 표제어 자리만 다른 거의 같은 문장이다."
+  meaning_ko: "집중, 집중력"
+  pattern: "lose/keep + concentration"
+  example: "I lose concentration after one hour."
+  usage_note: "한 가지에 마음을 모아 버티는 힘이라 keep your concentration 처럼 씁니다. 이름씨 focus 도 같은 자리에 써서 lose focus 라고 하고, 그렇게 하는 동작은 concentrate 라서 concentrate on your work 라고 합니다. 마음을 어디에 두고 살피는 것은 attention 이라 pay attention to the teacher 처럼 써요."
+  confused_with: ["focus", "attention"]
+
+- word: "deserve"
+  reason: "**뜻 칸의 '권하다' 는 이 낱말의 뜻이 아니다** — 그건 urge 나 recommend 쪽이다. / 해석 '휴식 시간이 필요해요' 에도 deserve 가 한 조각도 남지 않았고, 설명의 \"'should'보다 더 강한 의미\" 는 잴 수 없는 말이다. / 반박: 'should' 는 조동사라 같은 빈칸에 들어갈 수 없어 고르기 짝이 되지 못한다. / 'He deserves to be punished.' 는 입음꼴에 어려운 낱말까지 얹혀 문형을 읽어 내기 어렵다. / 해석의 '당신은' 은 이 저장소가 이미 두 번 번역투로 판정한 꼴이다."
+  meaning_ko: "~할 만하다, ~을 받을 자격이 있다"
+  pattern: "deserve + 목적어 / deserve + to + 동사원형"
+  usage_note: "그만한 일을 했으니 받을 만하다는 뜻이에요 — She deserves a prize. 뒤에 to + 동사원형을 붙여 He deserves to win. 이라고도 합니다. 일해서 실제로 벌거나 얻는 것은 earn 이라 earn a living 처럼 써요. 그냥 있어야 한다는 need 와는 달리 받을 까닭이 있다는 말이에요."
+  confused_with: ["earn", "need"]
+
+- word: "defend"
+  reason: "해석 '친구를 비난에 대항해 방어했어요' 는 번역투라 성립하지 않는다. / 설명의 '방어할 대상과 공격의 원인을 함께 설명해야 해요' 는 무엇을 하라는 말인지 알 수 없고, confused_with 의 protect·support 를 갈라 주지 않는다. / 반박: **뜻 칸의 '(말로) 편들어 주다' 는 같은 DB 의 support 카드가 이미 쓰고 있는 말이다** — 이 카드의 설명 자체가 '편을 들어 힘을 보태는 것은 support' 로 끝나, 한 화면에서 두 낱말에 같은 한국어를 붙여 놓고 가르라고 하는 꼴이 된다. / 해석의 '비난받는 친구' 도 against 자리를 꾸밈말로 녹여 없앴다."
+  meaning_ko: "지키다; (뭐라 할 때) 말로 감싸 주다"
+  usage_note: "공격이 들어올 때 막아 지키는 것이 defend 라, 뒤에 against 나 from 을 붙여 defend the city against attack 처럼 씁니다. 남이 뭐라 할 때 나서서 말로 감싸 준다는 뜻도 있어요. 다치지 않게 미리 막아 두는 것은 protect 라서 protect your skin from the sun 이라고 하고, 잘되라고 힘을 보태 주는 것은 support 라서 support a plan 처럼 씁니다."
+  confused_with: ["protect", "support"]
+
+- word: "classic"
+  reason: "설명의 \"'classic'은 'old'보다는 더 긍정적인 의미예요\" 는 잴 수 없는 말이고, confused_with 의 typical 도 영어로 갈라 주지 않는다. / 되읽기: 뜻 칸의 '고전의, 명작의' 는 같은 말을 두 번 적은 것이고, 예문·해석이 쓰는 '전형적인' 쪽과 설명의 갈래도 이어지지 않는다. / 되읽기·반박: 뜻 칸 첫머리 '전형적인' 을 설명이 마지막에 typical 쪽으로 넘겨, 학습자는 뜻·해석에서 배운 말을 설명이 부정하는 카드를 읽게 된다. / '고전의, 명작의' 도 겹말이고, '딱 그것답다' 의 '그것' 은 받을 말이 없다."
+  meaning_ko: "오래도록 손꼽히는; 딱 그것다운, 전형적인"
+  usage_note: "오래됐지만 여전히 훌륭해서 손꼽힌다는 뜻이라 a classic movie, a classic song 처럼 씁니다. 그런 일에서 늘 나오는 것이라는 뜻으로도 써서 a classic mistake(흔히들 하는 그 실수) 라고 해요. 그냥 오래됐다고 할 때는 old 를 쓰고, typical 은 특별할 것 없이 늘 그렇다는 쪽이라 a typical Monday 처럼 씁니다."
+  confused_with: ["old", "typical"]
+
+- word: "king"
+  reason: "설명의 \"'king'은 'queen'과 함께 왕실 관련 단어로 자주 쓰입니다\" 는 아무것도 갈라 주지 않는 빈말이고, confused_with 의 emperor 도 다루지 않는다. / 반박: '여자면 queen 이라' 는 임자말이 없어 홀로 서지 못하고, queen 이 왕의 아내도 가리킨다는 것(짝이 대칭이 아니라는 것)이 가려진다. / 예문 'He is the king of the country.' 도 the country 가 가리킬 데가 없어 어색한데, 설명에는 이미 the King of England 라는 멀쩡한 짝이 있다."
+  example: "He is the King of England."
+  usage_note: "나라를 다스리는 남자가 king 이에요. 다스리는 사람이 여자면 queen 이고 왕의 아내도 queen 이라 부르는데, 여왕의 남편은 king 이라고 하지 않습니다. 여러 나라를 거느린 더 큰 자리는 emperor(황제) 예요."
+  confused_with: ["queen", "emperor"]
+
+- word: "interaction"
+  reason: "설명의 \"한국어 '교류'보다 더 구체적인 상호작용을 말해요\" 는 한국어와 견주는 잴 수 없는 말이고, confused_with 의 relationship 도 다루지 않는다. / 뜻 칸의 '상호작용' 도 왕초보에게는 딱딱하다. / 반박: **\"뜻이 오가 통하는 쪽은 communication 이고\" 는 비문이다** — '오가' 가 홀로 서지 못해 문장이 끊긴다. 학습자가 가장 먼저 읽는 갈림 문장이 무너졌다. / 해석도 뜻 칸 문구를 그대로 박아 넣어 '물건을 주고받지 않았다' 로 먼저 읽히고, 문형이 내건 between('사이') 도 사라졌다."
+  meaning_ko: "서로 주고받는 것"
+  usage_note: "사람들이 서로 말을 걸고 반응하며 주고받는 것이 interaction 이에요 — social interaction. 말이 오가며 뜻이 통하는 쪽은 communication 이고, 오래 이어지는 사이는 relationship 이라 a good relationship 이라고 합니다. 그렇게 주고받는 동작은 interact 예요."
+  confused_with: ["communication", "relationship"]
+
+- word: "repair"
+  reason: "설명의 '수리할 대상을 명확히 해야 해요' 는 무엇을 하라는 말인지 알 수 없고, \"'수리'는 고칠 때 쓰고, 'fix'는 더 일반적인 표현\" 은 한국어 '수리' 를 영어 fix 와 견주는 말이다. / confused_with 의 mend 도 다루지 않는다. / 반박: '옷이나 천을 꿰매 고치는 것은 mend' 는 mend 를 천에만 있는 말로 좁혔다 — mend a fence 처럼 망가진 것 전반에 쓴다. / 해석도 '고쳐 주셨어요' 라 뜻 칸('수리하다')과 설명이 세운 딱딱함이 카드 어디에도 남지 않는다."
+  usage_note: "망가진 것을 손봐서 다시 쓰게 만드는 것이 repair 예요 — repair the roof. 딱딱한 말이라 말할 때는 fix 를 더 자주 써서 Can you fix my phone? 이라고 합니다. 옷처럼 꿰매 고칠 때는 mend 를 특히 자주 써요."
+  confused_with: ["fix", "mend"]
+
+- word: "collapse"
+  reason: "문형 'collapse + 목적어' 를 예문 'The bridge collapsed last year.' 가 보여 주지 않는다 — 이 낱말은 목적어를 받지 않는 쪽으로 쓴다. / 뜻 칸 앞에 빈칸이 두 개 들어가 있고, 설명의 'The glass fell down.' 도 유리컵이 떨어지는 자리에 잘 쓰지 않는 말이다. / 반박: 설명은 'He collapsed on the floor.' 로 사람이 쓰러지는 뜻을 가르치는데 뜻 칸은 '무너지다' 하나뿐이라 걸어 둘 자리가 없다 — 같은 묶음의 dish·chip 은 둘째 뜻을 뜻 칸에 올렸다. / 문형이 낱말 하나뿐이라 예문과 견줄 자리가 없다."
+  meaning_ko: "무너지다; (사람이) 쓰러지다"
+  pattern: "주어 + collapse"
+  usage_note: "서 있던 것이 힘없이 폭삭 내려앉는 것이 collapse 예요 — The roof collapsed. 사람이 쓰러질 때도 써서 He collapsed on the floor. 라고 합니다. 그냥 떨어지거나 넘어지는 것은 fall 이고, 깨지거나 부러지는 것은 break 예요."
+  confused_with: ["fall", "break"]
+
+- word: "borrow"
+  reason: "confused_with 의 rent 를 설명이 갈라 주지 않는다. / 반박: 설명 세 문장이 모두 lend·rent 이야기뿐이고 **표제어 borrow 를 앉히는 문장이 하나도 없다** — 첫머리 '빌려주는 쪽은' 은 '빌려 오는 쪽' 이 앞에 세워져야 성립하는 말인데 받을 말이 없다. / 문형이 내건 'from + 사람' 자리도 어디에도 드러나지 않고, '자연스러워요' 는 잴 수 없는 말이다."
+  usage_note: "남의 것을 잠깐 얻어 와 쓰는 쪽이 borrow 라, 누구한테서인지는 from 으로 밝혀 borrow a book from the library 처럼 씁니다. 빌려주는 쪽은 lend 라서 '돈 좀 빌려줄래?' 는 Can you lend me some money? 라고 해요. 돈을 내고 빌리는 것은 rent 라서 rent a car 라고 합니다."
+
+- word: "fundamental"
+  reason: "설명의 \"'important'보다 더 깊은 뜻이 있어요\" 와 \"'basic'은 더 쉬운 뜻이에요\" 는 둘 다 잴 수 없는 말인 데다 뒷문장은 성립하지도 않는다. / 반박: **'맨 밑에서 떠받치는 가장 바탕이 된다는 뜻이라' 는 성립하지 않는 한국어다** — 관형형이 꾸밀 이름씨 없이 끊기고 겹말이기도 하다. / 뜻 칸의 '기본적인' 은 설명이 basic 쪽으로 넘긴 말이라 두 칸이 부딪히고, 해석의 '가장' 은 예문에 없는 최상급이다. / 'basic 은 처음 배우는 기초' 도 너무 좁아 basic rights 같은 자리를 잘라 낸다."
+  meaning_ko: "근본적인, 바탕이 되는"
+  usage_note: "맨 밑에서 떠받치는 바탕이라는 뜻이라 a fundamental change, a fundamental right 처럼 씁니다. basic 은 처음 배우는 기초라는 쪽으로도 써서 basic English 라고 하는데, fundamental English 라고는 하지 않아요. important 는 그냥 중요하다는 말이에요."
+  confused_with: ["basic", "important"]
+
+- word: "dish"
+  reason: "**설명 \"한국어 '접시'는 일반적으로 '그릇'을 의미하지만, 'dish'는 반드시 접시를 의미해요\" 는 거짓이다** — dish 는 그릇을 두루 가리키고 '요리' 라는 뜻도 있다. 한국어 낱말끼리 견주는 말이기도 하다. / 그 '요리' 뜻이 뜻 칸에도 없다. / 자리 검사: 문형 'a/the + dish' 를 예문 'Can I use this dish?' 가 보여 주지 않는다. / 반박: 문형 'a/the + dish' 를 예문 'Can I use this dish?' 가 보여 주지 않고, 뜻 칸에 새로 넣은 '요리' 뜻도 예문에 흔적이 없다. / 설명 첫 문장에도 임자말이 없어 둘째 문장의 '도' 가 받을 말을 잃는다."
+  meaning_ko: "그릇; 요리 (한 가지 음식)"
+  pattern: "a/the + dish"
+  example: "This is a Korean dish."
+  usage_note: "음식을 담는 그릇을 두루 가리키는 말이 dish 예요 — wash the dishes(설거지하다). 만들어 낸 음식 한 가지도 dish 라고 해요. 납작하고 둥근 접시 하나는 a plate 예요."
+  confused_with: ["plate"]
+
+- word: "abroad"
+  reason: "**설명의 \"'abroad'는 명사로만 쓰이고\" 는 거짓이고**(어찌씨다) 품사 단정 검사에도 걸린다. / \"'abroad'에 가는 곳을 설명할 때는 'in/around the world'와 같이 쓰세요\" 도 무슨 말인지 알 수 없다. / 반박: 'overseas 도 같은 뜻인데 바다 건너를 가리키는 말이에요' 는 같다고 못박고 곧바로 다른 뜻을 대어 앞뒤가 부딪힌다. / \"어느 나라인지 밝힐 때는 abroad 를 빼고\" 도 지나치다 — 이 카드의 예문 동사 study 는 'study abroad in Japan' 이 아주 흔해서, 학습자가 제 예문에 이 규칙을 대면 맞는 영어를 틀렸다고 배운다."
+  meaning_ko: "외국에, 외국으로"
+  pattern: "동사 + abroad"
+  usage_note: "'외국에·외국으로' 라는 뜻이 한 낱말에 들어 있어서 앞에 to 나 in 을 붙이지 않아요 — go abroad, live abroad. go abroad to Japan 이라고는 하지 않고 go to Japan 이라고 하며, 나라를 밝히려면 study abroad in Japan 처럼 in 을 씁니다. overseas 도 외국에 있거나 간다는 뜻인데 바다 건너 나라를 말할 때 주로 써요."
+  confused_with: ["overseas"]
+
+- word: "soul"
+  reason: "예문 'What is the soul of this music?' 은 원어민이 잘 하지 않는 말이고, 해석의 '소울' 은 영어를 소리대로 옮긴 것이다. / 설명도 \"'spirit'보다 더 깊은 의미를 가진다고 생각해요\" 로 끝나 잴 수 없는 말인 데다 문체까지 무너졌다. / 반박: 'team spirit' 은 기운이 아니라 한 팀으로 뭉치는 마음이라 든 보기가 설명하는 뜻을 받쳐 주지 못하고, 정작 갈라 줄 자리(spirit 은 유령에도 바로 쓴다)가 빠졌다. / '마음이 움직이는 자리' 도 잡히지 않는 비유이고, 넓혀 둔 문형 'a/the + soul' 의 a 갈래는 예문도 설명도 보여 주지 않는다."
+  meaning_ko: "영혼, 넋"
+  pattern: "the + soul"
+  example: "Some people believe in the soul."
+  usage_note: "몸과 달리 죽어도 남는다고 여기는 것이 soul 이에요. spirit 도 거의 같은 뜻으로 쓰는데 유령을 가리키는 데도 바로 써서 evil spirits 라고 합니다. 기쁘고 슬픈 마음이 오가는 곳은 heart 라서 from the heart(진심으로) 처럼 써요."
+  confused_with: ["spirit", "heart"]
+
+- word: "capable"
+  reason: "문형 'be capable of + 동사' 가 부정확하다 — of 뒤에는 -ing 가 온다. / 설명의 \"'can'보다 더 강하게\", \"'I can help'보다 더 정중한\" 은 둘 다 잴 수 없는 말이고 뒤엣것은 사실도 아니다. / 반박: 설명이 '말할 때는 그냥 can 을 쓰는 것이 가장 흔합니다' 라고 못박아 놓고 예문은 상대에게 대놓고 묻는 말하기 자리였다. / 첫머리의 '그럴' 도 받을 말이 앞에 없다."
+  pattern: "be capable of + -ing"
+  example: "This machine is capable of printing 100 pages a minute."
+  usage_note: "어떤 일을 해낼 힘이나 솜씨가 있다는 뜻이라 of 뒤에 -ing 를 붙여 capable of driving 처럼 씁니다. able 도 같은 뜻인데 뒤에 to + 동사원형을 붙여 be able to drive 라고 해요. 말할 때는 그냥 can 을 쓰는 것이 가장 흔합니다."
+  confused_with: ["able", "can"]
+
+- word: "defeat"
+  reason: "설명이 win 과의 갈림을 세우다 말고 예문을 되풀이하며 끝나고, confused_with 의 beat 를 다루지 않는다. / 반박: '뒤에 이긴 상대가 옵니다' 의 '이긴 상대' 는 승자로 먼저 읽혀 뜻이 뒤집힌다 — defeat 뒤에 오는 것은 진 쪽이다. / 예문 'Our team defeated the other team.' 도 설명이 beat 에게 넘긴 말하기 자리라, 설명의 보기와 예문이 같은 상황을 두고 서로 다른 낱말을 내세운다."
+  example: "Korea defeated Japan in the final."
+  usage_note: "겨루어 상대를 이기는 것이 defeat 라, 뒤에는 누구를 이겼는지가 옵니다 — defeat the champion. 딱딱한 말이라 기사에서 자주 만나고, 말할 때는 beat 를 써서 We beat them easily. 라고 해요. win 뒤에는 상대가 아니라 경기나 상이 와서 win the game 이라고 합니다."
+  confused_with: ["win", "beat"]
+
+- word: "perfectly"
+  reason: "**설명의 'Perfectly는 형용사나 동사 앞에 써요' 는 거짓이고 제 예문과도 부딪힌다** — 'She sings perfectly.' 는 움직씨 뒤 자리다. 문형 'perfectly + 형용사/동사' 도 같은 잘못을 담고 있다. / confused_with 의 well 도 다루지 않는다. / 반박: 문형과 설명은 그림씨 앞에서 뜻이 '아주' 로 달라진다고 가르치는데 뜻 칸은 '완벽하게, 완전히' 한 갈래뿐이다 — 같은 묶음의 nearby 는 두 갈래로 맞췄는데 여기만 빠졌다."
+  meaning_ko: "완벽하게; (그림씨 앞에서) 아주"
+  pattern: "동사 + perfectly / perfectly + 형용사"
+  usage_note: "흠잡을 데 없이 잘한다는 뜻으로 움직씨 뒤에 붙여 He speaks English perfectly. 처럼 씁니다. 그림씨 앞에 놓으면 '아주' 라는 뜻이 되어 perfectly fine(아무 문제 없어요) 이라고 해요. 그냥 잘한다고 할 때는 well 을 쓰고, 그림씨 perfect 는 '완벽한' 이라 a perfect score 처럼 씁니다."
+  confused_with: ["perfect", "well"]
+
+- word: "enhance"
+  reason: "해석 '이 앱은 학습을 더 잘 해 줍니다' 는 성립하지 않는다. / 설명의 \"'improve'는 더 일반적인 상황에서 쓰입니다\" 도 잴 수 없는 말이고 confused_with 의 increase 를 다루지 않는다. / 반박: 설명 첫 문장이 뜻 칸을 거의 그대로 되풀이해 뜻·설명·해석 세 칸이 같은 말을 세 번 한다. / 뜻 칸의 '높이다' 는 예문도 설명도 받쳐 주지 않고, '나쁘던 것을 낫게 고치는' 의 '고치다' 는 같은 묶음의 repair 가 쓰는 말이라 improve 를 repair 쪽으로 민다."
+  meaning_ko: "더 좋게 만들다"
+  usage_note: "이미 나쁘지 않은 것에 무엇을 더해 값을 올려 주는 말이라 광고나 설명서에서 자주 만나요 — enhance the flavor. 모자라던 것을 더 낫게 만드는 쪽은 improve 라서 improve my English 라고 합니다. 수나 양을 늘리는 것은 increase 예요."
+  confused_with: ["improve", "increase"]
+
+- word: "proud"
+  reason: "뜻 칸의 '품격 있는' 은 proud 의 뜻이 아니다 — 이 낱말의 둘째 뜻은 오히려 '거만한' 쪽이다. / 해석 '아들에 대해 자랑스럽습니다' 도 번역투이고, confused_with 의 shame·ashamed 를 설명이 갈라 주지 않는다. / 반박: **설명이 예문의 네 낱말(proud of my son)을 그대로 떠 와 예문의 8할이 겹친다** — 되풀이 검사에 걸리는 자리다. / \"of 를 빼면 말이 되지 않아요\" 도 영어 사실로 틀렸다 — I'm proud to be here, a proud father 처럼 of 없이 쓰는 자리가 많고, 그중 to + 동사원형은 A2 가 가장 자주 만나는 꼴이다."
+  meaning_ko: "자랑스러운, 뿌듯한"
+  usage_note: "잘한 것이 있어 뿌듯하다는 뜻이라 사람이나 일을 바로 붙일 때는 of 를 씁니다 — proud of her work. I'm proud my son 이라고는 하지 않아요. 뒤에 to + 동사원형을 붙여 I'm proud to be here. 라고도 합니다. 반대로 부끄럽다고 할 때는 그림씨 ashamed 를 써서 ashamed of myself 라고 하고, 그 마음 자체는 이름씨 shame 이에요."
+  confused_with: ["ashamed", "shame"]
+
+- word: "emergency"
+  reason: "**설명의 \"'in emergency'과 같이 쓰세요\" 는 틀렸다** — in an emergency 라고 관사를 넣는다. 조사도 어긋났다('in emergency과'). / 문형 'in + emergency' 를 예문 'We had an emergency at the hospital.' 이 보여 주지도 않는다. / confused_with 의 urgent·crisis 도 다루지 않는다. / 반박: 설명이 든 첫 보기 'call an emergency number' 의 an 은 emergency 가 아니라 뒤의 number 에 붙은 관사라, 이름씨 머리 자리를 보여 줘야 할 자리에서 문형과 어긋난다(a metal spoon 과 같은 꼴). / 'in an emergency' 를 '만일의 경우에는' 으로 옮긴 것도 뜻 칸과 이어지지 않는다."
+  meaning_ko: "위급한 일, 응급 상황"
+  pattern: "an/the + emergency / in an emergency"
+  usage_note: "갑자기 벌어져 곧바로 손을 써야 하는 일이 emergency 예요 — It's an emergency! 위급한 일이 생겼을 때는 in an emergency 라고 통째로 씁니다. 그림씨 urgent 는 '급한' 이라 an urgent message 처럼 쓰고, 나라나 회사가 크게 흔들리는 큰일은 crisis 예요."
+  confused_with: ["urgent", "crisis"]
+
+- word: "educational"
+  reason: "**confused_with 가 빈 목록이다.** / 설명의 \"'교육'을 직접 의미하지는 않아요\" 도 한국어 낱말을 두고 도는 말이라 갈라 주는 것이 없다. / 문형 자리의 '(ex: video, program)' 은 형태 표기가 아니라 보기 나열이다. / 반박: 뜻 칸 '교육적인, 교육에 도움이 되는' 은 한 뜻을 두 번 적은 것이고, 새 설명 첫머리까지 같은 말을 세 번째로 되풀이한다. / 설명이 든 보기가 예문·문형과 통째로 겹친다. / 이 낱말의 또 다른 흔한 뜻(the educational system 처럼 '교육의')이 빠졌다."
+  meaning_ko: "교육적인 (배우는 데 도움이 되는); 교육의"
+  pattern: "educational + 명사"
+  usage_note: "사람이 아니라 영상·프로그램·장난감 같은 것에 붙여 educational toys, an educational trip 처럼 씁니다. 학교나 나라의 교육과 관련된 것에도 붙여 the educational system 이라고 해요. 배우고 가르치는 일 자체는 이름씨 education 이고, 대학이나 연구 쪽 일은 academic 이라 academic results 처럼 씁니다."
+  confused_with: ["education", "academic"]
+
+- word: "distinguish"
+  reason: "설명이 문형 칸의 between 을 되풀이하는 데 자리를 쓰고, confused_with 의 differentiate·separate 를 갈라 주지 않는다. / 되읽기: 뜻 칸의 '구분하다, 구분할 수 있다' 는 같은 말을 두 번 적은 것이다. / 반박: 'differentiate 도 같은 뜻인데 더 딱딱하고' 는 잴 수 없는 말인 데다 사실도 미덥지 않고(사업 말투에서 오히려 흔하다), separate 도 영어 짝 없이 한 마디로 끝난다."
+  meaning_ko: "구분하다, 가려내다"
+  usage_note: "둘 사이의 다른 점을 알아보는 것이 distinguish 예요 — distinguish between right and wrong. 하나를 다른 것과 갈라 볼 때는 from 을 붙여 distinguish a copy from the original 이라고 합니다. differentiate 는 무엇이 남과 다른지 내세울 때 자주 써서 differentiate our product from others 처럼 쓰고, separate 는 실제로 떼어 놓는 것이라 separate the eggs 라고 해요."
+  confused_with: ["differentiate", "separate"]
+
+- word: "substantial"
+  reason: "설명이 한국어 '크다' 와 견주다 끝나 confused_with 의 large·big 을 영어로 갈라 주지 않는다. / 해석 '이익을 가지고 있어요' 도 have 를 그대로 옮긴 번역투다. / 반박: '덩치가 크다는 뜻은 없어서' 는 영어 사실로 틀렸다 — a substantial meal, a substantial house 처럼 크고 실하다는 뜻으로도 쓴다. 가르치려는 요지는 옳지만 '뜻이 없다' 는 단정으로 세워 거짓이 됐다(abroad 의 '명사로만' 과 같은 종류다)."
+  meaning_ko: "꽤 많은, 상당한"
+  usage_note: "적지 않다고 힘주어 말할 때 쓰는 딱딱한 말이라 a substantial amount, substantial changes 처럼 씁니다. 물건 하나의 크기를 잴 때는 잘 쓰지 않아서 크기는 large 나 big 으로 말해요 — a large box."
+  confused_with: ["large", "big"]
+
+- word: "nearby"
+  reason: "문형 'nearby + 장소' 와 그 예 'the store nearby' 가 서로 순서가 반대이고, 예문 'Is there a bank nearby?' 도 뒤에 붙는 자리다. / 설명은 한국어 '가까이' 와만 견주다 끝나 confused_with 의 close·near 를 갈라 주지 않는다. / 반박: 설명의 '문장 뒤에 붙여 씁니다' 가 문형 '명사 + nearby' 와 어긋난다 — 실제로는 꾸미는 이름씨 뒤에 붙는다(a bank nearby). 한 카드가 두 규칙을 준다. / 해석 '가까이에 은행이 있어요?' 도 길 묻는 자리에서 쓰는 한국어가 아니고, 원본 뜻 칸에 있던 '근처' 가 카드에서 통째로 사라졌다."
+  meaning_ko: "가까이에, 근처에; 가까운"
+  pattern: "명사 + nearby / nearby + 명사"
+  usage_note: "'가까이에' 라는 뜻으로 꾸미는 이름씨 뒤에 붙여 a bank nearby, a store nearby 처럼 씁니다. 이름씨 앞에 놓으면 '가까운' 이 되어 a nearby station 이라고 해요. near 는 뒤에 곳을 붙여 near the station 이라고 하고, close 는 to 를 붙여 close to my house 라고 합니다."
+  confused_with: ["close", "near"]
+
+- word: "manufacturer"
+  reason: "설명의 \"'maker'는 더 일반적인 표현이에요\" 는 잴 수 없는 말이고 confused_with 의 producer 도 다루지 않는다. / 해석의 '입니다' 도 다른 항목들과 문체가 어긋난다. / 반박: **\"영화나 음악이 만들어지도록 대는 쪽은 producer 라서 자리가 달라요\" 는 영어 사실이 아니다** — producer 는 the world's largest producer of oil, wine producers 처럼 물건을 만들어 내는 쪽으로도 아주 흔해서 manufacturer 와 같은 자리에 들어간다. / 예문 'This is a car manufacturer.' 도 회사를 눈앞의 것처럼 가리켜 어색하고, 해석 '여긴' 은 회사를 장소로 만든다."
+  meaning_ko: "제조사 (물건을 만들어 내는 회사)"
+  example: "Toyota is a car manufacturer."
+  usage_note: "공장에서 물건을 만드는 회사가 manufacturer 예요. 말할 때는 maker 를 더 자주 써서 a car maker 라고 합니다. producer 는 더 넓어서 기름이나 커피처럼 캐고 기르는 것까지 아울러 the world's largest producer of coffee 처럼 써요."
+  confused_with: ["maker", "producer"]
+
+- word: "slide"
+  reason: "**뜻 칸의 '끄러지다' 는 오타다.** / 문형 'slide + 목적어' 를 예문 'I slid down the hill.' 이 보여 주지 않는다. / 설명의 'slide a book' 도 원어민이 쓰는 짝이 아니고, confused_with 의 slip·fall 을 갈라 주지 않는다. / 반박: 설명이 '발표에 쓰는 화면 한 장도 a slide' 라며 이름씨 뜻을 들여오는데 뜻 칸은 '미끄러져 가다' 하나뿐이고, 왕초보가 가장 먼저 만나는 이름씨 뜻인 '미끄럼틀' 은 어디에도 없다. / '닿은 채로' 도 무엇이 어디에 닿는지가 없어 떠 있다."
+  meaning_ko: "미끄러져 가다; 미끄럼틀, (발표) 슬라이드"
+  pattern: "slide down/into + 장소"
+  usage_note: "바닥에 닿은 채로 스르륵 미끄러져 가는 것이 slide 예요 — slide into the pool. 아이들이 타고 내려오는 미끄럼틀도 a slide 라서 go down the slide 라고 하고, 발표에 쓰는 화면 한 장도 a slide 예요. 발이 미끄러져 휘청하는 것은 slip 이라 I slipped on the ice. 라고 하고, 바닥으로 넘어지면 fall 이에요."
+  confused_with: ["slip", "fall"]
+
+- word: "personally"
+  reason: "**문형 'personally + about/with + 주제' 는 틀렸다** — 예문 'Personally, I don't like spicy food.' 처럼 문장 맨 앞에 붙는 말이다. / confused_with 의 individually·privately 도 다루지 않는다. / 되읽기: 뜻 칸의 '나만의 입장에서' 는 굳어진 한국어가 아니고 앞의 '개인적으로' 를 되풀이한다. / 반박: 이 낱말의 또 다른 흔한 뜻 '몸소·직접' 이 통째로 빠졌다 — Don't take it personally. / I know her personally. 왕초보가 오히려 더 자주 만나는 자리인데 설명이 '문장 맨 앞에' 로 못박아 막아 버린다(I personally think ~ 도 아주 흔하다). / 뜻 칸의 '나만의 입장에서' 도 굳어진 한국어가 아니다."
+  meaning_ko: "개인적으로는; 직접, 몸소"
+  pattern: "Personally, + 문장 / 주어 + personally + 동사"
+  usage_note: "내 생각을 말한다고 밝힐 때 앞쪽에 붙여 Personally, I think it's too expensive. 나 I personally think so. 처럼 씁니다. 내가 직접 한다는 뜻도 있어서 I know him personally, Don't take it personally(기분 나쁘게 듣지 마세요) 처럼 써요. 사람을 하나하나 따로 대할 때는 individually, 남에게 알리지 않고 조용히 하는 것은 privately 예요."
+  confused_with: ["individually", "privately"]
+
+- word: "breast"
+  reason: "**예문 'She has a beautiful breast.' 는 원어민이 쓰지 않는 문장이고**(홑수로 이렇게 쓰지 않는다) 왕초보 학습 카드에 놓기에도 맞지 않는다. 해석의 '가슴을 가지고 있어요' 도 have 를 그대로 옮긴 번역투다. / 왕초보가 실제로 만나는 자리(chicken breast)가 빠져 있다. / 되읽기: **예문을 'I ordered a chicken breast.' 로 바꾸면서 문형 'the + breast' 를 안 맞췄다** — 예문에는 the 가 없다. 자리 어긋남을 스스로 또 만들었다. / 되읽기·반박: **예문을 바꾸면서 문형 'the + breast' 를 안 맞췄다** — 예문에 the 가 없고, 있는 a 는 뒤 덩어리 chicken breast 에 붙은 것이라 자리를 보여 주지 못한다. 'the breast' 자체도 이 낱말을 잘 쓰는 꼴이 아니다. / 뜻 칸과 설명이 가슴을 앞세우는데 예문·해석은 오로지 가슴살 쪽뿐이라 차례도 어긋난다."
+  meaning_ko: "(닭 등의) 가슴살; 가슴"
+  pattern: "명사 + breast / breast + 명사"
+  example: "I ordered a chicken breast."
+  usage_note: "닭이나 오리의 가슴살을 chicken breast 라고 해서 식당에서 자주 만나요. 사람의 가슴을 가리키기도 하는데 병원이나 건강 이야기에서 breast cancer(유방암) 처럼 씁니다. 남녀 모두의 가슴팍 전체는 chest 라서 chest pain(가슴 통증) 이라고 해요."
+  confused_with: ["chest"]
+
+- word: "cope"
+  reason: "해석 '스트레스를 어떻게 대처하시나요?' 는 조사가 틀렸다 — 대처하는 대상에는 '에' 가 붙는다. / 설명도 solve 만 갈라 주고 confused_with 의 deal 을 다루지 않는다. / 반박: 설명이 '나서서 처리한다' 는 쪽을 deal 에 넘겼는데 뜻 칸은 '대처하다' 로 시작하고 새 해석까지 '대처하세요' 라, 카드의 한국어 두 칸이 설명이 그은 갈림의 반대편에 서 있다."
+  meaning_ko: "감당하다, 견디며 해 나가다"
+  usage_note: "힘든 일을 없애지는 못해도 그럭저럭 견디며 해 나가는 것이 cope 라, 뒤에 with 를 붙여 cope with stress 처럼 씁니다. deal 도 with 를 붙여 deal with a problem 이라고 하는데 나서서 처리한다는 쪽이에요. 문제의 답을 찾아 아예 끝내는 것은 solve 예요."
+  confused_with: ["solve", "deal"]
+
+- word: "approximately"
+  reason: "**뜻 칸의 '약간' 은 이 낱말의 뜻이 아니다** — 그건 a little 쪽이다. 설명도 \"'약간'이나 '대충'처럼\" 이라며 같은 거짓 위에 서 있다. / confused_with 의 about·roughly 도 갈라 주지 않는다. / 반박: 설명이 '글에서 쓰는 딱딱한 말이라 말할 때는 about 을 써서' 라고 못박았는데, 남은 예문 '비용은 대략 10달러' 는 전형적인 입말 자리다 — 카드의 유일한 본보기가 설명이 about 을 쓰라고 한 자리를 보여 준다."
+  meaning_ko: "대략, 얼추"
+  example: "The flight takes approximately two hours."
+  usage_note: "정확하지는 않지만 그쯤 된다고 할 때 수 앞에 붙입니다 — approximately 200 people. 글에서 쓰는 딱딱한 말이라 말할 때는 about 을 써서 about 200 people 이라고 해요. roughly 도 같은 뜻으로 roughly half 처럼 씁니다."
+  confused_with: ["about", "roughly"]
+
+- word: "accommodation"
+  reason: "설명의 \"'accommodation'은 명사로만 쓰이고\" 는 품사 단정 검사에 걸린다. / 문형 'a/the + accommodation' 도 예문 'We need accommodation for two people.' 이 보여 주지 않는다 — 이 낱말은 관사 없이 쓴다. / 반박: '하나 둘로 세지 않아서' 는 영국 영어에만 참이다 — 미국에서는 hotel accommodations 처럼 겹수가 표준이고, 같은 묶음의 chip 이 미국말을 기본으로 세운 것과도 어긋난다. / 예문 'We need accommodation for two people.' 도 말로 하는 요청이라, 설명이 '안내문에서 만나요' 라고 한 자리와 부딪힌다."
+  meaning_ko: "묵을 곳, 숙소"
+  pattern: "accommodation + for + 사람"
+  example: "The price includes accommodation for two people."
+  usage_note: "여행이나 출장에서 묵을 곳을 가리키는 딱딱한 말이라 안내문에서 만나요 — find accommodation. 영국에서는 이렇게 뭉뚱그려 쓰고 미국에서는 hotel accommodations 처럼 -s 를 붙입니다. 묵을 자리를 내주는 동작은 accommodate 이고, 말할 때는 a place to stay 나 a hotel 을 더 자주 써요."
+  confused_with: ["accommodate", "hotel"]
+
+- word: "climate"
+  reason: "**해석 '여기 날씨가 매우 더워요' 가 climate 를 '날씨' 로 옮겨, 설명이 애써 갈라 놓은 weather 와 도로 붙인다.** / 문형 'the + climate of + 장소' 도 예문 'The climate here is very hot.' 이 보여 주지 않는다. / 반박: 남은 예문 'The climate here is very hot.' 은 '여기 오늘 덥다' 로도 읽혀, 설명이 애써 갈라 놓은 weather 와 도로 붙는다. 해석만 '기후' 로 고치고 예문을 그대로 둬서, 카드의 핵심인 '해마다 되풀이되는 큰 흐름' 을 정작 예문이 보여 주지 못한다."
+  pattern: "a/the + climate"
+  example: "This country has a dry climate."
+  usage_note: "한 고장에서 해마다 되풀이되는 날씨의 큰 흐름이 climate 예요 — a dry climate. 오늘내일의 날씨는 weather 라서 What's the weather like today? 라고 합니다. 지구가 더워지는 일은 climate change(기후 변화) 라고 해요."
+  confused_with: ["weather"]
+
+- word: "shirt"
+  reason: "설명의 \"'top'은 더 넓은 말이기 때문에 셔츠보다 더 일반적인 옷을 의미할 수 있어요\" 는 늘어지기만 하고, confused_with 의 blouse 를 다루지 않는다. / 반박: 설명 첫 문장이 뜻 칸 괄호를 글자 그대로 되풀이한다. / 뜻 칸이 '단추가 달린' 으로 못박고 설명도 '티셔츠는 따로 말합니다' 라 해서 T-shirt 가 shirt 가 아닌 것처럼 되는데, T-shirt 는 shirt 의 한 갈래다."
+  meaning_ko: "셔츠 (윗옷)"
+  usage_note: "깃이 있고 앞에 단추가 죽 달린 것이 흔해서 a white shirt, a dress shirt 처럼 씁니다. 티셔츠도 shirt 의 하나라 a T-shirt 라고 따로 부릅니다. 여자가 입는 얇은 윗옷은 a blouse 이고, top 은 윗옷을 통틀어 가리키는 말이에요."
+  confused_with: ["blouse", "top"]
+
+- word: "exception"
+  reason: "설명이 든 'This is an exception for him.' 은 원어민이 잘 쓰지 않는 말이고, confused_with 의 exceptional·exceptionally 도 다루지 않는다. / 선별기: 설명에 든 'an exception to the rule' 이 예문을 그대로 옮겨 적은 것이라 되풀이 검사에 걸렸다. / 반박: 뜻 칸 '예외, 예외인 사람/일' 은 제 낱말로 제 뜻을 풀어 제자리를 돈다. / 왕초보가 가장 자주 만나는 짝 make an exception 이 빠지고 글에서 쓰는 무거운 with the exception of 만 올라 쓸모 순서가 뒤집혔다. / 해석의 '그' 도 받을 말이 없다."
+  meaning_ko: "예외 (규칙에 들어맞지 않는 하나)"
+  usage_note: "봐 달라고 할 때는 Can you make an exception? 이라고 해요. 무슨 규칙에서 빠지는지 밝힐 때는 뒤에 to 를 붙입니다. 그림씨 exceptional 은 '아주 뛰어난' 이라 an exceptional student 처럼 씁니다."
+  confused_with: ["exceptional"]
+
+- word: "corporation"
+  reason: "설명이 한국어 '회사' 와 견주다 끝나 confused_with 의 company·enterprise 를 영어로 갈라 주지 않고, '더 큰 규모' 도 잴 수 없는 말이다. / 해석의 '이것은' 도 번역투다. / 반박: 설명이 '날마다 말할 때는 company 를 써서' 라고 못박았는데 남은 예문 'This is a big corporation.' 이 바로 그 날마다 말하는 자리다. / 'enterprise 도 회사를 가리키는 딱딱한 말' 은 바로 앞에서 corporation 을 두고 한 말과 똑같아 둘을 하나도 갈라 주지 않는다."
+  meaning_ko: "큰 회사, 법인"
+  example: "He works for a large corporation."
+  usage_note: "법으로 하나의 몸처럼 세워 둔 큰 회사가 corporation 이라 서류나 이름에 들어가 Samsung Corporation 처럼 씁니다. 날마다 말할 때는 company 를 써요. enterprise 는 사업체나 사업 자체를 가리키는 쪽이라 a state-owned enterprise 처럼 씁니다."
+  confused_with: ["company", "enterprise"]
+
+- word: "chip"
+  reason: "**confused_with 의 'chips' 는 표제어의 복수형이고 'chip (computer)' 는 표제어에 괄호까지 붙인 것이라, 헷갈리는 짝이 하나도 없다.** / 설명의 '감자 칩은 chips, 컴퓨터 칩은 chip이라고 말해요' 도 거짓이다 — 갈리는 것은 뜻이 아니라 미국말과 영국말이다. / 반박: 설명은 '얇게 튀긴 과자' 가 미국말에서만이라고 못박는데 뜻 칸은 나라를 안 밝혀 두 칸이 부딪힌다 — 고침 사유 스스로 '갈리는 것은 미국말과 영국말' 이라 써 놓고 뜻 칸에 그 갈림이 없다. / '(컴퓨터의) 칩' 도 표제어를 소리대로 옮긴 것이라 뜻을 알려 주지 못한다. / 설명 첫 문장도 뜻 칸을 되풀이한다."
+  meaning_ko: "(미국) 얇게 튀긴 과자, (영국) 감자튀김; (컴퓨터 안의) 작은 부품"
+  pattern: "a + chip / potato chips"
+  usage_note: "미국에서 chips 라 하면 봉지에 든 과자예요 — a bag of potato chips. 영국에서는 그것을 crisps 라 하고, chips 는 미국의 French fries(감자튀김)를 가리킵니다. 컴퓨터 안의 작은 부품도 a chip 이라고 해요."
+  confused_with: ["crisps", "fries"]
+
+- word: "overseas"
+  reason: "**짝 항목 맞춤** — abroad 를 고치며 'overseas 도 같은 뜻' 이라고 했는데, 이 항목의 설명이 든 'overseas person' 은 원어민이 쓰지 않는 짝이다(overseas students 처럼 쓴다). / 문형 'overseas + 명사' 도 예문 'I have a friend who lives overseas.' 가 보여 주지 않는다 — 예문은 움직씨 뒤 자리다. **칸 몇 개만 맞춘 것이라 이 낱말은 대장에 올리지 않는다.** / 되읽기: 뜻 칸이 그림씨 쪽('해외의')만 담고 있어, 설명·문형이 새로 세운 어찌씨 자리(live overseas)를 받쳐 주지 못한다."
+  meaning_ko: "해외에, 해외로; 해외의"
+  pattern: "동사 + overseas / overseas + 명사"
+  usage_note: "'바다 건너 외국에' 라는 뜻이 들어 있어서 앞에 to 나 in 을 붙이지 않고 live overseas, work overseas 처럼 씁니다. 이름씨 앞에 놓으면 '해외의' 가 되어 overseas students 라고 해요. abroad 도 같은 뜻이라 go abroad 와 go overseas 를 바꿔 쓸 수 있습니다."
