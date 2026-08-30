@@ -5662,28 +5662,49 @@
   confused_with: ["conservative", "generous"]
 
 - word: "existence"
-  reason: "문형 자리에 영어가 들어가 있었다: existence: 불가산명사 (the existence of + something)"
-  pattern: "existence: 불가산명사 (the existence of + 명사)"
+  reason: "문형 자리에 영어가 들어가 있었다: existence: 불가산명사 (the existence of + something) / **문형 자리에 'existence: 불가산명사' 라는 딱지가 들어가 있다** — 형태 표기가 아닌 데다 '불가산' 이 가산성 단정 검사에 걸려 이 낱말이 연습장에서 빠진다. / 예문 'The existence of this problem is important.' 도 어색하고, 설명은 \"'존재'를 직접 쓰는 것보다 더 공식적인\" 이라는 잴 수 없는 말이다. / 반박: 설명 첫 문장이 뜻 칸의 괄호 '(있다는 것)' 을 그대로 되풀이한다. / '살아가는 삶' 은 겹말이고, existence 자체에 고단한 삶을 가리키는 쓰임이 있어 삶 쪽을 통째로 life 에 넘기면 나중에 어긋난다."
+  meaning_ko: "존재 (있다는 것)"
+  pattern: "the existence of + 명사"
+  example: "No one knew about the existence of the letter."
+  usage_note: "글이나 뉴스에서 the existence of ~ 꼴로 만나는 딱딱한 말이에요. 말할 때는 그냥 exist 를 써서 Does it exist? 라고 해요. 사는 것을 가리킬 때는 보통 life 를 써서 a hard life 라고 합니다."
+  confused_with: ["exist", "life"]
 
 - word: "bother"
-  reason: "문형 자리에 영어가 들어가 있었다: bother + 목적어 (사람), bother about + something"
-  pattern: "bother + 목적어 (사람), bother about + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: bother + 목적어 (사람), bother about + something / 설명이 든 'This isn't a bother' 는 원어민이 잘 쓰지 않는 말이라 예로 서지 못하고, 그 뒤 \"'bother'가 '문제'로 쓰인 것이죠\" 도 뜻을 비뚤게 옮긴다. / 문형의 'bother about + 명사' 도 예문에 없고 이 낱말의 흔한 꼴이 아니다. / 반박: 뜻 칸 '성가시게 하다, 귀찮게 하다' 는 같은 말을 두 번 적은 것이라, 설명이 크게 다루는 둘째 쓰임(Don't bother.)이 뜻 칸에도 문형에도 없다. / **그 둘째 쓰임이 목적어가 사라진 자동사라는 것을 밝히지 않아**, 예문 'Don't bother me now.' 바로 밑에서 같은 꼴이 딴 뜻으로 나온다."
+  meaning_ko: "귀찮게 하다; 굳이 애쓰다"
+  pattern: "bother + 사람"
+  usage_note: "자꾸 신경 쓰이게 해서 귀찮게 하는 것이 bother 예요 — Sorry to bother you. 뒤에 사람을 붙이지 않고 bother 만 쓰면 '굳이 애쓰다' 라는 딴 뜻이 되어 Don't bother. 는 '그러지 않으셔도 돼요' 입니다. annoy 는 짜증 나게 하는 쪽이고, disturb 는 하던 일이나 조용한 자리를 끊는 쪽이라 호텔 문에 Do not disturb 라고 걸어 둡니다."
+  confused_with: ["annoy", "disturb"]
 
 - word: "motion"
-  reason: "문형 자리에 영어가 들어가 있었다: make a motion + 목적어 (to + someone)"
-  pattern: "make a motion + 목적어 (to + 사람)"
+  reason: "문형 자리에 영어가 들어가 있었다: make a motion + 목적어 (to + someone) / **예문과 해석이 어긋난다** — 'He made a motion to the teacher.' 는 선생님에게 손짓했다는 말인데 해석은 '제안을 했어요' 다(회의에서 안건을 내는 그 뜻은 to 를 이렇게 쓰지 않는다). / 뜻 칸의 '움직이다' 도 움직씨 풀이라 이름씨인 이 낱말과 맞지 않고, 문형도 뒤섞여 있다. / 반박: 문형에 넣은 'a + motion' 갈래를 뜻·예문·설명 어디도 받쳐 주지 않는다 — 게다가 설명이 \"하나하나 세어 말할 때는 movement\" 라고 못박아, 문형이 설명이 금한 꼴을 가르치는 셈이다. / '움직이는 동작은 move' 도 이름씨 풀이에 움직씨 보기를 붙여 어긋난다."
+  meaning_ko: "움직임"
+  pattern: "in + motion / in slow + motion"
+  example: "The train was already in motion."
+  usage_note: "무엇이 움직이는 것 자체를 가리키는 이름씨예요 — in slow motion(느린 화면). 몸을 움직인다고 할 때는 move 를 써서 Don't move! 라고 하고, 이름씨로 쓰면 a good move(좋은 수) 예요. 움직임을 하나하나 세어 말할 때는 movement 라서 a sudden movement 라고 합니다."
+  confused_with: ["move", "movement"]
 
 - word: "assumption"
-  reason: "문형 자리에 영어가 들어가 있었다: make an assumption + about + something"
-  pattern: "make an assumption + about + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: make an assumption + about + something / **뜻 칸의 '(사실이 아님을 알면서도 잠시 받아들이는 것)' 이 거짓이다** — 그건 가정법이나 가설 쪽이고, assumption 은 확인해 보지 않고 사실이라고 믿어 버리는 것이다. 설명도 같은 거짓 위에 서 있고 '더 강하게' 라는 잴 수 없는 말을 쓴다. / 반박: 설명 첫 문장이 뜻 칸을 거의 그대로 되받아 새로 얹은 것이 '확인해 보지 않고' 하나뿐이다. / '짐작하는 동작' 의 '동작' 은 머릿속 일에 붙지 않고, hypothesis 를 한국어로 뭐라 하는지(가설)도 끝내 말해 주지 않는다. / 해석도 문형이 가르치는 make an assumption 과 about 을 한 조각도 남기지 않는다."
+  meaning_ko: "짐작, 지레 믿어 버리는 것"
+  pattern: "make + an assumption + about + 명사"
+  usage_note: "묻거나 확인해 보지 않고 넘겨짚는 것이라, 틀렸을 때 Don't make assumptions. 라고 합니다. 그렇게 짐작한다고 말할 때는 assume 을 써서 I assumed you were coming. 이라고 해요. 맞는지 확인해 보려고 미리 세워 두는 생각, 곧 가설은 hypothesis 라서 과학 시간에 만나요."
+  confused_with: ["assume", "hypothesis"]
 
 - word: "mechanism"
-  reason: "문형 자리에 영어가 들어가 있었다: the mechanism + of + something"
-  pattern: "the mechanism + of + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: the mechanism + of + something / 설명 \"'기작'은 물리적인 부품을, '작동 방식'은 어떻게 작동하는지를 말해요\" 는 한국어 낱말끼리 견주는 말이다. / 뜻 칸의 '기작' 도 학술어라 왕초보가 만날 말이 아니고, 예문 'How does the mechanism of this machine work?' 도 늘어진다. / 반박: **'짜임새' 는 한국어에서 글이나 구성이 잘 짜였는지를 말하는 낱말이라** 기계 속에는 쓰지 않는다 — 해석 '이 자물쇠의 짜임새는 단순해요' 도 성립하지 않는다. / '그 속' 의 '그' 도 받을 말이 없고, system 을 '큰 덩어리' 라 한 것도 the school system 을 설명하지 못한다. / 예문 'The mechanism of this lock is simple.' 도 원어민이 자물쇠를 두고 쓰는 말투가 아니다."
+  meaning_ko: "장치 (안이 어떻게 움직이는지)"
+  pattern: "a + 명사 + mechanism / the mechanism of + 명사"
+  example: "This lock has a simple locking mechanism."
+  usage_note: "기계나 물건이 어떻게 움직이게 되어 있는지, 그 안의 구조가 mechanism 이에요 — a safety mechanism. 여러 부분이 맞물려 함께 돌아가는 큰 틀은 system 이라 the school system 이라고 합니다. 차례차례 밟아 가는 과정은 process 예요."
+  confused_with: ["system", "process"]
 
 - word: "observation"
-  reason: "문형 자리에 영어가 들어가 있었다: noun: a/the + observation"
-  pattern: "a/the + observation"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: a/the + observation / 설명의 \"'I made an observation'은 '나는 관찰을 했다'고 자연스럽게 들려요\" 는 제자리를 도는 말이고, confused_with 의 notice·comment 를 갈라 주지 않는다. / 뜻 칸의 '(특히 과학이나 의학에서)' 도 쓰임을 지나치게 좁힌다. / 반박: 새 해석 '중요한 관찰 결과를 내놓았어요' 는 자료를 발표했다는 말로 읽히는데, make an observation 은 보고 나서 한마디 했다는 뜻이다 — 뜻 칸·설명이 세운 '관찰해서 한 말' 을 해석 혼자 다른 쪽으로 옮겼다."
+  meaning_ko: "관찰; 관찰해서 한 말"
+  pattern: "make + an observation"
+  usage_note: "눈여겨보는 일 자체를 가리키기도 하고, 그렇게 보고 나서 한 말을 가리키기도 해요 — an interesting observation. 눈에 띄어 알아채는 것은 notice 라서 I noticed a mistake. 라고 합니다. 무엇에 대해 한마디 하는 것은 comment 예요."
+  confused_with: ["notice", "comment"]
 
 - word: "implication"
   reason: "문형 자리에 영어가 들어가 있었다: noun: ~의 implication"
@@ -7818,8 +7839,11 @@
   confused_with: ["competition", "rival"]
 
 - word: "emotional"
-  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
-  pattern: "be + emotional"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다. / 해석 '이 영화는 감동이 많아요' 는 성립하지 않는다. / 설명이 그림씨 emotional 을 이름씨 feeling 과 견주는데 품사가 달라 고를 자리가 아니고, '감정의 강도를 강조해요' 도 잴 수 없는 말이다. / 반박: **뜻 칸의 '감정을 건드리는' 은 한국어에서 '기분을 상하게 하다' 로 읽힌다** — 해석 '감동적이에요' 와 설명 '마음을 흔든다' 와도 어긋난다. / 설명이 사람 쪽 뜻을 '감정을 잘 드러내는' 이라 해 놓고 보기는 '감정에 휩쓸리지 마' 라 맞물리지 않고, emotion 과 feeling 도 한 덩어리로 묶어 갈라 주지 않는다."
+  meaning_ko: "마음을 울리는, 감동적인; (사람이) 감정에 북받치는"
+  pattern: "be + emotional / emotional + 명사"
+  usage_note: "읽는 사람이나 보는 사람 마음을 흔든다는 뜻으로 an emotional moment 처럼 씁니다. 사람에게 쓰면 감정에 북받쳐 있다는 뜻이 되어 Don't get emotional. 은 '너무 감정에 휩쓸리지 마' 예요. 마음속에 생기는 느낌 하나하나는 emotion 이고, feeling 은 몸으로 느끼는 것이나 막연한 예감까지 아울러요 — I have a feeling he'll come."
+  confused_with: ["emotion", "feeling"]
 
 - word: "apparent"
   reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
@@ -10804,8 +10828,11 @@
   usage_note: "일반적으로 'thing'은 '물건'을 의미하지만, 상황이나 사건을 나타낼 때도 쓰입니다. 상황을 말할 때는 이렇게 써요: How are things at work?"
 
 - word: "diet"
-  reason: "설명이 예문을 그대로 옮겨 적고 있었다 — 마지막 문장이 예문과 해석을 그대로 되풀이할 뿐이라 설명 칸이 한 줄 비는 셈이에요."
-  usage_note: "다이어트는 일시적인 식단 조절을 말해요. '식단'은 일반적인 일상적인 식사 내용을 말하는 데 쓰이기도 해요. 'a healthy diet'는 평소 먹는 식단을 뜻해요."
+  reason: "설명이 예문을 그대로 옮겨 적고 있었다 — 마지막 문장이 예문과 해석을 그대로 되풀이할 뿐이라 설명 칸이 한 줄 비는 셈이에요. / 문형 'on + diet' 를 예문 'I'm on a diet.' 가 보여 주지 않는다 — a 가 붙는다. / 설명의 \"'식단'은 일반적인 일상적인 식사 내용\" 은 '일반적인' 과 '일상적인' 이 겹치고, confused_with 의 food·meal 을 갈라 주지 않는다. / 반박: **뜻 칸의 '다이어트' 는 표제어를 소리대로 옮겨 적은 것**이라 '프로듀서·미션' 과 같은 흠이고, 한국어 '다이어트' 가 살 빼는 일로만 굳어 있어 영어의 넓은 쓰임과 어긋난 짝을 심는다. / \"평소에 무엇을 먹고 사는지를 통틀어 가리켜 a healthy diet 라고 해요\" 도 등치가 어긋난다('건강한' 이 뜻풀이 안으로 딸려 들어갔다)."
+  meaning_ko: "평소 먹는 것; 살 빼려고 먹는 것을 줄이는 일"
+  pattern: "on a + diet / a + 형용사 + diet"
+  usage_note: "평소에 무엇을 먹고 사는지가 diet 예요 — a healthy diet(건강한 식단). 살을 빼려고 먹는 것을 줄이는 일도 diet 라서 go on a diet 라고 합니다. 한 끼는 a meal, 먹을 것 자체는 food 예요."
+  confused_with: ["food", "meal"]
 
 - word: "interpretation"
   reason: "설명이 예문을 그대로 옮겨 적고 있었다 — 예문에서 song 을 movie 로만 바꿔 다시 적은 문장이라 더해 주는 것이 없어요."
@@ -10888,8 +10915,8 @@
   usage_note: "두드리는 자리 앞에는 on 을 붙여요 — She knocked on the window. 벽도 He knocked on the wall. 이라고 해요. 문에는 at 을 쓰기도 하는데 Someone knocked at the door. 는 주로 영국에서 하는 말이고 미국에서는 on 이 흔해요. hit 은 세게 때리는 것, beat 는 여러 번 내리치는 것이라 인기척을 내는 뜻이 없어요."
 
 - word: "emphasize"
-  reason: "사람 지시대로 'I emphasize that...' 을 부자연스러운 쪽으로 놓은 거짓을 지우고, emphasize + 목적어와 emphasize that + 문장이 둘 다 정상인 문형임을 예로 보였어요. 예문을 그대로 옮겨 적던 겹침도 사라졌고, confused_with 의 stress·highlight 를 갈라 줬어요."
-  usage_note: "강조할 것을 바로 뒤에 놓아요 — He emphasized the price. 문장을 통째로 강조할 때는 emphasize that 뒤에 문장을 그대로 이어요 — She emphasized that we must hurry. stress 도 같은 자리에 쓸 수 있고, highlight 는 눈에 띄게 짚어 준다는 쪽이라 The report highlights the problem. 처럼 써요."
+  reason: "사람 지시대로 'I emphasize that...' 을 부자연스러운 쪽으로 놓은 거짓을 지우고, emphasize + 목적어와 emphasize that + 문장이 둘 다 정상인 문형임을 예로 보였어요. 예문을 그대로 옮겨 적던 겹침도 사라졌고, confused_with 의 stress·highlight 를 갈라 줬어요. / 반박: 그대로 두려 했으나 confused_with 의 stress 를 설명이 갈라 주지 않는다 — \"stress 도 같은 자리에 쓸 수 있고\" 는 같다는 말이지 가르는 말이 아니고 영어 보기도 없다. / '바로 뒤', '같은 자리' 의 기준이 되는 낱말도 빠져 있다. / 왕초보가 자주 틀리는 emphasize on 도 짚어 준다."
+  usage_note: "강조할 것을 emphasize 바로 뒤에 놓고 on 을 붙이지 않아요 — He emphasized the importance of safety. 문장을 통째로 강조할 때는 emphasize that 뒤에 그대로 이어 붙여요 — She emphasized that we must hurry. stress 도 emphasize 자리에 그대로 쓸 수 있고(He stressed the same point.), highlight 는 눈에 띄게 짚어 준다는 쪽이라 The report highlights the problem. 처럼 써요."
 
 - word: "preserve"
   reason: "조건절 '~하려면' 과 평서문이 어긋나던 짝을 '옛 건물을 보존해야 해요 → We should preserve old buildings.' 로 맞췄어요. '보존할 때는 preserve, 보호할 때는 protect' 라는 한국어끼리 견주는 틀도 버리고, protect·save 를 각각 영어 예로 갈랐어요."
@@ -11719,3 +11746,232 @@
   meaning_ko: "사무장 (객실 승무원을 이끄는 사람)"
   usage_note: "비행기나 배에서 객실 승무원을 이끄는 사람이 purser 예요. 비행기를 모는 사람은 pilot 이고 그중 책임자는 captain(기장) 이라고 합니다. 승객을 돌보는 승무원 한 사람은 a flight attendant 예요."
   confused_with: ["captain", "flight attendant"]
+
+- word: "disk"
+  reason: "설명 \"디스크는 컴퓨터 용어로, 일반적인 '판'과는 다르게 사용해요\" 는 한국어 낱말끼리 견주다 끝나 아무것도 갈라 주지 않는다. / confused_with 의 disc·diskette 도 설명에 없고, diskette 은 이제 쓰지 않는 말이다. / 반박: 뜻 칸에 '둥글넓적한 판' 을 둘째 갈래로 세워 놓고 설명은 그 뜻을 disc 쪽으로 넘겨, 둥근 판이 disk 인지 disc 인지 알 길이 없다. / '음악이 담긴 둥근 판은 disc' 도 갈림 기준이 틀렸다 — 자료가 든 DVD 도, disc brake 도 disc 다."
+  meaning_ko: "(컴퓨터의) 저장 장치"
+  pattern: "a/the + disk"
+  usage_note: "컴퓨터 안에 붙어 자료를 담아 두는 것이 disk 예요 — a hard disk. 그 판이 든 장치 전체는 a hard drive 라고 더 자주 말합니다. CD 나 DVD 처럼 넣었다 빼는 둥근 판은 disc 로 적어요."
+  confused_with: ["disc", "drive"]
+
+- word: "core"
+  reason: "설명의 \"'center'는 더 넓은 의미로 쓰여요\" 는 잴 수 없는 말이다. / 예문 'The core of the apple is white.' 도 사과 심이 하얗다는 말이 되어 어색하고, 이 낱말을 실제로 만나는 자리(문제의 핵심)를 보여 주지 못한다. / 반박: \"center 나 middle 은 그냥 한가운데 자리\" 는 참이 아니다 — the center of the problem, the center of attention 이 다 흔해서, 이대로면 새 예문의 core 를 center 로 바꾸면 틀린다고 배우게 된다. / 'core subjects(주요 과목)' 도 옮김이 틀렸다(반드시 들어야 하는 필수 과목이다). / 뜻 칸의 '가장 안쪽; 속' 도 겹말이다."
+  meaning_ko: "핵심; 속, 한가운데 부분"
+  pattern: "the + core + of + 명사"
+  example: "The core of the problem is money."
+  usage_note: "겉이 아니라 속 깊은 곳이나 가장 중요한 알맹이가 core 예요 — the earth's core, an apple core. center 는 자리 이름으로 굳어 the city center, a shopping center 처럼 쓰고, middle 은 in the middle of the room 처럼 한가운데를 가리켜요."
+  confused_with: ["center", "middle"]
+
+- word: "aircraft"
+  reason: "\"비행기 한 대를 가리킬 때는 'aircraft'를 써요\" 는 거짓이다 — 이 낱말은 하나든 여럿이든 모양이 같아서 예문도 many aircraft 다. / 문형 'a/the + aircraft' 를 그 예문이 보여 주지도 않는다. / 반박: **설명이 '날마다 쓰는 말은 plane' 이라고 못박은 자리를 예문이 그대로 보여 준다** — 'There are many aircraft in the sky.' 는 하늘을 올려다보며 하는 일상 문장이라, 설명이 말리는 쪽을 하나뿐인 본보기가 가르친다. / 설명 첫 문장도 뜻 칸 괄호를 그대로 되풀이하고, confused_with 의 airplane 을 다루지 않는다."
+  meaning_ko: "항공기"
+  pattern: "a/the + aircraft"
+  example: "The aircraft is ready for takeoff."
+  usage_note: "뉴스나 공항 안내에서 만나는 딱딱한 말이라, 비행기뿐 아니라 헬리콥터까지 아울러요. 하나든 여럿이든 모양이 그대로라 one aircraft, ten aircraft 라고 합니다. 평소에 말할 때는 plane 을 쓰고, 갖춰 말하면 airplane 이라 미국에서 자주 써요."
+  confused_with: ["plane", "airplane"]
+
+- word: "self"
+  reason: "**문형 칸과 해석 칸이 둘 다 비어 있다.** / **예문 'Take care of yourself.' 에 표제어가 없다** — yourself 는 self 가 아니라서 검증기도 이것을 막는다. / 설명의 '반사적 대명사' 는 재귀대명사를 잘못 적은 것이고 '쓰인다' 로 문체도 깨졌다. / 반박: confused_with 의 myself·yourself 는 표제어를 품은 꼴이라 'plastics' 를 뺀 규칙에 걸리고, 설명이 둘을 갈라 주는 것도 아니다. / 왕초보가 실제로 self 를 만나는 앞가지 자리(self-service, self-study)가 통째로 빠졌다. / '혼자 쓰는 일은 드물고' 의 '혼자' 가 설명 끝의 '혼자서(by myself)' 와 두 뜻으로 쓰여 헷갈린다."
+  meaning_ko: "자기 자신, 본디 모습"
+  pattern: "self- + 명사 / my/her/his + self"
+  example: "She is not her usual self today."
+  usage_note: "이름씨 앞에 self- 를 붙여 '스스로 하는' 이라는 뜻으로 자주 만나요 — self-service, self-study. 낱말 하나로 쓸 때는 앞에 my·her·his 를 붙여 본디 그 사람다운 모습을 가리켜 back to her old self 라고 합니다. 나를 가리키는 자리에는 보통 me 를 쓰고 임자말과 같은 사람일 때만 myself 를 써요 — I hurt myself. selfish 는 저만 생각한다는 뜻이라 아주 다른 말이에요."
+  confused_with: ["me", "selfish"]
+
+- word: "metal"
+  reason: "**해석 '이것은 금속 젓가락입니다' 가 틀렸다** — spoon 은 숟가락이다. / 설명 \"'금속'은 물질을 말하는 반면, 'metal'은 그 물질로 만든 물건을 말할 때 쓰입니다\" 도 거짓이자 한국어 낱말끼리 견주는 말이다. / 반박: **문형 'a/the + metal' 을 예문 'This is a metal spoon.' 이 보여 주지 않는다** — 여기서 a 는 spoon 에 붙은 관사이고 metal 은 뒤 이름씨를 꾸미는 자리다. / 뜻 칸도 '금속' 하나뿐이라 예문이 보여 주는 쓰임을 받쳐 주지 못한다. / confused_with 의 gold 는 metal 의 한 가지일 뿐 고르다 틀릴 짝이 아니다."
+  meaning_ko: "금속, 쇠붙이; 금속으로 된"
+  pattern: "metal + 명사 / a + metal"
+  usage_note: "쇠붙이를 통틀어 가리키는 말이라 Gold is a metal. 처럼 씁니다. 이름씨 앞에 놓으면 '그것으로 만든' 이라는 뜻이 되어 a metal door 라고 해요. 쇠나 철 하나만 가리킬 때는 iron 이나 steel 을 씁니다. 쇠붙이 같은 느낌이나 소리는 그림씨 metallic 이라 a metallic sound 라고 해요."
+  confused_with: ["metallic", "iron"]
+
+- word: "bone"
+  reason: "설명의 'bone and meat' 은 지어낸 짝이고, 앞 문장 \"한국어 '뼈'는 복수형이 없지만\" 도 영어를 배우는 데 쓸 데가 없는 말이다. / confused_with 의 bore·bar 는 소리만 비슷할 뿐 뜻이 헷갈리는 짝이 아니다. / 반박: 새로 넣은 confused_with 의 meat 도 고르다 틀릴 짝이 아니고(뼈와 살은 마주 놓이는 말일 뿐이다), 설명의 '뼈에 붙은 살은 meat' 은 meat 의 뜻을 '뼈에 붙은 살' 로 좁혀 잘못 알려 준다. / 설명이 가르치는 '생선 가시' 도 뜻 칸에 없다."
+  meaning_ko: "뼈; (생선의) 가시"
+  usage_note: "몸속의 뼈 하나하나를 가리켜 break a bone, a broken bone 처럼 씁니다. 생선 가시도 fish bones 라고 해요. 뼈를 다 모아 놓은 뼈대는 a skeleton 이라고 합니다."
+  confused_with: ["skeleton"]
+
+- word: "panel"
+  reason: "**설명 '패널은 보통 특정 목적에 따라 만들어진 판을 말하나요.' 는 성립하지 않는 문장이다.** / 문형 'a panel + 목적어' 는 이름씨에 목적어를 요구한다. / 뜻 칸의 '판넬' 은 잘못 굳은 외래어 표기다. / 되읽기·반박: confused_with 의 board 를 설명이 갈라 주지 않았다. / 설명 첫 문장이 뜻 칸을 낱말까지 그대로 되풀이하고, '벽·기계에 붙은' 이라는 좁힘은 바로 뒤에 든 a solar panel(지붕이나 벌판에 세운다)과 어긋난다."
+  meaning_ko: "넓적하고 판판한 조각; 토론에 나온 사람들"
+  pattern: "a/the + panel (+ of + 사람들)"
+  usage_note: "기계나 지붕에 놓이는 넓적하고 판판한 조각이 panel 이에요 — a control panel, a solar panel. 어떤 일을 두고 이야기하려고 모인 사람들을 가리키기도 해서 a panel of experts 라고 하고, 그 자리에 나온 사람 하나는 a panelist 예요. 회사 일을 정하는 붙박이 모임은 a board 라서 the board of directors 라고 합니다."
+  confused_with: ["panelist", "board"]
+
+- word: "prime"
+  reason: "설명의 \"'최고의'라는 의미로 쓸 때가 더 많아요\" 는 잴 수 없는 말이고, confused_with 의 main·primary 를 갈라 주지 않는다. / 반박: 설명 첫 문장이 뜻 칸을 그대로 되풀이하고, 보기가 the Prime Minister 하나뿐이라 예문(prime time)을 받쳐 주지 못한다. / \"primary 는 맨 처음이거나 가장 앞선다\" 도 제 보기와 어긋난다 — the primary cause 는 '주된 원인' 이라 main 과 겹쳐 버린다. / 예문의 the prime time for shopping 도 원어민이 잘 하지 않는 말이다."
+  meaning_ko: "가장 좋은, 가장 중요한"
+  example: "The hotel is in a prime location."
+  usage_note: "값이나 자리, 때가 더 나을 수 없다는 뜻으로 이름씨 앞에 붙여 prime time(황금 시간대), a prime example 처럼 씁니다. main 은 여럿 가운데 중심이 되는 것이라 the main road, the main reason 처럼 아무 데나 붙어요. primary 는 맨 처음이라는 뜻으로 primary school(초등학교) 처럼 씁니다."
+  confused_with: ["main", "primary"]
+
+- word: "maximum"
+  reason: "문형 'maximum + 수량/정도' 는 형태 표기가 아니다. / **confused_with 의 'maximum capacity' 는 표제어를 품은 구다.** / 설명의 \"수량이나 정도를 정확하게 표현할 때\" 도 무엇을 가르는지 알 수 없다. / 반박: 뜻 칸이 그림씨 풀이뿐이라 설명·문형이 가르치는 이름씨 쓰임(The maximum is 100.)을 받쳐 주지 못하고, '가장 많은' 은 수량에만 걸려 the maximum speed 를 못 받는다. / 설명의 '~을 가리켜 ~ 붙입니다' 도 호응이 깨졌다."
+  meaning_ko: "최대의, 가장 큰; 최대치"
+  pattern: "maximum + 명사 / the maximum"
+  usage_note: "더는 넘을 수 없는 가장 큰 수·양·정도를 나타내는 말이라 이름씨 앞에 붙입니다 — the maximum speed. 이름씨로도 써서 a maximum of 10 people 처럼 해요. 반대는 minimum 이라 the minimum wage(최저 임금) 처럼 씁니다."
+  confused_with: ["minimum"]
+
+- word: "effectively"
+  reason: "문형 'effectively + 목적어 (동사)' 는 목적어와 동사가 뒤섞여 무엇을 넣으라는지 알 수 없고, 예문은 움직씨 뒤 자리다. / 설명의 \"한국어 '실제로'보다 조금 더 공식적인\" 은 한국어와 견주는 잴 수 없는 말이고, confused_with 의 efficiently·actually 를 갈라 주지 않는다. / 반박: **뜻 칸의 '실제로' 는 confused_with 에 올린 actually 의 뜻이다** — 설명은 이 낱말의 둘째 뜻을 '사실상' 이라 못박고 '사실은' 은 actually 몫이라 갈라 놓았는데, 뜻 칸이 그 갈림을 도로 무너뜨린다. / \"문장 앞에 놓으면 '사실상'\" 이라는 자리 규칙도 거짓이다 — The road is effectively closed. 처럼 그림씨 앞에서도 '사실상' 이다."
+  meaning_ko: "효과적으로; 사실상"
+  pattern: "동사 + effectively / Effectively, + 문장"
+  usage_note: "사람이나 회사가 일하는 방식을 꾸미면 '효과적으로' 라는 뜻이에요 — work effectively. 상태나 사실을 통째로 꾸미면 '사실상' 이 되어 The road is effectively closed. 라고 합니다. efficiently 는 시간이나 힘을 덜 들인다는 뜻이라 work efficiently 는 '빠르고 알뜰하게 일한다' 는 말이에요. actually 는 '사실은' 이라고 바로잡는 말이라 또 달라요."
+  confused_with: ["efficiently", "actually"]
+
+- word: "elsewhere"
+  reason: "문형 'elsewhere (장소)' 는 형태 표기가 아니다. / 예문 'The restaurant is elsewhere.' 는 원어민이 잘 하지 않는 말이다. / 설명 \"한국어 '다른 곳'보다 더 구체적인 위치를 나타내지 않아요\" 도 무슨 말인지 알 수 없다. / 반박: 설명 첫 문장이 뜻 칸을 따옴표째 되풀이한다. / \"앞에 in 이나 to 를 붙이지 않아요\" 도 지나쳐 from elsewhere 를 틀린 말로 배우게 한다. / 문형 '동사 + elsewhere' 를 예문이 곧이곧대로 보여 주지 않는다(사이에 목적어가 낀다)."
+  meaning_ko: "다른 데서, 다른 데로"
+  pattern: "동사 (+ 목적어) + elsewhere"
+  example: "You can buy it elsewhere."
+  usage_note: "앞에 to 나 in 을 붙이지 않고 바로 붙여 go elsewhere, look elsewhere 처럼 씁니다. 다만 '다른 데서 온' 이라고 할 때는 from elsewhere 라고 해요. 어딘지 모르는 곳은 somewhere 라서 It's somewhere in the house. 라고 하고, 아무 데나 좋다고 할 때는 anywhere 예요."
+  confused_with: ["somewhere", "anywhere"]
+
+- word: "initiative"
+  reason: "설명의 \"'initiative'는 명사로만 쓰이고\" 는 품사 단정 검사에 걸린다. / \"'take initiative'는 주도적으로 행동하는 것을 말해요\" 도 뜻 칸을 되풀이하며 제자리를 돈다. / confused_with 의 action·idea 도 갈라 주지 않는다. / 반박: 설명이 둘째 뜻(회사·정부가 새로 벌이는 일)을 가르치는데 뜻 칸에는 없다. / 설명 안에서 '일' 이 두 문장에 걸쳐 서로 다른 낱말을 받아(initiative 와 action) 갈라 주려던 둘이 도로 엉킨다 — action 은 '행동' 이다. / confused_with 의 action·idea 도 고르다 틀릴 짝이 아니다."
+  meaning_ko: "먼저 나서서 하는 것; (새로 벌이는) 사업"
+  pattern: "take + the initiative + to + 동사원형"
+  usage_note: "시키지 않아도 스스로 나설 때 take the initiative 를 통째로 씁니다 — the 를 빼먹지 않게 조심해요. 회사나 정부가 새로 벌이는 일도 initiative 라서 a new health initiative 처럼 써요. 그 일을 처음 벌이는 동작은 initiate 이고, 한 번 하는 행동 하나는 action 이에요."
+  confused_with: ["initiate", "action"]
+
+- word: "sharp"
+  reason: "설명 \"예리한 것에만 쓰고, '예쁘다'처럼 쓰면 안 돼요\" 는 앞뒤가 닿지 않는다 — 이 낱말을 '예쁘다' 로 쓸 일이 애초에 없다. / 'sharp pencil'(날카로운 연필)도 어색하고, confused_with 의 cut 은 헷갈리는 짝이 아니다. / 반박: **문형 'sharp + 명사' 를 예문 'This knife is very sharp.' 이 보여 주지 않는다**(be + sharp 자리다) — 같은 묶음의 plastic·gray 에서는 이 어긋남을 잡아 고쳐 놓고 sharp 만 빠뜨렸다. / '끝이 뾰족한 것은 pointed' 라며 뾰족한 쪽을 남에게 넘긴 것도 틀렸다 — a sharp pencil, sharp claws 가 다 흔하다. / 뜻 칸의 '(머리가) 빠른' 도 굳어진 짝이 아니다."
+  meaning_ko: "날카로운, 뾰족한; 머리가 잘 돌아가는"
+  pattern: "be + sharp / sharp + 명사"
+  usage_note: "잘 베고 잘 찌른다는 뜻이라 a sharp knife, a sharp pencil 처럼 씁니다. 머리가 잘 돌아간다는 뜻으로도 써서 She is very sharp. 라고 해요. 생김새가 뾰족한 것은 pointed 라서 pointed shoes 라고 합니다. 칼이 잘 안 드는 것은 dull 이에요."
+  confused_with: ["pointed", "dull"]
+
+- word: "gray"
+  reason: "**문형 'gray + 색상' 은 틀렸다** — 예문 'The sky is gray today.' 는 be + gray 자리이고, 색깔 이름 뒤에 또 색깔이 오지도 않는다. / 설명의 '희미한, 모호한' 도 A1 학습자가 만날 자리가 아니고, confused_with 의 grey(영국 철자)를 정작 다루지 않는다. / 반박: **confused_with 의 grey 는 헷갈리는 딴 낱말이 아니라 같은 낱말의 영국 철자**라, 'plastics' 를 뺀 규칙에 그대로 걸린다(고르는 문제로 내면 답이 둘이 된다). / 새로 넣은 silver 도 설명이 갈라 주지 않았다. / \"무슨 색이라고 말할 때는 is 뒤에 놓습니다\" 는 무엇을 놓으라는지가 빠졌다."
+  meaning_ko: "회색의, 회색"
+  pattern: "be + gray / gray + 명사"
+  usage_note: "미국에서는 gray, 영국에서는 grey 로 적는데 소리도 뜻도 같아요. 이름씨 앞에 붙여 a gray coat 라고 하고, 무슨 색인지 말할 때는 is 나 are 뒤에 놓습니다. 반짝이는 은빛은 silver 라서 a silver ring 이라고 해요. 머리가 센 것도 gray hair 라고 합니다."
+  confused_with: ["silver"]
+
+- word: "plastic"
+  reason: "문형 'plastic + 명사' 를 예문 'This bag is plastic.' 이 보여 주지 않는다 — 예문은 be + plastic 자리다. / **confused_with 의 plastics 는 표제어의 복수형이고** flexible 은 헷갈리는 짝이 아니다. / 뜻 칸의 '비닐의' 도 영어 vinyl 과 이어져 도리어 헷갈린다. / 반박: **설명이 가르치는 a plastic bag 을 예문이 하나도 안 보여 준다** — 하필 예문의 소재도 bag('This bag is plastic.')이라 정면으로 어긋난다. / 원본 설명의 첫 마디('플라스틱으로 만든 것에 쓰는 말')를 지워 뜻을 한 번도 밝히지 않게 됐다. / \"vinyl 이라고 하면 못 알아듣습니다\" 도 넘겨짚은 말이다(vinyl records, vinyl flooring 은 멀쩡한 영어다)."
+  meaning_ko: "플라스틱; 플라스틱으로 만든"
+  pattern: "plastic + 명사 / be + plastic"
+  example: "This is a plastic bag."
+  usage_note: "플라스틱으로 만든 것에 쓰는 말이라 이름씨 앞에 붙여 a plastic bottle 처럼 씁니다. 한국에서 '비닐봉지' 라고 하는 것이 영어로는 이 말이에요 — vinyl 은 레코드판이나 바닥재를 가리켜서 봉지에는 쓰지 않습니다. 재료 자체를 말할 때는 관사 없이 It's made of plastic. 이라고 해요."
+  confused_with: ["vinyl", "paper"]
+
+- word: "complicate"
+  reason: "설명의 \"'문제를 복잡하게 만다'\" 는 '만든다' 의 오타라 문장이 성립하지 않는다. / confused_with 가 complicated 하나뿐이라 반대쪽(쉽게 푸는 말)이 비어 있다. / 반박: 예문의 complicate + problem 은 원어민이 잘 쓰지 않는 짝이다(complicate things/matters/the situation 쪽이다). 정작 설명이 자연스러운 'Don't complicate things.' 를 들고 있어 예문만 어색하게 남았다. / '일을 더 얽히고 어렵게' 도 '얽히다' 가 '~을' 을 받지 못해 성립하지 않는다."
+  example: "Don't complicate things."
+  usage_note: "일을 더 복잡하고 어렵게 만드는 것이 complicate 예요 — You're complicating everything. 이미 얽혀 있는 상태는 그림씨 complicated 라서 This is complicated. 라고 합니다. 쉽게 푸는 쪽은 simplify 예요."
+  confused_with: ["complicated", "simplify"]
+
+- word: "discipline"
+  reason: "**설명이 스스로 뒤집힌다** — '자기 통제' 라는 뜻도 있다고 해 놓고 바로 뒤에 \"학문 관련 문맥에서만 써요\" 라고 못박는다. / 뜻 칸의 괄호 '(예: 경제학과는 economics 학과예요)' 도 성립하지 않는 말이고, 예문 'I study economics as a discipline.' 도 어색하다. / 반박: 뜻 칸과 confused_with 가 '학문 분야' 뜻에 매달려 있는데 그 뜻을 보여 주는 영어가 하나도 없다. / 해석의 '말을 배우려면' 은 아기가 말 배우는 쪽으로 먼저 읽혀 a language 를 흐린다."
+  meaning_ko: "규율, 스스로를 다스림; 학문 분야"
+  pattern: "take/need + discipline"
+  example: "Learning a language takes discipline."
+  usage_note: "하기 싫어도 정해진 대로 해내는 힘이 discipline 이에요 — self-discipline(자기 관리). 대학에서 나누는 학문 분야도 discipline 이라 History and biology are different disciplines. 라고 합니다. 학교에서 배우는 한 과목은 subject 라서 My favorite subject is math. 라고 하고, 일하는 분야는 field 예요."
+  confused_with: ["subject", "field"]
+
+- word: "disappoint"
+  reason: "설명이 disappoint 와 disappointed 만 나란히 놓고 끝나, 왕초보가 실제로 자주 틀리는 세 번째 꼴(disappointing)이 빠졌다. / 반박: confused_with 가 disappointed·disappointing 둘 다 표제어에서 갈라져 나온 꼴이라 딴 낱말이 하나도 없다. -ed/-ing 짝은 왕초보가 실제로 틀리는 자리라 설명에 남기고, 혼동 칸에는 고르다 틀리는 낱말을 넣는다."
+  usage_note: "남의 기대를 저버려 마음을 상하게 하는 것이 disappoint 예요 — I don't want to disappoint you. 실망한 쪽은 be disappointed, 실망스러운 것 자체는 disappointing 이라 a disappointing result 예요. upset 은 속상하게 만든다는 쪽이라 더 넓게 씁니다."
+  confused_with: ["disappointed", "upset"]
+
+- word: "boss"
+  reason: "설명이 한국어 '상사' 와 '주인' 만 나열하고 confused_with 의 manager·owner 를 영어로 갈라 주지 않는다. / 되읽기·반박: 설명이 '가게나 회사를 가진 사람' 을 owner 쪽으로 넘겼는데 뜻 칸에 '주인(가게 등)' 이 그대로 남아, 한 카드가 가게 주인을 boss 라고도 하고 owner 라고도 한다. / 문형 'a/the + boss' 도 예문 'My boss is very strict.' 이 보여 주지 않는다."
+  meaning_ko: "상사 (나에게 일을 시키는 윗사람)"
+  pattern: "my/the + boss"
+  usage_note: "나에게 일을 시키는 윗사람이 boss 인데 편하게 하는 말이에요. 회사에서 부르는 정식 직책은 manager 라서 the sales manager 라고 합니다. 가게나 회사를 가진 사람은 owner 예요."
+  confused_with: ["manager", "owner"]
+
+- word: "freeze"
+  reason: "문형 'freeze + 목적어' 를 예문 'The water froze in the fridge.' 가 보여 주지 않는다 — 예문은 목적어가 없다. / 그 예문도 어색하다(fridge 는 냉장 칸이라 얼리는 곳은 freezer 다). / 뜻 칸의 '냉각시키다' 도 이 낱말이 아니라 cool 쪽이다. / 반박: \"물이 얼음이 되는 것이 freeze 예요 — It's freezing today.\" 에서 줄표 뒤 보기가 앞말을 보여 주지 못한다 — It's freezing today. 는 물이 언다는 말이 아니라 '몹시 춥다' 는 날씨 표현이라, 학습자가 '오늘 물이 얼어요' 로 새기게 된다."
+  meaning_ko: "얼다; 얼리다"
+  pattern: "freeze / freeze + 목적어"
+  example: "The water in the lake froze."
+  usage_note: "물이 얼음이 되는 것이 freeze 예요 — The pond froze last night. 무엇을 얼릴 때도 써서 freeze the meat 이라고 합니다. 날씨가 몹시 추울 때도 써서 It's freezing today. 는 '오늘 너무 추워요' 예요. 얼어 있는 상태는 그림씨 frozen 이라 frozen food(냉동식품), 녹는 쪽은 melt 입니다."
+  confused_with: ["frozen", "melt"]
+
+- word: "extreme"
+  reason: "**설명의 \"'extreme'은 명사 앞에만 써요\" 는 거짓이고**(The weather was extreme.) \"'extreme'은 형용사로만 쓰이고\" 는 품사 단정 검사에 걸린다. / **confused_with 의 'extreme weather' 는 표제어를 품은 구다.** / 반박: **\"움직씨나 그림씨를 꾸밀 때는 extremely\" 의 '움직씨' 가 거짓이다** — extremely 는 정도부사라 그림씨·어찌씨만 꾸민다(I extremely like it. 은 성립하지 않는다). / 뜻 칸의 '아주 심한' 을 설명이 마지막 문장에서 severe 에 통째로 넘겨 두 칸이 부딪힌다. / 원본의 \"명사 앞에만 써요\" 를 거짓이라며 물려 놓고, 새 칸 어디에도 be + extreme 자리를 남기지 않았다."
+  meaning_ko: "더할 수 없이 심한, 극한의"
+  pattern: "extreme + 명사 / be + extreme"
+  usage_note: "더 갈 데 없이 심하다는 뜻으로 이름씨 앞에 붙입니다 — extreme weather, extreme sports. is 뒤에 놓아 The weather was extreme. 처럼도 써요. 그림씨나 어찌씨를 꾸밀 때는 extremely 로 모양이 바뀌어 extremely hot 이라고 합니다. severe 는 아픔·병·날씨가 나쁠 때 붙여 a severe headache 처럼 써요."
+  confused_with: ["extremely", "severe"]
+
+- word: "passage"
+  reason: "**설명 \"통로를 뜻할 때 '로'가 아닌 'between'을 써요\" 는 무슨 말인지 알 수 없다.** / 문형 'a passage + 목적어 (통로)' 도 이름씨에 목적어를 요구한다. / confused_with 의 section 은 설명에 없다. / 반박: 설명의 'Read the passage and answer.' 는 목적어가 빠져 시험 지시문으로 서지 못한다(answer the questions 라야 한다). / 뜻 칸이 '좁은 통로' 로 '좁은' 을 품었는데 설명이 다시 a narrow passage 를 들어, passage 만으로는 좁지 않은 것처럼 읽힌다. / 뜻 칸의 '한 대목' 과 설명의 '글 한 토막' 도 같은 것을 두 이름으로 부른다."
+  meaning_ko: "통로; (글의) 한 대목"
+  pattern: "a/the + passage"
+  usage_note: "건물 안의 좁고 긴 길이 passage 예요 — a narrow passage. 책이나 시험지에 나오는 글의 한 대목도 passage 라서 Read the passage and answer the questions. 라고 합니다. 산이나 들에 난 길은 path 예요."
+  confused_with: ["path"]
+
+- word: "reputation"
+  reason: "설명의 \"'reputation'은 명사로만 쓰이고\" 는 품사 단정 검사에 걸리고, 앞 문장 '평판은 행동에 따라 바뀌어요' 는 영어와 상관없는 일반론이다. / confused_with 의 fame·popularity 도 갈라 주지 않는다. / 뜻 칸의 괄호도 같은 말을 늘어놓기만 한다. / 반박: 설명 첫 문장이 새로 단 뜻 칸 괄호를 그대로 되받아, 원본 괄호를 '같은 말을 늘어놓는다' 며 고쳐 놓고 같은 흠을 두 칸에 걸쳐 되살렸다. / 'She found fame young.' 은 기사체 압축이라 A1~A2 가 따라 쓸 말이 아니고, '그 사람이나' 의 '그' 도 받을 말이 없다. / popularity 를 '좋아해 주는 것' 이라고만 해 '인기' 를 끝내 대 주지 않는다."
+  meaning_ko: "평판"
+  pattern: "a good/bad + reputation"
+  usage_note: "사람이나 가게를 두고 사람들 사이에 도는 말이 reputation 이라 have a good reputation, a reputation for good coffee 처럼 씁니다. 널리 이름이 알려진 것은 fame 이라 She became famous when she was young. 이라고 해요. 많은 사람이 좋아하는 것, 곧 인기는 popularity 예요."
+  confused_with: ["fame", "popularity"]
+
+- word: "forth"
+  reason: "문형 'go forth + 목적지' 는 틀렸다 — go forth 뒤에 갈 곳을 붙이지 않는다. / 예문 'Go forth and explore the city.' 도 성경이나 옛글에서 쓰는 말투라 왕초보가 만날 자리가 아니다. / 뜻 칸의 '전진하다' 도 움직씨 풀이라 어찌씨인 이 낱말과 맞지 않는다. / 반박: 뜻 칸 '앞으로' 를 설명 마지막 문장이 forward 쪽에 넘겨 버려, 뜻 칸이 이 낱말의 어느 쓰임과도 이어지지 않는다 — and so forth(등등)는 '앞으로' 와 아무 상관이 없다. / '굳은 표현' 도 한국어에서 쓰지 않는 짝이다(정해진 표현·굳어진 표현)."
+  meaning_ko: "정해진 표현에서만 쓰는 말 (back and forth 왔다 갔다 / and so forth 등등)"
+  pattern: "back and forth / and so forth"
+  example: "He walked back and forth."
+  usage_note: "혼자서는 거의 쓰지 않고 정해진 표현 안에서만 써요. back and forth 는 왔다 갔다 하는 것이고, and so forth 는 '등등' 이라는 뜻이라 apples, oranges, and so forth 처럼 씁니다. 그냥 '앞으로' 라고 할 때는 forward 를 써서 Move forward. 라고 해요."
+  confused_with: ["forward"]
+
+- word: "negotiation"
+  reason: "문형 'negotiation + about + 주제' 를 예문 'We had a negotiation about the price.' 가 보여 주지 않는다 — a 가 붙는다. / 설명은 합의(agreement) 이야기로 새어 confused_with 의 discussion·argument 를 갈라 주지 않는다. / 되읽기·반박: 뜻 칸의 '상의' 는 설명이 discussion 쪽으로 넘긴 말이라 두 칸이 정면으로 부딪힌다. / 예문 'We had a negotiation about the price.' 도 원어민이 잘 하지 않는 말이다 — 협상 자리는 거의 늘 복수 negotiations 이거나 움직씨 negotiate 쪽이다."
+  meaning_ko: "협상 (조건을 주고받으며 정하기)"
+  pattern: "a/the + negotiation (+ about/over + 주제)"
+  example: "The negotiation over the price took all day."
+  usage_note: "서로 조건을 주고받으며 이야기해 정하는 것이 negotiation 이라 값이나 계약을 두고 씁니다. 여러 차례 이어지면 복수로 after long negotiations 라고 해요. 그렇게 하는 동작은 negotiate 이고, 그냥 여럿이 이야기 나누는 것은 discussion, 목소리를 높여 다투는 것은 argument 예요."
+  confused_with: ["discussion", "argument"]
+
+- word: "coat"
+  reason: "설명이 \"'coat'은 보통 더 긴 옷\" 이라고만 하고 무엇보다 긴지 밝히지 않으며, confused_with 의 suit 를 다루지 않는다. / 되읽기·반박: 설명이 jacket 을 '짧은 것' 으로 갈라 놓았는데 뜻 칸의 '겉옷' 은 jacket 까지 품어 버려 둘을 도로 붙인다. / '맨 위에 걸치는' 도 옷을 겹쳐 입는 것은 위/아래가 아니라 겉/안이라 어긋나고, 뒤의 '위아래를 갖춰 입는 정장' 과도 부딪힌다. / confused_with 의 suit 는 자리가 겹치지 않아 고르다 틀릴 짝이 아니다."
+  meaning_ko: "코트 (밖에 걸치는 긴 겉옷)"
+  usage_note: "밖에 나갈 때 맨 겉에 걸치는 긴 옷이 coat 예요 — a winter coat. 허리쯤에서 끝나는 짧은 것은 jacket 이라 a leather jacket 이라고 합니다. 비 올 때 입는 것은 a raincoat 예요."
+  confused_with: ["jacket", "raincoat"]
+
+- word: "democracy"
+  reason: "설명 \"민주주의와 민주제는 비슷하지만, '민주제'는 더 일반적인 표현이에요\" 는 한국어 낱말끼리 견주는 데다 '민주제' 는 잘 쓰지도 않는 말이다. / confused_with 의 democratic·democrat 도 갈라 주지 않는다. / 반박: **\"그런 생각을 가진 사람은 a democrat\" 은 뉴스를 반대로 읽게 한다** — 학습자가 만나는 Democrat 은 거의 전부 미국 민주당원이다. / '사람들이' 가 잇달아 두 번 나와 누가 누구를 뽑는지 잡히지 않고, '그런' 이 받을 말도 앞에 없다. / 뜻 칸과 예문이 세운 '나라' 쓰임을 설명이 한 번도 짚지 않는다."
+  meaning_ko: "민주주의; 민주주의 나라"
+  usage_note: "사람들이 뽑은 대표가 나라 일을 맡는 방식이 democracy 예요. 그런 방식으로 굴러가는 나라 자체를 가리키기도 해서 live in a democracy 라고 합니다. 그림씨는 democratic 이라 a democratic country 라고 하고, a Democrat 은 미국에서 민주당원을 가리키는 말로 훨씬 자주 써요."
+  confused_with: ["democratic", "democrat"]
+
+- word: "pocket"
+  reason: "설명의 \"'on your pocket'은 주머니 위에 놓다예요\" 는 원어민이 쓰지 않는 말을 짝으로 세운 것이다. / confused_with 의 bag·case 도 갈라 주지 않는다. / 반박: **문형 'a/the + pocket' 을 예문 'Put your phone in your pocket.' 이 보여 주지 않는다** — 실제로 나타나는 꼴은 소유격이고, 왕초보가 빠뜨리는 것은 관사가 아니라 in 이다. / '옷에 달린 주머니라 넣을 때는 in 을 붙여' 도 성립하지 않는 인과다. / 해석의 '-어 주세요' 는 영어에 없는 부탁의 뜻을 붙인다."
+  pattern: "in + my/your + pocket"
+  usage_note: "옷에 달린 주머니예요. 무엇을 넣어 둔 자리를 말할 때는 in 을 붙여 in my pocket 이라고 합니다. 손에 들고 다니는 것은 a bag 이고, 안경이나 기계를 담는 딱딱한 통은 a case 예요."
+  confused_with: ["bag", "case"]
+
+- word: "lucky"
+  reason: "문형 'lucky + to be + 주어' 는 뒤가 임자말이 아니라 동사원형이 오는 자리라 틀렸다. / 설명의 \"한국어 '행운'보다 더 강하게\" 는 한국어와 견주는 잴 수 없는 말이고, confused_with 의 fortunate·happy 를 갈라 주지 않는다. / 반박: 'fortunate 도 같은 뜻' 은 반만 맞다 — lucky 에는 '행운을 가져다주는' 쪽 뜻이 따로 있어 a lucky number, a lucky charm 처럼 쓰는데 여기에는 fortunate 이 들어가지 못한다."
+  meaning_ko: "운이 좋은"
+  pattern: "be + lucky + to + 동사원형"
+  usage_note: "운이 좋아 잘 풀렸다는 뜻이라 You're lucky! 처럼 씁니다. 사람이나 일을 두고는 fortunate 으로 바꿔 쓸 수 있지만, 행운을 가져다준다는 뜻(a lucky number, a lucky charm)에는 lucky 만 써요. 운 그 자체는 이름씨 luck 이라 Good luck! 이라고 합니다."
+  confused_with: ["fortunate", "luck"]
+
+- word: "crash"
+  reason: "설명이 break 만 짧게 다루고 confused_with 의 collide 를 갈라 주지 않으며, 문형이 요구하는 into 도 설명 어디에도 없다. / 반박: '부딪힌 것을 밝힐 때는 into' 의 '부딪힌 것' 이 부딪은 쪽(차)으로 읽혀 뜻이 거꾸로 잡힌다. / '깨지거나 부러지는 것은 break' 는 저절로 깨지는 쪽인데 붙인 보기는 사람이 깨뜨리는 쪽이라 방향이 어긋난다. / 'collide 는 둘이 마주 부딪힌다' 의 '마주'(정면)도 틀렸다 — 옆에서 들이받아도 collide 이고, 갈리는 것은 둘 다 움직이고 있다는 점이다."
+  meaning_ko: "세게 부딪히다, 충돌하다"
+  usage_note: "차나 비행기가 세게 부딪히는 것이 crash 예요 — The plane crashed. 무엇에 부딪혔는지 밝힐 때는 into 를 붙여 crashed into a tree 라고 해요. 무엇을 깨뜨리거나 부러뜨리는 것은 break 라서 I broke my phone. 이라고 합니다. collide 는 둘이 움직이다 서로 부딪히는 것이라 Two cars collided. 처럼 써요."
+  confused_with: ["break", "collide"]
+
+- word: "meat"
+  reason: "문형 'a/the + meat' 를 예문 'I don't eat meat.' 가 보여 주지 않는다 — 이 낱말은 관사 없이 쓴다. / 설명 '고기와 관련된 단어인 fish, chicken, beef 등과 혼동하지 마세요' 는 무엇이 어떻게 다른지 말해 주지 않고 '말하죠' 로 문체도 깨졌다. / 반박: '하나 둘로 세지 않아서 그냥 meat 이라고 해요' 와 고침 사유의 '관사 없이 쓴다' 가 지나치다 — 정해진 것을 가리킬 때는 Put the meat in the oven. 처럼 the 를 붙인다. / '한 덩어리를 세다' 도 한국어로 어색하다."
+  pattern: "meat / the + meat / a piece of meat"
+  usage_note: "하나 둘로 세지 않아서 a meat 이라고 하지 않아요. 다만 정해진 고기를 가리킬 때는 the 를 붙여 Put the meat in the oven. 이라고 합니다. 한 덩어리를 가리킬 때는 a piece of meat 이에요. 소고기는 beef, 닭고기는 chicken 이고, 생선은 meat 에 넣지 않아 fish 라고 따로 말해요."
+  confused_with: ["fish", "chicken", "beef"]
+
+- word: "luck"
+  reason: "**짝 항목 맞춤** — lucky 를 고치면서 '운 그 자체는 이름씨 luck' 이라고 했는데, 이 항목은 \"'luck'은 명사로만 쓰이고, 동사로는 'lucky'를 써요\" 라고 한다. lucky 는 움직씨가 아니라 그림씨라 **거짓**이고, '명사로만' 은 품사 단정 검사에도 걸린다. / 문형 'a/the + luck' 도 예문 'I have good luck.' 이 보여 주지 않는다. **칸 몇 개만 맞춘 것이라 이 낱말은 대장에 올리지 않는다.** / 되읽기: confused_with 에 넣은 chance 를 설명이 갈라 주지 않는다."
+  meaning_ko: "운"
+  pattern: "good/bad + luck"
+  usage_note: "물처럼 하나 둘로 세지 않아서 a luck 이라고 하지 않아요 — good luck, bad luck. 헤어질 때 잘되기를 빌며 Good luck! 이라고 합니다. 사람을 두고 운이 좋다고 할 때는 그림씨 lucky 를 써서 You're lucky. 라고 해요."
+  confused_with: ["lucky"]
+
+- word: "highlight"
+  reason: "**짝 항목 맞춤** — 설명이 \"강조할 때는 highlight, 설명할 때는 explain을 써요\" 라고 해, emphasize 항목이 세운 갈림(highlight 는 눈에 띄게 짚어 주는 쪽)과 부딪힌다. explain 도 헷갈리는 짝이 아니다. **설명 칸만 맞춘 것이라 이 낱말은 대장에 올리지 않는다.**"
+  usage_note: "글에서 중요한 데를 눈에 띄게 짚어 주는 것이 highlight 예요 — highlight a sentence. 형광펜으로 칠하는 것도 highlight 라고 합니다. 말이나 글에서 힘주어 말하는 쪽은 emphasize 예요."
+  confused_with: ["emphasize"]

@@ -3693,3 +3693,131 @@
 - word: "purser"
   example_ko: "사무장이 우리 표를 확인했어요."
   reason: "뜻 칸을 '사무장' 으로 바로잡은 것에 맞췄다. '승무원이 ~ 확인했습니다' 는 purser 와 flight attendant 를 도로 붙인다."
+
+- word: "disk"
+  example_ko: "이 컴퓨터에는 하드디스크가 있어요."
+  reason: "'이 컴퓨터는 ~ 있어요' 는 조사가 어긋난다."
+
+- word: "core"
+  example_ko: "그 문제의 핵심은 돈이에요."
+  reason: "바뀐 예문에 맞췄다. 옛 예문은 사과 심이 하얗다는 말이 되어 어색했다."
+
+- word: "emotional"
+  example_ko: "이 영화는 정말 감동적이에요."
+  reason: "'이 영화는 감동이 많아요' 는 성립하지 않는 한국어다."
+
+- word: "aircraft"
+  example_ko: "그 항공기는 이륙 준비가 됐어요."
+  reason: "뜻 칸을 '항공기' 로 고친 것에 맞췄다 — '비행기들이' 는 plane 과 갈리지 않는다. / 바뀐 예문에 맞췄다. 옛 예문 'There are many aircraft in the sky.' 는 설명이 'plane 자리' 라고 못박은 일상 문장이었다."
+
+- word: "self"
+  example_ko: "그녀는 오늘 평소 모습이 아니에요."
+  reason: "**해석 칸이 비어 있었다.** 예문도 표제어가 없어 함께 바꿨다."
+
+- word: "metal"
+  example_ko: "이건 금속 숟가락이에요."
+  reason: "**'금속 젓가락' 은 틀렸다** — spoon 은 숟가락이다. 문체도 다른 해석들과 어긋났다."
+
+- word: "existence"
+  example_ko: "그 편지가 있다는 것을 아무도 몰랐어요."
+  reason: "바뀐 예문에 맞췄다. 옛 예문 'The existence of this problem is important.' 는 늘어져 어색했다."
+
+- word: "bone"
+  example_ko: "이 개는 뼈가 부러졌어요."
+  reason: "'부러진 뼈가 있어요' 는 번역투다."
+
+- word: "maximum"
+  example_ko: "인원은 최대 10명이에요."
+  reason: "'사람 수는 최대 10명입니다' 는 '수' 가 겹치고 문체도 어긋난다. / '사람은 최대 10명까지예요' 는 임자말과 서술이 매끄럽게 붙지 않는다."
+
+- word: "elsewhere"
+  example_ko: "그건 다른 데서 살 수 있어요."
+  reason: "바뀐 예문에 맞췄다. 옛 예문 'The restaurant is elsewhere.' 는 원어민이 잘 하지 않는 말이었다. / '사도 돼요' 는 허락을 주는 말로 읽혀 can 의 뜻을 좁힌다."
+
+- word: "bother"
+  example_ko: "지금은 저를 귀찮게 하지 마세요."
+  reason: "뜻 칸을 '귀찮게 하다' 로 세운 것에 맞췄다."
+
+- word: "sharp"
+  example_ko: "이 칼은 아주 날카로워요."
+  reason: "뜻 칸을 '날카로운' 으로 고친 것에 맞췄다. '매우' 도 다른 해석들의 문체와 어긋난다."
+
+- word: "motion"
+  example_ko: "기차는 이미 움직이고 있었어요."
+  reason: "바뀐 예문에 맞췄다. **옛 해석 '그는 선생님께 제안을 했어요' 는 예문과 다른 뜻이었다** — made a motion to ~ 는 손짓했다는 말이다."
+
+- word: "discipline"
+  example_ko: "외국어를 배우려면 스스로를 다스리는 힘이 필요해요."
+  reason: "바뀐 예문에 맞췄다. 옛 예문 'I study economics as a discipline.' 은 어색했다. / '말을 배우려면' 은 아기가 말 배우는 쪽으로 먼저 읽혀 a language 를 흐리고, 이름씨 discipline 도 풀이말로 녹아 사라졌다."
+
+- word: "boss"
+  example_ko: "제 상사는 아주 엄격해요."
+  reason: "'제 상사가 매우 엄격해요' 는 조사가 어긋나고 '매우' 도 문체가 다르다."
+
+- word: "assumption"
+  example_ko: "저는 회의 시간을 두고 지레짐작했어요."
+  reason: "뜻 칸을 '짐작' 으로 바로잡은 것에 맞췄다 — '가정을 했어요' 는 딱딱하고 뜻도 흐리다. / '회의 시간을 지레짐작했어요' 는 문형이 가르치는 about 자리를 한 조각도 남기지 않았다."
+
+- word: "freeze"
+  example_ko: "호숫물이 얼었어요."
+  reason: "바뀐 예문에 맞췄다. 옛 예문은 냉장 칸(fridge)에서 물이 언다고 해 어색했다."
+
+- word: "reputation"
+  example_ko: "그는 평판이 좋아요."
+  reason: "'좋은 평판을 가지고 있어요' 는 have 를 그대로 옮긴 번역투다."
+
+- word: "forth"
+  example_ko: "그는 왔다 갔다 걸어 다녔어요."
+  reason: "바뀐 예문에 맞췄다. 옛 예문 'Go forth and explore the city.' 는 옛글 말투였다. / '왔다 갔다 했어요' 는 walked 가 빠져 걸어 다니는 그림이 사라진다."
+
+- word: "negotiation"
+  example_ko: "가격 협상이 하루 종일 걸렸어요."
+  reason: "'가격에 대해 협상했습니다' 는 '~에 대해' 번역투이고 문체도 어긋난다. / 바뀐 예문에 맞췄다. 옛 예문의 have a negotiation 은 원어민이 잘 하지 않는 말이었다."
+
+- word: "mechanism"
+  example_ko: "이 자물쇠는 잠기는 구조가 단순해요."
+  reason: "바뀐 예문에 맞췄다. 뜻 칸의 '기작' 도 '짜임새' 로 바꿨다. / **'이 자물쇠의 짜임새는 단순해요' 는 성립하지 않는 한국어다** — 자물쇠에는 '짜임새' 를 쓰지 않는다. 바뀐 예문에도 맞췄다."
+
+- word: "democracy"
+  example_ko: "대한민국은 민주주의 나라예요."
+  reason: "'민주주의 국가입니다' 는 다른 해석들과 문체가 어긋난다."
+
+- word: "lucky"
+  example_ko: "여기 있게 되어서 운이 좋아요."
+  reason: "'여기 있을 수 있다는 건 운이 좋은 거예요' 는 늘어진다."
+
+- word: "observation"
+  example_ko: "의사가 중요한 점을 짚어 말했어요."
+  reason: "'중요한 관찰을 했습니다' 는 번역투이고 문체도 어긋난다. / '중요한 관찰 결과를 내놓았어요' 는 자료를 발표했다는 말로 읽힌다 — make an observation 은 보고 나서 한마디 했다는 뜻이다."
+
+- word: "prime"
+  example_ko: "그 호텔은 자리가 아주 좋아요."
+  reason: "바뀐 예문에 맞췄다. 옛 예문의 the prime time for shopping 은 원어민이 잘 하지 않는 말이었다."
+
+- word: "initiative"
+  example_ko: "그는 먼저 나서서 도왔어요."
+  reason: "'도움을 주기로 먼저 나섰어요' 는 help 를 그대로 옮긴 번역투이고 '~기로 나서다' 도 잘 붙지 않는 짝이다."
+
+- word: "diet"
+  example_ko: "저는 살 빼는 중이에요."
+  reason: "뜻 칸에서 '다이어트' 라는 소리 옮김을 걷어낸 것에 맞췄다."
+
+- word: "plastic"
+  example_ko: "이건 비닐봉지예요."
+  reason: "바뀐 예문에 맞췄다. 설명이 가르치는 a plastic bag 을 예문이 이제 보여 준다."
+
+- word: "complicate"
+  example_ko: "일을 복잡하게 만들지 마세요."
+  reason: "바뀐 예문에 맞췄다. 옛 예문의 complicate + problem 은 원어민이 잘 쓰지 않는 짝이었다."
+
+- word: "pocket"
+  example_ko: "휴대폰을 주머니에 넣으세요."
+  reason: "'-어 주세요' 는 말하는 사람을 위해 해 달라는 부탁이 되어 영어에 없는 뜻이 붙는다."
+
+- word: "crash"
+  example_ko: "차가 나무를 들이받았어요."
+  reason: "'나무에 부딪혔어요' 는 살짝 스친 것과 갈리지 않아, 뜻 칸에 새로 세운 '세게' 가 해석에 닿지 않았다."
+
+- word: "luck"
+  example_ko: "저는 운이 좋아요."
+  reason: "'운이 좋습니다' 는 이 묶음의 다른 해석들과 문체가 어긋난다."
