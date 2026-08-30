@@ -55,7 +55,10 @@ from app.db.models import WordRow  # noqa: E402
 logger = logging.getLogger("apply_fixes")
 FIXES = Path(__file__).parent / "data" / "manual_fixes.yaml"
 GLOSS_FIXES = Path(__file__).parent / "data" / "gloss_fixes.yaml"
-FIELDS = ("meaning_ko", "pattern", "example", "usage_note", "confused_with")
+# level 도 여기 있어야 한다. 없던 동안 apply 는 fix 의 level 을 받아 WordEntry 로
+# 검증까지 하고는 row 에 쓰지 않고 버렸다 — `sake` 의 뜻을 술에서 for the sake of 로
+# 옮기며 B1 을 준 것이 조용히 A2 로 남아서 드러났다.
+FIELDS = ("level", "meaning_ko", "pattern", "example", "usage_note", "confused_with")
 
 
 def _find(db, word: str) -> WordRow | None:

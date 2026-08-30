@@ -3407,8 +3407,8 @@
   reason: "'특히' 는 especially 쪽 말이라, 뜻 칸을 '딱 집어서' 로 고친 것과 맞춘다."
 
 - word: "gay"
-  example_ko: "제 형은 동성애자예요."
-  reason: "해석 칸이 아예 다른 항목 것이었다 — '그는 새로운 것에 대해 매우 흥미를 느껴요.' 로, 예문 'My brother is gay.' 와 아무 상관이 없었다."
+  example_ko: "제 형은 게이예요."
+  reason: "해석 칸이 아예 다른 항목 것이었다 — '그는 새로운 것에 대해 매우 흥미를 느껴요.' 로, 예문 'My brother is gay.' 와 아무 상관이 없었다. / '동성애자예요' 는 딱딱한 자리에서 쓰는 말이라, 형제를 두고 하는 말로는 무겁다."
 
 - word: "below"
   example_ko: "선 아래에 이름을 쓰세요."
@@ -4345,3 +4345,155 @@
 - word: "proof"
   example_ko: "신분을 보여 줄 증거가 있으세요?"
   reason: "되읽기: '증명할 수 있는 증거' 는 '증명' 과 '증거' 가 겹친다."
+
+- word: "retail"
+  example_ko: "이 가게는 소매 물건만 팔아요."
+  reason: "'소매 상품만 판매해요' 는 한자어가 겹쳐 딱딱하다."
+
+- word: "wire"
+  example_ko: "전선이 끊어졌어요."
+  reason: "'고장 났어요' 는 broken(끊어짐)과 어긋난다 — 줄은 고장 나지 않는다."
+
+- word: "unlikely"
+  example_ko: "내일 비가 올 것 같지는 않아요."
+  reason: "뜻 칸을 '그럴 것 같지 않은' 으로 고친 것에 맞췄다."
+
+- word: "publication"
+  example_ko: "이건 새로 나온 책이에요."
+  reason: "'이것은 새로운 출판물입니다' 는 번역투이고 문체도 어긋난다."
+
+- word: "slight"
+  example_ko: "그 작은 실수는 문제가 되지 않았어요."
+  reason: "'작은 실수는' 은 예문의 The slight mistake 가 가리키는 그 실수라는 것이 드러나지 않는다."
+
+- word: "unknown"
+  example_ko: "이건 모르는 번호예요."
+  reason: "'이 번호는 모르는 번호입니다' 는 '번호' 가 겹치고 문체도 어긋난다."
+
+- word: "framework"
+  example_ko: "그 건물은 뼈대가 튼튼해요."
+  reason: "뜻 칸을 '뼈대' 로 고친 것에 맞췄다."
+
+- word: "zone"
+  example_ko: "여기는 담배를 피울 수 없는 구역이에요."
+  reason: "'흡연이 금지된 구역입니다' 는 한자어가 겹쳐 딱딱하고 문체도 어긋난다."
+
+- word: "restrict"
+  example_ko: "그들은 공공장소에서 담배 피우는 것을 막아요."
+  reason: "'흡연을 제한합니다' 는 한자어가 겹치고 문체도 어긋난다."
+
+- word: "inch"
+  example_ko: "이건 길이가 10인치예요."
+  reason: "'이것은 10인치 길이입니다' 는 번역투다."
+
+- word: "equivalent"
+  example_ko: "1달러는 약 1,300원과 같아요."
+  reason: "바뀐 예문에 맞췄다. 옛 예문은 낱말을 낱말로 설명하는 자기참조였다."
+
+- word: "solid"
+  example_ko: "이 의자는 아주 튼튼해요."
+  reason: "뜻 칸을 '속이 꽉 찬, 튼튼한' 으로 고친 것에 맞췄다."
+
+- word: "elderly"
+  example_ko: "우리는 노인분들을 잘 모셔야 해요."
+  reason: "'존중해야 해요' 는 respect 를 그대로 옮긴 번역투다."
+
+- word: "owe"
+  example_ko: "저는 친구한테 10달러를 갚아야 해요."
+  reason: "'10달러 빚이 있어요' 보다 뜻 칸의 '갚아야 한다' 가 드러난다."
+
+- word: "uniform"
+  example_ko: "학교에서는 교복을 입어야 해요."
+  reason: "'유니폼' 은 영어를 소리대로 옮긴 말이고, 학교라면 '교복' 이 맞다."
+
+- word: "port"
+  example_ko: "우리는 항구에 도착했어요."
+  reason: "'도착했습니다' 는 다른 해석들과 문체가 어긋난다."
+
+- word: "arrival"
+  example_ko: "도착 시간이 몇 시예요?"
+  reason: "'도착 시간은 언제예요' 는 예문(What time is your arrival?)의 물음과 결이 다르다. / 예문을 'What is your arrival time?' 로 옮긴 데 맞춘다. 반박 여섯이 '몇 시에 도착하세요?' 는 arrival 을 움직씨로 옮겨 confused_with 의 arrive 와 구별되지 않는다고 했다 — 이름씨 자리로 고친다."
+
+- word: "contemporary"
+  example_ko: "저는 현대 미술을 좋아해요."
+  reason: "바뀐 예문에 맞췄다. 옛 예문은 왕초보가 만날 자리가 아니었다."
+
+- word: "ease"
+  example_ko: "약이 두통을 덜어 주었어요."
+  reason: "'제 머리가 아픈 것을 줄여 주었어요' 는 늘어져 읽힌다."
+
+- word: "specialist"
+  example_ko: "그는 컴퓨터 쪽 전문가예요."
+  reason: "'컴퓨터 과학 분야의 전문가입니다' 는 딱딱하고 문체도 어긋난다."
+
+- word: "assure"
+  example_ko: "그는 오겠다고 저를 안심시켰어요."
+  reason: "**'그는 제가 그가 올 것이라고 확실히 했어요' 는 성립하지 않는 한국어다.** / 되읽기: '그는 저에게 오겠다고 했어요' 는 said 의 해석이라 assure(안심시키다)가 드러나지 않는다. / 반박 둘: 1차안의 '꼭 오겠다고' 에서 '꼭 ~겠다고' 는 이 DB 가 guarantee('꼭 그렇게 해 주겠다고 약속')와 promise('꼭 그렇게 하겠다고 다짐')에 배정한 틀이고, guarantee 는 assure 의 confused_with 라 갈라 놓은 선이 흐려진다. 예문의 that 절도 그냥 would come 이라 '꼭' 이 원문에 없다."
+
+- word: "profile"
+  example_ko: "신상 정보를 채워 주세요."
+  reason: "'프로필' 은 영어를 소리대로 옮긴 말이다."
+
+- word: "episode"
+  example_ko: "저는 그 프로그램 한 회를 봤어요."
+  reason: "'저 텔레비전 프로그램의 한 회차를 봤어요' 는 늘어지고 '저' 도 지시가 어색하다."
+
+- word: "crack"
+  example_ko: "유리에 금이 갔어요."
+  reason: "'균열이 생겼어요' 는 한자어라 왕초보가 만날 말이 아니다."
+
+- word: "numerous"
+  example_ko: "책꽂이에 책이 많이 있어요."
+  reason: "'서가' 는 왕초보가 만날 말이 아니고 '많습니다' 도 문체가 어긋난다."
+
+- word: "submit"
+  example_ko: "저는 내일 신청서를 내야 해요."
+  reason: "'내일까지' 는 예문에 없는 말이고 임자말도 빠졌다."
+
+- word: "symptom"
+  example_ko: "독감에 걸리면 어떤 증상이 나타나나요?"
+  reason: "**'감기의 증상은' 은 flu(독감)를 감기로 옮긴 것이다.**"
+
+- word: "coverage"
+  example_ko: "그 뉴스는 이 일을 잘 다뤄요."
+  reason: "'이 사건에 대해 잘 다루고 있어요' 는 '~에 대해' 번역투다."
+
+- word: "tension"
+  example_ko: "그들 사이가 껄끄러워요."
+  reason: "'긴장이 있습니다' 는 번역투이고 문체도 어긋난다."
+
+- word: "cable"
+  example_ko: "이 텔레비전은 케이블을 연결해야 해요."
+  reason: "'케이블 연결이 필요해요' 는 번역투다."
+
+- word: "sensitive"
+  example_ko: "그는 비판에 마음이 잘 다쳐요."
+  reason: "'민감해요' 는 뜻 칸이 갈라 놓은 두 뜻(예민한/민감한) 가운데 기계 쪽으로 읽힌다."
+
+- word: "nervous"
+  example_ko: "저는 시험 앞두고 긴장돼요."
+  reason: "'시험 전에 제가 긴장돼요' 는 조사가 어긋난다."
+
+- word: "input"
+  example_ko: "비밀번호를 넣어 주세요."
+  reason: "'입력해 주세요' 보다 뜻 칸의 '넣어 주는 것' 과 이어진다."
+
+- word: "isolate"
+  example_ko: "의사가 아픈 환자를 다른 사람들과 떨어뜨려 놓았어요."
+  reason: "'격리시켰어요' 는 한자어이고 '시키다' 도 겹친다. / 뜻 칸을 '(남들과 떨어뜨려) 혼자 있게 하다' 로 옮긴 데 맞춘다. '따로 떼어 놓았어요' 는 저장된 separate 의 말이라 그대로 두면 뜻 칸과 해석이 어긋난다."
+
+- word: "gate"
+  example_ko: "대문이 열려 있어요."
+  reason: "반박 다섯. '문이 열려 있어요.' 의 '문' 은 이웃 door 카드의 뜻 칸 전부와 글자 그대로 같아, 뜻 칸이 door 와 갈라 놓은 것을 해석 한 줄이 도로 붙인다. 빈칸 'The ___ is open.' 에 door 를 넣어도 해석이 들어맞는다."
+
+- word: "sake"
+  example_ko: "저는 가족을 위해서 그렇게 했어요."
+  reason: "표제어 뜻을 목록이 가리키는 for the sake of 쪽으로 다시 짜면서 예문을 'I did it for the sake of my family.' 로 바꾼 데 맞춘다."
+
+- word: "wholesale"
+  example_ko: "우리는 가게들에 물건을 도매로 팔아요."
+  reason: "'우리는 매장을 대상으로 도매로 판매합니다' 는 '~를 대상으로'·'판매합니다' 가 번역투다. / 반박 둘: 무엇을 파는지가 빠지면 '가게에 팔다' 가 목적어를 부르는 자리라 문장이 뜨고, 예문의 stores(되파는 가게들)를 '가게에' 로 뭉개면 wholesale 의 알맹이가 지워진다."
+
+- word: "ensure"
+  example_ko: "문이 꼭 잠겨 있게 해 주세요."
+  reason: "되읽기: 뜻을 '확실히 해 두다' 로 좁히고 설명이 '확인' 을 make sure 쪽에 배정했는데, 해석 '문이 잠겨 있는지 확인해 주세요.' 는 그 make sure 의 해석이라 설명이 갈라 놓은 것을 도로 붙인다."
