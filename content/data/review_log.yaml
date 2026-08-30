@@ -3280,3 +3280,47 @@ passes:
   - substantial
   - unusual
   - valuable
+- id: top2000-a
+  date: '2026-08-30'
+  what: 빈도 1908~1949위 40개 — 마흔 전부가 고칠 것이었다(직접 읽음 + 반박 98건 판정, 워크플로 13/24 실패)
+  words:
+  - advertisement
+  - aside
+  - beauty
+  - brown
+  - calculate
+  - comfort
+  - confuse
+  - consistent
+  - creation
+  - encounter
+  - excuse
+  - gene
+  - illness
+  - install
+  - luck
+  - massive
+  - mathematics
+  - mouse
+  - neck
+  - occupy
+  - originally
+  - outline
+  - output
+  - partly
+  - plot
+  - preserve
+  - prospect
+  - secondly
+  - severe
+  - snow
+  - southern
+  - split
+  - sudden
+  - sufficient
+  - swing
+  - tennis
+  - update
+  - upper
+  - urban
+  - winner
