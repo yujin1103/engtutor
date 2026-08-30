@@ -3456,3 +3456,47 @@ passes:
   - unlikely
   - wire
   - zone
+- id: top2100-c
+  date: '2026-08-30'
+  what: 빈도 2078~2121위 40개 — 서른아홉이 고칠 것이었다(직접 읽음. perceive 만 그대로 뒀다). 되읽기가 열하나를 더 잡았다
+  words:
+  - alter
+  - anymore
+  - beside
+  - cloud
+  - convert
+  - crew
+  - devote
+  - disaster
+  - eliminate
+  - exclude
+  - 'false'
+  - fascinate
+  - formula
+  - grand
+  - heavily
+  - hence
+  - hero
+  - inspire
+  - justify
+  - meter
+  - nose
+  - perceive
+  - persuade
+  - phenomenon
+  - prisoner
+  - pupil
+  - recruit
+  - routine
+  - sail
+  - secondary
+  - stare
+  - steady
+  - string
+  - supporter
+  - terrorist
+  - tight
+  - truck
+  - vital
+  - welfare
+  - wet

@@ -4497,3 +4497,133 @@
 - word: "ensure"
   example_ko: "문이 꼭 잠겨 있게 해 주세요."
   reason: "되읽기: 뜻을 '확실히 해 두다' 로 좁히고 설명이 '확인' 을 make sure 쪽에 배정했는데, 해석 '문이 잠겨 있는지 확인해 주세요.' 는 그 make sure 의 해석이라 설명이 갈라 놓은 것을 도로 붙인다."
+
+# 빈도 2078~2121위 40개의 해석 교정.
+
+- word: "prisoner"
+  example_ko: "그 죄수가 어젯밤에 달아났어요."
+  reason: "예문을 'The prisoner ran away last night.' 로 바꾼 데 맞춘다. 옛 해석 '그는 감옥에서 감금되어 있습니다' 는 '감금되어' 가 어렵고 예문의 이름씨 자리도 안 보여 줬다."
+
+- word: "tight"
+  example_ko: "제 신발이 너무 꽉 껴요."
+  reason: "'저의 신발이 너무 조여요' 의 '저의' 는 번역투이고, 뜻 칸의 '꽉 끼는' 과도 이어지지 않는다."
+
+- word: "wet"
+  example_ko: "제 신발이 젖었어요."
+  reason: "'저의 신발이 젖었어요' 의 '저의' 는 번역투다."
+
+- word: "secondary"
+  example_ko: "이곳은 중·고등학교예요."
+  reason: "'중학교' 는 secondary school 이 가리키는 범위(중·고등)보다 좁다."
+
+- word: "welfare"
+  example_ko: "그 나라는 복지 제도가 잘 되어 있어요."
+  reason: "예문을 'The country has a good welfare system.' 으로 바꾼 데 맞춘다."
+
+- word: "recruit"
+  example_ko: "그들은 해마다 새 병사를 뽑아요."
+  reason: "'매년 새로운 병사를 모집해요' 는 주어가 빠졌다. 뜻 칸의 '뽑다' 와도 잇는다."
+
+- word: "inspire"
+  example_ko: "이 영화는 저에게 큰 감명을 줘요."
+  reason: "'이 영화는 저를 많이 영감 주어요.' 는 비문이다."
+
+- word: "grand"
+  example_ko: "우리는 으리으리한 호텔에서 묵었어요."
+  reason: "'고급 호텔' 은 뜻 칸의 '웅장한, 으리으리한' 과 이어지지 않아 백필에 지워진다."
+
+- word: "crew"
+  example_ko: "이 배에는 승무원이 스무 명 있어요."
+  reason: "'20명의 승무원이 있어요' 는 '~의' 가 번역투다."
+
+- word: "phenomenon"
+  example_ko: "이건 자연 현상이에요."
+  reason: "'이것은 자연 현상입니다.' 는 앱의 다른 해석들과 문체가 갈린다. 설명이 이 문장을 그대로 옮겨 적고 있던 것도 함께 푼다."
+
+- word: "pupil"
+  example_ko: "그 아이는 저 학교 학생이에요."
+  reason: "'그녀는 그 학교에서 공부하고 있어요' 에는 표제어의 뜻(학생)이 남아 있지 않다."
+
+- word: "false"
+  example_ko: "이 정보는 거짓이에요."
+  reason: "'이 정보는 잘못된 정보예요' 는 '정보' 가 겹친다."
+
+- word: "formula"
+  example_ko: "물의 공식은 뭐예요?"
+  reason: "'무엇인가요?' 는 앱의 다른 해석들과 문체가 갈린다."
+
+- word: "routine"
+  example_ko: "저는 매일 일과가 딱 정해져 있어요."
+  reason: "'엄격한 루틴을 가지고 있어요' 는 '루틴' 이 표제어 음차이고 '가지고 있어요' 도 번역투다."
+
+- word: "stare"
+  example_ko: "저를 그렇게 빤히 쳐다보지 마세요."
+  reason: "'그렇게 제가 보는 건 마세요.' 는 비문이고 주객이 뒤바뀌었다 — 예문은 나를 쳐다보지 말라는 말이다."
+
+- word: "hero"
+  example_ko: "그는 제가 제일 좋아하는 영웅이에요."
+  reason: "'제 좋아하는' 은 비문이다."
+
+- word: "steady"
+  example_ko: "배가 이제 안 흔들려요."
+  reason: "'배가 이제 안정이 되었어요' 는 뜻 칸의 '흔들리지 않는' 과 이어지지 않아 백필에 지워진다."
+
+- word: "nose"
+  example_ko: "저는 지난주에 코가 부러졌어요."
+  reason: "'코를 부렀어요' 는 비문이다."
+
+- word: "sail"
+  example_ko: "우리는 다음 달에 배를 타고 일본에 가요."
+  reason: "'내달 일본으로 항해할 예정이에요' 는 '내달' 이 딱딱하고, 뜻 칸을 '배를 타고 가다' 로 연 데도 맞춘다."
+
+- word: "disaster"
+  example_ko: "공장에서 큰 사고가 났어요."
+  reason: "'재해가 발생했습니다' 는 뜻 칸의 '재난, 큰 사고' 와 낱말이 갈리고 문체도 딱딱하다."
+
+- word: "heavily"
+  example_ko: "어젯밤에 비가 많이 왔어요."
+  reason: "예문을 'It rained heavily last night.' 로 바꾼 데 맞춘다."
+
+- word: "devote"
+  example_ko: "저는 공부에 시간을 다 쏟아요."
+  reason: "'시간을 투자해요' 의 '투자' 는 confused_with 에 올라 있는 invest 쪽 말이라 두 낱말을 도로 붙인다."
+
+- word: "justify"
+  example_ko: "그 결정을 정당화할 수 있어요?"
+  reason: "'당신의 결정을' 의 '당신의' 는 번역투다."
+
+- word: "vital"
+  example_ko: "건강에는 잠이 꼭 필요해요."
+  reason: "예문을 'Sleep is vital for your health.' 로 옮긴 데 맞춘다. 옛 예문·해석은 저장된 essential 카드('A passport is essential for traveling.' / '여행할 때 여권은 필수예요.')와 틀이 같아 빈칸에 둘 다 들어맞았다."
+
+- word: "fascinate"
+  example_ko: "그 영화가 저를 사로잡았어요."
+  reason: "'정말 매료했어요' 의 '정말' 은 예문에 없는 말이고, 뜻 칸을 '사로잡다' 로 연 데도 맞춘다."
+
+- word: "cloud"
+  example_ko: "하늘에 구름이 많아요."
+  reason: "되읽기: '하늘에 많은 구름이 있어요' 는 'there are many ~' 를 그대로 옮긴 번역투다."
+
+- word: "alter"
+  example_ko: "원피스 치수 좀 바꿔 주실 수 있어요?"
+  reason: "되읽기: '드레스의 사이즈' 는 '드레스'·'사이즈' 가 둘 다 음차이고 '~의' 도 번역투다."
+
+- word: "meter"
+  example_ko: "이건 2미터짜리 천이에요."
+  reason: "되읽기: '2미터 길이의 천입니다' 는 '~의' 가 번역투이고 '~입니다' 도 다른 해석들과 문체가 갈린다."
+
+- word: "remove"
+  example_ko: "신발을 벗어 주세요."
+  reason: "되읽기: '벗어주세요' 는 띄어쓰기가 틀렸다."
+
+- word: "terrorist"
+  example_ko: "그는 테러범이에요."
+  reason: "되읽기: '테러범입니다' 는 다른 해석들과 문체가 갈린다."
+
+- word: "cheek"
+  example_ko: "제 볼을 만지지 마세요."
+  reason: "역방향 짝 검사. '내 얼굴을 만지지 마세요' 는 cheek(볼)을 얼굴 전체로 넓혀 버린다."
+
+- word: "spy"
+  example_ko: "동료를 몰래 살피지 마세요."
+  reason: "역방향 짝 검사. 뜻 칸을 '몰래 살피다' 로 고친 데 맞춘다 — '감시하다' 만으로는 비밀을 알아내려 한다는 알맹이가 빠진다."
