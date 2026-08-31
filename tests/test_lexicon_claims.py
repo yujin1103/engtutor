@@ -111,6 +111,27 @@ def test_a_true_denial_is_not_flagged():
     assert "pos_claim_wrong" not in _codes(row)
 
 
+# --- 표기를 바꿔 검사를 피할 수 없다 -------------------------------------------
+#
+# 정규식에 `(명사|동사|형용사|부사)` 를 박아 두었더니 순우리말로 쓴 단정이 통째로
+# 지나갔다. 이 자료의 표기는 한자어로 통일했지만, 검사기가 표기 하나에 매여 있으면
+# 누군가 다시 순우리말로 쓰는 순간 구멍이 다시 열린다. 그래서 자료가 아니라
+# 검사기 쪽에서 막고, 그 사실을 여기서 못 박는다.
+
+
+@needs_lexicon
+def test_a_native_term_only_claim_is_flagged_too():
+    """'이름씨로만' 도 '명사로만' 과 똑같이 잡혀야 한다."""
+    row = _row("name", "'name'은 이름씨로만 쓰이고, 동사 'to name'과는 다릅니다.")
+    assert "pos_claim_overreach" in _codes(row)
+
+
+@needs_lexicon
+def test_a_native_term_denial_is_flagged_too():
+    row = _row("name", "'name'은 움직씨로는 쓰지 않아요.")
+    assert "pos_claim_wrong" in _codes(row)
+
+
 # --- 가산성: 판정하지 않고 사람을 부른다 ---------------------------------------
 
 

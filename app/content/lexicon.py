@@ -59,6 +59,24 @@ POS_KO: dict[str, str] = {
 }
 KO_POS: dict[str, str] = {v: k for k, v in POS_KO.items()}
 
+# 순우리말 품사 이름도 같은 태그로 받는다. **읽어 주기만 하고 내보내지는 않는다** —
+# 이 자료의 표기는 한자어로 통일되어 있고(명사 1441 : 이름씨 0) 지적 메시지도 POS_KO
+# 를 쓴다. 그런데도 여기 두는 이유는 검사기가 눈멀지 않게 하기 위해서다:
+# 품사 단정 검사가 `(명사|동사|형용사|부사)` 만 알던 동안 "'name'은 이름씨로만 쓰여요"
+# 는 통째로 지나갔다. 표기를 통일한 뒤에도 누군가 순우리말로 다시 쓰면 같은 구멍이
+# 다시 열리므로, 자료가 아니라 **검사기 쪽에서** 막아 둔다.
+KO_POS.update(
+    {
+        "이름씨": POS_NOUN,
+        "움직씨": POS_VERB,
+        "그림씨": POS_ADJ,
+        "어찌씨": POS_ADV,
+    }
+)
+
+# 품사 단정 검사의 정규식이 쓰는 대안 목록. 한자어와 순우리말을 함께 잡는다.
+POS_KO_ALTERNATION = "|".join(sorted(KO_POS, key=len, reverse=True))
+
 _wordnet = None
 _load_failed = False
 
