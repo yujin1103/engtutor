@@ -24,9 +24,20 @@ export function WordCard({ card, known, saved, onToggleKnown, onToggleSaved }: W
   return (
     <article className={`${styles.card} ${known ? styles.knownCard : ""}`}>
       <header className={styles.head}>
+        {/* '위' 를 붙이는 것이 이 화면의 유일한 설명이다.
+         *
+         * 숫자만 찍으면 학습자는 그것을 '목록의 몇 번째 카드' 로 읽는데, 실제 값은
+         * 토익 낱말 전체에서 몇째로 자주 나오는지다. 그래서 첫 화면이 3, 4, 6, 8 로
+         * 시작하고 첫 30장 안에서만 열두 번 끊긴다(같은 낱말이 다른 목록에도 있어
+         * 자리를 비워 둔 것이 575개, 생활 회화 쪽으로 간 것이 159개다).
+         *
+         * 설명을 title 에 담아 두었더니 **폰에서는 아예 안 떴다** — 이 앱의 주
+         * 화면이 폰이다. 담은 낱말 탭에도 같은 카드를 쓰는데 거기엔 안내 문장이
+         * 아예 없어서 더 그렇다. '3위' 는 목록 안 번호로는 읽히지 않으므로
+         * 툴팁 없이, 두 탭 모두에서, 터치에서도 통한다. */}
         {card.rank !== null && (
-          <span className={styles.rank} title="자주 쓰이는 차례">
-            {card.rank}
+          <span className={styles.rank} title="토익에서 몇째로 자주 나오는지">
+            {card.rank}위
           </span>
         )}
         <h2 className={styles.word}>{card.word}</h2>

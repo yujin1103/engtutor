@@ -76,7 +76,8 @@ export function ToeicScreen({ onBack, onPractice }: ToeicScreenProps) {
       {tab === "list" && list.state.status === "ready" && (
         <>
           <p className={`muted ${styles.lead}`}>
-            자주 나오는 차례로 놓았어요. 낱말 앞의 숫자가 그 차례예요.
+            자주 나오는 차례로 놓았어요. 낱말 앞 숫자는 토익 낱말 가운데 몇째로 자주
+            나오는지라, 중간 번호가 비기도 해요.
             {list.state.resumed && (
               <>
                 {" "}
