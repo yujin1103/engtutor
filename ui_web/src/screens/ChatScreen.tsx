@@ -35,11 +35,21 @@ export interface ChatScreenProps {
   onBack: () => void;
   /** 대화를 끝냈다. 리포트 화면으로 넘어간다. 세션이 아직 없으면 부르지 않는다. */
   onFinish: (sessionId: string) => void;
+  /** 서버가 세션을 열었다. 화면 바깥이 이것을 라우트에 실어 새로고침을 견디게 한다. */
+  onSession?: (sessionId: string) => void;
+  /** 새로고침으로 되살아난 세션 손잡이. 라우트에서 온다. */
+  resumeSessionId?: string | null;
 }
 
-export function ChatScreen({ scenario, onBack, onFinish }: ChatScreenProps) {
+export function ChatScreen({
+  scenario,
+  onBack,
+  onFinish,
+  onSession,
+  resumeSessionId = null,
+}: ChatScreenProps) {
   const { level, strictness } = useSettings();
-  const chat = useChat({ scenario, level, strictness });
+  const chat = useChat({ scenario, level, strictness, onSession, resumeSessionId });
 
   const [text, setText] = useState("");
   const [confirming, setConfirming] = useState(false);
@@ -87,8 +97,15 @@ export function ChatScreen({ scenario, onBack, onFinish }: ChatScreenProps) {
 
   // 콜백 안에서는 좁혀진 타입이 유지되지 않는다. 한 번 꺼내 두고 쓴다.
   const sessionId = chat.sessionId;
-  // 주고받은 말이 하나라도 있으면 잃을 것이 있다.
-  const hasTalked = chat.entries.length > 0;
+  /**
+   * 잃을 것이 있는가.
+   *
+   * `entries.length > 0` 로 재던 것을 고쳤다 — 첫 대사가 이미 한 줄 들어 있어서
+   * **언제나 참**이었고, 아무 말도 안 한 채 뒤로 눌러도 "나가면 하던 대화가
+   * 사라져요" 가 떴다. 실제로 잃는 것이 생기는 때는 내가 한 마디라도 보내
+   * 서버에 세션이 열린 뒤다.
+   */
+  const hasTalked = sessionId !== null || chat.entries.some((e) => e.role === "me");
 
   return (
     <Screen

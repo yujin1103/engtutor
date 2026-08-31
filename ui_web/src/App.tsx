@@ -56,6 +56,18 @@ export default function App() {
         <ChatScreen
           scenario={scenario}
           onBack={back}
+          // 서버가 세션을 열면 그 손잡이를 라우트에 박아 둔다. **새로고침을
+          // 견디게 하는 것이 이 한 줄이다** — history.state 는 새로고침 뒤에도
+          // 살아 돌아오지만 React 상태는 안 그렇다. 이게 없으면 되살아난 화면에
+          // '끝내기' 가 없고, 세션을 닫는 것은 리포트뿐이라 서버 세션이
+          // ended_at=NULL 인 채 영영 남는다.
+          //
+          // replace 인 것도 뜻이 있다 — 방문 기록을 한 칸 더 쌓으면 뒤로 가기가
+          // 같은 화면을 한 번 더 지나간다.
+          onSession={(sessionId) =>
+            replace({ name: "chat", scenarioId: scenario.id, sessionId })
+          }
+          resumeSessionId={route.sessionId ?? null}
           // replace 다 — 리포트에서 뒤로 갔을 때 이미 끝난 세션의 대화로
           // 되돌아가면 거기서 보내는 요청은 전부 409 가 된다.
           onFinish={(sessionId) =>

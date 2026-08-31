@@ -217,11 +217,17 @@ export function openingTurn(scenario: ScenarioOut): TurnResponse {
   };
 }
 
-/** 대화를 시작하는 상태. 첫 대사가 이미 들어 있다. */
-export function initialChatState(scenario: ScenarioOut): ChatState {
+/** 대화를 시작하는 상태. 첫 대사가 이미 들어 있다.
+ *
+ * `sessionId` 를 받는 것은 **새로고침으로 되살아난 경우**뿐이다. 이 값이 없으면
+ * 화면에 '끝내기' 가 안 그려져(그 버튼이 sessionId 를 요구한다) 리포트로 가는 길이
+ * 끊기고, 서버 세션은 ended_at 이 NULL 인 채 남는다. 말풍선까지 되살리지는 않는다 —
+ * 서버가 안 들고 있는 칸(해석·say_en)이 섞여 있어 그건 따로 볼 일이다.
+ */
+export function initialChatState(scenario: ScenarioOut, sessionId: string | null = null): ChatState {
   return {
     entries: [{ id: 0, role: "ai", turn: openingTurn(scenario) }],
-    sessionId: null,
+    sessionId,
     streaming: false,
     draft: "",
     rewriting: false,
@@ -257,13 +263,42 @@ export interface UseChatOptions {
   scenario: ScenarioOut;
   level: Level;
   strictness: StrictnessKey;
+  /**
+   * 서버가 세션을 열면 한 번 불린다. 화면이 이것을 라우트에 실어 두어야
+   * 새로고침 뒤에도 세션 손잡이가 살아남는다 — 안 그러면 되살아난 화면에
+   * '끝내기' 가 없고 서버 세션이 ended_at=NULL 로 미아가 된다.
+   */
+  onSession?: (sessionId: string) => void;
+  /**
+   * 새로고침으로 되살아난 세션 손잡이. 라우트에서 온다.
+   *
+   * 이것이 있으면 다음 전송이 **같은 서버 세션**으로 붙고, 서버가 turns 에서
+   * 대화 히스토리를 다시 세워 준다. 화면의 말풍선까지 되살리지는 않는다 —
+   * 그건 서버가 안 들고 있는 것(해석·say_en)이 섞여 있어 따로 볼 일이다.
+   */
+  resumeSessionId?: string | null;
 }
 
-export function useChat({ scenario, level, strictness }: UseChatOptions): Chat {
-  const [state, dispatch] = useReducer(chatReducer, scenario, initialChatState);
+export function useChat({
+  scenario,
+  level,
+  strictness,
+  onSession,
+  resumeSessionId = null,
+}: UseChatOptions): Chat {
+  const [state, dispatch] = useReducer(chatReducer, { scenario, resumeSessionId }, (init) =>
+    initialChatState(init.scenario, init.resumeSessionId),
+  );
 
   const idRef = useRef(0);
-  const sessionRef = useRef<string | null>(null);
+  const sessionRef = useRef<string | null>(resumeSessionId);
+
+  // 콜백은 화면이 매 렌더마다 새로 만들 수 있으니 ref 로 들고 쓴다 —
+  // 이것 때문에 send 가 다시 만들어지면 스트리밍 중 취소가 어긋난다.
+  const onSessionRef = useRef(onSession);
+  useEffect(() => {
+    onSessionRef.current = onSession;
+  }, [onSession]);
   /** 상태 말고 ref 로도 들고 있는다 — 연타 막기는 렌더를 기다릴 수 없다. */
   const streamingRef = useRef(false);
   const abortRef = useRef<AbortController | null>(null);
@@ -308,7 +343,12 @@ export function useChat({ scenario, level, strictness }: UseChatOptions): Chat {
         for await (const event of streamChat(req, { signal: controller.signal, stallMs })) {
           if (event.type === "delta") midway = true;
           // 다음 요청에 넣을 세션은 렌더를 기다릴 수 없어 ref 에도 적어 둔다.
-          if (event.type === "session") sessionRef.current = event.session_id;
+          // 화면에도 한 번 알려 라우트에 실어 두게 한다 — 그래야 새로고침을
+          // 견딘다(이 훅은 라우트를 모르므로 콜백으로 넘긴다).
+          if (event.type === "session") {
+            sessionRef.current = event.session_id;
+            onSessionRef.current?.(event.session_id);
+          }
           if (event.type === "turn" || event.type === "error") settled = true;
           dispatch({ type: "event", event, id: ++idRef.current, meId, attempt, midway });
         }
