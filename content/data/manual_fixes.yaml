@@ -5905,24 +5905,36 @@
   usage_note: "무엇을 다른 꼴로 바꾸는 것이 convert 예요. 무엇으로 바꾸는지는 into 로 말해서 convert dollars into won 이라고 합니다. 그냥 바뀌는 것은 change 라서 change my plan 이라고 하고, 모습이 아주 달라지는 것은 transform 이라 transform the room 이라고 해요."
 
 - word: "anger"
-  reason: "문형 자리에 영어가 들어가 있었다: noun: anger at + 사람/일"
-  pattern: "anger at + 사람/일"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: anger at + 사람/일 / 해석 '불공평한 대우에 화를 느꼈습니다' 에 임자말 he 가 빠졌고, '화를 느끼다' 는 우리말이 아니라 feel anger 를 낱말째 옮긴 번역투다 — 한국어로는 '화가 나다' 라고 한다. / 설명이 anger 는 이름씨, angry 는 그림씨라는 품사 이름만 알려 주고 이 낱말이 서는 자리(at·about 을 붙여 무엇에 화가 났는지 밝히는 것)를 안 보여 준다. / 반박 6건 판정(high 둘). **새 해석이 짝 카드 angry 의 저장된 해석과 술어가 글자까지 같다** — angry 는 '저는 형한테 화가 났어요.' 이고 이쪽은 '그는 부당한 대우에 화가 났어요.' 라, 한국어→영어 방향에서 He was angry at the unfair treatment. 가 더 자연스러운 답이 되어 정작 이름씨 anger 를 쓸 이유가 사라진다. 게다가 뜻 칸의 '분노' 가 해석에서 사라져 이름씨가 우리말에서는 움직씨로만 남는다 — 설명이 세운 품사 갈림을 해석이 지운다. / **'at 이나 about' 을 같은 자리에 놓은 것이 영어와 다르다** — about 은 일·사건만 받고 사람은 안 받는다(anger about my brother 는 안 쓴다). 남아 있는 문형이 'anger at + 사람/일' 이라 학습자는 at 자리의 '사람' 을 그대로 about 에 넣게 된다. 일·결정에 가장 흔히 붙는 것은 오히려 over 다. / 문형이 about 을 안 담고, 설명이 맨 앞에 든 'He was full of anger.' 는 at 도 about 도 없어 제 문형으로 안 읽힌다."
+  pattern: "anger at/about + 대상"
+  usage_note: "화라는 감정 자체를 가리키는 이름씨가 anger 예요 — He was full of anger. 무엇에 대한 화인지는 뒤에 붙여 밝혀요 — 사람에게 난 화는 his anger at his brother, 일이나 결정에 난 화는 anger over the decision 처럼 씁니다. 화가 난 상태를 말할 때는 그림씨 angry 를 써서 I'm angry. 라고 해요."
 
 - word: "height"
-  reason: "문형 자리에 영어가 들어가 있었다: the + height + of + something"
-  pattern: "the + height + of + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: the + height + of + something / 혼동 칸의 width 는 카드가 없어 눌러도 갈 곳이 없다. / 설명의 \"'height'는 좀 더 공식적인 표현이에요\" 는 잴 수 없는 말이고, 실제 갈림(height 는 이름씨, tall·high 는 그림씨)을 짚지 않는다. / 사람 키도 height 라는 것이 카드에 없어, 학습자가 키를 말할 때 이 낱말을 못 쓴다. / 자리 검사. 새 설명에 '사람 키도 height 라서 What's your height?' 를 넣었는데 뜻 칸은 '높이' 뿐이라, 설명이 든 둘째 자리를 뜻 칸이 안 받아 준다. / 반박 9건 판정(high 둘). **내가 새로 넣은 'What's your height? 라고 물어요' 가 저장된 tall 카드와 정면으로 부딪힌다** — 그 카드는 '키를 물을 때는 How tall are you? 라고 해요' 로 못박아 두었고, 나는 같은 교정에서 tall 을 혼동 칸에 새로 걸어 두었다. 학습자가 한 번 눌러 바로 반대 지시를 만난다. 실제로도 What's your height? 는 서류·문진표 쪽 말이고 회화에서 흔한 쪽은 How tall are you? 다. / 뜻 칸을 '높이; (사람의) 키' 로 여는 것은 자리 검사에서 이미 잡았다. / **문형이 내가 든 둘째 예를 못 받는다** — 'What's your height?' 에는 the 도 of 도 없다. / 혼동 칸에 남긴 length 를 설명이 한 번도 안 다루고, 거꾸로 설명이 세우는 high 는 혼동 칸에 없다. / '위로 선 것' 은 이 자료에 처음 나오는 말이라, 같은 기준을 tall 카드('바닥에서 위로 길게 솟은 것')와 high 카드가 저마다 다르게 부르는 데 셋째 표현이 더해진다."
+  meaning_ko: "높이; (사람의) 키"
+  pattern: "the height of + 명사 / 소유격 + height"
+  usage_note: "얼마나 높은지를 가리키는 이름씨가 height 예요 — measure the height of the wall. 사람 키도 height 라서 He is 180cm in height. 처럼 써요. 다만 말로 키를 물을 때는 How tall are you? 가 흔합니다. 가로로 뻗은 길이는 length 예요. 그림씨는 high 이고, 사람이나 나무처럼 바닥에서 위로 길게 솟은 것에는 tall 을 씁니다."
+  confused_with: ["length", "tall", "high"]
 
 - word: "expansion"
-  reason: "문형 자리에 영어가 들어가 있었다: noun: expansion of + something"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: expansion of + something / **설명이 같은 낱말을 저와 견준다** — \"'expansion'은 주로 물리적 또는 사업적 성장에 쓰이고 'expansion'은 'growth'보다 더 구체적인 의미예요\" 로 expansion 이 두 번 나와 문장이 무너졌고, '더 구체적인 의미' 도 잴 수 없는 말이다. / 뜻 '확장, 확대' 가 이웃 extension 의 '확장, 연장' 과 '확장' 을 나눠 가진다. / 해석 '회사의 확장이 인상 깊어요' 는 번역투다. / 반박 9건 판정(high 셋). **'저절로 자라 커지는 쪽은 growth' 가 거짓이다** — growth 의 가장 흔한 자리가 오히려 사람이 꾀해서 키우는 쪽이다(economic growth, sales growth, a growth strategy). 더 나쁜 것은 저장된 growth 카드의 예문이 'The growth of the company was amazing.' 이라는 점이다 — 회사가 저절로 자라지 않으므로, 이 문장을 믿은 학습자는 검수된 이웃 카드의 예문 자체를 틀린 것으로 판단한다. / **예문·해석이 그 growth 카드와 통째로 겹친다** — 'The expansion of the company is impressive.' 대 'The growth of the company was amazing.', 해석도 '회사가 그렇게 커진 것이 놀라워요' 대 '회사의 성장이 정말 놀라웠어요' 라 같은 빈칸의 답이 둘이 된다. 게다가 impressive 는 '대단하다' 쪽인데 옆 카드가 amazing 에 붙여 둔 '놀라-' 를 그대로 가져다 썼고, 영어에 없는 '그렇게' 도 붙었다. 예문을 회사 밖으로 옮긴다. / **extension 의 집 보기가 영국 전용이다** — 미국에서 덧대어 늘린 부분은 an addition 이고, 이 DB 는 영국 말에 반드시 '영국에서는' 을 붙여 온 자료다. 게다가 저장된 extension 카드는 뜻이 '확장, 연장 (시간이나 기간의)' 이고 예문이 마감 연장이라, 이 카드가 드는 집 보기와 서로 안 맞는다. / 뜻 칸의 괄호 '(규모가 커지는 것)' 이 앞말 '커짐' 을 되풀이한다 — 같은 교정안이 external 에서 스스로 든 잣대를 여기서 안 지켰다."
+  meaning_ko: "커짐, 넓어짐 (사업·규모를 넓히는 것)"
   pattern: "expansion of + 명사"
+  example: "The expansion of the airport took two years."
+  usage_note: "사업이나 땅을 일부러 넓혀 키우는 일이 expansion 이에요 — the expansion of the business. 얼마나 늘었는지 그 정도를 말할 때는 growth 를 써서 economic growth(경제 성장) 라고 해요. 있던 것을 더 늘려 주는 것은 extension 이라 an extension of the deadline(기한 연장) 처럼 씁니다."
 
 - word: "scare"
-  reason: "문형 자리에 영어가 들어가 있었다: scare + 목적어 (사람), be scared of + something"
+  reason: "문형 자리에 영어가 들어가 있었다: scare + 목적어 (사람), be scared of + something / **뜻 칸 첫머리 '무서워하다' 가 틀렸다** — scare 는 남을 무섭게 만드는 쪽이지 내가 무서워하는 쪽이 아니다. 내가 무서운 것은 be scared 라서, 뜻 칸을 그대로 외운 학습자는 I scare of spiders. 같은 문장을 만들게 된다. / 해석 '그 영화가 저를 무서워하게 했어요' 도 같은 자리에서 어긋난 우리말이다. / 혼동 칸의 terrify 는 카드가 없다. / 반박 7건 판정. **'무서운 마음을 그림씨로 말하면 afraid 예요' 가 제 앞 문장을 부정한다** — 바로 앞에서 'be scared of 로 뒤집어 써서 I'm scared of spiders.' 라고 해 놓았는데 그 scared 가 이미 그림씨다. scare 에서 나온 그림씨는 scared 이고 afraid 는 뜻이 비슷한 다른 낱말이라, 혼동 칸에 새로 올린 afraid 가 왜 헷갈리는 짝인지도 카드가 안 갈라 준다. '무서운 마음' 은 이름씨로 읽히는데 '그림씨로 말하면' 이라고 이어 붙인 것도 어긋난다. / **뜻 '무섭게 하다, 겁주다' 가 저장된 frighten 카드의 뜻 '무서워하게 하다' 와 사실상 같은 한국어다** — 게다가 내 설명이 'frighten 은 뜻이 같은데' 라고 스스로 인정해, 혼동 칸의 짝을 뜻으로 갈라 주지 못하고 남은 갈래는 잴 수 없는 말뿐이었다. 원래 있던 '놀라게 하다' 를 살려 갈래를 만든다. / '글에서 더 자주 만납니다' 는 빈도 주장으로는 거짓에 가깝다 — 말뭉치에서 scare/scared 는 소설·기사까지 아울러 frighten 보다 훨씬 잦다. frighten 이 상대적으로 격식 쪽인 것만 남긴다. '만납니다' 도 낱말을 사람처럼 만난다는 번역투다."
+  meaning_ko: "겁주다, 놀라게 하다"
   pattern: "scare + 목적어 (사람), be scared of + 명사"
+  usage_note: "남을 무섭게 만드는 것이 scare 예요 — You scared me!(깜짝이야) 처럼 말할 때 흔히 씁니다. 내가 무섭다고 할 때는 뒤집어서 be scared of 나 be afraid of 를 써서 I'm scared of spiders. / I'm afraid of dogs. 라고 해요. frighten 은 뜻이 같은데 좀 더 딱딱해서, 말할 때는 scare 를 더 씁니다."
+  confused_with: ["frighten", "afraid"]
 
 - word: "symbol"
-  reason: "문형 자리에 영어가 들어가 있었다: a symbol of + something"
-  pattern: "a symbol of + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: a symbol of + something / 설명이 한국어 '기호' 와 '상징' 을 견주는 데 세 문장을 다 쓰고 영어는 한 낱말도 안 든다 — 게다가 '하트는 사랑의 상징이지만, 단지 기호일 수도 있어요' 는 무엇을 하라는 말인지 잡히지 않는다. / 혼동 칸에 걸린 sign 과 icon 을 설명이 한 번도 갈라 주지 않아, 눌러 간 학습자가 돌아올 자리가 없다. sign 카드의 뜻은 '서명하다; 간판, 표지판' 이라 이 카드가 말하는 '기호' 와도 어긋난다. / 자리 검사. 해석을 '평화를 나타내는 표시' 로 고쳤는데 뜻 칸에는 '표시' 가 없어 짝이 안 맞는다. 뜻 칸의 '기호' 도 설명이 세운 '대신 나타내는 것' 과 결이 달라, 학습자가 sign 과 갈라 볼 근거가 없다. / 반박 7건 판정(high 하나). **해석을 '표시' 로 옮긴 것이 한국어를 나쁜 쪽으로 몰았다 — 1차와 자리 검사 판정을 둘 다 물린다.** (1) '평화의 상징' 은 번역투가 아니라 한국어에서 가장 굳은 짝이고, (2) 해석이 표제어의 뜻을 담는 것은 이 DB 가 오히려 요구하는 바다(traffic 항목: '해석은 빈칸 문제의 지시문이라 … 표제어의 뜻이 통째로 사라져 학습자가 car 를 답하게 된다'), (3) 무엇보다 '표시' 는 mark·indication·highlight 세 카드가 이미 나눠 갖는 말인 데 견주어 '상징' 은 두 파일을 통틀어 한 번도 안 쓰인, symbol 만 쓸 수 있는 자리였다. 빈칸으로 읽으면 '평화를 나타내는 표시' 에는 mark·sign·indication 이 다 들어맞는다. / **'the dollar symbol($)' 이 실제 영어와 어긋난다** — $ 는 압도적으로 the dollar sign 이라 부르고(유니코드 문자 이름도 DOLLAR SIGN), 같은 자리의 다른 글자도 모두 sign 이다(plus/minus/equals/percent sign). 하필 바로 앞줄에서 sign 을 '길 표지판' 으로 넘겨 놓고 그 갈림을 떠받칠 보기로 영어가 sign 이라 부르는 글자를 골랐다. / 문형이 '상징' 자리 하나뿐이라 뜻 칸이 앞세운 '기호' 를 문형도 예문도 한 번도 안 보여 준다."
+  meaning_ko: "상징; (글자로 적는) 기호"
+  pattern: "a symbol of + 명사 (상징) / 명사 + symbol (기호)"
+  usage_note: "무엇을 대신 나타내는 것이 symbol 이에요 — a symbol of hope(희망의 상징). 글자로 적는 기호도 symbol 이라 a chemical symbol(H, O 같은 원소 기호) 처럼 씁니다. 다만 $ 나 % 같은 글자는 a dollar sign, a percent sign 이라고 불러요. 길에서 알려 주는 표지판도 a sign 이고, 화면에 뜨는 작은 그림은 an icon 이에요."
 
 - word: "demonstration"
   reason: "문형 자리에 영어가 들어가 있었다: demonstration + of + something"
@@ -6379,9 +6391,10 @@
   pattern: "+ of + 찾는 대상"
 
 - word: "withdrawal"
-  reason: "문형 자리에 영어가 들어가 있었다: noun: withdrawal + from + 장소/사람 / '인출은 money 관련일 때 주로 쓰고' 에서 한국어 문장에 영어 money 가 그대로 끼어 있다."
+  reason: "문형 자리에 영어가 들어가 있었다: noun: withdrawal + from + 장소/사람 / '인출은 money 관련일 때 주로 쓰고' 에서 한국어 문장에 영어 money 가 그대로 끼어 있다. / 짝 맞춤(withdraw 의 confused_with, 서로 걸어 두었다). withdraw 쪽에서 '인출' 을 '은행 서류에서 쓰는 말이라 왕초보 카드의 말이 아니다' 라고 판정했는데, 정작 그 말을 뜻 칸과 해석에 통째로 쓰고 있는 이 카드는 안 고쳐 판정이 짝의 한쪽에만 닿아 있었다. 게다가 서로 걸린 두 카드가 같은 일을 '인출'(이쪽 뜻·해석), '빼다'(이쪽 설명), '찾다'(withdraw 쪽) 세 이름으로 부르고 있었다 — 검수를 마친 ATM 카드가 세운 '뽑다/넣다' 축으로 모은다."
+  meaning_ko: "(넣어 둔 것을) 도로 빼는 일; 물러남"
   pattern: "withdrawal + from + 장소/사람"
-  usage_note: "넣어 둔 것을 도로 빼는 것이에요 — a withdrawal from my account. 군대가 물러나는 것도 withdrawal 이라고 해요. 빼는 동사는 withdraw 예요."
+  usage_note: "은행에 넣어 둔 돈을 도로 뽑는 일이 withdrawal 이에요 — a withdrawal from my account. 뽑는 동작은 withdraw 라서 withdraw cash 라고 해요. 군대가 물러나는 것도 withdrawal 이라고 합니다."
 
 - word: "brake"
   reason: "문형 자리에 영어가 들어가 있었다: brake + on + something"
@@ -7408,8 +7421,10 @@
   confused_with: ["cover", "report"]
 
 - word: "rarely"
-  reason: "문형 자리에 영어가 들어가 있었다: adverb (문장 중간에 쓰기)"
-  pattern: "주어 + rarely + 동사"
+  reason: "문형 자리에 영어가 들어가 있었다: adverb (문장 중간에 쓰기) / 뜻 '거의 없이, 거의 안' 에서 '거의 없이' 는 우리말로 읽히지 않는다(무엇이 없다는 말인지 받을 말이 없다). / 설명이 한국어 '가끔' 하나와만 견주고 영어를 한 줄도 안 든다. / **왕초보가 이 낱말에서 실제로 저지르는 잘못(이미 부정의 뜻이 들어 있는데 not 을 또 붙이는 것)이 카드에 없다.** / 해석 '거의 육류를 안 먹어요' 는 어순이 어색하고 '육류' 도 대화에서 쓰는 말이 아니다. / 자리 검사. 뜻 '좀처럼 ~하지 않는' 은 매김꼴 어미라 어찌씨 뜻으로 읽히지 않는다 — 뒤에 받을 이름씨가 없다. / 반박 7건 판정. **뜻 '좀처럼 ~하지 않는' 이 관형형이라 그림씨처럼 읽힌다** — rarely 는 어찌씨이고, 이 DB 의 형제 카드는 모두 어찌씨 낱말을 그대로 적는다(often '자주, 흔하게', sometimes '가끔, 때때로', never '절대, 결코'). 게다가 혼동 칸으로 이어진 rare 카드의 뜻이 '드문, 흔하지 않은' 이라는 같은 관형형이어서, 두 카드의 뜻 칸이 나란히 서면 그림씨 rare 와 어찌씨 rarely 를 뜻 칸만 보고는 못 가른다. / **'동사 앞에 넣어요' 가 be 동사 예외를 빠뜨렸다** — He is rarely late. 이지 He rarely is late. 가 아니다. 같은 DB 의 더 쉬운 often 카드가 그 예외를 이미 적어 두었다('be동사와 쓸 때는 뒤로 가서 He is often late. 가 돼요') — 쉬운 짝이 짚어 준 자리를 이 카드가 빠뜨렸다. / 혼동 칸의 often 을 설명이 한 글자도 안 다룬다. / '거의 없다시피 아주 드물게만' 은 한 마디에 네 겹의 한정이 겹쳐 왕초보가 읽을 문장이 아니고, '없다시피' 는 '~하다' 로 받아야 하는 꼴이다. / 뜻 칸의 대표 말 '좀처럼' 이 해석·설명에 한 번도 안 되받아진다."
+  meaning_ko: "좀처럼, 드물게"
+  pattern: "주어 + rarely + 동사 (be 동사는 뒤)"
+  usage_note: "어떤 일이 아주 드물게만 일어난다고 할 때 동사 앞에 넣어요 — I rarely watch TV. be 동사와 쓸 때는 뒤로 가서 He is rarely late. 가 됩니다. 이미 '아니다' 는 뜻이 들어 있어서 not 을 또 붙이지 않아요. 가끔은 있다는 쪽은 sometimes, 자주 있는 쪽은 often 이에요."
 
 - word: "evil"
   reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
@@ -7956,8 +7971,11 @@
   confused_with: ["emotion", "feeling"]
 
 - word: "apparent"
-  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
-  pattern: "be + apparent"
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다. / **이 낱말의 두 뜻이 서로 반대인데 카드가 한쪽만 가르친다** — apparent 는 '누가 봐도 뚜렷하다' 이기도 하지만 the apparent cause 처럼 '겉보기에는 그렇다(실제는 다를 수 있다)' 이기도 하다. 뒤쪽이 카드에 없어 학습자가 겉보기 쪽 문장을 만나면 정반대로 읽는다. / 뜻 '눈에 보이는, 분명한' 의 '분명한' 이 이웃 clear 카드의 뜻 '깨끗한, 분명한' 과 겹친다. / 설명이 한국어 '분명한' 과 견주는 데서 시작해 영어 갈림을 안 세운다. / 자리 검사. 새 설명이 the apparent cause(이름씨 앞 자리)를 드는데 문형은 'be + apparent' 하나뿐이라, 설명이 든 자리를 문형이 안 보여 준다. / 반박 12건 판정(high 셋). **내 reason 이 제일 큰 구멍이라고 밝힌 둘째 뜻을 설명에만 넣고 뜻 칸은 한쪽으로 남겼다** — '겉으로 드러나 보이는, 뚜렷한' 은 뒤를 '뚜렷한' 이 받쳐 결국 '누가 봐도 분명하다' 한쪽으로만 읽히고, the apparent cause 의 '실제는 다를 수 있다' 는 결이 뜻 칸에 없다. 그 결을 만드는 조사 '만' 은 설명에만 있었다. / **더 나쁜 것은 문형이 그 둘째 뜻을 막고 있다는 점이다** — '겉보기' 뜻은 이름씨 앞에 놓을 때만 나오고 be 뒤에서는 '뚜렷하다' 로만 읽힌다(The cause is apparent. = 원인이 뚜렷하다). 문형에 이름씨 앞자리가 없으니, 설명을 읽고 '겉보기 원인' 을 말하려는 학습자가 카드에 있는 유일한 문형을 따라 쓰면 뜻이 정반대가 된다 — 내가 새로 만든 함정이다. / **해석의 '뻔히' 를 같은 카드의 설명이 방금 obvious 에 넘겨 놓았다** — 저장된 obvious 카드도 '그건 뻔하잖아' 로 '뻔' 을 제 말로 쓰고, obvious 는 이 카드의 혼동 칸에 있어 한 번 눌러 바로 모순으로 간다. 게다가 '뻔히' 는 나무라는 결이 붙어 중립적인 진술과도 어긋난다. / 설명 첫머리의 '누가 봐도' 역시 obvious 카드가 제 뜻을 밝히는 바로 그 말이라 두 카드가 같은 한국어를 나눠 갖는다. / 혼동 칸의 clear 를 설명이 안 다룬다. / '결도 있어서' 의 '결' 은 이 자료에서 '결이 조금 달라요' 라는 굳은 짝으로만 쓰였다. / 예문 'The problem is apparent.' 는 이 낱말이 실제로 가장 많이 쓰이는 꼴(become 을 낀 것)이 아니고, 내 설명 스스로 그 꼴을 들면서 예문에는 안 남겼다."
+  meaning_ko: "뚜렷한, 눈에 띄는; 겉보기에만 그런"
+  pattern: "be + apparent (뚜렷하다) / apparent + 명사 (겉보기 ~)"
+  example: "The problem soon became apparent."
+  usage_note: "가리지 않고 겉으로 드러나 있다는 뜻이라 It soon became apparent. 처럼 become 과 잘 붙고 글에서 많이 써요. '겉보기에만 그렇다' 는 뜻은 이름씨 앞에서만 나와서 the apparent cause 는 '겉보기 원인' 이라는 말인데, 이 뜻은 obvious 에 없습니다. 말이나 글이 알아듣기 쉽다는 쪽은 clear 라서 a clear explanation 처럼 써요."
 
 - word: "accurate"
   reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다."
@@ -12552,8 +12570,12 @@
   confused_with: ["partly", "somewhat"]
 
 - word: "initially"
-  reason: "**짝 항목 맞춤** — originally 를 고치며 at first 를 갈라 놓았는데, 이 항목은 \"'Initially'는 과거의 처음을, 'at first'는 현재의 처음을 의미할 수 있어요\" 라고 해 성립하지 않는 갈림을 세운다. **칸 하나만 맞춘 것이라 이 낱말은 대장에 올리지 않는다.** / **짝 항목 맞춤** — originally 를 고치며 at first 를 '처음 얼마 동안' 쪽으로 갈라 놓았는데, 이 항목은 \"'Initially'는 과거의 처음을, 'at first'는 현재의 처음을 의미할 수 있어요\" 라고 해 성립하지 않는 갈림을 세운다. **칸 하나만 맞춘 것이라 이 낱말은 대장에 올리지 않는다.**"
-  usage_note: "지금은 달라졌지만 맨 처음에는 그랬다고 밝힐 때 문장 맨 앞에 붙여 씁니다. at first 도 같은 뜻인데 말할 때 더 흔해요. originally 는 본디 무엇이었는지를 짚는 쪽이라 The house was originally a school. 처럼 씁니다."
+  reason: "**짝 항목 맞춤** — originally 를 고치며 at first 를 갈라 놓았는데, 이 항목은 \"'Initially'는 과거의 처음을, 'at first'는 현재의 처음을 의미할 수 있어요\" 라고 해 성립하지 않는 갈림을 세운다. **칸 하나만 맞춘 것이라 이 낱말은 대장에 올리지 않는다.** / **짝 항목 맞춤** — originally 를 고치며 at first 를 '처음 얼마 동안' 쪽으로 갈라 놓았는데, 이 항목은 \"'Initially'는 과거의 처음을, 'at first'는 현재의 처음을 의미할 수 있어요\" 라고 해 성립하지 않는 갈림을 세운다. **칸 하나만 맞춘 것이라 이 낱말은 대장에 올리지 않는다.** / 혼동 칸의 'at first' 는 카드가 없어 눌러도 갈 곳이 없다 — 설명에서 드는 것은 그대로 두고 혼동 칸만 카드가 있는 낱말로 줄인다. 나머지 칸은 앞서 손본 것이라 어긋나는 데가 없다. / 반박 7건 판정(high 셋). 1차에서 '나머지 칸은 앞서 손본 것이라 어긋나는 데가 없다' 고 적었는데 사실이 아니었다 — 앞선 교정은 usage_note 만 고쳤고 뜻·문형·예문·해석은 원문 그대로였다. / **문형과 설명이 자리를 문두 하나로 못박은 것이 거짓이다** — I initially thought it was a joke. / The plan was initially rejected. 가 모두 바른 영어다. 같은 묶음의 whenever·naturally 에서 내가 바로 이 흠을 잡아 놓고 여기만 지나쳤고, 저장된 짝 카드 originally 는 '문장 맨 앞에 놓기도 합니다' 로 열어 두어 같은 갈래 어찌씨 둘이 정반대 규칙을 가르치게 됐다. / **혼동 칸에 남긴 originally 를 설명이 갈라 주지 못한다** — 저장된 originally 카드의 reason 이 이미 \"'본디 처음에는 그랬는데 지금은 달라졌다' 가 바로 at first 의 뜻\" 이라고 판정했는데, 이 카드의 설명 첫 문장이 그대로 그 축이다. 게다가 'originally 는 본디 무엇이었는지를 짚는 쪽' 이라는 갈림도 그 카드가 '애초에 무엇을 하려 했는지' 까지 넓혀 두어 뒤집힌다. initially 에게 남는 제 몫이 없었다. / 뜻 '처음에, 처음에는' 은 조사만 바꿔 같은 말을 두 번 적은 것이다. / 예문 'Initially, I didn't like the idea.' 는 저장된 originally 카드가 'At first I didn't like it.' 으로 at first 에 배정해 둔 문장과 거의 같아, 표제어를 골라 쓸 이유를 못 보여 준다."
+  meaning_ko: "처음에는 (나중에는 달라졌다)"
+  pattern: "Initially, + 문장 / 주어 + initially + 동사"
+  example: "We initially planned to leave on Monday."
+  usage_note: "여러 단계 가운데 첫 단계에서는 그랬다고 밝힐 때 써요 — The plan was initially rejected, but later approved. 문장 맨 앞에 놓아도 되고 주어 뒤나 be동사 뒤에 넣어도 돼요. 겪는 동안의 처음 얼마 동안은 at first 를 쓰고, 본디 무엇이었는지를 짚는 것은 originally 라 The house was originally a school. 처럼 씁니다."
+  confused_with: ["originally"]
 
 - word: "primarily"
   reason: "**문형 'primarily + 목적어' 는 틀렸다** — 어찌씨라 목적어를 받지 않는다. / 설명의 \"'mainly'보다는 더 공식적인 분위기\", \"'firstly'보다 더 강한 의미\" 는 둘 다 잴 수 없는 말이고, firstly 는 차례를 매기는 말이라 짝도 되지 않는다. / 반박 9건 판정(high 셋). **'움직씨 앞에 붙여 씁니다' 라는 자리 규칙을 바로 뒤에 든 제 보기가 부정한다** — 'The school is primarily for children.' 에서 primarily 는 움직씨(is) 뒤이고 뒤따르는 것은 전치사구다. 문형 '주어 + primarily + 동사' 와도, 카드 예문과도 자리가 다르다. 왕초보가 설명대로 외우면 The school primarily is for children. 을 만든다. / '말할 때는 mainly 나 mostly 를 써요' 에서 mostly 는 대신하지 못한다 — mostly 는 '양이 거의 다' 쪽이라(이 DB 의 mostly 카드도 그렇게 못 박았다) He is mostly responsible. 은 뜻이 달라진다. / **앞선 교정이 'firstly 는 짝도 되지 않는다' 며 confused_with 에서 뺐는데 설명은 여전히 firstly 에 한 문장을 쓴다** — 게다가 '자리가 아주 다릅니다' 는 어떻게 다른지 안 보여 주는 빈말이다. / 뜻 '주로, 무엇보다' 가 mainly('주로, 대부분')·mostly('대부분, 주로')와 학습자 눈에 같은 한국어다."
@@ -13480,3 +13502,228 @@
   reason: "짝 맞춤(typically 의 confused_with). typically 카드의 교정 reason 이 \"'usually'보다 더 공식적인 느낌\" 을 잴 수 없는 말이라며 지웠는데, 정작 이 카드가 \"한국어 '보통'보다 조금 더 공식적인 느낌이 들어요\" 로 똑같은 말을 그대로 두고 있어 학습자가 건너오면 방금 지운 결함을 다시 만난다. 게다가 그 문장은 영어 낱말끼리가 아니라 한국어 '보통' 과만 견주는 자리다. 뜻 칸 '보통, 일반적으로' 도 usually 카드와 글자 하나 다르지 않다."
   meaning_ko: "대체로, 크게 보아"
   usage_note: "하나하나 따지면 다를 수 있지만 통틀어 보면 그렇다고 할 때 써요 — Generally, it rains a lot in summer. 얼마나 자주 하느냐를 말할 때는 usually 를 써서 I usually get up at seven. 이라고 해요. 여느 때와 다르지 않게 흔히 그렇다는 쪽은 typically 예요."
+
+- word: "external"
+  reason: "뜻 '외부의, 외부에 속한' 은 같은 말을 두 번 적은 것이고, 예문 'The external door is broken.' 은 영어로 잘 안 쓰는 말이다 — 바깥으로 통하는 문은 an exterior door 나 the front door 라고 한다. 설명은 '내부에 있는 것과는 구분해야 해요' 로 한국어 안내만 하고 영어 예가 한 줄도 없다. external 이 실제로 붙는 자리(an external hard drive, external walls, external factors)를 보여 준다. / 반박 5건 판정. **뜻에서 '외부' 를 통째로 덜어낸 것이 과교정이었다** — 원본의 흠은 '외부의, 외부에 속한' 이 같은 말을 두 번 적은 것이지 '외부' 자체가 아니었고, 짝 카드 internal 의 뜻이 '내부의, 조직 내부의' 라 '외부' 를 지우면 두 말이 짝이라는 것을 한국어로 못 읽는다. / **설명의 internal organs 줄이 짝 카드와 통째로 겹친다** — 저장된 internal 카드가 이미 제 설명 끝을 'internal organs(장기)' 로 맺고 있어 눌러 가도 새로 얻는 것이 없다. 반대로 그 카드가 첫머리로 내세우는 '조직 안'(an internal meeting)의 짝인 '조직 밖' 쓰임은 이쪽에 한 줄도 없어, 건너온 학습자가 받을 말이 없다. / external walls 는 미국에서 exterior walls 가 표준인 한쪽으로 기운 짝이라 뺀다. / 괄호 풀이 '바깥 요인' 은 굳어진 말 '외부 요인' 과 어긋나고, 이 DB 의 factor 카드도 뜻을 '요인' 으로 잡아 두었다."
+  meaning_ko: "외부의, 바깥쪽의 (밖에서 오는)"
+  example: "I saved it on an external drive."
+  usage_note: "안이 아니라 바깥에 있거나 바깥에서 오는 것이 external 이에요 — external factors(외부 요인). 컴퓨터에 꽂아 쓰는 외장 기기도 external 이라 an external hard drive 라고 해요. 회사 밖 사람이나 바깥 상대를 가리킬 때도 써서 an external candidate(외부 지원자) 처럼 씁니다. 안쪽이나 조직 안은 internal 이에요."
+
+- word: "spare"
+  reason: "**설명이 제 예를 뒤집었다** — \"'spare tire'처럼 물건을 가리킬 때는 '여유가 있는' 뜻\" 이라 했는데, spare tire 야말로 '예비의(대체용)' 쪽이고 '여유' 쪽은 예문의 spare time 이다. 두 뜻을 서로 바꿔 붙여 놓았다. / 문형 'spare + 목적어' 는 움직씨 꼴인데 예문 'Do you have any spare time?' 의 spare 는 이름씨 앞에 붙은 그림씨다 — 문형이 예문의 자리를 안 보여 준다. / \"'extra'는 더 강한 의미를 가지고 있어요\" 는 잴 수 없는 말이다. / 혼동 칸의 free(무료인)는 spare 와 겹치는 자리가 없다. / 반박 8건 판정(high 둘). **내가 새로 만든 겹침** — 새 뜻의 '여분의' 가 이 카드의 유일한 혼동 짝인 extra 카드의 뜻 '추가의, 여분의' 와 글자까지 같다. 갈라 보라고 걸어 준 단 하나의 짝과 뜻 칸이 같은 한국어를 나눠 가지면 빈칸 답이 둘이 된다(같은 교정안이 obligation·ratio·boundary 에서 바로 이 까닭으로 뜻을 고쳐 놓고 여기서 새로 만들었다). / **설명 첫머리 '쓰고 남아 따로 둔' 이 제 보기와 어긋난다** — a spare key 는 쓰고 남은 열쇠가 아니라 처음부터 여벌로 만들어 둔 것이다. spare 의 중심은 '쓰고 남은' 이 아니라 '지금 안 쓰고 필요할 때를 위해 따로 둔' 이라(그래서 a spare room 도 성립한다). / 같은 설명이 열쇠는 '여분', 타이어는 '예비' 로 불러 학습자는 두 뜻이 갈리는 줄 안다. / spare time 을 가르치면서 같은 자리에 훨씬 자주 쓰는 free time 을 한 줄도 안 보여 준다. / 해석의 '남는 시간' 은 '여유 시간' 보다 나쁜 한국어라 물린다 — 뜻 칸에서 '여분의' 를 덜어내면 해석을 손댈 까닭도 사라진다."
+  meaning_ko: "남는, 예비의 (쓰려고 따로 둔)"
+  pattern: "spare + 명사"
+  usage_note: "지금은 안 쓰지만 필요할 때 쓰려고 따로 둔 것이 spare 예요 — a spare key(예비 열쇠), spare parts. 차에 싣고 다니는 예비 타이어도 a spare tire 예요. 쓰지 않고 남는 시간은 free time 이라고도 하는데 말할 때는 그쪽이 더 흔합니다. extra 는 본디 것에 하나 더 얹은 쪽이라 an extra chair(의자 하나 더) 처럼 써요."
+  confused_with: ["extra"]
+
+- word: "whenever"
+  reason: "**설명이 제가 든 올바른 문장을 틀렸다고 가르친다** — \"영어에서는 문장의 맨 앞에만 써요. 'I will help you whenever you need me.'처럼 문장 중간에 쓰면 안 돼요\" 라고 못박았는데, 그 문장은 흠 없는 영어다. 이 카드를 읽은 학습자는 맞는 문장을 스스로 고쳐 쓰게 된다. 문형의 '(문장 맨 앞)' 도 같은 거짓을 되풀이한다. / 반박 7건 판정(high 셋). **설명이 첫째로 가르치는 뜻이 뜻 칸에 한 조각도 없다** — 새 설명은 '~할 때는 언제나' 로 두 문장을 잇는 쓰임을 본뜻으로 세웠는데, 안 건드린 뜻 칸은 설명이 곁가지로 미룬 '언제든지, 아무 때나' 만 걸고 있다. 무게가 뒤집혔다. / **혼동 칸에 새로 넣은 anytime 을 설명이 한 번도 안 갈라 준다** — 설명이 견주는 낱말은 혼동 칸에 없는 wherever 하나뿐이고, anytime 카드는 뜻이 '언제든지' 라 이 카드 뜻의 앞 반쪽을 통째로 가져가는 데다 해석까지 '도움이 필요할 때면 언제든지 저에게 전화해 주세요.' 로 거의 같은 문장이다. 두 카드가 서로를 가리키면서 같은 한국어를 두 번 읽힌다. / '맞는 말이에요' 는 내용이 옳다는 뜻으로 읽힌다 — 이 DB 는 그 자리에 '써도 돼요' 를 쓴다."
+  meaning_ko: "~할 때는 언제나 (두 문장을 잇는 말); 아무 때나"
+  pattern: "whenever + 문장 (앞에 놓거나 뒤에 붙인다)"
+  usage_note: "'~할 때는 언제나' 라는 뜻으로 두 문장을 잇는 말이에요. 앞에 놓아도 되고 뒤에 붙여도 돼서 I will help you whenever you need me. 처럼 써도 돼요. 뒤에 문장을 달지 않고 '아무 때나요' 라고 답할 때는 Whenever. 한 마디로 씁니다. 홀로 '언제든지' 라고 할 때는 anytime 을 써서 Call me anytime. 이라고 해요. 곳을 말할 때는 wherever 예요."
+  confused_with: ["anytime"]
+
+- word: "depression"
+  reason: "문형 'a/the + depression' 이 제 예문과 어긋난다 — 예문 'She has depression and needs help.' 에는 관사가 없다. 마음의 병을 가리키는 depression 은 관사 없이 쓰고, a depression 은 경제 불황이나 움푹 팬 곳 쪽이다. / 혼동 칸의 sadness·depressed 는 카드가 아예 없어 눌러도 갈 곳이 없다. / 설명이 '정신 건강 문제' 라는 한국어 풀이에 머물러, 왕초보가 쓸 영어 꼴을 보여 주지 않는다. / 반박 6건 판정. **'앞에 a 를 붙이지 않고 그대로 씁니다' 는 내가 새로 세운 단정인데 영어와 어긋난다** — 꾸미는 말이 붙으면 관사를 쓴다(fall into a deep depression, a severe depression). 관사가 붙은 depression 은 경제 불황뿐이라던 내 근거가 여기서 무너진다. / **뜻 칸의 '우울한 상태' 를 설명이 방금 sad 에게 넘겨 놓고 뜻 칸이 붙들고 있다** — 그러면 학습자가 기분을 말할 때 I have depression today. 를 쓰게 된다. 게다가 원본 설명에 있던 그림씨 꼴(I'm feeling depressed)을 내가 지워, 뜻 칸이 여전히 내세우는 '우울한 상태' 를 영어로 어떻게 말하는지가 카드에서 사라졌다. 저장된 sad 카드는 이미 그 자리를 depressed 에게 주고 있다. / '마음이 가라앉다' 는 이 DB 가 calm 에 준 한국어라(뜻 '차분한, 마음이 가라앉은') 정반대 개념 둘이 한 말을 쓴다 — 주어를 '기분' 으로 바꾼다. / 해석의 '그녀는' 은 같은 묶음의 disorder·scream·perception 이 모두 '그 사람은' 으로 간 것과 갈린다."
+  meaning_ko: "우울증 (오래 이어지는 마음의 병)"
+  pattern: "have + depression"
+  usage_note: "기분이 오래 가라앉아 힘든 병이 depression 이에요. 병 이름처럼 말할 때는 a 없이 She has depression. 이라고 해요. 그런 상태인 사람을 두고는 그림씨 depressed 를 써서 I feel depressed. 라고 합니다. 그저 슬픈 기분은 sad 예요 — I feel sad today. 마음을 짓누르는 부담은 stress 라고 해요."
+  confused_with: ["sad", "stress"]
+
+- word: "guilty"
+  reason: "**이 낱말이 왕초보에게 훨씬 자주 필요한 쪽인 '미안해서 마음이 무겁다'(feel guilty about)가 카드 어디에도 없다** — 뜻 칸에 '죄책감을 느끼는' 이 있는데 문형·예문·설명은 법정의 유죄 쪽만 보여 준다. / 설명이 든 반례 'He is guilty a stealing' 은 of 를 뺀 꼴이 아니라 of 를 a 로 바꿔 놓은 이상한 문장이라, 무엇이 틀렸는지 짚어 주지 못한다. / 혼동 칸의 shameful 은 카드가 없다. / 자리 검사. 뜻 칸의 차례가 문형·예문과 어긋난다 — 뜻은 '죄책감을 느끼는' 을 앞세우는데 예문과 문형 첫 갈래는 유죄 쪽이다. 예문이 보여 주는 것을 앞에 둔다. / 반박 9건 판정. **문형을 두 갈래로 열어 놓고 예문·해석은 법정 쪽 하나뿐이었다** — 내 reason 스스로 'feel guilty 가 카드 어디에도 없다' 를 흠으로 들었는데, 고친 뒤에도 학습자가 따라 쓸 본보기 문장은 여전히 유죄 쪽이었다. 왕초보가 실제로 쓸 자리는 I feel guilty 쪽이므로 예문을 그리로 옮기고 뜻 칸 차례도 맞춘다. / **혼동 칸에 새로 넣은 sorry 를 설명이 한 번도 안 갈라 준다** — 하필 설명이 guilty 를 '미안해서' 라고 풀어, 저장된 sorry 카드(뜻 '죄송하다, 미안하다')와 같은 한국어를 나눠 갖는다. 이대로면 발을 밟고 I feel guilty. 라고 말하게 된다. / **'남 보기 부끄러운 쪽은 ashamed' 가 영어와 어긋난다** — ashamed 는 남이 보느냐와 상관없이 제가 한 짓을 두고 느끼는 것이고(I'm ashamed of what I did), 저장된 ashamed 카드도 'I'm ashamed of myself 는 나 자신이 창피하다' 로 적어 두었다. 설명이 그 낱말을 안 다루게 됐으니 혼동 칸에서도 뺀다. / 저장된 innocent 카드가 제 혼동 칸에 guilty 를 걸어 두었는데 이쪽에서는 안 걸어 링크가 한 방향뿐이었다. / '법에서 죄를 지었다' 는 조사가 어긋나고, 판결을 말하는 굳은 짝은 be found guilty 다."
+  meaning_ko: "(미안해서) 마음이 무거운; 죄를 지은, 유죄인"
+  pattern: "feel guilty about + 일 / be guilty of + 죄"
+  example: "I feel guilty about it."
+  usage_note: "잘못한 것 같아 마음이 무거울 때 쓰는 말이에요 — 무엇 때문인지는 about 을 붙여 밝힙니다. 그 자리에서 입 밖에 내어 사과하는 말은 sorry 라 I'm sorry. 라고 하고, guilty 는 사과하고 나서도 마음에 남는 쪽이에요. 법을 어겨 죄가 있다고 할 때는 be guilty of 를 쓰고, 재판에서 죄가 인정되면 He was found guilty of theft. 라고 합니다. 죄가 없는 쪽은 innocent 예요."
+  confused_with: ["sorry", "innocent"]
+
+- word: "underlie"
+  reason: "**영어가 실제로 쓰는 꼴을 안 보여 준다** — underlie 는 원형보다 the underlying cause, an underlying problem 처럼 -ing 꼴로 만나는 쪽이 훨씬 흔한데 카드에 한 번도 안 나온다. / 혼동 칸의 'lie under' 는 카드가 없는 데다 그 말을 갈라 주겠다며 든 설명(\"'underlie'는 보통 명사를 직접 받는 반면…\")이 왕초보가 읽을 말이 아니다. / 설명의 \"'lie under'보다 더 공식적인 표현\" 은 잴 수 없는 말이다. / 자리 검사. 뜻 칸을 '밑바탕에 깔려 있다' 로 고쳤는데 해석은 '…의 원인이 될 수 있어요' 그대로라 뜻 칸의 말이 해석에 한 글자도 안 남는다. 해석은 gloss 쪽에서 함께 고친다. / 반박 10건 판정(high 둘). **해석을 안 고쳐 카드의 유일한 한국어 문장이 옛 뜻에 남았다** — 뜻·설명은 '원인' 을 cause 에 넘겨 놓고 해석은 '…의 원인이 될 수 있어요' 그대로라, 학습자가 실제로 외우는 쪽이 방금 세운 갈림을 도로 무너뜨린다(해석은 gloss 쪽에서 함께 고친다). / **새 뜻에 목적어 자리가 없다** — underlie 는 타동사로만 쓰여 반드시 목적어를 받고 문형도 'underlie + 명사' 인데, '밑바탕에 깔려 있다' 는 자동사 꼴이라 학습자가 Stress underlies in many problems 를 만들게 된다. 원본 뜻의 '...의' 를 지우면서 생긴 손실이다. / **cause 에 '눈에 보이는' 이라는 제한을 내가 새로 세웠다** — 같은 설명이 두 줄 앞에서 the underlying cause 를 들고 있어 제 예가 반례다. 갈림은 '보이느냐' 가 아니라 주어 자리다. / '까닭' 을 cause 에 준 것도 어긋난다 — 이 DB 의 factor·purpose·explanation·motive 카드가 모두 '까닭' 을 reason 의 말로 못박아 두었다. / '-ing 꼴' 이라고만 적으면 Stress is underlying… 같은 진행형을 만들 길이 열린다 — underlying 은 이름씨 앞에 붙는 그림씨다. / 첫 문장의 '그 일' 이 가리킬 것이 앞에 없다."
+  meaning_ko: "~의 밑바탕에 깔려 있다"
+  usage_note: "겉으로 드러난 문제 밑에 깔려서 그 문제를 일으키는 것을 말해요. 밑에 깔린 쪽을 주어로 세워 Stress underlies the problem. 처럼 씁니다. 실제로는 이름씨 앞에 붙는 그림씨 underlying 으로 만나는 쪽이 훨씬 흔해서 the underlying cause(밑바탕이 되는 원인), an underlying problem 이라고 해요. 겉으로 드러난 원인을 그냥 말할 때는 cause 를 써서 What caused it? 이라고 합니다."
+  confused_with: ["cause"]
+
+- word: "mom"
+  reason: "**이웃 mother 카드와 뜻이 '엄마' 로 글자까지 같다** — 갈라 주겠다고 혼동 칸에 걸어 둔 카드와 뜻 칸이 똑같으니 아무것도 갈리지 않는다. / 문형 'a/the + mom' 이 틀렸다 — mom 은 my mom 처럼 소유격을 붙이거나 이름처럼 Mom 으로 부르지, a mom 을 예문 자리에 쓰지 않는다. 예문 'This is my mom.' 도 관사가 아니라 my 다. / 설명이 한국어 '엄마' 를 풀이하는 데만 쓰이고 mum·Mom 같은 실제 꼴을 안 보여 준다. / 반박 7건 판정. **뜻 칸의 겹침은 mom 한 장을 고쳐서는 안 사라진다** — 괄호를 붙여도 머리말은 여전히 '엄마' 이고 mother 카드의 뜻 칸도 그냥 '엄마' 다. 정작 갈림은 이미 해석 쪽에 서 있었다(저장된 mother gloss 교정이 '이분이 저희 어머니예요' 로 잡고 그 까닭을 'father·parent 와 갈려서 답이 하나' 라고 적어 두었다). mother 를 짝으로 함께 고친다. / **새 해석이 예문의 This is 자리를 통째로 버렸다** — 되돌려 옮기면 She's my mom. 이 되어 다른 문장이 되고, 같은 틀을 쓰는 이웃 카드 셋(mother '이분이 저희 어머니예요', dad '이분은 제 아빠예요', father '이 분은 제 아버지예요')과 넉 장 가운데 하나만 꼴이 달라진다. / '대문자로 적습니다' 는 낱말 전체를 MOM 으로 쓰라는 말로 읽힌다 — 이 DB 는 dad·march·Friday·north 카드에서 예외 없이 '첫 글자를 크게 쓴다' 로 적는다."
+  meaning_ko: "엄마 (집에서 부르는 말)"
+  pattern: "my/your + mom"
+  usage_note: "mother 를 친근하게 부르는 말이 mom 이에요 — my mom. 부를 때는 이름처럼 첫 글자를 크게 써요 — Ask Mom(엄마한테 물어봐). 서류나 딱딱한 글에서는 mother 를 씁니다. 영국에서는 같은 말을 mum 이라고 적고, 아빠는 dad 예요."
+
+- word: "distinction"
+  reason: "**해석이 예문에 없는 말을 넣었다** — 'Can you make a distinction between these two words?' 는 둘을 갈라 볼 수 있느냐고 묻는 말인데 해석은 '차이점을 설명해 주실 수 있나요' 로 '설명' 을 보탰다. / 뜻 '차이, 구분' 이 이웃 difference 카드의 뜻 '차이, 차이점' 과 '차이' 를 나눠 가져, 빈칸 문제로 내면 한국어가 답을 안 짚는다. distinction 은 '갈라 보는 일'(행위)이고 difference 는 '갈라진 결과'(차이 자체)라 그 갈림을 뜻 칸에 넣는다. / 반박 8건 판정(high 셋). **difference 와의 겹침을 풀려다 훨씬 가까운 짝인 distinguish 와 겹쳤다** — 새 뜻의 '구분' 이 저장된 distinguish 카드의 뜻 '구분하다, 가려내다' 와 겹치고, 새 해석 '이 두 낱말을 구분할 수 있나요?' 는 그 카드의 해석 '이 두 가지 색을 구분할 수 있나요?' 와 목적어만 다른 같은 문장이며, 예문 틀도 'Can you ~ between these two ~?' 로 같다. 흠이 옮겨졌을 뿐이다. / **머리말로 세운 '가름' 은 이 DB 의 학습자용 글에 한 번도 안 쓴 말이다** — 두 파일을 통틀어 검수자 reason 칸에만 있고, 하필 gauge 카드가 '가늠' 을 학습자용으로 쓰고 있어 한 글자 차이로 헷갈린다. / **뜻을 '갈라 보는 행위' 로만 좁힌 것이 영어와 어긋난다** — distinction 이 가장 흔히 가리키는 것은 갈라진 차이 그 자체다(There's an important distinction between weather and climate). 같은 까닭으로 '다른 점 자체는 difference 라서' 도 없는 규칙 단정이다 — 그 자리에서 두 낱말은 바꿔 쓸 수 있다. / 혼동 칸의 separation 은 학습자가 이 자리에 잘못 쓸 일이 거의 없는 짝인 데다, 설명이 부르는 '떼어 놓는 일' 과 그 카드의 뜻 '분리, 이별' 이 갈린다."
+  meaning_ko: "뚜렷한 차이 (둘 사이에 분명히 그어지는 선)"
+  pattern: "make a distinction between + 두 대상"
+  usage_note: "둘 사이에 분명히 선을 그어 갈라 놓는 것이 distinction 이라 make a distinction between A and B 처럼 써요. 그렇게 갈린 차이를 가리켜 the distinction between A and B 라고도 합니다. 같은 뿌리의 움직씨는 distinguish 라서 Can you distinguish between them? 이라고 해요. 차이를 그냥 물을 때는 What's the difference? 가 가장 흔합니다."
+  confused_with: ["difference", "distinguish"]
+
+- word: "satisfaction"
+  reason: "**문형 'a/the + satisfaction' 이 틀렸다** — satisfaction 은 하나 둘로 세지 않아서 a satisfaction 이라고 쓰지 않는다. 예문에도 관사가 없다(a lot of satisfaction). / 예문 'I have a lot of satisfaction from my job.' 도 영어로 어색하다 — 이 자리에는 get 을 쓴다. / 혼동 칸의 satisfying 은 카드가 없다. / 설명이 한국어 '만족' 과 견주는 데서 시작해 품사 이름만 늘어놓는다. / 반박 8건 판정. **'앞에 a 를 붙이지 않고 그대로 씁니다' 가 제 예문과 눈으로 부딪힌다** — 같은 교정이 새로 넣은 예문이 'I get a lot of satisfaction…' 이라, 왕초보는 satisfaction 바로 앞의 a lot of 를 보고 설명이 틀렸다고 읽거나 a lot of 를 쓰면 안 되는 줄로 배운다. 게다가 It was a great satisfaction to see it finished. 처럼 a 가 붙는 자리가 실제로 있어 단정 자체도 지나치다. / **'흐뭇' 은 이 DB 의 두 파일 어디에도 없는 말이고**, 뜻 칸과 해석은 '만족' 이라 한 카드가 같은 것을 두 말로 부른다. 더구나 혼동 짝 satisfy 카드가 그 자리를 이미 '남을 만족시키다' 로 적어 두었다. / 뜻 '만족, 만족감' 은 같은 말을 두 번 적은 것이다 — 같은 묶음에서 external 의 '외부의, 외부에 속한' 을 두고 내가 든 바로 그 잣대를 이 카드에는 안 댔다. / 문형이 예문의 a lot of 를 안 담고, from 뒤에 흔한 -ing 꼴도 막는다. / 해석 '저는 제 일에서' 는 첫째 사람을 두 번 세웠다."
+  meaning_ko: "만족감 (해내고 나서 드는 뿌듯한 마음)"
+  pattern: "get (a lot of) satisfaction from + 명사/동사-ing"
+  example: "I get a lot of satisfaction from my job."
+  usage_note: "무엇을 해내고 마음이 차오르는 것이 satisfaction 이에요. 하나 둘로 세지 않아서 a satisfaction 처럼 쓰지 않고, 양은 a lot of satisfaction, great satisfaction 처럼 앞에 붙여 나타냅니다. 무엇에서 얻었는지는 from 으로 밝혀요 — from helping people. 남을 만족시키는 동작은 satisfy 라서 The answer satisfied me. 라고 해요."
+  confused_with: ["satisfy"]
+
+- word: "incorporate"
+  reason: "**문형이 예문의 자리를 안 보여 준다** — 예문 'They incorporated our ideas into the plan.' 은 into 로 어디에 넣었는지 밝히는 꼴인데 문형은 'incorporate + 목적어' 뿐이라, 왕초보가 가장 자주 빠뜨리는 전치사가 문형에서 빠졌다. / 설명의 '더 공식적인 상황에서 써요' 는 잴 수 없는 말이고, 든 보기 둘(We included our ideas / We incorporated our ideas)이 무엇이 다른지 안 갈라 준다 — 실제 갈림은 격식이 아니라 '안에 들어 있다'(include)와 '넣어서 하나로 만들다'(incorporate)다. / 반박 7건 판정(high 둘). **저장된 integrate 카드와 카드째 겹쳤다** — 새 뜻 '(안에) 넣어 하나로 만들다' 가 그 카드의 뜻 '하나로 합쳐 넣다' 와 사실상 같고, 새 문형 'incorporate + 목적어 + into + 명사' 는 그 카드의 문형과 글자까지 같으며, 새 설명 첫 문장 '따로 있던 것을 안에 넣어 한 덩어리로 만드는 것이…' 도 그 카드의 첫 문장과 거의 같다. include·combine 과의 겹침을 풀려다 훨씬 가까운 짝과 통째로 겹쳤고, 정작 integrate 는 한 번도 부르지 않았다. / **into 를 반드시 있어야 하는 자리로 못박은 것이 없는 규칙이다** — The new design incorporates all the latest safety features. 처럼 전치사 없는 꼴이 가장 흔한 축에 들고, in 도 쓴다. / '섞어 합치는 것은 combine' 이 저장된 combine 카드와 부딪힌다 — 그 카드는 '재료를 휘저어 섞는 건 mix' 라며 '섞다' 를 mix 에 넘겨 두었다. / 해석의 '아이디어' 는 이 DB 가 여러 번 소리 옮김으로 판정해 걷어낸 말이고(바로 이웃 integrate 카드의 gloss 교정이 그렇게 했다), '넣었어요' 는 add 카드의 해석과 겹쳐 뜻 칸이 세운 '하나로 만들다' 를 안 보여 준다."
+  meaning_ko: "(한 부분으로) 집어넣다"
+  pattern: "incorporate + 목적어 (+ into/in + 명사)"
+  usage_note: "남이 낸 것이나 새것을 받아 제 것 안에 한 부분으로 집어넣는 것이 incorporate 예요 — incorporate feedback into the design. 전치사 없이 품고 있다는 뜻으로도 써서 The new design incorporates a bigger battery. 라고 합니다. 따로 돌던 것들을 맞물려 한 몸처럼 돌아가게 하는 것은 integrate 예요. 목록이나 값에 들어 있다는 말은 include 라서 The price includes tax. 라고 해요."
+  confused_with: ["include", "integrate"]
+
+- word: "pour"
+  reason: "**해석에 맞춤법 오류가 있다** — '붓어 주세요' 가 아니라 '부어 주세요' 다. / 설명이 한국어 '붓다' 를 두고 \"주로 페인트나 유사한 것에 쓰입니다\" 라고 근거 없는 말을 하고, 영어 pour 가 실제로 쓰이는 자리(비가 억수같이 오다, 잔에 따르다)는 안 보여 준다. / 혼동 칸의 'pour out' 은 카드가 없다. / 반박 5건 판정. **안 건드린 문형이 내가 새로 넣은 설명을 금지한다** — 설명에 'It's pouring.' 을 넣었는데 문형 'pour + 목적어 + into + 장소' 에는 목적어도 into 도 없는 그 문장이 설 자리가 없고, 뜻 칸에 남은 '퍼붓다' 도 같은 이유로 이 문형으로는 한 번도 못 선다. into 를 필수로 잡은 탓에 pour water on the plants, pour me a glass 같은 흔한 꼴도 배제된다. / 같은 뜻을 뜻 칸은 '퍼붓다', 설명은 '쏟아지다' 로 불러 두 칸이 안 이어진다. / 정의 '액체를 다른 그릇으로 옮겨 담는 것' 이 영어보다 좁다 — 받는 그릇이 없어도 되고 흐르듯 쏟아지는 것이면 액체가 아니어도 쓴다. / 해석의 '주세요' 는 영어에 없는 부탁을 보탠 것이다 — 원문에 please 가 없다."
+  meaning_ko: "(그릇에) 붓다, 따르다; (비가) 퍼붓다"
+  pattern: "pour + 액체 (+ into/on + 곳) / It's pouring (비가)"
+  usage_note: "기울여서 줄줄 쏟아 붓는 것이 pour 예요 — pour the milk into a glass. 받는 그릇 없이 pour water on the plants 처럼도 써요. 실수로 엎지르는 것은 spill 이라 I spilled my drink. 라고 합니다. 비가 퍼부을 때도 써서 It's pouring. 이라고 하는데, 이때는 목적어 없이 It 을 임자말로 씁니다."
+  confused_with: ["spill"]
+
+- word: "sweep"
+  reason: "**뜻 칸이 통째로 틀렸다** — sweep 은 '스치다·흔들다' 가 아니라 빗자루로 '쓸다' 이다. 괄호로 '(바닥 청소할 때)' 를 달아 놓았지만 앞의 두 낱말이 이미 딴 뜻을 가르치고 있다. / 설명 '스위프트(switch)와는 전혀 다른 의미예요' 는 switch 를 '스위프트' 라고 잘못 적었고, 두 낱말은 형태도 뜻도 헷갈릴 사이가 아니라 갈라 줄 것이 없다. 혼동 칸의 sweat 는 카드도 없다. / 해석 '바닥을 치웁니다' 는 쓸어 내는 동작을 안 보여 준다. / 반박 5건 판정. **혼동 칸에 넣은 낱말은 설명이 안 다루고, 설명이 다루는 낱말은 카드가 없다** — 혼동 칸에 clean 을 넣어 놓고 설명은 vacuum 과 mop 만 갈랐는데, mop 은 DB 에 카드가 없다. clean 은 sweep 과 고르는 사이가 아니라 위 갈래라(빗자루로 쓸든 청소기를 돌리든 다 clean) 그 층 차이를 설명이 밝혀야 짝으로 설 수 있다. / **'진공청소기' 가 저장된 vacuum 카드의 한국어와 어긋난다** — 그 카드는 뜻이 '청소기로 밀다, 청소기를 돌리다' 이고 그 교정의 근거가 '해석의 치우다에서 청소기가 통째로 사라져' 라 '청소기' 를 일부러 세워 둔 것이다. 게다가 내가 '밀다' 를 mop 에 붙여, 왕초보가 '청소기로 민다' 와 '걸레로 민다' 중 어느 쪽이 vacuum 인지 못 가르게 됐다. / **'매일 → 날마다' 로 바꾼 근거가 사실이 아니었다** — gloss_fixes.yaml 의 example_ko 에 '날마다' 는 한 번도 없고 '매일' 이 쓰인다. '날마다' 는 설명 안의 '날마다 말할 때는' 이라는 관용구로만 쓰였고, 그 쓰임은 바로 앞 묶음에서 비문에 가깝다고 판정한 자리다. 되돌린다. / 도구를 정의에 박아 넣어 sweep the crumbs off the table 같은 쓰임을 밀어냈다."
+  meaning_ko: "(빗자루로) 쓸다"
+  pattern: "sweep + 목적어 (바닥·길)"
+  usage_note: "먼지나 부스러기를 한쪽으로 쓸어 내는 것이 sweep 이에요 — 보통 빗자루로 해서 sweep the floor 라고 합니다. 그냥 치워서 깨끗하게 만드는 일 전체는 clean 이라 clean your room 이라고 해요. 청소기를 돌려 빨아들이는 것은 vacuum 이라 vacuum the carpet 이라고 하고, 젖은 걸레로 문질러 닦는 것은 mop 이에요."
+  confused_with: ["clean", "vacuum"]
+
+- word: "obligation"
+  reason: "**뜻 '의무, 책임' 이 이웃 카드 둘과 겹친다** — duty 의 뜻이 '의무, 책임' 으로 글자까지 같고, responsibility 는 '책임, 의무' 로 앞뒤만 바꾼 말이다. 셋이 같은 한국어를 나눠 가져 빈칸 문제에서 답이 갈리지 않는다. / 문형 'a/the + obligation' 은 이 낱말이 실제로 서는 자리(have an obligation to do)를 안 보여 준다. / 예문 'It is my obligation to clean the room.' 은 방 청소를 법·약속으로 매인 의무라 해서 낱말의 무게와 안 맞는다. / 반박 6건 판정. **뜻을 고쳐 놓고도 머리말 '의무' 를 남겨 겹침이 안 줄었다** — duty 카드의 뜻이 '의무, 책임' 이고 그 카드는 이 카드의 혼동 칸에 그대로 걸려 있으며, 해석까지 duty 의 '당신을 돕는 것이 제 의무예요' 와 같은 '의무' 위에 선다. 한국어 '의무' 로 빈칸을 내면 답이 여전히 둘이다. / **괄호가 이 낱말의 폭보다 좁다** — moral obligation, family obligations, out of obligation 처럼 법도 약속도 아닌 도리·체면으로 지는 쪽이 회화에서 오히려 자주 나온다. 이대로면 I felt a moral obligation to help. 을 틀린 쓰임으로 읽는다. / **'잘못되면 내가 감당한다는 쪽은 responsibility' 가 저장된 그 카드와 다른 정의다** — 그 카드는 '내가 맡은 일 하나는 a responsibility' 로 맡아 하는 일 쪽이지 뒷감당 쪽이 아니고, 뜻 칸의 '책임' 이 내 설명에 한 번도 안 나와 학습자가 우리말 '책임' 과 이을 고리가 없다."
+  meaning_ko: "(법·약속·도리로) 반드시 해야 하는 일"
+  pattern: "have an obligation to + 동사"
+  example: "I have an obligation to pay the rent."
+  usage_note: "법이나 약속, 또는 사람 된 도리로 매여 반드시 해야 하는 것이 obligation 이에요 — a legal obligation(법으로 진 의무), a moral obligation(도리로 진 의무). 맡은 자리 때문에 당연히 하는 일은 duty 라서 a police officer's duty 라고 해요. 내가 맡아서 해내야 하는 일, 곧 책임은 responsibility 예요."
+
+- word: "sir"
+  reason: "**문형 'a/the + sir' 이 틀렸다** — sir 는 관사 없이 홀로 부르는 말이고, 제 예문 'Excuse me, sir.' 에도 관사가 없다. / 설명 '상대가 남성인지 여성이지 않아도 쓸 수 있어요' 는 비문인 데다 거짓이다 — sir 는 남성에게만 쓴다. 바로 다음 문장이 'madam 은 여성인 경우에만' 이라 스스로 부딪힌다. / 혼동 칸의 madam·ladies and gentlemen 은 둘 다 카드가 없다. / 뜻 '선생님, 분, 남성(예의를 차리는 경우)' 은 셋을 늘어놓기만 해 무엇을 외워야 할지 잡히지 않는다. / 반박 9건 판정. **혼동 칸을 비웠는데 설명이 갈라 주는 ma'am 은 카드가 실재한다**(A2, 예문 'Good morning, ma'am.') — 죽은 짝 둘을 걷어내면서 살아 있는 짝 하나까지 지웠다. / **뜻 칸의 '모르는' 이 영어보다 좁고 제 설명이 그것을 깬다** — 군대·직장에서 아는 상관에게 Yes, sir. 라고 하고(내가 든 바로 그 예다), 영국 학교에서 학생이 담임 남교사를 Sir 라고 부른다. '모르는' 을 조건으로 박으면 그 문장들이 틀린 것이 된다. / **문형의 '홀로' 를 내 설명의 Sir John 이 바로 부순다** — 작위 칭호는 이름을 받아 서고, 부름말은 홀로 선다. A1 카드에 왕초보가 쓸 일 없는 작위 뜻을 늘리면서 뜻 칸·문형 둘과 동시에 부딪혔으니 그 줄을 뺀다. / 문형이 '무엇을 붙이지 마라' 는 금지문이라 예문 'Excuse me, sir.' 의 자리를 안 보여 준다. / 해석은 부름말을 문장 뒤에 붙인 번역투이고, 이 DB 에서 '선생님' 은 teacher 의 한국어라 해석만 읽으면 진짜 교사를 부르는 말로 읽힌다."
+  meaning_ko: "남성을 예의 갖춰 부르는 말 (우리말 '선생님·손님' 자리)"
+  pattern: "문장 + , + sir (관사 없이 부르는 말)"
+  usage_note: "처음 보는 남성이든 윗사람이든, 남성을 예의 갖춰 부를 때 홀로 써요 — Yes, sir. / Thank you, sir. 앞에 a 나 the 를 붙이지 않습니다. 여성에게는 ma'am 을 써요. 우리말로는 이 자리에서 흔히 '저기요' 라고 해요."
+  confused_with: ["ma'am"]
+
+- word: "perception"
+  reason: "**설명이 제 예문을 부정한다** — '보다 정확한 생각을 의미해요' 라고 했는데, 예문이 바로 'Her perception of the situation was wrong.'(틀린 perception)이다. perception 은 정확한 생각이 아니라 '그 사람이 받아들인 방식' 이라 사실과 어긋날 수 있는 것이고, 그래서 a false perception 이라는 말이 성립한다. / 해석 '그녀가 상황에 대한 인식은' 은 임자말 조사가 어긋난 비문이다. / 혼동 칸의 understanding 은 카드가 없다. / 자리 검사. 문형 'a/the + perception' 이 예문 'Her perception of the situation was wrong.' 과 어긋난다 — 예문은 관사가 아니라 소유격 Her 이고, 무엇에 대한 perception 인지 붙이는 of 가 문형에 없다. 왕초보가 빠뜨리는 것이 바로 그 of 다. / 반박 8건 판정(high 하나). 문형이 예문의 of 를 안 담는 것은 자리 검사에서 이미 잡았다(소유격 + perception + of). 여기에 더해 — **설명을 갈아 끼우면서 원본에 있던 유일한 of 예('perception of the person')까지 지워, 바뀐 칸 어디에도 예문의 구조가 없어졌다.** 새 설명이 드는 것은 조각말 a false perception 하나뿐이다. / **'처음 만나 받은 느낌은 impression' 이 저장된 impression 카드와 방향이 반대다** — 그 카드는 문형이 'make + a + impression + on + 사람' 이고 설명이 '누구에게 어떤 느낌을 남겼는지 말할 때' 라 주는 쪽인데, 여기서는 받는 쪽으로 적고 동사 없이 명사구만 던졌다. 두 카드를 다 읽은 학습자가 I had a good first impression on him. 같은 말을 만든다. / 뜻 칸의 '보는 눈' 은 카드의 어느 칸도 안 받쳐 주고, 우리말로는 안목·판단력을 뜻해 이 카드가 가르치는 '사실과 어긋날 수도 있다' 와 결이 반대로 읽힌다. / 새 해석이 이름씨를 통째로 지워, 되돌려 영어로 만들면 She misunderstood the situation. 이 나온다."
+  meaning_ko: "받아들이는 방식 (어떻게 보고 있느냐)"
+  pattern: "someone's perception of + 대상"
+  usage_note: "무엇을 어떻게 받아들이고 있느냐가 perception 이라 사실과 어긋날 수도 있어요 — a false perception. 누구의 것인지, 무엇에 대한 것인지는 of 로 붙여 his perception of the problem 이라고 해요. 처음 만나 남긴 느낌은 impression 이라 He made a good first impression. 처럼 make 와 함께 씁니다. 알아듣고 아는 것은 understanding 이에요."
+  confused_with: ["impression"]
+
+- word: "naturally"
+  reason: "**혼동 칸 둘이 다 죽었다** — 'i think so' 와 'of course' 는 카드가 없다. 게다가 'I think so' 는 헷갈리는 낱말이 아니라 설명이 지어낸 대비다. / 문형이 자리를 문두 하나로 못박았는데 naturally 는 Her hair is naturally curly. 처럼 꾸미는 말 앞에도 흔히 온다. / 설명 '한국어 당연히보다 더 부드럽고 자연스러운 표현' 은 잴 수 없는 말이고, 정작 이 낱말의 또 다른 뜻(힘들이지 않고 저절로)이 카드에 없다. / 반박 10건 판정(high 하나). **내가 새로 넣은 문형 자리를 내가 든 예가 못 받친다** — '주어 + naturally + 동사' 의 근거로 든 문장이 'Her hair is naturally curly.' 인데 거기서 naturally 는 be동사 뒤·그림씨 앞이라, 문형대로 쓰면 Her hair naturally is curly. 라는 비문이 나온다. 이 DB 는 저장된 originally 카드에서 똑같은 흠을 이미 판정해 문형을 be 꼴로 고쳤고, 나 자신도 같은 묶음의 badly 에서 같은 잣대를 썼다. / **뜻 칸을 안 건드려 설명이 새로 세운 갈래를 못 받는다** — 'Her hair is naturally curly.' 는 '자연스럽게 곱슬' 이 아니라 '타고나기를 곱슬' 이고, 뜻 칸 첫머리 '자연스럽게' 는 저장된 natural 카드의 뜻 '자연의, 자연스러운' 과 겹치기까지 한다. / **죽은 짝 둘을 걷어내고 비워만 두었다** — 같은 교정안이 everyday 에서는 죽은 짝을 살아 있는 카드로 갈아 끼웠는데 여기서는 안 썼다. natural 과 certainly 가 둘 다 카드로 살아 있다. / '힘들이지 않고 저절로' 는 이 DB 에서 '누가 손대지 않았는데 일이 일어난다' 는 뜻으로 굳어 쓰여, 타고난 상태인 곱슬머리에 안 붙는다. / 해석의 '저도' 는 예문에 없는 also/too 를 보탠 것이다."
+  meaning_ko: "당연히; 원래 그렇게, 타고나기를"
+  pattern: "Naturally, + 문장 / be + naturally + 형용사"
+  usage_note: "굳이 말 안 해도 그럴 만하다고 할 때 써요 — Naturally, he was upset(당연히 화가 났죠). 손대지 않아도 원래 그렇다는 뜻으로도 써서 Her hair is naturally curly(원래 곱슬머리예요) 라고 해요. 그림씨는 natural 이에요. 확실하다고 힘줘 말하거나 상대 말에 한 마디로 대꾸할 때는 certainly 를 씁니다."
+  confused_with: ["natural", "certainly"]
+
+- word: "currency"
+  reason: "뜻 '통화 (국가별로 다른 화폐)' 의 '통화' 는 전화 통화로도 읽히는 말이고 왕초보가 쓰는 말이 아니다. / 설명 \"'money'보다 더 정확한 표현이에요\" 는 갈림이 아니다 — 둘은 정확도가 아니라 가리키는 것이 다르다(currency 는 나라마다 쓰는 돈의 종류, money 는 돈 그 자체). / 해석 '일본의 화폐는 무엇인가요?' 는 번역투다. / 반박 7건 판정(high 하나). **내가 새로 넣은 '지폐는 a bill(영국에서는 a note)' 이 저장된 두 카드와 정면으로 부딪힌다** — bill 카드는 뜻이 '청구서, 요금' 이고 그 교정의 근거가 'bill 은 받고 낸 돈이 아니라 앞으로 낼 금액을 적은 계산서' 라며 뜻을 좁혀 확정한 것이며, note 카드는 뜻이 '메모, 노트, 주의사항' 뿐이다. 지폐 뜻은 두 카드 어디에도 없어, 이 문장을 읽고 건너간 학습자는 한 낱말의 한국어가 셋으로 갈리는 것을 본다. 영·미 갈림은 A2 카드가 질 짐도 아니다. / **새 해석이 이 카드가 스스로 막던 문장을 되살렸다** — 원본 설명이 \"'What money do they use?'보다는 'What is the currency?'가 자연스러워요\" 라고 콕 집었는데, 새 해석 '일본에서는 어떤 돈을 쓰나요?' 가 바로 그 막던 문장이고 나는 그 경고까지 지웠다. 두 교정이 겹쳐 막던 오류를 유도하는 꼴이 됐다. / 뜻 칸의 '그 나라' 는 받을 것이 앞에 없어 지시가 뜨고, 설명의 '나라마다' 와도 갈린다."
+  meaning_ko: "나라마다 쓰는 돈, 화폐"
+  usage_note: "나라마다 쓰는 돈의 종류가 currency 예요 — The currency of Korea is the won. 손에 쥔 돈 자체는 money 라서 I need money. 라고 하고, 쇠붙이 동전 하나는 a coin 이에요. 어떤 돈을 쓰느냐고 물을 때는 What money do they use? 보다 currency 를 쓰는 쪽이 자연스러워요."
+
+- word: "database"
+  reason: "뜻 '데이터가 저장된 대규모 컴퓨터 파일' 은 '대규모' 도 '파일' 도 맞지 않는다 — 작은 데이터베이스도 database 이고, 파일 하나가 아니라 자료를 모아 두고 찾아 쓰게 만든 것이다. / 해석 '이것은 고객 데이터베이스입니다' 의 '이것은' 은 번역투다. / 설명이 data 와의 갈림만 다루고 이 낱말이 문장에서 서는 자리를 안 보여 준다. / 반박 7건 판정(high 셋). **'그 안에 든 자료 하나하나는 data 라고 해요' 가 저장된 카드 둘을 동시에 무너뜨린다** — data 카드는 문형이 'much / a lot of + data' 이고 설명이 'How many data 라고는 하지 않아요' 라 세지 않는 말로 확정된 카드인데, '하나하나' 는 곧 셀 수 있다는 뜻이라 그 카드가 막으려던 a data / three datas 를 그대로 유도한다(낱개는 a datum 이지 a data 가 아니다). 게다가 '컴퓨터에 저장된 자료 하나하나' 는 저장된 file 카드가 이미 file 에 붙여 둔 한국어라, 빈칸 답이 file 과 data 둘이 된다. / **문형 'a + database' 가 카드의 어느 쪽과도 안 맞는다** — 예문의 뼈대인 of 가 없고, 새 설명이 드는 두 예는 둘 다 the 다(search the database, add to the database). 같은 교정안이 disorder·pollution 에서 쓴 잣대를 여기서만 안 썼다. / 해석이 뜻 칸의 괄호 풀이를 낱말째 옮겨 같은 말을 두 번 하고, of customers 는 고객 자체를 담았다는 말인데 '자료' 를 보탰다. / '새로 넣는 것은 …라고 씁니다' 는 임자말과 풀이말이 안 맞는다."
+  meaning_ko: "데이터베이스 (자료를 모아 둔 곳)"
+  pattern: "a/the + database (+ of + 명사)"
+  usage_note: "자료를 차곡차곡 모아 두고 찾아 쓸 수 있게 만든 것이 database 예요 — search the database. 그 안에 담긴 자료를 통틀어 data 라고 하고, 자료 한 건은 a record 라고 해요. 새로 넣을 때는 add it to the database 라고 합니다."
+
+- word: "territory"
+  reason: "해석 '이것은 우리 나라 영토입니다' 의 '이것은' 은 땅을 가리키는 말로 어색한 번역투이고, 예문 'This is our country's territory.' 도 영어로 잘 쓰지 않는 꼴이다. / 뜻 '영토, 영역' 과 설명이 나라 쪽만 다루는데, 이 낱말이 왕초보에게 실제로 걸리는 자리는 짐승이 제 구역을 삼는 쪽(mark its territory)이다. / 이웃 area(지역, 구역)·region(지역) 과 뜻 칸이 '영역/지역' 으로 겹쳐, 갈라 준다는 설명이 '정치적 의미가 더 강해요' 라는 잴 수 없는 말에만 실려 있다. / 반박 4건 판정(high 하나). **예문과 설명을 새로 쓰면서 문형을 안 건드려, 카드에 실린 영어 세 조각 가운데 a 를 붙인 것이 하나도 없게 됐다** — 예문은 our territory(소유격), 설명은 enter enemy territory(관사 없음)와 mark its territory(소유격)다. 카드가 가르치는 뜻에서 territory 는 셀 수 없는 쪽으로 쓰고(Japanese territory, in enemy territory), a territory 는 Guam is a US territory 처럼 자치령을 세는 딴 뜻인데 그 뜻은 카드에 없다. 문형만 따라 쓰면 카드 어디에도 없는 문장이 나온다. / **새 뜻의 '구역' 이 없애겠다던 겹침을 되풀이한다** — 저장된 area 카드의 뜻이 '지역, 구역' 이고 area 는 이 카드의 혼동 칸에 그대로 있다. 게다가 '제 구역' 의 '제' 는 이 자료에서 거의 언제나 '저의' 로 쓰여 왕초보는 '내 구역' 으로 읽는다. / 설명의 '무리' 는 이 자료가 사람·짐승 떼에만 쓰는 말이고 나라와 나란히 놓는 자리에는 '집단' 을 쓴다. '~라며' 도 사실이 아닐 수 있다는 전언 꼴이다."
+  meaning_ko: "영토; 짐승이 차지한 땅"
+  pattern: "소유격/명사 + territory (관사 없이)"
+  example: "This land is our territory."
+  usage_note: "어느 나라나 집단이 차지해 다스리는 땅이 territory 예요 — enter enemy territory. 짐승이 차지한 자리도 territory 라서 mark its territory 라고 해요. 그냥 어떤 곳을 가리킬 때는 area, 여러 곳을 아우르는 넓은 지방은 region 이에요."
+
+- word: "stream"
+  reason: "**문형이 예문과 품사부터 어긋난다** — 문형 'stream + 목적어 (물, 정보 등)' 는 움직씨 꼴인데 예문 'There is a stream near the forest.' 의 stream 은 이름씨다. 학습자가 문형대로 따라 쓰면 예문 같은 문장을 만들 수 없다. / 뜻 '물이 흐르는 줄, 강' 이 이웃 river 카드의 뜻 '강' 을 그대로 품어, 갈라 주겠다고 걸어 둔 카드와 같은 말이 된다. / 설명이 든 '정보가 흐르는 것도 stream' 은 요즘 학습자가 훨씬 자주 만나는 뜻(영상을 받아 보다)을 안 보여 준다. / 반박 9건 판정(high 하나). **원본이 앓던 병을 방향만 뒤집어 되풀이했다** — 원본은 문형이 움직씨인데 예문이 이름씨였고, 내 교정은 뜻·문형을 이름씨로 좁혀 놓고 설명 끝에 'stream a movie' 라는 움직씨 쓰임을 넣었다. 내 reason 스스로 그 뜻을 '요즘 학습자가 훨씬 자주 만나는 뜻' 이라 적어 놓고 그것이 들어갈 칸을 닫아 버렸다. / **'시내' 가 왕초보에게 市內(도심)로 먼저 읽힌다** — 이 자료에서 '시내' 가 쓰인 유일한 자리도 highway 카드의 '시내의 큰길' 이라 도심 쪽이다. 뜻 칸 첫 낱말이 다른 뜻으로 읽히면 카드가 통째로 어긋난다. / **'근처 → 가까이' 는 이 저장소가 이미 되돌린 결정이다** — gloss_fixes 의 nearby 항목이 \"'가까이에 은행이 있어요?' 는 길 묻는 자리에서 쓰는 한국어가 아니다 — 뜻 칸에도 '근처' 를 되살렸다\" 로 정확히 반대 방향을 적어 두었고, 짝 카드 river 의 저장된 해석도 '우리 집 근처에 강이 있어요.' 다. / 한 물건을 부르는 말이 넷으로 갈린다 — 뜻 '시내/개울', 설명 '물줄기', river 카드의 '작은 하천'. / 혼동 칸의 flow 를 설명이 한 번도 안 다룬다. / '받아 보다' 는 내려받아서 본다는 말로 읽혀 스트리밍의 뜻을 뒤집는다."
+  meaning_ko: "개울, 시냇물; (영상·음악을) 이어서 보다"
+  pattern: "a + stream / stream + 목적어 (영상·음악)"
+  usage_note: "강보다 좁고 얕게 흐르는 개울이 stream 이에요 — a mountain stream. 더 크고 넓은 것은 river(강)예요. 물이 움직이는 동작 자체는 flow 라서 The water flows slowly. 라고 합니다. 인터넷으로 영상이나 음악을 내려받지 않고 바로 이어서 보는 것도 stream 이라 stream a movie 처럼 써요."
+
+- word: "western"
+  reason: "혼동 칸의 westerner 는 카드가 없다. / 설명이 '문맥에 따라 다르게 해석되니 주의하세요' 라고만 하고 무엇을 보고 가리는지는 안 알려 준다 — 실제 표시는 대문자다(Western food 는 서양 음식, the western part 는 서쪽 부분). 그 규칙이 카드에 없어 학습자가 가릴 방법이 없다. / 자리 검사 — **내가 새로 만든 결함이다.** 설명을 '서양 쪽 뜻일 때는 대문자로 적어 Western food 라고 합니다' 로 다시 썼는데, 예문이 소문자 'I like western food.' 그대로라 설명이 제 예문을 부정하게 됐다. / 반박 7건 판정(high 셋). 예문이 소문자 그대로라 설명이 제 예문을 부정하던 것은 자리 검사에서 잡았다(예문을 Western food 로). **거기에 더해 대문자를 두 뜻을 가르는 잣대로 세운 것 자체가 없는 규칙이다** — 사전은 이 뜻을 'often capitalized' 로 적을 뿐이고 western food 소문자 표기도 흔하며, 반대쪽에도 대문자로 굳은 지리 이름이 있다(Western Europe, the Western Hemisphere, Western Australia). '대문자면 문화 뜻' 이라는 시험이 곧장 깨진다. 검수를 마친 southern 카드도 대문자를 나라 이름(South Korea)에만 걸고 뜻 가르기에는 안 쓴다. / **뜻 칸이 형제 카드 셋과 어긋난다** — northern '북쪽의, 북부의', southern '남쪽의, 남부의', eastern '동쪽의, 동쪽에 있는' 인데 western 만 '서양의' 가 첫머리라, 새 설명이 첫 문장에 세운 '서쪽의' 를 뜻 칸에서 못 찾는다. / 혼동 칸에 새로 넣은 west 를 설명이 한 글자도 안 다룬다 — 저장된 northern·southern 카드는 맨몸 형태를 반드시 한 문장씩 갈라 준다."
+  meaning_ko: "서쪽의, 서부의; (문화를 말할 때) 서양의"
+  example: "I like Western food."
+  usage_note: "서쪽에 있다는 뜻이라 the western part of the country 처럼 써요. 유럽이나 미국 쪽 문화를 가리킬 때도 쓰는데, 그때는 Western food, Western culture 처럼 대문자로 적는 일이 많아요. 방위 자체는 west 라서 to the west of the station 처럼 쓰고, 이름씨 앞에 붙는 그림씨가 western 이에요. 동쪽은 eastern 입니다."
+  confused_with: ["eastern", "west"]
+
+- word: "muscle"
+  reason: "설명이 한국어에 복수형이 없다는 이야기로 시작해 영어를 안 가르치고, \"'muscle'은 명사로만 쓰이고\" 는 품사 단정이다(muscle in, muscle through 처럼 움직씨로도 쓴다). 든 보기 'muscle into' 도 '고급 표현' 이라고만 하고 뜻을 안 알려 준다. / 혼동 칸의 flesh 는 카드가 없고, meat(고기)는 muscle 과 바꿔 쓸 일이 없어 헷갈리는 짝이 아니다. / 자리 검사. 문형 'a/the + muscle' 이 예문 'I need to build more muscle.' 과 어긋난다 — 예문에는 관사가 없고, 새 설명도 '하나하나를 셀 때는 muscles' 라고 해서 홑수에 관사를 붙이지 않는 자리를 가르친다. / 반박 8건 판정(high 셋). **문형 'a/the + muscle' 이 예문과 설명 둘 다를 부정한다** — 예문 'I need to build more muscle.' 에는 관사가 없고, 새 설명도 셀 수 없는 쪽(build muscle)과 셀 때(muscles)를 갈라 가르친다. 문형대로 외운 학습자는 I need to build a muscle. 을 만든다. 이 자료는 똑같은 어긋남을 meat 에서 이미 잡아 문형을 'meat / the + meat / a piece of meat' 로 고친 선례가 있다. / **'몸속 뼈대는 bones' 가 저장된 카드 셋과 부딪힌다** — 혼동 칸에 새로 넣은 bone 카드가 '뼈를 다 모아 놓은 뼈대는 a skeleton 이라고 합니다' 로 '뼈대' 를 skeleton 에 명시적으로 넘겨 두었고, framework 카드는 뜻 칸이 아예 '뼈대, 틀' 이며 outline 카드도 '뼈대' 를 쓴다. / **혼동 칸의 bone 은 bone 카드가 이미 같은 근거로 물리친 짝이다** — 그 카드의 reason 이 '뼈와 살은 마주 놓이는 말일 뿐이다' 라며 meat 를 뺐는데, muscle 과 bone 도 똑같이 마주 놓이는 말이지 빈칸에서 헷갈려 잘못 고를 짝이 아니다. / '힘살' 은 두 파일을 통틀어 이 문장에만 나오는 말이고, 같은 카드가 바로 앞줄에서 같은 것을 '근육' 이라 두 번 부른다."
+  pattern: "build + muscle / a + muscle (하나로 셀 때)"
+  usage_note: "몸을 움직이게 하는 살이 muscle 이에요 — build muscle(근육을 키우다). 하나하나를 셀 때는 muscles 라고 해서 sore muscles(뻐근한 근육) 처럼 쓰고, 다칠 때는 하나로 세어 I pulled a muscle. 이라고 해요. 근육이 잘 붙은 몸을 말할 때는 그림씨 muscular 를 써서 a muscular arm 이라고 합니다."
+  confused_with: []
+
+- word: "badly"
+  reason: "뜻 '비상한 상태로, 심각하게' 의 '비상한 상태로' 는 우리말로 뜻이 잡히지 않는다. / **문형 'badly + 목적어 (일반적으로 동사)' 가 제 예문과 어긋난다** — 예문 'He hurt his leg badly.' 에서 badly 는 앞이 아니라 뒤에 온다. 문형대로 쓰면 He badly his leg. 같은 문장이 나온다. / 이 낱말의 또 다른 뜻(잘 못한다)이 카드에 없다. / 해석 '그는 다리가 심하게 다쳤어요' 는 조사가 어긋났다 — 다리를 다친 것이다. / 반박 7건 판정(high 셋). **새 문형 '동사 + badly' 를 내 설명이 두 번 어긴다** — 'badly damaged' 와 'I badly want it.' 은 둘 다 badly 가 앞에 온다. 영어에서 badly 는 과거분사 앞자리가 오히려 굳어 있고(badly damaged, badly injured, badly written) need·want 앞도 마찬가지다. 원본 문형 'badly + 목적어' 를 고치면서 정반대 쪽으로 똑같이 좁힌 셈이라, 학습자는 badly damaged 를 틀린 말로 읽게 된다. 검수를 마친 seriously 카드가 '동사 + seriously / seriously + 동사-ing' 로 두 자리를 다 적어 둔 선례다. 예문 'He hurt his leg badly.' 도 동사와 badly 사이에 목적어가 끼어 있어 '동사 + badly' 와 안 맞는다. / **뜻 칸에서 '나쁘게' 를 뺀 것이 저장된 treat 카드와 부딪힌다** — 그 카드는 '나쁘게 대하면 badly 를 뒤에 붙여요 — They treat us badly.' 라고 badly 를 정확히 '나쁘게' 로 가르치고, 저장된 poorly 항목의 근거도 \"'나쁘게'는 badly 로 읽히니\" 라고 이 대응을 확정해 두었다. / 설명이 가르치는 셋째 뜻('몹시')이 뜻 칸에 없고, '서투르게' 는 두 파일 어디에도 없는 말인 데다 같은 설명이 그 뜻을 '잘 못한다' 로 달리 부른다. / 'I badly want it.' 은 연어가 어색하다 — 이 뜻으로 굳은 짝은 badly need 이고, want 에 대명사 목적어가 붙으면 I want it badly. 쪽이 자연스럽다."
+  meaning_ko: "심하게; 나쁘게, 잘 못; (need·want 와 함께) 몹시"
+  pattern: "동사 + badly / badly + 과거분사"
+  usage_note: "얼마나 심한지를 말할 때 동사 뒤에 붙여요 — hurt badly. 망가진 정도를 말할 때는 앞에 붙여 badly damaged 라고 합니다. 잘 못한다는 뜻으로도 써서 She sings badly, They treat us badly 처럼 쓰고, 몹시 아쉽다고 할 때도 써서 I badly need a break. 라고 해요. 그림씨 자리에는 bad 를 써서 This food is bad. 라고 합니다."
+
+- word: "everyday"
+  reason: "혼동 칸의 'every day' 는 카드가 없어 눌러도 갈 곳이 없다 — 설명에서 두 꼴을 갈라 주는 것은 그대로 두고 혼동 칸만 카드가 있는 낱말로 바꾼다. / 설명의 '부사어' 는 학습자가 읽는 말이 아니라, 이 DB 가 쓰는 말(어찌씨)이나 쉬운 풀이로 바꾼다. / 자리 검사. 새 설명은 '날마다 쓰는, 흔한' 이라고 푸는데 뜻 칸은 '매일 사용하는, 일상적인' 이라 같은 것을 부르는 한국어가 칸마다 갈린다. 이 DB 는 다른 곳에서 '날마다' 를 쓴다. / 반박 6건 판정(high 셋). **내가 새로 세운 '띄어 쓴 every day 는 문장 뒤에 붙여요' 가 거짓이고, 이 저장소가 이미 같은 문장을 거짓으로 판정해 둔 자리다** — daily 항목의 reason 에 \"올라온 FIX 의 'every day 는 문장 끝에만 붙여요' 는 Every day I check my email. 을 부정하는 새 거짓이라 실제로 갈리는 자리(명사 앞)로 바꿨다\" 고 적혀 있다. 같은 묶음의 whenever 에서 내가 '문장 맨 앞에만' 을 거짓이라며 잡아 놓고 여기서 거울상을 새로 만들었다. / **혼동 칸을 daily 로 갈아 끼우고 설명은 daily 를 한 글자도 안 다룬다** — 게다가 두 카드가 자리를 통째로 나눠 갖는다(daily 뜻 '매일의, 일일의' + 문형 'daily + 명사', everyday 뜻 '매일 사용하는' + 문형 'everyday + 명사'). '___ life' 빈칸의 답이 둘이 된다. 실제 영어에서 둘은 갈린다 — daily 는 하루 한 번씩 되풀이(a daily newspaper), everyday 는 특별할 것 없이 흔한(everyday clothes). / 맺음 '붙이면 그림씨, 띄우면 때를 나타내는 말입니다' 를 일반 규칙처럼 못박았는데 바로 그 daily 가 반례다 — 붙여 쓴 한 낱말인데 I check my email daily. 처럼 때를 나타낸다. / 품사를 '이름씨·그림씨' 로 불렀는데 이 카드의 문형 칸은 '명사' 이고 짝 카드 daily 도 '명사·부사' 를 쓴다."
+  meaning_ko: "늘 쓰는, 흔한 (특별할 것 없는)"
+  usage_note: "명사 앞에 붙어 '늘 쓰는, 특별할 것 없는' 이라는 뜻이 everyday 예요 — everyday life, everyday clothes. 띄어 쓴 every day 는 '날마다' 라는 때를 가리켜요 — I go to school every day. 명사 앞에는 붙이지 못합니다. daily 는 하루에 한 번씩 되풀이한다는 쪽이라 a daily newspaper(일간지) 처럼 써요."
+  confused_with: ["daily"]
+
+- word: "boundary"
+  reason: "**설명이 든 보기가 영어로 틀렸다** — \"'What is the boundary between Korea and China?'가 자연스러워요\" 라고 했지만 나라와 나라 사이는 border 라고 한다. 이 카드를 읽은 학습자는 border 를 써야 할 자리에 boundary 를 쓰게 되고, 정작 border 는 혼동 칸에도 설명에도 없다. / 뜻 '경계, 경계선' 이 이웃 edge 카드의 뜻 '가장자리, 경계' 와 '경계' 를 나눠 가진다. / 자리 검사. 문형 'a/the + boundary' 가 예문 'This is the boundary of the park.' 의 of 를 안 담는다 — 어디의 경계인지 붙이는 자리가 문형에서 빠졌다. / 반박 6건 판정(high 하나). **내가 스스로 든 근거를 내 교정이 안 지켰다** — '뜻 경계, 경계선 이 edge 의 경계 와 겹친다' 고 해 놓고 새 뜻 '구역이 갈리는 선, 경계' 에 '경계' 를 그대로 남겼다. 오히려 혼동 칸을 ['border','edge'] 로 바꾸면서 겹치는 카드 둘을 다 매달았다(border 뜻 '경계선, 국경', edge 뜻 '가장자리, 경계'). 한국어 '경계' 로 되묻는 빈칸에 셋이 다 답이 된다. / **문형 'a/the + boundary' 가 관사만 보여 준다** — 예문의 of 자리도, 새 설명이 든 between 자리도 없다. 같은 교정안이 ratio 는 문형을 자리까지 채웠고, 혼동 칸에 건 이웃들도 자리가 있다(border 'border + between + 두 곳', edge 'the edge of + 장소'). / '나라와 나라 사이는 border' 만으로는 안 갈린다 — 저장된 border 카드가 스스로를 '두 나라나 두 지역이 맞닿는 선' 이라 적어 '지역' 까지 가져간다. 실제로 갈리는 자리는 한 나라 안에서 땅·구역을 가르는 선이 boundary 라는 것이다. / 뜻('구역이 갈리는 선' — 저절로 갈리는 쪽)과 설명('어디까지가 이쪽 구역인지 가르는 선' — 누가 가르는 쪽)이 태가 흔들린다."
+  meaning_ko: "구역을 가르는 선"
+  pattern: "the boundary of + 곳 / the boundary between + 두 곳"
+  usage_note: "한 나라 안에서 땅이나 구역을 가르는 선이 boundary 예요 — the city boundary, the boundary between the two farms. 나라와 나라 사이는 border 라고 해서 cross the border 라고 씁니다. 물건의 바깥 가장자리는 edge 예요."
+  confused_with: ["border", "edge"]
+
+- word: "ratio"
+  reason: "뜻 '비율, 비' 가 이웃 카드 둘과 겹친다 — proportion 이 '비율, 비례', percentage 가 '백분율, 비율' 이라 셋이 '비율' 을 나눠 갖는다. / 설명이 \"'ratio of' 뒤에 두 개의 대상이 온다고 기억하세요\" 라고 외우기를 시키면서, 정작 그 사이에 들어가는 to 를 짚지 않는다 — 예문의 'of boys to girls' 에서 왕초보가 빠뜨리는 것이 바로 to 다. / 해석 '3대2' 는 '3 대 2' 로 띄어 써야 한다. / 반박 4건 판정. **예문에는 to 가 둘인데(대상을 잇는 to, 값을 잇는 to) 문형도 설명도 첫째만 다룬다** — 뒤의 'is 3 to 2' 는 어느 칸에서도 안 짚히는데 해석은 그 부분을 '3 대 2예요' 로 옮긴다. 예문의 절반이 카드에서 설명되지 않는다. / 문형에 the 를 붙박이로 넣은 것도 지나치다 — in a ratio of 2 to 1, a high ratio of fat to muscle 처럼 a 로도 쓴다. 자리말 A·B 도 이 DB 의 다른 문형 칸이 쓰는 한국어 자리말과 어긋난다. / 해석의 '비는' 은 홑으로 주어 자리에 서서 왕초보가 먼저 비(rain)로 읽는다 — 뜻 칸은 괄호가 받쳐 주지만 해석에는 받쳐 줄 것이 없다."
+  meaning_ko: "비 (두 수를 견준 것)"
+  pattern: "a/the ratio of + 무엇 + to + 무엇"
+  usage_note: "두 수를 견주어 3 대 2 처럼 말하는 것이 ratio 라, 사이에 to 를 넣어 the ratio of teachers to students 라고 해요. 값도 to 로 이어 붙입니다. 전체 가운데 얼마만큼인지는 proportion 이라 a large proportion of students 라고 하고, 100 을 기준으로 말하면 percentage 예요."
+
+- word: "essay"
+  reason: "뜻 '논문, 에세이' 의 '논문' 이 틀렸다 — 학술 논문은 a paper 나 a thesis 이고, essay 는 학교에서 제 생각을 풀어 쓰는 과제 글이다. 뜻 칸을 그대로 외우면 대학원 논문을 an essay 라고 부르게 된다. / 설명이 '자신의 생각을 담고 있어요' 한 줄로 report 와 갈라 놓았을 뿐 영어 보기가 없고, 혼동 칸에 걸린 article 은 설명에서 한 번도 안 다룬다. / 반박 7건 판정(high 둘). **뜻 칸에서 '에세이' 를 뺀 효과를 옆 칸이 상쇄한다** — 해석에 essay 항목을 안 넣어 '기후 변화에 대해 에세이를 써야 해요.' 가 그대로 남았고, 카드를 뒤집어 해석만 읽는 학습자는 결국 지운 말을 그대로 배운다. 게다가 한국어 '에세이' 는 일상에서 수필 쪽으로 먼저 읽히는데 그것이 바로 새 뜻이 밀어낸 자리라, 뜻 칸은 학교 과제라 하고 해석은 수필로 읽히는 말을 남긴 꼴이 됐다. / **'과제 글' 은 한국어에서 굳어진 말이 아니다** — 학교에서 써 내는 글을 '과제', '리포트', '글' 이라고 하지 '과제 글' 이라고 묶어 부르지 않는다. 게다가 '과제' 는 이 DB 가 assignment 카드에 준 말이다. / **저장된 composition 카드가 제 혼동 칸에 essay 를 걸어 두고 '학교에서 써 내는 글도 composition' 이라 적었는데 이쪽은 그 낱말을 한 번도 안 다룬다** — 내가 옛 카드를 나무란 근거('혼동 칸에 걸린 article 은 설명에서 한 번도 안 다룬다')가 그대로 되풀이됐다. / 문형은 about, 설명의 report 보기는 on 이라 나란히 읽으면 없는 갈림으로 읽힌다 — write an essay on climate change 도 write a report about the results 도 다 쓴다."
+  meaning_ko: "(학교에서) 제 생각을 풀어 쓰는 글"
+  usage_note: "학교에서 주제를 놓고 제 생각과 까닭을 펴 쓰는 글이 essay 예요 — write an essay. 알아본 것을 정리해 알리는 글은 a report 라서 write a report about the results 라고 해요. 글쓰기 연습으로 써 내는 짧은 글은 a composition 이라고도 합니다. 신문이나 잡지에 실리는 글은 an article 이에요."
+  confused_with: ["report", "article", "composition"]
+
+- word: "scream"
+  reason: "**문형과 예문이 둘 다 이 낱말이 실제로 서는 자리가 아니다** — 문형 'scream + about/over + 이유' 는 잘 쓰지 않는 꼴이고, 예문 'He screamed over the noise.' 의 over 는 '소음 때문에' 가 아니라 '소음보다 크게' 로 읽힌다. 그런데 해석은 '소음 속에서' 라고 세 번째 뜻으로 옮겨, 문형·예문·해석이 저마다 딴 말을 한다. / 해석 '소리를 지르며 외쳤어요' 는 같은 말을 두 번 적은 겹말이다. / 혼동 칸의 yell 은 카드가 없다. / 반박 10건 판정(high 둘). **설명 첫 문장이 제 뜻 칸·문형 칸을 부정한다** — '…지르는 소리가 scream 이에요' 는 이름씨 풀이인데 뜻·문형·예문은 모두 움직씨다. 게다가 '지르다' 는 목적어를 받아야 하는 말이라 '지르는 소리' 는 '소리를 지르는 소리' 가 되어 우리말이 안 선다. 저장된 shout 카드는 같은 내용을 'scream 은 무섭거나 아플 때 내는 높은 비명이에요' 로 '내는' 을 써서 바르게 적었다. / **'화가 나서 사람에게 지를 때는 scream at' 이 저장된 shout 카드와 정면으로 부딪힌다** — 그 카드는 '누구를 향해 화내며 지르는 것은 shout at' 이라 못박았고 두 카드가 서로를 혼동으로 걸고 있어, 학습자는 똑같은 한국어에 두 답을 받는다. / **'shout for help' 가 갈림의 보기로 틀렸다** — scream for help 도 아주 흔한 영어라 for help 는 두 낱말이 다 쓰는 자리이고, 저장된 shout 카드는 '멀리 있는 사람에게 알리려 지르는 것은 shout to' 로 to 를 짚는다. / 뜻 '비명을 지르다' 하나로는 내가 새로 넣은 문형의 둘째 갈래(scream at)를 못 받는다 — He screamed at me. 는 '나에게 비명을 질렀다' 가 아니라 '악을 썼다' 다. / 혼동 칸에 새로 넣은 cry 를 설명이 한 번도 안 다룬다 — 저장된 cry 카드는 거꾸로 '무서워서 지르는 비명은 scream 입니다' 로 갈라 주고 있다."
+  meaning_ko: "비명을 지르다; (화나서) 소리 지르다"
+  pattern: "scream (홀로) / scream at + 사람"
+  example: "She screamed when she saw the snake."
+  usage_note: "무섭거나 아파서 아주 높고 날카롭게 소리를 지르는 것이 scream 이에요. 화가 나서 사람에게 악을 쓰듯 지를 때도 at 을 붙여 scream at me 라고 하는데, 말로 퍼붓는 쪽은 shout at me 가 더 흔해요. 멀리 있는 사람을 부를 때는 to 를 붙여 shout to him 이라고 합니다. 눈물을 흘리며 우는 것은 cry 예요."
+  confused_with: ["shout", "cry"]
+
+- word: "withdraw"
+  reason: "설명 '돈을 빼는 경우에만 money를 목적어로 쓰고, 다른 경우는 목적어를 직접 쓰세요' 는 무슨 말인지 잡히지 않는다 — money 도 목적어이므로 앞뒤가 같은 말이고, 학습자가 무엇을 하라는 것인지 알 수 없다. / 뜻 '철수하다, 빼다 (돈, 손, 등)' 도 서로 먼 뜻 셋을 괄호로 몰아 놓았다. / **은행에서 돈을 찾는다는 이 낱말의 가장 흔한 자리에서 짝이 되는 낱말(deposit)이 카드에 없다.** / 혼동 칸의 'take back' 은 카드가 없다. / 자리 검사. 문형 괄호의 '(돈, 손, 등)' 가운데 '손' 은 새 설명이 다루지 않는 자리이고, 새로 넣은 둘째 뜻(자리에서 물러나다, withdraw from)이 문형에 없다. / 반박 10건 판정(high 하나). **'인출' 을 버린 판단은 옳았지만 '찾다' 가 더 나쁜 자리에 떨어졌다** — '찾다' 는 이 DB 에서 A1 카드 find 의 뜻 그 자체라(뜻 '찾다, 발견하다', 해석 '저는 제 열쇠를 찾았어요'), 해석을 빈칸 지시문으로 읽으면 I need to find some money. 가 똑같이 맞는 답이 된다. 게다가 이 DB 는 은행에서 돈을 빼는 일의 한국어를 이미 정해 두었다 — 검수를 마친 ATM 카드가 뜻을 '돈을 뽑거나 넣는 기계' 로 잡아 '뽑다/넣다' 를 withdraw/deposit 짝에 대응시켜 놓았다. / **혼동 칸의 remove 를 설명이 안 갈라 주고, 이 카드가 가르치는 자리에서 둘은 바꿔 쓰지도 못한다** — remove money from the bank 라고는 하지 않는다. 저장된 remove 카드도 take off·delete 하고만 견주어 짝이 양쪽 다 비어 있고, 새 뜻 '(넣어 둔 것을) 빼내다' 가 그 카드의 뜻 '제거하다, 없애다' 와 오히려 더 가까워졌다. deposit 카드의 혼동 칸이 이미 ['withdraw','transfer'] 라 그쪽으로 맞물린다. / **문형이 from 자리를 안 담아 I withdrew the race. 를 만들게 한다** — 이 뜻의 withdraw 는 목적어를 안 받고 from 을 단다. 짝 낱말 withdrawal 카드는 이미 'withdrawal + from + 장소/사람' 을 달고 있어 이름씨 쪽에만 from 틀이 있는 꼴이었다. / 문형 괄호의 '손' 은 옛 설명의 'I withdrew my hand' 가 근거였는데 내가 그 줄을 지워, 카드 어디에도 근거가 없는 말만 남았다. / 뜻 칸의 '물러나다' 는 자리·지위에서 내려온다는 쪽으로 먼저 읽히는데 설명이 드는 보기는 경기 기권 하나뿐이고, 같은 갈래를 뜻은 '물러나다', 설명 괄호는 '빠지다' 로 달리 부른다."
+  meaning_ko: "(넣어 둔 것을) 빼내다; (하던 일·겨루기에서) 빠지다"
+  pattern: "withdraw + 목적어 (돈) / withdraw from + 일·경기"
+  usage_note: "은행에서 돈을 뽑는 것이 withdraw 예요 — withdraw cash from the bank. 돈을 넣는 쪽은 deposit 이라고 해요. 하던 일이나 겨루던 자리에서 빠질 때도 써서 withdraw from the race(경기에서 빠지다) 라고 합니다."
+  confused_with: ["deposit", "transfer"]
+
+- word: "pollution"
+  reason: "**레벨이 A1 인데 이 낱말은 왕초보 첫 어휘가 아니다** — 같은 묶음의 territory·boundary 가 B1 인 것과 견주어도 어긋난다. / 문형 'a/the + pollution' 이 제 예문과 어긋난다 — 예문 'Air pollution is bad for health.' 에는 관사가 없고, pollution 은 하나 둘로 세지 않아 a pollution 이라고 쓰지 않는다. / 설명의 \"'오염'은 명사로만 쓰입니다\" 는 한국어에 대한 품사 단정이라 영어를 가르치지 않는다. / 해석 '건강에 나쁘습니다' 는 '나쁩니다' 가 맞다. / 반박 6건 판정. **예문의 'bad for health' 가 검수를 마친 health 카드가 세운 틀을 깬다** — 그 카드의 문형이 'your/his/my + health (앞에 a 를 붙이지 않아요)' 이고 예문도 'Take care of your health.' 다. 영어에서도 이 자리의 표준은 bad for your health 다. / **새 문형 'air/water + pollution' 이 영어에 없는 두 갈래 고르기를 만든다** — noise·light·plastic·soil pollution 이 다 흔하고, 무엇보다 앞말 없이 홀로 쓰는 쪽이 더 흔하다(Pollution is a serious problem.). 게다가 이 카드의 참 문제인 관사를 문형이 안 지게 됐다 — 저장된 money 카드는 같은 문제를 'money (앞에 a 를 붙이지 않는다)' 로 문형에 담아 두었다. / 설명 첫 줄 '공기나 물이 더러워지는 것' 도 뜻 칸 '오염' 보다 좁아, 바뀐 칸과 남은 칸의 넓이가 어긋난다. / 설명이 '오염' 이라는 말을 한 번도 안 써서 왕초보가 '더러워지다' 와 '오염' 을 이을 다리가 없고, 설명의 '공기' 와 해석의 '대기' 도 갈린다. / 레벨은 A2 를 지킨다 — 반박이 든 근거(pollute 가 B1)에 견줄 만한 A2 카드가 같은 빈도 띠에 여럿 있다(essay 2158, scream 2159, furniture 2163, symbol 2164)."
+  level: "A2"
+  pattern: "pollution (앞에 a 를 붙이지 않는다)"
+  example: "Air pollution is bad for your health."
+  usage_note: "사람이 내놓은 것 때문에 공기나 물, 땅이 더러워지는 것, 곧 오염이 pollution 이에요 — air pollution(대기 오염), water pollution(수질 오염). 시끄러운 소리도 noise pollution 이라고 해요. 앞에 a 를 붙이지 않고 그대로 씁니다. 더럽히는(오염시키는) 동작은 pollute 라서 They polluted the river. 라고 해요."
+
+- word: "disorder"
+  reason: "**이 낱말이 오늘날 가장 자주 쓰이는 뜻(몸·마음의 질환)이 카드에 아예 없다** — an eating disorder, a sleep disorder 처럼 쓰는 쪽인데 뜻·예문·설명이 모두 '질서의 부재' 만 다룬다. / 예문 'There is a lot of disorder in the room.' 은 그 뜻에서 관사 없이 쓰는 꼴인데 문형은 'a + disorder' 라 서로 어긋난다. / 해석 '방에 너무 많은 혼란이 있어요' 는 번역투다. / 설명의 \"'disorder'은 명사로만 쓰이고\" 는 품사 단정이고 조사도 틀렸다. / 반박 7건 판정(high 둘). **새 뜻의 '어지러움' 이 살아 있는 카드 셋과 같은 한국어를 나눠 갖는다** — 검수를 마친 dizzy 카드의 뜻이 아예 '어지럽다' 이고, turmoil 뜻이 '혼란, 어지러움', mess 뜻이 '엉망이 되다, 어지럽다' 인 데다 뒤의 둘은 제 혼동 칸에 disorder 를 걸고 있다. 더 나쁜 것은 자리다 — '(몸·마음의) 장애, 질환' 바로 뒤에 붙어 있어 왕초보는 이것을 무질서가 아니라 현기증으로 읽는다. / **'질환' 과 '병' 도 이웃이 쥔 말이다** — disease 뜻이 '질병', illness 뜻이 '(앓고 지내는) 병, 병치레' 이고, 그 두 카드는 '몸에 생긴 탈 자체 대 그 탈로 앓고 지내는 상태' 라는 축을 애써 세워 검수를 마쳤는데 disorder 는 그 축 어디에도 자리를 안 잡은 채 셋째로 끼어들었다. / 혼동 칸에 새로 넣은 illness 를 설명이 한 번도 안 다루고, 그 카드도 disease·sickness 하고만 견주어 짝이 양쪽 다 비었다. / 문형의 자리표시 '종류' 가 무엇을 넣으라는 말인지 안 알려 준다 — sleep·eating 은 disorder 의 '종류' 가 아니라 무엇이 제대로 안 돌아가는지를 가리키는 말이다. 같은 묶음의 pollution 에서는 내가 실제 낱말을 보여 주는 쪽으로 적어 한 묶음 안에서 표기가 갈렸다. / in disorder 는 격식·글말 쪽이라, 방이 어지럽다고 할 때 이 수준에서 쓰는 말은 a mess 다."
+  meaning_ko: "(몸·마음의) 장애; 어수선함"
+  pattern: "a sleep/eating + disorder"
+  example: "She has a sleep disorder."
+  usage_note: "몸이나 마음이 제대로 돌아가지 않는 상태에 붙는 이름이 disorder 예요 — an eating disorder. 몸에 생긴 탈 자체는 disease, 그 탈로 앓고 지내는 상태는 an illness 라고 해요. 질서가 무너져 어수선한 것도 disorder 라서 in disorder(뒤죽박죽으로) 처럼 쓰는데, 방이 어지럽다고 말할 때는 a mess 를 씁니다."
+  confused_with: ["disease", "illness", "mess"]
+
+- word: "furniture"
+  reason: "**혼동 칸 둘이 다 죽었다** — 'furniture store' 와 'furniture shop' 은 카드가 없을뿐더러 표제어를 통째로 품은 말이라 헷갈리는 짝이 아니다. 설명 마지막 줄도 그 둘을 갈라 주느라 쓰였는데, furniture 와 furniture store 를 헷갈리는 학습자는 없다. / 문형 'a/the + furniture' 가 제 설명과 정면으로 부딪힌다 — 설명이 'a lot of furniture 처럼 써야 해요' 라고 해 놓고 문형은 a furniture 를 보여 준다. / 반박 2건 판정. 해석 '이 방에는 많은 가구가 있어요.' 가 a lot of 를 낱말째 옮긴 번역투다 — 이 DB 는 같은 꼴을 이미 판정해 고쳤고(cloud 카드의 '하늘에 많은 구름이 있어요' → '하늘에 구름이 많아요'), 결정적으로 같은 묶음의 disorder 에서 내가 '방에 너무 많은 혼란이 있어요' 를 번역투라 판정해 놓고 글자 배열이 거의 같은 이 해석은 그냥 지나쳤다. / 혼동 칸을 비운 것은 그대로 둔다 — 살아 있는 decoration 카드가 제 혼동에 furniture 를 걸어 두어 한쪽만 걸린 채 남지만, 그 카드는 뜻이 '장식, 꾸밈새' 라 왕초보가 furniture 와 바꿔 쓸 짝이 아니다. decoration 을 검수할 차례에 그쪽 혼동에서 furniture 를 빼는 것이 맞다."
+  pattern: "a lot of / a piece of + furniture"
+  usage_note: "책상·의자·침대를 통틀어 furniture 라고 해요. 하나 둘로 세지 않아서 two furnitures 라고 하지 않고 a lot of furniture, a piece of furniture 라고 씁니다. 하나를 콕 집어 말할 때는 a desk, a chair 처럼 그 이름을 부르면 돼요."
+  confused_with: []
+
+- word: "mother"
+  reason: "짝 맞춤(mom 의 confused_with). 뜻 칸이 '엄마' 라 mom 카드와 글자까지 같아, 어느 쪽을 고쳐도 한 장만으로는 겹침이 안 사라진다. 정작 이 카드의 저장된 해석은 이미 '이분이 저희 어머니예요.' 이고 그 gloss 교정의 까닭이 'father(아버지)·parent(부모) 와 갈려서 답이 하나예요' 였다 — 해석은 '어머니' 로 갔는데 뜻 칸만 '엄마' 로 남은 짝 칸 안 맞춤이다. 이웃 father 카드가 뜻을 '아빠, 아버지' 로 두 층으로 갖는 것과도 어긋난다. / 되읽기. 뜻을 '어머니' 로 갈라 놓았는데 설명이 '엄마와 mother는 동일하지만' 으로 시작해 여전히 '엄마' 를 쓰고, 정작 짝인 mom 은 한 번도 안 든다 — 한 칸만 고치고 짝 칸을 안 맞춘 자리다. '더 공식적인 표현' 도 잴 수 없는 말이라, 어디서 쓰는지로 바꾼다."
+  meaning_ko: "어머니"
+  usage_note: "mom 을 딱딱하게 이르는 말이 mother 예요 — 서류나 글에서 My mother is a teacher. 처럼 씁니다. 집에서 부르거나 편하게 말할 때는 mom 을 써요. 아버지는 father, 부모를 아울러 이르면 parents 예요."
+
+- word: "frighten"
+  reason: "짝 맞춤(scare 의 confused_with). 뜻 '무서워하게 하다' 가 scare 의 '겁주다, 놀라게 하다' 와 같은 자리를 다른 말로 적어, 두 카드를 나란히 읽는 학습자가 차이를 뜻 칸에서 잘못 읽는다. 겹사동('무서워하게 하다')도 읽기 껄끄러워, 이 DB 가 같은 자리에 쓰는 꼴로 맞춘다. / 되읽기. 뜻을 '무섭게 하다' 로 고쳤는데 설명은 'frighten은 무서워하게 하는 동작' 으로 겹사동 그대로다 — 짝 칸을 안 맞췄다. '더 일상적으로 쓰여요' 도 scare 카드가 새로 세운 갈림(좀 더 딱딱하다)과 결이 어긋나 두 카드를 한 축에 올린다."
+  meaning_ko: "무섭게 하다"
+  usage_note: "남을 무섭게 만드는 것이 frighten 이에요. 뜻은 scare 와 같은데 좀 더 딱딱해서, 말할 때는 scare 를 더 씁니다. 내가 무섭다고 할 때는 뒤집어서 be frightened of 나 be scared of 를 써요 — I'm frightened of dogs."
