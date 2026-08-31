@@ -4107,8 +4107,8 @@
   reason: "'그냥 밥' 보다 plain rice(아무것도 안 넣은 밥)가 드러난다. / '그냥 흰밥' 의 '흰' 은 white rice(백미)라는 빛깔 이야기라 뜻 칸의 '아무것도 안 넣은' 을 흐린다 — 현미도 plain rice 일 수 있고 볶음밥의 흰쌀은 white rice 이지만 plain 이 아니다. 남은 '그냥' 도 '흰밥' 이 아니라 '좋아요' 에 걸려 읽힌다."
 
 - word: "volunteer"
-  example_ko: "저는 그 자선 단체에서 자원봉사하고 싶어요."
-  reason: "'이 자선 단체' 는 예문의 the charity 와 어긋난다."
+  example_ko: "저는 그 자선 단체를 위해 자원봉사하고 싶어요."
+  reason: "'이 자선 단체' 는 예문의 the charity 와 어긋난다. / '~에서' 는 장소를 뜻해 되돌리면 volunteer at the charity 가 나온다 — 카드가 가르치는 for 자리를 해석이 보여 주지 못했다."
 
 - word: "calm"
   example_ko: "그는 그 소식에 차분했어요."
@@ -4131,8 +4131,8 @@
   reason: "'이 선물로 인해' 는 '~로 인해' 번역투다. / 예문을 표제어 자리 'To my delight, she came back.' 으로 옮긴 데 맞춘다. 옛 해석은 현재 상태를 과거로 바꾸고 예문에 없는 '받고' 를 넣었으며 with 자리를 지웠다."
 
 - word: "spell"
-  example_ko: "이름 철자가 어떻게 되세요?"
-  reason: "**'이름을 어떻게 씁니까?' 는 뜻 칸의 거짓('발음하다')을 그대로 받아 흐릿하다.** spell 은 철자를 대는 것이다."
+  example_ko: "이름 철자 좀 말해 주시겠어요?"
+  reason: "**'이름을 어떻게 씁니까?' 는 뜻 칸의 거짓('발음하다')을 그대로 받아 흐릿하다.** spell 은 철자를 대는 것이다. / '이름 철자가 어떻게 되세요?' 는 'How do you spell your name?' 의 우리말이라, 예문 'Can you spell your name?'(부탁)의 꼴이 사라진다. 하필 같은 설명이 How 꼴을 가르치고 있어 한국어에서 되돌리면 예문이 아닌 쪽이 나온다."
 
 - word: "premise"
   example_ko: "그 이야기의 기본 설정이 재미있어요."
@@ -4167,12 +4167,12 @@
   reason: "'도와주는 일에서 행복을 얻습니다' 는 문체가 어긋나고 늘어진다. / '남을 도우면서' 의 '-면서' 는 같은 때에 일어남을 뜻해, 뜻 칸('~에서 얻다')과 문형이 내내 가르치는 from(어디서 나왔는가)을 해석에서 지운다."
 
 - word: "unemployment"
-  example_ko: "그 나라는 실업이 심해요."
-  reason: "바뀐 예문에 맞췄다."
+  example_ko: "그 나라는 실업률이 높아요."
+  reason: "바뀐 예문에 맞췄다. / '실업이 심해요' 는 한국어 짝짓기가 어색하고(보통 '실업률이 높다' 라고 한다), 이 카드의 문형이 'high/low + unemployment' 라 high 를 겨냥해 출제되는데 '심해요' 에서는 되돌릴 단서가 없다. 짝인 low unemployment 를 옮길 길도 없어진다."
 
 - word: "wheel"
-  example_ko: "그 차는 바퀴가 네 개예요."
-  reason: "'네 개의 바퀴가 있어요' 는 번역투다."
+  example_ko: "앞바퀴가 고장 났어요."
+  reason: "'네 개의 바퀴가 있어요' 는 번역투다. / 예문을 'The front wheel is broken.' 으로 옮긴 데 맞춘다. 옛 예문 'The car has four wheels.' 는 이웃 tire 카드의 'The car has four tires.' 와 틀이 같아 빈칸에서 두 낱말이 함께 정답이 됐다."
 
 - word: "crop"
   example_ko: "우리는 밀과 다른 작물을 길러요."
@@ -4203,8 +4203,8 @@
   reason: "되읽기: '여기 풍경이 매우 아름다워요' 는 조사가 빠지고 '매우' 도 다른 해석들과 문체가 어긋난다."
 
 - word: "fault"
-  example_ko: "그 전화기에 결함이 있어요."
-  reason: "'전화기에는 문제가 있어요' 는 조사가 어색하고 fault(결함)가 드러나지 않는다."
+  example_ko: "제 잘못이에요."
+  reason: "'전화기에는 문제가 있어요' 는 조사가 어색하고 fault(결함)가 드러나지 않는다. / 예문을 'It's my fault.' 로 옮긴 데 맞춘다. 옛 해석 '그 전화기에 결함이 있어요' 는 저장된 deficit 카드('소통에 결함이 있어요')와 낱말·문틀이 통째로 겹쳤고, 이 낱말이 A2 목록에 든 까닭인 잘못·책임 쪽이 카드 어디에도 안 보였다."
 
 - word: "exhibit"
   example_ko: "그들은 박물관에서 그림을 전시해요."
@@ -4215,8 +4215,8 @@
   reason: "'가장 큰 성취는 경기를 이긴 것이었습니다' 는 문체가 어긋나고, competition 을 '경기' 로 좁혔다."
 
 - word: "negotiate"
-  example_ko: "우리는 파는 사람과 값을 흥정했어요."
-  reason: "바뀐 예문에 맞췄다. 옛 문형 'negotiate + about' 은 이 낱말의 흔한 꼴이 아니었다."
+  example_ko: "우리는 파는 사람과 값을 협상했어요."
+  reason: "바뀐 예문에 맞췄다. 옛 문형 'negotiate + about' 은 이 낱말의 흔한 꼴이 아니었다. / '흥정했어요' 는 저장된 bargain 카드(뜻 '값을 협상하다', 해석 '가격을 협상할 수 있을까요?')와 한국어를 맞바꾼 꼴이다 — 값을 깎으려 밀고 당기는 쪽이 bargain, 조건을 걸고 정하는 쪽이 negotiate 인데 정반대로 붙었다. 뜻 칸의 '협상' 어간도 해석에 한 조각 안 남았다."
 
 - word: "shoot"
   example_ko: "그들은 그 영화를 서울에서 찍었어요."
@@ -4235,24 +4235,24 @@
   reason: "**'잠자리에 드요' 는 '들어요' 의 오타다.**"
 
 - word: "peer"
-  example_ko: "십 대는 또래를 많이 신경 써요."
-  reason: "바뀐 예문에 맞췄다. 옛 예문 'She is my classmate and a peer.' 는 두 낱말이 거의 같아 어색했다."
+  example_ko: "십 대는 또래에 신경을 많이 써요."
+  reason: "바뀐 예문에 맞췄다. 옛 예문 'She is my classmate and a peer.' 는 두 낱말이 거의 같아 어색했다. / '또래를 많이 신경 써요' 는 '신경(을) 쓰다' 가 이미 목적어를 품은 말이라 목적어가 겹쳐 어색하다."
 
 - word: "pension"
   example_ko: "그는 매달 연금을 받아요."
-  reason: "'받습니다' 는 다른 해석들과 문체가 어긋난다."
+  reason: "'받습니다' 는 다른 해석들과 문체가 어긋난다. / 예문을 'He gets his pension every month.' 로 옮긴 데 맞춘다 — a pension 은 다달이 새로 하나씩 받는 것이 아니라 계속 받게 된 몫 하나라, every month 와 겹쳐 셈이 어긋나 있었다."
 
 - word: "wing"
   example_ko: "그 새는 날개가 두 개예요."
   reason: "'두 개의 날개를 가지고 있어요' 는 have 를 그대로 옮긴 번역투다."
 
 - word: "acquisition"
-  example_ko: "새 말을 익히는 데는 시간이 걸려요."
-  reason: "'새로운 언어를 배우는 것은 시간이 걸립니다' 는 문체가 어긋나고 늘어진다."
+  example_ko: "새 언어를 익히는 데는 시간이 걸려요."
+  reason: "'새로운 언어를 배우는 것은 시간이 걸립니다' 는 문체가 어긋나고 늘어진다. / '새 말' 은 왕초보에게 '새로 나온 낱말' 이나 '새로 한 말' 로 먼저 읽혀 a new language 를 못 가리킨다 — 앞선 교정의 사유는 문체가 늘어진다는 것뿐이었는데 줄이면서 뜻이 흐려졌다. 같은 DB 의 language·acquire 카드는 줄곧 '언어' 를 쓴다."
 
 - word: "laughter"
-  example_ko: "옆방에서 웃음소리가 들렸어요."
-  reason: "'다음 방에서 당신의 웃음소리가 들려왔어요' 는 next room 을 '다음 방' 으로 잘못 옮겼고 '당신' 도 번역투다."
+  example_ko: "옆방에서 네 웃음소리가 들렸어요."
+  reason: "'다음 방에서 당신의 웃음소리가 들려왔어요' 는 next room 을 '다음 방' 으로 잘못 옮겼고 '당신' 도 번역투다. / 앞선 교정이 '당신' 번역투를 걷어내며 소유격 your 를 아예 지워, 문형 '소유격 + laughter' 가 가르치려는 '누구의 웃음소리인가' 가 해석에서 사라졌다. '네' 로 쓰면 번역투도 아니다."
 
 - word: "deeply"
   example_ko: "실수해서 깊이 사과드립니다."
@@ -4267,8 +4267,8 @@
   reason: "'사용해요' 보다 말하듯이 읽힌다."
 
 - word: "assistance"
-  example_ko: "도움이 좀 필요해요."
-  reason: "'도움 좀 주시겠어요' 는 예문(I need some assistance)이 아니라 딴 문장의 해석이다."
+  example_ko: "도움을 좀 받을 수 있을까요?"
+  reason: "'도움 좀 주시겠어요' 는 예문(I need some assistance)이 아니라 딴 문장의 해석이다. / '도움이 좀 필요해요' 는 'I need some help.' 의 해석과 한 글자도 다르지 않아, 이 카드가 가르치려는 딱딱한 말투가 해석에 하나도 남지 않는다."
 
 - word: "roof"
   example_ko: "지붕이 새요."
@@ -4287,8 +4287,8 @@
   reason: "바뀐 예문에 맞췄다. **옛 예문은 'smart 는 사람에게 잘 안 쓴다' 는 거짓 위에 서 있었다.**"
 
 - word: "layer"
-  example_ko: "이 케이크는 세 겹으로 되어 있어요."
-  reason: "뜻 칸을 '겹, 층' 으로 세운 것에 맞췄다."
+  example_ko: "이 케이크는 세 층으로 되어 있어요."
+  reason: "뜻 칸을 '겹, 층' 으로 세운 것에 맞췄다. / 한국어로 케이크는 '세 층' 이 자연스럽고 '세 겹' 은 옷이나 종이처럼 얇은 것이 포개진 데 쓴다. 뜻 칸에 '켜' 를 넣고 설명에서 케이크 자리를 받아, 건물 층(floor)과는 설명이 갈라 준다."
 
 - word: "upset"
   example_ko: "언니를 속상하게 하지 마세요."
@@ -4307,28 +4307,28 @@
   reason: "바뀐 예문에 맞췄다. 옛 예문 'I need to make some preparation.' 은 원어민이 겹수로 쓰는 자리였다."
 
 - word: "dispute"
-  example_ko: "우리는 값을 두고 다퉜어요."
-  reason: "'가격에 대해 다툼이 있었어요' 는 '~에 대해' 번역투다."
+  example_ko: "그들은 회사와 오래 다툼을 벌였어요."
+  reason: "'가격에 대해 다툼이 있었어요' 는 '~에 대해' 번역투다. / 예문을 'They had a long dispute with the company.' 로 옮긴 데 맞춘다. 옛 예문·해석은 설명이 argument 에 넘긴 자리(둘이 값 가지고 다투는 장면)였고, 이웃 argument 카드의 'We had an argument with the waiter.' 와 틀이 사실상 같아 빈칸에서 두 낱말이 함께 정답이 됐다."
 
 - word: "agenda"
-  example_ko: "내일 회의에서 뭘 다루나요?"
-  reason: "**'내일의 일정은 뭐예요?' 는 agenda 를 '일정' 으로 옮겨 설명이 갈라 놓으려는 schedule 과 도로 붙인다.**"
+  example_ko: "내일 다룰 의제가 뭐예요?"
+  reason: "**'내일의 일정은 뭐예요?' 는 agenda 를 '일정' 으로 옮겨 설명이 갈라 놓으려는 schedule 과 도로 붙인다.** / 예문을 \"What's on the agenda for tomorrow?\" 로 옮긴 데 맞춘다. 옛 해석 '내일 회의에서 뭘 다루나요?' 는 예문에 없는 '회의' 를 넣고 이름씨 agenda 를 통째로 녹여 없애, 학습자가 해석에서 그 자리를 짚을 수 없었다."
 
 - word: "emphasis"
-  example_ko: "중요한 부분을 힘주어 말해 주세요."
-  reason: "'강조를 해 주세요' 는 조사가 어색하고 emphasis 가 이름씨인 것이 드러나지 않는다."
+  example_ko: "중요한 대목에 강조를 더 두어 주세요."
+  reason: "'강조를 해 주세요' 는 조사가 어색하고 emphasis 가 이름씨인 것이 드러나지 않는다. / '중요한 부분을 힘주어 말해 주세요' 는 emphasis 를 통째로 움직씨구로 풀어, 앞선 교정이 내건 사유('이름씨인 것이 드러나지 않는다')와 정반대로 갔다 — 되돌리면 emphasize 가 나온다. '중요' 도 설명이 importance 쪽에 떼어 준 한국어라 '대목' 으로 바꾼다."
 
 - word: "edition"
   example_ko: "이건 그 책의 초판이에요."
   reason: "'첫 번째 판입니다' 는 문체가 어긋나고, 우리말로는 '초판' 이 자연스럽다."
 
 - word: "entertainment"
-  example_ko: "우리는 재미 삼아 영화를 봤어요."
-  reason: "바뀐 예문에 맞췄다. 옛 예문 'This is a great entertainment.' 는 관사가 붙어 어색했다."
+  example_ko: "그 호텔은 밤마다 공연이 있어요."
+  reason: "바뀐 예문에 맞췄다. 옛 예문 'This is a great entertainment.' 는 관사가 붙어 어색했다. / 예문을 'The hotel has live entertainment every night.' 로 옮긴 데 맞춘다. 옛 해석 '재미 삼아' 는 for fun 이 먼저 떠오르는 말이라, 뜻 칸의 '재미' 와 함께 빈칸에서 fun 을 정답으로 만들었다."
 
 - word: "honest"
-  example_ko: "그는 자기 실수를 솔직히 말해요."
-  reason: "'실수에 대해 솔직해요' 는 '~에 대해' 번역투다."
+  example_ko: "그는 자기 실수에 솔직해요."
+  reason: "'실수에 대해 솔직해요' 는 '~에 대해' 번역투다. / '자기 실수를 솔직히 말해요' 는 그림씨를 움직씨로 바꿔 문형 'be + honest' 가 세운 자리를 지운다 — 되돌리면 He tells his mistakes honestly. 가 나오고, '솔직히 말해요' 는 DB 의 honestly 카드 뜻과 글자 그대로 같다."
 
 - word: "undertake"
   example_ko: "제가 그 일을 맡을게요."
@@ -4681,3 +4681,11 @@
 - word: "rapidly"
   example_ko: "그 도시는 빠르게 커졌어요."
   reason: "예문을 'The city grew rapidly.' 로 옮긴 데 맞춘다. 옛 예문 'The car moved rapidly.' 는 설명이 세운 갈래(늘거나 바뀌는 이야기) 밖이었고, 실제로도 차에는 fast·quickly 가 훨씬 흔하다."
+
+- word: "tire"
+  example_ko: "타이어를 갈아야 해요."
+  reason: "짝 맞춤(wheel 의 confused_with). 예문을 'I need to change a tire.' 로 옮긴 데 맞춘다. 옛 해석 '차는 네 개의 타이어가 있어요' 는 wheel 해석을 고칠 때 '번역투' 라며 지운 바로 그 꼴이었다."
+
+- word: "success"
+  example_ko: "그 잔치는 아주 잘됐어요."
+  reason: "짝 맞춤. 예문을 'The party was a big success.' 로 옮긴 데 맞춘다 — 옛 예문 'He had a big success in business.' 는 이 자리에서 보통 have great success 로 쓰는 어색한 꼴이었다."
