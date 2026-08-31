@@ -4223,16 +4223,16 @@
   reason: "바뀐 예문에 맞췄다. **옛 예문은 '사진은 shoot 이 자연스럽다' 는 거짓 위에 서 있었다.**"
 
 - word: "supplier"
-  example_ko: "이 물건은 누가 대나요?"
-  reason: "'제품의 공급자는 누구입니까' 는 딱딱하고 다른 해석들과 문체도 어긋난다."
+  example_ko: "이 물건을 대 주는 회사가 어디예요?"
+  reason: "'제품의 공급자는 누구입니까' 는 딱딱하고 다른 해석들과 문체도 어긋난다. / '이 물건은 누가 대나요?' 는 뜻 칸이 못박은 '회사' 를 '누가' 로 바꿔 사람을 묻고, 문형 'a/the + supplier' 라는 이름씨 자리를 움직씨 '대다' 하나로 지워 버린다. 목적어 없이 홀로 선 '대나요' 도 왕초보에게 뜻이 안 잡힌다."
 
 - word: "prize"
-  example_ko: "저는 그 대회에서 상을 받았어요."
-  reason: "'경연대회에서 상을 받았어요' 는 임자말이 빠지고 '경연대회' 도 늘어진다."
+  example_ko: "저는 그 대회에서 상을 탔어요."
+  reason: "'경연대회에서 상을 받았어요' 는 임자말이 빠지고 '경연대회' 도 늘어진다. / 설명이 prize 는 win, award 는 receive 로 갈라 놓았는데 해석이 won 을 '받았어요' 로 옮겨 그 갈림을 지웠다. 우리말에서 겨루어 이겨 얻는 쪽은 '상을 타다' 이고, 이 DB 의 win 카드도 win a prize 를 '상을 타다' 로 옮긴다."
 
 - word: "typically"
-  example_ko: "저는 보통 밤 10시에 잠자리에 들어요."
-  reason: "**'잠자리에 드요' 는 '들어요' 의 오타다.**"
+  example_ko: "저는 으레 밤 10시에 잠자리에 들어요."
+  reason: "**'잠자리에 드요' 는 '들어요' 의 오타다.** / 해석의 '보통' 은 이웃 usually 카드의 뜻 칸과 같은 말이라, 설명이 애써 usually 와 갈라 놓은 자리를 해석 한 줄이 도로 붙여 버린다. 해석만 보면 이 문장은 usually 문장과 구별되지 않는다."
 
 - word: "peer"
   example_ko: "십 대는 또래에 신경을 많이 써요."
@@ -4259,8 +4259,8 @@
   reason: "'실수로 인해' 는 '~로 인해' 번역투다."
 
 - word: "recognition"
-  example_ko: "그는 일을 잘해서 인정을 받았어요."
-  reason: "'그의 작품으로 인해 인정을 받았습니다' 는 '~로 인해' 번역투이고 work 를 '작품' 으로 좁혔다."
+  example_ko: "그는 자기가 한 일로 인정을 받았어요."
+  reason: "'그의 작품으로 인해 인정을 받았습니다' 는 '~로 인해' 번역투이고 work 를 '작품' 으로 좁혔다. / '일을 잘해서' 는 예문 'He received recognition for his work.' 에 없는 까닭을 지어 넣은 것이고, for his work(그가 한 일)라는 자리를 까닭말로 바꿔 버렸다."
 
 - word: "electricity"
   example_ko: "우리는 매일 전기를 써요."
@@ -4271,20 +4271,20 @@
   reason: "'도움 좀 주시겠어요' 는 예문(I need some assistance)이 아니라 딴 문장의 해석이다. / '도움이 좀 필요해요' 는 'I need some help.' 의 해석과 한 글자도 다르지 않아, 이 카드가 가르치려는 딱딱한 말투가 해석에 하나도 남지 않는다."
 
 - word: "roof"
-  example_ko: "지붕이 새요."
-  reason: "**'집의 지붕이 흘러내리고 있어요' 는 성립하지 않는다** — leak 은 새는 것이다."
+  example_ko: "지붕에서 물이 새요."
+  reason: "**'집의 지붕이 흘러내리고 있어요' 는 성립하지 않는다** — leak 은 새는 것이다. / '지붕이 새요.' 는 무엇이 새는지가 빠져 있고, 왕초보에게 '새요' 가 '새(bird)' 로 읽힐 여지가 있다."
 
 - word: "retirement"
-  example_ko: "그는 회사에서 은퇴할 준비를 하고 있어요."
-  reason: "'은퇴를 준비하고 있어요' 는 조사가 어색하다."
+  example_ko: "그는 회사에서의 은퇴를 준비하고 있어요."
+  reason: "'은퇴를 준비하고 있어요' 는 조사가 어색하다. / 카드가 가르치는 것은 이름씨 retirement 인데 해석이 '은퇴할 준비' 로 움직씨가 되어, 같은 카드의 설명('물러나는 동작은 retire')과 이웃 retire 카드 해석('그는 교직에서 은퇴했어요')에 둘 다 겹친다. 빈칸 문제로 나가면 한국어가 retire 를 가리키는데 답은 retirement 가 된다."
 
 - word: "variation"
   example_ko: "일본에는 이 요리를 조금 바꾼 것이 있어요."
   reason: "'이 요리의 변형이 있어요' 는 '변형' 이 딱딱하고 조사도 어긋난다."
 
 - word: "smart"
-  example_ko: "그녀는 똑똑한 학생이에요."
-  reason: "바뀐 예문에 맞췄다. **옛 예문은 'smart 는 사람에게 잘 안 쓴다' 는 거짓 위에 서 있었다.**"
+  example_ko: "그녀는 아주 똑똑해요."
+  reason: "바뀐 예문에 맞췄다. **옛 예문은 'smart 는 사람에게 잘 안 쓴다' 는 거짓 위에 서 있었다.** / 예문을 'She is very smart.' 로 바꿔 문형 'be + smart' 자리를 보이게 했다."
 
 - word: "layer"
   example_ko: "이 케이크는 세 층으로 되어 있어요."
@@ -4295,16 +4295,16 @@
   reason: "'화나게 하지 마세요' 는 upset 을 angry 쪽으로 밀어, 저장된 disappoint 카드가 세운 갈림과 어긋난다."
 
 - word: "tooth"
-  example_ko: "저는 이가 하나 부러졌어요."
-  reason: "'치아가 부러졌어요' 는 예문의 a broken tooth(한 개)가 드러나지 않는다."
+  example_ko: "저는 부러진 이가 하나 있어요."
+  reason: "'치아가 부러졌어요' 는 예문의 a broken tooth(한 개)가 드러나지 않는다. / '이가 하나 부러졌어요' 는 방금 부러지는 일이 일어났다는 사건으로 읽히는데, 예문 'I have a broken tooth.' 는 지금 부러진 이가 있다는 상태다. 앞선 교정이 '한 개' 를 드러낸 것은 맞지만 상(相)이 예문과 어긋났다."
 
 - word: "representation"
-  example_ko: "이건 그 도시를 잘 나타낸 그림이에요."
-  reason: "'도시의 좋은 표현이에요' 는 번역투라 무엇을 말하는지 잡히지 않는다."
+  example_ko: "이건 그 도시를 잘 나타낸 것이에요."
+  reason: "'도시의 좋은 표현이에요' 는 번역투라 무엇을 말하는지 잡히지 않는다. / '그림' 이 예문에 없다 — a good representation of the city 는 모형·지도·글일 수도 있고, 같은 카드 설명도 '그림이나 글로' 라고 넓혀 놓았다. 한국어만 보면 답이 picture 로 샌다."
 
 - word: "preparation"
-  example_ko: "우리는 여행 준비를 했어요."
-  reason: "바뀐 예문에 맞췄다. 옛 예문 'I need to make some preparation.' 은 원어민이 겹수로 쓰는 자리였다."
+  example_ko: "우리는 여행에 필요한 것들을 미리 챙겨 두었어요."
+  reason: "바뀐 예문에 맞췄다. 옛 예문 'I need to make some preparation.' 은 원어민이 겹수로 쓰는 자리였다. / '여행 준비를 했어요' 는 설명이 prepare 에 넘긴 동작의 한국어라, 이웃 prepare 카드('시험을 위해 준비해야 해요')와도 arrangement 의 make arrangements 와도 같은 말이 되어 빈칸 답이 셋으로 갈린다."
 
 - word: "dispute"
   example_ko: "그들은 회사와 오래 다툼을 벌였어요."
@@ -4343,8 +4343,8 @@
   reason: "'이 수프 너무 진해요' 는 조사가 빠지고, 설명이 세운 '걸쭉하다' 와도 어긋난다."
 
 - word: "proof"
-  example_ko: "신분을 보여 줄 증거가 있으세요?"
-  reason: "되읽기: '증명할 수 있는 증거' 는 '증명' 과 '증거' 가 겹친다."
+  example_ko: "신분을 확인할 수 있는 게 있으세요?"
+  reason: "되읽기: '증명할 수 있는 증거' 는 '증명' 과 '증거' 가 겹친다. / '신분을 보여 줄 증거가 있으세요?' 는 설명이 proof 를 '보여 주는 것' 이라 푼 것과 겹말이 되고, 이웃 evidence 카드의 '…증거가 있어요' 와 틀도 같다. 실제로 이 문장은 창구에서 신분증을 묻는 말이다."
 
 - word: "retail"
   example_ko: "이 가게는 소매 물건만 팔아요."
@@ -4689,3 +4689,31 @@
 - word: "success"
   example_ko: "그 잔치는 아주 잘됐어요."
   reason: "짝 맞춤. 예문을 'The party was a big success.' 로 옮긴 데 맞춘다 — 옛 예문 'He had a big success in business.' 는 이 자리에서 보통 have great success 로 쓰는 어색한 꼴이었다."
+
+- word: "respectively"
+  example_ko: "존과 메리는 차례대로 5달러, 10달러를 받았어요."
+  reason: "'존은 5달러, 메리는 10달러 받았어요.' 에는 뜻 칸의 '차례대로' 도 설명의 '짝지어' 도 한 글자가 안 남아, 해석만 읽으면 respectively 가 무슨 일을 하는 낱말인지 드러나지 않는다. 목적격 조사도 빠져 있었다."
+
+- word: "clever"
+  example_ko: "그건 재치 있는 생각이었어요."
+  reason: "짝 맞춤. 예문을 'That was a clever idea.' 로 바꿨다 — 옛 예문 'Your idea was clever enough to solve the problem.' 은 이웃 intelligent 카드의 'She is intelligent enough to lead the project.' 와 같은 틀이었다."
+
+- word: "respective"
+  example_ko: "각자 자기 영수증을 확인해 주세요."
+  reason: "짝 맞춤. '각각의 영수증' 은 이웃 each 카드의 뜻 '각각의' 와 같은 말이라, 뜻 칸을 '저마다의, 각자의' 로 고친 것에 맞춰 해석도 갈라 놓는다."
+
+- word: "storm"
+  example_ko: "어젯밤에 큰 폭풍이 몰아쳤어요."
+  reason: "'큰 폭풍이 있었어요' 는 There was 를 그대로 옮긴 번역투다 — 한국어로 폭풍은 '있다' 가 아니라 '몰아치다·불다' 로 말한다. 또 뜻 칸(폭풍우)·해석(폭풍)·설명(비바람)이 한 카드 안에서 같은 것을 셋으로 불렀는데, 뜻 칸을 '폭풍, 사나운 날씨' 로 고친 것에 맞춰 해석도 '폭풍' 으로 맞춘다."
+
+- word: "provider"
+  example_ko: "우리는 전기 회사를 바꿨어요."
+  reason: "짝 맞춤. 예문을 'We changed our energy provider.' 로 바꿨다 — 옛 예문 'Who is our main service provider?' 는 supplier 카드의 'Who is the supplier of this product?' 와 거의 같은 틀이었고, 해석 '우리의 주요 서비스 제공업체는 누구인가요?' 도 번역투였다."
+
+- word: "generally"
+  example_ko: "대체로 사람들은 커피를 좋아해요."
+  reason: "짝 맞춤. 뜻 칸을 '대체로, 크게 보아' 로 갈라 놓은 것에 맞춰 해석도 '일반적으로' 대신 '대체로' 로 맞춘다 — '일반적으로' 는 usually·typically 해석과도 겹치던 말이다."
+
+- word: "ultimately"
+  example_ko: "따지고 보면 그건 네가 정할 일이에요."
+  reason: "옛 해석 '결국 우리는 떠나야 했어요' 는 finally 카드의 '결국 우리는 호텔에 도착했습니다', eventually 카드의 '결국 우리는 호텔을 찾았어요' 와 '결국 우리는 ~' 로 틀이 똑같아 빈칸 답이 셋이었다. 예문을 이 낱말의 제 자리인 'Ultimately, it's your choice.' 로 바꾸면서 해석도 함께 옮긴다."

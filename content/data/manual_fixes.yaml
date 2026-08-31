@@ -5834,16 +5834,17 @@
   confused_with: ["exhibition", "display"]
 
 - word: "variation"
-  reason: "문형 자리에 영어가 들어가 있었다: a variation of + something / 설명이 한국어 '변이' 와 견주다 끝나고 \"'different version'과 유사하지만, 조금 더 중립적인 표현\" 도 잴 수 없는 말이다. / confused_with 의 difference·change 도 갈라 주지 않는다."
+  reason: "문형 자리에 영어가 들어가 있었다: a variation of + something / 설명이 한국어 '변이' 와 견주다 끝나고 \"'different version'과 유사하지만, 조금 더 중립적인 표현\" 도 잴 수 없는 말이다. / confused_with 의 difference·change 도 갈라 주지 않는다. / 반박이 다 죽어 내가 직접 읽고 판정. **바탕이 되는 것을 붙이는 자리에 쓰는 전치사가 빠졌다** — 무엇을 조금 바꾼 다른 꼴이라고 할 때 영어가 가장 흔히 쓰는 꼴은 a variation on a theme 처럼 on 인데, 문형도 설명도 of 만 보여 준다. / **한 집안 낱말인 vary 를 한 번도 안 든다** — 게다가 이웃 vary 카드는 '이름씨는 variety 예요' 라고만 적어 variation 을 제 이름씨로 세지 않아, 두 카드를 오가는 학습자가 이 낱말이 vary 에서 온 말이라는 것을 어디서도 볼 수 없다."
   meaning_ko: "조금 달라진 것; 달라지는 폭"
   pattern: "a variation of + 명사"
-  usage_note: "본디 것에서 조금 바뀐 다른 꼴이 variation 이에요 — a variation of this recipe. 얼마나 오르내리는지를 가리키기도 해서 variation in temperature 라고 합니다. 서로 다른 점 자체는 difference 이고, 바뀌는 일은 change 예요."
+  usage_note: "본디 것에서 조금 바뀐 다른 꼴이 variation 이에요 — a variation on a theme(같은 가락을 조금 바꾼 것). 무엇을 바탕으로 바꿨는지 말할 때는 on 을 자주 쓰고 of 도 씁니다. 얼마나 오르내리는지를 가리키기도 해서 variation in temperature 라고 해요. 달라지는 동작은 vary 라서 Prices vary. 라고 하고, 서로 다른 점 자체는 difference 예요."
 
 - word: "upset"
-  reason: "문형 자리에 영어가 들어가 있었다: upset + 목적어 (사람), upset about + something / 뜻 칸의 '화내다' 는 스스로 화를 낸다는 자동사 풀이라, 남을 상하게 한다는 이 낱말과 맞지 않는다. / 설명의 \"'I'm upset about the news'는 '그 소식에 화가 났다'\" 도 upset 을 angry 쪽으로 밀어, 저장된 disappoint 카드가 세운 갈림('upset 은 속상하게 만든다')과 어긋난다."
+  reason: "문형 자리에 영어가 들어가 있었다: upset + 목적어 (사람), upset about + something / 뜻 칸의 '화내다' 는 스스로 화를 낸다는 자동사 풀이라, 남을 상하게 한다는 이 낱말과 맞지 않는다. / 설명의 \"'I'm upset about the news'는 '그 소식에 화가 났다'\" 도 upset 을 angry 쪽으로 밀어, 저장된 disappoint 카드가 세운 갈림('upset 은 속상하게 만든다')과 어긋난다. / 반박이 다 죽어 내가 직접 읽고 판정. confused_with 의 'worried' 는 카드가 없어 죽은 짝이다 — 설명에서 드는 것은 그대로 두고 혼동 칸만 카드가 있는 낱말로 바꾼다. 뜻 칸이 움직씨와 그림씨를 둘 다 담고 문형·예문·설명이 그 둘을 다 보여 주어, 나머지는 어긋나는 데가 없다."
   meaning_ko: "속상하게 하다; 속상한"
   pattern: "upset + 사람 / be upset + about + 명사"
   usage_note: "남의 마음을 상하게 하는 것이 upset 이에요 — Don't upset her. 마음이 상한 쪽은 be upset 으로 써서 I'm upset about the news. 라고 합니다. 화가 났다는 쪽은 angry 라서 angry with my boss 라고 하고, 걱정된다는 쪽은 worried 예요."
+  confused_with: ["angry", "sad"]
 
 - word: "emphasis"
   reason: "문형 자리에 영어가 들어가 있었다: put + emphasis + on + something / **뜻 칸의 '강조하다' 는 움직씨 풀이라 이름씨인 이 낱말과 맞지 않는다.** / 설명도 '강조할 대상이 명확해야 하며' 로 무엇을 하라는 말인지 알 수 없고, 왕초보가 실제로 틀리는 자리(emphasis 에는 on 을 붙이지만 emphasize 에는 안 붙인다)를 짚지 않는다. / 반박 8건 판정(high 둘). **'이름씨라 on 을 붙이는데' 는 없는 규칙이다**(반박자 셋) — 이름씨라서 on 이 붙는 것이 아니고, 하필 같은 설명이 가리키는 importance 가 이름씨인데 of 를 받는다(the importance of exercise). 이 규칙을 외운 학습자는 the importance on ~ 을 만든다. / **해석이 앞선 교정의 사유와 정반대로 갔다** — 사유는 'emphasis 가 이름씨인 것이 드러나지 않는다' 였는데 바꾼 값 '힘주어 말해 주세요' 는 통째로 움직씨구라 옛 값('강조')보다도 이름씨가 더 안 보이고, 되돌리면 emphasize 가 나온다. / 뜻 '강조 (힘주어 말함)' 는 소리 쪽으로만 좁다 — put emphasis on safety 는 말투와 무관하게 '어디에 무게를 두느냐' 다. / 예문의 맨 emphasis 도 어색하다(put more/greater emphasis on ~ 이 표준 짝이다)."
@@ -7830,10 +7831,10 @@
   usage_note: "수나 양, 권리가 똑같을 때 equal을 써요. 무엇과 같은지는 to로 붙여요: Two plus two is equal to four. 물건이 똑같을 때는 the same을 써요: We have the same bag."
 
 - word: "recognition"
-  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다. / 문형 'recognition + 명사' 는 틀렸다 — 이름씨 뒤에 이름씨가 오지 않고, 예문도 receive + recognition 자리다. / 설명도 한국어 '인식' 안에서만 맴돌아 confused_with 의 identification 을 갈라 주지 않는다."
-  meaning_ko: "인정 (잘한 것을 알아주는 것); 알아봄"
-  pattern: "receive/get + recognition"
-  usage_note: "잘한 것을 남들이 알아주는 것이 recognition 이에요 — receive recognition. 누구인지 알아보는 것도 recognition 이라 face recognition(얼굴 알아보기) 이라고 합니다. 알아보는 동작은 recognize 예요. 누구인지 밝혀 확인하는 것은 identification 이라 an ID card 라고 해요."
+  reason: "문형이 예문에 없는 전치사를 요구하고 있었다. 예문이 보여주는 꼴로 맞춘다. / 문형 'recognition + 명사' 는 틀렸다 — 이름씨 뒤에 이름씨가 오지 않고, 예문도 receive + recognition 자리다. / 설명도 한국어 '인식' 안에서만 맴돌아 confused_with 의 identification 을 갈라 주지 않는다. / 반박 11건 판정. **identification 과의 갈림이 안 갈라진다**(반박자 셋) — '누구인지 알아보는 것' 과 '누구인지 밝혀 확인하는 것' 은 왕초보에게 같은 말이고, 근거로 든 an ID card 는 identification 의 줄임꼴이라 행위를 물건으로 바꿔 놓는다. 게다가 카드가 든 face recognition 이야말로 identification 쪽으로 밀어 놓은 그 일이다. / **해석이 예문에 없는 까닭을 지어 넣었다**(반박자 셋) — 'for his work'(그가 한 일)를 '일을 잘해서' 라는 인과로 바꿨고, 같은 교정이 옛 해석을 두고 'work 를 작품으로 좁혔다' 를 결함으로 들었는데 이번엔 없는 판단을 보탰다. / 문형이 예문에 있는 for 를 빠뜨려 무엇에 대한 인정인지 붙이는 자리를 안 보여 준다. / 뜻 칸 괄호가 설명 첫 문장과 겹친다. / 'face recognition(얼굴 알아보기)' 은 굳어진 말 '얼굴 인식' 과 어긋난다."
+  meaning_ko: "인정; 알아봄"
+  pattern: "receive + recognition + for + 명사"
+  usage_note: "잘한 것을 남들이 알아주는 것이 recognition 이라 receive recognition for your work 처럼 씁니다. 전에 본 적이 있어 다시 알아보는 것도 recognition 이라 face recognition(얼굴 인식) 이라고 해요. 알아보는 동작은 recognize 라서 I recognized her voice. 라고 합니다. 서류로 누구인지 맞는지 따져 밝히는 일은 identification 이라 show your identification 처럼 써요."
   confused_with: ["recognize", "identification"]
 
 - word: "angle"
@@ -8024,9 +8025,10 @@
   usage_note: "목소리나 글에서 느껴지는 결이에요 — a calm tone. 색의 느낌을 말할 때도 써요: warm tones. 귀에 들리는 소리 자체는 sound 예요."
 
 - word: "proof"
-  reason: "'‘Proof’ 는 명사로만 쓰이고, ‘proving’ 과는 다르게 쓰입니다' 는 낱말과 동사의 -ing 형을 견주는 것이라 자리가 맞지 않고, 사전에는 proof 의 동사 뜻도 있다. 문형도 'proof (e.g.' 로 잘려 있었다. / **confused_with 의 'proving' 은 표제어의 다른 꼴이라 헷갈리는 짝이 아니다.** / 설명도 evidence 를 갈라 주지 않고, 든 보기가 예문 구절을 그대로 옮긴 것이다."
+  reason: "'‘Proof’ 는 명사로만 쓰이고, ‘proving’ 과는 다르게 쓰입니다' 는 낱말과 동사의 -ing 형을 견주는 것이라 자리가 맞지 않고, 사전에는 proof 의 동사 뜻도 있다. 문형도 'proof (e.g.' 로 잘려 있었다. / **confused_with 의 'proving' 은 표제어의 다른 꼴이라 헷갈리는 짝이 아니다.** / 설명도 evidence 를 갈라 주지 않고, 든 보기가 예문 구절을 그대로 옮긴 것이다. / 반박 10건 판정(high 셋). **'evidence 는 자료 하나하나라, 여럿이 모여 proof 가 됩니다' 가 이웃 evidence 카드와 정반대다**(반박자 셋) — 그 카드는 'proof 는 그것만으로 확실히 증명되는 결정적 증거이고, evidence 는 그보다 약한 단서' 라며 갈림을 '세기' 로 잡는데 이 카드는 '개수' 로 잡는다. 영어로도 영수증 한 장이 그대로 proof of payment 이고(이 카드가 스스로 든 보기다) circumstantial evidence 는 산더미여도 proof 가 못 된다. '자료 하나하나' 는 an evidence 같은 틀린 꼴로도 유도한다. / **뜻 칸이 설명이 prove 에 넘긴 '증명' 을 붙들고 있다**(반박자 둘) — 이웃 prove 카드의 뜻이 '증명하다, 입증하다' 라 학습자가 나란히 읽는다. / 해석 '신분을 보여 줄 증거' 는 설명이 proof 를 '보여 주는 것' 이라 푼 것과 겹말이 되고, 실제로 이 문장은 창구에서 '신분증 있으세요?' 라고 묻는 말이다."
+  meaning_ko: "증거 (사실임을 확실히 보여 주는 것)"
   pattern: "proof + of + 명사"
-  usage_note: "사실임을 보여 주는 것이 proof 예요 — proof of payment(낸 증거). 무엇의 증거인지는 of 로 붙입니다. 증명하는 동작은 prove 라서 prove it 이라고 해요. evidence 는 그렇게 보이게 하는 자료 하나하나라, 여럿이 모여 proof 가 됩니다."
+  usage_note: "그것만으로 사실이 확인되는 것이 proof 예요 — proof of payment(돈을 냈다는 증거). 무엇의 증거인지는 of 로 붙입니다. 증명하는 동작은 prove 라서 prove it 이라고 해요. evidence 는 사실인 것 같다고 알려 주는 자료 쪽이라 proof 보다 약합니다."
   confused_with: ["prove", "evidence"]
 
 - word: "closure"
@@ -8978,9 +8980,10 @@
   usage_note: "audience 는 공연이나 강연을 보러 온 사람들을 통째로 묶어 부르는 말이에요. 그래서 한 사람을 가리킬 때는 an audience 가 아니라 someone in the audience 라고 해요. 텔레비전을 보는 사람들도 audience 라고 부릅니다."
 
 - word: "award"
-  reason: "pattern: 예문 They awarded him a prize. 가 사람을 먼저 받는 꼴이라 NOW 와 어긋났고, 두 어순 모두 실제로 쓰는 말이다. / usage_note: to 뒤는 받는 쪽이라 NOW 가 거꾸로였고, 새 예문 They awarded a prize to him. 은 옳다."
+  reason: "pattern: 예문 They awarded him a prize. 가 사람을 먼저 받는 꼴이라 NOW 와 어긋났고, 두 어순 모두 실제로 쓰는 말이다. / usage_note: to 뒤는 받는 쪽이라 NOW 가 거꾸로였고, 새 예문 They awarded a prize to him. 은 옳다. / 짝 맞춤(prize 의 confused_with, 서로 걸어 두었다. 대장에 이미 올라간 낱말). **'award 는 상을 주는 행동이고, prize 는 상 그 자체예요' 가 거짓이다** — an award 는 물건으로 아주 흔하다(win an award, an award ceremony, the Academy Awards). prize 카드가 receive an award 를 가르치며 기대는 자리라 두 카드가 정면으로 부딪히고, 같은 DB 의 reward 카드는 또 '대회에서 심사해 주는 상은 an award' 라 해 셋이 서로 다른 말을 한다."
+  meaning_ko: "상을 주다; 상"
   pattern: "award + 사람 + 상, 또는 award + 상 + to + 사람"
-  usage_note: "상을 받는 사람을 뒤에 쓸 때 to 를 써요 — They awarded a prize to him. award 는 상을 주는 행동이고, prize 는 상 그 자체예요."
+  usage_note: "상을 주는 동작이 award 예요 — award a medal(메달을 주다). 상을 받는 사람을 뒤에 쓸 때는 to 를 붙여 award a prize to the winner 라고 합니다. 심사해서 주는 상 자체도 an award 라서 win an award, an award ceremony 처럼 써요. 겨루거나 뽑혀서 받는 상은 a prize 이고, 잘한 일에 대한 보답은 a reward 예요."
 
 - word: "background"
   reason: "pattern: 예문이 in the background 이고 in background 는 성립하지 않아, the 를 넣는 것이 맞다. / usage_note: foreground 는 사전에 실재하는 낱말이고(WordNet n·v) What's your background? 도 굳어진 표현이라 새 거짓이 없다."
@@ -10849,8 +10852,9 @@
   usage_note: "몸을 쭉 펴는 것도, 고무처럼 늘어나는 것도 stretch 예요 — stretch before exercise(운동 전에 몸을 풀다). 수나 양이 늘어나는 것은 increase 라고 합니다. 길게 뻗은 구간을 뜻하는 이름씨로도 써요."
 
 - word: "retire"
-  reason: "usage_note: \"'retire' 는 장기적인 결정을 나타내요\" 는 잴 수 없는 말이고, 이름씨 retirement 가 빠져 있었다."
-  usage_note: "나이가 되어 일을 그만두는 것이 retire 예요 — 뒤에 from 을 붙여 어디서 물러났는지 말합니다. 이름씨는 retirement 라서 은퇴 후를 after retirement 라고 해요. 그냥 일을 그만두는 것은 quit 이에요."
+  reason: "usage_note: \"'retire' 는 장기적인 결정을 나타내요\" 는 잴 수 없는 말이고, 이름씨 retirement 가 빠져 있었다. / 짝 맞춤(retirement 의 confused_with). 뜻 '정년퇴직하다' 와 설명 '나이가 되어 일을 그만두는 것' 이 영어 사실과 어긋난다 — retire 는 나이에 매인 말이 아니다(take early retirement, She retired from tennis at 30). 검수 대상인 retirement 카드는 옳게 '일에서 물러나 더는 일하지 않는 것' 이라고만 적어 나이 조건을 두지 않으므로, 짝으로 걸린 두 카드가 같은 사건을 서로 다르게 정의하고 있다."
+  meaning_ko: "은퇴하다, 일을 그만두고 물러나다"
+  usage_note: "하던 일을 아주 그만두고 물러나는 것이 retire 예요 — 뒤에 from 을 붙여 어디서 물러났는지 말해요. 나이가 차서 그만두는 경우가 많지만 She retired from tennis at 30. 처럼 나이와 상관없이도 써요. 이름씨는 retirement 라서 은퇴 후를 after retirement 라고 해요. 잠깐 그만두는 것까지 아우르는 말은 quit 이에요."
 
 - word: "native"
   reason: "meaning_ko: **'생일이 되는 날' 은 native 의 뜻이 아니다** — 아예 다른 낱말을 풀이해 놓았고, confused_with 의 birth 도 그 거짓을 굳힌다. / example: 'English is my second native language.' 는 스스로 모순이다 — 모국어는 두 번째일 수 없다."
@@ -12765,16 +12769,17 @@
   usage_note: "짐승을 잡으러 다니는 것이 hunt 예요 — hunt deer. 무엇을 애써 찾아다닐 때도 뒤에 for 를 붙여 hunt for a job(일자리를 찾다) 처럼 씁니다. 어디에 있는지 뒤져 보는 것은 search 라서 search the room 이라고 하고, 그냥 찾는 것은 look for 예요."
 
 - word: "storm"
-  reason: "**설명이 통째로 깨져 있다** — \"'storm'은 명사로만 쓰이고 동사로는 'storm'이 아니라 'storm'의 동사형은 'storm'이 아니에요\" 는 문장이 되지 않고 품사 단정 검사에도 걸린다. / 문형 'storm + 목적어' 도 틀렸다 — 예문은 이름씨 자리다."
-  meaning_ko: "폭풍우"
+  reason: "**설명이 통째로 깨져 있다** — \"'storm'은 명사로만 쓰이고 동사로는 'storm'이 아니라 'storm'의 동사형은 'storm'이 아니에요\" 는 문장이 되지 않고 품사 단정 검사에도 걸린다. / 문형 'storm + 목적어' 도 틀렸다 — 예문은 이름씨 자리다. / 반박 10건 판정(high 넷). **'비만 오면 rain, 바람만 불면 wind 라고 하는데 storm 은 둘이 함께' 가 없는 규칙이고, 같은 문장 안의 제 예가 반례다** — a snow storm 에는 비가 없다. snowstorm, thunderstorm, sandstorm, hailstorm 처럼 비 없는 storm 이 흔하다. 영어의 storm 은 '비+바람 동시' 가 아니라 '날씨가 사납게 거칠어진 상태' 다. / **저장된 typhoon 카드와 정면으로 부딪힌다** — 그 카드는 'storm 은 비바람이 센 날씨를 두루 가리키는 말' 이라고 넓게 세워 두었고, 그 카드의 reason 이 잡아낸 것이 바로 '없는 차이를 지어낸 설명' 이었다. 이번 카드는 그 금지된 유형을 storm 쪽에서 새로 만들었다. / 뜻 칸 '폭풍우' 는 '우(비)' 를 못박아 같은 설명이 드는 a snow storm 과 어긋나고, 뜻 칸(폭풍우)·해석(폭풍)·설명(비바람)이 한 카드 안에서 같은 것을 셋으로 부른다. / 'a snow storm' 은 띄어 쓴 꼴이라 표준에서 벗어난다 — snowstorm 이 압도적이다. / 마지막 문장 '그런 날씨는 그림씨 stormy 로 … 라고 합니다' 는 임자말과 서술이 안 맞물리는 비문이다."
+  meaning_ko: "폭풍, 사나운 날씨"
   pattern: "a/the + storm"
-  usage_note: "비바람이 세차게 몰아치는 날씨가 storm 이에요 — a snow storm. 비만 오면 rain, 바람만 불면 wind 라고 하는데 storm 은 둘이 함께 사납게 몰아치는 것을 말해요. 그런 날씨는 그림씨 stormy 로 a stormy night 라고 합니다."
+  usage_note: "바람이 세고 날씨가 사납게 몰아치는 것이 storm 이에요 — a big storm. 무엇이 몰아치느냐에 따라 앞말을 붙여 a snowstorm(눈), a thunderstorm(천둥·번개) 이라고 해요. 비가 내리는 것만 가리키면 rain, 공기가 부는 것만 가리키면 wind 예요. 그런 날씨를 말할 때는 그림씨 stormy 를 써서 a stormy night 라고 해요."
 
 - word: "thick"
-  reason: "자리 검사: **문형 'thick + 명사' 를 예문 'This soup is too thick.' 이 보여 주지 않는다**(be + thick 자리다). / 설명도 한국어 '두꺼운'·'진한' 을 견주다 끝나 confused_with 의 dense·heavy 를 갈라 주지 않고, 반대말 thin 도 없다."
+  reason: "자리 검사: **문형 'thick + 명사' 를 예문 'This soup is too thick.' 이 보여 주지 않는다**(be + thick 자리다). / 설명도 한국어 '두꺼운'·'진한' 을 견주다 끝나 confused_with 의 dense·heavy 를 갈라 주지 않고, 반대말 thin 도 없다. / 반박 5건 판정(high 셋). **뜻 칸의 '진한' 은 thick 의 뜻이 아니다** — 한국어 '진한' 이 가리키는 것은 strong(진한 커피)·dark/deep(진한 색)이고 thick coffee·thick color 는 쓰지 않는다. 게다가 앞선 gloss 교정이 바로 이 예문 해석에서 '진해요' 를 '걸쭉해요' 로 물렸고 설명도 '걸쭉할 때' 로 갔는데, 뜻 칸만 옛 '진한' 을 붙들고 있는 짝 칸 안 맞춤이다. / **'빽빽하게 들어찬 것은 dense' 가 thick 의 흔한 쓰임을 빼앗는다** — thick fog, thick hair, a thick forest 모두 표준 영어이고 회화에서는 dense 보다 오히려 흔하다. 더구나 dense 는 content/data 의 낱말 목록에 없어 카드가 아예 없다 — confused_with 를 눌러도 갈 곳이 없는 죽은 짝이다. / '반대는 thin' 은 이웃 thin 카드가 쓰는 '반대말은' 과 갈려, 두 카드를 오가는 학습자에게 용어가 흔들린다."
+  meaning_ko: "두꺼운; (국·소스가) 걸쭉한"
   pattern: "be + thick / thick + 명사"
-  usage_note: "두께가 있다는 뜻이라 a thick book, a thick coat 처럼 씁니다. 국이나 소스가 걸쭉할 때도 써서 thick soup 이라고 해요. 반대는 thin 이라 a thin slice 라고 합니다. 빽빽하게 들어찬 것은 dense 라서 a dense forest 예요."
-  confused_with: ["thin", "dense"]
+  usage_note: "두께가 있다는 뜻이라 a thick book, a thick coat 처럼 써요. 국이나 소스가 걸쭉할 때도 써서 thick soup 이라고 해요. 빽빽하게 들어찬 것에도 써서 thick fog, thick hair 라고 합니다. 반대말은 thin 이라 a thin slice 라고 해요."
+  confused_with: ["thin"]
 
 - word: "achievement"
   reason: "자리 검사: 문형 'a/the + achievement' 를 예문 'Her biggest achievement was winning the competition.' 이 보여 주지 않는다. / 설명의 \"'성공'보다 더 구체적인 결과\" 도 잴 수 없는 말이고, 움직씨 짝인 achieve 를 다루지 않는다. / 반박 3건 판정(high 둘). **설명이 새로 세운 갈림을 뜻 칸이 도로 지운다** — 설명은 '잘된 것 자체는 success 이고' 라며 '성공' 을 넘겼는데 뜻 칸은 '성과, 성공한 일' 로 그것을 붙들고 있고, 이웃 success 카드의 뜻이 '성공, 성공한 상태' 라 학습자 화면에 '성공한 일' 과 '성공한 상태' 가 나란히 뜬다. 앞선 교정이 설명만 새로 쓰고 뜻 칸을 안 맞춘 자리다. / 앞선 교정의 reason 이 '문형을 예문이 보여 주지 않는다' 며 문형에 소유격만 덧붙였는데, 예문의 실제 꼴은 'Her biggest achievement'(소유격 + 최상급 + achievement)라 지적한 자리가 그대로 남았다."
@@ -12790,25 +12795,29 @@
   usage_note: "서로 조건을 주고받으며 이야기해 정하는 것이 negotiate 예요 — negotiate a contract. 누구와 하는지는 with 로 붙입니다. 그 일 자체는 이름씨 negotiation 이에요. 무엇을 두고 의견을 주고받는 것은 discuss 라 discuss the plan 처럼 목적어를 바로 받고, 서로 뜻이 달라 말로 맞서는 것은 argue 예요."
 
 - word: "shoot"
-  reason: "**설명의 \"사진 찍는 경우는 'take a photo'보다 'shoot a photo'가 더 자연스럽지만\" 은 거짓이다** — 사진 한 장은 take a photo 가 훨씬 흔하다. 예문도 그 거짓 위에 서 있다. / 되읽기: 문형 괄호의 '사진 대상' 이 새 설명과 부딪힌다 — 설명은 사진 한 장은 take a photo 를 쓴다고 못박았다. / 되읽기 2차: 뜻 칸의 '사진을' 이 설명과 부딪힌다 — 설명은 사진 한 장에는 take a photo 를 쓴다고 못박았다."
+  reason: "**설명의 \"사진 찍는 경우는 'take a photo'보다 'shoot a photo'가 더 자연스럽지만\" 은 거짓이다** — 사진 한 장은 take a photo 가 훨씬 흔하다. 예문도 그 거짓 위에 서 있다. / 되읽기: 문형 괄호의 '사진 대상' 이 새 설명과 부딪힌다 — 설명은 사진 한 장은 take a photo 를 쓴다고 못박았다. / 되읽기 2차: 뜻 칸의 '사진을' 이 설명과 부딪힌다 — 설명은 사진 한 장에는 take a photo 를 쓴다고 못박았다. / 반박 6건 판정(high 하나). **'총을 쏘아 대는 것은 fire 라고도 합니다' 가 위험한 거짓이다** — fire 의 목적어는 무기·탄이지(fire a gun) 사람이 아니고, 사람을 목적어로 두면 영어에서는 '해고하다' 로만 읽힌다. 저장된 이웃 fire 카드의 예문이 바로 'They fired him.'(해고)이라, 이 설명을 읽은 학습자는 '그를 쐈다' 를 They fired him. 으로 쓰게 된다. 또 '쏘아 대다' 는 여러 발이라는 결을 주는데 같은 DB 의 shot 카드는 fire a shot 을 한 발에 쓴다. / **문형 괄호의 '총' 을 예문이 안 보여 준다** — 예문은 영화뿐이라 괄호가 약속한 것과 어긋나고, 선별기의 문형 토큰 검사는 표제어와 괄호를 빼고 세므로 요구 토큰이 0개가 되어 이 어긋남을 못 잡는다. / **confused_with 의 take 가 설 근거가 카드 안에서 사라졌다** — 겹치던 자리는 사진 하나뿐인데 앞선 교정이 사진을 뜻·예문에서 걷어 냈고 설명은 오히려 shoot 을 그 자리에서 밀어냈다. 저장된 take 카드에도 사진 이야기가 한 줄 없다. / '사진 한 장은 shoot 을 잘 쓰지 않아요' 가 shot 카드의 '사진 한 장도 a shot' 과 나란히 놓여 어느 쪽이 맞는지 가릴 수 없다."
   meaning_ko: "쏘다; (영화를) 찍다"
-  pattern: "shoot + 목적어 (총·영화)"
+  pattern: "shoot + 목적어 (영화·광고)"
   example: "They shot the movie in Seoul."
-  usage_note: "총이나 화살을 쏘는 것이 shoot 이에요 — shoot a gun. 영화나 광고를 찍는 것도 shoot 이라서 shoot a film 이라고 합니다. 사진 한 장은 보통 take a photo 라고 하지 shoot 을 잘 쓰지 않아요. 총을 쏘아 대는 것은 fire 라고도 합니다."
+  usage_note: "총이나 화살을 쏘는 것이 shoot 이에요 — shoot a gun. 영화나 광고를 찍는 것도 shoot 이라 shoot a film 이라고 해요. 무기를 쏘는 동작만 딱딱하게 말할 때는 fire 를 쓰는데, fire 뒤에 사람이 오면 '해고하다' 가 되니 사람을 쐈다고 할 때는 They shot him. 이라고 해야 해요. 사진을 찍는 동작은 take a photo 라 하고, 찍힌 사진 한 장은 a shot 이라고 불러요."
+  confused_with: ["fire", "film"]
 
 - word: "supplier"
-  reason: "설명이 한국어 '공급자' 와 견주다 끝나고 confused_with 의 provider·manufacturer 를 영어로 갈라 주지 않는다. / 해석의 '제품'·'입니까' 도 딱딱하다."
-  meaning_ko: "납품하는 회사, 대는 쪽"
-  usage_note: "물건이나 재료를 대 주는 회사가 supplier 예요 — our main supplier. 공장에서 물건을 만드는 회사는 manufacturer 이고, 만들지 않고 대기만 하면 supplier 입니다. 서비스를 해 주는 쪽은 provider 라서 an internet provider 라고 해요."
+  reason: "설명이 한국어 '공급자' 와 견주다 끝나고 confused_with 의 provider·manufacturer 를 영어로 갈라 주지 않는다. / 해석의 '제품'·'입니까' 도 딱딱하다. / 반박 8건 판정(high 둘). **'만들지 않고 대기만 하면 supplier' 는 영어에 없는 배타적 갈림이다** — supplier 는 '무엇을 하는 회사' 가 아니라 '나에게 대 주는 쪽' 이라는 관계 이름이라 만드는 회사도 그대로 supplier 다(Toyota's parts suppliers, an approved supplier). 이 갈림대로 배우면 제조사를 supplier 라고 부르는 흔한 영어를 틀린 것으로 여기게 된다. / **해석 '이 물건은 누가 대나요?' 가 뜻 칸·문형을 도로 지운다** — 뜻 칸은 '회사' 라고 못박고 문형은 'a/the + supplier' 라는 이름씨 자리인데, 해석은 '누가' 로 사람을 묻고 supplier 를 움직씨 '대다' 로 풀어 버려 이름씨 자리가 한 글자도 안 남는다. 앞선 교정의 reason 은 '딱딱하다' 를 고치려던 것인데 문체를 낮추다 품사를 흘렸다. / '물건=supplier / 서비스=provider' 도 반례가 흔하다 — a supplier of goods and services, your energy supplier, 거꾸로 an energy provider. / '만들지 않고 대기만' 의 '대기' 가 '기다리기(待機)' 로 읽히는 중의어다. / 'an internet provider' 의 온전한 꼴은 an internet service provider 다. / 뜻 칸에서 '공급자' 를 걷어냈는데 정작 이웃 provider 카드가 '공급자' 를 쥐고 있어, 학습자가 '공급자' 를 찾으면 엉뚱한 카드로 간다."
+  meaning_ko: "공급자, 물건을 대 주는 회사"
+  usage_note: "물건이나 재료를 대 주는 쪽이 supplier 예요 — our main supplier. 대 주는 자리를 가리키는 말이라 직접 만들어서 대는 회사도 supplier 라고 불러요. 만드는 일 자체를 가리킬 때는 manufacturer 를 씁니다. 서비스 쪽에는 provider 를 더 자주 써서 an internet service provider 라고 해요."
 
 - word: "prize"
-  reason: "설명의 \"'상품'은 gift나 item으로도 쓸 수 있어요\" 는 한국어 '상품' 을 두고 도는 말이고, confused_with 의 award 를 갈라 주지 않는다. / 되읽기: 뜻 칸의 '상품' 은 설명이 gift 쪽으로 넘긴 말이라 두 칸이 부딪힌다."
-  meaning_ko: "상 (겨루어 이긴 사람에게 주는 것)"
-  usage_note: "겨루어 이긴 사람에게 주는 것이 prize 예요 — win first prize. 애쓴 것을 기려 주는 것은 award 라서 receive an award 라고 합니다. 그냥 마음을 담아 주는 것은 a gift 예요."
+  reason: "설명의 \"'상품'은 gift나 item으로도 쓸 수 있어요\" 는 한국어 '상품' 을 두고 도는 말이고, confused_with 의 award 를 갈라 주지 않는다. / 되읽기: 뜻 칸의 '상품' 은 설명이 gift 쪽으로 넘긴 말이라 두 칸이 부딪힌다. / 반박 10건 판정(high 둘). **award 를 세 카드가 서로 다르게 가르친다**(반박자 넷) — 이 카드는 award 를 받는 물건(receive an award)으로 놓는데 이웃 award 카드는 'award 는 상을 주는 행동이고, prize 는 상 그 자체예요' 라고 못 박고, reward 카드는 또 '대회에서 심사해 주는 상은 an award' 라 한다. 게다가 award 카드의 단정 자체가 거짓이다 — an award 는 물건으로 아주 흔하다(win an award, the Academy Awards). / **뜻이 '겨루어 이긴 사람에게 주는 것' 으로 좁다** — win a prize in the raffle, first prize in the lottery 는 아무도 이기지 않고, the Nobel Prize 처럼 애쓴 것을 기려 주는 대표적인 상도 prize 다. / 해석 '상을 받았어요' 가 설명이 award 에 배정한 '받다' 를 prize 예문에 써 갈림을 지운다 — win 카드는 win a prize 를 '상을 타다' 로 옮긴다. / 뜻 칸 괄호가 설명 첫 문장과 글자까지 같다. / 문형 'a + prize' 는 이 카드의 축인 win 을 안 보여 준다."
+  meaning_ko: "상, 상품"
+  pattern: "win + a prize"
+  usage_note: "겨루거나 뽑혀서 받는 상이 prize 예요 — win a prize, win first prize. 애쓴 것이나 훌륭한 업적을 기려 주는 것도 prize 라서 the Nobel Prize 라고 합니다. 심사해서 주는 상은 an award 라 receive an award 라고 하고, 그냥 마음을 담아 주는 것은 a gift 예요."
 
 - word: "typically"
-  reason: "설명의 \"'usually'보다 더 공식적인 느낌\" 은 잴 수 없는 말이고 confused_with 의 generally 를 다루지 않는다. / **해석의 '드요' 는 '들어요' 의 오타다.**"
-  usage_note: "여느 때와 다르지 않게 흔히 그렇다고 할 때 써요 — Typically, it rains in July. 무엇이 그것다운 모습이라고 할 때도 써서 a typically Korean dish 라고 합니다. 날마다 말할 때는 usually 를 쓰고, 넓게 봐서 그렇다고 할 때는 generally 예요."
+  reason: "설명의 \"'usually'보다 더 공식적인 느낌\" 은 잴 수 없는 말이고 confused_with 의 generally 를 다루지 않는다. / **해석의 '드요' 는 '들어요' 의 오타다.** / 반박 13건 판정(high 다섯). **뜻 칸 '보통, 일반적으로' 가 confused_with 로 걸어 둔 usually·generally 두 카드의 뜻 칸과 글자 하나 다르지 않다** — 갈라 주겠다고 걸어 둔 낱말들과 뜻 칸에서는 완전히 같은 말이 된다. 이 DB 는 같은 결함을 이미 판정한 전례가 있다(normally 항목 reason 이 '두 낱말의 저장된 뜻이 사실상 같으니 뜻도 함께 갈라야 해요' 라며 normally 를 '평소에는, 별일 없으면 늘' 로 갈랐다). / **문형이 자리를 문두 하나로 못박았는데 영어 사실이 아니다** — 가장 흔한 자리는 오히려 동사 앞 중간 자리다(I typically go to bed at 10 PM. / Prices are typically higher in summer.). 같은 카드의 설명이 든 'a typically Korean dish' 도 문두가 아니고, 이웃 usually 카드는 '문장 중간 또는 맨 앞' 이라 두 낱말 사이에 없는 자리 차이가 생겼다. / **'날마다 말할 때는 usually 를 쓰고' 가 제 예문을 부정한다** — 이 카드의 예문 'Typically, I go to bed at 10 PM.' 이야말로 날마다 되풀이하는 취침 시각이다. 빈도 뜻에서 typically 와 usually 는 거의 바꿔 쓸 수 있어(I usually get up at 7. = I typically get up at 7.) 이 갈림 자체가 근거 없이 새로 세운 규칙이고, 한국어 '날마다 말할 때는' 도 '매일 말하는 상황' 으로 읽히는 비문에 가깝다. / '무엇이 그것다운 모습' 은 왕초보가 못 읽는 말이고, 그 둘째 갈래가 뜻 칸에 흔적이 없다. / 해석의 '보통' 은 usually 뜻 칸과 같은 말이라 설명이 세운 갈림을 한 줄로 되돌린다."
+  meaning_ko: "흔히, 으레; 전형적으로"
+  pattern: "typically + 문장 (맨 앞) / 주어 + typically + 동사"
+  usage_note: "여느 때와 다르지 않게 흔히 그렇다고 할 때 써요 — It typically rains in July. 얼마나 자주냐를 말하는 자리에서는 usually 와 거의 같아서 바꿔 써도 돼요. typically 에만 있는 자리는 '딱 그것답다' 는 쪽이라, a typically Korean dish 는 '딱 한국 음식다운 음식' 이라는 말이에요."
 
 - word: "peer"
   reason: "설명의 \"'peer'는 명사로만 쓰이고\" 는 품사 단정 검사에 걸리고, 바로 뒤의 '동사 peer 와는 다르게' 와도 부딪힌다. / 예문 'She is my classmate and a peer.' 도 classmate 와 peer 가 거의 같은 말이라 어색하다. / 자리 검사도 함께 맞췄다. / 반박 8건 판정. **뜻 칸 괄호 '(나이나 처지가 비슷한 사람)' 을 설명 첫 구절이 글자까지 똑같이 되풀이한다**(반박자 둘) — 같은 교정에서 두 칸을 나란히 쓰면서 설명 첫 문장이 통째로 뜻 칸의 복사가 됐다. / **'peer pressure(또래가 주는 눈치)' 의 '눈치' 가 가리키는 것이 다르다** — 눈치는 남의 기색을 살피는 쪽이고 peer pressure 는 또래에 맞추라고 밀리는 압박이다. / 해석 '또래를 많이 신경 써요' 는 '신경(을) 쓰다' 가 이미 목적어를 품은 말이라 목적어가 겹친다. / '같은 곳에서 일하는 사람은 colleague' 가 peer 에서 일터를 통째로 떼어 내는데 peer review, my peers at work 가 흔하다. / 이웃 classmate 카드는 뜻이 '동창' 이라 이 카드의 '같은 반 친구' 와 어긋난다."
@@ -12825,9 +12834,9 @@
   usage_note: "일에서 물러난 뒤에 다달이 받는 돈이 pension 이에요 — receive a pension. 일에서 물러나는 일 자체는 retirement 이고, 일하는 동안 받는 돈은 salary 예요. 한국에서 말하는 '펜션' 같은 숙소는 영어로 a holiday cottage 라고 하면 통합니다."
 
 - word: "wing"
-  reason: "**설명의 \"'wing'은 'side'와 혼동되지 않아요\" 는 confused_with 에 side 를 올려 둔 것과 앞뒤가 맞지 않는다.** / 문형 'wing + of + 주체' 도 예문 'The bird has two wings.' 가 보여 주지 않고, 해석도 have 를 그대로 옮긴 번역투다."
+  reason: "**설명의 \"'wing'은 'side'와 혼동되지 않아요\" 는 confused_with 에 side 를 올려 둔 것과 앞뒤가 맞지 않는다.** / 문형 'wing + of + 주체' 도 예문 'The bird has two wings.' 가 보여 주지 않고, 해석도 have 를 그대로 옮긴 번역투다. / 반박이 다 죽어 내가 직접 읽고 판정. **건물 쪽 뜻이 이웃 side 카드와 겹친다** — 이 카드는 '큰 건물에서 옆으로 뻗은 부분도 wing' 이라 해 놓고 곧바로 '그냥 옆쪽은 side' 라고 가르는데, 정작 side 카드는 'the side of the building 은 건물 옆면이에요' 라고 같은 건물의 옆을 제 자리로 잡고 있다. 두 카드를 나란히 읽으면 건물의 옆을 wing 이라 해야 할지 side 라 해야 할지 가릴 근거가 없다. wing 이 가리키는 것은 옆면이 아니라 본채에서 옆으로 뻗어 나온 별관이므로 그 말을 넣어 갈라 준다."
   pattern: "a/two + wing(s)"
-  usage_note: "새나 비행기가 날 때 쓰는 것이 wing 이에요 — spread its wings. 큰 건물에서 옆으로 뻗은 부분도 wing 이라서 the east wing 이라고 합니다. 사람의 팔은 arm 이고, 그냥 옆쪽은 side 예요."
+  usage_note: "새나 비행기가 날 때 쓰는 것이 wing 이에요 — spread its wings. 큰 건물에서 본채 옆으로 뻗어 나온 별관도 wing 이라 the east wing(동쪽 별관) 이라고 해요. 건물의 바깥 옆면을 가리킬 때는 side 를 써서 the side of the building 이라고 합니다. 사람의 팔은 arm 이에요."
 
 - word: "laughter"
   reason: "자리 검사: 문형 'a/the + laughter' 를 예문 'I heard your laughter from the next room.' 이 보여 주지 않는다. / 설명의 \"웃는 사람의 감정을 더 강조할 때\" 도 잴 수 없는 말이고 confused_with 의 smile 을 갈라 주지 않는다. / 해석의 '다음 방'·'당신의' 도 어긋난다(next room 은 옆방이다). / 반박 9건 판정(high 넷). **'여럿이 웃는 소리를 통틀어 가리켜요' 가 제 예문·문형을 부정한다**(반박자 셋) — 예문은 'I heard your laughter'(한 사람)이고 같은 교정에서 새로 넣은 문형도 'your/his/her + laughter'(한 사람 소유격)다. laughter 는 사람 수와 무관한 말이라 '여럿이' 는 근거 없는 조건이다. / **해석이 문형이 세운 소유격 자리를 도로 지웠다**(반박자 둘) — 앞선 gloss 교정이 '당신' 번역투를 걷어내며 your 와 임자말 I 를 통째로 지워, 누구의 웃음소리인지도 누가 들었는지도 안 남았다. 같은 교정자가 exhibit 에서는 임자말 복원을 요구했는데 여기서는 반대로 갔다. / **문형이 소유격 목록이라 가장 흔한 꼴을 배제한다**(반박자 셋) — 설명이 대표로 드는 burst into laughter 조차 이 문형 밖이다."
@@ -12854,31 +12863,36 @@
   usage_note: "남을 거들어 주는 일이 assistance 인데 안내문이나 가게에서 쓰는 딱딱한 말이에요 — Do you need any assistance? 그런 자리에서는 Could I get some assistance? 라고 해도 되고, 친구에게는 I need help. 라고 합니다. 한 번 거들어 주는 것이 아니라 계속 편이 되어 주는 것은 support 예요."
 
 - word: "roof"
-  reason: "**해석 '집의 지붕이 흘러내리고 있어요' 는 성립하지 않는다** — leak 은 새는 것이다. / 뜻 칸에도 '지붕' 이라는 말이 없고, 설명은 한국어 '지붕' 과 견주다 끝나 confused_with 의 ceiling 을 영어로 갈라 주지 않는다."
+  reason: "**해석 '집의 지붕이 흘러내리고 있어요' 는 성립하지 않는다** — leak 은 새는 것이다. / 뜻 칸에도 '지붕' 이라는 말이 없고, 설명은 한국어 '지붕' 과 견주다 끝나 confused_with 의 ceiling 을 영어로 갈라 주지 않는다. / 반박 4건 판정. **confused_with 의 rooftop 은 표제어 roof 를 통째로 품은 합성어라 헷갈리는 짝이 아니고**(이 DB 가 tooth 의 teeth 를 같은 까닭으로 걷어 낸 전례가 manual_fixes.yaml:12822 에 있다), content/data 의 어느 낱말 목록에도 없어 카드 자체가 없다 — 눌러도 갈 곳이 없다. / '지붕 위 평평한 자리는 the rooftop 이에요' 는 영어에 없는 갈림을 새로 세운 것이다. 사전은 rooftop 을 '건물의 지붕' 으로 적지 평평한 부분으로 한정하지 않고(snow on the rooftops), 홀로 서기보다 a rooftop bar 처럼 앞에 붙여 쓰는 쪽이 압도적이다. / 해석 '지붕이 새요' 는 무엇이 새는지가 빠졌고 왕초보에게는 '새(bird)' 로 읽힐 여지가 있다."
   meaning_ko: "지붕"
-  usage_note: "건물 맨 위를 덮는 것이 roof 예요 — a red roof. 방 안에서 올려다보는 천장은 ceiling 이라 a high ceiling 이라고 합니다. 지붕 위 평평한 자리는 the rooftop 이에요."
-  confused_with: ["ceiling", "rooftop"]
+  usage_note: "건물 맨 위를 덮는 것이 roof 예요 — a red roof. 방 안에서 올려다보는 천장은 ceiling 이라 a high ceiling 이라고 해요. 건물 옥상에 무엇을 두고 말할 때는 rooftop 을 앞에 붙여 a rooftop bar 라고 써요."
+  confused_with: ["ceiling"]
 
 - word: "retirement"
-  reason: "설명의 \"'retirement'은 명사로만 쓰이고\" 는 품사 단정 검사에 걸리고, 앞부분도 한국어 '은퇴' 와 견주다 끝난다. / 짝 항목 맞춤: pension 카드와 말을 맞췄다."
+  reason: "설명의 \"'retirement'은 명사로만 쓰이고\" 는 품사 단정 검사에 걸리고, 앞부분도 한국어 '은퇴' 와 견주다 끝난다. / 짝 항목 맞춤: pension 카드와 말을 맞췄다. / 반박 1건(high) 판정. 이 카드가 가르치는 것은 이름씨 retirement 인데 해석이 '은퇴할 준비' 로 움직씨가 됐다 — 같은 카드의 설명이 '물러나는 동작은 retire' 라고 못박고 있어 설명이 제 해석을 부정하고, 이웃 retire 카드 해석 '그는 교직에서 은퇴했어요.' 와도 학습자 눈에 구별이 사라진다. gloss_fixes.yaml:4277 의 reason 은 \"'은퇴를 준비하고 있어요' 는 조사가 어색하다\" 였는데 그 조사는 어색하지 않다 — reason 이 든 근거가 안 서는데 고친 결과는 품사까지 바꿔 놓았다."
   usage_note: "일에서 물러나 더는 일하지 않는 것이 retirement 예요 — after his retirement. 물러나는 동작은 retire 라서 He retired last year. 라고 합니다. 물러난 뒤 다달이 받는 돈은 a pension 이에요."
   confused_with: ["retire", "pension"]
 
 - word: "respectively"
-  reason: "설명이 예문을 다시 풀어 주기만 하고 confused_with 의 each 를 갈라 주지 않는다."
-  meaning_ko: "차례대로 각각"
-  usage_note: "앞에 든 것들과 뒤에 든 것들을 차례대로 짝지어 준다는 뜻이라 문장 끝에 붙입니다. 차례가 어긋나면 뜻이 달라져요. 하나하나 따로 말할 때는 each 를 써서 They each got a prize. 라고 합니다."
+  reason: "설명이 예문을 다시 풀어 주기만 하고 confused_with 의 each 를 갈라 주지 않는다. / 반박 7건 + 제가 대신 본 칸 아귀 판정. **뜻 칸이 이웃 each 와 '각각' 을 나눠 갖는다** — 정작 이 낱말의 알맹이인 '앞뒤를 짝지어 준다' 가 뜻 칸에 없다. / **문형이 두 벌 가운데 뒤쪽 한 벌만 보여 준다** — 'A and B, respectively' 만 따라 쓰면 짝지을 앞 목록이 없는 'I bought apples and oranges, respectively.' 가 나온다. / 해석에 뜻 칸의 '차례대로' 도 설명의 '짝지어' 도 한 글자가 안 남아, 빈칸 문제로 나가면 한국어가 답을 안 짚는다. / '문장 끝에 붙입니다' 는 단정이다 — 실제 자리는 두 번째 목록 바로 뒤이고 그것이 문장 한가운데일 때가 있다. / 설명이 든 each 갈림이 겹치기만 하고 안 갈라 준다. / 진짜 헷갈리는 짝은 each 가 아니라 respective 인데 한 번도 안 나온다(그 카드는 이쪽을 혼동으로 걸어 두었다)."
+  meaning_ko: "앞에 든 차례대로 짝지어"
+  pattern: "A and B ... X and Y, respectively"
+  usage_note: "앞에 든 것과 뒤에 든 것을 나온 차례대로 짝지어 줄 때 써요 — 존이 5달러, 메리가 10달러입니다. 짝지을 두 번째 목록 바로 뒤에 붙이는데 그 자리가 문장 끝일 때가 많아요. 여럿이 똑같이 하나씩 받았다고 할 때는 each 를 써서 Each student got a prize. 라고 해요. 이름씨 앞에 붙는 그림씨는 respective 라서 their respective rooms 라고 해요."
+  confused_with: ["respective", "each"]
 
 - word: "ultimately"
-  reason: "설명이 한국어 '결국' 과 견주며 '더 강하게' 라는 잴 수 없는 말을 쓰고, confused_with 의 finally·eventually 를 영어로 갈라 주지 않는다."
-  meaning_ko: "결국에는, 따지고 보면"
-  usage_note: "이런저런 일이 있었지만 마지막에 가서는 그렇다는 뜻이에요 — Ultimately, it's your choice. 오래 기다린 끝에 드디어 그렇게 됐다고 할 때는 finally 나 eventually 를 써서 He finally arrived. 라고 합니다."
+  reason: "설명이 한국어 '결국' 과 견주며 '더 강하게' 라는 잴 수 없는 말을 쓰고, confused_with 의 finally·eventually 를 영어로 갈라 주지 않는다. / 반박이 다 죽어 내가 직접 읽고 판정. **설명이 제 낱말을 eventually 로 정의한다** — '이런저런 일이 있었지만 마지막에 가서는 그렇다' 는 이웃 eventually 카드의 설명 '오래 걸리고 이런저런 일이 있은 끝에 그렇게 됐다' 와 같은 말이다. 그러면서 바로 뒤에 드는 예 'Ultimately, it's your choice.' 는 시간이 흐른 끝이 아니라 '따져 보면' 쪽이라, 정의와 그 정의가 든 예가 서로 다른 뜻을 가리킨다. / **해석이 짝 카드 둘과 같은 틀을 나눠 갖는다** — '결국 우리는 떠나야 했어요' 는 finally 카드의 '결국 우리는 호텔에 도착했습니다', eventually 카드의 '결국 우리는 호텔을 찾았어요' 와 '결국 우리는 ~' 로 똑같아, 빈칸으로 내면 답이 셋이 된다. 예문 자체도 시간 쪽 뜻이라 이 카드가 가져야 할 자리가 아니다. / **문형이 자리를 문두 하나로 못박았다** — ultimately 는 It ultimately depends on you. 처럼 동사 앞에도 흔히 온다. 같은 부류인 이웃 eventually 카드는 문형에 '주어 + eventually + 동사' 를 이미 담고 있어 두 낱말 사이에 없는 자리 차이가 생겼다."
+  meaning_ko: "따지고 보면, 결국은"
+  pattern: "ultimately + 문장 (맨 앞) / 주어 + ultimately + 동사"
+  example: "Ultimately, it's your choice."
+  usage_note: "이것저것 따져 보면 마지막에 남는 답이 그것이라고 할 때 써요 — It ultimately depends on you(따지고 보면 네게 달렸어요). 동사 앞에도 자주 옵니다. 시간이 오래 걸린 끝에 마침내 그렇게 됐다는 쪽은 finally 나 eventually 라서 He finally arrived. 라고 해요."
 
 - word: "smart"
-  reason: "**설명의 \"사람을 말할 때는 'clever'가 더 자연스러운데요\" 는 거짓이다** — 사람에게 가장 흔히 쓰는 것이 smart 다. 문체도 깨졌다. / 문형 'smart + about/with + 주제' 와 예문 'He is smart about technology.' 도 원어민이 잘 쓰지 않는 꼴이다."
-  pattern: "be + smart / smart + 명사"
-  example: "She is a smart student."
-  usage_note: "머리가 좋다는 뜻으로 사람에게 가장 자주 씁니다 — He's really smart. clever 도 같은 뜻인데 꾀가 있다는 결이 좀 더 있어요. intelligent 는 글에서 쓰는 딱딱한 말입니다. 옷차림이 말끔하다는 뜻으로도 써서 smart clothes 라고 해요."
+  reason: "**설명의 \"사람을 말할 때는 'clever'가 더 자연스러운데요\" 는 거짓이다** — 사람에게 가장 흔히 쓰는 것이 smart 다. 문체도 깨졌다. / 문형 'smart + about/with + 주제' 와 예문 'He is smart about technology.' 도 원어민이 잘 쓰지 않는 꼴이다. / 반박 6건 판정. **영국·미국 갈림을 뒤섞고 한쪽을 보편 규칙으로 단정했다** — '머리가 좋다는 뜻으로 사람에게 가장 자주 씁니다' 는 미국 영어의 사실이고, 영국에서는 clever 가 보통 말이며 He's smart. 는 오히려 옷차림 쪽으로 읽힌다. 그러면서 같은 설명 끝이 영국 전용 짝인 smart clothes 를 표시 없이 가르친다. / **설명이 든 둘째 뜻이 뜻 칸에 없다** — 같은 묶음의 shoot 카드는 둘째 뜻을 뜻 칸에 적어 두어 한 묶음 안에서 처리가 갈린다. / **문형 두 갈래 중 'be + smart' 를 예문이 안 보여 준다** — 예문은 이름씨 앞 자리뿐인데 'is ... smart' 가 나란히 보여 두 자리를 같은 것으로 오해하기 쉽고, 선별기는 슬래시 형태 중 하나만 맞으면 통과시켜 못 잡는다. / '꾀가 있다는 결이 좀 더 있어요' 는 잴 수 없는 말이고 clever 의 기본 쓰임(a clever student)을 과장한다. 말투도 한 카드 안에서 네 번 갈린다."
+  meaning_ko: "똑똑한, 영리한; (옷차림이) 말끔한"
+  pattern: "be + smart"
+  example: "She is very smart."
+  usage_note: "미국에서는 머리가 좋다는 뜻으로 사람에게 가장 자주 써요 — He's really smart. 이름씨 앞에도 붙여 a smart student 라고 해요. 영국에서는 같은 뜻으로 clever 를 더 쓰고, smart 는 옷차림이 말끔하다는 쪽으로 자주 써서 smart clothes 라고 해요. intelligent 는 글에서 쓰는 딱딱한 말이에요."
 
 - word: "layer"
   reason: "자리 검사: 문형 'layer + of + 명사' 를 예문 'This cake has three layers.' 가 보여 주지 않는다. / 설명의 'layer of bread' 도 원어민이 잘 쓰지 않는 짝이고 confused_with 의 floor 를 다루지 않는다. / 반박 5건 판정(high 둘). **뜻 칸의 '층' 을 같은 카드 설명이 floor 에게 넘겼다**(반박자 셋) — '건물의 층은 a floor 라서 the third floor 라고 하고' 라 해 놓고 뜻 칸은 '층' 을 들고 있어, 학습자가 '3층' 을 the third layer 로 옮긴다. 이웃 floor 카드의 뜻도 '바닥, 층' 이라 두 카드가 같은 한국어를 나눠 갖는다. 앞선 교정이 설명에만 floor 를 넣고 뜻 칸을 안 맞췄다. / 해석 '세 겹' 은 케이크에 어색하다(옷 세 겹, 종이 세 겹처럼 얇은 것에 쓴다) — 정작 맞는 말 '층' 은 설명이 floor 로 넘겨 못 쓰게 되어 있다. / level 을 '높낮이나 등급' 으로 옮겼는데 이웃 level 카드의 뜻은 '수준, 단계' 다."
@@ -12887,23 +12901,24 @@
   usage_note: "위아래로 포개진 하나하나가 layer 예요 — a layer of dust. 케이크처럼 층층이 쌓인 것도 three layers 라고 하고, 옷을 겹쳐 입는 것도 wear layers 라고 합니다. 건물의 층은 a floor 라서 the third floor 라고 하고, 수준이나 단계는 level 이라 a high level 이라고 해요."
 
 - word: "tooth"
-  reason: "**confused_with 가 'teeth' 하나뿐인데 이는 표제어의 겹수꼴이라 헷갈리는 짝이 아니다.** / 뜻 칸의 '이빨' 은 보통 짐승의 이를 가리키는 말이라 사람에게는 '이' 나 '치아' 를 쓴다."
+  reason: "**confused_with 가 'teeth' 하나뿐인데 이는 표제어의 겹수꼴이라 헷갈리는 짝이 아니다.** / 뜻 칸의 '이빨' 은 보통 짐승의 이를 가리키는 말이라 사람에게는 '이' 나 '치아' 를 쓴다. / 반박 3건 판정. **confused_with 에 남은 dentist 는 헷갈리는 짝이 아니다** — 몸의 한 부분(이)과 사람(치과 의사)이라 뜻이 겹치지 않아 바꿔 쓸 일이 없고, 설명도 '이를 치료해 주는 사람은 a dentist' 라며 딸린 낱말을 소개할 뿐 갈라 주는 일을 하지 않는다(갈라 줄 것이 없다). 앞선 교정이 겹수꼴 teeth 를 뺀 것까지는 옳았으나 그 빈자리를 헷갈림이 아닌 말로 메워, 칸의 뜻이 사라졌다. 이 낱말에는 A1 수준에서 실제로 바꿔 쓸 짝이 없으므로 비워 둔다(DB 에 빈 혼동 칸이 71개 있다). / 해석 '이가 하나 부러졌어요' 는 방금 부러진 사건으로 읽히는데 예문 'I have a broken tooth.' 는 지금 부러진 이가 있다는 상태다."
   meaning_ko: "이, 치아"
   usage_note: "입 안의 이 하나가 tooth 예요. 여럿이면 모양이 바뀌어 teeth 라고 합니다 — brush your teeth. 이가 아픈 것은 a toothache 이고, 이를 치료해 주는 사람은 a dentist 예요."
-  confused_with: ["dentist"]
+  confused_with: []
 
 - word: "representation"
-  reason: "**confused_with 가 빈 목록이다.** / 설명도 한국어 '대표'·'표현' 을 두고 돌 뿐 움직씨 represent 를 다루지 않는다."
-  meaning_ko: "나타낸 것, 그려 낸 것; 대표"
-  usage_note: "무엇을 그림이나 글로 나타낸 것이 representation 이에요 — a representation of a dog. 어떤 무리를 대신해 나서는 일도 representation 이라, 그 사람은 a representative 라고 합니다. 나타내는 동작은 represent 예요."
+  reason: "**confused_with 가 빈 목록이다.** / 설명도 한국어 '대표'·'표현' 을 두고 돌 뿐 움직씨 represent 를 다루지 않는다. / 반박 8건 판정(high 하나). **해석의 '그림' 이 예문에 없다**(반박자 셋) — a good representation of the city 는 모형·지도·글일 수도 있는데 해석이 하나로 못박아 한국어만 보면 답이 picture 로 샌다. 같은 검수자가 recognition 해석을 두고 'work 를 작품으로 좁혔다' 를 결함으로 적어 놓고 여기서 같은 좁힘을 새로 만들었고, 이 카드의 설명이 '그림이나 글로' 라고 넓혀 둔 것과도 어긋난다. / **뜻 칸의 '대표' 가 이웃 representative 카드의 뜻 '대표, 대리인' 과 같은 한국어다**(반박자 둘) — 게다가 우리말 '대표' 는 홀로 쓰면 사람을 가리켜, 설명이 '대신해 나서는 일'(행위)로 잡은 것과도 어긋난다. / '그 사람' 이 받을 말이 없다 — 앞에 나온 것은 '나서는 일' 이라는 행위뿐이다. / 문형이 예문·설명이 쓰는 관사 자리를 안 담는다."
+  meaning_ko: "나타낸 것, 그려 낸 것; 대신해 나서는 일"
+  pattern: "a representation of + 대상"
+  usage_note: "무엇을 그림이나 글, 모형으로 나타낸 것이 representation 이에요 — a representation of a dog. 어떤 무리를 대신해 나서는 일도 representation 입니다. 그렇게 나서는 사람은 a representative 라고 해요. 나타내는 동작은 represent 라서 This symbol represents peace. 라고 합니다."
   confused_with: ["represent", "representative"]
 
 - word: "preparation"
-  reason: "**confused_with 의 'preparations' 는 표제어의 겹수꼴이다.** / 설명의 \"'preparation'은 명사로만 쓰입니다\" 는 품사 단정 검사에 걸린다. / 예문 'I need to make some preparation.' 도 원어민이 겹수로 쓰는 자리다."
+  reason: "**confused_with 의 'preparations' 는 표제어의 겹수꼴이다.** / 설명의 \"'preparation'은 명사로만 쓰입니다\" 는 품사 단정 검사에 걸린다. / 예문 'I need to make some preparation.' 도 원어민이 겹수로 쓰는 자리다. / 반박 8건 판정. **저장된 arrangement 카드와 같은 자리를 차지한다** — 그 카드의 뜻이 '배치, 배열; (미리 해 두는) 준비' 이고 설명도 'make arrangements' 라, '미리 해 두는 준비' + 'make + 겹수' 를 두 카드가 똑같이 갖고 어느 쪽도 상대를 안 갈라 준다. / 해석 '여행 준비를 했어요' 는 설명이 prepare 에 넘긴 동작의 한국어라, 빈칸 답이 preparations/prepared/arrangements 로 갈린다. / 한 카드 안에서 가리키는 것이 바뀐다 — 첫 문장은 '미리 챙겨 두는 일'(행위)인데 다음 문장은 겹수를 '하나하나 챙긴 것들'(물건)이라 한다. / 문형의 둘째 갈래 'in preparation for' 를 예문도 설명도 한 번도 안 다룬다. / '겹수' 는 이 DB 가 다른 곳에서 '복수' 로 적는 말이다."
   meaning_ko: "준비"
-  pattern: "make + preparations / in preparation for + 명사"
+  pattern: "make + preparations + for + 명사"
   example: "We made preparations for the trip."
-  usage_note: "무엇을 하기 전에 미리 챙겨 두는 일이 preparation 이에요. 하나하나 챙긴 것들을 말할 때는 겹수로 make preparations 라고 씁니다. 준비하는 동작은 prepare 라서 prepare dinner 라고 하고, 준비가 된 상태는 그림씨 ready 예요."
+  usage_note: "무엇을 하기 전에 미리 챙겨 두는 일이 preparation 이에요. 챙길 일이 여러 가지일 때는 -s 를 붙여 make preparations for the trip 처럼 씁니다. 홑수로는 in preparation for the exam(시험에 대비해) 처럼 써요. 같은 말을 동작으로 하면 prepare 라서 prepare for the trip 이라고 하고, 준비가 된 상태는 그림씨 ready 예요."
   confused_with: ["prepare", "ready"]
 
 - word: "dispute"
@@ -12935,11 +12950,11 @@
   confused_with: ["fun", "entertain"]
 
 - word: "undertake"
-  reason: "설명의 \"'I will take the project.'보다는 더 공식적인 상황에서 써요\" 는 잴 수 없는 말이고 confused_with 의 start 를 다루지 않는다. / 왕초보가 실제로 쓰는 짝(take on)도 빠졌다. / 되읽기: 문형 괄호의 '프로젝트' 는 영어를 소리대로 옮긴 말이다."
+  reason: "설명의 \"'I will take the project.'보다는 더 공식적인 상황에서 써요\" 는 잴 수 없는 말이고 confused_with 의 start 를 다루지 않는다. / 왕초보가 실제로 쓰는 짝(take on)도 빠졌다. / 되읽기: 문형 괄호의 '프로젝트' 는 영어를 소리대로 옮긴 말이다. / 반박이 다 죽어 내가 직접 읽고 판정. confused_with 의 'take on' 은 content/data 의 어느 낱말 목록에도 없어 카드가 아예 없다 — 학습자가 눌러도 갈 곳이 없는 죽은 짝이다(같은 까닭으로 이번 묶음에서 rooftop·dense 도 걷어냈다). 설명 안에서 take on 을 드는 것은 그대로 두어도 되지만, 혼동 칸은 카드가 있는 낱말만 담아야 한다. 나머지 칸(뜻·문형·예문·해석·설명)은 서로 어긋나는 데가 없어 그대로 둔다."
   meaning_ko: "떠맡다, 책임지고 하다"
   pattern: "undertake + 목적어 (일, 연구 등)"
   usage_note: "쉽지 않은 일을 책임지고 맡아 하겠다는 뜻이라 서류나 뉴스에서 쓰는 딱딱한 말이에요 — undertake a study. 날마다 말할 때는 take on 을 써서 take on more work 라고 합니다. 그냥 시작하는 것은 start 예요."
-  confused_with: ["take on", "start"]
+  confused_with: ["start", "accept"]
 
 - word: "retail"
   reason: "문형 'retail + 상품 (예: retail store)' 의 괄호가 어긋난다 — store 는 상품이 아니다. / 설명의 \"'wholesale'과 혼동하지 않도록 주의하세요\" 도 갈라 주는 말이 아니다. / 반박(칸 아귀 3): 설명의 '가게에 대량으로 넘기는 쪽은 wholesale' 이 wholesale 을 '양' 으로 가른다. 실제 갈림은 양이 아니라 되파는 쪽에 넘긴다는 상대라, bulk 와 겹쳐 버린다. 이번에 함께 고치는 wholesale 카드와 낱말을 맞춘다."
@@ -13440,3 +13455,28 @@
   reason: "짝 맞춤(peer 의 confused_with). peer 카드는 '같은 반 친구는 classmate 예요' 라고 갈라 주는데, 이 카드는 뜻이 '동창', 해석이 '동기', 설명이 '학교에서 같이 공부한 사람' 이라 한 낱말을 세 한국어로 가리킨다. 영어 classmate 는 지금 같은 반·같은 수업을 듣는 사람이고, 졸업한 뒤의 동창은 보통 a former classmate 나 an alumnus 다. 게다가 '동창(학교에서 같이 공부한 사람)' 은 peer 의 '처지가 비슷한 사람' 과 거의 겹쳐 peer 가 세우려는 갈림을 지운다. 낱말을 다 읽은 것이 아니라 대장에는 안 올린다."
   meaning_ko: "같은 반 친구, 학교 친구"
   usage_note: "같은 반이나 같은 수업에서 함께 공부하는 사람이 classmate 예요 — my classmate from school. 졸업한 뒤의 동창은 a former classmate 라고 따로 말합니다. 나이나 처지가 비슷한 사람들은 peers 라고 해요."
+
+- word: "clever"
+  reason: "짝 맞춤(smart 의 confused_with). 설명이 \"clever는 '재치 있는' 의미로 쓸 때, '재미있는'이나 '재치 있는'과 헷갈릴 수 있어요\" 로 제 뜻을 제 뜻과 견주는 자기순환이고 영어가 한 글자도 없다. 뜻 칸의 '똑똑한' 은 smart·intelligent 와 셋이 나눠 가진 말이고, 문형 'clever + enough + to + 동사' 와 예문 틀은 이웃 intelligent 카드의 'She is intelligent enough to lead the project.' 와 같은 틀이라 짝 카드 둘이 한 문장을 나눠 갖는다. smart 카드가 세운 갈림(영국에서 더 흔함)과도 맞물리지 않았다."
+  meaning_ko: "재치 있는, 꾀바른"
+  pattern: "a clever + 명사"
+  example: "That was a clever idea."
+  usage_note: "머리가 좋다는 뜻은 smart 와 같은데 영국에서 이 뜻으로 더 자주 써요 — a clever student. 잔꾀를 부린다는 쪽으로도 읽혀서 a clever trick 은 얕은 수를 뜻해요. 미국에서 사람이 똑똑하다고 할 때는 smart 를 쓰고, 글에서 쓰는 딱딱한 말은 intelligent 예요."
+  confused_with: ["smart", "intelligent"]
+
+- word: "respective"
+  reason: "짝 맞춤(respectively 를 혼동으로 걸어 두었고, 이번에 respectively 쪽에서도 이 낱말을 걸었다). 설명이 \"한국어 '각각의'와 혼동하지만\" 으로 한국어끼리만 견주고 영어 정보가 없으며, 뜻 칸의 '각각의' 는 이웃 each 카드의 뜻과 같은 말이다. 이름씨 앞에만 서는 자리라는 것과 respectively 와의 갈림이 설명에 없다."
+  meaning_ko: "저마다의, 각자의"
+  usage_note: "여럿이 저마다 따로 가진 것을 가리킬 때 이름씨 앞에 붙여 써요 — their respective rooms(저마다 제 방). 이름씨 없이 홀로는 쓰지 않아요. 앞뒤를 차례대로 짝지어 주는 어찌씨는 respectively 라서 목록 뒤에 붙여요."
+
+- word: "provider"
+  reason: "짝 맞춤(supplier 의 confused_with). 뜻 칸 '공급자, 제공자' 의 '공급자' 는 supplier 의 표준 대응이라, 학습자가 '공급자' 를 찾으면 이 카드로 잘못 온다. 설명은 \"'supplier'와는 조금 다른 맥락이에요\" 로 끝나 무엇이 다른지 한 글자도 갈라 주지 않고 영어 정보도 없다. 예문 틀 'Who is our main service provider?' 도 supplier 카드의 'Who is the supplier of this product?' 와 거의 같아 두 카드를 갈라 볼 근거가 없다. 해석의 '우리의 …는 누구인가요?' 도 번역투다."
+  meaning_ko: "(서비스를) 제공하는 쪽, 제공업체"
+  example: "We changed our energy provider."
+  usage_note: "서비스를 해 주는 회사가 provider 예요 — an internet service provider. 물건이나 재료를 대 주는 쪽은 supplier 라서 our main supplier 라고 해요. 두 낱말이 겹치는 자리도 있어서 전기·가스 회사는 an energy provider 라고도 an energy supplier 라고도 불러요."
+  confused_with: ["supplier"]
+
+- word: "generally"
+  reason: "짝 맞춤(typically 의 confused_with). typically 카드의 교정 reason 이 \"'usually'보다 더 공식적인 느낌\" 을 잴 수 없는 말이라며 지웠는데, 정작 이 카드가 \"한국어 '보통'보다 조금 더 공식적인 느낌이 들어요\" 로 똑같은 말을 그대로 두고 있어 학습자가 건너오면 방금 지운 결함을 다시 만난다. 게다가 그 문장은 영어 낱말끼리가 아니라 한국어 '보통' 과만 견주는 자리다. 뜻 칸 '보통, 일반적으로' 도 usually 카드와 글자 하나 다르지 않다."
+  meaning_ko: "대체로, 크게 보아"
+  usage_note: "하나하나 따지면 다를 수 있지만 통틀어 보면 그렇다고 할 때 써요 — Generally, it rains a lot in summer. 얼마나 자주 하느냐를 말할 때는 usually 를 써서 I usually get up at seven. 이라고 해요. 여느 때와 다르지 않게 흔히 그렇다는 쪽은 typically 예요."
