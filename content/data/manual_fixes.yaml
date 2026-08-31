@@ -5937,16 +5937,26 @@
   usage_note: "무엇을 대신 나타내는 것이 symbol 이에요 — a symbol of hope(희망의 상징). 글자로 적는 기호도 symbol 이라 a chemical symbol(H, O 같은 원소 기호) 처럼 씁니다. 다만 $ 나 % 같은 글자는 a dollar sign, a percent sign 이라고 불러요. 길에서 알려 주는 표지판도 a sign 이고, 화면에 뜨는 작은 그림은 an icon 이에요."
 
 - word: "demonstration"
-  reason: "문형 자리에 영어가 들어가 있었다: demonstration + of + something"
-  pattern: "demonstration + of + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: demonstration + of + something / **이 낱말이 뉴스에서 가장 자주 쓰이는 뜻(시위)이 카드에 없다** — hold a demonstration 은 거리로 나와 뜻을 밝히는 일이고, 이 DB 에는 protest 카드가 살아 있어 이어 줄 수 있다. / 설명이 한국어 '보여주기' 와 견주는 데서 시작하고 '보다 공식적이고 교육적인' 은 잴 수 없는 말이다. / 해석 '선생님은 그 도구를 사용하는 방법을 보여주셨어요' 는 이름씨 a demonstration 을 통째로 움직씨로 풀어, 예문의 gave a demonstration 이라는 짜임이 한 조각도 안 남는다. / 예문이 11낱말로 길다. / 반박 8건 판정(high 하나). **내가 새로 넣은 시위 뜻을 바로 다음 문장이 스스로 부정한다** — '시위도 demonstration' 이라 해 놓고 '반대한다고 목소리를 내는 쪽은 protest' 라고 갈랐는데, 영어에 그런 갈림은 없다. a demonstration 은 protest 의 한 갈래이고, an anti-war demonstration 처럼 반대 쪽에도 그대로 쓴다. 게다가 검수를 마친 protest 카드의 설명이 '여럿이 모여 반대한다고 드러내는 것이 protest 예요' 라 내가 적은 시위 풀이와 글자 그대로 같은 것을 가리키고, 그 카드가 '이름씨로도 써서 join a protest' 로 이름씨 자리까지 이미 차지하고 있다 — 뜻 칸의 '시위' 빈칸 답이 둘로 갈린다. 갈림을 자리로 다시 세운다(모인 자리 자체 대 against 로 반대를 밝히는 동작). / 뜻 '시범, 해 보이기' 는 같은 말을 한자말과 순우리말로 두 번 적은 것이고, '해 보이기' 는 이 DB 에 없는 이름꼴 조어다 — 같은 교정안이 platform·foundation 에서 되풀이를 흠으로 들어 놓고 여기서 남겼고, premise 항목이 '따짐' 을 같은 까닭으로 이미 물렀다. / 새 해석 '시범으로 보여 주셨어요' 도 뼈대가 여전히 움직씨 '보여 주다' 인데, 그 말은 show 카드의 뜻 그 자체이고 demonstrate 카드 해석도 같아 세 카드가 답을 나눠 갖는다. 문형 'give a demonstration of' 가 가르치는 목적어 자리를 해석에 세운다. / '거리로 나와 뜻을 밝히는' 의 '뜻' 은 이 앱이 낱말의 meaning 으로만 쓰는 말이라 왕초보가 낱말 뜻 이야기로 먼저 읽는다."
+  meaning_ko: "시범; (여럿이 모여 하는) 시위"
+  pattern: "give a demonstration of + 명사"
+  example: "The teacher gave a demonstration of the tool."
+  usage_note: "무엇을 어떻게 하는지 실제로 해 보이는 것이 demonstration 이에요 — give a demonstration. 사람들이 거리에 모여 하고 싶은 말을 드러내는 시위도 demonstration 이라 hold a demonstration 이라고 해요. 해 보이는 동작은 demonstrate 이고, 무엇에 반대하는지를 against 로 밝히는 동작은 protest 라서 protest against the law 라고 합니다."
+  confused_with: ["demonstrate", "protest"]
 
 - word: "restriction"
-  reason: "문형 자리에 영어가 들어가 있었다: noun: restriction on + 대상"
-  pattern: "restriction on + 대상"
+  reason: "문형 자리에 영어가 들어가 있었다: noun: restriction on + 대상 / 해석 '여기서는 흡연이 제한되어 있어요' 가 이름씨 restrictions 를 '제한되어' 라는 움직씨로 풀어 버려, 문형 'restriction on + 대상' 이 가르치는 이름씨 자리가 한국어에 한 조각도 안 남는다. / 설명이 한국어 '제한·규제' 와 견주는 데서 시작하고 '보통 공식적인 규칙이나 법' 은 잴 수 없는 말이며, 든 보기 'smoking restriction' 은 예문의 restrictions on smoking 과 꼴이 달라 문형을 안 받친다. / 혼동 칸의 limit·rule 을 설명이 한 번도 갈라 주지 않고, 짝인 움직씨 restrict 도 안 든다. / 반박 9건 판정(high 하나). **가장 가까운 짝인 limitation 이 빠졌다** — 그 카드의 예문·해석이 'There is a limitation on the number of guests.' / '손님 수에 제한이 있어요.' 라, 내가 새로 쓴 해석 '여기는 흡연에 제한이 있어요.' 와 한국어 틀도 영어 틀도 같아 빈칸 답이 둘이 된다. limitation 쪽은 이미 restriction 을 걸어 두어 한쪽만 이어진 상태이고, 검수를 마친 limit 카드가 셋을 이미 갈라 놓았다. / **'규칙' 을 한 문단 안에서 두 임자에게 줬다** — 첫 문장이 restriction 을 '규칙으로 막아 두는 것' 이라 해 놓고 뒤에서 '지켜야 할 규칙은 a rule' 이라 넘긴다. 게다가 검수를 마친 limit 카드가 'restriction 은 누가 정해 놓은 규칙이라' 로 restriction 을 대놓고 '규칙' 이라 부르고 있어, 저장된 카드와 정면으로 부딪힌다. / 뜻 칸의 '하지 못하게 두는' 은 성립하지 않는 한국어다 — '두다' 가 홀로 못 서고, '못하게 두다' 로 읽으면 '내버려 두다' 라는 딴 뜻이 된다. 정작 내 설명은 '막아 두는' 이라고 제대로 적었다. / 문형이 홑수인데 예문도 내 보기도 겹수라 카드 안에서 문형만 다른 꼴이고, 굳어 쓰이는 앞자리 겹수(travel restrictions)도 없다. / 해석의 '흡연' 은 이 DB 가 '한자어가 겹쳐 딱딱하다' 며 '담배를 피울 수 없는' 으로 고친 판정과 어긋나고, 새로 건 restrict 카드의 저장된 해석도 '담배 피우는 것' 이다."
+  meaning_ko: "(못 하게 막아 두는) 제한"
+  pattern: "restrictions on + 대상 / a restriction on + 대상"
+  usage_note: "무엇을 못 하게 막아 두는 것이 restriction 이에요 — restrictions on smoking. 무엇에 대한 제한인지는 on 으로 붙이고, 앞에 놓기도 해요 — travel restrictions. 넘을 수 없는 선 자체는 a limit 이라 a speed limit 이라고 하고, 사람이나 물건이 못 하는 점은 a limitation 이에요. 다 같이 지키기로 정해 놓은 것은 a rule 이고, 막는 동작은 restrict 예요."
+  confused_with: ["limit", "limitation", "rule", "restrict"]
 
 - word: "trap"
-  reason: "문형 자리에 영어가 들어가 있었다: trap + 목적어 (사람/동물), trap + someone + into + something"
-  pattern: "trap + 목적어 (사람/동물), trap + 사람 + into + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: trap + 목적어 (사람/동물), trap + someone + into + something / **뜻 칸의 '함정을 세우다' 가 틀렸다** — 함정을 놓는 것은 set a trap 이고 움직씨 trap 은 '가두다' 다. 게다가 이 낱말의 이름씨 뜻(덫)이 뜻 칸에 없는데 설명은 '물리적인 함정' 을 말한다. / **문형이 예문과 태가 어긋난다** — 문형은 'trap + 목적어' 라는 능동인데 예문 'The mouse was trapped in the box.' 는 수동이고, 실제로 이 낱말은 갇힌 쪽을 주어로 세우는 be trapped 꼴로 훨씬 자주 쓴다. 문형의 둘째 갈래 'trap + 사람 + into + 명사' 는 드문 꼴인 데다 설명도 예문도 안 받친다. / 혼동 칸의 snare 는 카드가 없다. / 해석 '쥐는 상자에 갇혀 있었습니다' 는 말투가 갈리고 조사도 '쥐가' 가 맞다. / 반박 2건 판정. 새 뜻 칸 '덫; 가두다, 덫에 걸리게 하다' 는 능동인데 카드의 나머지 다섯 칸이 모두 당하는 쪽이다 — 문형 'be trapped in', 예문 'The mouse was trapped in the box.', 해석 '쥐가 상자에 갇혔어요.', 설명 '갇힌 쪽을 주어로 놓아'. 뜻 칸만 혼자 서 있고, '덫에 걸리게 하다' 는 설명이 든 승강기 쓰임을 못 받는다(승강기는 덫이 아니다). / 새 문형이 능동 자리를 통째로 지웠다 — 남은 둘 중 set a trap 은 이름씨 연어이고 be trapped 는 수동이라, 뜻 칸이 약속한 '가두다' 를 만들 자리가 카드에 없다. 능동 타동사 trap 은 드물지 않다(The fire trapped ten people on the roof.)."
+  meaning_ko: "덫; 가두다 (주로 be trapped 로 '갇히다')"
+  pattern: "trap + 목적어 / be trapped in + 곳"
+  usage_note: "짐승을 잡으려고 놓는 덫이 a trap 이라 set a trap 이라고 해요. 빠져나오지 못하게 가둔다는 뜻으로도 쓰는데, 가둔 쪽을 주어로 하면 The fire trapped ten people. 이고 갇힌 쪽을 주어로 하면 be trapped in the elevator(승강기에 갇히다) 예요. 그냥 잡는 것은 catch 라서 catch a fish 라고 합니다."
+  confused_with: ["catch"]
 
 - word: "confident"
   reason: "문형 자리에 영어가 들어가 있었다: be confident + about/with + something"
@@ -7427,12 +7437,18 @@
   usage_note: "어떤 일이 아주 드물게만 일어난다고 할 때 동사 앞에 넣어요 — I rarely watch TV. be 동사와 쓸 때는 뒤로 가서 He is rarely late. 가 됩니다. 이미 '아니다' 는 뜻이 들어 있어서 not 을 또 붙이지 않아요. 가끔은 있다는 쪽은 sometimes, 자주 있는 쪽은 often 이에요."
 
 - word: "evil"
-  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + 명사 / 설명이 한국어 '악한' 과 견주는 데서 시작해 영어를 거의 안 가르치고, 혼동 칸의 bad 를 갈라 주는 말이 한 줄도 없다 — 실제 갈림은 evil 이 '남을 해치려는 마음' 을 담아 도덕을 말하는 무거운 자리에 쓴다는 점이다. / 혼동 칸의 wicked 는 카드가 없다. / 이름씨로 쓰는 자리(good and evil)도 카드에 없다."
+  meaning_ko: "아주 나쁜, 악한"
   pattern: "evil + 명사"
+  usage_note: "남을 해치려는 마음이 있어 아주 나쁘다는 뜻이라 an evil plan, an evil king 처럼 이름씨 앞에 붙여 써요. 그냥 나쁜 것은 bad 라서 bad weather 라고 하는데, evil 은 그보다 훨씬 무겁고 도덕을 말하는 자리에 씁니다. 이름씨로 쓰면 '악' 이라 good and evil 이라고 해요."
+  confused_with: ["bad"]
 
 - word: "extraordinary"
-  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun"
+  reason: "문형 자리에 영어가 들어가 있었다: adjective + noun / **뜻 칸 '이상한, 특이한' 이 이 낱말의 결을 거꾸로 잡았다** — extraordinary 는 대개 칭찬하는 말이라 an extraordinary talent 처럼 쓰는데, '이상한' 을 앞세우면 학습자가 나무라는 자리에 쓰게 된다. 설명이 스스로 \"'이상한'보다는 긍정적인 의미예요\" 라고 뜻 칸을 부정한다. / 게다가 '이상한' 은 혼동 칸의 strange 카드 뜻('기이한, 이상한')과, '특이한' 은 unusual 카드 뜻('여느 때와 다른, 흔치 않은')과 겹쳐 셋이 같은 한국어를 나눠 갖는다. / 반대말 ordinary 가 카드로 살아 있는데 한 번도 안 든다."
+  meaning_ko: "보통이 아닌, 대단한"
   pattern: "extraordinary + 명사"
+  usage_note: "여느 것과 견줄 수 없을 만큼 대단하다는 뜻이라 an extraordinary talent 처럼 써요. 좋은 쪽으로 쓰는 일이 많습니다. 그저 여느 때와 다르다는 쪽은 unusual 이고, 낯설고 알 수 없어 이상하다는 쪽은 strange 예요. 반대말은 ordinary(보통의)입니다."
+  confused_with: ["ordinary", "unusual"]
 
 - word: "agricultural"
   reason: "문형 자리에 영어가 들어가 있었다: adjective + 농업, 농사"
@@ -11127,10 +11143,10 @@
   confused_with: ["notice", "sense"]
 
 - word: "strain"
-  reason: "strain 은 '거르다'(타동사)이지 '걸러지다' 가 아니고, 설명이 든 'The water was strained' 는 수동태 문장을 뜻풀이로 오해한 것이다. 뜻 칸의 '스트레인하다' 도 외래어를 그대로 옮긴 말이라 뜻풀이가 되지 못한다."
-  meaning_ko: "무리하게 힘을 주다, 혹사하다; (물기를) 거르다"
-  pattern: "strain + 목적어 (눈·목·근육 등)"
-  usage_note: "몸의 한 곳에 무리하게 힘을 줘서 상하게 하는 것이 strain 이에요 — He strained his back. 국물에서 건더기를 걸러 내는 것도 strain 이라서 Strain the noodles. 라고 해요. 마음이 받는 압박은 stress 라고 합니다."
+  reason: "strain 은 '거르다'(타동사)이지 '걸러지다' 가 아니고, 설명이 든 'The water was strained' 는 수동태 문장을 뜻풀이로 오해한 것이다. 뜻 칸의 '스트레인하다' 도 외래어를 그대로 옮긴 말이라 뜻풀이가 되지 못한다. / 혼동 칸에 걸린 stretch 를 설명이 한 번도 갈라 주지 않는다 — 설명은 stress 만 다룬다. 몸을 늘여 펴는 stretch 와 무리하게 힘을 줘 상하게 하는 strain 은 왕초보가 실제로 헷갈리는 짝이라 한 줄이 필요하다. 나머지 칸은 앞서 손본 것이라 어긋나는 데가 없다. / 반박 9건 판정(high 셋). 1차 reason 에서 '나머지 칸은 앞서 손본 것이라 어긋나는 데가 없다' 고 단언한 것이 세 군데서 틀렸다. / **'국물에서 건더기를 걸러 내는 것도 strain 이라서 Strain the noodles.' 가 풀이와 보기가 서로 반대 방향을 가리킨다**(반박자 넷) — Strain the noodles. 는 물을 따라 버리고 국수를 남기는 동작이라 국수는 걸러 내는 쪽이 아니라 남는 쪽이다. 뜻 칸의 '(물기를) 거르다' 와도 목적어가 어긋나, 학습자는 Strain the water. 같은 안 쓰는 문장을 만든다. / **문형 'strain + 목적어 (눈·목·근육 등)' 가 둘째 뜻을 막는다** — 괄호가 목적어를 몸의 부위로 못박아, 카드가 약속한 거르는 쪽 뜻을 문형만 따라 쓰는 학습자는 한 번도 못 만든다. apparent·badly 에서 이미 high 로 판정한 꼴이다. / **이 낱말이 빈도 2176위에 든 까닭인 이름씨 쓰임이 카드 어디에도 없다** — put a strain on the family, be under a lot of strain, eye strain 은 움직씨만큼 흔한데, 카드는 움직씨 둘만 가르치고 그중 하나는 훨씬 좁은 자리다. 같은 묶음의 trail 을 바로 이 까닭으로 갈아엎어 놓고 여기는 그냥 뒀다. / '마음이 받는 압박은 stress 라고 합니다' 는 영어가 긋지 않는 선을 긋는다 — He's under a lot of strain. 은 아주 흔한 말이다. / 혼동 칸의 stretch 를 설명이 한 번도 안 갈라 줬다."
+  meaning_ko: "무리하게 힘을 주다, 혹사하다; (물기를) 빼다; 무리"
+  pattern: "strain + 목적어 (눈·근육 / 국수) / put a strain on + 대상"
+  usage_note: "몸의 한 곳에 무리하게 힘을 줘서 상하게 하는 것이 strain 이에요 — He strained his back. 몸을 쭉 늘여 펴는 것은 stretch 라서 stretch your legs 라고 해요. 삶은 국수의 물을 따라 버리듯 물기를 빼는 것도 strain 입니다. 이름씨로 쓰면 오래 받는 무리라 The work put a strain on his family. 처럼 쓰고, 마음이 눌리는 느낌 자체는 stress 예요."
 
 - word: "inner"
   reason: "예문 'The inner part of the box is empty.' 가 어색하다 — 원어민은 the inside of the box 라고 한다. 설명도 'inside 는 상자 안, inner 는 상자의 내부 부분' 이라며 같은 말을 두 번 해 둘을 가르지 못했다. inner 가 실제로 붙는 자리로 예문을 옮긴다."
@@ -11874,8 +11890,11 @@
   confused_with: ["custom", "tradition"]
 
 - word: "wound"
-  reason: "**짝 항목 맞춤** — injury 를 '넘어지거나 부딪혀 몸이 상한 것' 으로 고쳤는데 이 항목은 '사고로 인한 상처' 를 wound 라고 해, 둘이 서로 반대를 가르쳤다. / 설명의 \"'injury'는 더 일반적인 표현이에요\" 도 잴 수 없는 말이고 confused_with 의 cut 을 갈라 주지 않는다. **설명 칸만 맞춘 것이라 이 낱말은 대장에 올리지 않는다.**"
-  usage_note: "칼이나 총처럼 날카로운 것에 베이거나 뚫린 자리가 wound 예요 — a gunshot wound. 넘어지거나 부딪혀 몸이 상한 것은 injury 라서 a knee injury 라고 합니다. 살짝 베인 작은 자리는 cut 이라고 해요."
+  reason: "**짝 항목 맞춤** — injury 를 '넘어지거나 부딪혀 몸이 상한 것' 으로 고쳤는데 이 항목은 '사고로 인한 상처' 를 wound 라고 해, 둘이 서로 반대를 가르쳤다. / 설명의 \"'injury'는 더 일반적인 표현이에요\" 도 잴 수 없는 말이고 confused_with 의 cut 을 갈라 주지 않는다. **설명 칸만 맞춘 것이라 이 낱말은 대장에 올리지 않는다.** / 문형 'a/the + wound' 가 예문 'He has a big wound on his hand.' 의 on 자리를 안 보여 준다 — 어디에 난 상처인지 붙이는 자리가 왕초보가 빠뜨리는 곳이다. / 해석의 '그의' 는 이 DB 가 여러 번 번역투로 판정한 꼴이다. 나머지 칸(뜻·설명)은 앞서 손본 것이라 어긋나는 데가 없다. / 반박 13건 판정(high 셋). 1차 reason 에서 '뜻·설명은 어긋나는 데가 없다' 고 단정한 것이 틀렸다. **뜻 칸의 '부상' 은 저장된 injury 카드의 뜻 칸 전체다**(반박자 셋) — 게다가 이 카드의 설명이 스스로 '넘어지거나 부딪혀 몸이 상한 것은 injury' 라며 그 자리를 넘겨, 설명이 제 뜻 칸을 부정한다. 두 카드는 서로를 혼동으로 걸고 마주 보는데, injury 쪽 교정은 이미 그 경계를 순찰해 뜻을 좁혀 두었고 반대쪽만 두 번째로 살아남았다. / **예문 'a big wound' 가 연어가 약하고, 설명이 cut 과 wound 를 크기로 가른 것도 영어와 어긋난다** — 손에 크게 베인 자리도 a deep cut 이라 하지 wound 로 올려 부르지 않는다. wound 에 붙는 말은 deep/open/gunshot 쪽이고, 갈림은 크기가 아니라 무엇에 다쳤느냐다. 지금 카드는 '큰 상처 = wound' 라는 없는 승급 규칙을 가르친다. / **문형이 on 하나로 못박아 설명의 대표 짝을 막는다** — a gunshot wound 는 to 를 받는다(a gunshot wound to the chest). 짝 카드 injury 는 이미 to 로 확정돼 있는데 왜 한쪽은 on 이고 한쪽은 to 인지 두 카드 어디에도 한 줄이 없다. / 문형의 '몸의 자리' 는 굳어진 말이 아니고, 같은 카드 설명이 '자리' 를 상처 자국에 쓰고 있어 한 카드에서 같은 말이 두 뜻이 된다. / 해석이 임자말 He 를 통째로 지워 1인칭으로 읽힌다 — 짝 카드 injury 는 '그는 다리에 부상을 입었어요.' 로 살려 두었고, 같은 교정안의 다른 3인칭 해석도 모두 임자말을 남긴다. / 이 낱말이 목록에 드는 큰 까닭 하나인 수동 움직씨 쓰임(Two people were wounded.)이 카드에 없다."
+  meaning_ko: "(베이거나 뚫린) 상처"
+  pattern: "a wound on + 몸의 부위"
+  example: "He has a deep wound on his arm."
+  usage_note: "칼이나 총처럼 무거운 것에 다쳐 베이거나 뚫린 자리가 wound 예요. 어디에 났는지는 on 을 붙여 a wound on the leg 라고 하고, 몸을 뚫고 들어간 자리는 to 를 써서 a gunshot wound to the chest 라고 해요. 넘어지거나 부딪혀 몸이 상한 것은 injury, 부엌칼에 살짝 베인 자리는 a cut 이에요. 움직씨로도 써서 Two people were wounded. 처럼 씁니다."
 
 - word: "operator"
   reason: "**짝 항목 맞춤** — pilot 을 '버스나 택시를 모는 사람은 driver' 로 고쳤는데 이 항목은 operator 를 '버스나 택시를 운전하는 사람' 이라고 해, 둘이 서로 반대를 가르쳤다. / 뜻 칸의 '운전자가 있는 사람' 은 성립하지 않는 한국어다. / 예문 'The bus operator is very friendly.' 도 operator 가 사람인지 회사인지 갈리지 않는다. **칸 몇 개만 맞춘 것이라 이 낱말은 대장에 올리지 않는다.**"
@@ -13724,6 +13743,242 @@
   usage_note: "mom 을 딱딱하게 이르는 말이 mother 예요 — 서류나 글에서 My mother is a teacher. 처럼 씁니다. 집에서 부르거나 편하게 말할 때는 mom 을 써요. 아버지는 father, 부모를 아울러 이르면 parents 예요."
 
 - word: "frighten"
-  reason: "짝 맞춤(scare 의 confused_with). 뜻 '무서워하게 하다' 가 scare 의 '겁주다, 놀라게 하다' 와 같은 자리를 다른 말로 적어, 두 카드를 나란히 읽는 학습자가 차이를 뜻 칸에서 잘못 읽는다. 겹사동('무서워하게 하다')도 읽기 껄끄러워, 이 DB 가 같은 자리에 쓰는 꼴로 맞춘다. / 되읽기. 뜻을 '무섭게 하다' 로 고쳤는데 설명은 'frighten은 무서워하게 하는 동작' 으로 겹사동 그대로다 — 짝 칸을 안 맞췄다. '더 일상적으로 쓰여요' 도 scare 카드가 새로 세운 갈림(좀 더 딱딱하다)과 결이 어긋나 두 카드를 한 축에 올린다."
+  reason: "짝 맞춤(scare 의 confused_with). 뜻 '무서워하게 하다' 가 scare 의 '겁주다, 놀라게 하다' 와 같은 자리를 다른 말로 적어, 두 카드를 나란히 읽는 학습자가 차이를 뜻 칸에서 잘못 읽는다. 겹사동('무서워하게 하다')도 읽기 껄끄러워, 이 DB 가 같은 자리에 쓰는 꼴로 맞춘다. / 되읽기. 뜻을 '무섭게 하다' 로 고쳤는데 설명은 'frighten은 무서워하게 하는 동작' 으로 겹사동 그대로다 — 짝 칸을 안 맞췄다. '더 일상적으로 쓰여요' 도 scare 카드가 새로 세운 갈림(좀 더 딱딱하다)과 결이 어긋나 두 카드를 한 축에 올린다. / 바로 앞 묶음에서 scare 의 짝으로 뜻·설명을 고쳤는데, 해석 '그 개가 저를 놀라게 했어요' 가 그대로 남아 scare 카드의 새 뜻 '겁주다, 놀라게 하다' 와 '놀라게' 를 나눠 갖는다 — 두 카드가 서로를 혼동으로 걸고 있어 빈칸 답이 갈리지 않는다. 설명에 '겁먹게' 를 넣어 해석과 이어 준다."
   meaning_ko: "무섭게 하다"
-  usage_note: "남을 무섭게 만드는 것이 frighten 이에요. 뜻은 scare 와 같은데 좀 더 딱딱해서, 말할 때는 scare 를 더 씁니다. 내가 무섭다고 할 때는 뒤집어서 be frightened of 나 be scared of 를 써요 — I'm frightened of dogs."
+  usage_note: "남을 무섭게 만들어 겁먹게 하는 것이 frighten 이에요. 뜻은 scare 와 같은데 좀 더 딱딱해서, 말할 때는 scare 를 더 씁니다. 내가 무섭다고 할 때는 뒤집어서 be frightened of 나 be scared of 를 써요 — I'm frightened of dogs."
+
+- word: "apartment"
+  reason: "**설명이 사실을 정반대로 적었다** — \"한국어 '아파트'는 대부분 1~2층이지만, 영어 'apartment'는 고층 건물에 있는 집\" 이라 했는데, 한국의 아파트야말로 고층이다. 두 말이 갈리는 자리는 층수가 아니라 영국(flat)/미국(apartment)이다. / 혼동 칸의 flat 은 카드가 살아 있지만 뜻이 '평평한, 편평한' 이라, 눌러 간 학습자는 집과 아무 상관 없는 그림씨를 만난다 — 설명이 flat 을 한 번도 안 다루면서 걸어만 두었다. / 반박 11건 판정(high 하나). **문형 'a/the + apartment' 를 안 건드려 새 설명과 관사에서 정면으로 부딪힌다** — apartment 는 첫소리가 모음이라 a apartment 가 성립하지 않는데, 새 설명은 같은 카드 안에서 an apartment 를 세 번 쓴다. 이 파일은 같은 판정을 interpretation·injury 에서 이미 두 번 내렸고 analysis·issue·estate 에는 'an/the + ~' 로 적어 두었다. 게다가 문형은 빈칸 화면에 힌트로 그대로 나가므로 학습자는 a 를 옳은 관사로 배운다. / **뜻 칸 '아파트' 가 새 설명이 세운 갈림을 도로 무너뜨린다**(반박자 넷) — 한국어 '아파트' 는 건물·단지를 먼저 가리켜서('아파트 20층', '아파트 단지'), 뜻 칸만 본 학습자는 Our apartment is 20 stories. 같은 말을 만든다. 설명이 잡아내려는 바로 그 콩글리시를 뜻 칸이 그대로 준다. / **혼동에서 flat 을 뺐는데 설명은 여전히 flat 을 가르친다** — 설명이 갈라 주는 낱말이 혼동 칸에 없는 거꾸로 된 꼴이다. 이 DB 의 영/미 짝 처리는 그 반대로 굳어 있고(elevator↔lift, pants↔trousers), 받는 쪽 카드가 딴 뜻인 문제도 lift 카드에 '영국에서는 lift 가 엘리베이터를 뜻하기도 합니다' 한 줄을 얹어 푼 전례가 있다 — flat 카드에도 같은 줄을 얹는다. / 저장된 studio 카드가 제 혼동에 apartment 를 걸고 '방 하나짜리 작은 집도 a studio(원룸)' 라고 갈라 주는데 이쪽은 안 갚아, 짝이 한쪽으로만 걸려 있었다. / '한 건물 안에 여러 집이 나뉘어 있고' 는 조사가 틀렸고(나뉘는 것은 건물이다), '집' 이 한 설명 안에서 an apartment 와 a house 둘을 가리키며, '같은 것을 a flat' 의 '같은 것' 은 바로 앞의 '건물 전체' 로 읽혀 거짓이 된다(영국은 a block of flats). / 되읽기. 문형을 'live in + an/the + apartment' 로 고쳐 an 을 세워 놓았는데, 예문이 'I live in a small apartment.' 라 a 가 보인다 — small 이 끼어서 문법으로는 맞지만, 문형과 예문을 나란히 본 학습자에게는 an 을 세운 까닭이 사라진다. 이 카드가 고치려던 것이 바로 그 관사이므로 예문을 an 이 드러나는 꼴로 옮긴다. 자기소개 시나리오에서 실제로 쓰는 문장이기도 하다."
+  meaning_ko: "아파트 (건물 안의 한 집)"
+  pattern: "live in + an/the + apartment"
+  example: "I live in an apartment."
+  usage_note: "한 건물을 여러 집으로 나눠 놓았을 때 그 가운데 한 집이 an apartment 예요 — 첫소리가 모음이라 a 가 아니라 an 을 붙입니다. 영국에서는 이 한 집을 a flat 이라고 불러요. 건물 전체는 an apartment building 이라고 합니다. 나누지 않고 건물 하나를 통째로 쓰는 것은 a house 이고, 방이 따로 없이 한 칸뿐인 작은 집은 a studio 예요."
+  confused_with: ["house", "flat", "studio"]
+
+- word: "analyst"
+  reason: "설명의 \"'analyst'는 명사로만 쓰이고\" 는 품사 단정이라 이 DB 가 걷어내 온 꼴이고, 그 앞의 '한국어 분석가와 혼동하지만' 도 무엇이 다른지 안 알려 준다. / 문형 'a/an + analyst' 는 관사 두 가지를 늘어놓았을 뿐, 예문 'He is a financial analyst.' 가 보여 주는 자리(앞에 분야를 붙인다)를 안 담는다. / 결과물인 an analysis 를 카드가 한 번도 안 든다 — 그 카드는 이미 검수를 마쳤다. / 반박 6건 판정. **새 문형 'a + 분야 + analyst' 가 두 가지를 잃었다**(반박자 셋) — (1) 원본이 그나마 갖고 있던 an 정보를 지웠다. 표제어가 모음으로 시작하고 분야 낱말도 모음일 수 있어(an economic analyst, an IT analyst) a 로 못박으면 틀린다. 저장된 analysis 카드의 문형이 바로 'an/the + analysis' 다. (2) 분야를 필수 자리로 만들어 He works as an analyst. 같은 흔한 문장을 막는다 — 내 설명 첫 문장조차 분야 없이 an analyst 를 쓴다. / **'읽어 내다' 가 이미 다른 낱말의 말이다** — 검수를 마친 interpretation 카드가 '저마다 다르게 읽어 내는 것이 interpretation' 으로 가져갔고, 이웃 analysis 의 뜻이 '분석, 해석' 이라 그쪽으로 더 끌린다. 게다가 커밋된 analyze 카드는 같은 낱말을 '무엇을 잘게 나눠 살펴본다는 뜻' 으로 정의해 두어, 두 카드가 analyze 의 우리말 풀이를 서로 다르게 준다. / 뜻 칸 괄호와 설명 첫 문장이 같은 말을 두 번 해 설명 한 줄이 낭비된다. / 괄호의 '자료를 따져 읽어 내는' 은 목적어가 어긋난다 — '읽어 내다' 가 받는 것은 자료가 아니라 그 속뜻이다."
+  meaning_ko: "분석가"
+  pattern: "a/an + (분야) + analyst"
+  usage_note: "자료를 잘게 나눠 살펴보고 무슨 뜻인지 알아내는 사람이 an analyst 예요 — a financial analyst, a data analyst. 어느 분야인지 앞에 붙여 말할 때가 많아요. 잘게 나눠 살펴보는 동작은 analyze 이고, 그렇게 해서 나온 결과는 an analysis 예요."
+  confused_with: ["analyze", "analysis"]
+
+- word: "platform"
+  reason: "**오늘날 학습자가 훨씬 자주 만나는 뜻(인터넷 서비스가 돌아가는 바탕)이 카드에 없다** — a social media platform, a streaming platform 은 뉴스와 일상에 두루 나온다. / 뜻 칸 '승강장, 플랫폼 (기차나 버스가 정차하는 곳)' 은 같은 것을 우리말과 소리 옮김으로 두 번 적었고, 괄호가 '버스' 까지 넣었는데 버스 타는 곳은 보통 a bus stop 이라 부른다. / 해석 '5번 열차의 플랫폼은 어디에 있어요?' 는 '~의 …는 어디에 있어요' 로 번역투다. / 자리 검사. 문형 'a/the + platform' 이 예문 'Where is the platform for train 5?' 의 for 를 안 담는다 — 어느 열차의 승강장인지 붙이는 자리다. / 반박 11건 판정(high 넷). **해석만 바꾸고 예문을 안 건드려 영어와 한국어가 서로 다른 것을 묻게 됐다**(반박자 셋) — 예문은 'Where is the platform for train 5?' 로 어디에 있는지 묻는데 새 해석은 몇 번인지를 묻는다. 해석은 빈칸 문제의 지시문이라, 이 해석을 받은 학습자는 Which platform is train 5 on? 을 떠올리고도 화면의 영어와 못 맞춘다. 게다가 '~는 어디에 있어요' 자체는 이 DB 가 이미 자연스러운 우리말로 받아들인 꼴이다(station 카드 '기차역은 어디에 있어요?', turnstile '개찰구가 어디에 있어요?') — 진짜 번역투는 '5번 열차의 플랫폼' 의 '~의' 였다. / **뜻 칸에 남긴 소리 옮김 '플랫폼' 이 답을 흘린다** — 빈칸 화면에서 가려지는 것은 영어뿐이고 뜻 칸은 그대로 나가므로, '플랫폼' 은 정답 platform 을 한글로 적어 준 셈이다. 이 파일은 grand·tone·idea·corner·host·wave 에서 소리 옮김 뜻풀이를 모두 걷어냈고, 내 reason 자신이 원본을 '우리말과 소리 옮김으로 두 번 적었다' 고 지적해 놓고 둘째 뜻에서 되풀이했다. / 문형 'a/the + platform' 이 예문의 for 자리도, 내 설명이 든 platform 3 의 무관사 번호 자리도 안 담는다 — 이 DB 는 관사만 늘어놓은 문형을 '알맹이 없는 껍데기' 로 판정해 왔고(advertisement), exit·fare 는 뒤 자리를 문형에 넣어 두었다. 길 묻기 시나리오에서 왕초보가 실제로 틀리는 것은 관사가 아니라 on 이다. / 설명 끝의 '무대처럼 한 단 높인 자리' 는 뜻 칸에도 혼동 칸에도 없는 셋째 뜻이고, 살아 있는 stage 카드(뜻 '무대, 단계')를 갈라 주지 않은 채 같은 그림만 빌려 쓴다 — 왕초보 카드에 셋째 뜻은 짐이라 뺀다. / 해석의 '열차' 는 두 파일에 0건이고 이 DB 는 train·station·subway 카드에서 모두 '기차' 를 쓴다. / 설명의 '자리' 는 기차 이야기에서 좌석으로 먼저 읽히고, 뜻 칸에 세운 '승강장' 을 설명이 한 번도 안 쓴다."
+  meaning_ko: "승강장; (인터넷 서비스가 도는) 바탕"
+  pattern: "the platform for + 기차 / on platform + 숫자"
+  usage_note: "역에서 기차를 타고 내리는 곳, 승강장이 platform 이에요. 어느 승강장에 서 있는지는 on 으로 말해요 — Wait on platform 3. 역 전체는 station 이라고 합니다. 인터넷에서 서비스가 도는 바탕도 platform 이라 a social media platform 처럼 써요."
+
+- word: "steel"
+  reason: "**문형 칸에 품사 이름을 적어 놓아 자리를 안 보여 준다** — 'steel: 명사 (강철로 만든 물건)' 는 문형이 아니라 뜻풀이이고, 예문 'This bridge is made of steel.' 이 보여 주는 made of 자리가 어디에도 없다. / **혼동 칸의 strengthen 은 헷갈리는 짝이 아니다** — 철자가 비슷할 뿐 하나는 이름씨(강철), 하나는 움직씨(강하게 만들다)라 바꿔 쓸 자리가 없다. 실제로 갈리는 짝은 iron(섞지 않은 쇠)과 metal(쇠붙이를 통틀어)이고 둘 다 카드가 살아 있다. / 설명이 그 strengthen 이야기로만 채워져 이 낱말 자체를 한 줄도 안 가르친다. / 반박 10건 판정(high 하나). **설명이 제가 든 보기를 한 줄 뒤에서 부정한다**(반박자 넷) — 'a steel bridge' 를 들고 바로 다음 줄에 '앞에 a 를 붙이지 않습니다' 라고 적었다. 문법으로는 a 가 bridge 에 붙은 것이지만 A2 학습자에게는 눈에 보이는 정면 충돌이고, 이 DB 는 '항목이 스스로를 부정해요' 를 고칠 사유로 이미 판정했다(washer). 저장된 재료 카드들은 예외 없이 조건을 앞세운다 — glass '재료인 유리를 말할 때는', stone '재료로서의 돌을 말할 때는', plastic '재료 자체를 말할 때는'. / **문형 'made of + steel' 이 설명이 든 이름씨 앞 자리를 못 담는다** — 이 파일의 gold 가 'made of + gold / gold + 명사' 로, metal 이 'metal + 명사 / a + metal' 로 두 자리를 다 적어 둔 본보기가 있다. 게다가 'made of + ____' 는 wood·cotton·wool·gold 가 나눠 쓰는 힌트라 빈칸 옆에 떠도 steel 을 가리키는 힘이 거의 없다. / **혼동에 새로 건 iron 을 누르면 다림질 카드가 나온다** — 그 카드는 여섯 칸 중 다섯이 다리미이고 혼동에 steel 을 걸어 두고도 한 번도 안 갈라 준다. 같은 교정안이 apartment 에서 flat 을 뺀 근거를 대면 iron 도 걸리므로, elevator↔lift 에서 쓴 방법대로 iron 카드에 착지할 자리를 만들어 준다. / 뜻 칸의 '강철' 이 설명에 한 조각도 안 남고, '이르면' 은 이 DB 가 '가리켜요/부르는 말' 로 쓰는 자리의 예스러운 말이다."
+  meaning_ko: "강철"
+  pattern: "made of + steel / steel + 명사"
+  usage_note: "쇠에 다른 것을 섞어 더 단단하게 만든 강철이 steel 이에요. 재료 자체를 말할 때는 앞에 a 를 붙이지 않아요 — It's made of steel. 이름씨 앞에 놓아 꾸며 줄 때는 a steel door 처럼 씁니다. 섞지 않은 쇠 그 자체는 iron(철)이고, 쇠붙이를 통틀어 가리킬 때는 metal 이라고 해요."
+  confused_with: ["iron", "metal"]
+
+- word: "cake"
+  reason: "**뜻 칸의 '케이크를 만드는 것' 이 틀렸다** — cake 에 그런 움직씨 뜻은 없다(움직씨 cake 는 진흙 따위가 '두껍게 들러붙다' 로, caked with mud 처럼 쓰는 드문 말이다). 설명도 \"영어 'cake'는 명사와 동사 모두 쓸 수 있어요\" 라 해 놓고 든 예가 '이렇게 쓰면 안 된다' 는 틀린 문장 하나뿐이라, 학습자는 무엇을 배우는지 알 수 없다. A1 카드에 넣을 뜻이 아니다. / 반박 14건 판정(high 넷). **내가 새로 세운 통/조각 갈림이 손대지 않은 예문·해석을 틀린 것으로 만들었다**(반박자 넷) — '통째로 하나면 a cake' 를 그대로 대면 'I want a chocolate cake.' / '초코케이크 하나 주세요.' 는 카페에서 케이크 한 판을 달라는 말이 된다. 한국에서 '케이크 하나 주세요' 는 조각을 시키는 말이고, 저장된 piece 카드가 그 자리를 이미 'Can I have a piece of cake? / 케이크 한 조각 주세요.' 로 갖고 있으며 cheesecake 카드도 '카페에서 한 조각을 시킬 때는 a piece of cheesecake' 로 못박아 두었다. / **더 나쁜 것은 'I want ~' 자체다** — 이 프로젝트 명세와 튜터 시스템 프롬프트가 'I want an iced americano' 를 고쳐야 할 보기로 직접 들고 있어, 카드가 가르친 문장을 같은 앱의 튜터가 곧바로 교정하게 된다. 게다가 'I want ~'(서술)와 '주세요'(청)는 태가 달라, 이 DB 가 두 번 판정한 꼴이다. 주문 장면을 떠나 통째임이 분명한 예문으로 옮긴다. / 설명이 cake 를 '단 빵' 이라 해 bread 카드의 뜻 칸 전체('빵')를 빌려 쓰는데, 그 카드는 혼동에 cake 를 걸고 있어 두 카드가 '빵' 을 나눠 갖는다. / 통/조각 둘로만 닫아, 왕초보가 케이크를 권하고 받는 자리에서 쓰는 셋째 꼴(some cake)이 통째로 빠졌다. / 문형 'a/the + cake' 는 관사만 늘어놓아 설명이 가르치는 두 자리를 절반만 받친다 — meat·muscle 에서 이미 고친 선례가 있다. / '초코케이크' 는 이 DB 가 brownie 항목에서 '적기도 어긋나요' 라고 판정한 뒤 줄곧 '초콜릿' 으로 적어 온 것과 갈린다."
+  meaning_ko: "케이크"
+  pattern: "a/some + cake / a piece of cake"
+  example: "I bought a chocolate cake."
+  usage_note: "밀가루와 달걀, 설탕을 섞어 오븐에 구운 것이 cake 예요 — a birthday cake. 통째로 하나면 a cake, 잘라 낸 한 조각은 a piece of cake 라고 해요. 덜어 먹을 때는 세지 않고 some cake 라고도 합니다 — Would you like some cake? 오븐에 넣어 굽는 동작은 bake 라서 bake a cake 라고 해요."
+  confused_with: ["bake"]
+
+- word: "transform"
+  reason: "**문형이 예문의 into 를 안 담는다** — 예문 'The magic transformed the frog into a prince.' 에서 무엇으로 바뀌는지 밝히는 into 가 이 낱말의 핵심 자리인데 문형은 'transform + 목적어' 뿐이다. / 설명의 'change는 더 일반적인 변화' 는 잴 수 없는 말이고, 든 보기도 'I changed my mind 가 I transformed my mind 보다 자연스러워요' 라 두 낱말이 언제 갈리는지가 아니라 한쪽이 어색하다는 말만 한다. / 혼동 칸의 alter 를 설명이 한 번도 안 다룬다. / 자리 검사. 뜻 '변화시키다, 바꾸다' 가 그대로 남아, 혼동 짝인 change 카드의 뜻 '바꾸다, 달라지다' 와 '바꾸다' 를 나눠 갖는다 — 새 설명이 세운 '아주 딴것이 되게' 라는 알맹이가 뜻 칸에 없다. / 반박 9건 판정(high 셋). 뜻 칸이 change·alter 와 '바꾸다' 를 나눠 갖는 것은 자리 검사에서 잡았고, 반박이 '탈바꿈시키다' 를 더해 갈림을 뚜렷하게 하라고 했다 — 저장된 change 뜻이 '바꾸다, 달라지다', alter 가 '바꾸다, 수정하다' 라 셋이 한 말을 나눠 갖고 있었다. 같은 교정안이 transition 에서 '변화' 를 change 의 몫이라며 걷어내 놓고, change 와 가장 가까운 이 카드에는 그 잣대를 안 댔다. / **새 문형이 into 를 필수 자리로 못박은 것이 거짓이다** — Technology has transformed our lives. 처럼 into 없이 쓰는 쪽이 오히려 흔하고, 검수를 마친 convert 카드가 이 낱말을 'transform the room' 으로 into 없이 가르쳐 두 카드가 정면으로 맞선다. 이 DB 에는 딸림 자리를 괄호로 적는 꼴이 이미 있다(restrict, cut, bake). / 해석 '변하게 했어요' 는 change 나 turn 으로도 그대로 읽혀 새 갈림이 한국어에 한 조각도 안 남는다 — underlie 에서 똑같은 것을 high 로 물린 자리다. / 살아 있는 transformation 카드를 한 번도 안 든다(같은 교정안이 analyst 에서는 바로 그 까닭으로 analysis 를 넣었다). / '딴것' 은 이 DB 가 늘 '딴 뜻', '딴 낱말' 로 띄어 쓰는 말이다."
+  meaning_ko: "(아주 딴것이 되게) 바꿔 놓다, 탈바꿈시키다"
+  pattern: "transform + 목적어 (+ into + 명사)"
+  usage_note: "모습이나 성질이 완전히 딴 모습이 되게 바꿔 놓는 것이 transform 이에요 — transform a room into an office. 무엇으로 바뀌는지는 into 로 밝히는데, Smartphones transformed our lives. 처럼 into 없이 쓰기도 해요. 바뀐 결과나 그 과정은 a transformation 이에요. 그냥 바꾸는 것은 change, 조금 손보아 고치는 것은 alter 예요."
+  confused_with: ["change", "alter", "transformation"]
+
+- word: "foundation"
+  reason: "**이 낱말의 큰 뜻 하나(좋은 일에 쓰려고 돈을 모아 세운 단체, a charitable foundation)가 카드에 없다.** / 설명의 \"'base'는 더 일반적인 기반이나 중심\" 은 잴 수 없는 말이라 두 낱말을 못 갈라 준다 — 실제 갈림은 foundation 이 땅에 놓는 밑바탕(그래서 겹수 foundations 로 자주 쓴다)이고 base 는 물건의 맨 아랫부분이라는 점이다. / 뜻 칸의 '기반이 되는 부분' 도 앞의 '기초' 를 되풀이한다. / 자리 검사. 문형 'a/the + foundation' 이 예문 'The foundation of the house is strong.' 의 of 를 안 담는다 — 무엇의 밑바탕인지 붙이는 자리가 빠졌다. / 반박 14건 판정(high 다섯). **뜻 칸의 '기초' 를 저장된 카드 둘이 이미 갖고 있다** — base '맨 아랫부분, 밑, 기초', basis '기초, 기반'. 셋이 서로를 잇는 한 무리라 한국어 '기초' 하나에 답이 셋이 되는데, 내 reason 은 '기반이 되는 부분' 이 되풀이라며 뒤엣말만 지우고 정작 겹치는 '기초' 는 남겼다. / **문형 'a/the + foundation' 이 카드의 나머지가 한목소리로 가르치는 of 자리를 못 담는다**(반박자 셋) — 예문도, 내 보기 둘도 모두 of 를 쓴다. 같은 교정안이 analyst 에서 '관사 두 가지를 늘어놓았을 뿐' 이라며 고쳤고 이번 묶음의 wound·transform·restriction·bid·mode 문형도 다 고쳤는데 foundation 만 빠졌다. / **base 갈림이 저장된 basis 카드와 부딪힌다** — 그 카드는 '건물이나 물건을 실제로 받치는 밑바닥은 base 라고 해요' 로 건물을 받치는 쪽까지 base 에 배당해 두었다. 두 낱말을 '기초냐 아랫부분이냐' 가 아니라 자리로 가른다(땅속에 묻혀 떠받치는 쪽 대 눈에 보이는 맨 아랫부분). / **'돈을 모아 좋은 일에 쓰는 단체' 는 foundation 이 아니라 charity 의 뜻풀이다** — 영어의 foundation 은 큰 기금을 미리 받아 두고 그 돈을 내주는 쪽이고(the Gates Foundation), 대중에게서 모으는 쪽이 charity 다. 저장된 charity 카드의 뜻이 글자 그대로 '기부금을 모으는 단체' 라 내가 그 정의를 옮겨 적은 꼴이 됐다. / 뜻 칸에 넣은 '재단' 을 설명이 한 번도 안 부른다 — 이 DB 는 tune·breed·trap 처럼 새 갈래를 넣을 때 설명에서 그 한국어와 영어 보기를 함께 되짚는다. / 내 reason 이 겹수(foundations)를 base 와의 갈림 근거로 내세웠으면서 설명 본문에는 그 말이 한 줄도 없어, 예문의 홑수와 보기의 겹수가 까닭 없이 어긋나 보인다."
+  meaning_ko: "(건물 밑에 놓는) 밑바탕, 토대; 재단"
+  pattern: "the foundation(s) of + 명사"
+  usage_note: "땅을 파고 건물 밑에 놓아 떠받치는 밑바탕이 foundation 이에요 — 건물 쪽은 보통 겹수로 써서 lay the foundations of a house 라고 합니다. 생각이나 학문의 밑바탕일 때는 홑수로 the foundation of modern science 라고 해요. 눈에 보이는 맨 아랫부분은 base 입니다. 큰돈을 내어 세우고 그 돈으로 남을 돕는 단체도 a foundation(재단)이라 the Gates Foundation 처럼 써요."
+
+- word: "designer"
+  reason: "뜻 칸의 '설계자' 는 이 DB 의 architect 카드(건축가)가 맡은 자리와 겹치고, 정작 설명은 그 둘을 갈라 준다 — 뜻 칸이 설명을 거스른다. / 설명이 '어떤 분야의 디자이너인지 모호할 수 있어요' 로 끝나 무엇을 하라는 말인지 없고, 짝인 움직씨 design 을 한 번도 안 든다. / designer clothes(이름난 상표의 값비싼 옷)라는 흔한 쓰임도 빠져 있다. / 자리 검사. 새 설명이 '어느 분야인지 앞에 붙여 말합니다' 라고 세웠는데 문형 'a/the + designer' 에는 그 자리가 없다 — 예문도 a fashion designer 다. 같은 묶음의 analyst 는 'a + 분야 + analyst' 로 적었으니 꼴을 맞춘다. / 반박 9건 판정. 뜻 칸의 '모양을 짜는 사람' 이 내 설명이 든 보기 a game designer 를 못 담는다 — 게임 디자이너가 짜는 것은 모양이 아니라 규칙과 짜임이다. / 설명 끝의 'designer clothes' 는 뜻 칸에도 문형에도 예문에도 없는 둘째 쓰임인 데다 사람이 아니라 이름씨 앞에 붙는 꼴이라, 왕초보 카드에서는 빼는 편이 낫다(이 DB 는 '설명이 든 둘째 뜻이 뜻 칸에 없다' 를 volume·initiative·smart 에서 되풀이해 잡았다). / '짜임을 짜는' 은 겹말이고, 한 설명 안에서 '짜다' 가 세 번 되풀이된다 — 짝인 design 카드는 같은 뜻을 '모양을 짜서 만들 때 써요' 로 한 번만 쓴다. / '건물을 짜는 사람은 an architect 라고 따로 불러요' 는 학습자가 이미 아는 '건축가' 를 안 주고 에두르며, '따로 불러요' 는 the designer of the building 처럼 멀쩡한 영어를 막는 배타 단정이다. / 문형은 analyst 와 같은 꼴로 맞추되 분야를 괄호에 넣어 She is a designer. 도 막지 않는다. / 해석 '그녀는' 은 같은 묶음의 brilliant·pose·creative 를 '그 사람은' 으로 옮긴 손질에서 혼자 빠졌다."
+  meaning_ko: "디자이너 (모양이나 짜임을 짜는 사람)"
+  pattern: "a + (분야) + designer"
+  usage_note: "옷이나 물건의 모양을 짜서 만드는 사람이 a designer 예요 — a fashion designer, a game designer. 어느 분야인지 앞에 붙여 말할 때가 많아요. 짜서 만드는 동작은 design 이고, 건물을 짜는 일을 하는 사람은 건축가라서 an architect 라고 해요."
+
+- word: "innovation"
+  reason: "**혼동 칸의 technology 는 헷갈리는 짝이 아니다** — 저장된 그 카드의 뜻은 '기술, 과학 기술' 이라 innovation 과 바꿔 쓸 자리가 없고, 예문에 technology 가 들어 있어 딸려 온 것으로 보인다. 실제로 갈라 줄 짝은 invention(만들어 낸 물건 하나하나)이고 그 카드가 살아 있다. / 설명의 \"'New idea'보다 더 구체적인 변화를 강조\" 는 잴 수 없는 말이고, 혼동 칸의 idea 도 그 한 마디로만 다뤄진다. / 그림씨 innovative 가 카드에 없다. / 자리 검사. 문형 'a/the + innovation' 이 예문 'This is a big innovation in technology.' 의 in 을 안 담고, 새 설명이 든 a major innovation in medicine 도 같은 자리다. / 반박 12건 판정(high 넷). **새 뜻의 '물건' 을 같은 교정안의 설명이 곧바로 invention 에게 넘겨, 뜻 칸이 설명을 부정한다**(반박자 셋) — 게다가 저장된 invention 카드가 '그렇게 만들어 낸 물건도 invention 이라 our latest invention 이라고 해요' 로 그 말을 이미 쥐고 있어, 새로 건 혼동 짝을 가르는 축이 제 뜻 칸에서 무너진다. / **'새로 만들어 낸 물건 하나하나는 an invention 이라 the invention of the telephone 처럼 씁니다' 에서 보기가 틀렸다** — the invention of the telephone 은 '전화기를 발명한 일'(행위)이지 물건 하나가 아니고, invention 카드의 예문 자체가 그 문장을 행위 뜻으로 쓴다. 물건 쪽 보기는 our latest invention 이다. / **갈림의 축도 제 예문이 어긴다** — 'This is a big innovation in technology.' 의 This 는 눈앞의 물건 하나이고, 영어에서도 the iPhone was a major innovation 처럼 물건을 innovation 이라 부른다. 축을 '물건이냐' 가 아니라 '처음 만들어 냈느냐 / 방식까지 바꿔 놓았느냐' 로 다시 세운다. / **내 reason 의 '그림씨 innovative 가 카드에 없다' 는 사실이 아니었다** — innovative 는 살아 있고 검수까지 끝난 B1 카드이며, creative 카드는 이미 그것을 혼동으로 걸고 있다. / 문형 'a/the + innovation' 이 예문·설명이 함께 쓰는 in + 분야 자리를 안 담는다(반박자 셋) — improvement·experience 카드가 같은 자리를 이미 문형에 담아 두었다. / 해석의 '기술에서' 는 원본의 '분야' 가 까닭 없이 떨어져 나가 한국어가 안 선다."
+  meaning_ko: "혁신 (전에 없던 새로운 방법)"
+  pattern: "an innovation in + 분야"
+  usage_note: "이제까지 없던 것을 처음 만들어 낸 것은 an invention 이고, 그것으로 일하는 방식까지 새로 바꿔 놓은 것이 innovation 이에요 — a major innovation in medicine. 어느 분야인지는 in 으로 붙입니다. 머릿속에 떠오른 생각은 an idea 예요. 그림씨는 innovative 라고 해요."
+  confused_with: ["invention", "idea", "innovative"]
+
+- word: "album"
+  reason: "**혼동 칸의 book·photo 는 헷갈리는 짝이 아니다** — album 을 book 이나 photo 자리에 잘못 쓸 일이 없다(설명이 '책' 이라고 풀어 놓아 딸려 온 것으로 보인다). / 설명이 '앨범은 책처럼 쓰지만 … 특별한 책이에요' 로 같은 말을 두 번 하고, 정작 오늘날 이 낱말이 가장 자주 쓰이는 자리(가수가 낸 음반)를 song·single 과 갈라 주지 않는다. / 반박 12건 판정(high 하나). **내 reason 이 'book·photo 는 헷갈리는 짝이 아니다' 라고 못박아 놓고 정작 photo 를 그대로 남겼다**(반박자 셋) — 제 판정과 제 고침이 어긋난다. 게다가 설명이 photo 를 다루는 유일한 자리가 a photo album 인데, 이는 표제어를 품은 합성어라 갈라 주는 문장이 아니다(이 DB 는 belong 에서 같은 꼴을 걷어냈다). / **'a music album' 은 영어가 안 쓰는 군더더기다**(반박자 둘) — I bought a new album. 이 기본형이고, 앞에 말을 붙이는 쪽은 사진첩을 가를 때의 photo album 이다. 뜻·설명을 음반 쪽으로 세운 지금 music 은 두 겹으로 남는 말이 됐다. / **'한 곡만 따로 낸 것은 a single' 이 저장된 single 카드와 부딪힌다**(반박자 셋) — 그 카드는 뜻이 '혼자인, 하나의' 뿐이라 음반 쪽 뜻이 이 DB 어디에도 없고, A1 카드에 확인할 데 없는 낱말을 하나 더 얹는 꼴이다. / 뜻 칸의 '음반' 은 저장된 record 카드가 '레코드(음악)를 담은 판' 으로 이미 쓰고 있는 말이다. / 해석의 '새로운' 은 이 DB 가 산 물건 앞에서 여러 번 번역투로 판정해 '새 + 이름씨' 로 고쳐 온 꼴이다. / 되읽기. 문형 'a/the + album' 이 그대로 남았는데 album 도 첫소리가 모음이라 a album 이 성립하지 않는다 — 같은 묶음의 apartment·analyst 에서 바로 이 함정을 잡아 놓고 이 카드만 지나쳤다. 이 파일은 analysis·issue·injury·estate 에 'an/the + ~' 로 적어 온 전례가 있다."
+  meaning_ko: "앨범 (가수가 노래를 모아 낸 것; 사진첩)"
+  pattern: "an/the + album"
+  example: "I bought a new album."
+  usage_note: "가수가 노래 여러 곡을 모아 낸 것이 an album 이에요 — her new album. 노래 한 곡은 a song 이라고 해요. 사진을 붙여 모아 둔 사진첩도 album 이라 a photo album 이라고 합니다."
+  confused_with: ["song"]
+
+- word: "singer"
+  reason: "**설명 '연예인 중에 가수를 가리킬 때 쓰고, 일반적인 직업으로 쓰는 것은 드물어요' 가 거짓이다** — singer 는 What do you do? 에 I'm a singer. 라고 답하는 흔한 직업 이름이다. 이대로면 학습자는 직업을 말하는 자리에서 이 낱말을 피하게 된다. / 혼동 칸의 songwriter 는 카드가 아예 없어 눌러도 갈 곳이 없다. / 짝인 움직씨 sing 을 카드가 한 번도 안 든다. / 반박 5건 판정. 뜻 칸 '가수' 한 낱말이 내가 새로 쓴 설명 '노래하는 사람이 a singer 예요' 와 어긋난다 — 영어 singer 는 직업뿐 아니라 그냥 노래 부르는 사람에게도 써서 She's a good singer. 는 '가수예요' 가 아니라 '노래를 잘해요' 다. / '아울러 이르면' 은 왕초보가 못 읽는 말이고, 이 DB 는 이 낱말을 install 항목에서 이미 걷어냈다('왕초보가 못 읽을 말이 섞였다 — 아울러요'). 같은 자리에 이 DB 가 쓰는 말은 '두루 가리켜요/두루 부르는 말' 이고(artist·scientist·bag·pill·storm), 짝 카드 musician 이 스스로 쓰는 '음악가' 도 한 번 안 줬다. / 죽은 짝이라고 혼동에서 뺀 songwriter 를 설명에서는 그대로 가르쳐, 학습자는 여전히 확인할 데 없는 낱말을 만난다 — 뺀 근거가 그대로면 설명에 남길 근거도 약하다. / A1 직업 이름씨인데 왕초보가 가장 자주 저지르는 잘못(She is singer.)을 카드가 한 번도 안 짚는다. / 해석 '그녀는' 은 같은 묶음의 셋을 '그 사람은' 으로 옮긴 손질에서 빠졌고, 짝 카드 musician 의 해석 '그녀는 음악가예요' 와 글자까지 같은 꼴이다."
+  meaning_ko: "가수, 노래하는 사람"
+  usage_note: "노래하는 사람이 a singer 예요 — 직업을 말할 때는 꼭 a 를 붙여요. 노래를 잘한다고 할 때도 써서 She's a good singer. 라고 합니다. 노래하는 동작은 sing 이에요. 노래하는 사람과 악기를 연주하는 사람을 두루 부르는 말은 a musician(음악가)이에요."
+  confused_with: ["sing", "musician"]
+
+- word: "trail"
+  reason: "**이 낱말이 목록에 든 까닭인 이름씨 뜻(산이나 숲의 오솔길)을 뜻·문형·예문 어디도 안 보여 준다** — 설명만 '명사로 쓰일 때는 산책로' 라고 덧붙여, 카드가 스스로 가장 흔한 뜻을 곁가지로 미뤄 두었다. / 뜻 '따르다, 뒤따르다' 는 저장된 follow 카드의 뜻 '따르다' 와 겹치는데, 정작 영어에서 trail 은 그냥 따라가는 것이 아니라 뒤처져 끌려가듯 따라가는 쪽이고 보통 after 를 붙인다(trailed after him). 예문 'The dog trails his owner everywhere.' 도 그 자리를 안 보여 준다. / 해석 '따라다니죠' 는 이 DB 의 말투와 갈린다. / 반박 6건 판정(high 둘). **내가 새로 세운 trail/path 갈림이 거짓이고 저장된 카드 셋과 정면으로 부딪힌다** — '산이나 숲의 좁은 길은 trail, 공원이나 마을의 작은 길은 path' 라고 장소로 갈랐는데, 살아 있는 path 카드가 뜻 '길, 통로 (자연이나 산에 있는)' 에 예문 'There is a path through the forest.' 로 정반대를 가르치고, road 카드가 a garden path 를, passage 카드가 '산이나 들에 난 길은 path 예요' 를 이미 확정해 두었다. 영어로도 숲·산길은 그대로 a path 다(a forest path, a mountain path). 실제로 갈리는 자리는 어디에 있느냐가 아니라 **따라 걷도록 낸, 대개 이름이 붙은 코스인가** 다 — the Appalachian Trail, a nature trail, a bike trail 은 공원 안에도 있고 포장돼 넓기도 하다. / 뜻 칸을 이름씨 하나로 좁혀 놓고 설명은 움직씨 뜻을 새로 가르치고 혼동 칸에는 움직씨 카드 follow 가 그대로 걸려 있다 — 원본을 나무란 까닭이 방향만 뒤집힌 채 남았다. / '뒤처져 따라갈 때 after 를 붙인다' 도 새 단정이다 — 목적어를 바로 받는 타동사 trail(몰래 뒤를 밟다)이 표준이고, 내가 혼동에서 뺀 track 카드가 바로 그 자리를 맡고 있다. / 문형 'a + trail' 이 예문의 walk along 자리도 앞에 붙는 꾸밈말도 안 담는다 — 같은 교정안이 analyst 에 댄 잣대 그대로다. / 뜻 '(산이나 숲의) 오솔길' 은 영어보다 좁다."
+  meaning_ko: "(걷도록 낸) 산길, 등산로; 뒤처져 따라가다"
+  pattern: "walk along a + trail / a hiking trail"
+  example: "We walked along a mountain trail."
+  usage_note: "산이나 숲을 따라 걷도록 길게 낸 길이 a trail 이에요 — a hiking trail, a nature trail. 이름이 붙어 있고 길게 이어지는 코스를 가리킵니다. 사람이 다녀 생긴 좁은 길은 두루 a path 라고 해요. 움직씨로 쓰면 뒤처져 따라간다는 뜻이라 trail after him 처럼 after 를 붙이고, 몰래 뒤를 밟을 때는 목적어를 바로 받아 The police trailed him. 이라고 합니다."
+  confused_with: ["path", "follow", "track"]
+
+- word: "loose"
+  reason: "**문형 'loose + 목적어 (물건)' 이 움직씨 꼴인데 loose 는 그림씨다** — 예문 'The button is loose.' 는 be 뒤 서술 자리라 문형과 태가 다르고, 문형대로 쓰면 loose the button 이라는 없는 말이 나온다(그 꼴은 loosen 이다). 뜻 칸의 '풀리다' 도 같은 자리에서 어긋난다. / 설명은 lose 와의 갈림만 다루면서 정작 왕초보가 헷갈리는 까닭(철자 o 하나 차이)을 안 짚고, 반대말 tight 도 안 든다. / 반박 2건 판정. 해석 '버튼이 헐거워요' 가 새 설명이 잡은 옷 쪽 틀(a loose button, loose clothes)과 어긋난다 — 저장된 button 카드가 \"한국어 '단추'는 옷에 쓰는 것을 말하지만, '버튼'은 전화기나 기계에 있는 것도 포함해요\" 로 두 말을 갈라 놓았고 press 카드도 버튼을 기계 쪽에 둔다. 그 잣대대로면 지금 해석은 기계 버튼이 헐겁다는 말이다. / 소리를 스스로 꺼내 놓고 반쪽만 적었다 — '소리가 비슷한 lose' 라고만 하고 '철자도 o 가 하나' 로 끝내면 '차이는 한 글자뿐' 으로 읽힌다. 한국인 학습자가 실제로 내는 잘못이 loose 를 '루즈' 로 읽는 것이라, 끝소리 갈림을 밝혀야 한다."
+  meaning_ko: "헐거운, 느슨한"
+  pattern: "be + loose / loose + 명사"
+  usage_note: "꽉 죄어 있지 않고 헐렁한 것이 loose 예요 — a loose button, loose clothes. 반대말은 tight(꽉 끼는)이에요. 소리가 비슷한 lose 는 '잃다' 라는 딴 낱말인데, 끝소리가 달라서 loose 는 '루스', lose 는 '루즈' 로 소리 냅니다. 철자도 lose 는 o 가 하나뿐이에요."
+  confused_with: ["lose", "tight"]
+
+- word: "extension"
+  reason: "지난 묶음(expansion)에서 이미 이 카드가 걸렸다 — 그 카드가 extension 을 '있던 것을 더 늘려 주는 것' 으로 이어 주는데, 이 카드는 뜻·문형·예문이 모두 시간에만 묶여 있어 건물에 덧대어 늘린 부분이라는 흔한 뜻을 못 받는다. / 혼동 칸의 prolongation 은 카드가 없고, 애초에 왕초보가 만날 낱말이 아니다. / 설명의 \"'extension'은 'prolongation'보다 더 공식적인 느낌이 있어요\" 는 잴 수 없는 말이다. / 전화기의 내선 번호도 extension 인데 카드에 없다. / 해석 '마감일 연장은 두 주입니다' 는 말투가 갈린다. / 반박 9건 판정(high 둘). **새 해석이 이름씨 자리를 통째로 지웠다** — '마감 기한이 두 주 늘어났어요' 를 되돌리면 The deadline was extended by two weeks. 가 나와 저장된 extend 카드의 답이 된다. 이 저장소는 같은 흠을 arrival·interpretation·creation·comfort 해석에서 이미 물렸고, 내가 든 까닭('말투가 갈린다')은 어미만 고치면 되는 것이라 이름씨를 버릴 이유가 못 됐다. / **혼동 칸에 delay 를 남겨 두고 설명이 한 번도 안 갈라 준다** — 같은 교정안이 bid·transition·evil 에서 바로 이 잣대를 댔다. 게다가 delay 는 움직씨 카드이고 뜻으로도 정반대에 가깝다(부탁해서 받아 내는 것 대 원치 않게 늦어지는 것). 짝인 extend 로 바꾼다. / **예문 'The extension of the deadline is two weeks.' 는 영어가 안 쓰는 꼴이다** — 이 말은 We got a two-week extension. / They gave us an extension. 로 하지 'The extension of X is + 기간' 이라는 서술로 세지 않는다. / 문형 'an extension of + 기간' 의 이름표가 제 예문·설명과 어긋난다 — 둘 다 of 뒤가 기간이 아니라 늘려 주는 대상이다. / 설명이 가르치는 셋째 뜻(전화 내선)이 뜻 칸에 없다 — 원본 trail 을 나무란 것과 같은 꼴이다. / 짝인 움직씨 extend 를 한 번도 안 들었다(같은 묶음에서 analyst·demonstration·invitation·adviser 는 다 이어 줬다). / addition 으로 넘기면서 그 카드의 뜻이 '더하기, 추가물' 뿐이라는 것을 안 밝혔다."
+  meaning_ko: "기한 연장; 덧대어 늘린 부분; 전화 내선"
+  pattern: "an extension of + 늘릴 것 / an extension to + 건물"
+  example: "Can I get an extension of the deadline?"
+  usage_note: "있던 것을 더 늘려 주는 것이 extension 이에요 — an extension of the contract. 늘려 주는 동작은 extend 라서 extend the deadline 이라고 해요. 집에 덧대어 늘린 부분도 an extension 인데 미국에서는 an addition(집에 덧댄 부분) 이라고 합니다. 전화기의 내선 번호도 extension 이라 extension 204 처럼 써요."
+  confused_with: ["expansion", "extend"]
+
+- word: "wealth"
+  reason: "**문형 'a/the + wealth' 가 제 예문과 어긋난다** — 예문 'He has a lot of wealth.' 에는 관사가 없고, wealth 는 하나 둘로 세지 않아 a wealth of ~ 라는 굳은 짝 말고는 a 를 안 붙인다. / 설명의 \"'money'는 현금만을 말해요\" 는 거짓이다 — money 는 현금뿐 아니라 돈 일반을 가리킨다. 두 낱말이 갈리는 자리는 wealth 가 땅·집까지 아우른다는 점이지 현금이냐 아니냐가 아니다. / 짝인 그림씨 rich 를 혼동 칸에 걸어 놓고 설명이 한 번도 안 다룬다. / 자리 검사. 뜻 칸의 '부유함' 은 그림씨 rich 를 이름씨로 바꾼 말이라 혼동 짝인 그 카드(부유한, 많은)와 겹치고, 새 설명이 세운 '가진 것을 통틀어' 라는 알맹이는 뜻 칸에 없다. / 반박 9건 판정(high 셋). **'하나 둘로 세지 않아서 앞에 a 를 붙이지 않고' 가 없는 규칙 단정이다**(반박자 둘) — a wealth of information, a wealth of experience 는 아주 흔한 표준 표현이다. 내 reason 칸은 예외를 알고 적어 놓고 정작 학습자가 읽는 설명에서는 그 단서를 통째로 빼, 카드만 읽은 학습자는 맞는 영어를 틀렸다고 판정하게 된다. 이 저장소는 knowledge 카드에서 똑같은 단정을 물리고 '뒤에 of 가 따라올 때는 a 를 쓰기도 해요' 를 붙인 전례가 있다. / **'손에 쥔 돈 자체는 money' 는 내가 거짓이라고 물린 그 오류를 다시 적은 것이다** — 원본의 \"'money'는 현금만을 말해요\" 를 걷어내면서 '손에 쥔 돈' 이라는 cash 의 풀이를 새로 넣었다. money 는 통장에 든 돈·버는 돈까지 아우르고, 저장된 cash 카드가 '현금' 을 맡고 있다. / **뜻 칸의 '부유함, 재산' 이 둘 다 남의 카드 몫이다** — property 뜻이 '재산, 소유물' 이고 그 설명이 '한국어 재산은 주로 돈을 떠올리게 하지만 property 는 집이나 땅도 함께 가리켜요' 라 내 새 설명과 거의 같은 문장이며, '부유함' 은 rich·wealthy 와 나눠 갖는다. / **그림씨 짝을 잘못 짚었다** — 같은 뿌리의 wealthy 카드가 살아 있고 제 혼동 칸에 wealth 를 걸어 되가리키는데 나는 rich 를 세웠다. 그 rich 카드는 문형이 'rich + in + 명사', 예문이 'He is rich in experience.' 라 눌러 간 학습자가 만나는 것은 재산이 아니라 '풍부한' 쪽이다. / 예문 'He has a lot of wealth.' 도 사람 하나를 두고는 어색한 연어인데, 내가 그것을 문형으로 굳혀 카드 중심에 올렸다 — 굳은 짝은 great/enormous wealth 쪽이다. / 문형 'a lot of + wealth (a 없이)' 는 괄호가 'a 없이' 라면서 정작 적힌 말에 a 가 들어 있어 제 안에서 부딪힌다."
+  meaning_ko: "가진 것 전체, 부"
+  pattern: "wealth (앞에 a 를 붙이지 않아요), great wealth"
+  example: "He has great wealth."
+  usage_note: "돈에 땅·집까지 더한, 가진 것 전체를 이르는 말이 wealth 예요. 보통 앞에 a 를 붙이지 않고 great wealth 처럼 씁니다. 다만 '아주 많은' 이라는 뜻의 a wealth of ~ 는 통째로 굳은 말이에요 — a wealth of information. 돈 자체를 가리키는 흔한 말은 money 이고, 재산이 많다고 그림씨로 말하면 wealthy 라서 a wealthy family 라고 해요."
+  confused_with: ["money", "wealthy"]
+
+- word: "gradually"
+  reason: "**문형 'gradually + 동사' 가 제 예문과 어긋난다** — 예문 'He got better gradually.' 에서 gradually 는 동사 앞이 아니라 문장 끝에 온다. 이 어찌씨는 두 자리를 다 쓰는데 문형이 한쪽만 못박았다. / 설명이 한국어 '점점' 과 견주는 데서 시작하고, \"'점점'은 더 빈번하게 쓰이고\" 는 한국어 빈도 이야기라 영어를 안 가르친다. / 혼동 칸의 slowly 를 갈라 주는 말이 없다 — 실제 갈림은 gradually 가 '조금씩 오래 걸려' 이고 slowly 는 '움직임이 느려' 라는 점이다. / 그림씨 gradual 이 카드에 없다. / 반박이 다 죽어 내가 직접 대조. 설명 끝의 '그림씨는 gradual 이에요' 는 DB 에 카드가 없는 낱말이라 학습자가 확인할 데가 없다 — 다만 혼동 칸에 건 링크가 아니라 설명 안의 파생꼴 안내이고, 저장된 slowly 카드도 같은 자리에 '그림씨는 slow 라서' 를 두고 있어 이 DB 의 꼴에 맞다. 그대로 두되 여기 적어 둔다. 나머지 칸은 자리 검사에서 문형을 두 자리로 연 것 말고는 어긋나는 데가 없다."
+  pattern: "주어 + gradually + 동사 / 동사 + gradually"
+  usage_note: "한 번에가 아니라 조금씩 오래 걸려 그렇게 된다고 할 때 써요 — The weather gradually got warmer. 동사 앞에도 놓고 문장 끝에 붙이기도 합니다. slowly 는 움직임이 느리다는 쪽이라 Drive slowly. 처럼 써요. 그림씨는 gradual 이에요."
+
+- word: "tank"
+  reason: "**뜻·예문이 왕초보가 훨씬 자주 만나는 쪽을 뒤로 미뤘다** — a water tank, a gas tank, a fish tank 는 일상에 흔한데, 뜻 칸은 '전차' 를 앞세우고 예문도 박물관의 전차다. / **혼동 칸의 trunk 는 헷갈리는 짝이 아니고 vat 은 카드가 없다** — trunk 는 자동차 짐칸이라 tank 자리에 잘못 쓸 일이 없고, vat 은 왕초보가 만날 낱말도 아니다. / 설명이 '상황에 따라 다르게 써야 해요' 로 끝나 무엇을 하라는 말인지 없다. / 자리 검사. 예문을 'The water tank is empty.' 로 바꾸고 설명도 a gas tank, a fish tank 를 드는데, 문형 'a/the + tank' 는 앞에 무엇이 붙는 자리를 안 보여 준다. / 반박이 다 죽어 내가 직접 대조. 혼동 칸에 container 를 새로 걸어 놓고 설명이 그 낱말을 한 번도 안 다룬다 — 이번 묶음에서 반박이 bid·transition·evil·extension 에 되풀이해 댄 잣대다. 저장된 container 카드(뜻 '컨테이너, 용기 (물이나 물건을 담는 큰 상자)')와 갈리는 자리는 tank 가 액체를 담는 쪽이라는 점이므로 그것을 한 줄로 밝힌다."
+  meaning_ko: "(물·기름을 담는) 통; 전차"
+  pattern: "a water/gas + tank"
+  example: "The water tank is empty."
+  usage_note: "물이나 기름처럼 흐르는 것을 담아 두는 큰 통이 tank 예요 — a gas tank(기름통). 물고기를 기르는 유리 통도 a fish tank 라고 해요. 물건을 담는 큰 상자는 a container 입니다. 전쟁에 쓰는 전차도 tank 인데, 그 뜻일 때는 a military tank 라고 밝혀 주면 헷갈리지 않아요."
+  confused_with: ["container"]
+
+- word: "remarkable"
+  reason: "혼동 칸의 amazing 은 카드가 없어 눌러도 갈 곳이 없다. / 설명의 \"'good'이나 'great'보다 훨씬 더 강한 감탄\" 과 '일상 대화보다는 특별한 상황에서' 는 둘 다 잴 수 없는 말이라, 학습자가 언제 이 낱말을 고를지 알 수 없다. 실제로 갈리는 자리는 remarkable 이 말보다 글에서 만나는 딱딱한 말이라는 점이다. / 어찌씨 remarkably 가 카드에 없다. / 반박이 다 죽어 내가 직접 대조. **혼동 칸에 새로 건 unusual 을 설명이 한 번도 안 갈라 준다** — 게다가 내 설명 첫머리 '여느 것과 달라' 는 저장된 unusual 카드의 뜻 '여느 때와 다른, 흔치 않은' 과 같은 말이라, 갈라 주기는커녕 두 카드를 붙여 놓았다. / 뜻 칸의 '놀랄 만한' 은 또 다른 혼동 짝 impressive 의 뜻 '인상 깊은, 놀라운' 과 '놀라' 를 나눠 갖는다 — 한국어로 되물으면 답이 둘이 된다."
+  meaning_ko: "눈에 띄게 뛰어난"
+  usage_note: "여느 것과 달라 눈길을 끌 만큼 뛰어나다는 뜻이라 a remarkable woman 처럼 써요. 말할 때보다 글에서 더 자주 만나는 딱딱한 말입니다. 그저 늘 보던 것과 다르다는 쪽은 unusual 이고, 보고 감탄이 나올 만큼 인상 깊다는 쪽은 impressive 예요. 어찌씨는 remarkably 라고 합니다."
+  confused_with: ["impressive", "unusual"]
+
+- word: "tune"
+  reason: "뜻 칸의 '음계를 맞추다' 가 틀렸다 — 맞추는 것은 음계(scale)가 아니라 음(pitch)이다. 이 낱말의 대표 자리는 tune a guitar 인데 카드가 라디오 예문 하나만 든다. / 혼동 칸의 'tune in' 은 카드가 없다(설명 안에서 다루면 될 말이다). / 설명의 '음악을 조절할 때는 adjust 보다 tune 이 자연스러워요' 는 '음악을 조절한다' 는 말 자체가 잡히지 않고, 이름씨 뜻(가락)도 카드에 없다. / 자리 검사. 뜻 칸에 올린 이름씨 '가락' 을 문형('tune + 목적어')도 예문도 보여 주지 못한다 — 이 DB 의 꼴은 문형이 못 보여 주는 품사는 설명에만 두는 것이다(drink 의 '마실 것', sail 의 '돛' 을 같은 까닭으로 물렸다). 설명에는 a catchy tune 을 남긴다."
+  meaning_ko: "(악기의) 음을 맞추다"
+  pattern: "tune + 목적어 (악기·라디오)"
+  usage_note: "악기가 제 음을 내도록 맞추는 것이 tune 이에요 — tune a guitar. 라디오나 채널을 맞출 때도 쓰고, 방송을 챙겨 듣는다는 뜻으로 tune in 이라고도 합니다. 이름씨로 쓰면 '가락' 이라 a catchy tune(귀에 감기는 가락) 이라고 해요. 크기나 세기를 손봐 맞추는 것은 adjust 예요."
+  confused_with: ["adjust"]
+
+- word: "invitation"
+  reason: "문형 'receive/accept/decline + invitation' 이 함께 쓰는 움직씨는 잘 보여 주지만, 예문 'I received an invitation to the party.' 의 to 자리를 안 담는다 — 어디로의 초대인지 붙이는 자리가 왕초보가 빠뜨리는 곳이다. / 짝인 움직씨 invite 를 카드가 한 번도 안 들고, 혼동 칸의 request(요청하다)는 초대와 바꿔 쓸 자리가 없어 갈라 줄 것이 없다."
+  pattern: "an invitation to + 행사"
+  usage_note: "어디에 오라고 부르는 것, 또는 그 부름을 적은 종이가 an invitation 이에요 — an invitation to the wedding. 어디로의 초대인지는 to 로 붙입니다. 받는 것은 receive, 응하는 것은 accept, 거절하는 것은 decline 이라고 해요. 부르는 동작은 invite 라서 I invited him. 이라고 합니다."
+  confused_with: ["invite"]
+
+- word: "transition"
+  reason: "해석 '겨울에서 봄으로의 변화가 있었습니다' 는 '~으로의' 가 번역투이고 말투도 갈린다. / 뜻 칸의 '변화, 전환' 에서 '변화' 는 저장된 change 카드의 몫이라, 혼동 칸에 걸어 놓은 그 카드와 한국어를 나눠 갖는다 — 실제 갈림은 transition 이 '천천히 넘어가는 동안' 을 가리킨다는 점이다. / 설명의 'change는 더 일반적인 변화' 는 잴 수 없는 말이고, 혼동 칸의 shift 도 한 번도 안 다룬다."
+  meaning_ko: "(다른 상태로) 넘어감, 전환"
+  usage_note: "한 상태에서 다른 상태로 천천히 넘어가는 것이 transition 이에요 — the transition from school to work. 어디서 어디로인지는 from ~ to ~ 로 밝힙니다. 그냥 달라지는 것은 change 라서 change my mind 라고 하고, 자리나 방향을 옮기는 것은 shift 예요."
+
+- word: "bid"
+  reason: "**문형이 예문의 for 를 안 담는다** — 예문 'They bid for the painting at the auction.' 에서 무엇에 값을 부르는지 붙이는 for 가 이 낱말의 자리인데, 문형은 'bid + 목적어 (경매, 물건 등)' 라 목적어를 바로 받는 것처럼 보인다. 문형대로 쓰면 bid the painting 이 나온다. / 뜻 칸의 '입찰하다, 경매에 참여하다' 는 둘 다 딱딱한 한자말이고 뒤엣말은 참여만 해도 되는 것처럼 읽힌다 — 알맹이는 '값을 부르는 것' 이다. / 설명의 ask 갈림은 억지다 — bid 와 ask 를 바꿔 쓸 자리가 없다. 혼동 칸의 offer 는 한 번도 안 다룬다. / 해석 '그 그림을 낙찰하려고 입찰했습니다' 는 겹말이고, 낙찰은 값을 부른 결과라 예문이 말하는 바가 아니다. / 반박이 다 죽어 내가 직접 대조. 혼동 칸에 새로 건 auction 을 설명이 한 번도 안 다루고, 저장된 auction 카드(B1, 뜻 '경매, 경락')는 아직 미검수라 눌러 가도 받아 줄 자리가 없다. 설명이 실제로 갈라 주는 짝만 남긴다."
+  meaning_ko: "(경매에서) 값을 부르다"
+  pattern: "bid for + 물건"
+  usage_note: "경매에서 사겠다고 값을 부르는 것이 bid 예요 — bid for a painting. 무엇에 부르는지는 for 로 붙입니다. 부른 값 자체도 a bid 라서 make a bid 라고 해요. 일감을 따려고 값을 써내는 것도 bid 입니다. 팔 쪽에서 값을 내미는 것은 offer 예요."
+  confused_with: ["offer"]
+
+- word: "breed"
+  reason: "뜻 칸의 '종을 이루다' 는 우리말로 읽히지 않고, 이 낱말의 이름씨 뜻(품종 — What breed is your dog?)이 뜻 칸에 없다. / 설명이 '동물이 자연스럽게 자식을 낳는 행위는 have babies 또는 give birth' 라며 그 자리를 남에게 넘기는데, 짐승이 스스로 새끼를 치는 것도 breed 다(Rabbits breed quickly.) — 없는 규칙을 세워 맞는 영어를 막았다. / 혼동 칸의 produce 를 설명이 한 번도 안 다루고, raise 와의 갈림도 '인위적으로 품종을 만들 때' 한 마디에만 실려 있다. / 해석의 '경연 대회' 는 노래·춤 겨루기 쪽 말이라 개 대회에 안 맞는다. / 자리 검사. 뜻 칸에 올린 이름씨 '품종' 을 문형('breed + 동물')도 예문도 보여 주지 못한다 — tune 과 같은 까닭으로 설명에만 둔다."
+  meaning_ko: "(새끼를 얻으려고) 길러 내다"
+  pattern: "breed + 동물"
+  usage_note: "새끼를 얻으려고 짝지어 기르는 것이 breed 예요 — breed horses. 짐승이 스스로 새끼를 치는 것도 breed 라서 Rabbits breed quickly. 라고 해요. 이름씨로 쓰면 '품종' 이라 What breed is your dog? 라고 묻습니다. 그냥 먹이고 돌보아 키우는 것은 raise 예요."
+  confused_with: ["raise"]
+
+- word: "brilliant"
+  reason: "**혼동 칸의 outstanding 은 저장된 카드의 뜻이 '미결인, 처리되지 않은' 이라 이 낱말과 겹치는 자리가 없다** — 눌러 간 학습자는 미지급금 이야기를 만난다. / 설명의 \"한국어 '우수한'보다 더 강하게 뛰어난 느낌\" 은 잴 수 없는 말이고 한국어와만 견준다. / **영국에서 '아주 좋다' 는 뜻으로 Brilliant! 한 마디를 흔히 쓰는 것이 이 낱말의 가장 큰 쓰임인데 카드에 없다.** 빛이 밝다는 본뜻도 빠져 있다. / 반박이 다 죽어 내가 직접 대조. 혼동 칸에 새로 건 smart 를 설명이 한 번도 안 갈라 준다 — 바로 앞 묶음에서 smart 카드를 '미국에서는 머리가 좋다는 뜻으로 사람에게 가장 자주 써요' 로 고쳐 두었으므로, 두 낱말이 겹치는 자리(사람의 머리)를 세기로 갈라 준다."
+  meaning_ko: "아주 똑똑한; 아주 훌륭한"
+  usage_note: "머리가 아주 좋다는 뜻으로 사람에게 써요 — a brilliant idea. 그냥 머리가 좋다고 할 때는 smart 를 쓰고 brilliant 는 훨씬 센 말이에요. 영국에서는 '아주 좋다' 는 뜻으로 감탄할 때도 흔히 써서 Brilliant! 한 마디로 대답합니다. 아주 잘한다는 쪽은 excellent 이고, 빛이 아주 밝다는 뜻도 있어 brilliant sunshine 처럼 써요."
+  confused_with: ["excellent", "smart"]
+
+- word: "adviser"
+  reason: "**문형 'adviser: 불가산명사 (an adviser X)' 가 통째로 거짓이다** — adviser 는 사람을 가리키는 셀 수 있는 이름씨라 an adviser, two advisers 가 맞고, 카드가 X 표를 친 an adviser 야말로 표준이다. 설명도 \"한국어 '상담사'처럼 불가산명사예요. 'a adviser'는 잘못 쓰는 거예요\" 라며 같은 거짓을 되풀이하는데, a adviser 가 틀린 것은 셀 수 없어서가 아니라 첫소리가 모음이라 an 을 써야 하기 때문이다. 이 카드를 읽은 학습자는 맞는 영어를 스스로 고쳐 쓰게 된다. / 설명 끝의 \"'advice'는 명사지만 'adviser'는 명사예요\" 는 문장이 무너져 아무 뜻이 없다. / 해석의 '조언사' 는 없는 말이고, '조언을 듣기 위해' 도 예문에 없는 까닭을 보탠 것이다. / 짝인 움직씨 advise 를 한 번도 안 든다."
+  meaning_ko: "조언해 주는 사람, 상담사"
+  pattern: "an/my + adviser"
+  usage_note: "무엇을 어떻게 할지 조언해 주는 사람이 an adviser 예요 — a financial adviser. 하나 둘로 세는 말이라 two advisers 처럼 쓰고, 첫소리가 모음이라 a 가 아니라 an 을 붙입니다. 조언 자체는 advice 라서 give advice 라고 하고, 조언하는 동작은 advise 예요. advisor 라고 적기도 합니다."
+  confused_with: ["advice", "advise"]
+
+- word: "reverse"
+  reason: "왕초보가 이 낱말을 실제로 만나는 자리 둘이 빠져 있다 — 차를 뒤로 빼는 것(reverse into a parking space, in reverse)과 이미 정한 것을 뒤집는 것(reverse a decision)이다. / 설명이 '예: She reversed the direction of the car.' 를 드는데 그것은 차를 후진하는 말이 아니라 방향을 되돌린다는 말이라, 정작 흔한 후진 쓰임을 안 보여 준다. / 혼동 칸의 opposite 를 설명이 한 번도 안 다룬다. / 자리 검사. 새 설명이 든 reverse into a parking space 는 목적어 없이 into 를 다는 꼴인데 문형은 'reverse + 목적어' 하나뿐이라 그 자리가 없다."
+  meaning_ko: "(차례·방향을) 정반대로 하다, 뒤집다"
+  pattern: "reverse + 목적어 / reverse into + 곳"
+  usage_note: "차례나 방향을 정반대로 만드는 것이 reverse 예요 — reverse the order. 이미 정한 것을 뒤집을 때도 써서 reverse a decision 이라고 합니다. 차를 뒤로 빼는 것도 reverse 라 reverse into a parking space 처럼 써요. 그냥 방향을 바꾸는 것은 turn 이고, 맞은편이라는 뜻의 그림씨는 opposite 예요."
+
+- word: "mode"
+  reason: "**설명 '기계나 기술 관련 문맥에서만 자주 쓰여요' 가 거짓이다** — a mode of transport(교통수단), a mode of thinking 처럼 '무엇을 하는 방식' 이라는 뜻으로도 흔히 쓴다. / **문형 'in + mode' 가 제 예문과 어긋난다** — 예문 'This phone has airplane mode.' 에는 in 이 없다. 두 자리(has ~ mode / in ~ mode)를 다 보여 줘야 한다. / 혼동 칸의 way·method 를 설명이 한 번도 안 갈라 준다. / 자리 검사. 새 설명이 a mode of transport 를 드는데 문형에 of 자리가 없다 — 뜻 칸의 둘째 갈래 '방식' 을 문형이 못 보여 준다. / 반박이 다 죽어 내가 직접 대조. 혼동 칸에 way 를 그대로 두었는데 설명은 method 만 갈라 준다 — 저장된 way 카드(A1, 뜻 '길, 방법')는 이 낱말과 겹치는 자리가 거의 없고, method 카드가 이미 'way 는 더 편한 말이라 일상에서 자주 쓰고, method 는 조금 딱딱해요' 로 그 갈림을 맡고 있다. 설명이 다루는 짝만 남긴다."
+  meaning_ko: "(기계의) 모드; 방식"
+  pattern: "명사 + mode (in ~ mode) / a mode of + 명사"
+  usage_note: "기계나 프로그램이 어떤 식으로 돌아가는지를 가리켜요 — turn on night mode. 그 상태에 있다고 할 때는 in 을 붙여 in airplane mode 라고 합니다. 무엇을 하는 방식이라는 뜻으로도 써서 a mode of transport(교통수단) 처럼 씁니다. 일을 해내는 구체적인 절차는 a method 예요."
+  confused_with: ["method"]
+
+- word: "mirror"
+  reason: "**왕초보가 이 낱말에서 실제로 틀리는 자리(거울을 볼 때 at 이 아니라 in 을 쓴다)를 카드가 안 짚는다** — 제 예문이 바로 'Look in the mirror.' 인데 설명은 그 전치사를 한 번도 안 다루고 reflection 이야기만 한다. / 차의 a side mirror, a rearview mirror 처럼 일상에서 자주 만나는 짝도 없다. / 자리 검사. 새 설명의 알맹이가 '들여다볼 때 at 이 아니라 in 을 쓴다' 인데 문형 'a/the + mirror' 에 그 자리가 없다 — 예문이 바로 'Look in the mirror.' 다."
+  pattern: "look in + the mirror / a + mirror"
+  usage_note: "얼굴이나 모습을 비추어 보는 것이 mirror 예요. 들여다본다고 할 때 at 이 아니라 in 을 쓰는 것이 이 낱말의 함정입니다. 차의 옆·뒤를 보는 거울은 a side mirror, a rearview mirror 라고 해요. 거울에 비친 모습 자체는 a reflection 이에요."
+  confused_with: ["reflection"]
+
+- word: "awful"
+  reason: "**설명 \"'awful'은 명사 앞에만 써요\" 가 제 예문을 부정한다** — 이 카드의 예문이 바로 'This weather is awful.' 로 be 뒤 서술 자리다. 문형 'awful + 명사' 도 같은 거짓을 되풀이해, 학습자는 제 카드의 예문을 틀린 것으로 읽는다. / 'Awful good은 잘못된 표현이에요' 는 어찌씨로 쓰는 미국 입말을 두고 한 말인데 왕초보가 만날 자리가 아니고, 그 이야기가 위의 거짓 규칙을 떠받치는 데 쓰였다. / 뜻 칸의 '참으로 형편없는' 은 이 DB 의 말투와 갈리는 옛 말투다. / 반박이 다 죽어 내가 직접 대조. 뜻 칸 '아주 나쁜, 끔찍한' 의 '나쁜' 을 혼동 짝 둘이 다 갖고 있다 — terrible 뜻이 '매우 나쁜, 아주 안 좋은', bad 뜻이 '나쁜, 안 좋은' 이라 셋이 한국어를 나눠 갖는다. terrible 과 뜻이 거의 같은 것은 사실이므로 설명에서 그렇게 밝히되, 뜻 칸 머리말은 갈라 놓는다."
+  meaning_ko: "끔찍한, 지독한"
+  pattern: "be + awful / awful + 명사"
+  usage_note: "아주 나쁘다고 할 때 쓰는 말이라 be 뒤에도 놓고(The food was awful.) an awful smell 처럼 이름씨 앞에도 붙여요. terrible 과 뜻이 거의 같아 바꿔 써도 됩니다. bad 보다 훨씬 센 말이에요. 몸이 안 좋다고 할 때도 써서 I feel awful. 이라고 합니다."
+
+- word: "pose"
+  reason: "**문형이 제 예문의 자리를 안 보여 준다** — 예문 'She posed for a photograph.' 는 목적어 없이 for 를 붙이는 꼴인데, 문형 'pose + 목적어 (자세/문제), pose a question' 에는 그 자리가 없다. 문형대로 쓰면 pose a photograph 가 나온다. / **혼동 칸의 raise 는 저장된 카드가 '키우다, 기르다; 올리다' 만 담고 있어 이 카드가 견주려는 '문제를 제기하다' 뜻이 그 카드에 없다** — 눌러 간 학습자가 받을 말이 없다. / pose a problem, pose a risk 처럼 '문제·위험을 있게 만든다' 는 흔한 쓰임이 카드에 없다. / 해석 '사진 촬영을 위해' 는 for 를 낱말째 옮긴 번역투다. / 반박이 다 죽어 내가 직접 대조. 혼동 칸에 남긴 model 을 설명이 한 번도 안 다룬다 — 저장된 model 카드(뜻 '모델 (패션모델), 모형')와 이 낱말이 맞닿는 자리는 사진 찍히는 일이므로 그것을 한 줄로 밝힌다."
+  meaning_ko: "(사진 찍으려고) 자세를 잡다; (문제를) 일으키다"
+  pattern: "pose for + 사진 / pose + 문제·위험"
+  usage_note: "사진을 찍으려고 자세를 잡는 것이 pose 예요 — pose for a photo. 그렇게 사진 찍히는 일을 하는 사람은 a model 이에요. 문제나 위험을 있게 만든다는 뜻으로도 써서 pose a problem, pose a risk 처럼 씁니다. 질문을 던진다고 할 때도 pose a question 이라고 하는데, 말할 때는 ask 를 더 써요."
+  confused_with: ["model"]
+
+- word: "adjust"
+  reason: "이 낱말의 둘째 자리(새 환경에 맞춰 간다는 adjust to)가 카드에 없는데, 설명은 바로 그 자리를 adapt 에게 통째로 넘긴다 — 영어에서 adjust to a new school 은 아주 흔한 말이라 학습자가 그 문장을 틀린 것으로 배우게 된다. / 문형 'adjust + 목적어 (물건)' 도 그 to 자리를 안 담는다. / 설명의 든 예 '내가 이 상황에 적응해야 해요' 는 한국어만 있고 영어 문장이 반쪽이다(I need to adapt, 로 끝난다). / 자리 검사. 새 문형에 'adjust to + 명사' 를 넣고 설명도 adjust to a new school 을 드는데, 뜻 칸은 '조정하다, 맞추다' 뿐이라 그 갈래를 뜻 칸이 안 받는다."
+  meaning_ko: "조정하다, 맞추다; (새 환경에) 맞춰 가다"
+  pattern: "adjust + 목적어 / adjust to + 명사"
+  usage_note: "크기나 세기를 조금 손봐 알맞게 맞추는 것이 adjust 예요 — adjust the mirror. 새 환경에 몸과 마음을 맞춰 간다는 뜻으로도 써서 adjust to a new school 처럼 to 를 붙입니다. 하는 방식 자체를 상황에 맞게 바꾸는 것은 adapt 라서 adapt to change 라고 해요."
+  confused_with: ["adapt"]
+
+- word: "creative"
+  reason: "**문형 'creative + about/with + 주제' 와 예문 'She is creative with art.' 가 둘 다 영어에서 잘 안 쓰는 꼴이다** — 이 낱말이 실제로 서는 자리는 a creative idea 처럼 이름씨 앞이거나 She is very creative. 처럼 be 뒤다. / 설명이 세 문장을 한국어 '창의적/창조적' 가르기에만 쓰는데, 그 둘은 영어에서 갈리지 않는 같은 낱말이라 학습자가 얻을 것이 없다. / 짝인 움직씨 create 를 한 번도 안 들고, 혼동 칸의 innovative 도 안 다룬다."
+  meaning_ko: "새롭게 생각해 내는, 창의적인"
+  pattern: "creative + 명사 / be + creative"
+  example: "She has a lot of creative ideas."
+  usage_note: "남들이 안 한 것을 새롭게 생각해 낸다는 뜻이라 creative work 처럼 이름씨 앞에 붙여 써요. 사람에게 쓸 때는 She is very creative. 처럼 be 뒤에 놓습니다. 만들어 내는 동작은 create 이고, 전에 없던 것을 처음 내놓았다는 쪽은 original, 낡은 것을 새 방식으로 바꾼다는 쪽은 innovative 예요."
+  confused_with: ["create", "original", "innovative"]
+
+- word: "flat"
+  reason: "짝 맞춤(apartment 가 설명에서 이 낱말을 가르치는데 카드가 받아 줄 자리가 없었다). 이 DB 는 같은 사정을 lift 카드에서 이미 풀어 두었다 — 뜻이 '들다' 인 카드 설명 끝에 '영국에서는 lift 가 엘리베이터를 뜻하기도 합니다' 한 줄을 얹어 elevator 에서 온 링크가 착지하게 했다. 같은 방식으로 한 줄을 얹는다. 설명이 'level' 과 견주면서 '더 추상적인 의미' 라는 잴 수 없는 말에 기대던 것도 함께 고친다."
+  usage_note: "울퉁불퉁하지 않고 고르게 판판한 것이 flat 이에요 — a flat surface, flat shoes. 바람이 빠진 타이어도 a flat tire 라고 해요. 영국에서는 flat 이 아파트 한 집을 뜻하기도 해서 I live in a flat. 이라고 합니다."
+  confused_with: ["level", "apartment"]
+
+- word: "iron"
+  reason: "짝 맞춤(steel 의 confused_with). 뜻 칸이 '다듬다, 철' 로 다림질을 앞세워, steel 에서 '섞지 않은 쇠 그 자체는 iron' 을 확인하러 온 학습자가 셔츠 다리는 카드를 만난다 — 여섯 칸 중 다섯이 다리미이고, 혼동 칸에 steel 을 걸어 두고도 설명이 한 번도 안 갈라 준다. 혼동 칸의 smelt 는 카드가 아예 없는 죽은 짝이다. 설명의 '문맥에 따라 다르게 쓰이기 때문에 주의해야 해요' 도 무엇을 하라는 말인지 없다."
+  meaning_ko: "철, 쇠; (옷을) 다리다"
+  pattern: "made of + iron / iron + 목적어 (옷)"
+  usage_note: "섞지 않은 쇠붙이 하나를 가리키는 말이 iron 이에요 — an iron gate, made of iron. 여기에 다른 것을 섞어 더 단단하게 만든 것이 steel(강철)이에요. 옷의 주름을 펴는 동작도 iron 이라 iron my shirt 라고 하는데, 그때 쓰는 도구도 an iron 이라고 부릅니다."
+  confused_with: ["steel", "metal"]
+
+- word: "bake"
+  reason: "짝 맞춤(cake 의 confused_with, 그 카드도 예문에 cake 를 쓴다). **뜻 '구워 오다 (쿠키, 빵 등)' 와 설명 '구워 내는 동작을 말할 때는 make 쓰고, 구워 오는 동작을 말할 때는 bake 쓰세요' 가 통째로 거짓이다** — 영어 bake 에 '가져온다' 는 뜻은 없고, bake 는 오븐에 넣어 굽는 것이다. cake 카드가 '굽는 동작은 bake' 라고 옳게 가르치는데 혼동 칸을 눌러 온 학습자는 곧바로 '굽는 건 make, bake 는 구워 오는 것' 이라는 반대말을 만난다. 해석 '구워 줄 수 있을까요?' 도 그 거짓을 따라간 것이다."
+  meaning_ko: "(오븐에) 굽다"
+  usage_note: "오븐에 넣어 굽는 것이 bake 예요 — bake a cake, bake bread. 불이나 팬에 올려 익히는 것까지 통틀어 이르면 cook 이고, 재료를 섞어 만들어 내는 것은 make 예요. 빵을 구워 파는 사람은 a baker, 그 가게는 a bakery 라고 합니다."
+  confused_with: ["cook", "make", "cake"]
