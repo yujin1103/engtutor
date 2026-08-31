@@ -5005,6 +5005,7 @@
 - word: "apartment"
   example_ko: "저는 아파트에 살아요."
   reason: "되읽기. 예문을 'I live in an apartment.' 로 바꾼 것에 맞춘다 — small 이 빠졌다."
+
 - word: "table"
   example_ko: "이 탁자는 아주 커요."
   reason: "뜻 칸에서 소리 옮김 '테이블' 을 걷어낸 것에 맞춘다 — 그대로 두면 해석이 뜻 칸의 말을 한 조각도 안 담고, 빈칸 옆에 정답이 한글로 적혀 있는 것도 그대로다."
@@ -5012,3 +5013,131 @@
 - word: "height"
   example_ko: "이 탁자는 높이가 얼마예요?"
   reason: "'테이블의 높이는 어떻게 되나요?' 의 '어떻게 되나요' 는 What is ~? 를 낱말째 옮긴 번역투다. 앞선 묶음에서 이 자리를 잡아 놓고 근거를 잘못 대는 바람에 물렸던 것을 이제 고친다."
+
+- word: "nowadays"
+  example_ko: "요즘은 사람들이 스마트폰을 많이 써요."
+  reason: "해석의 '이제는' 이 뜻 칸의 '요즘' 과 갈려 한 카드가 같은 것을 두 말로 부른다. '사용해요' 도 이 DB 가 쓰는 '써요' 와 갈린다."
+
+- word: "agricultural"
+  example_ko: "이건 농산물이에요."
+  reason: "'이것은 …입니다' 는 번역투이고 말투도 갈린다. an agricultural product 를 우리말로 옮기면 '농산물' 이 굳은 짝이다."
+
+- word: "competitor"
+  example_ko: "그는 만만찮은 경쟁자예요."
+  reason: "'강한 경쟁자입니다' 의 '강한' 은 strong 을 낱말째 옮긴 것이라 사람에게 붙으면 힘이 세다는 쪽으로 읽힌다. 말투도 갈린다."
+
+- word: "alcohol"
+  example_ko: "술 드세요?"
+  reason: "'술을 드십니까?' 는 이 DB 의 말투와 갈린다."
+
+- word: "festival"
+  example_ko: "다음 주에 음악 축제가 있어요."
+  reason: "'내주' 는 왕초보가 쓰는 말이 아니다 — 이 DB 는 다른 해석에서 '다음 주' 를 쓴다."
+
+- word: "curve"
+  example_ko: "그 길에 휜 데가 있어요."
+  reason: "'도로는 예리한 곡선이 있어요' 는 조사가 어긋난 번역투이고, '예리한' 은 sharp 의 오역이다 — 저장된 sharp 카드의 뜻이 '날카로운, 뾰족한' 이라 칼에 쓰는 말이다. / 예문에서 sharp 를 뺀 것에 맞춘다 — 앞 줄의 해석에 남은 '급하게' 는 새 설명이 '각지게 꺾이는 쪽은 a sharp bend' 라고 갈라 놓은 것과 어긋난다."
+
+- word: "knee"
+  example_ko: "그는 어제 무릎을 다쳤어요."
+  reason: "'어제 그는' 은 때를 앞세운 영어 어순을 그대로 옮긴 것이라, 우리말은 임자말을 앞에 둔다."
+
+- word: "overcome"
+  example_ko: "저는 영어로 말하는 두려움을 이겨 냈어요."
+  reason: "'영어를 말하는 데 대한 두려움' 은 조사가 겹친 번역투다. 뜻 칸에서 '넘어오르다' 를 빼고 '이겨 내다' 를 앞세운 것에 맞춘다."
+
+- word: "web"
+  example_ko: "저는 웹에서 정보를 찾아요."
+  reason: "'인터넷을 사용해요' 에는 뜻 칸의 '웹' 이 한 조각도 안 남아, 되돌리면 혼동 짝 internet 이 답이 된다. 임자말도 빠져 있었다."
+
+- word: "depth"
+  example_ko: "그 수영장은 깊이가 2미터예요."
+  reason: "'수영장의 깊이는 2미터입니다' 는 '~의 …는' 이 번역투이고 말투도 갈린다."
+
+- word: "entrance"
+  example_ko: "그 건물 입구가 어디예요?"
+  reason: "'건물의 입구는 어디에 있어요?' 의 '~의' 는 번역투다."
+
+- word: "log"
+  example_ko: "저는 그날그날 한 일을 적어 둬요."
+  reason: "'매일의 활동을 기록해요' 는 daily activities 를 낱말째 옮긴 번역투다. 뜻 칸에 '때를 따라' 를 넣은 것에 맞춰 해석에도 그 결을 남긴다."
+
+- word: "god"
+  example_ko: "신을 믿으세요?"
+  reason: "'믿으시나요' 는 이 DB 의 말투와 갈린다. 예문의 god 도 대문자 God 으로 바로잡았다."
+
+- word: "portion"
+  example_ko: "이건 밥을 아주 많이 담은 한 그릇이에요."
+  reason: "'이것은 많은 양의 밥이에요' 는 a large portion of rice 를 낱말째 옮긴 번역투이고, 뜻 칸의 '몫' 이 한 조각도 안 남는다."
+
+- word: "substance"
+  example_ko: "이건 위험한 물질이에요."
+  reason: "예문을 'This is a dangerous substance.' 로 바꾼 것에 맞춘다 — 옛 예문 'This medicine has many substances.' 는 영어로 어색했다(약에 든 것은 ingredients 다)."
+
+- word: "extensive"
+  example_ko: "그 도서관은 소장 자료가 아주 많아요."
+  reason: "'도서관의 책은 매우 다양합니다' 의 '다양' 은 various 의 말이라 예문(extensive collections)과 어긋나고, '~의 …는' 도 번역투다."
+
+- word: "interpret"
+  example_ko: "이 문장이 무슨 뜻인지 풀어 주시겠어요?"
+  reason: "'설명해 주시겠어요' 의 '설명' 은 혼동 짝 explain 의 말이라 빈칸 답이 갈린다. '제가 이해할 수 있도록' 도 예문에 없는 말이다."
+
+- word: "independence"
+  example_ko: "그 사람은 부모님에게서 독립하고 싶어 해요."
+  reason: "예문을 'She wants independence from her parents.' 로 바꾼 것에 맞춘다 — 옛 예문은 나라에만 매여 있어 이 낱말의 흔한 자리(개인의 독립)를 안 보여 줬다."
+
+- word: "consult"
+  example_ko: "선생님께 상의해 봐야 해요."
+  reason: "'것 같아요' 는 예문 'I need to ~' 에 없는 말이다."
+
+- word: "pink"
+  example_ko: "저는 저 분홍색 원피스가 마음에 들어요."
+  reason: "'분홍색 드레스가 좋아요' 는 임자말이 빠졌고, the 가 가리키는 '저' 도 안 남는다. 저장된 dress 카드의 뜻이 '원피스, 드레스' 라 앞말을 쓴다."
+
+- word: "smooth"
+  example_ko: "이 탁자는 표면이 매끄러워요."
+  reason: "'테이블 표면은 매끄럽습니다' 는 말투가 갈리고, table 카드의 뜻을 '탁자, 식탁' 으로 옮긴 것과도 어긋난다."
+
+- word: "intervention"
+  example_ko: "싸움을 말리려고 누군가 끼어들었어요."
+  reason: "'개입이 있었습니다' 는 There was ~ 를 그대로 옮긴 번역투이고 말투도 갈린다. 뜻 칸의 '끼어들어 막음' 을 해석에도 남긴다."
+
+- word: "impress"
+  example_ko: "그 영화는 저에게 깊은 인상을 남겼어요."
+  reason: "'나를 깊이 인상했어요' 의 '인상했어요' 는 한국어에 없는 말이다. '진짜' 도 really 를 낱말째 옮긴 것이고 '나를' 도 이 DB 의 말투와 갈린다."
+
+- word: "radical"
+  example_ko: "그들은 계획을 확 뜯어고쳤어요."
+  reason: "예문을 'They made radical changes to the plan.' 으로 바꾼 것에 맞춘다 — 옛 예문 'He is a radical about politics.' 는 영어로 잘 안 쓰는 꼴이었다."
+
+- word: "similarly"
+  example_ko: "저도 마찬가지로 매운 음식을 못 먹어요."
+  reason: "'비슷하게, 저는 …' 은 한국어로 문장을 열 수 없는 꼴이다 — 우리말은 '저도 마찬가지로' 라고 한다."
+
+- word: "behave"
+  example_ko: "식당에서는 얌전히 행동해 주세요."
+  reason: "'식당에서 잘 행동해 주세요' 의 '잘 행동하다' 는 우리말로 어색하다 — behave well 을 낱말째 옮긴 것이다."
+
+- word: "loud"
+  example_ko: "음악 소리가 너무 커요."
+  reason: "'음악이 너무 크게 나와요' 는 무엇이 큰지가 흐리다 — 큰 것은 음악이 아니라 소리다."
+
+- word: "subsequent"
+  example_ko: "뒤이어 일어난 일들은 뜻밖이었어요."
+  reason: "'이후의 일들은 예상치 못했습니다' 는 말투가 갈리고, '예상치 못했다' 는 임자말이 사람이어야 하는 말이라 조사가 어긋난다."
+
+- word: "infection"
+  example_ko: "의사 선생님이 피부 감염이라고 했어요."
+  reason: "'의사가' 보다 '의사 선생님이' 가 이 DB 가 쓰는 말이고(doctor 카드), 왕초보 화면의 말투에도 맞는다."
+
+- word: "jacket"
+  example_ko: "추울 때 입을 재킷이 필요해요."
+  reason: "'겉옷' 은 뜻 칸의 '재킷' 과 갈리고 저장된 coat 카드의 뜻 '코트 (밖에 걸치는 긴 겉옷)' 와도 같은 말을 나눠 갖는다. '추위를 막을 수 있는' 도 for the cold 를 낱말째 옮긴 번역투다."
+
+- word: "planet"
+  example_ko: "지구는 행성이에요."
+  reason: "'지구는 행성입니다' 는 이 DB 의 말투와 갈린다 — 교정안의 reason 에 적어 놓고 정작 해석 값을 안 냈다."
+
+- word: "shadow"
+  example_ko: "그 나무는 그림자가 길어요."
+  reason: "예문을 'The tree has a long shadow.' 로 바꾼 것에 맞춘다 — 옛 예문은 볕을 피해 숨는 자리를 shadow 로 잘못 썼다."
